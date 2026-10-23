@@ -1,5 +1,5 @@
 ﻿# Unified Cheat Menu: Character & Genetics and Relationships & Family tabs (spec 4.1, 4.2).
-# Root = player; the target is var:ucm_target, the second character global_var:skonester_crozier_cheats_other.
+# Root = player; the target is var:ucm_target, the second character global_var:ucm_crozier_cheats_other.
 
 # --- Step size ---------------------------------------------------------------
 ucm_step_1 = {
@@ -192,143 +192,143 @@ ucm_relation_friend = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_pair_valid_trigger = yes }
-	effect = { var:ucm_target = { set_relation_friend = global_var:skonester_crozier_cheats_other } }
+	effect = { var:ucm_target = { set_relation_friend = global_var:ucm_crozier_cheats_other } }
 }
 
 ucm_relation_best_friend = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_pair_valid_trigger = yes }
-	effect = { var:ucm_target = { set_relation_best_friend = global_var:skonester_crozier_cheats_other } }
+	effect = { var:ucm_target = { set_relation_best_friend = global_var:ucm_crozier_cheats_other } }
 }
 
 ucm_relation_rival = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_pair_valid_trigger = yes }
-	effect = { var:ucm_target = { set_relation_rival = global_var:skonester_crozier_cheats_other } }
+	effect = { var:ucm_target = { set_relation_rival = global_var:ucm_crozier_cheats_other } }
 }
 
 ucm_relation_nemesis = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_pair_valid_trigger = yes }
-	effect = { var:ucm_target = { set_relation_nemesis = global_var:skonester_crozier_cheats_other } }
+	effect = { var:ucm_target = { set_relation_nemesis = global_var:ucm_crozier_cheats_other } }
 }
 
 ucm_relation_lover = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_pair_valid_trigger = yes }
-	effect = { var:ucm_target = { set_relation_lover = global_var:skonester_crozier_cheats_other } }
+	effect = { var:ucm_target = { set_relation_lover = global_var:ucm_crozier_cheats_other } }
 }
 
 ucm_relation_soulmate = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_pair_valid_trigger = yes }
-	effect = { var:ucm_target = { set_relation_soulmate = global_var:skonester_crozier_cheats_other } }
+	effect = { var:ucm_target = { set_relation_soulmate = global_var:ucm_crozier_cheats_other } }
 }
 
 ucm_relation_clear = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_pair_valid_trigger = yes }
-	effect = { var:ucm_target = { if = { limit = { has_relation_friend = global_var:skonester_crozier_cheats_other } remove_relation_friend = global_var:skonester_crozier_cheats_other } if = { limit = { has_relation_best_friend = global_var:skonester_crozier_cheats_other } remove_relation_best_friend = global_var:skonester_crozier_cheats_other } if = { limit = { has_relation_rival = global_var:skonester_crozier_cheats_other } remove_relation_rival = global_var:skonester_crozier_cheats_other } if = { limit = { has_relation_nemesis = global_var:skonester_crozier_cheats_other } remove_relation_nemesis = global_var:skonester_crozier_cheats_other } if = { limit = { has_relation_lover = global_var:skonester_crozier_cheats_other } remove_relation_lover = global_var:skonester_crozier_cheats_other } if = { limit = { has_relation_soulmate = global_var:skonester_crozier_cheats_other } remove_relation_soulmate = global_var:skonester_crozier_cheats_other } } }
+	effect = { var:ucm_target = { if = { limit = { has_relation_friend = global_var:ucm_crozier_cheats_other } remove_relation_friend = global_var:ucm_crozier_cheats_other } if = { limit = { has_relation_best_friend = global_var:ucm_crozier_cheats_other } remove_relation_best_friend = global_var:ucm_crozier_cheats_other } if = { limit = { has_relation_rival = global_var:ucm_crozier_cheats_other } remove_relation_rival = global_var:ucm_crozier_cheats_other } if = { limit = { has_relation_nemesis = global_var:ucm_crozier_cheats_other } remove_relation_nemesis = global_var:ucm_crozier_cheats_other } if = { limit = { has_relation_lover = global_var:ucm_crozier_cheats_other } remove_relation_lover = global_var:ucm_crozier_cheats_other } if = { limit = { has_relation_soulmate = global_var:ucm_crozier_cheats_other } remove_relation_soulmate = global_var:ucm_crozier_cheats_other } } }
 }
 
 # --- Marriage ------------------------------------------------------------------
 ucm_marry_second = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_pair_valid_trigger = yes NOT = { var:ucm_target = { is_spouse_of = global_var:skonester_crozier_cheats_other } } }
-	effect = { var:ucm_target = { marry = global_var:skonester_crozier_cheats_other } }
+	is_valid = { ucm_menu_pair_valid_trigger = yes NOT = { var:ucm_target = { is_spouse_of = global_var:ucm_crozier_cheats_other } } }
+	effect = { var:ucm_target = { marry = global_var:ucm_crozier_cheats_other } }
 }
 
 ucm_marry_second_matrilineal = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_pair_valid_trigger = yes NOT = { var:ucm_target = { is_spouse_of = global_var:skonester_crozier_cheats_other } } }
-	effect = { var:ucm_target = { marry_matrilineal = global_var:skonester_crozier_cheats_other } }
+	is_valid = { ucm_menu_pair_valid_trigger = yes NOT = { var:ucm_target = { is_spouse_of = global_var:ucm_crozier_cheats_other } } }
+	effect = { var:ucm_target = { marry_matrilineal = global_var:ucm_crozier_cheats_other } }
 }
 
 ucm_betroth_second = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_pair_valid_trigger = yes OR = { var:ucm_target = { is_adult = no } global_var:skonester_crozier_cheats_other = { is_adult = no } } var:ucm_target = { is_betrothed = no } global_var:skonester_crozier_cheats_other = { is_betrothed = no } }
-	effect = { var:ucm_target = { create_betrothal = global_var:skonester_crozier_cheats_other } }
+	is_valid = { ucm_menu_pair_valid_trigger = yes OR = { var:ucm_target = { is_adult = no } global_var:ucm_crozier_cheats_other = { is_adult = no } } var:ucm_target = { is_betrothed = no } global_var:ucm_crozier_cheats_other = { is_betrothed = no } }
+	effect = { var:ucm_target = { create_betrothal = global_var:ucm_crozier_cheats_other } }
 }
 
 ucm_betroth_second_matrilineal = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_pair_valid_trigger = yes OR = { var:ucm_target = { is_adult = no } global_var:skonester_crozier_cheats_other = { is_adult = no } } var:ucm_target = { is_betrothed = no } global_var:skonester_crozier_cheats_other = { is_betrothed = no } }
-	effect = { var:ucm_target = { create_betrothal_matrilineal = global_var:skonester_crozier_cheats_other } }
+	is_valid = { ucm_menu_pair_valid_trigger = yes OR = { var:ucm_target = { is_adult = no } global_var:ucm_crozier_cheats_other = { is_adult = no } } var:ucm_target = { is_betrothed = no } global_var:ucm_crozier_cheats_other = { is_betrothed = no } }
+	effect = { var:ucm_target = { create_betrothal_matrilineal = global_var:ucm_crozier_cheats_other } }
 }
 
 ucm_break_betrothal_second = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { betrothed ?= global_var:skonester_crozier_cheats_other } }
-	effect = { var:ucm_target = { break_betrothal = global_var:skonester_crozier_cheats_other } }
+	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { betrothed ?= global_var:ucm_crozier_cheats_other } }
+	effect = { var:ucm_target = { break_betrothal = global_var:ucm_crozier_cheats_other } }
 }
 
 ucm_divorce_second = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { is_spouse_of = global_var:skonester_crozier_cheats_other } }
-	effect = { var:ucm_target = { divorce = global_var:skonester_crozier_cheats_other } }
+	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { is_spouse_of = global_var:ucm_crozier_cheats_other } }
+	effect = { var:ucm_target = { divorce = global_var:ucm_crozier_cheats_other } }
 }
 
 # --- Family --------------------------------------------------------------------
 ucm_second_as_father = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_second_can_be_parent_trigger = yes global_var:skonester_crozier_cheats_other = { is_male = yes } }
-	effect = { var:ucm_target = { set_father = global_var:skonester_crozier_cheats_other } }
+	is_valid = { ucm_second_can_be_parent_trigger = yes global_var:ucm_crozier_cheats_other = { is_male = yes } }
+	effect = { var:ucm_target = { set_father = global_var:ucm_crozier_cheats_other } }
 }
 
 ucm_second_as_real_father = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_second_can_be_parent_trigger = yes global_var:skonester_crozier_cheats_other = { is_male = yes } }
-	effect = { var:ucm_target = { set_real_father = global_var:skonester_crozier_cheats_other } }
+	is_valid = { ucm_second_can_be_parent_trigger = yes global_var:ucm_crozier_cheats_other = { is_male = yes } }
+	effect = { var:ucm_target = { set_real_father = global_var:ucm_crozier_cheats_other } }
 }
 
 ucm_second_as_mother = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_second_can_be_parent_trigger = yes global_var:skonester_crozier_cheats_other = { is_female = yes } }
-	effect = { var:ucm_target = { set_mother = global_var:skonester_crozier_cheats_other } }
+	is_valid = { ucm_second_can_be_parent_trigger = yes global_var:ucm_crozier_cheats_other = { is_female = yes } }
+	effect = { var:ucm_target = { set_mother = global_var:ucm_crozier_cheats_other } }
 }
 
 ucm_join_second_house = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_pair_valid_trigger = yes exists = global_var:skonester_crozier_cheats_other.house NOT = { var:ucm_target.house ?= global_var:skonester_crozier_cheats_other.house } }
-	effect = { var:ucm_target = { set_house = global_var:skonester_crozier_cheats_other.house } }
+	is_valid = { ucm_menu_pair_valid_trigger = yes exists = global_var:ucm_crozier_cheats_other.house NOT = { var:ucm_target.house ?= global_var:ucm_crozier_cheats_other.house } }
+	effect = { var:ucm_target = { set_house = global_var:ucm_crozier_cheats_other.house } }
 }
 
 # --- Pregnancy -----------------------------------------------------------------
 ucm_pregnant_by_second_1 = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { is_female = yes is_pregnant = no } global_var:skonester_crozier_cheats_other = { is_male = yes } }
-	effect = { var:ucm_target = { make_pregnant_no_checks = { father = global_var:skonester_crozier_cheats_other number_of_children = 1 } } }
+	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { is_female = yes is_pregnant = no } global_var:ucm_crozier_cheats_other = { is_male = yes } }
+	effect = { var:ucm_target = { make_pregnant_no_checks = { father = global_var:ucm_crozier_cheats_other number_of_children = 1 } } }
 }
 
 ucm_pregnant_by_second_2 = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { is_female = yes is_pregnant = no } global_var:skonester_crozier_cheats_other = { is_male = yes } }
-	effect = { var:ucm_target = { make_pregnant_no_checks = { father = global_var:skonester_crozier_cheats_other number_of_children = 2 } } }
+	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { is_female = yes is_pregnant = no } global_var:ucm_crozier_cheats_other = { is_male = yes } }
+	effect = { var:ucm_target = { make_pregnant_no_checks = { father = global_var:ucm_crozier_cheats_other number_of_children = 2 } } }
 }
 
 ucm_pregnant_by_second_3 = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { is_female = yes is_pregnant = no } global_var:skonester_crozier_cheats_other = { is_male = yes } }
-	effect = { var:ucm_target = { make_pregnant_no_checks = { father = global_var:skonester_crozier_cheats_other number_of_children = 3 } } }
+	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { is_female = yes is_pregnant = no } global_var:ucm_crozier_cheats_other = { is_male = yes } }
+	effect = { var:ucm_target = { make_pregnant_no_checks = { father = global_var:ucm_crozier_cheats_other number_of_children = 3 } } }
 }
 
 ucm_end_pregnancy = {
@@ -343,14 +343,14 @@ ucm_second_hook_on_target = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_pair_valid_trigger = yes }
-	effect = { global_var:skonester_crozier_cheats_other = { add_hook = { type = strong_favor_hook target = var:ucm_target } } }
+	effect = { global_var:ucm_crozier_cheats_other = { add_hook = { type = strong_favor_hook target = var:ucm_target } } }
 }
 
 ucm_target_hook_on_second = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_pair_valid_trigger = yes }
-	effect = { var:ucm_target = { add_hook = { type = strong_favor_hook target = global_var:skonester_crozier_cheats_other } } }
+	effect = { var:ucm_target = { add_hook = { type = strong_favor_hook target = global_var:ucm_crozier_cheats_other } } }
 }
 
 ucm_learn_target_secrets = {

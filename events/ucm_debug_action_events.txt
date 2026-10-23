@@ -1,0 +1,221 @@
+﻿namespace = ucm_debug_actions
+
+# Clean replacement for the old tocmod.2000-2090 debug-event maze.
+# The target is restored from the global interaction lock on every page.
+# Every submenu has an explicit parent button and a close button; successful actions remain on-page.
+
+ucm_debug_actions.1000 = {
+	type = character_event
+	title = ucm_debug_actions.1000.t
+	desc = ucm_debug_actions.1000.desc
+	theme = default
+	immediate = { ucm_cheat_menu_sync_target_effect = yes }
+
+	option = { name = ucm_debug_actions.1000.resources trigger_event = ucm_debug_actions.1100 }
+	option = { name = ucm_debug_actions.1000.character trigger_event = ucm_debug_actions.1200 }
+	option = { name = ucm_debug_actions.1000.perks trigger_event = ucm_debug_actions.2000 }
+	option = {
+		name = ucm_debug_actions.1000.county
+		trigger = { scope:ucm_cheat_menu_target = { is_landed = yes } }
+		trigger_event = ucm_debug_actions.3000
+	}
+	option = {
+		name = ucm_debug_actions.1000.traits
+		ucm_cheat_menu_open_base_game_traits_effect = yes
+	}
+	option = {
+		name = ucm_debug_actions.1000.lifestyle
+		ucm_cheat_menu_open_lifestyle_effect = yes
+	}
+	option = { name = ucm_debug_actions.close }
+}
+
+ucm_debug_actions.1100 = {
+	type = character_event
+	title = ucm_debug_actions.1100.t
+	desc = ucm_debug_actions.1100.desc
+	theme = default
+	immediate = { ucm_cheat_menu_sync_target_effect = yes }
+
+	option = {
+		name = ucm_debug_actions.1100.gold
+		scope:ucm_cheat_menu_target = { add_gold = 5000 }
+		trigger_event = ucm_debug_actions.1100
+	}
+	option = {
+		name = ucm_debug_actions.1100.prestige
+		scope:ucm_cheat_menu_target = { add_prestige = 5000 }
+		trigger_event = ucm_debug_actions.1100
+	}
+	option = {
+		name = ucm_debug_actions.1100.piety
+		scope:ucm_cheat_menu_target = { add_piety = 5000 }
+		trigger_event = ucm_debug_actions.1100
+	}
+	option = {
+		name = ucm_debug_actions.1100.renown
+		scope:ucm_cheat_menu_target.dynasty = { add_dynasty_prestige = 5000 }
+		trigger_event = ucm_debug_actions.1100
+	}
+	option = { name = ucm_debug_actions.back_main trigger_event = ucm_debug_actions.1000 }
+	option = { name = ucm_debug_actions.close }
+}
+
+ucm_debug_actions.1200 = {
+	type = character_event
+	title = ucm_debug_actions.1200.t
+	desc = ucm_debug_actions.1200.desc
+	theme = default
+	immediate = { ucm_cheat_menu_sync_target_effect = yes }
+
+	option = {
+		name = ucm_debug_actions.1200.heal
+		ucm_debug_actions_heal_target_effect = yes
+		trigger_event = ucm_debug_actions.1200
+	}
+	option = {
+		name = ucm_debug_actions.1200.age_plus_one
+		scope:ucm_cheat_menu_target = { change_age = 1 }
+		trigger_event = ucm_debug_actions.1200
+	}
+	option = {
+		name = ucm_debug_actions.1200.age_plus_five
+		scope:ucm_cheat_menu_target = { change_age = 5 }
+		trigger_event = ucm_debug_actions.1200
+	}
+	option = {
+		name = ucm_debug_actions.1200.age_minus_one
+		trigger = { scope:ucm_cheat_menu_target = { age >= 1 } }
+		scope:ucm_cheat_menu_target = { change_age = -1 }
+		trigger_event = ucm_debug_actions.1200
+	}
+	option = {
+		name = ucm_debug_actions.1200.age_minus_five
+		trigger = { scope:ucm_cheat_menu_target = { age >= 5 } }
+		scope:ucm_cheat_menu_target = { change_age = -5 }
+		trigger_event = ucm_debug_actions.1200
+	}
+	option = { name = ucm_debug_actions.back_main trigger_event = ucm_debug_actions.1000 }
+	option = { name = ucm_debug_actions.close }
+}
+
+ucm_debug_actions.2000 = {
+	type = character_event
+	title = ucm_debug_actions.2000.t
+	desc = ucm_debug_actions.2000.desc
+	theme = default
+	immediate = { ucm_cheat_menu_sync_target_effect = yes }
+
+	option = {
+		name = ucm_debug_actions.2000.all_perks
+		ucm_debug_actions_grant_base_perks_effect = yes
+		trigger_event = ucm_debug_actions.2000
+	}
+	option = {
+		name = ucm_debug_actions.2000.lifestyle
+		ucm_cheat_menu_open_lifestyle_effect = yes
+	}
+	option = {
+		name = ucm_debug_actions.2000.seducer
+		scope:ucm_cheat_menu_target = { add_perk = seducer_perk }
+		trigger_event = ucm_debug_actions.2000
+	}
+	option = {
+		name = ucm_debug_actions.2000.lock_court
+		trigger = { scope:ucm_cheat_menu_target = { NOT = { has_character_flag = blocked_from_leaving } } }
+		scope:ucm_cheat_menu_target = { add_character_flag = blocked_from_leaving }
+		trigger_event = ucm_debug_actions.2000
+	}
+	option = {
+		name = ucm_debug_actions.2000.unlock_court
+		trigger = { scope:ucm_cheat_menu_target = { has_character_flag = blocked_from_leaving } }
+		scope:ucm_cheat_menu_target = { remove_character_flag = blocked_from_leaving }
+		trigger_event = ucm_debug_actions.2000
+	}
+	option = {
+		name = ucm_debug_actions.2000.alliance
+		trigger = {
+			scope:ucm_cheat_menu_target != root
+			root = { is_landed = yes }
+			scope:ucm_cheat_menu_target = { is_landed = yes }
+		}
+		scope:ucm_cheat_menu_target = { create_alliance = root }
+		trigger_event = ucm_debug_actions.2000
+	}
+	option = { name = ucm_debug_actions.2000.punishments trigger_event = ucm_debug_actions.2100 }
+	option = {
+		name = ucm_debug_actions.2000.clear
+		ucm_debug_actions_clear_punishments_effect = yes
+		trigger_event = ucm_debug_actions.2000
+	}
+	option = { name = ucm_debug_actions.back_main trigger_event = ucm_debug_actions.1000 }
+	option = { name = ucm_debug_actions.close }
+}
+
+ucm_debug_actions.2100 = {
+	type = character_event
+	title = ucm_debug_actions.2100.t
+	desc = ucm_debug_actions.2100.desc
+	theme = default
+	immediate = { ucm_cheat_menu_sync_target_effect = yes }
+
+	option = { name = ucm_debug_actions.punish.wounded scope:ucm_cheat_menu_target = { add_trait = wounded_1 } trigger_event = ucm_debug_actions.2100 }
+	option = { name = ucm_debug_actions.punish.scarred scope:ucm_cheat_menu_target = { add_trait = scarred } trigger_event = ucm_debug_actions.2100 }
+	option = { name = ucm_debug_actions.punish.one_eyed scope:ucm_cheat_menu_target = { add_trait = one_eyed } trigger_event = ucm_debug_actions.2100 }
+	option = { name = ucm_debug_actions.punish.disfigured scope:ucm_cheat_menu_target = { add_trait = disfigured } trigger_event = ucm_debug_actions.2100 }
+	option = { name = ucm_debug_actions.punish.one_legged scope:ucm_cheat_menu_target = { add_trait = one_legged } trigger_event = ucm_debug_actions.2100 }
+	option = { name = ucm_debug_actions.punish.impotent scope:ucm_cheat_menu_target = { add_trait = impotent } trigger_event = ucm_debug_actions.2100 }
+	option = { name = ucm_debug_actions.punish.infirm scope:ucm_cheat_menu_target = { add_trait = infirm } trigger_event = ucm_debug_actions.2100 }
+	option = { name = ucm_debug_actions.punish.incapable scope:ucm_cheat_menu_target = { add_trait = incapable } trigger_event = ucm_debug_actions.2100 }
+	option = { name = ucm_debug_actions.next trigger_event = ucm_debug_actions.2101 }
+	option = { name = ucm_debug_actions.back_perks trigger_event = ucm_debug_actions.2000 }
+	option = { name = ucm_debug_actions.close }
+}
+
+ucm_debug_actions.2101 = {
+	type = character_event
+	title = ucm_debug_actions.2101.t
+	desc = ucm_debug_actions.2100.desc
+	theme = default
+	immediate = { ucm_cheat_menu_sync_target_effect = yes }
+
+	option = { name = ucm_debug_actions.punish.maimed scope:ucm_cheat_menu_target = { add_trait = maimed } trigger_event = ucm_debug_actions.2101 }
+	option = { name = ucm_debug_actions.punish.leper scope:ucm_cheat_menu_target = { add_trait = leper } trigger_event = ucm_debug_actions.2101 }
+	option = { name = ucm_debug_actions.punish.blind scope:ucm_cheat_menu_target = { add_trait = blind } trigger_event = ucm_debug_actions.2101 }
+	option = { name = ucm_debug_actions.punish.inbred scope:ucm_cheat_menu_target = { add_trait = inbred } trigger_event = ucm_debug_actions.2101 }
+	option = {
+		name = ucm_debug_actions.2000.clear
+		ucm_debug_actions_clear_punishments_effect = yes
+		trigger_event = ucm_debug_actions.2101
+	}
+	option = { name = ucm_debug_actions.previous trigger_event = ucm_debug_actions.2100 }
+	option = { name = ucm_debug_actions.back_perks trigger_event = ucm_debug_actions.2000 }
+	option = { name = ucm_debug_actions.close }
+}
+
+ucm_debug_actions.3000 = {
+	type = character_event
+	title = ucm_debug_actions.3000.t
+	desc = ucm_debug_actions.3000.desc
+	theme = default
+	immediate = { ucm_cheat_menu_sync_target_effect = yes }
+
+	option = { name = ucm_debug_actions.3000.city scope:ucm_cheat_menu_target.capital_county = { add_county_modifier = toc_cityland_modifier } trigger_event = ucm_debug_actions.3000 }
+	option = { name = ucm_debug_actions.3000.big_city scope:ucm_cheat_menu_target.capital_county = { add_county_modifier = toc_bigcityland_modifier } trigger_event = ucm_debug_actions.3000 }
+	option = { name = ucm_debug_actions.3000.imperial_city scope:ucm_cheat_menu_target.capital_county = { add_county_modifier = toc_imperialcityland_modifier } trigger_event = ucm_debug_actions.3000 }
+	option = { name = ucm_debug_actions.3000.horde scope:ucm_cheat_menu_target.capital_county = { add_county_modifier = toc_hordeland_modifier } trigger_event = ucm_debug_actions.3000 }
+	option = { name = ucm_debug_actions.3000.wall scope:ucm_cheat_menu_target.capital_county = { add_county_modifier = toc_grandwallland_modifier } trigger_event = ucm_debug_actions.3000 }
+	option = {
+		name = ucm_debug_actions.3000.clear
+		scope:ucm_cheat_menu_target.capital_county = {
+			remove_county_modifier = toc_cityland_modifier
+			remove_county_modifier = toc_bigcityland_modifier
+			remove_county_modifier = toc_imperialcityland_modifier
+			remove_county_modifier = toc_hordeland_modifier
+			remove_county_modifier = toc_grandwallland_modifier
+		}
+		trigger_event = ucm_debug_actions.3000
+	}
+	option = { name = ucm_debug_actions.back_main trigger_event = ucm_debug_actions.1000 }
+	option = { name = ucm_debug_actions.close }
+}

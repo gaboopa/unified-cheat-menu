@@ -1,0 +1,33 @@
+﻿ucm_bulk_guardian_run_decision = {
+  picture = {
+    reference = "gfx/interface/illustrations/decisions/8.dds"
+  }
+  decision_group_type = ucm_officials
+  sort_order = 100
+  title = ucm_bulk_guardian_run_decision
+  desc = ucm_bulk_guardian_run_decision_desc
+  selection_tooltip = ucm_bulk_guardian_run_decision_desc
+  confirm_text = ucm_bulk_guardian_run_decision_confirm
+
+  ai_check_interval = 0
+  ai_potential = { always = no }
+
+  is_shown = { ucm_single_player_trigger = yes 
+
+    has_character_flag = pcm_b_show_decision_flag
+    ucm_officials_decision_visible_for_player_trigger = yes
+  }
+
+  is_valid = {
+    is_playable_character = yes
+    ucm_bulk_guardian_any_ward_trigger = yes
+  }
+
+  effect = {
+    ucm_bulk_guardian_auto_daily_effect = yes
+  }
+
+  ai_will_do = {
+    base = 0
+  }
+}

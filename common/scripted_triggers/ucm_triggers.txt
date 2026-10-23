@@ -33,9 +33,9 @@ ucm_menu_target_valid_trigger = {
 # Buttons that act on the target and the second character together.
 ucm_menu_pair_valid_trigger = {
 	ucm_menu_target_valid_trigger = yes
-	exists = global_var:skonester_crozier_cheats_other
-	global_var:skonester_crozier_cheats_other = { is_alive = yes }
-	NOT = { global_var:skonester_crozier_cheats_other = var:ucm_target }
+	exists = global_var:ucm_crozier_cheats_other
+	global_var:ucm_crozier_cheats_other = { is_alive = yes }
+	NOT = { global_var:ucm_crozier_cheats_other = var:ucm_target }
 }
 
 # Making the second character a parent of the target must not create a loop:
@@ -44,7 +44,7 @@ ucm_menu_pair_valid_trigger = {
 ucm_second_can_be_parent_trigger = {
 	ucm_menu_pair_valid_trigger = yes
 	NOT = {
-		global_var:skonester_crozier_cheats_other = {
+		global_var:ucm_crozier_cheats_other = {
 			any_ancestor = { this = root.var:ucm_target }
 		}
 	}

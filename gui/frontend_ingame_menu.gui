@@ -81,17 +81,17 @@
 						layoutpolicy_horizontal = expanding
 						size = { 0 30 }
 						visible = "[Not( GameHasMultiplePlayers )]"
-						text = "SKONESTER_DEBUG_MODE"
+						text = "UCM_DEBUG_MODE"
 						onclick = "[ExecuteConsoleCommand('debug_mode')]"
 						tintcolor = { 1.0 0.5 1.0 0.8 }
-						tooltip = "SKONESTER_DEBUG_MODE_TT"
+						tooltip = "UCM_DEBUG_MODE_TT"
 					
 						editor_textbox = {
 							visible = "[InDebugMode]"
 							parentanchor = right|vcenter
 							position = { -11 0 }
 							align = right|nobaseline
-							text = "SKONESTER_DEBUG_ACTIVE"
+							text = "UCM_DEBUG_ACTIVE"
 							default_format = "#low"
 							autoresize = yes
 					
@@ -106,10 +106,10 @@
 					
 					dockable_button = {
 						size = { 150 30 }
-						text = "SKONESTER_FOG_OF_WAR"
+						text = "UCM_FOG_OF_WAR"
 						onclick = "[ExecuteConsoleCommand('tweak FogOfWar.Enable')]"
 						tintcolor = { 0.5 0.5 0.5 0.8 }
-						tooltip = "SKONESTER_FOG_OF_WAR_TT"
+						tooltip = "UCM_FOG_OF_WAR_TT"
 					}
 					#### MMD CHANGE END ####
 

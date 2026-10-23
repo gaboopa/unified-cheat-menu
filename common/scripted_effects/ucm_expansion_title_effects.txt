@@ -1,0 +1,188 @@
+﻿# 扩张帝号：剥离其它扩张头衔/修正 → 创建或篡夺名义头衔 → 刷新持有者修正
+
+ucm_remove_all_expansion_title_holder_modifiers_effect = {
+  remove_character_modifier = ucm_expansion_hegemon_holder
+  remove_character_modifier = ucm_expansion_devourer_holder
+  remove_character_modifier = ucm_expansion_war_path_holder
+  remove_character_modifier = ucm_expansion_mandate_holder
+  remove_character_modifier = ucm_expansion_predator_holder
+}
+
+ucm_destroy_all_held_expansion_titular_titles_effect = {
+  every_held_title = {
+    limit = { ucm_is_expansion_titular_title_trigger = yes }
+    prev = { destroy_title = prev }
+  }
+}
+
+# 在 scope:ucm_expansion_grant_title 已设为将授予之法理头衔后，于 scope:ucm_cheat_menu_target 上调用。
+ucm_grant_expansion_titular_title_to_character_effect = {
+  ucm_remove_all_expansion_title_holder_modifiers_effect = yes
+  ucm_destroy_all_held_expansion_titular_titles_effect = yes
+  if = {
+    limit = {
+      exists = scope:ucm_expansion_grant_title
+      scope:ucm_expansion_grant_title = { exists = holder }
+    }
+    scope:ucm_expansion_grant_title = {
+      create_title_and_vassal_change = {
+        type = usurped
+        save_scope_as = ucm_exp_title_change
+      }
+      change_title_holder = {
+        holder = scope:ucm_cheat_menu_target
+        change = scope:ucm_exp_title_change
+      }
+      resolve_title_and_vassal_change = scope:ucm_exp_title_change
+    }
+  }
+  else_if = {
+    limit = { exists = scope:ucm_expansion_grant_title }
+    create_title_and_vassal_change = {
+      type = created
+      save_scope_as = ucm_exp_title_change
+    }
+    change_title_holder = {
+      holder = scope:ucm_cheat_menu_target
+      change = scope:ucm_exp_title_change
+      title = scope:ucm_expansion_grant_title
+    }
+    resolve_title_and_vassal_change = scope:ucm_exp_title_change
+  }
+  if = {
+    limit = {
+      exists = scope:ucm_expansion_grant_title
+      exists = primary_title
+      scope:ucm_expansion_grant_title = { tier > prev.primary_title.tier }
+    }
+    set_primary_title_to = scope:ucm_expansion_grant_title
+  }
+  if = {
+    limit = {
+      scope:ucm_expansion_grant_title = title:e_ucm_expansion_hegemon
+    }
+    add_character_modifier = { modifier = ucm_expansion_hegemon_holder }
+  }
+  else_if = {
+    limit = {
+      scope:ucm_expansion_grant_title = title:e_ucm_expansion_devourer
+    }
+    add_character_modifier = { modifier = ucm_expansion_devourer_holder }
+  }
+  else_if = {
+    limit = {
+      scope:ucm_expansion_grant_title = title:e_ucm_expansion_war_path
+    }
+    add_character_modifier = { modifier = ucm_expansion_war_path_holder }
+  }
+  else_if = {
+    limit = {
+      scope:ucm_expansion_grant_title = title:e_ucm_expansion_mandate
+    }
+    add_character_modifier = { modifier = ucm_expansion_mandate_holder }
+  }
+  else_if = {
+    limit = {
+      scope:ucm_expansion_grant_title = title:k_ucm_expansion_predator
+    }
+    add_character_modifier = { modifier = ucm_expansion_predator_holder }
+  }
+  ucm_apply_titular_supremacy_bundle_effect = yes
+}
+
+ucm_grant_expansion_hegemon_title_effect = {
+  scope:ucm_cheat_menu_target = {
+    title:e_ucm_expansion_hegemon = { save_scope_as = ucm_expansion_grant_title }
+    ucm_grant_expansion_titular_title_to_character_effect = yes
+  }
+}
+
+ucm_grant_expansion_devourer_title_effect = {
+  scope:ucm_cheat_menu_target = {
+    title:e_ucm_expansion_devourer = { save_scope_as = ucm_expansion_grant_title }
+    ucm_grant_expansion_titular_title_to_character_effect = yes
+  }
+}
+
+ucm_grant_expansion_war_path_title_effect = {
+  scope:ucm_cheat_menu_target = {
+    title:e_ucm_expansion_war_path = { save_scope_as = ucm_expansion_grant_title }
+    ucm_grant_expansion_titular_title_to_character_effect = yes
+  }
+}
+
+ucm_grant_expansion_mandate_title_effect = {
+  scope:ucm_cheat_menu_target = {
+    title:e_ucm_expansion_mandate = { save_scope_as = ucm_expansion_grant_title }
+    ucm_grant_expansion_titular_title_to_character_effect = yes
+  }
+}
+
+ucm_grant_expansion_predator_title_effect = {
+  scope:ucm_cheat_menu_target = {
+    title:k_ucm_expansion_predator = { save_scope_as = ucm_expansion_grant_title }
+    ucm_grant_expansion_titular_title_to_character_effect = yes
+  }
+}
+
+ucm_sync_expansion_title_holder_modifiers_effect = {
+  if = {
+    limit = { has_title = title:e_ucm_expansion_hegemon }
+    remove_character_modifier = ucm_expansion_devourer_holder
+    remove_character_modifier = ucm_expansion_war_path_holder
+    remove_character_modifier = ucm_expansion_mandate_holder
+    remove_character_modifier = ucm_expansion_predator_holder
+    if = {
+      limit = { NOT = { has_character_modifier = ucm_expansion_hegemon_holder } }
+      add_character_modifier = { modifier = ucm_expansion_hegemon_holder }
+    }
+  }
+  else_if = {
+    limit = { has_title = title:e_ucm_expansion_devourer }
+    remove_character_modifier = ucm_expansion_hegemon_holder
+    remove_character_modifier = ucm_expansion_war_path_holder
+    remove_character_modifier = ucm_expansion_mandate_holder
+    remove_character_modifier = ucm_expansion_predator_holder
+    if = {
+      limit = { NOT = { has_character_modifier = ucm_expansion_devourer_holder } }
+      add_character_modifier = { modifier = ucm_expansion_devourer_holder }
+    }
+  }
+  else_if = {
+    limit = { has_title = title:e_ucm_expansion_war_path }
+    remove_character_modifier = ucm_expansion_hegemon_holder
+    remove_character_modifier = ucm_expansion_devourer_holder
+    remove_character_modifier = ucm_expansion_mandate_holder
+    remove_character_modifier = ucm_expansion_predator_holder
+    if = {
+      limit = { NOT = { has_character_modifier = ucm_expansion_war_path_holder } }
+      add_character_modifier = { modifier = ucm_expansion_war_path_holder }
+    }
+  }
+  else_if = {
+    limit = { has_title = title:e_ucm_expansion_mandate }
+    remove_character_modifier = ucm_expansion_hegemon_holder
+    remove_character_modifier = ucm_expansion_devourer_holder
+    remove_character_modifier = ucm_expansion_war_path_holder
+    remove_character_modifier = ucm_expansion_predator_holder
+    if = {
+      limit = { NOT = { has_character_modifier = ucm_expansion_mandate_holder } }
+      add_character_modifier = { modifier = ucm_expansion_mandate_holder }
+    }
+  }
+  else_if = {
+    limit = { has_title = title:k_ucm_expansion_predator }
+    remove_character_modifier = ucm_expansion_hegemon_holder
+    remove_character_modifier = ucm_expansion_devourer_holder
+    remove_character_modifier = ucm_expansion_war_path_holder
+    remove_character_modifier = ucm_expansion_mandate_holder
+    if = {
+      limit = { NOT = { has_character_modifier = ucm_expansion_predator_holder } }
+      add_character_modifier = { modifier = ucm_expansion_predator_holder }
+    }
+  }
+  else = {
+    ucm_remove_all_expansion_title_holder_modifiers_effect = yes
+  }
+  ucm_sync_titular_supremacy_if_holding_cheat_title_effect = yes
+}

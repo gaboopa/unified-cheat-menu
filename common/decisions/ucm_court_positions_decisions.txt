@@ -1,0 +1,38 @@
+﻿ucm_positions_mass_reshuffle_decision = {
+  decision_group_type = ucm_officials
+  picture = {
+    reference = "gfx/interface/illustrations/decisions/8.dds"
+  }
+  # åŠŸèƒ½å·²å¹¶å…¥å³é”®èœå•ï¼›ä¸æŒ‚ ucm_officials å†³è®®ç»„ï¼Œé¿å…åˆ—è¡¨å‡ºçŽ°ç©ºç™½å ä½è¡Œ
+  sort_order = 85
+  title = ucm_positions_mass_reshuffle_decision
+  desc = ucm_positions_mass_reshuffle_decision_desc
+  selection_tooltip = ucm_positions_mass_reshuffle_decision_tooltip
+  confirm_text = ucm_positions_mass_reshuffle_decision_confirm
+
+  ai_goal = no
+  ai_potential = { always = no }
+
+  # åŠŸèƒ½å·²å¹¶å…¥å³é”®ã€Œä»»å…å®«å»·èŒä½ã€èœå•ï¼Œå†³è®®åˆ—è¡¨ä¸­éšè—
+  is_shown = { ucm_single_player_trigger = yes 
+    has_character_flag = pcm_b_show_decision_flag
+    always = no
+  }
+
+  is_valid = {
+    is_alive = yes
+    is_ruler = yes
+  }
+
+  effect = {
+    ucm_positions_sync_liege_player_effect = yes
+    ucm_positions_mass_reshuffle_court_only_liege_effect = yes
+    send_interface_message = {
+      type = event_toast_effect_good
+      title = ucm_court_positions.toast_mass_done_t
+      left_icon = root
+    }
+  }
+
+  ai_will_do = { base = 0 }
+}

@@ -12,7 +12,7 @@ daddy_pika_edit_character = {
     ignores_pending_interaction_block = yes
 	
     is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
         scope:actor = {
             has_character_flag = bone_cheat_interactions_flag
             is_ai = no
@@ -43,7 +43,7 @@ daddy_pika_character_currency_menu = {
     ignores_pending_interaction_block = yes
 	
     is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
             has_character_flag = bone_cheat_interactions_flag
@@ -73,7 +73,7 @@ daddy_pika_character_spawner = {
 	ignores_pending_interaction_block = yes
 	
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
 			has_character_flag = bone_cheat_interactions_flag
@@ -103,7 +103,7 @@ daddy_pika_change_character = {
 	ignores_pending_interaction_block = yes
 
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
 			has_character_flag = bone_cheat_interactions_flag
@@ -138,7 +138,7 @@ daddy_pika_change_religion = {
 	ignores_pending_interaction_block = yes
 
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		NOT = { scope:recipient = scope:actor }
 		NOT = { scope:actor.faith = scope:recipient.faith }
 		scope:actor = {
@@ -168,7 +168,7 @@ daddy_pika_change_culture = {
 	ignores_pending_interaction_block = yes
 
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		NOT = { scope:recipient = scope:actor }
 		NOT = { scope:actor.culture = scope:recipient.culture }
 		scope:actor = {
@@ -198,7 +198,7 @@ daddy_pika_change_dynasty = {
 	ignores_pending_interaction_block = yes
 
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		NOT = { scope:recipient = scope:actor }
 		NOT = { scope:actor.house = scope:recipient.house }
 		scope:actor = {
@@ -231,7 +231,7 @@ daddy_pika_char_modify_vassal_contract_inter = {
 	notification_text = MODIFY_VASSAL_CONTRACT_NOTIFICATION_TO_VASSAL
 	
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		scope:recipient = {
 			NOT = { this = scope:actor }
 			exists = liege
@@ -306,7 +306,7 @@ daddy_pika_vassal_mod_vassal_contract_inter = {
 	}
 	
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		scope:recipient = {
 			is_independent_ruler = no
 			NOT = { this = scope:actor }
@@ -461,7 +461,7 @@ daddy_pika_arrange_marriage_inter = {
 	}
 
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		scope:actor = {
 			has_character_flag = bone_cheat_interactions_flag
 			is_ai = no
@@ -576,7 +576,7 @@ divorce_character_cheat = {
 	
 
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		scope:recipient = {
 			is_spouse_of = scope:actor
 		}
@@ -613,7 +613,7 @@ daddy_pika_designate_heir = {
 	ignores_pending_interaction_block = yes
 
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
 			has_character_flag = bone_cheat_interactions_flag
@@ -645,7 +645,7 @@ daddy_pika_adopt_m = {
 	ignores_pending_interaction_block = yes
 
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
 			is_female = no
@@ -682,7 +682,7 @@ daddy_pika_adopt_f = {
 	ignores_pending_interaction_block = yes
 
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
 			is_female = yes
@@ -719,7 +719,7 @@ daddy_pika_disown = {
 	ignores_pending_interaction_block = yes
 
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
 			has_character_flag = bone_cheat_interactions_flag
@@ -755,7 +755,7 @@ daddy_pika_boost_stats = {
 	ignores_pending_interaction_block = yes
 
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
 			has_character_flag = bone_cheat_interactions_flag
@@ -790,7 +790,7 @@ daddy_pika_murder = {
     icon = icon_dead
 
     is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
         NOT = { scope:recipient = scope:actor }
         scope:actor = {
             is_ai = no
@@ -878,7 +878,7 @@ daddy_pika_imprison = {
 	ignores_pending_interaction_block = yes
 
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		NOT = { scope:recipient = scope:actor }
 		scope:actor = {
 			is_ai = no
@@ -913,7 +913,7 @@ daddy_pika_usurpy_surp = {
 	interface_priority = 4985
 	
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		NOT = { scope:actor = scope:recipient }
 		scope:recipient = {
 			is_landed = yes
@@ -952,7 +952,7 @@ daddy_pika_claim_title = {
 	interface_priority = 4997
 
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		NOT = { scope:actor = scope:recipient }
 		scope:recipient = {
 			is_landed = yes
@@ -1007,7 +1007,7 @@ daddy_pika_revoke_title = {
 	target_filter = recipient_domain_titles
 
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		scope:recipient = {
 			is_landed = yes
 			target_is_liege_or_above = scope:actor
@@ -1101,7 +1101,7 @@ daddy_pika_offer_vassal_inter = {
 	# triggers/traits, so the file parses the same in both. AGOT dragons are never landed.
 	# AGOT flags: government_is_uninteractable (ruins/wilderness dummy holders), government_is_nw (Night's Watch).
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
 			has_character_flag = bone_cheat_interactions_flag
@@ -1213,7 +1213,7 @@ daddy_pika_add_to_court = {
 	ignores_pending_interaction_block = yes
 	
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		NOT = { scope:recipient = scope:actor }
 		scope:recipient = {
 			is_landed = no
@@ -1249,7 +1249,7 @@ daddy_pika_concubine_cheat = {
 	ignores_pending_interaction_block = yes
 	
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		NOT = { scope:actor = scope:recipient }
 		NOT = { scope:recipient = { age < 16 } }
 		scope:recipient = {
@@ -1283,7 +1283,7 @@ daddy_pika_impregnate_cheat = {
 	ignores_pending_interaction_block = yes
 	
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		debug_only = yes
 		scope:recipient = { is_adult = yes }
 		scope:actor = { is_adult = yes }
@@ -1319,7 +1319,7 @@ dp_sex_interaction = { #一起睡觉
     interface_priority = 8983
 
     is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
         NOT = { scope:recipient = scope:actor }
         scope:actor = {
             is_ai = no
@@ -1349,7 +1349,7 @@ daddy_pika_add_strong_hook = {
 	ignores_pending_interaction_block = yes
 
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		NOT = { scope:recipient = scope:actor }
 		scope:actor = {
 			is_ai = no
@@ -1379,7 +1379,7 @@ daddy_pika_excommunicate = {
 	ignores_pending_interaction_block = yes
 	
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		NOT = {
 			scope:recipient = {
 				has_trait = excommunicated
@@ -1414,7 +1414,7 @@ daddy_pika_remove_excommunication = {
 	ignores_pending_interaction_block = yes
 	
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		scope:recipient = {
 			has_trait = excommunicated
 		}
@@ -1445,7 +1445,7 @@ daddy_pika_commit_suicide = {
 	ignores_pending_interaction_block = yes
 
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		scope:recipient = scope:actor
 		scope:actor = {
 			is_ai = no
@@ -1477,7 +1477,7 @@ daddy_pika_extermination_process = {
 	ignores_pending_interaction_block = yes
 
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		NOT = { scope:recipient = scope:actor }
 		scope:actor = {
 			is_ai = no
@@ -1510,7 +1510,7 @@ daddy_pika_designate_survivors = {
 	ignores_pending_interaction_block = yes
 
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		NOT = { scope:recipient = scope:actor }
 		scope:actor = {
 			is_ai = no
@@ -1540,7 +1540,7 @@ daddy_pika_designate_survivors_remove = {
 	ignores_pending_interaction_block = yes
 
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		NOT = { scope:recipient = scope:actor }
 		scope:actor = {
 			is_ai = no
@@ -1573,7 +1573,7 @@ daddy_pika_murder_off_dynasty = {
 	ignores_pending_interaction_block = yes
 
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		NOT = { scope:recipient = scope:actor }
 		scope:actor = {
 			is_ai = no

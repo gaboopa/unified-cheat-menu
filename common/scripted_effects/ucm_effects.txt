@@ -10,32 +10,68 @@ ucm_menu_scopes_effect = {
 	}
 }
 
-# Open/close the main menu. Scope = player. Skonester's own interactions only show
-# while its two right-click toggles are on, so the menu turns them on while it's
-# open (and the right-click menu shows them too), then restores what was there.
+# Open/close the main menu. Scope = player. The baseline's interactions and decisions
+# only show while their sub-menu toggles (character flags) are on, so the menu turns
+# them on while it's open (the right-click menu and decision list show them too),
+# then turns off only the ones it turned on.
+ucm_menu_flag_on_effect = {
+	if = {
+		limit = { NOT = { has_character_flag = $FLAG$ } }
+		add_character_flag = $FLAG$
+		add_character_flag = ucm_added_$FLAG$
+	}
+}
+
+ucm_menu_flag_off_effect = {
+	if = {
+		limit = { has_character_flag = ucm_added_$FLAG$ }
+		remove_character_flag = $FLAG$
+		remove_character_flag = ucm_added_$FLAG$
+	}
+}
+
 ucm_menu_open_effect = {
 	add_character_flag = ucm_menu_open
 	if = {
 		limit = { NOT = { exists = var:ucm_step } }
 		set_variable = { name = ucm_step value = 1 }
 	}
-	if = {
-		limit = { NOT = { has_character_flag = skonester_character_interaction_menu_open } }
-		add_character_flag = skonester_character_interaction_menu_open
-		add_character_flag = ucm_added_tools_flag
-	}
-	if = {
-		limit = { NOT = { has_character_flag = bone_cheat_interactions_flag } }
-		add_character_flag = bone_cheat_interactions_flag
-		add_character_flag = ucm_added_cheats_flag
-	}
+	ucm_menu_flag_on_effect = { FLAG = ucm_character_interaction_menu_open }
+	ucm_menu_flag_on_effect = { FLAG = bone_cheat_interactions_flag }
+	ucm_menu_flag_on_effect = { FLAG = toc_showdebsflag }
+	ucm_menu_flag_on_effect = { FLAG = toc_showspecsflag }
+	ucm_menu_flag_on_effect = { FLAG = toc_showtextrasflag }
+	ucm_menu_flag_on_effect = { FLAG = daddy_pika_cheat_menu }
+	ucm_menu_flag_on_effect = { FLAG = govt_menu }
+	ucm_menu_flag_on_effect = { FLAG = covt_menu }
+	ucm_menu_flag_on_effect = { FLAG = zhuge_juese_menu_01 }
+	ucm_menu_flag_on_effect = { FLAG = zhuge_sansi_menu_02 }
+	ucm_menu_flag_on_effect = { FLAG = pcm_show_decision_flag }
+	ucm_menu_flag_on_effect = { FLAG = pcm_b_show_decision_flag }
+	ucm_menu_flag_on_effect = { FLAG = open_optroop_menu }
+	ucm_menu_flag_on_effect = { FLAG = sol_war_without_bounds_open }
 }
 
 ucm_menu_close_effect = {
 	remove_character_flag = ucm_menu_open
+	ucm_menu_flag_off_effect = { FLAG = ucm_character_interaction_menu_open }
+	ucm_menu_flag_off_effect = { FLAG = bone_cheat_interactions_flag }
+	ucm_menu_flag_off_effect = { FLAG = toc_showdebsflag }
+	ucm_menu_flag_off_effect = { FLAG = toc_showspecsflag }
+	ucm_menu_flag_off_effect = { FLAG = toc_showtextrasflag }
+	ucm_menu_flag_off_effect = { FLAG = daddy_pika_cheat_menu }
+	ucm_menu_flag_off_effect = { FLAG = govt_menu }
+	ucm_menu_flag_off_effect = { FLAG = covt_menu }
+	ucm_menu_flag_off_effect = { FLAG = zhuge_juese_menu_01 }
+	ucm_menu_flag_off_effect = { FLAG = zhuge_sansi_menu_02 }
+	ucm_menu_flag_off_effect = { FLAG = pcm_show_decision_flag }
+	ucm_menu_flag_off_effect = { FLAG = pcm_b_show_decision_flag }
+	ucm_menu_flag_off_effect = { FLAG = open_optroop_menu }
+	ucm_menu_flag_off_effect = { FLAG = sol_war_without_bounds_open }
+	# Phase 2 builds used these markers for the first two toggles.
 	if = {
 		limit = { has_character_flag = ucm_added_tools_flag }
-		remove_character_flag = skonester_character_interaction_menu_open
+		remove_character_flag = ucm_character_interaction_menu_open
 		remove_character_flag = ucm_added_tools_flag
 	}
 	if = {
@@ -47,28 +83,28 @@ ucm_menu_close_effect = {
 
 # Picker launchers, shared by the right-click interactions and the main menu.
 ucm_open_culture_picker_effect = {
-	skonester_cheat_menu_lock_recipient_effect = yes
+	ucm_cheat_menu_lock_recipient_effect = yes
 	scope:actor = {
-		skonester_cheat_menu_sync_target_effect = yes
-		skonester_open_acm_culture_picker_effect = yes
+		ucm_cheat_menu_sync_target_effect = yes
+		ucm_open_acm_culture_picker_effect = yes
 	}
 }
 
 ucm_open_religion_picker_effect = {
-	skonester_cheat_menu_lock_recipient_effect = yes
+	ucm_cheat_menu_lock_recipient_effect = yes
 	scope:recipient = { faith = { save_scope_as = selected_faith } }
 	scope:actor = {
-		skonester_save_skonester_selected_faith_effect = yes
-		skonester_open_acm_religion_picker_effect = yes
+		ucm_save_ucm_selected_faith_effect = yes
+		ucm_open_acm_religion_picker_effect = yes
 	}
 }
 
 ucm_open_tradition_picker_effect = {
-	skonester_cheat_menu_lock_recipient_effect = yes
+	ucm_cheat_menu_lock_recipient_effect = yes
 	scope:recipient = { culture = { save_scope_as = culture } }
 	scope:actor = {
-		skonester_cw_open_tradition_picker_effect = yes
-		add_character_flag = skonester_cw_tradition_picker_open
+		ucm_cw_open_tradition_picker_effect = yes
+		add_character_flag = ucm_cw_tradition_picker_open
 	}
 }
 

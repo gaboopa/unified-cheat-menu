@@ -1,0 +1,57 @@
+﻿l_german:
+ ucm_cheat_menu_military_manage_menu_interaction: "Militärverwaltung"
+ ucm_cheat_menu_military_manage_menu_interaction_desc: "Heerbann, Elite-Berittene Soldaten, bestehende Einheiten verstärken, Soldaten generieren, Nachschub auffüllen, unbegrenzter Heerbann & Gottesmodus"
+ ucm_military_raise_levies_army_name: "Heerbann"
+ ucm_military_raise_levies_toast: "Heerbann ausgehoben"
+ ucm_military_raise_levies_toast_desc: "[ucm_military_toast_char.GetShortUIName] hat Heerbann bis zur maximalen Militärstärke ausgehoben."
+ ucm_military_add_maa_toast: "Berittene Soldaten hinzugefügt"
+ ucm_military_add_maa_toast_desc: "Neue Berittene-Soldaten-Regimenter wurden für [ucm_military_toast_char.GetShortUIName] hinzugefügt."
+ ucm_military_add_maa_all_toast: "Alle Elite-Berittene hinzugefügt"
+ ucm_military_supply_on_toast: "Unendlicher Nachschub aktiviert"
+ ucm_military_supply_on_toast_desc: "[ucm_military_toggle_char.GetShortUIName]: endloser Nachschub, nahezu keine Unterhaltskosten."
+ ucm_military_supply_off_toast: "Unendlicher Nachschub deaktiviert"
+ ucm_military_levy_on_toast: "Unbegrenzter Heerbann aktiviert"
+ ucm_military_levy_on_toast_desc: "[ucm_military_toggle_char.GetShortUIName]: Heerbanngröße ×100, nahezu keine Unterhaltskosten."
+ ucm_military_levy_off_toast: "Unbegrenzter Heerbann deaktiviert"
+ ucm_military_god_on_toast: "Armeegottesmodus aktiviert"
+ ucm_military_god_on_toast_desc: "[ucm_military_toggle_char.GetShortUIName]: nahezu keine Verluste, maximale Marschgeschwindigkeit."
+ ucm_military_god_off_toast: "Armeegottesmodus deaktiviert"
+
+ ucm_military_expand_maa_toast: "Berittene Soldaten verstärkt"
+ ucm_military_expand_maa_toast_desc: "Jedes bestehende Regiment von [ucm_military_expand_toast_char.GetShortUIName] erhielt +5 Einheiten und wurde aufgefüllt."
+ ucm_military_instant_replenish_modifier: "Unendlicher Nachschub (Kriegsvorräte gehen nie zur Neige, nahezu keine Unterhaltskosten)"
+ ucm_military_supply_overflow_modifier: "Vorratsstapel"
+ ucm_military_levy_overflow_modifier: "Unbegrenzter Heerbann"
+ ucm_military_maintenance_waive_a_modifier: "Keine Unterhaltskosten (A)"
+ ucm_military_maintenance_waive_b_modifier: "Keine Unterhaltskosten (B)"
+ ucm_military_maintenance_waive_c_modifier: "Keine Unterhaltskosten (C)"
+ ucm_military_god_mode_modifier: "Armeegottesmodus (Maximale Marschgeschwindigkeit)"
+
+ ucm_cheat_menu.3080.t: "Militärverwaltung"
+ ucm_cheat_menu.3080.desc: "Armeen und Heerbann von [ucm_cheat_menu_target.GetShortUIName] anpassen."
+
+
+ ucm_cheat_menu.3085.t: "Heerbann & Berittene Soldaten"
+ ucm_cheat_menu.3085.desc: "Heerbann und Berittene Soldaten von [ucm_cheat_menu_target.GetShortUIName]."
+ ucm_cheat_menu.3086.t: "Armeeverbesserungen"
+ ucm_cheat_menu.3086.desc: "Cheats für Vorräte, Heerbann und Gottesmodus bei [ucm_cheat_menu_target.GetShortUIName] ein- oder ausschalten."
+
+
+
+ ucm_cheat_menu.3081.t: "Elite-Berittene Soldaten hinzufügen"
+ ucm_cheat_menu.3081.desc: "Regimenter für [ucm_cheat_menu_target.GetShortUIName] hinzufügen (pro Klick ~5 Einheiten à 100 Mann)."
+
+ ucm_cheat_menu.3090.t: "Weitere Elite-Einheiten"
+ ucm_cheat_menu.3090.desc: "Kriegselefanten, Armbrustschützen oder alle fünf Elite-Typen."
+
+ ucm_military_knight_limit_modifier: "Ritterplätze"
+ ucm_military_knight_power_modifier: "Ritterstärke"
+ ucm_military_accolade_glory_modifier: "Mehr Ruhm durch Auszeichnungen"
+
+ ucm_cheat_menu.3190.opt_custom_accolade: "@accolade_icon! Benutzerdefinierte Auszeichnungen"
+ ucm_cheat_menu.3190.opt_custom_accolade_tt: "Assistent zum Erstellen, Verwalten vorhandener Auszeichnungen oder virtuelle Auszeichnung (kein DLC erforderlich)."
+ ucm_cheat_menu.3190.t: "Benutzerdefinierte Auszeichnungen"
+ ucm_cheat_menu.3190.desc: "Auszeichnungen für [ucm_cheat_menu_target.GetShortUIName] konfigurieren."
+ ucm_cheat_menu.3190.opt_wizard: "Erstellungsassistent"
+ ucm_cheat_menu.3190.opt_manage: "Vorhandene verwalten"
+ ucm_cheat_menu.3190.opt_virtual: "Virtuelle Auszeichnung"

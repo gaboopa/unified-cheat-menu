@@ -5,7 +5,7 @@
  leech_mc_event.truce.attacker:0 "Победа атакующего"
  leech_mc_event.truce.white_peace:0 "Белый мир"
  leech_mc_event.truce.defender:0 "Победа защитника"
- leech_mc_event.simple_action.t:0 "Skonester : Подменю"
+ leech_mc_event.simple_action.t:0 " : Подменю"
  leech_mc_event.simple_action.desc:0 "Позволить [recipient.GetShortUIName] совершить следующие действия против [secondary_recipient.GetShortUIName]"
  leech_mc_event.simple_action.vassalize:0 "Позволить [recipient.GetShortUIName] вассализировать [secondary_recipient.GetShortUIName]"
  leech_mc_event.simple_action.marry:0 "Позволить [recipient.GetShortUIName] жениться на [secondary_recipient.GetShortUIName]"

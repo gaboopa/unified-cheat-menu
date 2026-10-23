@@ -1,5 +1,5 @@
 ﻿l_german:
- interaction_category_leech:0 "Skonester-Untermenü"
+ interaction_category_leech:0 "Untermenü"
  leech_mind_control_interaction:0 "Werkzeuge/DNA-Übertragung: Start"
  leech_mind_control_interaction_desc:0 "Bereitet [recipient.GetShortUIName] für die folgenden Interaktionen vor."
  recipient_secondary_leech_mind_control_interaction:0 ""

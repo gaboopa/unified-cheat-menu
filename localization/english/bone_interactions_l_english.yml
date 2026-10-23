@@ -3,11 +3,11 @@
  
  open_bone_cheat_interactions:0 "Open Cheats"
  close_bone_cheat_interactions:0 "Close Cheats"
- bone_cheat_interactions_desc:0 "Skonester cheat interactions"
+ bone_cheat_interactions_desc:0 "Cheat interactions"
 
  open_bone_trait_interactions:0 "Open Traits"
  close_bone_trait_interactions:0 "Close Traits"
- bone_trait_interactions_desc:0 "Skonester trait interactions"
+ bone_trait_interactions_desc:0 "Cheat trait interactions"
  
  bone_add_to_court:0 "Add to Court"
  bone_add_to_court_desc:0 "Add character to court"

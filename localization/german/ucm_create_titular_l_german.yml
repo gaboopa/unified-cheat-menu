@@ -1,0 +1,21 @@
+﻿l_german:
+ GET_TARGET_TITLE_NAME:0 "[target.GetBaseNameNoTierNoTooltip]"
+ GET_TARGET_TITLE_ADJECTIVE:0 "[target.GetAdjectiveNoTooltip]" #nicht verwendet
+
+ ucm_create_titular.back:0 "Zurück"
+
+ ucm_create_titular:0 "Titulartitel erstellen"
+
+ ucm_create_titular.1000.t:0 "Besitzer auswählen"
+ ucm_create_titular.1000.desc:0 "#S Wer soll den Titel erhalten? #!"
+
+ ucm_create_titular.1000.me:0 "Für mich beanspruchen!"
+ ucm_create_titular.1000.recipient:0 "An [recipient.GetNameNoTooltip] verleihen"
+
+ ucm_create_titular.1001.desc:0 "#S Gewünschten Rang des Titels auswählen #!"
+ ucm_create_titular.1001.t:0 "Titelrang"
+
+ ucm_create_titular.1001.duchy:0 "Herzogtum erstellen"
+ ucm_create_titular.1001.kingdom:0 "Königreich erstellen"
+ ucm_create_titular.1001.empire:0 "Kaiserreich erstellen"
+ ucm_create_titular.1001.hegemony:0 "Hegemonie erstellen"

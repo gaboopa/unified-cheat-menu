@@ -1,9 +1,9 @@
-"""Regenerate common/scripted_effects/skonester_cw_tradition_picker_lists_generated.txt.
+"""Regenerate common/scripted_effects/ucm_cw_tradition_picker_lists_generated.txt.
 
 The tradition picker GUI shows global lists of culture traditions. CK3 has no way to
 iterate the tradition database from script, so the keys are written out here: one list
 for vanilla and one for A Game of Thrones (AGOT). At runtime the AGOT list is used when
-skonester_compat_agot_loaded_trigger is true, otherwise the vanilla list.
+ucm_compat_agot_loaded_trigger is true, otherwise the vanilla list.
 
 Run after a CK3 or AGOT update:
     python tools/gen_cw_tradition_picker_lists.py --game-dir <CK3>/game --agot-dir <workshop>/2962333032
@@ -16,7 +16,7 @@ import re
 import sys
 
 MOD_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUT = os.path.join(MOD_DIR, "common", "scripted_effects", "skonester_cw_tradition_picker_lists_generated.txt")
+OUT = os.path.join(MOD_DIR, "common", "scripted_effects", "ucm_cw_tradition_picker_lists_generated.txt")
 SUB = os.path.join("common", "culture", "traditions")
 
 CATEGORIES = ["realm", "combat", "societal", "ritual", "regional"]
@@ -100,7 +100,7 @@ def emit_effect(name, trads):
         keys = sorted(k for k, c in trads.items() if c == cat)
         lines.append(f"  # {cat} ({len(keys)})")
         for k in keys:
-            lines.append(f"  add_to_global_variable_list = {{ name = skonester_cw_{cat}_tradition_list target = culture_tradition:{k} }}")
+            lines.append(f"  add_to_global_variable_list = {{ name = ucm_cw_{cat}_tradition_list target = culture_tradition:{k} }}")
         lines.append("")
     lines.append("}")
     return lines
@@ -124,21 +124,21 @@ def main():
         "# AGOT-only keys do not exist in vanilla, so vanilla logs one harmless \"Failed to find\" error per key at",
         "# load; the AGOT branch never runs there.",
         "",
-        "skonester_cw_build_tradition_picker_lists_effect = {",
-        "  skonester_cw_clear_tradition_picker_lists_effect = yes",
+        "ucm_cw_build_tradition_picker_lists_effect = {",
+        "  ucm_cw_clear_tradition_picker_lists_effect = yes",
         "  if = {",
-        "    limit = { skonester_compat_agot_loaded_trigger = yes }",
-        "    skonester_cw_build_tradition_picker_lists_agot_effect = yes",
+        "    limit = { ucm_compat_agot_loaded_trigger = yes }",
+        "    ucm_cw_build_tradition_picker_lists_agot_effect = yes",
         "  }",
         "  else = {",
-        "    skonester_cw_build_tradition_picker_lists_vanilla_effect = yes",
+        "    ucm_cw_build_tradition_picker_lists_vanilla_effect = yes",
         "  }",
         "}",
         "",
     ]
-    out += emit_effect("skonester_cw_build_tradition_picker_lists_vanilla_effect", vanilla)
+    out += emit_effect("ucm_cw_build_tradition_picker_lists_vanilla_effect", vanilla)
     out.append("")
-    out += emit_effect("skonester_cw_build_tradition_picker_lists_agot_effect", agot)
+    out += emit_effect("ucm_cw_build_tradition_picker_lists_agot_effect", agot)
     out.append("")
 
     with open(OUT, "wb") as fh:

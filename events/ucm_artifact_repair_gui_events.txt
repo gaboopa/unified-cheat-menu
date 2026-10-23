@@ -1,0 +1,16 @@
+﻿namespace = ucm_artifact_repair
+
+# 宝物修复 GUI：保存修复（清除旧修饰 → 套用新品质与修饰）
+ucm_artifact_repair.9001 = {
+  type = character_event
+  hidden = yes
+
+  immediate = {
+    root = {
+      save_scope_as = ucm_acm_craft_creator
+      save_scope_as = actor
+      ucm_acm_clamp_craft_slot_layers_to_quality_effect = yes
+    }
+    ucm_acm_gui_finish_repair_effect = yes
+  }
+}

@@ -1,0 +1,28 @@
+﻿# Skonester「亲密」：场景背景与怀孕（仅亲密关系目标；不检查生育力，必定怀孕）
+
+ucm_cheat_menu_intimacy_apply_pregnancy_effect = {
+  if = {
+    limit = { exists = scope:ucm_cheat_menu_target }
+    scope:ucm_cheat_menu_target = {
+      ucm_guaranteed_pregnancy_effect = yes
+    }
+  }
+}
+
+ucm_cheat_menu_intimacy_setup_scene_effect = {
+  ucm_cheat_menu_sync_target_effect = yes
+  if = {
+    limit = {
+      exists = scope:actor
+      scope:actor = { exists = location }
+    }
+    scope:actor = { save_scope_as = bg_override_char }
+  }
+  else_if = {
+    limit = {
+      exists = scope:ucm_cheat_menu_target
+      scope:ucm_cheat_menu_target = { exists = location }
+    }
+    scope:ucm_cheat_menu_target = { save_scope_as = bg_override_char }
+  }
+}

@@ -1,0 +1,392 @@
+﻿# 宝物修改：列出目标宝物 → 修改 GUI（名称/描述/品质/修饰）→ 保存
+# 变量 ucm_acm_repair_victim 必须写在 scope:actor（玩家）上，事件用 var:ucm_acm_repair_victim 读取（同窃宝链）。
+
+# 将所选宝物名称/描述载入玩家编辑缓冲（与制作窗同一套 key；优先 creator 再 artifact）
+ucm_acm_sync_edit_text_from_artifact_effect = {
+  remove_character_flag = ucm_acm_edit_name_confirmed
+  remove_character_flag = ucm_acm_edit_desc_confirmed
+  if = {
+    limit = { exists = global_var:ucm_acm_repair_target }
+    global_var:ucm_acm_repair_target = {
+      if = {
+        limit = {
+          exists = creator
+          creator = { has_character_flag = ucm_acm_edit_name_confirmed }
+        }
+        creator = { save_scope_as = ucm_acm_name_copy_source }
+      }
+      else_if = {
+        limit = { has_variable = ucm_acm_has_custom_name }
+        save_scope_as = ucm_acm_name_copy_source
+      }
+      if = {
+        limit = {
+          exists = creator
+          creator = { has_character_flag = ucm_acm_edit_desc_confirmed }
+        }
+        creator = { save_scope_as = ucm_acm_desc_copy_source }
+      }
+      else_if = {
+        limit = { has_variable = ucm_acm_has_custom_desc }
+        save_scope_as = ucm_acm_desc_copy_source
+      }
+    }
+  }
+  root = {
+    remove_localized_text = ucm_acm_edit_artifact_name
+    remove_localized_text = ucm_acm_edit_artifact_desc
+    if = {
+      limit = { exists = scope:ucm_acm_name_copy_source }
+      copy_localized_text = {
+        key = ucm_acm_edit_artifact_name
+        target = scope:ucm_acm_name_copy_source
+      }
+    }
+    if = {
+      limit = { exists = scope:ucm_acm_desc_copy_source }
+      copy_localized_text = {
+        key = ucm_acm_edit_artifact_desc
+        target = scope:ucm_acm_desc_copy_source
+      }
+    }
+    if = {
+      limit = { exists = scope:ucm_acm_name_copy_source }
+      add_character_flag = ucm_acm_edit_name_confirmed
+    }
+    if = {
+      limit = { exists = scope:ucm_acm_desc_copy_source }
+      add_character_flag = ucm_acm_edit_desc_confirmed
+    }
+    ucm_acm_refresh_artifact_text_preview_effect = yes
+  }
+}
+
+ucm_acm_reset_modifier_slots_for_edit_effect = {
+  set_variable = { name = ucm_craft_m1 value = 0 }
+  set_variable = { name = ucm_craft_m2 value = 0 }
+  set_variable = { name = ucm_craft_m3 value = 0 }
+  set_variable = { name = ucm_craft_m4 value = 0 }
+  set_variable = { name = ucm_craft_m5 value = 0 }
+  set_variable = { name = ucm_craft_m1_cnt value = 0 }
+  set_variable = { name = ucm_craft_m2_cnt value = 0 }
+  set_variable = { name = ucm_craft_m3_cnt value = 0 }
+  set_variable = { name = ucm_craft_m4_cnt value = 0 }
+  set_variable = { name = ucm_craft_m5_cnt value = 0 }
+  ucm_acm_sync_craft_layer_quality_effect = yes
+}
+
+ucm_acm_reopen_repair_gui_effect = {
+  add_character_flag = ucm_acm_repair_gui_open
+}
+
+ucm_acm_register_repair_target_effect = {
+  save_scope_as = ucm_acm_picked_artifact
+  set_global_variable = {
+    name = ucm_acm_repair_target
+    value = scope:ucm_acm_picked_artifact
+  }
+  root = {
+    set_variable = {
+      name = ucm_acm_repair_artifact_var
+      value = scope:ucm_acm_picked_artifact
+    }
+  }
+}
+
+# 将所选宝物当前品质同步到 GUI 品质按钮（修饰槽仍由玩家重新选择）
+ucm_acm_sync_repair_gui_from_artifact_effect = {
+  if = {
+    limit = { exists = global_var:ucm_acm_repair_target }
+    global_var:ucm_acm_repair_target = {
+      if = {
+        limit = { rarity = illustrious }
+        root = { ucm_acm_set_quality_illustrious_effect = yes }
+      }
+      else_if = {
+        limit = { rarity = famed }
+        root = { ucm_acm_set_quality_famed_effect = yes }
+      }
+      else_if = {
+        limit = { rarity = masterwork }
+        root = { ucm_acm_set_quality_masterwork_effect = yes }
+      }
+      else = {
+        root = { ucm_acm_set_quality_common_effect = yes }
+      }
+    }
+  }
+  else = {
+    ucm_acm_set_quality_common_effect = yes
+  }
+}
+
+ucm_acm_save_repair_modifier_baseline_effect = {
+  set_variable = { name = ucm_acm_repair_baseline_m1 value = var:ucm_craft_m1 }
+  set_variable = { name = ucm_acm_repair_baseline_m2 value = var:ucm_craft_m2 }
+  set_variable = { name = ucm_acm_repair_baseline_m3 value = var:ucm_craft_m3 }
+  set_variable = { name = ucm_acm_repair_baseline_m4 value = var:ucm_craft_m4 }
+  set_variable = { name = ucm_acm_repair_baseline_m5 value = var:ucm_craft_m5 }
+  set_variable = { name = ucm_acm_repair_baseline_m1_cnt value = var:ucm_craft_m1_cnt }
+  set_variable = { name = ucm_acm_repair_baseline_m2_cnt value = var:ucm_craft_m2_cnt }
+  set_variable = { name = ucm_acm_repair_baseline_m3_cnt value = var:ucm_craft_m3_cnt }
+  set_variable = { name = ucm_acm_repair_baseline_m4_cnt value = var:ucm_craft_m4_cnt }
+  set_variable = { name = ucm_acm_repair_baseline_m5_cnt value = var:ucm_craft_m5_cnt }
+}
+
+ucm_acm_repair_picker_close_effect = {
+  remove_character_flag = ucm_acm_repair_picker_active
+  clear_variable_list = ucm_acm_repair_art_queue
+  if = {
+    limit = { has_variable = ucm_acm_repair_page }
+    remove_variable = ucm_acm_repair_page
+  }
+  if = {
+    limit = { has_variable = ucm_acm_repair_art_total }
+    remove_variable = ucm_acm_repair_art_total
+  }
+  if = {
+    limit = { has_variable = ucm_acm_repair_skip }
+    remove_variable = ucm_acm_repair_skip
+  }
+  if = {
+    limit = { has_variable = ucm_acm_repair_victim }
+    remove_variable = ucm_acm_repair_victim
+  }
+}
+
+ucm_acm_repair_picker_reopen_effect = {
+  trigger_event = {
+    id = ucm_artifact_repair.8001
+    days = 0
+  }
+}
+
+ucm_acm_after_repair_pick_effect = {
+  ucm_acm_repair_picker_close_effect = yes
+  remove_character_flag = ucm_acm_modify_session
+  remove_character_flag = ucm_acm_gui_open
+  ucm_acm_sync_repair_gui_from_artifact_effect = yes
+  ucm_acm_sync_edit_text_from_artifact_effect = yes
+  ucm_acm_load_modifier_slots_from_artifact_effect = yes
+  ucm_acm_save_repair_modifier_baseline_effect = yes
+  if = {
+    limit = {
+      exists = global_var:ucm_acm_repair_target
+      global_var:ucm_acm_repair_target = { has_variable = ucm_acm_from_gui_craft }
+    }
+    root = { save_scope_as = ucm_acm_craft_creator }
+    global_var:ucm_acm_repair_target = {
+      save_scope_as = ucm_new_crafted_artifact
+      ucm_acm_persist_craft_slots_on_artifact_effect = yes
+    }
+  }
+  add_character_flag = ucm_acm_repair_gui_open
+  if = {
+    limit = { exists = global_var:ucm_acm_repair_target }
+    send_interface_toast = {
+      type = event_toast_effect_neutral
+      title = ucm_acm_repair_selected_toast_t
+      left_icon = root
+      right_icon = global_var:ucm_acm_repair_target
+    }
+  }
+}
+
+# 宝物列表选项：在宝物作用域注册目标，再在玩家身上打开修复 GUI
+ucm_acm_on_repair_artifact_picked_effect = {
+  ucm_acm_register_repair_target_effect = yes
+  root = { ucm_acm_after_repair_pick_effect = yes }
+}
+
+# 在玩家（或 scope:actor 上下文）上打开宝物列表；勿包 scope:actor，否则 GUI 按钮点击时 actor 不存在导致无反应
+ucm_acm_gui_open_repair_picker_effect = {
+  if = {
+    limit = { exists = global_var:ucm_cheat_menu_recipient }
+    set_variable = {
+      name = ucm_acm_repair_victim
+      value = global_var:ucm_cheat_menu_recipient
+    }
+  }
+  else_if = {
+    limit = { exists = global_var:ucm_acm_recipient }
+    set_variable = {
+      name = ucm_acm_repair_victim
+      value = global_var:ucm_acm_recipient
+    }
+  }
+  else_if = {
+    limit = { exists = scope:ucm_cheat_menu_target }
+    set_variable = {
+      name = ucm_acm_repair_victim
+      value = scope:ucm_cheat_menu_target
+    }
+  }
+  else_if = {
+    limit = { exists = scope:recipient }
+    set_variable = {
+      name = ucm_acm_repair_victim
+      value = scope:recipient
+    }
+  }
+  set_variable = {
+    name = ucm_acm_repair_page
+    value = 0
+  }
+  if = {
+    limit = { has_variable = ucm_acm_repair_art_total }
+    remove_variable = ucm_acm_repair_art_total
+  }
+  add_character_flag = ucm_acm_repair_picker_active
+  if = {
+    limit = { has_global_variable = ucm_acm_repair_target }
+    remove_global_variable = ucm_acm_repair_target
+  }
+  if = {
+    limit = { has_variable = ucm_acm_repair_artifact_var }
+    remove_variable = ucm_acm_repair_artifact_var
+  }
+  remove_character_flag = ucm_acm_repair_gui_open
+  remove_character_flag = ucm_acm_gui_open
+  ucm_acm_repair_picker_reopen_effect = yes
+}
+
+ucm_acm_apply_repair_to_selected_artifact_effect = {
+  if = {
+    limit = {
+      exists = global_var:ucm_acm_repair_target
+    }
+    root = {
+      save_scope_as = ucm_acm_craft_creator
+      save_scope_as = actor
+    }
+    if = {
+      limit = {
+        scope:ucm_acm_craft_creator = {
+          has_variable = ucm_acm_repair_baseline_m1
+          var:ucm_craft_m1 = var:ucm_acm_repair_baseline_m1
+          var:ucm_craft_m2 = var:ucm_acm_repair_baseline_m2
+          var:ucm_craft_m3 = var:ucm_acm_repair_baseline_m3
+          var:ucm_craft_m4 = var:ucm_acm_repair_baseline_m4
+          var:ucm_craft_m5 = var:ucm_acm_repair_baseline_m5
+          var:ucm_craft_m1_cnt = var:ucm_acm_repair_baseline_m1_cnt
+          var:ucm_craft_m2_cnt = var:ucm_acm_repair_baseline_m2_cnt
+          var:ucm_craft_m3_cnt = var:ucm_acm_repair_baseline_m3_cnt
+          var:ucm_craft_m4_cnt = var:ucm_acm_repair_baseline_m4_cnt
+          var:ucm_craft_m5_cnt = var:ucm_acm_repair_baseline_m5_cnt
+        }
+      }
+      global_var:ucm_acm_repair_target = {
+        save_scope_as = ucm_new_crafted_artifact
+        ucm_acm_apply_craft_quality_rarity_from_craft_creator_effect = yes
+        ucm_acm_apply_custom_artifact_text_effect = yes
+      }
+    }
+    else_if = {
+      limit = {
+        global_var:ucm_acm_repair_target = { has_variable = ucm_acm_from_gui_craft }
+      }
+      global_var:ucm_acm_repair_target = {
+        save_scope_as = ucm_new_crafted_artifact
+        set_variable = { name = historical_unique_artifact value = yes }
+        clear_artifact_modifiers = yes
+        ucm_acm_apply_craft_quality_rarity_from_craft_creator_effect = yes
+        ucm_acm_craft_subtype_name_effect = yes
+        ucm_apply_crafted_artifact_modifiers_effect = yes
+        ucm_acm_persist_craft_slots_on_artifact_effect = yes
+        ucm_acm_apply_custom_artifact_text_effect = yes
+      }
+    }
+    else = {
+      global_var:ucm_acm_repair_target = {
+        save_scope_as = ucm_new_crafted_artifact
+        ucm_acm_apply_craft_quality_rarity_from_craft_creator_effect = yes
+        ucm_apply_crafted_artifact_modifiers_effect = yes
+        ucm_acm_apply_custom_artifact_text_effect = yes
+      }
+    }
+    root = {
+      ucm_acm_cleanup_artifact_edit_buffer_effect = yes
+      if = {
+        limit = { has_variable = ucm_acm_repair_baseline_m1 }
+        remove_variable = ucm_acm_repair_baseline_m1
+      }
+      if = {
+        limit = { has_variable = ucm_acm_repair_baseline_m2 }
+        remove_variable = ucm_acm_repair_baseline_m2
+      }
+      if = {
+        limit = { has_variable = ucm_acm_repair_baseline_m3 }
+        remove_variable = ucm_acm_repair_baseline_m3
+      }
+      if = {
+        limit = { has_variable = ucm_acm_repair_baseline_m4 }
+        remove_variable = ucm_acm_repair_baseline_m4
+      }
+      if = {
+        limit = { has_variable = ucm_acm_repair_baseline_m5 }
+        remove_variable = ucm_acm_repair_baseline_m5
+      }
+      if = {
+        limit = { has_variable = ucm_acm_repair_baseline_m1_cnt }
+        remove_variable = ucm_acm_repair_baseline_m1_cnt
+      }
+      if = {
+        limit = { has_variable = ucm_acm_repair_baseline_m2_cnt }
+        remove_variable = ucm_acm_repair_baseline_m2_cnt
+      }
+      if = {
+        limit = { has_variable = ucm_acm_repair_baseline_m3_cnt }
+        remove_variable = ucm_acm_repair_baseline_m3_cnt
+      }
+      if = {
+        limit = { has_variable = ucm_acm_repair_baseline_m4_cnt }
+        remove_variable = ucm_acm_repair_baseline_m4_cnt
+      }
+      if = {
+        limit = { has_variable = ucm_acm_repair_baseline_m5_cnt }
+        remove_variable = ucm_acm_repair_baseline_m5_cnt
+      }
+      send_interface_toast = {
+        type = event_toast_effect_good
+        title = ucm_acm_repair_applied_toast_t
+        left_icon = root
+        right_icon = global_var:ucm_acm_repair_target
+      }
+    }
+  }
+}
+
+ucm_acm_gui_finish_repair_effect = {
+  save_scope_as = ucm_acm_craft_creator
+  save_scope_as = actor
+  ucm_acm_apply_repair_to_selected_artifact_effect = yes
+  remove_character_flag = ucm_acm_repair_gui_open
+}
+
+ucm_cheat_menu_open_artifact_repair_effect = {
+  ucm_cheat_menu_open_artifact_modify_effect = yes
+}
+
+ucm_cheat_menu_open_artifact_modify_effect = {
+  ucm_cheat_menu_lock_recipient_effect = yes
+  scope:actor = {
+    ucm_cheat_menu_sync_target_effect = yes
+    if = {
+      limit = { exists = scope:ucm_cheat_menu_target }
+      set_global_variable = {
+        name = ucm_acm_recipient
+        value = scope:ucm_cheat_menu_target
+      }
+    }
+    else_if = {
+      limit = { exists = scope:recipient }
+      set_global_variable = {
+        name = ucm_acm_recipient
+        value = scope:recipient
+      }
+    }
+    remove_character_flag = ucm_acm_gui_open
+    remove_character_flag = ucm_acm_modify_session
+    ucm_acm_gui_open_repair_picker_effect = yes
+  }
+}

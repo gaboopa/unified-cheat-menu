@@ -26,7 +26,7 @@
  set_unsuper_general_interaction_desc:0 "[recipient.GetShortUINameNoTooltip|U] verliert jeglichen göttlichen Beistand im Krieg und mag scheitern, wo [recipient.GetSheHe] einst triumphierte."
 
  set_all_in_one_interaction:0 "Zum vollkommenen Herrscher krönen"
- set_all_in_one_interaction_desc:0 "[recipient.GetShortUINameNoTooltip|U] erhält sämtliche Segnungen zugleich: die Gaben des Vorbilds, den Verwaltersegen und die Macht des Kriegsherrn. Wahrlich ein Wunder der Mysterien Skonesters."
+ set_all_in_one_interaction_desc:0 "[recipient.GetShortUINameNoTooltip|U] erhält sämtliche Segnungen zugleich: die Gaben des Vorbilds, den Verwaltersegen und die Macht des Kriegsherrn. Wahrlich ein Wunder der Mysterien s."
 
  set_unall_in_one_interaction:0 "Zum Sterblichen zurückführen"
  set_unall_in_one_interaction_desc:0 "[recipient.GetShortUINameNoTooltip|U] verliert sämtliche Gaben des Vorbilds, des Verwalters und des Kriegsherrn und wandelt fortan wieder als gewöhnlicher Sterblicher."

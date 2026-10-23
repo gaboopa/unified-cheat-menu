@@ -3,7 +3,7 @@
         reference = "gfx/interface/illustrations/decisions/new3.dds"
     }
 
-    decision_group_type = skonester_realm_tools
+    decision_group_type = ucm_realm_tools
 
     ai_check_interval_by_tier = {
         barony = 0
@@ -109,7 +109,7 @@ zhuge_huangzu_add = {
 	}
 	desc = zhuge_huangzu_add_desc
 	ai_check_interval = 0
-	decision_group_type = skonester_realm_tools
+	decision_group_type = ucm_realm_tools
 
 	is_shown = { ucm_single_player_trigger = yes 
 		is_ai = no
@@ -196,7 +196,7 @@ change_sansi_government = {
     selection_tooltip = change_govt_tt
     confirm_text = CONFIRM_OKAY
 
-	decision_group_type = skonester_realm_tools
+	decision_group_type = ucm_realm_tools
 
     is_shown = { ucm_single_player_trigger = yes 
 		is_ai = no
@@ -222,10 +222,10 @@ change_sansi_government = {
 
 start_searching_for_water_of_life_decision = {
     picture = {
-        reference = "gfx/interface/illustrations/decisions/skonester_clavius_grail.dds"
+        reference = "gfx/interface/illustrations/decisions/ucm_clavius_grail.dds"
     }
     ai_check_interval = 0
-	decision_group_type = skonester_realm_tools
+	decision_group_type = ucm_realm_tools
 	
 	# CK3 1.20: merged two is_shown blocks; only the first one was being read.
 	is_shown = { ucm_single_player_trigger = yes 
@@ -244,7 +244,7 @@ start_searching_for_water_of_life_decision = {
     cooldown = { years = 999 }
 
     is_valid = {
-        NOT = { has_character_flag = skonester_water_of_life_in_progress }
+        NOT = { has_character_flag = ucm_water_of_life_in_progress }
         custom_description = {
             text = "start_searching_for_water_of_life_decision_start"
             learning >= 35
@@ -252,7 +252,7 @@ start_searching_for_water_of_life_decision = {
     }
 
     effect = {
-        add_character_flag = skonester_water_of_life_in_progress
+        add_character_flag = ucm_water_of_life_in_progress
         trigger_event = {
             id = water_of_life.1001
             days = { 20 60 }

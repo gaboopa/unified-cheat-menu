@@ -8,7 +8,7 @@
  leech_mc_event.truce.white_peace:0 "White Peace"
  leech_mc_event.truce.defender:0 "Defender Wins"
  
- leech_mc_event.simple_action.t:0 "Skonester : Sub Menu"
+ leech_mc_event.simple_action.t:0 "Cheat: Sub Menu"
  leech_mc_event.simple_action.desc:0 "Let [recipient.GetShortUIName] do following actions to [secondary_recipient.GetShortUIName]"
  leech_mc_event.simple_action.vassalize:0 "Let [recipient.GetShortUIName] vassalize [secondary_recipient.GetShortUIName]"
  leech_mc_event.simple_action.marry:0 "Let [recipient.GetShortUIName] marry [secondary_recipient.GetShortUIName]"

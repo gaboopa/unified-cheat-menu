@@ -1,0 +1,143 @@
+﻿# Skonester「强制订婚」：DI #2986538297 双槽复制/粘贴 + ucm_ultra_force_betrothal_effect
+# 第一次右击：ucm_di_select_betrothal_primary_effect
+# 第二次右击：写入第三角色槽并强制订婚
+
+ucm_cheat_menu_prepare_char_for_force_betrothal_effect = {
+  if = {
+    limit = { is_imprisoned = yes }
+    release_from_prison = yes
+  }
+  if = {
+    limit = { has_trait = ucm_trait_marriage_ban }
+    add_character_flag = ucm_force_betrothal_had_ban
+    remove_trait = ucm_trait_marriage_ban
+  }
+}
+
+ucm_cheat_menu_restore_char_after_force_betrothal_effect = {
+  if = {
+    limit = { has_character_flag = ucm_force_betrothal_had_ban }
+    remove_character_flag = ucm_force_betrothal_had_ban
+    add_trait = ucm_trait_marriage_ban
+  }
+}
+
+ucm_cheat_menu_force_betrothal_resolve_pick_char_effect = {
+  if = {
+    limit = {
+      exists = scope:recipient
+      scope:recipient = { is_alive = yes }
+    }
+    scope:recipient = {
+      save_scope_as = ucm_betrothal_pick_char
+      save_scope_as = ucm_ultra_betrothal_charB
+    }
+  }
+  else_if = {
+    limit = { exists = scope:ucm_cheat_menu_target }
+    scope:ucm_cheat_menu_target = {
+      save_scope_as = ucm_betrothal_pick_char
+      save_scope_as = ucm_ultra_betrothal_charB
+    }
+  }
+}
+
+ucm_cheat_menu_force_betrothal_copy_to_slot_effect = {
+  ucm_cheat_menu_force_betrothal_resolve_pick_char_effect = yes
+  ucm_di_select_betrothal_primary_effect = yes
+  scope:actor = {
+    send_interface_toast = {
+      type = event_toast_effect_neutral
+      title = ucm_cheat_menu_force_betrothal_copy_toast_title
+      desc = ucm_cheat_menu_force_betrothal_copy_toast_desc
+      left_icon = scope:actor
+      right_icon = scope:ucm_betrothal_pick_char
+    }
+  }
+}
+
+ucm_cheat_menu_force_betrothal_clear_slot_effect = {
+  scope:actor = {
+    ucm_di_clear_betrothal_primary_effect = yes
+    ucm_di_clear_betrothal_tertiary_effect = yes
+  }
+}
+
+ucm_cheat_menu_force_betrothal_paste_from_slot_effect = {
+  ucm_cheat_menu_force_betrothal_resolve_pick_char_effect = yes
+  ucm_di_select_betrothal_tertiary_effect = yes
+  scope:actor = {
+    var:ucm_betrothal_slot_primary = {
+      save_scope_as = ucm_ultra_betrothal_charA
+    }
+    var:ucm_betrothal_slot_tertiary = {
+      save_scope_as = ucm_ultra_betrothal_charB
+    }
+  }
+  scope:ucm_ultra_betrothal_charA = {
+    ucm_cheat_menu_prepare_char_for_force_betrothal_effect = yes
+  }
+  scope:ucm_ultra_betrothal_charB = {
+    ucm_cheat_menu_prepare_char_for_force_betrothal_effect = yes
+  }
+  ucm_ultra_force_betrothal_effect = yes
+  scope:ucm_ultra_betrothal_charA = {
+    ucm_cheat_menu_restore_char_after_force_betrothal_effect = yes
+    remove_character_flag = ucm_ultra_betrothal_use_matrilineal
+  }
+  scope:ucm_ultra_betrothal_charB = {
+    ucm_cheat_menu_restore_char_after_force_betrothal_effect = yes
+  }
+  scope:actor = {
+    ucm_cheat_menu_force_betrothal_clear_slot_effect = yes
+    send_interface_toast = {
+      type = event_toast_effect_good
+      title = ucm_cheat_menu_force_betrothal_toast_title
+      desc = ucm_cheat_menu_force_betrothal_toast_desc
+      left_icon = scope:ucm_ultra_betrothal_charA
+      right_icon = scope:ucm_ultra_betrothal_charB
+    }
+  }
+}
+
+ucm_cheat_menu_force_betrothal_execute_effect = {
+  ucm_cheat_menu_lock_recipient_effect = yes
+  ucm_cheat_menu_sync_target_effect = yes
+  ucm_cheat_menu_force_betrothal_resolve_pick_char_effect = yes
+  if = {
+    limit = {
+      exists = scope:ucm_betrothal_pick_char
+      scope:ucm_betrothal_pick_char = { is_alive = yes }
+    }
+    if = {
+      limit = {
+        scope:actor = {
+          NOT = { has_variable = ucm_betrothal_slot_primary }
+        }
+      }
+      ucm_cheat_menu_force_betrothal_copy_to_slot_effect = yes
+    }
+    else_if = {
+      limit = {
+        scope:actor = {
+          var:ucm_betrothal_slot_primary = {
+            this = scope:ucm_betrothal_pick_char
+          }
+        }
+      }
+      ucm_cheat_menu_force_betrothal_copy_to_slot_effect = yes
+    }
+    else_if = {
+      limit = {
+        scope:actor = {
+          has_variable = ucm_betrothal_slot_primary
+          var:ucm_betrothal_slot_primary = {
+            is_alive = yes
+            NOT = { this = scope:ucm_betrothal_pick_char }
+          }
+        }
+      }
+      ucm_cheat_menu_force_betrothal_paste_from_slot_effect = yes
+    }
+  }
+}

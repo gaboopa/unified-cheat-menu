@@ -1,0 +1,40 @@
+﻿# 角色生成 hub（复用 ucm_cheat_menu_recipient）
+
+ucm_char_gen_sync_recipient_to_scope_effect = {
+  ucm_cheat_menu_sync_target_effect = yes
+  scope:ucm_cheat_menu_target = {
+    save_scope_as = ucm_char_gen_target
+  }
+}
+
+ucm_cheat_menu_open_character_gen_hub_effect = {
+  ucm_cheat_menu_lock_recipient_effect = yes
+  scope:actor = {
+    trigger_event = ucm_cheat_menu.0245
+  }
+}
+
+ucm_char_gen_hub_open_spawn_talent_effect = {
+  ucm_cheat_menu_sync_target_effect = yes
+  scope:actor = {
+    trigger_event = ucm_cheat_menu.0155
+  }
+}
+
+ucm_char_gen_hub_open_beauty_effect = {
+  ucm_cheat_menu_sync_target_effect = yes
+  scope:actor = {
+    trigger_event = ucm_cheat_menu.0180
+  }
+}
+
+ucm_char_gen_hub_open_children_effect = {
+  ucm_cheat_menu_sync_target_effect = yes
+  scope:actor = {
+    trigger_event = ucm_child_gen.1000
+  }
+}
+
+ucm_char_gen_clear_recipient_global_effect = {
+  ucm_cheat_menu_clear_recipient_effect = yes
+}

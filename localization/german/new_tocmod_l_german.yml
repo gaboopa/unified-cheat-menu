@@ -90,8 +90,8 @@
  toc_setheira_interaction:0 "Als Haupterben festlegen"
  toc_deposed_interaction:0 "Charakter zurücktreten lassen oder absetzen"
  toc_deposed_interaction_desc:0 "Entfernt diesen Charakter aus seinem Landamt. Verwaltungsgouverneure ziehen sich auf ihr Familienanwesen zurück; andere Herrscher verwenden CK3s landlosen Fortsetzungsablauf."
- skonester_deposed_to_estate_tt:0 "[recipient.GetShortUIName|U] tritt von allen Landämtern zurück und führt [recipient.GetHerHis] Verwaltungsanwesen weiter."
- skonester_depose_requires_landless_play_tt:0 "Roads to Power ist erforderlich, um einen Spielercharakter abzusetzen, ohne das Spiel zu beenden"
+ ucm_deposed_to_estate_tt:0 "[recipient.GetShortUIName|U] tritt von allen Landämtern zurück und führt [recipient.GetHerHis] Verwaltungsanwesen weiter."
+ ucm_depose_requires_landless_play_tt:0 "Roads to Power ist erforderlich, um einen Spielercharakter abzusetzen, ohne das Spiel zu beenden"
  toc_greatest_lord_np_interaction:0 "Lehnsherr-Eigenschaft hinzufügen"
  toc_greatest_lord_t_interaction:0 "Hohe-Blutlinie-Eigenschaft hinzufügen"
  toc_sneed_seed_interaction:0 "Eigenschaft der Ersten Menschen hinzufügen"
@@ -611,13 +611,13 @@
  toc_main_debug_interaction:0 "Debug-Ereignismenü öffnen"
  toc_main_debug_interaction_desc:0 "Öffnet geordnete Debug-Aktionen für den ausgewählten Charakter."
 
- toc_pregnancy_interaction:0 "Skonester: Schwangerschaft auslösen"
+ toc_pregnancy_interaction:0 ": Schwangerschaft auslösen"
  toc_pregnancy_interaction_desc:0 "Öffnet das Menü, um diesen Charakter schwanger werden zu lassen."
 
- toc_spawn_character_interaction:0 "Skonester: Charakter erschaffen"
+ toc_spawn_character_interaction:0 ": Charakter erschaffen"
  toc_spawn_character_interaction_desc:0 "Erstellt einen neuen benutzerdefinierten Charakter am Hof dieses Charakters."
 
- toc_torture_and_perks_interaction:0 "Skonester: Vorteile und Bestrafung"
+ toc_torture_and_perks_interaction:0 ": Vorteile und Bestrafung"
  toc_torture_and_perks_interaction_desc:0 "Verwaltet Vorteile, Hofbeschränkungen, Bündnisse und Bestrafungen für den ausgewählten Charakter."
 
  toc_county_modifier_interaction:0 "Hauptstadt-Grafschaft anpassen"

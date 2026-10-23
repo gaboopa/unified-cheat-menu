@@ -1,6 +1,6 @@
 ﻿l_german:
  dp_char_editor.main_menu.t:1 "Menü zur Charakterbearbeitung"
- dp_char_editor.main_menu.d:0 "Willkommen im Charaktereditor des Skonester-Cheatmenüs.\nPasse deinen Charakter ganz nach deinen Wünschen an!"
+ dp_char_editor.main_menu.d:0 "Willkommen im Charaktereditor des Cheatmenüs.\nPasse deinen Charakter ganz nach deinen Wünschen an!"
 
  dp_char_editor.naming.t:1 "Charakternamen bearbeiten"
  dp_char_editor.naming.d:0 "Gib den Namen ein, den dein Charakter erhalten soll."

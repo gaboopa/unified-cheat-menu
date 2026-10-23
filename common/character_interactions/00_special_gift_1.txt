@@ -6,7 +6,7 @@
 	# CK3 1.20: ai_frequency without ai_targets does nothing (and logs a warning). ai_frequency = 0
 
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		scope:actor = {
 			has_trait = water_of_life
 		}

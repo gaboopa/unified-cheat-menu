@@ -8,7 +8,7 @@
  leech_mc_event.truce.white_peace:0 "Weißer Frieden"
  leech_mc_event.truce.defender:0 "Verteidiger siegt"
 
- leech_mc_event.simple_action.t:0 "Skonester: Untermenü"
+ leech_mc_event.simple_action.t:0 ": Untermenü"
  leech_mc_event.simple_action.desc:0 "Lass [recipient.GetShortUIName] folgende Aktion gegenüber [secondary_recipient.GetShortUIName] ausführen"
  leech_mc_event.simple_action.vassalize:0 "[recipient.GetShortUIName] macht [secondary_recipient.GetShortUIName] zum Vasallen"
  leech_mc_event.simple_action.marry:0 "[recipient.GetShortUIName] heiratet [secondary_recipient.GetShortUIName]"

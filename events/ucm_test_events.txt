@@ -1,0 +1,16 @@
+﻿namespace = ucm_test
+
+# 测试事件 - 验证mod是否正确加载
+ucm_test.0001 = {
+  type = character_event
+  title = ucm_test.0001.t
+  desc = ucm_test.0001.desc
+  theme = default
+
+  option = {
+    name = ucm_test.0001.ok
+    scope:actor = { add_gold = 100
+    custom_tooltip =
+    ucm_test.0001.add_gold_tt }
+  }
+}

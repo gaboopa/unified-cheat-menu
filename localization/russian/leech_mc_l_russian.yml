@@ -1,5 +1,5 @@
 ﻿l_russian:
- interaction_category_leech:0 "Skonester — Чит-подменю"
+ interaction_category_leech:0 "— Чит-подменю"
  leech_mind_control_interaction:0 "Передача ДНК : Начать взаимодействие"
  leech_mind_control_interaction_desc:0 "Подготовить сцену для [recipient.GetShortUIName]"
  recipient_secondary_leech_mind_control_interaction:0 ""

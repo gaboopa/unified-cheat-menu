@@ -11,7 +11,7 @@ zhuge_organize_titles = {
     interface_priority = 4990
 
     is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
             has_character_flag = bone_cheat_interactions_flag
@@ -50,7 +50,7 @@ zhuge_destroy_title = {
     interface_priority = 1997
 
     is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
             has_character_flag = bone_cheat_interactions_flag
@@ -86,7 +86,7 @@ zhuge_buff_01 = {
     ignores_pending_interaction_block = yes
 
     is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
             has_character_flag = bone_cheat_interactions_flag
@@ -123,7 +123,7 @@ zhuge_buff_02 = {
     ignores_pending_interaction_block = yes
 
     is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
             has_character_flag = bone_cheat_interactions_flag
@@ -160,7 +160,7 @@ zhuge_buff_03 = {
     ignores_pending_interaction_block = yes
 
     is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
             has_character_flag = bone_cheat_interactions_flag
@@ -197,7 +197,7 @@ zhuge_yixue_05 = {
     ignores_pending_interaction_block = yes
 
     is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
             has_character_flag = bone_cheat_interactions_flag
@@ -235,7 +235,7 @@ zhuge_bloodline_03 = {
     ignores_pending_interaction_block = yes
 
     is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
             has_character_flag = bone_cheat_interactions_flag
@@ -294,7 +294,7 @@ zhuge_yixue_01 = {
     ignores_pending_interaction_block = yes
 
     is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
         scope:actor = {
             is_ai = no 
             has_character_flag = bone_cheat_interactions_flag 
@@ -518,7 +518,7 @@ zhuge_yixue_02 = {
     ignores_pending_interaction_block = yes
 
     is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
             has_character_flag = bone_cheat_interactions_flag
@@ -578,7 +578,7 @@ zhueg_yixue_03 = {
     ignores_pending_interaction_block = yes
 
     is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
             has_character_flag = bone_cheat_interactions_flag
@@ -632,7 +632,7 @@ zhuge_yixue_04 = {
     ignores_pending_interaction_block = yes
 
     is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
             has_character_flag = bone_cheat_interactions_flag
@@ -697,7 +697,7 @@ zhuge_yixue_06 = {
     ignores_pending_interaction_block = yes
 
     is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
             has_character_flag = bone_cheat_interactions_flag
@@ -869,7 +869,7 @@ zhuge_buff_04 = {
     ignores_pending_interaction_block = yes
 
     is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
             has_character_flag = bone_cheat_interactions_flag
@@ -902,7 +902,7 @@ zhuge_buff_05 = {
     ignores_pending_interaction_block = yes
 
     is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
             has_character_flag = bone_cheat_interactions_flag
@@ -987,7 +987,7 @@ zhuge_add_truce_interaction = {
     auto_accept = yes
 
     is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
             has_character_flag = bone_cheat_interactions_flag
@@ -1070,7 +1070,7 @@ zhuge_daming_currency_menu = {
     ignores_pending_interaction_block = yes
 
     is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
             has_character_flag = bone_cheat_interactions_flag 
@@ -1102,7 +1102,7 @@ zhuge_set_authority_inter = {
     ignores_pending_interaction_block = yes
 
     is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
             is_independent_ruler = yes
@@ -1209,7 +1209,7 @@ zhuge_set_relation_interaction = {
     ignores_pending_interaction_block = yes
 
     is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
             has_character_flag = bone_cheat_interactions_flag
@@ -1235,7 +1235,7 @@ zhuge_set_artifact_interaction = {
     ignores_pending_interaction_block = yes
 
     is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
         scope:actor = { is_ai = no has_character_flag = bone_cheat_interactions_flag }
         NOT = { scope:recipient = scope:actor }
     }
@@ -1266,7 +1266,7 @@ zhuge_kill_xingzh_house_interaction = {
     ignores_pending_interaction_block = yes
 
     is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
         scope:actor = { 
             is_ai = no 
             has_character_flag = bone_cheat_interactions_flag 
@@ -1302,7 +1302,7 @@ zhuge_huoqu_artifact_interaction = {
 	target_filter = recipient_artifacts
 
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		scope:actor = {
             is_ai = no
             has_character_flag = bone_cheat_interactions_flag
@@ -1357,7 +1357,7 @@ zhuge_great_steppe = {
 	auto_accept = yes
 
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		scope:actor = {
             is_ai = no
             has_character_flag = bone_cheat_interactions_flag
@@ -1539,7 +1539,7 @@ zhuge_ymbuff_02 = {
     ignores_pending_interaction_block = yes
 
     is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
             has_character_flag = bone_cheat_interactions_flag
@@ -1576,7 +1576,7 @@ zhuge_lifexp_all_xp = {
     interface_priority = 9985
 
     is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
 			has_character_flag = bone_cheat_interactions_flag

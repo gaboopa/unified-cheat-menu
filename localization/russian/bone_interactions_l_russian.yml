@@ -3,11 +3,11 @@
 
   open_bone_cheat_interactions:0 "Открыть читы"
   close_bone_cheat_interactions:0 "Закрыть читы"
-  bone_cheat_interactions_desc:0 "Читерские взаимодействия Skonester"
+  bone_cheat_interactions_desc:0 "Читерские взаимодействия"
 
   open_bone_trait_interactions:0 "Открыть Черты"
   close_bone_trait_interactions:0 "Закрыть Черты"
-  bone_trait_interactions_desc:0 "Взаимодействия с чертами Skonester"
+  bone_trait_interactions_desc:0 "Взаимодействия с чертами"
 
   bone_add_to_court:0 "Добавить ко Двору"
   bone_add_to_court_desc:0 "Добавить персонажа ко Двору"

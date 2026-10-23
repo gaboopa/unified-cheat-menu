@@ -1,1 +1,14 @@
-﻿gui/ucm_main_menu.gui = ucm_main_menu_window
+﻿gui/ucm_console_helper.gui = ucm_console_helper_window
+gui/ucm_artifact_craft.gui = ucm_artifact_craft_window
+gui/ucm_artifact_repair.gui = ucm_artifact_repair_window
+gui/ucm_acm_culture_picker.gui = ucm_acm_culture_picker_window
+gui/ucm_acm_religion_picker.gui = ucm_acm_religion_picker_window
+gui/ucm_acm_faith_editor.gui = ucm_acm_faith_editor_window
+# faith_editor_bridge / pick_panel 仅用于劫持本体信仰窗，已停用
+gui/ucm_acm_faith_doctrine_picker.gui = ucm_acm_faith_doctrine_picker_window
+gui/ucm_culture_tradition_picker.gui = ucm_culture_tradition_picker_window
+gui/ucm_sand_soldiers.gui = ucm_sand_soldiers_window
+gui/ucm_trait_editor.gui = ucm_trait_editor_window
+gui/ucm_cheat_trait_editor.gui = ucm_cheat_trait_editor_window
+gui/ucm_lifestyle.gui = ucm_lifestyle_gui_window
+gui/ucm_main_menu.gui = ucm_main_menu_window

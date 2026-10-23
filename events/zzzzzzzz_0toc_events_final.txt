@@ -868,7 +868,7 @@ tocmod.1005 = {
 
 #### Skonester debug actions
 # Legacy tocmod.2000-2090 and tocmod.3000 menus were removed.
-# Replacements live in events/skonester_debug_action_events.txt.
+# Replacements live in events/ucm_debug_action_events.txt.
 
 
 

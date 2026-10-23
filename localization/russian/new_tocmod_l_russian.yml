@@ -90,8 +90,8 @@
  toc_setheira_interaction:0 "Назначить основным наследником"
  toc_deposed_interaction:0 "Отправить в отставку или свергнуть"
  toc_deposed_interaction_desc:0 "Лишает персонажа земельной должности. Административный губернатор удаляется в родовое поместье, а для других правителей используется современное продолжение игры без земель."
- skonester_deposed_to_estate_tt:0 "[recipient.GetShortUIName|U] оставляет все земельные должности и продолжает управлять своим административным поместьем."
- skonester_depose_requires_landless_play_tt:0 "Чтобы свергнуть персонажа игрока без завершения игры, требуется Roads to Power"
+ ucm_deposed_to_estate_tt:0 "[recipient.GetShortUIName|U] оставляет все земельные должности и продолжает управлять своим административным поместьем."
+ ucm_depose_requires_landless_play_tt:0 "Чтобы свергнуть персонажа игрока без завершения игры, требуется Roads to Power"
  toc_greatest_lord_np_interaction:0 "Добавить свойство: Верховный лорд"
  toc_greatest_lord_t_interaction:0 "Добавить свойство: Кровь Высших лордов"
  toc_sneed_seed_interaction:0 "Добавить свойство: Первые Люди"
@@ -608,13 +608,13 @@
  toc_main_debug_interaction:0 "Открыть меню отладочных событий"
  toc_main_debug_interaction_desc:0 "Открыть упорядоченные отладочные действия для выбранного персонажа."
  
- toc_pregnancy_interaction:0 "Skonester: Вызвать беременность"
+ toc_pregnancy_interaction:0 ": Вызвать беременность"
  toc_pregnancy_interaction_desc:0 "Открыть меню, чтобы сделать этого персонажа беременным."
  
- toc_spawn_character_interaction:0 "Skonester: Создать персонажа"
+ toc_spawn_character_interaction:0 ": Создать персонажа"
  toc_spawn_character_interaction_desc:0 "Создать нового пользовательского персонажа при дворе этого правителя."
  
- toc_torture_and_perks_interaction:0 "Skonester: достоинства и наказания"
+ toc_torture_and_perks_interaction:0 ": достоинства и наказания"
  toc_torture_and_perks_interaction_desc:0 "Управлять достоинствами, ограничениями двора, союзами и наказаниями выбранного персонажа."
  
  toc_county_modifier_interaction:0 "Изменить столичное графство"

@@ -1,6 +1,6 @@
 ﻿l_russian:
  dp_char_editor.main_menu.t:1 "Меню редактирования персонажа"
- dp_char_editor.main_menu.d:0 "Добро пожаловать в редактор персонажей Skonester Cheat Menu.\nНастройте своего персонажа как хотите!"
+ dp_char_editor.main_menu.d:0 "Добро пожаловать в редактор персонажей Unified Cheat Menu.\nНастройте своего персонажа как хотите!"
 
  dp_char_editor.naming.t:1 "Изменить имя персонажа"
  dp_char_editor.naming.d:0 "Введите имя, которое вы хотите дать своему персонажу"

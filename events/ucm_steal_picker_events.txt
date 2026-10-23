@@ -1,0 +1,290 @@
+﻿# 宝物窃取：列出目标个人宝物栏，每页 3 件；翻页 days=0。由 tools/gen_steal_picker.py 生成。
+namespace = ucm_cheat_menu
+
+ucm_cheat_menu.3094 = {
+  type = character_event
+  title = ucm_art.3094.t
+  desc = ucm_ui_no_hover_tooltip
+  theme = default
+  left_portrait = root
+  right_portrait = scope:ucm_steal_evt_recipient
+
+  immediate = {
+    clear_saved_scope = ucm_steal_slot0
+    clear_saved_scope = ucm_steal_slot1
+    clear_saved_scope = ucm_steal_slot2
+    clear_saved_scope = ucm_steal_pop_tmp
+    clear_saved_scope = ucm_steal_chosen
+    clear_saved_scope = ucm_steal_evt_recipient
+    root = {
+      clear_variable_list = ucm_steal_art_queue
+      var:ucm_steal_victim ?= {
+        save_scope_as = ucm_steal_evt_recipient
+      }
+      if = {
+        limit = {
+          NOT = {
+            has_variable = ucm_steal_page
+          }
+        }
+        set_variable = {
+          name = ucm_steal_page
+          value = 0
+        }
+      }
+      if = {
+        limit = {
+          exists = scope:ucm_steal_evt_recipient
+        }
+        scope:ucm_steal_evt_recipient = {
+          every_character_artifact = {
+            save_scope_as = ucm_steal_art_iter
+            root = {
+              add_to_variable_list = {
+                name = ucm_steal_art_queue
+                target = scope:ucm_steal_art_iter
+              }
+            }
+            clear_saved_scope = ucm_steal_art_iter
+          }
+        }
+      }
+      set_variable = {
+        name = ucm_steal_art_total
+        value = 0
+      }
+      every_in_list = {
+        variable = ucm_steal_art_queue
+        root = {
+          change_variable = {
+            name = ucm_steal_art_total
+            add = 1
+          }
+        }
+      }
+      if = {
+        limit = {
+          has_variable = ucm_steal_page
+          var:ucm_steal_page > 0
+          has_variable = ucm_steal_art_total
+          var:ucm_steal_art_total <= ucm_steal_page_offset_value
+        }
+        set_variable = {
+          name = ucm_steal_page
+          value = 0
+        }
+      }
+      set_variable = {
+        name = ucm_steal_skip
+        value = {
+          value = var:ucm_steal_page
+          multiply = 3
+        }
+      }
+      while = {
+        limit = {
+          var:ucm_steal_skip > 0
+          variable_list_size = {
+            name = ucm_steal_art_queue
+            value > 0
+          }
+        }
+        ordered_in_list = {
+          variable = ucm_steal_art_queue
+          order_by = artifact_rarity  # CK3 1.20: artifact_wealth is not a value; vanilla sorts by rarity
+          position = 0
+          save_scope_as = ucm_steal_pop_tmp
+        }
+        remove_list_variable = {
+          name = ucm_steal_art_queue
+          target = scope:ucm_steal_pop_tmp
+        }
+        change_variable = {
+          name = ucm_steal_skip
+          add = -1
+        }
+      }
+      if = {
+        limit = {
+          variable_list_size = {
+            name = ucm_steal_art_queue
+            value > 0
+          }
+        }
+        ordered_in_list = {
+          variable = ucm_steal_art_queue
+          order_by = artifact_rarity  # CK3 1.20: artifact_wealth is not a value; vanilla sorts by rarity
+          position = 0
+          save_scope_as = ucm_steal_slot0
+        }
+      }
+      if = {
+        limit = {
+          variable_list_size = {
+            name = ucm_steal_art_queue
+            value > 1
+          }
+        }
+        ordered_in_list = {
+          variable = ucm_steal_art_queue
+          order_by = artifact_rarity  # CK3 1.20: artifact_wealth is not a value; vanilla sorts by rarity
+          position = 1
+          save_scope_as = ucm_steal_slot1
+        }
+      }
+      if = {
+        limit = {
+          variable_list_size = {
+            name = ucm_steal_art_queue
+            value > 2
+          }
+        }
+        ordered_in_list = {
+          variable = ucm_steal_art_queue
+          order_by = artifact_rarity  # CK3 1.20: artifact_wealth is not a value; vanilla sorts by rarity
+          position = 2
+          save_scope_as = ucm_steal_slot2
+        }
+      }
+      if = {
+        limit = {
+          has_variable = ucm_steal_skip
+        }
+        remove_variable = ucm_steal_skip
+      }
+    }
+  }
+
+  option = {
+    skill = learning
+    name = ucm_art.3094.prev_page
+    trigger = {
+      ucm_steal_picker_enabled_trigger = yes
+      var:ucm_steal_page > 0
+    }
+    root = {
+      change_variable = {
+        name = ucm_steal_page
+        add = -1
+      }
+      ucm_steal_picker_reopen_effect = yes
+    }
+  }
+
+  option = {
+    skill = learning
+    name = ucm_art.3094.next_page
+    trigger = {
+      ucm_steal_picker_enabled_trigger = yes
+      has_variable = ucm_steal_art_total
+      var:ucm_steal_art_total > ucm_steal_next_page_min_total_value
+    }
+    root = {
+      change_variable = {
+        name = ucm_steal_page
+        add = 1
+      }
+      ucm_steal_picker_reopen_effect = yes
+    }
+  }
+
+  option = {
+    skill = intrigue
+    name = ucm_art.3094.steal_0
+    trigger = {
+      ucm_steal_picker_enabled_trigger = yes
+      exists = scope:ucm_steal_slot0
+    }
+    custom_tooltip = ucm_art.3094.steal_0_tt
+    scope:ucm_steal_slot0 = {
+      show_as_tooltip = {
+        custom_description = {
+          text = ucm_art.3094.steal_0_tt
+          object = this
+        }
+      }
+    }
+    hidden_effect = {
+      scope:ucm_steal_slot0 = {
+        set_owner = root
+      }
+      ucm_steal_after_pick_effect = yes
+    }
+  }
+
+  option = {
+    skill = intrigue
+    name = ucm_art.3094.steal_1
+    trigger = {
+      ucm_steal_picker_enabled_trigger = yes
+      exists = scope:ucm_steal_slot1
+    }
+    custom_tooltip = ucm_art.3094.steal_1_tt
+    scope:ucm_steal_slot1 = {
+      show_as_tooltip = {
+        custom_description = {
+          text = ucm_art.3094.steal_1_tt
+          object = this
+        }
+      }
+    }
+    hidden_effect = {
+      scope:ucm_steal_slot1 = {
+        set_owner = root
+      }
+      ucm_steal_after_pick_effect = yes
+    }
+  }
+
+  option = {
+    skill = intrigue
+    name = ucm_art.3094.steal_2
+    trigger = {
+      ucm_steal_picker_enabled_trigger = yes
+      exists = scope:ucm_steal_slot2
+    }
+    custom_tooltip = ucm_art.3094.steal_2_tt
+    scope:ucm_steal_slot2 = {
+      show_as_tooltip = {
+        custom_description = {
+          text = ucm_art.3094.steal_2_tt
+          object = this
+        }
+      }
+    }
+    hidden_effect = {
+      scope:ucm_steal_slot2 = {
+        set_owner = root
+      }
+      ucm_steal_after_pick_effect = yes
+    }
+  }
+
+  option = {
+    skill = stewardship
+    name = ucm_art.3094.steal_all
+    trigger = {
+      ucm_steal_picker_enabled_trigger = yes
+      has_variable = ucm_steal_art_total
+      NOT = {
+        var:ucm_steal_art_total > ucm_steal_next_page_min_total_value
+      }
+    }
+    hidden_effect = {
+      var:ucm_steal_victim = {
+        every_character_artifact = {
+          set_owner = root
+        }
+      }
+      ucm_steal_picker_close_effect = yes
+    }
+  }
+
+  option = {
+    skill = learning
+    name = ucm_cheat_menu.00x.close
+    root = {
+      ucm_steal_picker_close_effect = yes
+    }
+  }
+}

@@ -30,7 +30,7 @@ Run on 2026-10-23: CK3 1.20.1.2, all DLC, playset with only this mod (`dlc_load.
 
 **2,717 error entries** (3,855 lines). This is the number to beat. `agent.md` reported 11,577 after the port, so later upstream fixes already cut most of them. No vanilla-only run was done, but nearly every entry traces to the mod:
 
-- **982 entries cite a file:** 666 are mod files and 316 are vanilla paths. 282 of the vanilla-path ones are in `00_building_effects.txt`, called by the mod's domicile presets (`skonester_cheat_menu_domicile_preset_effects.txt:3262`) with bad arguments.
+- **982 entries cite a file:** 666 are mod files and 316 are vanilla paths. 282 of the vanilla-path ones are in `00_building_effects.txt`, called by the mod's domicile presets (`ucm_cheat_menu_domicile_preset_effects.txt:3262`) with bad arguments.
 - **Most of the rest are load-time warnings about mod names:** "variable/flag used but never set" and "set but never used" (1,312 entries). 1,294 of them name variables or flags that appear in mod files.
 
 **Biggest groups:**
@@ -38,11 +38,11 @@ Run on 2026-10-23: CK3 1.20.1.2, all DLC, playset with only this mod (`dlc_load.
 | Count | What | Where |
 | --- | --- | --- |
 | 1,198 | Variable/flag used but never set | Mod variables and flags throughout |
-| 377 | Script system error (bad trigger/effect arguments) | Mostly the domicile presets (158), `dp_char_editor.txt` (36), `skonester_government_bianshen_daming_effects.txt` (30), `GM_value_on_action.txt` (29) |
+| 377 | Script system error (bad trigger/effect arguments) | Mostly the domicile presets (158), `dp_char_editor.txt` (36), `ucm_government_bianshen_daming_effects.txt` (30), `GM_value_on_action.txt` (29) |
 | 185 | Landed title not found | `yan_on_action.txt` (78), `GM_value_on_action.txt` (52), authority/expansion title effects. These reference titles from other mods |
-| 135 | Tradition not found | `skonester_cw_tradition_picker_lists_generated.txt`: AGOT-only keys, expected per the file header. Goes away when the picker uses `every_culture_tradition` |
+| 135 | Tradition not found | `ucm_cw_tradition_picker_lists_generated.txt`: AGOT-only keys, expected per the file header. Goes away when the picker uses `every_culture_tradition` |
 | 92 | Variable set but never used | Mod variables |
-| 67 | Orphaned events | `skonester_cheat_menu.*` and others |
+| 67 | Orphaned events | `ucm_cheat_menu.*` and others |
 | 54 | Missing characters `character:yannv*` / `yannan*` | `yan_on_action.txt` |
 
 **Quick wins:** `yan_on_action.txt` + `GM_value_on_action.txt` (about 300 entries combined, compatibility code for other mods running unguarded), the domicile presets (about 200), and the generated tradition list (135).
@@ -62,11 +62,11 @@ Each override is a full copy of the 1.20.1.2 vanilla file with small edits (whit
 
 | File | Change vs vanilla | Recommendation |
 | --- | --- | --- |
-| `gui/window_character.gui` | +384 / −25. Adds the "Crozier cheats" panel (open button, secret type list `SKONESTER_CROZIER_CHEATS_XR_*`) and adjusts court-tab text | Keep for now. Phase 1: move the panel into a scripted widget so this override can go |
+| `gui/window_character.gui` | +384 / −25. Adds the "Crozier cheats" panel (open button, secret type list `UCM_CROZIER_CHEATS_XR_*`) and adjusts court-tab text | Keep for now. Phase 1: move the panel into a scripted widget so this override can go |
 | `gui/interaction_menu_window.gui` | +181 / −4. Adds a collapsible category grid, portrait height (`xa_height`) ± controls, and removes the `CanCustomizePortrait` gate | Keep for now. Phase 1: same as above |
 | `gui/interaction_confirmation.gui` | +4 / −3, **layout only** (margins, minimum height 480 → 380) | **Remove the override.** No functionality depends on it |
 | `gui/frontend_ingame_menu.gui` | +37 / −1. Adds a pause-menu button that calls `ExecuteConsoleCommand('debug_mode')` | Keep. Low conflict risk |
-| `common/on_action/dlc/tgp/tgp_china_minister_on_action.txt` | Replaces 9 `would_be_valid_for_court_position` checks with `skonester_positions_loose_court_appointment_candidate_trigger` | **Changes AI behavior for every Chinese-government ruler**, not just cheat users. Move behind a game rule or player check, or remove |
+| `common/on_action/dlc/tgp/tgp_china_minister_on_action.txt` | Replaces 9 `would_be_valid_for_court_position` checks with `ucm_positions_loose_court_appointment_candidate_trigger` | **Changes AI behavior for every Chinese-government ruler**, not just cheat users. Move behind a game rule or player check, or remove |
 | `common/script_values/09_mpo_values.txt` | +19 in `study_commander_trait_success_chance_value`: +50/+100/+666 for `bloodline_god_1/2/3` | Only affects cheat-trait holders. Keep, but must be re-merged on every game update |
 | `common/culture/traditions/_traditions.info`, `common/succession_election/_succession_election.info` | Documentation files; not loaded | Delete the copies |
 | `localization/english/debug_l_english.yml` | Renames the debug interaction labels ("DEBUG Main" → "Skonester Cheat Menu") | Move the changed keys to `localization/replace/english/` instead of overriding the whole file |
@@ -90,25 +90,25 @@ Finding for the spec: GUI can call `ExecuteConsoleCommand`. That's narrower than
 
 **Per-player state (would only matter in multiplayer):**
 
-- **Targets:** `skonester_crozier_cheats_other`, `skonester_crozier_cheats_prev_char`, `skonester_cheat_menu_recipient`, `skonester_acm_recipient`, `skonester_acm_repair_target`. The primary target is already a character variable (`var:skonester_crozier_cheats_target`), so only the secondary targets are global.
-- **Persistent cheat toggles:** 32 cheats, each with three globals: `skonester_crozier_cheats_on_<cheat>` (flag), `_fx_<cheat>` and `_lv_<cheat>` (numbers). Cheats include income, health, stress, skills, immortal, levy, legend spread, and auto-ascension. In multiplayer, one player enabling a cheat enables it for everyone the tick applies to.
-- **Toggle settings:** `skonester_crozier_cheats_tier`, `_power`, `_freq`, `_no_toast`, `_tick_pending`, `_realm`.
+- **Targets:** `ucm_crozier_cheats_other`, `ucm_crozier_cheats_prev_char`, `ucm_cheat_menu_recipient`, `ucm_acm_recipient`, `ucm_acm_repair_target`. The primary target is already a character variable (`var:ucm_crozier_cheats_target`), so only the secondary targets are global.
+- **Persistent cheat toggles:** 32 cheats, each with three globals: `ucm_crozier_cheats_on_<cheat>` (flag), `_fx_<cheat>` and `_lv_<cheat>` (numbers). Cheats include income, health, stress, skills, immortal, levy, legend spread, and auto-ascension. In multiplayer, one player enabling a cheat enables it for everyone the tick applies to.
+- **Toggle settings:** `ucm_crozier_cheats_tier`, `_power`, `_freq`, `_no_toast`, `_tick_pending`, `_realm`.
 - **UI state:** `yyz_list_mode`, `yyz_sort_key`, `yyz_sort_desc`, `xa_height`.
-- **Other:** `skonester_domicile_cheat_active`.
+- **Other:** `ucm_domicile_cheat_active`.
 
 **World-wide, fine as globals:**
 
-- Compatibility detection: `skonester_compat_*_loaded`, `MTS_is_loaded`.
-- AI world settings: `skonester_ai_*`, `skonester_world_ai_boost_*`, `skonester_celestial_governor_rotation_grace_skip`, `skonester_samge_years_accum`.
-- World rules: `skonester_family_planning_*`, `skonester_daming_ming_gov_menu_unlocked`, `zhuge_has_guoxi1`, `save_the_data`. Check these in Phase 1; some may be per-player.
+- Compatibility detection: `ucm_compat_*_loaded`, `MTS_is_loaded`.
+- AI world settings: `ucm_ai_*`, `ucm_world_ai_boost_*`, `ucm_celestial_governor_rotation_grace_skip`, `ucm_samge_years_accum`.
+- World rules: `ucm_family_planning_*`, `ucm_daming_ming_gov_menu_unlocked`, `zhuge_has_guoxi1`, `save_the_data`. Check these in Phase 1; some may be per-player.
 - Read-only catalogs: tradition and men-at-arms global lists.
 
 ## Innovation generator (task 5)
 
-The missing script couldn't be recovered: it's not in the git history. It's rewritten as `tools/gen_skonester_cw_innovation_sguis.py`, which reuses the parser from `gen_cw_tradition_picker_lists.py`.
+The missing script couldn't be recovered: it's not in the git history. It's rewritten as `tools/gen_ucm_cw_innovation_sguis.py`, which reuses the parser from `gen_cw_tradition_picker_lists.py`.
 
 Running it against 1.20.1.2 reproduces the shipped files byte-for-byte except for **two innovations the shipped files were missing**: `fp3_innovation_fritware` and `fp3_innovation_mural_sextant` (Legacy of Persia). Their culture-window unlock/remove buttons pointed at scripted GUIs that didn't exist. The regenerated files are included.
 
 ```
-python tools/gen_skonester_cw_innovation_sguis.py --game-dir "C:/Program Files (x86)/Steam/steamapps/common/Crusader Kings III/game"
+python tools/gen_ucm_cw_innovation_sguis.py --game-dir "C:/Program Files (x86)/Steam/steamapps/common/Crusader Kings III/game"
 ```

@@ -1,0 +1,76 @@
+﻿namespace = ucm_cheat_menu
+
+# 庄园编辑子菜单（目标 = global_var:ucm_cheat_menu_recipient / scope:ucm_cheat_menu_target）
+ucm_cheat_menu.3095 = {
+  type = character_event
+  title = ucm_cheat_menu.3095.t
+  desc = ucm_cheat_menu.3095.desc
+  theme = stewardship
+  left_portrait = root
+  right_portrait = scope:ucm_cheat_menu_target
+
+  immediate = {
+    root = { save_scope_as = actor }
+    ucm_cheat_menu_sync_target_effect = yes
+  }
+
+  option = {
+    name = ucm_cheat_menu.00x.close
+  }
+
+  option = {
+    name = ucm_cheat_menu.3095.opt_preset_economy
+    custom_tooltip = ucm_cheat_menu.3095.opt_preset_economy_tt
+    ucm_cheat_menu_sync_target_effect = yes ucm_cheat_menu_domicile_preset_economy_apply_effect = yes
+    scope:actor = {
+    if = { limit = { exists =
+    scope:ucm_domicile_holder }
+    send_interface_toast = { type = event_toast_effect_good title =
+    ucm_cheat_menu_domicile_preset_economy_toast_title left_icon =
+    scope:actor right_icon =
+    scope:ucm_domicile_holder
+    trigger_event = ucm_cheat_menu.3095 } } }
+  }
+
+  option = {
+    name = ucm_cheat_menu.3095.opt_preset_military
+    custom_tooltip = ucm_cheat_menu.3095.opt_preset_military_tt
+    ucm_cheat_menu_sync_target_effect = yes ucm_cheat_menu_domicile_preset_military_apply_effect = yes
+    scope:actor = {
+    if = { limit = { exists =
+    scope:ucm_domicile_holder }
+    send_interface_toast = { type = event_toast_effect_good title =
+    ucm_cheat_menu_domicile_preset_military_toast_title left_icon =
+    scope:actor right_icon =
+    scope:ucm_domicile_holder
+    trigger_event = ucm_cheat_menu.3095 } } }
+  }
+
+  option = {
+    name = ucm_cheat_menu.3095.opt_preset_balanced
+    custom_tooltip = ucm_cheat_menu.3095.opt_preset_balanced_tt
+    ucm_cheat_menu_sync_target_effect = yes ucm_cheat_menu_domicile_preset_balanced_apply_effect = yes
+    scope:actor = {
+    if = { limit = { exists =
+    scope:ucm_domicile_holder }
+    send_interface_toast = { type = event_toast_effect_good title =
+    ucm_cheat_menu_domicile_preset_balanced_toast_title left_icon =
+    scope:actor right_icon =
+    scope:ucm_domicile_holder
+    trigger_event = ucm_cheat_menu.3095 } } }
+  }
+
+  option = {
+    name = ucm_cheat_menu.3095.opt_clear_external
+    custom_tooltip = ucm_cheat_menu.3095.opt_clear_external_tt
+    ucm_cheat_menu_sync_target_effect = yes ucm_cheat_menu_domicile_clear_external_apply_effect = yes
+    scope:actor = {
+    if = { limit = { exists =
+    scope:ucm_domicile_holder }
+    send_interface_toast = { type = event_toast_effect_neutral title =
+    ucm_cheat_menu_domicile_clear_external_toast_title left_icon =
+    scope:actor right_icon =
+    scope:ucm_domicile_holder
+    trigger_event = ucm_cheat_menu.3095 } } }
+  }
+}

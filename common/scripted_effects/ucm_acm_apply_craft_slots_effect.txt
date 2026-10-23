@@ -1,0 +1,21 @@
+﻿# ACM: GUI 五修饰槽（m1–m5）+ 层数 ucm_craft_m{1..5}_cnt；在宝物 scope 上注入 advcm 叠层修饰符。
+ucm_apply_crafted_artifact_modifiers_effect = {
+  if = {
+    limit = {
+      NOT = { exists = scope:ucm_acm_craft_creator }
+      exists = scope:actor
+    }
+    scope:actor = { save_scope_as = ucm_acm_craft_creator }
+  }
+  if = {
+    limit = { exists = scope:ucm_new_crafted_artifact }
+    scope:ucm_new_crafted_artifact = {
+      ucm_acm_add_artifact_modifier_slot_1 = yes
+      ucm_acm_add_artifact_modifier_slot_2 = yes
+      ucm_acm_add_artifact_modifier_slot_3 = yes
+      ucm_acm_add_artifact_modifier_slot_4 = yes
+      ucm_acm_add_artifact_modifier_slot_5 = yes
+      ucm_acm_persist_craft_slots_on_artifact_effect = yes
+    }
+  }
+}

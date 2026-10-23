@@ -1,0 +1,5 @@
+﻿l_turkish:
+ ucm_acm_faith_editor_apply_target: "İnancı Uygula"
+ ucm_acm_faith_editor_apply_target_tt: "Seçili karakteri bu düzenleyicide açık olan inanca geçir."
+ ucm_acm_faith_applied_toast: "İnanç Seçili Karaktere Uygulandı"
+ ucm_acm_religion_picker_hint: "① İnanç adına tıklayarak seçili karaktere uygula; ② » ile inanç düzenleyicisini aç."

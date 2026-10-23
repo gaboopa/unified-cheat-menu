@@ -14,7 +14,7 @@ sol_war_without_bounds_interaction = {
 	use_diplomatic_range = no
 
 	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
+		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
 		NOT = {
 			scope:recipient = scope:actor
 		}
@@ -75,7 +75,7 @@ sol_expansion_war_interaction = {
 		}
 		scope:actor = {
 			is_ai = no
-			has_character_flag = skonester_character_interaction_menu_open
+			has_character_flag = ucm_character_interaction_menu_open
 			has_character_flag = bone_cheat_interactions_flag
 			NOT = {
 				is_at_war_with = scope:recipient

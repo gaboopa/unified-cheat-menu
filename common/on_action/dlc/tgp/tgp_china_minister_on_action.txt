@@ -1,6 +1,6 @@
 ﻿# 自游戏本体复制；replace_path 覆盖。仅天朝神州（吏部尚书「管理人才」）使用。
 # 更新游戏后请对照原版合并差异。
-# skonester：宫廷职候选改用 skonester_positions_loose_court_appointment_candidate_trigger（不按信仰/性别筛）。
+# ucm：宫廷职候选改用 ucm_positions_loose_court_appointment_candidate_trigger（不按信仰/性别筛）。
 
 tgp_minister_manage_talent_on_action = {
   trigger = {
@@ -68,7 +68,7 @@ tgp_minister_manage_talent_on_action = {
               ordered_in_list = {
                 list = court_position_candidates
                 limit = {
-                  skonester_positions_loose_court_appointment_candidate_trigger = yes
+                  ucm_positions_loose_court_appointment_candidate_trigger = yes
                 }
                 order_by = aptitude:court_physician_court_position
                 save_scope_as = new_court_position_holder
@@ -86,7 +86,7 @@ tgp_minister_manage_talent_on_action = {
               ordered_in_list = {
                 list = court_position_candidates
                 limit = {
-                  skonester_positions_loose_court_appointment_candidate_trigger = yes
+                  ucm_positions_loose_court_appointment_candidate_trigger = yes
                 }
                 order_by = aptitude:travel_leader_court_position
                 save_scope_as = new_court_position_holder
@@ -104,7 +104,7 @@ tgp_minister_manage_talent_on_action = {
               ordered_in_list = {
                 list = court_position_candidates
                 limit = {
-                  skonester_positions_loose_court_appointment_candidate_trigger = yes
+                  ucm_positions_loose_court_appointment_candidate_trigger = yes
                 }
                 order_by = aptitude:grand_mentor_court_position
                 save_scope_as = new_court_position_holder
@@ -122,7 +122,7 @@ tgp_minister_manage_talent_on_action = {
               ordered_in_list = {
                 list = court_position_candidates
                 limit = {
-                  skonester_positions_loose_court_appointment_candidate_trigger = yes
+                  ucm_positions_loose_court_appointment_candidate_trigger = yes
                 }
                 order_by = aptitude:grand_preceptor_court_position
                 save_scope_as = new_court_position_holder
@@ -140,7 +140,7 @@ tgp_minister_manage_talent_on_action = {
               ordered_in_list = {
                 list = court_position_candidates
                 limit = {
-                  skonester_positions_loose_court_appointment_candidate_trigger = yes
+                  ucm_positions_loose_court_appointment_candidate_trigger = yes
                 }
                 order_by = aptitude:court_tutor_court_position
                 save_scope_as = new_court_position_holder
@@ -158,7 +158,7 @@ tgp_minister_manage_talent_on_action = {
               ordered_in_list = {
                 list = court_position_candidates
                 limit = {
-                  skonester_positions_loose_court_appointment_candidate_trigger = yes
+                  ucm_positions_loose_court_appointment_candidate_trigger = yes
                 }
                 order_by = aptitude:keeper_of_the_harem_court_position
                 save_scope_as = new_court_position_holder
@@ -176,7 +176,7 @@ tgp_minister_manage_talent_on_action = {
               ordered_in_list = {
                 list = court_position_candidates
                 limit = {
-                  skonester_positions_loose_court_appointment_candidate_trigger = yes
+                  ucm_positions_loose_court_appointment_candidate_trigger = yes
                 }
                 order_by = aptitude:chief_eunuch_court_position
                 save_scope_as = new_court_position_holder
@@ -194,7 +194,7 @@ tgp_minister_manage_talent_on_action = {
               ordered_in_list = {
                 list = court_position_candidates
                 limit = {
-                  skonester_positions_loose_court_appointment_candidate_trigger = yes
+                  ucm_positions_loose_court_appointment_candidate_trigger = yes
                 }
                 order_by = aptitude:royal_architect_court_position
                 save_scope_as = new_court_position_holder
@@ -212,7 +212,7 @@ tgp_minister_manage_talent_on_action = {
               ordered_in_list = {
                 list = court_position_candidates
                 limit = {
-                  skonester_positions_loose_court_appointment_candidate_trigger = yes
+                  ucm_positions_loose_court_appointment_candidate_trigger = yes
                 }
                 order_by = aptitude:seneschal_court_position
                 save_scope_as = new_court_position_holder
@@ -230,7 +230,7 @@ tgp_minister_manage_talent_on_action = {
               ordered_in_list = {
                 list = court_position_candidates
                 limit = {
-                  skonester_positions_loose_court_appointment_candidate_trigger = yes
+                  ucm_positions_loose_court_appointment_candidate_trigger = yes
                 }
                 order_by = aptitude:court_poet_court_position
                 save_scope_as = new_court_position_holder
@@ -248,7 +248,7 @@ tgp_minister_manage_talent_on_action = {
               ordered_in_list = {
                 list = court_position_candidates
                 limit = {
-                  skonester_positions_loose_court_appointment_candidate_trigger = yes
+                  ucm_positions_loose_court_appointment_candidate_trigger = yes
                 }
                 order_by = aptitude:grand_guardian_court_position
                 save_scope_as = new_court_position_holder
@@ -266,7 +266,7 @@ tgp_minister_manage_talent_on_action = {
               ordered_in_list = {
                 list = court_position_candidates
                 limit = {
-                  skonester_positions_loose_court_appointment_candidate_trigger = yes
+                  ucm_positions_loose_court_appointment_candidate_trigger = yes
                 }
                 order_by = aptitude:fire_dragon_engineer_court_position
                 save_scope_as = new_court_position_holder
@@ -284,7 +284,7 @@ tgp_minister_manage_talent_on_action = {
               ordered_in_list = {
                 list = court_position_candidates
                 limit = {
-                  skonester_positions_loose_court_appointment_candidate_trigger = yes
+                  ucm_positions_loose_court_appointment_candidate_trigger = yes
                 }
                 order_by = aptitude:chronicler_court_position
                 save_scope_as = new_court_position_holder
@@ -302,7 +302,7 @@ tgp_minister_manage_talent_on_action = {
               ordered_in_list = {
                 list = court_position_candidates
                 limit = {
-                  skonester_positions_loose_court_appointment_candidate_trigger = yes
+                  ucm_positions_loose_court_appointment_candidate_trigger = yes
                 }
                 order_by = aptitude:court_artificer_court_position
                 save_scope_as = new_court_position_holder

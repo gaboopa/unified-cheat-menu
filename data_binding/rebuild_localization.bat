@@ -3,7 +3,7 @@ setlocal
 cd /d "%~dp0"
 
 echo ========================================
-echo SKONESTER LOCALIZATION REBUILDER
+echo UCM LOCALIZATION REBUILDER
 echo ========================================
 echo.
 echo Scanning localization files...

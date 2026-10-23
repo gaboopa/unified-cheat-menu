@@ -130,7 +130,7 @@ Group actions (Section 5) live inside the category they belong to. For example, 
 
 Each category opens a focused submenu. Complex categories may open a dedicated GUI editor.
 
-Layer 2 is a single custom window with tabs, opened from the Layer 1 interaction. Skonester already uses this pattern (`common/character_interactions/01_skonester_gui_launcher_interactions.txt`). Skonester's existing decision-based menus stay available during migration.
+Layer 2 is a single custom window with tabs, opened from the Layer 1 interaction. Skonester already uses this pattern (`common/character_interactions/01_ucm_gui_launcher_interactions.txt`). Skonester's existing decision-based menus stay available during migration.
 
 ### Layer 3 — Specialized editors
 
@@ -138,14 +138,14 @@ Use dedicated editing windows for operations that involve large lists, many valu
 
 | Editor               | Intended functionality                                             | Skonester starting point                       |
 | -------------------- | ------------------------------------------------------------------ | ---------------------------------------------- |
-| Character Editor     | Skills, traits, genetics, health, sexuality, age, perks, modifiers | `skonester_trait_editor.gui`, `skonester_lifestyle.gui`, `skonester_cheat_trait_editor.gui` |
+| Character Editor     | Skills, traits, genetics, health, sexuality, age, perks, modifiers | `ucm_trait_editor.gui`, `ucm_lifestyle.gui`, `ucm_cheat_trait_editor.gui` |
 | Relationship Editor  | Clicked and second character: relationship status, family relationships | None                                      |
 | Title Manager        | Clicked title: de jure editing, claims, transfers                  | None                                           |
-| Culture Editor       | Traditions, pillars, innovations, conversions                      | `skonester_acm_culture_picker.gui`, `skonester_culture_tradition_picker.gui` |
-| Faith Editor         | Rites, tenets, doctrines, sins, virtues, conversions               | `skonester_acm_faith_editor.gui` and related pickers |
+| Culture Editor       | Traditions, pillars, innovations, conversions                      | `ucm_acm_culture_picker.gui`, `ucm_culture_tradition_picker.gui` |
+| Faith Editor         | Rites, tenets, doctrines, sins, virtues, conversions               | `ucm_acm_faith_editor.gui` and related pickers |
 | Construction Manager | Holdings, building chains, building slots                          | None                                           |
-| Army Manager         | Unit types, quantities, regiments, combat modifiers                | `skonester_sand_soldiers.gui`                  |
-| Artifact Workshop    | Artifact creation and editing                                      | `skonester_artifact_craft.gui`, `skonester_artifact_repair.gui` |
+| Army Manager         | Unit types, quantities, regiments, combat modifiers                | `ucm_sand_soldiers.gui`                  |
+| Artifact Workshop    | Artifact creation and editing                                      | `ucm_artifact_craft.gui`, `ucm_artifact_repair.gui` |
 | Character Generator  | Family, council, court, and custom character generation            | Existing generation interactions               |
 
 Editors must not become a competing navigation system. Each editor keeps its parent menu context and has an obvious way back.
@@ -169,7 +169,7 @@ There are no pins, saved selection lists, or extra target slots.
 
 The current player character and the clicked target must never be silently swapped for each other. Every two-character action shows both names before it runs.
 
-**Storage:** Because the mod is single-player only (Section 1.1, requirement 11), menu state can stay in global variables, as the baseline does (`skonester_crozier_cheats_other` already holds the second character). No migration is needed.
+**Storage:** Because the mod is single-player only (Section 1.1, requirement 11), menu state can stay in global variables, as the baseline does (`ucm_crozier_cheats_other` already holds the second character). No migration is needed.
 
 ### 3.2 Navigation consistency
 
@@ -228,7 +228,7 @@ An in-game history may record completed actions, but it must not imply that all 
 
 | Action                    | Functional requirement                                 | Engine support |
 | ------------------------- | ------------------------------------------------------ | -------------- |
-| Change age                | Increase/decrease age or use age presets               | Baseline has it (`skonester_change_age_interaction.txt`) |
+| Change age                | Increase/decrease age or use age presets               | Baseline has it (`ucm_change_age_interaction.txt`) |
 | Change sexuality          | Heterosexual, homosexual, bisexual, asexual            | `set_sexuality` |
 | Change weight             | Adjustable weight modification                         | `change_current_weight` |
 | Change nickname           | Choose from predefined nicknames                       | `give_nickname` / nickname effects |
@@ -419,7 +419,7 @@ Validate parentage changes to prevent ancestry cycles, contradictory parent assi
 
 Provide:
 
-- Start pregnancy (`make_pregnant`, baseline: `skonester_cheat_menu_force_pregnancy_effects.txt`).
+- Start pregnancy (`make_pregnant`, baseline: `ucm_cheat_menu_force_pregnancy_effects.txt`).
 - End pregnancy.
 - Select father (`make_pregnant = { father = … }`).
 - Request single-child, twin, or triplet outcomes (`number_of_children`).
@@ -477,12 +477,12 @@ Provide:
 - Take selected title.
 - Take all eligible titles.
 - Transfer title to the second character.
-- Create title (baseline: `skonester_create_titular_interactions.txt`).
+- Create title (baseline: `ucm_create_titular_interactions.txt`).
 - Rename title (`set_title_name` with the text-entry widget; see Section 7.3).
 - Destroy title.
 - Revoke title.
 - Grant title.
-- Merge titles using Skonester's existing behavior (`skonester_merge_titles.txt`).
+- Merge titles using Skonester's existing behavior (`ucm_merge_titles.txt`).
 - Select titles by rank.
 - Select all titles held by a specified character.
 - Select realm and sub-realm titles.
@@ -602,7 +602,7 @@ Required controls:
 - Change heritage.
 - Change language.
 - Change martial customs.
-- Add/remove traditions. Baseline uses generated lists (`skonester_cw_tradition_picker_lists_generated.txt`); `every_culture_tradition` can replace them.
+- Add/remove traditions. Baseline uses generated lists (`ucm_cw_tradition_picker_lists_generated.txt`); `every_culture_tradition` can replace them.
 - Replace traditions.
 - Change cultural acceptance.
 - Trigger supported hybridization/divergence workflows.
@@ -614,8 +614,8 @@ Editing a culture changes the shared culture definition, not just the character 
 
 Provide:
 
-- Add individual innovation. Baseline uses one generated scripted GUI per innovation (`skonester_cw_innovation_unlock_generated.txt`). `add_innovation` accepts a `culture_innovation` target, so one scripted GUI taking the innovation as a scope could replace all of them, if the GUI can pass the innovation as a scope the way the tradition picker does (verify).
-- Remove individual innovation (same; `skonester_cw_innovation_remove_generated.txt`).
+- Add individual innovation. Baseline uses one generated scripted GUI per innovation (`ucm_cw_innovation_unlock_generated.txt`). `add_innovation` accepts a `culture_innovation` target, so one scripted GUI taking the innovation as a scope could replace all of them, if the GUI can pass the innovation as a scope the way the tradition picker does (verify).
+- Remove individual innovation (same; `ucm_cw_innovation_remove_generated.txt`).
 - Add all eligible innovations.
 - Complete innovations by era.
 - Change cultural fascination/head where supported.
@@ -650,7 +650,7 @@ Provide:
 - Edit clergy doctrines.
 - Edit religious-head settings.
 - Select sins and virtues (the game keeps at most `MAX_VIRTUES_SINS = 7`, chosen from core and approved tenets).
-- Preserve Skonester's empty-tenet-slot fill and cleanup tools (`skonester_acm_faith_fill_empty_tenet_slots_effect`, `skonester_acm_faith_clear_empty_tenet_slots_effect`).
+- Preserve Skonester's empty-tenet-slot fill and cleanup tools (`ucm_acm_faith_fill_empty_tenet_slots_effect`, `ucm_acm_faith_clear_empty_tenet_slots_effect`).
 
 **Unverified: extra core tenets.** There's no slot-adding effect or define, but `add_rite_tenet` documents no limit. Whether a rite can hold more core tenets than usual has to be tested in game. Treat it as experimental until then.
 
@@ -762,7 +762,7 @@ Provide:
 - Spawn predefined military presets.
 - Reinforce generated units.
 
-Unit pickers use a generated men-at-arms catalog (baseline: `skonester_sand_maa_catalog_effects.txt`). Units added by other mods need a regenerated catalog or a compatibility patch.
+Unit pickers use a generated men-at-arms catalog (baseline: `ucm_sand_maa_catalog_effects.txt`). Units added by other mods need a regenerated catalog or a compatibility patch.
 
 ### Men-at-Arms Editor
 
@@ -1343,8 +1343,8 @@ Use CK3's existing modding mechanisms:
 
 **Generated catalogs.** There's no loop over building types, men-at-arms types, or artifact templates (`every_maa_regiment` and `every_artifact` cover existing regiments and artifacts, not the definitions). Pickers for those are **generated offline** from the game files by scripts in `tools/`, as the baseline already does:
 
-- `tools/gen_cw_tradition_picker_lists.py` produces `skonester_cw_tradition_picker_lists_generated.txt`.
-- `tools/gen_skonester_cw_innovation_sguis.py` produces the innovation unlock/remove scripted GUIs (rewritten in Phase 0; see [phase0-baseline.md](phase0-baseline.md)).
+- `tools/gen_cw_tradition_picker_lists.py` produces `ucm_cw_tradition_picker_lists_generated.txt`.
+- `tools/gen_ucm_cw_innovation_sguis.py` produces the innovation unlock/remove scripted GUIs (rewritten in Phase 0; see [phase0-baseline.md](phase0-baseline.md)).
 
 Generated files say "do not edit by hand" and are rebuilt whenever the target game version or a supported mod changes. Catalogs live in global variable lists.
 
@@ -1519,7 +1519,7 @@ All ten feature categories are in the final scope, but development proceeds in c
 2. Run `script_docs` in the in-game console and keep the generated effect/trigger/data-type logs as the reference for verifying everything marked "verify" in this spec.
 3. Review each vanilla override in Section 7.4.1 and each define in Section 7.4.2, and decide whether to keep, minimize, or remove it.
 4. List every global variable that holds per-player state. (Done; migration no longer needed since v1.3 made the mod single-player only.)
-5. Recover or rewrite the missing `gen_skonester_cw_innovation_sguis.py` generator.
+5. Recover or rewrite the missing `gen_ucm_cw_innovation_sguis.py` generator.
 6. Click through each existing feature and record whether it works, using the "Verify" notes in `agent.md`.
 
 Phase 0 progress and findings are recorded in [phase0-baseline.md](phase0-baseline.md). Phase 1 is described in [phase1-foundation.md](phase1-foundation.md), Phase 2 in [phase2-characters.md](phase2-characters.md).

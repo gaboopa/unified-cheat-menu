@@ -1,0 +1,165 @@
+﻿namespace = ucm_cheat_menu
+
+# 伯爵领作弊：以右键角色为「领地统治者」作用域；先选其直辖/封臣伯爵领，再选四项拉满（控制力、发展度、民众好感、文化信仰）
+
+ucm_cheat_menu.3070 = {
+  type = character_event
+  title = ucm_cnt.3070.t
+  desc = ucm_ui_no_hover_tooltip
+  theme = stewardship
+  left_portrait = scope:actor
+  right_portrait = scope:ucm_cnt_edit_target
+
+  immediate = {
+    if = {
+      limit = { exists = scope:ucm_cnt_edit_target }
+      scope:ucm_cnt_edit_target = { save_scope_as = ucm_cnt_realm_holder }
+    }
+    else = {
+      scope:actor = { save_scope_as = ucm_cnt_realm_holder }
+    }
+  }
+
+  option = {
+    name = ucm_cnt.3070.pick_domain
+    trigger = {
+      ucm_cheat_menu_menu_enabled_trigger = yes
+      scope:ucm_cnt_realm_holder = {
+        is_playable_character = yes
+        is_landed = yes
+      }
+    }
+    scope:actor = {
+      remove_character_flag = ucm_cnt_vassal_scope
+      add_character_flag = ucm_cnt_domain_scope
+      trigger_event = ucm_cheat_menu.3075
+    }
+  }
+  option = {
+    name = ucm_cnt.3070.pick_vassal_counties
+    trigger = {
+      ucm_cheat_menu_menu_enabled_trigger = yes
+      scope:ucm_cnt_realm_holder = {
+        is_playable_character = yes
+        is_landed = yes
+      }
+    }
+    scope:actor = {
+      remove_character_flag = ucm_cnt_domain_scope
+      add_character_flag = ucm_cnt_vassal_scope
+      trigger_event = ucm_cheat_menu.3075
+    }
+  }
+  option = {
+    name = ucm_cheat_menu.00x.close
+    scope:actor = {
+      remove_character_flag = ucm_cnt_domain_scope
+      remove_character_flag = ucm_cnt_vassal_scope
+      if = {
+        limit = { has_variable = ucm_cnt_edit_target }
+        remove_variable = ucm_cnt_edit_target
+      }
+    }
+  }
+}
+
+ucm_cheat_menu.3075 = {
+  type = character_event
+  title = ucm_cnt.3075.t
+  desc = ucm_ui_no_hover_tooltip
+  theme = stewardship
+  left_portrait = scope:actor
+  right_portrait = scope:ucm_cnt_edit_target
+
+  immediate = {
+    if = {
+      limit = { NOT = { exists = scope:ucm_cnt_realm_holder } }
+      if = {
+        limit = { exists = scope:ucm_cnt_edit_target }
+        scope:ucm_cnt_edit_target = { save_scope_as = ucm_cnt_realm_holder }
+      }
+      else = {
+        scope:actor = { save_scope_as = ucm_cnt_realm_holder }
+      }
+    }
+  }
+
+  option = {
+    name = ucm_cnt.3075.max_control
+    trigger = {
+      ucm_cheat_menu_menu_enabled_trigger = yes
+      exists = scope:ucm_cnt_realm_holder
+      scope:actor = {
+        OR = {
+          has_character_flag = ucm_cnt_domain_scope
+          has_character_flag = ucm_cnt_vassal_scope
+        }
+      }
+    }
+    ucm_cnt_apply_max_control_effect = yes
+    scope:actor = { trigger_event = ucm_cheat_menu.3075 }
+  }
+  option = {
+    name = ucm_cnt.3075.max_development
+    trigger = {
+      ucm_cheat_menu_menu_enabled_trigger = yes
+      exists = scope:ucm_cnt_realm_holder
+      scope:actor = {
+        OR = {
+          has_character_flag = ucm_cnt_domain_scope
+          has_character_flag = ucm_cnt_vassal_scope
+        }
+      }
+    }
+    ucm_cnt_apply_max_development_effect = yes
+    scope:actor = { trigger_event = ucm_cheat_menu.3075 }
+  }
+  option = {
+    name = ucm_cnt.3075.max_popular
+    trigger = {
+      ucm_cheat_menu_menu_enabled_trigger = yes
+      exists = scope:ucm_cnt_realm_holder
+      scope:actor = {
+        OR = {
+          has_character_flag = ucm_cnt_domain_scope
+          has_character_flag = ucm_cnt_vassal_scope
+        }
+      }
+    }
+    ucm_cnt_apply_popular_surge_effect = yes
+    scope:actor = { trigger_event = ucm_cheat_menu.3075 }
+  }
+  option = {
+    name = ucm_cnt.3075.max_culture_faith
+    trigger = {
+      ucm_cheat_menu_menu_enabled_trigger = yes
+      exists = scope:ucm_cnt_realm_holder
+      scope:actor = {
+        OR = {
+          has_character_flag = ucm_cnt_domain_scope
+          has_character_flag = ucm_cnt_vassal_scope
+        }
+      }
+    }
+    ucm_cnt_apply_culture_faith_effect = yes
+    scope:actor = { trigger_event = ucm_cheat_menu.3075 }
+  }
+  option = {
+    name = ucm_cnt.3075.back
+    trigger = { ucm_cheat_menu_menu_enabled_trigger = yes }
+    ucm_cnt_clear_scope_flags_effect = yes
+    scope:actor = { trigger_event = ucm_cheat_menu.3070 }
+  }
+  option = {
+    name = ucm_cheat_menu.00x.close
+    scope:actor = {
+    remove_character_flag =
+    ucm_cnt_domain_scope
+    remove_character_flag =
+    ucm_cnt_vassal_scope
+    if = { limit = { has_variable =
+    ucm_cnt_edit_target }
+    remove_variable =
+    ucm_cnt_edit_target } }
+  }
+}

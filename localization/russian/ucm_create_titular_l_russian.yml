@@ -1,0 +1,23 @@
+﻿l_russian:
+ GET_TARGET_TITLE_NAME:0 "[target.GetBaseNameNoTierNoTooltip]"
+ GET_TARGET_TITLE_ADJECTIVE:0 "[target.GetAdjectiveNoTooltip]" #not used
+
+ ucm_create_titular.back:0 "Назад"
+
+
+ ucm_create_titular:0 "Создать титульный титул"
+
+ ucm_create_titular.1000.t:0 "Выбор владельца"
+ ucm_create_titular.1000.desc:0 "#S Кому достанется этот титул? #!"
+
+ ucm_create_titular.1000.me:0 "Взять себе!"
+ ucm_create_titular.1000.recipient:0 "Даровать [recipient.GetNameNoTooltip]"
+
+
+ ucm_create_titular.1001.desc:0 "#S Выберите желаемый ранг титула #!"
+ ucm_create_titular.1001.t:0 "Ранг титула"
+
+ ucm_create_titular.1001.duchy:0 "Создать герцогство #!"
+ ucm_create_titular.1001.kingdom:0 "Создать королевство"
+ ucm_create_titular.1001.empire:0 "Создать империю"
+ ucm_create_titular.1001.hegemony:0 "Создать гегемонию"

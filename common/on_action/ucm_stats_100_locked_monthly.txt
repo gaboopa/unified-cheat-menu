@@ -1,0 +1,19 @@
+﻿# 属性100：每月校正持有特质的角色六维（仅追加 monthly_global_pulse）
+
+monthly_global_pulse = {
+  on_actions = {
+    ucm_stats_100_locked_monthly_pulse
+  }
+}
+
+ucm_stats_100_locked_monthly_pulse = {
+	trigger = { ucm_single_player_trigger = yes }
+  effect = {
+    every_living_character = {
+      limit = {
+        has_trait = ucm_trait_stats_100_locked
+      }
+      ucm_stats_100_clamp_all_skills_effect = yes
+    }
+  }
+}

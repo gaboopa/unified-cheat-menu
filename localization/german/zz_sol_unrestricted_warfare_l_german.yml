@@ -7,13 +7,13 @@
  sol_captive_war_cb_prisoners.tt_attacker:1 "Nach eurem Sieg werden viele von [defender.GetShortUINamePossessive] [courtiers|E] zu euren Gefangenen. Ihre Zahl richtet sich nach dem Rang von [defender.GetHerHis]."
 
 # Entscheidungen zum Aktivieren/Deaktivieren der Spezialtruppen
- sol_expanded_war_special_troops_activate:0 "Skonester-Kriegerscharen beschwören"
+ sol_expanded_war_special_troops_activate:0 "Kriegerscharen beschwören"
  sol_expanded_war_special_troops_activate_title:0 "Freikompanie beschwören"
  sol_expanded_war_special_troops_activate_desc:0 "Rufe Kriegerscharen zu den Waffen, die allein deiner Sache dienen. Diese Truppen verschwinden mit dem Ende des Krieges, kosten weder Gold noch Versorgung und erscheinen ausschließlich an deinem Herrschaftssitz."
  sol_expanded_war_special_troops_activate_tooltip:0 "Bei Kriegserklärungen schließen sich besondere Kriegerscharen deinen Streitkräften an."
  sol_expanded_war_special_troops_activate_confirm:0 "Sie beschwören"
 
- sol_expanded_war_special_troops_deactivate:0 "Skonester-Kriegerscharen entlassen"
+ sol_expanded_war_special_troops_deactivate:0 "Kriegerscharen entlassen"
  sol_expanded_war_special_troops_deactivate_title:0 "Freikompanie entlassen"
  sol_expanded_war_special_troops_deactivate_desc:0 "Entlasse deine beschworenen Krieger. Künftig werden weder Kriegerscharen zu Beginn eines Krieges erscheinen noch Garnisonen oder Aufgebote auf wundersame Weise wiederhergestellt."
  sol_expanded_war_special_troops_deactivate_tooltip:0 "Bei Kriegserklärungen werden keine Kriegerscharen mehr erscheinen."

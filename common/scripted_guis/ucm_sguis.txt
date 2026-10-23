@@ -17,21 +17,21 @@ ucm_open_trait_editor = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { ucm_menu_scopes_effect = yes skonester_cheat_menu_open_base_game_traits_effect = yes }
+	effect = { ucm_menu_scopes_effect = yes ucm_cheat_menu_open_base_game_traits_effect = yes }
 }
 
 ucm_open_cheat_trait_editor = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { ucm_menu_scopes_effect = yes skonester_cheat_menu_open_new_traits_effect = yes }
+	effect = { ucm_menu_scopes_effect = yes ucm_cheat_menu_open_new_traits_effect = yes }
 }
 
 ucm_open_lifestyle_editor = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { ucm_menu_scopes_effect = yes skonester_cheat_menu_open_lifestyle_effect = yes }
+	effect = { ucm_menu_scopes_effect = yes ucm_cheat_menu_open_lifestyle_effect = yes }
 }
 
 ucm_open_culture_picker = {
@@ -59,27 +59,27 @@ ucm_open_army_spawner = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { ucm_menu_scopes_effect = yes skonester_cheat_menu_open_sand_soldiers_effect = yes }
+	effect = { ucm_menu_scopes_effect = yes ucm_cheat_menu_open_sand_soldiers_effect = yes }
 }
 
 ucm_open_artifact_crafter = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { ucm_menu_scopes_effect = yes skonester_cheat_menu_open_artifact_craft_effect = yes }
+	effect = { ucm_menu_scopes_effect = yes ucm_cheat_menu_open_artifact_craft_effect = yes }
 }
 
 ucm_open_artifact_repair = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { ucm_menu_scopes_effect = yes skonester_cheat_menu_open_artifact_repair_effect = yes }
+	effect = { ucm_menu_scopes_effect = yes ucm_cheat_menu_open_artifact_repair_effect = yes }
 }
 
 ucm_open_console_helper = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	effect = { ucm_menu_scopes_effect = yes skonester_cheat_menu_open_console_helper_effect = yes }
+	effect = { ucm_menu_scopes_effect = yes ucm_cheat_menu_open_console_helper_effect = yes }
 }
 
 # --- Quick actions on the clicked target ------------------------------------
@@ -112,16 +112,16 @@ ucm_second_set_target = {
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = {
 		ucm_menu_target_valid_trigger = yes
-		NOT = { global_var:skonester_crozier_cheats_other ?= var:ucm_target }
+		NOT = { global_var:ucm_crozier_cheats_other ?= var:ucm_target }
 	}
-	effect = { set_global_variable = { name = skonester_crozier_cheats_other value = var:ucm_target } }
+	effect = { set_global_variable = { name = ucm_crozier_cheats_other value = var:ucm_target } }
 }
 
 ucm_second_clear = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { exists = global_var:skonester_crozier_cheats_other }
-	effect = { remove_global_variable = skonester_crozier_cheats_other }
+	is_valid = { exists = global_var:ucm_crozier_cheats_other }
+	effect = { remove_global_variable = ucm_crozier_cheats_other }
 }
 
 # --- Group actions (confirmation event ucm_group.1) --------------------------

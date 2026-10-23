@@ -1,0 +1,19 @@
+﻿ucm_holds_any_authority_titular_title_trigger = {
+  OR = {
+    has_title = title:e_ucm_authority_absolute
+    has_title = title:e_ucm_authority_overlord
+    has_title = title:e_ucm_authority_iron_fist
+    has_title = title:e_ucm_authority_unbound
+    has_title = title:k_ucm_authority_regent
+  }
+}
+
+ucm_is_authority_titular_title_trigger = {
+  OR = {
+    this = title:e_ucm_authority_absolute
+    this = title:e_ucm_authority_overlord
+    this = title:e_ucm_authority_iron_fist
+    this = title:e_ucm_authority_unbound
+    this = title:k_ucm_authority_regent
+  }
+}

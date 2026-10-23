@@ -1,7 +1,7 @@
 ﻿l_russian:
 # \character_interaction_categories
- cheateb_interaction_menu:0 "Главное меню Skonester"
- cheateb_interaction_menu_relation:0 "Skonester: Опции отношений"
+ cheateb_interaction_menu:0 "Главное меню"
+ cheateb_interaction_menu_relation:0 ": Опции отношений"
 
 # \character_interactions
 ## 0

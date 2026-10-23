@@ -1,0 +1,13 @@
+﻿namespace = ucm_crozier_cheats
+
+ucm_crozier_cheats.9000 = {
+	type = character_event
+	hidden = yes
+	trigger = { is_ai = no }
+	immediate = {
+		remove_global_variable = ucm_crozier_cheats_tick_pending
+		ucm_crozier_cheats_setup = yes
+		ucm_crozier_cheats_maintenance = yes
+		if = { limit = { ucm_crozier_cheats_any_toggle = yes } ucm_crozier_cheats_schedule = yes }
+	}
+}

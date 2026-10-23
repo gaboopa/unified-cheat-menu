@@ -1,0 +1,90 @@
+﻿# 自动任免功能测试事件
+
+namespace = ucm_auto_appointment_test
+
+# 测试自动内阁任免功能
+ucm_auto_appointment_test.1000 = {
+  type = character_event
+  title = ucm_auto_appointment_test.1000.t
+  desc = ucm_auto_appointment_test.1000.desc
+  theme = stewardship
+
+  option = {
+    name = ucm_auto_appointment_test.1000.test_cabinet
+    trigger_event = ucm_auto_appointment_test.1100
+  }
+
+  option = {
+    name = ucm_auto_appointment_test.1000.test_court_positions
+    trigger_event = ucm_auto_appointment_test.1200
+  }
+
+  option = {
+    name = ucm_auto_appointment_test.1000.test_both
+    trigger_event = ucm_auto_appointment_test.1300
+  }
+
+  option = {
+    name = ucm_auto_appointment_test.1000.close
+  }
+}
+
+# 测试自动内阁任免
+ucm_auto_appointment_test.1100 = {
+  type = character_event
+  title = ucm_auto_appointment_test.1100.t
+  desc = ucm_auto_appointment_test.1100.desc
+  theme = stewardship
+
+  option = {
+    name = ucm_auto_appointment_test.1100.execute
+    ucm_cheat_menu_court_cabinet_effect = yes
+    custom_tooltip = ucm_auto_appointment_test.1100.effect_tt
+  }
+
+  option = {
+    name = ucm_auto_appointment_test.1100.back
+    trigger_event = ucm_auto_appointment_test.1000
+  }
+}
+
+# 测试自动宫廷职位任免
+ucm_auto_appointment_test.1200 = {
+  type = character_event
+  title = ucm_auto_appointment_test.1200.t
+  desc = ucm_auto_appointment_test.1200.desc
+  theme = stewardship
+
+  option = {
+    name = ucm_auto_appointment_test.1200.execute
+    ucm_positions_sync_liege_player_effect = yes
+    ucm_auto_court_positions_15day_tick_effect = yes
+    custom_tooltip = ucm_auto_appointment_test.1200.effect_tt
+  }
+
+  option = {
+    name = ucm_auto_appointment_test.1200.back
+    trigger_event = ucm_auto_appointment_test.1000
+  }
+}
+
+# 测试同时执行两种自动任免
+ucm_auto_appointment_test.1300 = {
+  type = character_event
+  title = ucm_auto_appointment_test.1300.t
+  desc = ucm_auto_appointment_test.1300.desc
+  theme = stewardship
+
+  option = {
+    name = ucm_auto_appointment_test.1300.execute
+    ucm_cheat_menu_court_cabinet_effect = yes
+    ucm_positions_sync_liege_player_effect = yes
+    ucm_auto_court_positions_15day_tick_effect = yes
+    custom_tooltip = ucm_auto_appointment_test.1300.effect_tt
+  }
+
+  option = {
+    name = ucm_auto_appointment_test.1300.back
+    trigger_event = ucm_auto_appointment_test.1000
+  }
+}

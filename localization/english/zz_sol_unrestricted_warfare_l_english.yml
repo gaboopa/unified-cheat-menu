@@ -9,13 +9,13 @@ sol_war_without_bounds_interaction_desc:0 "$sol_expansion_war_interaction_desc$"
 sol_captive_war_cb_prisoners.tt_attacker:1 "Upon victory, many of [defender.GetShortUINamePossessive] [courtiers|E] shall become your captives, their number determined by [defender.GetHerHis] station."
 
 # Decision to show/hide expanded troops on war declaration
-sol_expanded_war_special_troops_activate:0 "Summon Skonester Warbands"
+sol_expanded_war_special_troops_activate:0 "Summon Cheat Warbands"
 sol_expanded_war_special_troops_activate_title:0 "Summon Free Company"
 sol_expanded_war_special_troops_activate_desc:0 "Call forth warbands loyal to your cause. These fierce cohorts do not linger after the war, draw not upon your coffers nor stores, and hail from your seat of power alone."
 sol_expanded_war_special_troops_activate_tooltip:0 "Special warbands will join your banners upon declaration of war."
 sol_expanded_war_special_troops_activate_confirm:0 "Summon Them"
 
-sol_expanded_war_special_troops_deactivate:0 "Disband Skonester Warbands"
+sol_expanded_war_special_troops_deactivate:0 "Disband Cheat Warbands"
 sol_expanded_war_special_troops_deactivate_title:0 "Dismiss Free Company"
 sol_expanded_war_special_troops_deactivate_desc:0 "Disband your summoned warriors. No warbands shall rally to your banner at the onset of war, nor shall your levies or garrisons be restored by magic or command."
 sol_expanded_war_special_troops_deactivate_tooltip:0 "No warbands will answer your call upon declaration of war."

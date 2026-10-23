@@ -1,7 +1,7 @@
 ﻿l_german:
 # \character_interaction_categories
- cheateb_interaction_menu:0 "Skonester-Hauptmenü"
- cheateb_interaction_menu_relation:0 "Skonester-Beziehungsoptionen"
+ cheateb_interaction_menu:0 "Hauptmenü"
+ cheateb_interaction_menu_relation:0 "Beziehungsoptionen"
 
 # \character_interactions
 ## 0

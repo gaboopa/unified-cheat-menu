@@ -90,8 +90,8 @@
  toc_setheira_interaction:0 "Set as Primary Heir"
  toc_deposed_interaction:0 "Retire or Depose Character"
  toc_deposed_interaction_desc:0 "Remove this character from landed office. Administrative governors retire to their family estate; other rulers use CK3's landless continuation flow."
- skonester_deposed_to_estate_tt:0 "[recipient.GetShortUIName|U] steps down from all landed offices and continues as the head of [recipient.GetHerHis] administrative estate."
- skonester_depose_requires_landless_play_tt:0 "Roads to Power is required to depose a player character without ending the game"
+ ucm_deposed_to_estate_tt:0 "[recipient.GetShortUIName|U] steps down from all landed offices and continues as the head of [recipient.GetHerHis] administrative estate."
+ ucm_depose_requires_landless_play_tt:0 "Roads to Power is required to depose a player character without ending the game"
  toc_greatest_lord_np_interaction:0 "Add Lord Paramount Trait"
  toc_greatest_lord_t_interaction:0 "Add High Blood Trait"
  toc_sneed_seed_interaction:0 "Add First Men Trait"
@@ -621,13 +621,13 @@
  toc_main_debug_interaction:0 "Open Debug Event Menu"
  toc_main_debug_interaction_desc:0 "Open organized debug actions for the selected character."
  
- toc_pregnancy_interaction:0 "Skonester: Trigger Pregnancy"
+ toc_pregnancy_interaction:0 "Cheat: Trigger Pregnancy"
  toc_pregnancy_interaction_desc:0 "Open the menu to make this character pregnant."
  
- toc_spawn_character_interaction:0 "Skonester: Spawn Character"
+ toc_spawn_character_interaction:0 "Cheat: Spawn Character"
  toc_spawn_character_interaction_desc:0 "Generate a new custom character in this character's court."
  
- toc_torture_and_perks_interaction:0 "Skonester Perks and Punishment"
+ toc_torture_and_perks_interaction:0 "Cheat Perks and Punishment"
  toc_torture_and_perks_interaction_desc:0 "Manage perks, restrictions, alliances, and punishments for the selected character."
  
  toc_county_modifier_interaction:0 "Modify Capital County"

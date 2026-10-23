@@ -1,6 +1,6 @@
 ﻿l_english:
  dp_char_editor.main_menu.t:1 "Character Edit Menu"
- dp_char_editor.main_menu.d:0 "Welcome to Skonester Cheat Menu's Character Editor.\nCustomize your character as you like!"
+ dp_char_editor.main_menu.d:0 "Welcome to Unified Cheat Menu's Character Editor.\nCustomize your character as you like!"
 
  dp_char_editor.naming.t:1 "Edit Character Name"
  dp_char_editor.naming.d:0 "Enter the name you want to give your character"

@@ -1,0 +1,49 @@
+﻿# 人类玩家政体锁定：开局记录；日/月脉冲见 zzz_ucm_fidelity_affair_sweep_daily 与 ucm_realm_authority_lock_pulses
+
+on_game_start_after_lobby = {
+  on_actions = {
+    ucm_player_government_lock_startup_pulse
+  }
+}
+
+ucm_player_government_lock_startup_pulse = {
+  effect = {
+    every_player = {
+      ucm_player_government_lock_apply_effect = yes
+    }
+  }
+}
+
+ucm_player_government_lock_monthly_pulse = {
+	trigger = { ucm_single_player_trigger = yes }
+  effect = {
+    root = {
+      if = {
+        limit = {
+          is_ai = no
+          NOT = { has_character_flag = ucm_player_government_locked }
+          ucm_player_government_lock_eligible_trigger = yes
+        }
+        ucm_player_government_lock_apply_effect = yes
+      }
+      ucm_player_government_lock_maintain_effect = yes
+    }
+  }
+}
+
+ucm_player_government_lock_daily_pulse = {
+	trigger = { ucm_single_player_trigger = yes }
+  effect = {
+    root = {
+      if = {
+        limit = {
+          is_ai = no
+          NOT = { has_character_flag = ucm_player_government_locked }
+          ucm_player_government_lock_eligible_trigger = yes
+        }
+        ucm_player_government_lock_apply_effect = yes
+      }
+      ucm_player_government_lock_maintain_effect = yes
+    }
+  }
+}

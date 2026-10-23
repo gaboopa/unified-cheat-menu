@@ -400,6 +400,7 @@ types InteractionTypes
 					# Skonester: toggle the menu height controls
 					button_icon = {
 						texture = "gfx/xa_height.png"
+						visible = "[Not( GameHasMultiplePlayers )]"
 						alpha = 0.8
 						size = { 25 25 }
 						tooltip = "xa_change_height"
@@ -412,7 +413,7 @@ types InteractionTypes
 		# Skonester: adjustable menu height controls
 		widget = {
 			size = { 317 30 }
-			visible = "[GetVariableSystem.Exists('change_xa_height')]"
+			visible = "[And( Not( GameHasMultiplePlayers ), GetVariableSystem.Exists('change_xa_height') )]"
 
 			hbox = {
 				layoutpolicy_horizontal = expanding

@@ -11,7 +11,7 @@ skonester_open_trait_editor_decision = {
 	ignores_pending_interaction_block = yes
 	icon = debug_chars
 	desc = skonester_open_trait_editor_decision_desc
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { is_ai = no has_character_flag = skonester_character_interaction_menu_open }
 		scope:recipient = { is_alive = yes }
 	}
@@ -30,7 +30,7 @@ skonester_open_cheat_trait_editor_decision = {
 	ignores_pending_interaction_block = yes
 	icon = debug_chars
 	desc = skonester_open_cheat_trait_editor_decision_desc
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { is_ai = no has_character_flag = skonester_character_interaction_menu_open }
 		scope:recipient = { is_alive = yes }
 	}
@@ -49,7 +49,7 @@ skonester_open_lifestyle_editor_decision = {
 	ignores_pending_interaction_block = yes
 	icon = debug_chars
 	desc = skonester_open_lifestyle_editor_decision_desc
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { is_ai = no has_character_flag = skonester_character_interaction_menu_open }
 		scope:recipient = { is_alive = yes }
 	}
@@ -68,7 +68,7 @@ skonester_open_sand_soldiers_decision = {
 	ignores_pending_interaction_block = yes
 	icon = debug_chars
 	desc = skonester_open_sand_soldiers_decision_desc
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { is_ai = no has_character_flag = skonester_character_interaction_menu_open }
 		scope:recipient = { is_alive = yes }
 	}
@@ -87,19 +87,13 @@ skonester_open_culture_picker_decision = {
 	ignores_pending_interaction_block = yes
 	icon = debug_chars
 	desc = skonester_open_culture_picker_decision_desc
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { is_ai = no has_character_flag = skonester_character_interaction_menu_open }
 		scope:recipient = { is_alive = yes exists = culture }
 	}
 	is_valid = { always = yes }
 	can_send = { always = yes }
-	on_accept = {
-		skonester_cheat_menu_lock_recipient_effect = yes
-		scope:actor = {
-			skonester_cheat_menu_sync_target_effect = yes
-			skonester_open_acm_culture_picker_effect = yes
-		}
-	}
+	on_accept = { ucm_open_culture_picker_effect = yes }
 	ai_will_do = 0
 }
 
@@ -112,20 +106,13 @@ skonester_open_religion_picker_decision = {
 	ignores_pending_interaction_block = yes
 	icon = debug_chars
 	desc = skonester_open_religion_picker_decision_desc
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { is_ai = no has_character_flag = skonester_character_interaction_menu_open }
 		scope:recipient = { is_alive = yes exists = faith }
 	}
 	is_valid = { always = yes }
 	can_send = { always = yes }
-	on_accept = {
-		skonester_cheat_menu_lock_recipient_effect = yes
-		scope:recipient = { faith = { save_scope_as = selected_faith } }
-		scope:actor = {
-			skonester_save_skonester_selected_faith_effect = yes
-			skonester_open_acm_religion_picker_effect = yes
-		}
-	}
+	on_accept = { ucm_open_religion_picker_effect = yes }
 	ai_will_do = 0
 }
 
@@ -138,20 +125,13 @@ skonester_open_tradition_picker_decision = {
 	ignores_pending_interaction_block = yes
 	icon = debug_chars
 	desc = skonester_open_tradition_picker_decision_desc
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { is_ai = no has_character_flag = skonester_character_interaction_menu_open }
 		scope:recipient = { is_alive = yes exists = culture }
 	}
 	is_valid = { always = yes }
 	can_send = { always = yes }
-	on_accept = {
-		skonester_cheat_menu_lock_recipient_effect = yes
-		scope:recipient = { culture = { save_scope_as = culture } }
-		scope:actor = {
-			skonester_cw_open_tradition_picker_effect = yes
-			add_character_flag = skonester_cw_tradition_picker_open
-		}
-	}
+	on_accept = { ucm_open_tradition_picker_effect = yes }
 	ai_will_do = 0
 }
 
@@ -164,7 +144,7 @@ skonester_open_artifact_crafter_decision = {
 	ignores_pending_interaction_block = yes
 	icon = debug_chars
 	desc = skonester_open_artifact_crafter_decision_desc
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { is_ai = no has_character_flag = skonester_character_interaction_menu_open }
 		scope:recipient = { is_alive = yes }
 	}
@@ -183,7 +163,7 @@ skonester_open_artifact_repair_decision = {
 	ignores_pending_interaction_block = yes
 	icon = debug_chars
 	desc = skonester_open_artifact_repair_decision_desc
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { is_ai = no has_character_flag = skonester_character_interaction_menu_open }
 		scope:recipient = { is_alive = yes }
 	}
@@ -202,7 +182,7 @@ skonester_open_console_helper_decision = {
 	ignores_pending_interaction_block = yes
 	icon = debug_chars
 	desc = skonester_open_console_helper_decision_desc
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { is_ai = no has_character_flag = skonester_character_interaction_menu_open }
 	}
 	is_valid = { always = yes }

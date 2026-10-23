@@ -80,6 +80,7 @@
 					dockable_button = {
 						layoutpolicy_horizontal = expanding
 						size = { 0 30 }
+						visible = "[Not( GameHasMultiplePlayers )]"
 						text = "SKONESTER_DEBUG_MODE"
 						onclick = "[ExecuteConsoleCommand('debug_mode')]"
 						tintcolor = { 1.0 0.5 1.0 0.8 }

@@ -59,7 +59,7 @@
     hegemony = 90
   }
 
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
 
     has_character_flag = pcm_b_show_decision_flag
     skonester_officials_decision_visible_for_player_trigger = yes
@@ -144,7 +144,7 @@ skonester_ai_yearly_de_jure_transfer_toggle_decision = {
     hegemony = 90
   }
 
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
 
     has_character_flag = pcm_b_show_decision_flag
     skonester_officials_decision_visible_for_player_trigger = yes
@@ -236,7 +236,7 @@ skonester_ai_yearly_admin_conversion_toggle_decision = {
     hegemony = 90
   }
 
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
 
     has_character_flag = pcm_b_show_decision_flag
     skonester_officials_decision_visible_for_player_trigger = yes
@@ -322,7 +322,7 @@ skonester_ai_boost_toggle_decision = {
     hegemony = 90
   }
 
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
 
     has_character_flag = pcm_b_show_decision_flag
     skonester_officials_decision_visible_for_player_trigger = yes
@@ -375,7 +375,7 @@ skonester_world_ai_boost_pause_decision = {
     hegemony = 0
   }
 
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     always = no
   }
   is_valid = {
@@ -426,7 +426,7 @@ skonester_world_ai_boost_resume_decision = {
     hegemony = 0
   }
 
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     always = no
   }
   is_valid = {
@@ -470,7 +470,7 @@ skonester_boost_world_ai_rulers_decision = {
     hegemony = 90
   }
 
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     always = no
   }
 

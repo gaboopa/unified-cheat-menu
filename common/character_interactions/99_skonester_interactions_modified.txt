@@ -6,7 +6,7 @@ change_hunt_success_chance = {
 	ignores_pending_interaction_block = yes
 	common_interaction = yes
 	icon = activity_hunt
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -114,7 +114,7 @@ debug_give_animal_interaction = {
 	ignores_pending_interaction_block = yes
 	common_interaction = no
 	icon = dog_positive
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -204,7 +204,7 @@ change_tournament_score = {
 	ignores_pending_interaction_block = yes
 	common_interaction = yes
 	icon = activity_tournament
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -306,7 +306,7 @@ add_to_court_interaction = {
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 	icon = guest
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -337,7 +337,7 @@ debug_secrets_interaction = {
 	ignores_pending_interaction_block = yes
 	icon = debug_secret
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -509,7 +509,7 @@ add_hook_interaction = {
 	icon = hook_icon
 	common_interaction = no
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -577,7 +577,7 @@ set_relation_debug = {
 	ignores_pending_interaction_block = yes
 	icon = debug_chars
 	common_interaction = yes
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -1204,7 +1204,7 @@ change_character_weight_interaction = {
 	ignores_pending_interaction_block = yes
 	icon = activity_feast
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -1241,7 +1241,7 @@ slay_character_interaction = {
 
 	interface_priority = 2000
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -1311,7 +1311,7 @@ change_cultural_acceptance_debug_interaction = {
 	ignores_pending_interaction_block = yes
 	icon = icon_culture
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -1362,7 +1362,7 @@ learn_language_debug_interaction = {
 
 	interface_priority = 5994
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -1390,7 +1390,7 @@ add_artifact_interaction = {
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 	icon = artifact
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -1683,7 +1683,7 @@ take_artifact_interaction = {
 	target_type = artifact
 	target_filter = recipient_artifacts
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -1761,7 +1761,7 @@ add_artifact_claim_interaction = {
 	target_type = artifact
 	target_filter = recipient_artifacts
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -1806,7 +1806,7 @@ debug_destroy_artifact_interaction = {
 	target_type = artifact
 	target_filter = recipient_artifacts
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -1858,7 +1858,7 @@ inspire_interaction = {
 	ignores_pending_interaction_block = yes
 	icon = inspiration
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -1985,7 +1985,7 @@ sponsor_inspiration_debug = {
 	ignores_pending_interaction_block = yes
 	auto_accept = yes
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -2019,7 +2019,7 @@ test_effect_localization_interaction = {
 	interface_priority = 999
 	use_diplomatic_range = no
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -2150,7 +2150,7 @@ give_criminal_trait_interaction = {
 	ignores_pending_interaction_block = yes
 	icon = prison
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -2209,7 +2209,7 @@ generate_artifact_with_history_interaction = {
 	ignores_pending_interaction_block = yes
 	icon = artifact
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -2233,7 +2233,7 @@ debug_sex_interaction = { # Sleep With Character
 	interface_priority = 9000
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -2254,7 +2254,7 @@ debug_change_every_county = {
 	ignores_pending_interaction_block = yes
 	icon = alliance
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -2322,7 +2322,7 @@ do_a_crime_embezzle_interaction = {
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 	icon = icon_gold
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -2405,7 +2405,7 @@ add_glory_interaction = {
 
 	interface_priority = 5000
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -2481,7 +2481,7 @@ debug_progress_all_active_schemes_interaction = {
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 	icon = debug_secret
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -2503,7 +2503,7 @@ debug_travel_to_ruler_interaction = {
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 	icon = travel_mixed
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -2570,7 +2570,7 @@ debug_add_truce_interaction = {
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 	icon = icon_retreat
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -2637,7 +2637,7 @@ spawn_epidemic_interaction = {
 
 	interface_priority = 3000
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -2832,7 +2832,7 @@ spawn_legend_interaction = {
 
 	interface_priority = 2990
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -2920,7 +2920,7 @@ debug_buff_schemes = {
 
 	interface_priority = 2998
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -3040,7 +3040,7 @@ debug_clear_agents_from_schemes = {
 
 	interface_priority = 2994
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -3181,7 +3181,7 @@ debug_make_laamp = {
 
 	interface_priority = 6995
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -3210,7 +3210,7 @@ debug_add_to_contact_list_interaction = {
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 	icon = icon_contract_modification_single
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -3243,7 +3243,7 @@ debug_alliance_interaction = {
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 	icon = icon_ally
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -3283,7 +3283,7 @@ create_task_contract_interaction = {
 
 	interface_priority = 4996
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -3398,7 +3398,7 @@ debug_move_domicile_interaction = {
 
 	interface_priority = 4991
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -3499,7 +3499,7 @@ debug_populate_contracts = {
 
 	interface_priority = 4989
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -3528,7 +3528,7 @@ give_infinite_schemes_of_type_interaction = {
 
 	interface_priority = 2991
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -3582,7 +3582,7 @@ antagonise_court = {
 	ignores_pending_interaction_block = yes
 	icon = icon_hostile
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -3690,7 +3690,7 @@ spawn_courtier_interaction = {
 
 	interface_priority = 6991
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -3823,7 +3823,7 @@ destroy_title_interaction = {
 	ignores_pending_interaction_block = yes
 	icon = antagonistic
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -3881,7 +3881,7 @@ debug_change_the_great_steppe = {
 	interface_priority = 4999
 	auto_accept = yes
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -4062,7 +4062,7 @@ debug_coronation_add_to_guest_subset_interaction = {
 	interface_priority = 2999
 	auto_accept = yes
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -4148,7 +4148,7 @@ change_coronation_law = {
 	ignores_pending_interaction_block = yes
 	icon = artifact
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -4206,7 +4206,7 @@ debug_change_dynastic_cycle = {
 	interface_priority = 5998
 	auto_accept = yes
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -4366,7 +4366,7 @@ debug_change_silk_road_cycle = {
 	interface_priority = 5996
 	auto_accept = yes
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no
@@ -4484,7 +4484,7 @@ debug_set_mandala_aspect = {
 	ignores_pending_interaction_block = yes
 	icon = debug_mandala_interaction
 	common_interaction = yes
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no

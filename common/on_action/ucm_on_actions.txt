@@ -1,0 +1,19 @@
+# Unified Cheat Menu: forget targets that die (spec Section 3.1).
+
+on_death = {
+	on_actions = { ucm_on_death }
+}
+
+ucm_on_death = {
+	effect = {
+		if = {
+			limit = { global_var:skonester_crozier_cheats_other ?= root }
+			remove_global_variable = skonester_crozier_cheats_other
+		}
+		every_player = {
+			limit = { var:ucm_target ?= root }
+			remove_variable = ucm_target
+			remove_character_flag = ucm_menu_open
+		}
+	}
+}

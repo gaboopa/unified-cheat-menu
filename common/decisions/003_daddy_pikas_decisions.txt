@@ -8,7 +8,7 @@
 
     decision_group_type = skonester_realm_tools
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
 		NOT = { has_government = celestial_government }
         has_character_flag = daddy_pika_cheat_menu
         has_character_flag = govt_menu
@@ -53,7 +53,7 @@ change_government_celestial = {
 
 	decision_group_type = skonester_realm_tools
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
         # CRITICAL FIX MISSING: You must add 'is_player = yes' here for visibility.
         NOT = { has_government = celestial_government }
         has_character_flag = daddy_pika_cheat_menu
@@ -105,7 +105,7 @@ change_government_mandala = {
 
 	decision_group_type = skonester_realm_tools
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
         # CRITICAL FIX MISSING: You must add 'is_player = yes' here for visibility.
         NOT = { has_government = mandala_government }
         has_character_flag = daddy_pika_cheat_menu
@@ -157,7 +157,7 @@ change_government_wanua = {
 
 	decision_group_type = skonester_realm_tools
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
         # CRITICAL FIX MISSING: You must add 'is_player = yes' here for visibility.
         NOT = { has_government = wanua_government }
         has_character_flag = daddy_pika_cheat_menu
@@ -209,7 +209,7 @@ change_government_feudal = {
 
 	decision_group_type = skonester_realm_tools
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
         NOT = { has_government = feudal_government }
         has_character_flag = daddy_pika_cheat_menu
         has_character_flag = govt_menu
@@ -243,7 +243,7 @@ change_government_meritocratic = {
 
 	decision_group_type = skonester_realm_tools
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
         NOT = { has_government = meritocratic_government }
         has_character_flag = daddy_pika_cheat_menu
         has_character_flag = govt_menu
@@ -287,7 +287,7 @@ change_government_clan = {
 
 	decision_group_type = skonester_realm_tools
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
         NOT = { has_government = clan_government }
         has_character_flag = daddy_pika_cheat_menu
         has_character_flag = govt_menu
@@ -321,7 +321,7 @@ change_govt_tribe = {
 
 	decision_group_type = skonester_realm_tools
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
         NOT = { has_government = tribal_government }
         has_character_flag = daddy_pika_cheat_menu
         has_character_flag = govt_menu
@@ -355,7 +355,7 @@ change_govt_nomad = {
 
 	decision_group_type = skonester_realm_tools
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
         NOT = { has_government = nomad_government }
         has_character_flag = daddy_pika_cheat_menu
         has_character_flag = govt_menu
@@ -387,7 +387,7 @@ change_government_administrative = {
 
 	decision_group_type = skonester_realm_tools
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		NOT = { has_government = administrative_government }   # ← 修正拼写
 		has_character_flag = daddy_pika_cheat_menu
 		has_character_flag = govt_menu
@@ -430,7 +430,7 @@ change_government_landless_adventurer = {
 
     decision_group_type = skonester_realm_tools
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
         has_character_flag = daddy_pika_cheat_menu
         has_character_flag = govt_menu
     }
@@ -497,7 +497,7 @@ change_government_steppe_admin = {
 
     decision_group_type = skonester_realm_tools
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
         has_character_flag = daddy_pika_cheat_menu
         has_character_flag = govt_menu
     }
@@ -541,7 +541,7 @@ change_government_japan_feudal_government = {
 
 	decision_group_type = skonester_realm_tools
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
         # CRITICAL FIX MISSING: You must add 'is_player = yes' here for visibility.
         NOT = { has_government = japan_feudal_government }
         has_character_flag = daddy_pika_cheat_menu
@@ -593,7 +593,7 @@ change_government_japan_administrative_government = {
 
 	decision_group_type = skonester_realm_tools
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
         is_ai = no # CK3 1.20: was is_player = yes, which is not a trigger
         NOT = { has_government = japan_administrative_government }
         has_character_flag = daddy_pika_cheat_menu

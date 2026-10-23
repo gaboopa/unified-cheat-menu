@@ -14,7 +14,7 @@
   ai_potential = { always = no }
 
   # åŠŸèƒ½å·²å¹¶å…¥å³é”®ã€Œä»»å…å®«å»·èŒä½ã€èœå•ï¼Œå†³è®®åˆ—è¡¨ä¸­éšè—
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = pcm_b_show_decision_flag
     always = no
   }

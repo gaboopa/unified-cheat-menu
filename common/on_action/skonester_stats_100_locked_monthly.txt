@@ -7,6 +7,7 @@ monthly_global_pulse = {
 }
 
 skonester_stats_100_locked_monthly_pulse = {
+	trigger = { ucm_single_player_trigger = yes }
   effect = {
     every_living_character = {
       limit = {

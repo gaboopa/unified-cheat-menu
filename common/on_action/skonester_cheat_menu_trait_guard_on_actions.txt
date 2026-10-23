@@ -28,6 +28,7 @@ monthly_global_pulse = {
 }
 
 skonester_trait_baidubuqin_monthly_upkeep_pulse = {
+	trigger = { ucm_single_player_trigger = yes }
   effect = {
     every_living_character = {
       limit = {
@@ -39,6 +40,7 @@ skonester_trait_baidubuqin_monthly_upkeep_pulse = {
 }
 
 skonester_trait_xinwuguai_monthly_upkeep_pulse = {
+	trigger = { ucm_single_player_trigger = yes }
   effect = {
     every_living_character = {
       limit = {

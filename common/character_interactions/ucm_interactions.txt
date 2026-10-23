@@ -1,0 +1,66 @@
+# Unified Cheat Menu: Layer 1 right-click entries (spec Section 2).
+
+ucm_open_cheat_menu = {
+	category = interaction_category_uncategorized
+	interface_priority = 12100
+	common_interaction = yes
+	auto_accept = yes
+	use_diplomatic_range = no
+	ignores_pending_interaction_block = yes
+	icon = debug_chars
+	desc = ucm_open_cheat_menu_desc
+	is_shown = {
+		ucm_single_player_trigger = yes
+		scope:actor = { is_ai = no }
+		scope:recipient = { is_alive = yes }
+	}
+	on_accept = {
+		skonester_cheat_menu_lock_recipient_effect = yes
+		scope:actor = {
+			set_variable = { name = ucm_target value = scope:recipient }
+			add_character_flag = ucm_menu_open
+		}
+	}
+	ai_will_do = 0
+}
+
+ucm_set_second_character = {
+	category = interaction_category_uncategorized
+	interface_priority = 12090
+	common_interaction = yes
+	auto_accept = yes
+	use_diplomatic_range = no
+	ignores_pending_interaction_block = yes
+	icon = debug_chars
+	desc = ucm_set_second_character_desc
+	is_shown = {
+		ucm_single_player_trigger = yes
+		scope:actor = { is_ai = no }
+		scope:recipient = { is_alive = yes }
+		NOT = { global_var:skonester_crozier_cheats_other ?= scope:recipient }
+	}
+	on_accept = {
+		set_global_variable = { name = skonester_crozier_cheats_other value = scope:recipient }
+	}
+	ai_will_do = 0
+}
+
+ucm_clear_second_character = {
+	category = interaction_category_uncategorized
+	interface_priority = 12090
+	common_interaction = yes
+	auto_accept = yes
+	use_diplomatic_range = no
+	ignores_pending_interaction_block = yes
+	icon = debug_chars
+	desc = ucm_clear_second_character_desc
+	is_shown = {
+		ucm_single_player_trigger = yes
+		scope:actor = { is_ai = no }
+		global_var:skonester_crozier_cheats_other ?= scope:recipient
+	}
+	on_accept = {
+		remove_global_variable = skonester_crozier_cheats_other
+	}
+	ai_will_do = 0
+}

@@ -1,6 +1,7 @@
 ﻿# 宗教编辑：信仰详情 + 教义库
 
 skonester_acm_faith_view_open_safety = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   is_valid = { always = yes }
   effect = { skonester_acm_faith_view_only_safety_effect = yes }
@@ -8,7 +9,7 @@ skonester_acm_faith_view_open_safety = {
 
 skonester_acm_faith_editor_visible = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     NOT = { has_character_flag = skonester_acm_faith_gui_locked }
     has_character_flag = skonester_acm_faith_editor_open
   }
@@ -16,6 +17,7 @@ skonester_acm_faith_editor_visible = {
 }
 
 skonester_acm_faith_editor_close = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   is_valid = { always = yes }
   effect = {
@@ -24,6 +26,7 @@ skonester_acm_faith_editor_close = {
 }
 
 skonester_acm_faith_editor_close_from_window = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   is_valid = { has_character_flag = skonester_acm_faith_editor_open }
   effect = {
@@ -32,6 +35,7 @@ skonester_acm_faith_editor_close_from_window = {
 }
 
 skonester_acm_faith_editor_init = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   is_valid = { always = yes }
   effect = {
@@ -41,6 +45,7 @@ skonester_acm_faith_editor_init = {
 }
 
 skonester_acm_faith_begin_pick_doctrine = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   saved_scopes = { pick_doctrine }
   is_valid = { has_variable = skonester_selected_faith_var }
@@ -50,6 +55,7 @@ skonester_acm_faith_begin_pick_doctrine = {
 }
 
 skonester_acm_faith_begin_pick_core_tenets = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   saved_scopes = { pick_doctrine }
   is_valid = { has_variable = skonester_selected_faith_var }
@@ -59,6 +65,7 @@ skonester_acm_faith_begin_pick_core_tenets = {
 }
 
 skonester_acm_faith_apply_pick_doctrine = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   saved_scopes = { pick_doctrine }
   is_valid = { has_variable = skonester_selected_faith_var }
@@ -69,7 +76,7 @@ skonester_acm_faith_apply_pick_doctrine = {
 
 skonester_acm_faith_doctrine_picker_visible = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     NOT = { has_character_flag = skonester_acm_faith_gui_locked }
     has_character_flag = skonester_acm_faith_doctrine_picker_open
   }
@@ -78,7 +85,7 @@ skonester_acm_faith_doctrine_picker_visible = {
 
 skonester_acm_faith_pick_sidebar_visible = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     NOT = { has_character_flag = skonester_acm_faith_gui_locked }
     has_character_flag = skonester_acm_faith_editor_open
     has_character_flag = skonester_acm_faith_pick_sidebar_open
@@ -87,6 +94,7 @@ skonester_acm_faith_pick_sidebar_visible = {
 }
 
 skonester_acm_faith_pick_sidebar_show = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   is_valid = { always = yes }
   effect = {
@@ -95,6 +103,7 @@ skonester_acm_faith_pick_sidebar_show = {
 }
 
 skonester_acm_faith_pick_sidebar_hide = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   is_valid = { always = yes }
   effect = {
@@ -103,6 +112,7 @@ skonester_acm_faith_pick_sidebar_hide = {
 }
 
 skonester_acm_faith_doctrine_picker_close = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   is_valid = { always = yes }
   effect = {
@@ -111,6 +121,7 @@ skonester_acm_faith_doctrine_picker_close = {
 }
 
 skonester_acm_faith_editor_add_doctrine = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   saved_scopes = { pick_doctrine }
   is_valid = {
@@ -123,6 +134,7 @@ skonester_acm_faith_editor_add_doctrine = {
 }
 
 skonester_acm_faith_reselect = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   is_valid = { always = yes }
   effect = {
@@ -132,30 +144,35 @@ skonester_acm_faith_reselect = {
 }
 
 skonester_acm_faith_pick_open_core_tenets = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   is_valid = { always = yes }
   effect = { skonester_acm_faith_pick_open_core_tenets_effect = yes }
 }
 
 skonester_acm_faith_pick_open_main_group = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   is_valid = { always = yes }
   effect = { skonester_acm_faith_pick_open_main_group_effect = yes }
 }
 
 skonester_acm_faith_pick_open_marriage = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   is_valid = { always = yes }
   effect = { skonester_acm_faith_pick_open_marriage_effect = yes }
 }
 
 skonester_acm_faith_pick_open_crimes = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   is_valid = { always = yes }
   effect = { skonester_acm_faith_pick_open_crimes_effect = yes }
 }
 
 skonester_acm_faith_pick_open_clergy = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   is_valid = { always = yes }
   effect = { skonester_acm_faith_pick_open_clergy_effect = yes }
@@ -165,7 +182,7 @@ skonester_acm_faith_pick_open_clergy = {
 # The pick sidebar shows the tenet list while the editor is picking core tenets.
 skonester_acm_faith_pick_is_tenets = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_variable = skonester_acm_pick_group_name
     var:skonester_acm_pick_group_name = flag:doctrine_core_tenets
   }

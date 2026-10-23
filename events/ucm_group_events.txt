@@ -1,0 +1,44 @@
+namespace = ucm_group
+
+# Group action confirmation (spec Section 5.3). Root = player; see ucm_effects.txt.
+ucm_group.1 = {
+	type = character_event
+	title = ucm_group.1.t
+	desc = {
+		first_valid = {
+			triggered_desc = { trigger = { var:ucm_group_action = flag:max_development } desc = ucm_group.1.desc.max_development }
+			triggered_desc = { trigger = { var:ucm_group_action = flag:max_control } desc = ucm_group.1.desc.max_control }
+			triggered_desc = { trigger = { var:ucm_group_action = flag:clear_stress } desc = ucm_group.1.desc.clear_stress }
+		}
+		desc = ucm_group.1.desc.counts
+	}
+	theme = stewardship
+	left_portrait = { character = var:ucm_target }
+
+	immediate = { ucm_group_count_effect = yes }
+
+	option = {
+		name = ucm_group.1.a
+		trigger = { var:ucm_group_eligible > 0 }
+		ucm_group_apply_effect = yes
+		trigger_event = ucm_group.2
+	}
+	option = {
+		name = ucm_group.1.b
+		ucm_group_clear_effect = yes
+	}
+}
+
+# Results.
+ucm_group.2 = {
+	type = character_event
+	title = ucm_group.2.t
+	desc = ucm_group.2.desc
+	theme = stewardship
+	left_portrait = { character = var:ucm_target }
+
+	option = {
+		name = ucm_group.2.a
+		ucm_group_clear_effect = yes
+	}
+}

@@ -6,6 +6,7 @@ yearly_playable_pulse = {
 }
 
 skonester_seduce_shield_yearly_traits = {
+	trigger = { ucm_single_player_trigger = yes }
   effect = {
     if = {
       limit = {

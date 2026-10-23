@@ -7,7 +7,7 @@
 
     decision_group_type = skonester_realm_tools
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
         NOT = { is_ai = yes }
         has_character_flag = daddy_pika_cheat_menu
         has_character_flag = govt_menu
@@ -29,7 +29,7 @@ change_Realm_succession_law_mod_decision = {
 
     decision_group_type = skonester_realm_tools
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
         NOT = { is_ai = yes }
         has_character_flag = daddy_pika_cheat_menu
         has_character_flag = govt_menu
@@ -66,7 +66,7 @@ change_succession_single = {
 
 	decision_group_type = skonester_realm_tools
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
         NOR = {
             government_has_flag = government_is_theocracy
             has_government = republic_government
@@ -103,7 +103,7 @@ change_succession_single_youngest = {
 
 	decision_group_type = skonester_realm_tools
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
         NOR = {
             government_has_flag = government_is_theocracy
             has_government = republic_government
@@ -140,7 +140,7 @@ convert_religion = {
 
 	decision_group_type = skonester_realm_tools
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
         has_character_flag = daddy_pika_cheat_menu
         has_character_flag = govt_menu
     }
@@ -169,7 +169,7 @@ convert_culture = {
 
 	decision_group_type = skonester_realm_tools
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
         has_character_flag = daddy_pika_cheat_menu
         has_character_flag = govt_menu 
     }
@@ -198,7 +198,7 @@ realm_control = {
 
 	decision_group_type = skonester_realm_tools
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
         has_character_flag = daddy_pika_cheat_menu
         has_character_flag = govt_menu
     }
@@ -224,7 +224,7 @@ realm_development = {
 
     decision_group_type = skonester_realm_tools
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
         has_character_flag = daddy_pika_cheat_menu
         has_character_flag = govt_menu
     }  # <--- THIS BRACKET WAS MISSING
@@ -247,7 +247,7 @@ dynasty_pope_0_decision = {
 
 	ai_goal = no
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		is_landed = yes
 		is_ai = no
 		has_character_flag = daddy_pika_cheat_menu
@@ -297,7 +297,7 @@ dynasty_grandmaster_0_decision = {
 
 	ai_goal = no
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		is_landed = yes
 		is_ai = no
 		has_character_flag = daddy_pika_cheat_menu

@@ -5,6 +5,7 @@ on_marriage = {
 }
 
 skonester_on_marriage_ban_check = {
+	trigger = { ucm_single_player_trigger = yes }
   effect = {
     # 任一方带禁婚或旧版不婚誓约：立即拆散本段婚姻（多配偶则循环离婚）
     if = {

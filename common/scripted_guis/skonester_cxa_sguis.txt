@@ -1,4 +1,5 @@
 ﻿set_xa_height = {
+	is_shown = { ucm_single_player_trigger = yes }
   effect = {
     if = {
       limit = {
@@ -13,6 +14,7 @@
 }
 
 minus_xa_height = {
+	is_shown = { ucm_single_player_trigger = yes }
   is_valid = {
     trigger_if = {
       limit = {
@@ -39,6 +41,7 @@ minus_xa_height = {
 }
 
 plus_xa_height = {
+	is_shown = { ucm_single_player_trigger = yes }
   effect = {
     if = {
       limit = {
@@ -57,6 +60,7 @@ plus_xa_height = {
 }
 
 reset_xa_height = {
+	is_shown = { ucm_single_player_trigger = yes }
   effect = {
     set_global_variable = {
       name = xa_height

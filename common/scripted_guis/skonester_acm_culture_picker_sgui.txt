@@ -2,11 +2,12 @@
 
 skonester_acm_culture_picker_visible = {
   scope = character
-  is_shown = { has_character_flag = skonester_acm_culture_picker_open }
+  is_shown = { ucm_single_player_trigger = yes  has_character_flag = skonester_acm_culture_picker_open }
   is_valid = { always = yes }
 }
 
 skonester_acm_culture_list_load = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   is_valid = { always = yes }
   effect = {
@@ -15,6 +16,7 @@ skonester_acm_culture_list_load = {
 }
 
 skonester_acm_culture_picker_close = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   is_valid = { always = yes }
   effect = {
@@ -24,6 +26,7 @@ skonester_acm_culture_picker_close = {
 
 # Click a culture name: save it and apply it to the locked character target.
 skonester_acm_culture_pick = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   saved_scopes = { selected_culture }
   is_valid = {
@@ -37,6 +40,7 @@ skonester_acm_culture_pick = {
 
 # »：保存并打开原版文化侧栏
 skonester_acm_culture_pick_vanilla = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   saved_scopes = { selected_culture }
   is_valid = {
@@ -48,6 +52,7 @@ skonester_acm_culture_pick_vanilla = {
 }
 
 skonester_acm_culture_picker_region_wizard = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   is_valid = { always = yes }
   effect = {
@@ -57,6 +62,7 @@ skonester_acm_culture_picker_region_wizard = {
 }
 
 skonester_acm_culture_picker_continue_edit = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   is_valid = {
     has_variable = skonester_selected_culture_var

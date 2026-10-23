@@ -14,6 +14,7 @@ yearly_playable_pulse = {
 }
 
 skonester_realm_authority_lock_monthly_pulse = {
+	trigger = { ucm_single_player_trigger = yes }
   effect = {
     root = {
       if = {
@@ -34,6 +35,7 @@ skonester_realm_authority_lock_monthly_pulse = {
 }
 
 skonester_realm_authority_lock_yearly_pulse = {
+	trigger = { ucm_single_player_trigger = yes }
   effect = {
     root = {
       if = {

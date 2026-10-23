@@ -2,7 +2,7 @@
 widget = {
   name = "yyz_cmd_buttons"
   size = { 0 0 }
-  visible = "[IsDefaultGUIMode]"
+  visible = "[And( Not( GameHasMultiplePlayers ), IsDefaultGUIMode )]"
   layer = bottom
 
 ##########################################################################################

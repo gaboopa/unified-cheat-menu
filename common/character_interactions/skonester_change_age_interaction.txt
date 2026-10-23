@@ -11,7 +11,7 @@
     use_diplomatic_range = no
     ignores_pending_interaction_block = yes
     
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
     	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = { is_ai = no has_character_flag = bone_cheat_interactions_flag }
     }
@@ -73,7 +73,7 @@ debug_imprison_simple_interaction = {
 	icon = prison
 	interface_priority = 11750
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		NOT = { scope:actor = scope:recipient }  # Prevents self-imprisonment
 		scope:actor = { is_ai = no has_character_flag = bone_cheat_interactions_flag }

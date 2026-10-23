@@ -1,6 +1,7 @@
 ﻿# Ported from advcm_innovation_sgui.txt (#2752613114) — tradition/innovation picker
 
 skonester_cw_military_list = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
 
   effect = {
@@ -44,6 +45,7 @@ skonester_cw_military_list = {
 }
 
 skonester_cw_civic_list = {
+	is_shown = { ucm_single_player_trigger = yes }
 
   scope = character
 
@@ -95,6 +97,7 @@ skonester_cw_civic_list = {
 }
 
 skonester_cw_regional_list = {
+	is_shown = { ucm_single_player_trigger = yes }
 
   scope = character
 
@@ -168,6 +171,7 @@ skonester_cw_regional_list = {
 
 
 skonester_cw_military_check = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = culture
   saved_scopes = { inno_flag }
 
@@ -275,6 +279,7 @@ skonester_cw_military_check = {
 }
 
 skonester_cw_civic_check = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = culture
   saved_scopes = { inno_flag }
 
@@ -421,6 +426,7 @@ skonester_cw_civic_check = {
 }
 
 skonester_cw_regional_check = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = culture
   saved_scopes = { inno_flag }
 
@@ -579,6 +585,7 @@ skonester_cw_regional_check = {
 }
 
 skonester_cw_add_innovation = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
 
   saved_scopes = { inno_flag }
@@ -975,6 +982,7 @@ skonester_cw_add_innovation = {
 }
 
 skonester_cw_remove_innovation = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
 
   saved_scopes = { inno_flag }
@@ -1371,6 +1379,7 @@ skonester_cw_remove_innovation = {
 }
 
 skonester_cw_build_innovation_list_check = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
 
   is_valid = {

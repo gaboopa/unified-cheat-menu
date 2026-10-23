@@ -10,7 +10,7 @@ zhuge_organize_titles = {
     ignores_pending_interaction_block = yes
     interface_priority = 4990
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
     	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
@@ -49,7 +49,7 @@ zhuge_destroy_title = {
     ignores_pending_interaction_block = yes
     interface_priority = 1997
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
     	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
@@ -85,7 +85,7 @@ zhuge_buff_01 = {
     use_diplomatic_range = no
     ignores_pending_interaction_block = yes
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
     	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
@@ -122,7 +122,7 @@ zhuge_buff_02 = {
     use_diplomatic_range = no
     ignores_pending_interaction_block = yes
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
     	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
@@ -159,7 +159,7 @@ zhuge_buff_03 = {
     use_diplomatic_range = no
     ignores_pending_interaction_block = yes
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
     	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
@@ -196,7 +196,7 @@ zhuge_yixue_05 = {
     use_diplomatic_range = no
     ignores_pending_interaction_block = yes
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
     	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
@@ -234,7 +234,7 @@ zhuge_bloodline_03 = {
     use_diplomatic_range = no
     ignores_pending_interaction_block = yes
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
     	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
@@ -293,7 +293,7 @@ zhuge_yixue_01 = {
     use_diplomatic_range = no
     ignores_pending_interaction_block = yes
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
     	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
         scope:actor = {
             is_ai = no 
@@ -517,7 +517,7 @@ zhuge_yixue_02 = {
     use_diplomatic_range = no
     ignores_pending_interaction_block = yes
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
     	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
@@ -577,7 +577,7 @@ zhueg_yixue_03 = {
     use_diplomatic_range = no
     ignores_pending_interaction_block = yes
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
     	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
@@ -631,7 +631,7 @@ zhuge_yixue_04 = {
     use_diplomatic_range = no
     ignores_pending_interaction_block = yes
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
     	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
@@ -696,7 +696,7 @@ zhuge_yixue_06 = {
     use_diplomatic_range = no
     ignores_pending_interaction_block = yes
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
     	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
@@ -868,7 +868,7 @@ zhuge_buff_04 = {
     use_diplomatic_range = no
     ignores_pending_interaction_block = yes
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
     	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
@@ -901,7 +901,7 @@ zhuge_buff_05 = {
     use_diplomatic_range = no
     ignores_pending_interaction_block = yes
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
     	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
@@ -986,7 +986,7 @@ zhuge_add_truce_interaction = {
 
     auto_accept = yes
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
     	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
@@ -1069,7 +1069,7 @@ zhuge_daming_currency_menu = {
     use_diplomatic_range = no
     ignores_pending_interaction_block = yes
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
     	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
@@ -1101,7 +1101,7 @@ zhuge_set_authority_inter = {
     use_diplomatic_range = no
     ignores_pending_interaction_block = yes
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
     	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
@@ -1208,7 +1208,7 @@ zhuge_set_relation_interaction = {
     use_diplomatic_range = no
     ignores_pending_interaction_block = yes
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
     	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
@@ -1234,7 +1234,7 @@ zhuge_set_artifact_interaction = {
     use_diplomatic_range = no
     ignores_pending_interaction_block = yes
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
     	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
         scope:actor = { is_ai = no has_character_flag = bone_cheat_interactions_flag }
         NOT = { scope:recipient = scope:actor }
@@ -1265,7 +1265,7 @@ zhuge_kill_xingzh_house_interaction = {
     use_diplomatic_range = no
     ignores_pending_interaction_block = yes
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
     	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
         scope:actor = { 
             is_ai = no 
@@ -1301,7 +1301,7 @@ zhuge_huoqu_artifact_interaction = {
 	target_type = artifact
 	target_filter = recipient_artifacts
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
             is_ai = no
@@ -1356,7 +1356,7 @@ zhuge_great_steppe = {
 	interface_priority = 4998
 	auto_accept = yes
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
             is_ai = no
@@ -1538,7 +1538,7 @@ zhuge_ymbuff_02 = {
     use_diplomatic_range = no
     ignores_pending_interaction_block = yes
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
     	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
         scope:actor = {
             is_ai = no
@@ -1575,7 +1575,7 @@ zhuge_lifexp_all_xp = {
     ignores_pending_interaction_block = yes
     interface_priority = 9985
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
     	scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:actor = {
 			is_ai = no

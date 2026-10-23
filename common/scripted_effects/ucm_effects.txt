@@ -1,0 +1,116 @@
+# Unified Cheat Menu: shared effects.
+
+# Main menu buttons run with root = player. The baseline's editor launchers expect
+# scope:actor and scope:recipient, as set by a character interaction.
+ucm_menu_scopes_effect = {
+	save_scope_as = actor
+	if = {
+		limit = { exists = var:ucm_target }
+		var:ucm_target = { save_scope_as = recipient }
+	}
+}
+
+# Picker launchers, shared by the right-click interactions and the main menu.
+ucm_open_culture_picker_effect = {
+	skonester_cheat_menu_lock_recipient_effect = yes
+	scope:actor = {
+		skonester_cheat_menu_sync_target_effect = yes
+		skonester_open_acm_culture_picker_effect = yes
+	}
+}
+
+ucm_open_religion_picker_effect = {
+	skonester_cheat_menu_lock_recipient_effect = yes
+	scope:recipient = { faith = { save_scope_as = selected_faith } }
+	scope:actor = {
+		skonester_save_skonester_selected_faith_effect = yes
+		skonester_open_acm_religion_picker_effect = yes
+	}
+}
+
+ucm_open_tradition_picker_effect = {
+	skonester_cheat_menu_lock_recipient_effect = yes
+	scope:recipient = { culture = { save_scope_as = culture } }
+	scope:actor = {
+		skonester_cw_open_tradition_picker_effect = yes
+		add_character_flag = skonester_cw_tradition_picker_open
+	}
+}
+
+# ---------------------------------------------------------------------------
+# Group actions (spec Section 5). Root = player throughout.
+#   var:ucm_target       the clicked character the group comes from
+#   var:ucm_group        flag:sub_realm_counties | flag:courtiers
+#   var:ucm_group_action flag:max_development | flag:max_control | flag:clear_stress
+# Adding an action: a branch in ucm_group_member_eligible_trigger, a branch in
+# ucm_group_apply_member_effect, a scripted GUI that starts it, and loc.
+# ---------------------------------------------------------------------------
+
+ucm_group_start_effect = {
+	set_variable = { name = ucm_group value = flag:$GROUP$ }
+	set_variable = { name = ucm_group_action value = flag:$ACTION$ }
+	trigger_event = ucm_group.1
+}
+
+ucm_group_for_each_effect = {
+	if = {
+		limit = { var:ucm_group = flag:sub_realm_counties }
+		var:ucm_target = { every_sub_realm_county = { $DO$ = yes } }
+	}
+	else_if = {
+		limit = { var:ucm_group = flag:courtiers }
+		var:ucm_target = { every_courtier = { $DO$ = yes } }
+	}
+}
+
+ucm_group_count_effect = {
+	set_variable = { name = ucm_group_total value = 0 }
+	set_variable = { name = ucm_group_eligible value = 0 }
+	ucm_group_for_each_effect = { DO = ucm_group_count_member_effect }
+}
+
+ucm_group_count_member_effect = {
+	root = { change_variable = { name = ucm_group_total add = 1 } }
+	if = {
+		limit = { ucm_group_member_eligible_trigger = yes }
+		root = { change_variable = { name = ucm_group_eligible add = 1 } }
+	}
+}
+
+# Every member is visited; ineligible ones are counted as skipped, never stop the run.
+ucm_group_apply_effect = {
+	set_variable = { name = ucm_group_changed value = 0 }
+	set_variable = { name = ucm_group_skipped value = 0 }
+	ucm_group_for_each_effect = { DO = ucm_group_apply_member_effect }
+}
+
+ucm_group_apply_member_effect = {
+	if = {
+		limit = { ucm_group_member_eligible_trigger = yes }
+		if = {
+			limit = { root.var:ucm_group_action = flag:max_development }
+			change_development_level = 100
+		}
+		else_if = {
+			limit = { root.var:ucm_group_action = flag:max_control }
+			change_county_control = 100
+		}
+		else_if = {
+			limit = { root.var:ucm_group_action = flag:clear_stress }
+			add_stress = -1000
+		}
+		root = { change_variable = { name = ucm_group_changed add = 1 } }
+	}
+	else = {
+		root = { change_variable = { name = ucm_group_skipped add = 1 } }
+	}
+}
+
+ucm_group_clear_effect = {
+	remove_variable = ucm_group
+	remove_variable = ucm_group_action
+	remove_variable = ucm_group_total
+	remove_variable = ucm_group_eligible
+	remove_variable = ucm_group_changed
+	remove_variable = ucm_group_skipped
+}

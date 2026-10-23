@@ -5,6 +5,7 @@ monthly_global_pulse = {
 }
 
 skonester_military_levy_overflow_monthly_pulse = {
+	trigger = { ucm_single_player_trigger = yes }
   effect = {
     every_living_character = {
       limit = {

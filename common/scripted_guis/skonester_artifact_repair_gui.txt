@@ -3,7 +3,7 @@
 
 skonester_acm_repair_gui_open_visible = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_acm_repair_gui_open
     NOT = { has_character_flag = skonester_acm_gui_text_edit_active }
   }
@@ -14,13 +14,13 @@ skonester_acm_repair_gui_open_visible = {
 # "HasValue(character variable)"，因此用 scripted_gui 包一层真正的脚本触发器 has_variable）
 skonester_acm_repair_has_artifact_var = {
   scope = character
-  is_shown = { has_variable = skonester_acm_repair_artifact_var }
+  is_shown = { ucm_single_player_trigger = yes  has_variable = skonester_acm_repair_artifact_var }
   is_valid = { always = yes }
 }
 
 skonester_acm_repair_gui_close = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = {
     remove_character_flag = skonester_acm_repair_gui_open
@@ -40,7 +40,7 @@ skonester_acm_repair_gui_close = {
 
 skonester_acm_repair_gui_save = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = {
     has_global_variable = skonester_acm_repair_target
   }
@@ -54,7 +54,7 @@ skonester_acm_repair_gui_save = {
 
 skonester_acm_repair_gui_edit_name = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = {
     skonester_acm_open_artifact_name_editor_effect = yes
@@ -63,7 +63,7 @@ skonester_acm_repair_gui_edit_name = {
 
 skonester_acm_repair_gui_edit_desc = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = {
     skonester_acm_open_artifact_desc_editor_effect = yes
@@ -72,7 +72,7 @@ skonester_acm_repair_gui_edit_desc = {
 
 skonester_acm_repair_gui_repick = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = {
     remove_character_flag = skonester_acm_repair_gui_open

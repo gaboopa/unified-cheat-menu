@@ -3,7 +3,7 @@
     picture = { reference = "gfx/interface/illustrations/decisions/1.dds" }
     title = X1_decision_title
     confirm_text = X1_decision_confirm
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
         NOT = { has_character_modifier = X1_modifier }
     }
     effect = {
@@ -21,7 +21,7 @@ X_build = {
     picture = { reference = "gfx/interface/illustrations/decisions/2.dds" }
     title = X_build_title
     confirm_text = X_build_confirm
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
         any_held_title = {
             tier = tier_county
             any_in_de_jure_hierarchy = {
@@ -141,7 +141,7 @@ X_city = {
     picture = { reference = "gfx/interface/illustrations/decisions/3.dds" }
     title = X_city_title
     confirm_text = X_city_confirm
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
         OR = {
             any_held_title = {
                 tier = tier_county
@@ -239,7 +239,7 @@ X_temple = {
     picture = { reference = "gfx/interface/illustrations/decisions/4.dds" }
     title = X_temple_title
     confirm_text = X_temple_confirm
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
         OR = {
             any_held_title = {
                 tier = tier_county
@@ -330,7 +330,7 @@ X_castle = {
     picture = { reference = "gfx/interface/illustrations/decisions/5.dds" }
     title = X_castle_title
     confirm_text = X_castle_confirm
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
         OR = {
             any_held_title = {
                 tier = tier_county
@@ -417,7 +417,7 @@ X_unify = {
     picture = { reference = "gfx/interface/illustrations/decisions/6.dds" }
     title = X_unify_title
     confirm_text = X_unify_confirm
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
         OR = {
             any_vassal = {
                 OR = {

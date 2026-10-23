@@ -15,6 +15,7 @@ skonester_player_government_lock_startup_pulse = {
 }
 
 skonester_player_government_lock_monthly_pulse = {
+	trigger = { ucm_single_player_trigger = yes }
   effect = {
     root = {
       if = {
@@ -31,6 +32,7 @@ skonester_player_government_lock_monthly_pulse = {
 }
 
 skonester_player_government_lock_daily_pulse = {
+	trigger = { ucm_single_player_trigger = yes }
   effect = {
     root = {
       if = {

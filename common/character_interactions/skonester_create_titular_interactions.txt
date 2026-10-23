@@ -9,7 +9,7 @@
 	target_filter = recipient_domain_titles
 	interface_priority = 11720
 	
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		scope:recipient = {
 			is_ruler = yes

@@ -4,7 +4,7 @@
 
 skonester_acm_gui_open_visible = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_acm_gui_open
     NOT = { has_character_flag = skonester_acm_gui_text_edit_active }
   }
@@ -13,13 +13,13 @@ skonester_acm_gui_open_visible = {
 
 skonester_acm_gui_is_modify_session = {
   scope = character
-  is_shown = { has_character_flag = skonester_acm_modify_session }
+  is_shown = { ucm_single_player_trigger = yes  has_character_flag = skonester_acm_modify_session }
   is_valid = { always = yes }
 }
 
 skonester_acm_gui_is_not_modify_session = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     NOT = { has_character_flag = skonester_acm_modify_session }
   }
   is_valid = { always = yes }
@@ -27,50 +27,50 @@ skonester_acm_gui_is_not_modify_session = {
 
 skonester_acm_gui_is_weapon_kind = {
   scope = character
-  is_shown = { has_character_flag = skonester_artifact_kind_weapon }
+  is_shown = { ucm_single_player_trigger = yes  has_character_flag = skonester_artifact_kind_weapon }
   is_valid = { always = yes }
 }
 
 skonester_acm_gui_is_armor_kind = {
   scope = character
-  is_shown = { has_character_flag = skonester_artifact_kind_armor }
+  is_shown = { ucm_single_player_trigger = yes  has_character_flag = skonester_artifact_kind_armor }
   is_valid = { always = yes }
 }
 
 skonester_acm_gui_is_crown_kind = {
   scope = character
-  is_shown = { has_character_flag = skonester_artifact_kind_crown }
+  is_shown = { ucm_single_player_trigger = yes  has_character_flag = skonester_artifact_kind_crown }
   is_valid = { always = yes }
 }
 
 skonester_acm_gui_is_regalia_kind = {
   scope = character
-  is_shown = { has_character_flag = skonester_artifact_kind_regalia }
+  is_shown = { ucm_single_player_trigger = yes  has_character_flag = skonester_artifact_kind_regalia }
   is_valid = { always = yes }
 }
 
 skonester_acm_gui_is_trinket_kind = {
   scope = character
-  is_shown = { has_character_flag = skonester_artifact_kind_trinket }
+  is_shown = { ucm_single_player_trigger = yes  has_character_flag = skonester_artifact_kind_trinket }
   is_valid = { always = yes }
 }
 
 skonester_acm_gui_is_book_kind = {
   scope = character
-  is_shown = { has_character_flag = skonester_artifact_kind_book }
+  is_shown = { ucm_single_player_trigger = yes  has_character_flag = skonester_artifact_kind_book }
   is_valid = { always = yes }
 }
 
 skonester_acm_gui_is_court_kind = {
   scope = character
-  is_shown = { has_character_flag = skonester_artifact_kind_court }
+  is_shown = { ucm_single_player_trigger = yes  has_character_flag = skonester_artifact_kind_court }
   is_valid = { always = yes }
 }
 
 # 按钮 down= 光圈：武器子类（大类+子类同时成立）
 skonester_acm_gui_sel_weapon_sword = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_weapon
     has_character_flag = skonester_artifact_subtype_sword
   }
@@ -79,7 +79,7 @@ skonester_acm_gui_sel_weapon_sword = {
 
 skonester_acm_gui_sel_weapon_axe = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_weapon
     has_character_flag = skonester_artifact_subtype_axe
   }
@@ -88,7 +88,7 @@ skonester_acm_gui_sel_weapon_axe = {
 
 skonester_acm_gui_sel_weapon_spear = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_weapon
     has_character_flag = skonester_artifact_subtype_spear
   }
@@ -97,31 +97,31 @@ skonester_acm_gui_sel_weapon_spear = {
 
 skonester_acm_gui_sel_q_common = {
   scope = character
-  is_shown = { var:skonester_acm_craft_quality_wealth = 10 }
+  is_shown = { ucm_single_player_trigger = yes  var:skonester_acm_craft_quality_wealth = 10 }
   is_valid = { always = yes }
 }
 
 skonester_acm_gui_sel_q_masterwork = {
   scope = character
-  is_shown = { var:skonester_acm_craft_quality_wealth = 100 }
+  is_shown = { ucm_single_player_trigger = yes  var:skonester_acm_craft_quality_wealth = 100 }
   is_valid = { always = yes }
 }
 
 skonester_acm_gui_sel_q_famed = {
   scope = character
-  is_shown = { var:skonester_acm_craft_quality_wealth = 250 }
+  is_shown = { ucm_single_player_trigger = yes  var:skonester_acm_craft_quality_wealth = 250 }
   is_valid = { always = yes }
 }
 
 skonester_acm_gui_sel_q_illustrious = {
   scope = character
-  is_shown = { var:skonester_acm_craft_quality_wealth = 500 }
+  is_shown = { ucm_single_player_trigger = yes  var:skonester_acm_craft_quality_wealth = 500 }
   is_valid = { always = yes }
 }
 
 skonester_acm_gui_close = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = {
     remove_character_flag = skonester_acm_gui_open
@@ -147,7 +147,7 @@ skonester_acm_gui_close = {
 
 skonester_acm_gui_create = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { skonester_player_may_use_artifact_craft_trigger = yes }
   effect = {
     save_scope_as = actor
@@ -160,7 +160,7 @@ skonester_acm_gui_create = {
 
 skonester_acm_craft_gui_edit_name = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = {
     skonester_acm_open_artifact_name_editor_effect = yes
@@ -169,7 +169,7 @@ skonester_acm_craft_gui_edit_name = {
 
 skonester_acm_craft_gui_edit_desc = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = {
     skonester_acm_open_artifact_desc_editor_effect = yes
@@ -178,13 +178,13 @@ skonester_acm_craft_gui_edit_desc = {
 
 skonester_acm_gui_has_modify_target = {
   scope = character
-  is_shown = { has_global_variable = skonester_acm_repair_target }
+  is_shown = { ucm_single_player_trigger = yes  has_global_variable = skonester_acm_repair_target }
   is_valid = { always = yes }
 }
 
 skonester_acm_gui_modify_pick = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = {
     skonester_acm_gui_open_repair_picker_effect = yes
@@ -193,7 +193,7 @@ skonester_acm_gui_modify_pick = {
 
 skonester_acm_gui_modify_apply = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = {
     has_global_variable = skonester_acm_repair_target
   }
@@ -204,217 +204,217 @@ skonester_acm_gui_modify_apply = {
 
 skonester_acm_gui_kind_sword = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_set_kind_weapon_sword_effect = yes }
 }
 
 skonester_acm_gui_kind_axe = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_set_kind_weapon_axe_effect = yes }
 }
 
 skonester_acm_gui_kind_spear = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_set_kind_weapon_spear_effect = yes }
 }
 
 skonester_acm_gui_kind_armor = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_set_kind_armor_effect = yes }
 }
 
 skonester_acm_gui_kind_regalia = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_set_kind_regalia_effect = yes }
 }
 
 skonester_acm_gui_kind_trinket = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_set_kind_trinket_effect = yes }
 }
 
 skonester_acm_gui_kind_book = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_set_kind_book_effect = yes }
 }
 
 skonester_acm_gui_quality_common = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_set_quality_common_effect = yes }
 }
 
 skonester_acm_gui_quality_masterwork = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_set_quality_masterwork_effect = yes }
 }
 
 skonester_acm_gui_quality_famed = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_set_quality_famed_effect = yes }
 }
 
 skonester_acm_gui_quality_illustrious = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_set_quality_illustrious_effect = yes }
 }
 
 skonester_acm_gui_toggle_give = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_toggle_give_recipient_effect = yes }
 }
 
 skonester_acm_gui_cycle_m1 = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_cycle_craft_m1_effect = yes }
 }
 
 skonester_acm_gui_cycle_m2 = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_cycle_craft_m2_effect = yes }
 }
 
 skonester_acm_gui_cycle_m3 = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_cycle_craft_m3_effect = yes }
 }
 
 skonester_acm_gui_cycle_m4 = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_cycle_craft_m4_effect = yes }
 }
 
 skonester_acm_gui_kind_crown = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_set_kind_crown_effect = yes }
 }
 
 skonester_acm_gui_kind_court = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_set_kind_court_effect = yes }
 }
 
 skonester_acm_gui_cycle_m5 = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_cycle_craft_m5_effect = yes }
 }
 
 skonester_acm_gui_m1_cnt_minus = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_dec_craft_m1_cnt_effect = yes }
 }
 
 skonester_acm_gui_m1_cnt_plus = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_inc_craft_m1_cnt_effect = yes }
 }
 
 skonester_acm_gui_m2_cnt_minus = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_dec_craft_m2_cnt_effect = yes }
 }
 
 skonester_acm_gui_m2_cnt_plus = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_inc_craft_m2_cnt_effect = yes }
 }
 
 skonester_acm_gui_m3_cnt_minus = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_dec_craft_m3_cnt_effect = yes }
 }
 
 skonester_acm_gui_m3_cnt_plus = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_inc_craft_m3_cnt_effect = yes }
 }
 
 skonester_acm_gui_m4_cnt_minus = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_dec_craft_m4_cnt_effect = yes }
 }
 
 skonester_acm_gui_m4_cnt_plus = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_inc_craft_m4_cnt_effect = yes }
 }
 
 skonester_acm_gui_m5_cnt_minus = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_dec_craft_m5_cnt_effect = yes }
 }
 
 skonester_acm_gui_m5_cnt_plus = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_inc_craft_m5_cnt_effect = yes }
 }
 
 skonester_acm_gui_pick_arm_leather = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_armor_leather_effect = yes }
 }
 
 skonester_acm_gui_sel_arm_leather = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_armor
     has_character_flag = skonester_acm_arm_leather
   }
@@ -423,14 +423,14 @@ skonester_acm_gui_sel_arm_leather = {
 
 skonester_acm_gui_pick_arm_chain = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_armor_chain_effect = yes }
 }
 
 skonester_acm_gui_sel_arm_chain = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_armor
     has_character_flag = skonester_acm_arm_chain
   }
@@ -439,14 +439,14 @@ skonester_acm_gui_sel_arm_chain = {
 
 skonester_acm_gui_pick_arm_scale = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_armor_scale_effect = yes }
 }
 
 skonester_acm_gui_sel_arm_scale = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_armor
     has_character_flag = skonester_acm_arm_scale
   }
@@ -455,14 +455,14 @@ skonester_acm_gui_sel_arm_scale = {
 
 skonester_acm_gui_pick_arm_plate = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_armor_plate_effect = yes }
 }
 
 skonester_acm_gui_sel_arm_plate = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_armor
     has_character_flag = skonester_acm_arm_plate
   }
@@ -471,14 +471,14 @@ skonester_acm_gui_sel_arm_plate = {
 
 skonester_acm_gui_pick_arm_halfplate = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_armor_halfplate_effect = yes }
 }
 
 skonester_acm_gui_sel_arm_halfplate = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_armor
     has_character_flag = skonester_acm_arm_halfplate
   }
@@ -487,14 +487,14 @@ skonester_acm_gui_sel_arm_halfplate = {
 
 skonester_acm_gui_pick_arm_fullplate = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_armor_fullplate_effect = yes }
 }
 
 skonester_acm_gui_sel_arm_fullplate = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_armor
     has_character_flag = skonester_acm_arm_fullplate
   }
@@ -503,14 +503,14 @@ skonester_acm_gui_sel_arm_fullplate = {
 
 skonester_acm_gui_pick_arm_sacred = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_armor_sacred_effect = yes }
 }
 
 skonester_acm_gui_sel_arm_sacred = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_armor
     has_character_flag = skonester_acm_arm_sacred
   }
@@ -519,14 +519,14 @@ skonester_acm_gui_sel_arm_sacred = {
 
 skonester_acm_gui_pick_crn_noble = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_crown_noble_effect = yes }
 }
 
 skonester_acm_gui_sel_crn_noble = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_crown
     has_character_flag = skonester_acm_crown_noble
   }
@@ -535,14 +535,14 @@ skonester_acm_gui_sel_crn_noble = {
 
 skonester_acm_gui_pick_crn_royal = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_crown_royal_effect = yes }
 }
 
 skonester_acm_gui_sel_crn_royal = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_crown
     has_character_flag = skonester_acm_crown_royal
   }
@@ -551,14 +551,14 @@ skonester_acm_gui_sel_crn_royal = {
 
 skonester_acm_gui_pick_crn_kingdom = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_crown_kingdom_effect = yes }
 }
 
 skonester_acm_gui_sel_crn_kingdom = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_crown
     has_character_flag = skonester_acm_crown_kingdom
   }
@@ -567,14 +567,14 @@ skonester_acm_gui_sel_crn_kingdom = {
 
 skonester_acm_gui_pick_crn_empire = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_crown_empire_effect = yes }
 }
 
 skonester_acm_gui_sel_crn_empire = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_crown
     has_character_flag = skonester_acm_crown_empire
   }
@@ -583,14 +583,14 @@ skonester_acm_gui_sel_crn_empire = {
 
 skonester_acm_gui_pick_crn_holy = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_crown_holy_effect = yes }
 }
 
 skonester_acm_gui_sel_crn_holy = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_crown
     has_character_flag = skonester_acm_crown_holy
   }
@@ -599,14 +599,14 @@ skonester_acm_gui_sel_crn_holy = {
 
 skonester_acm_gui_pick_crn_war = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_crown_war_effect = yes }
 }
 
 skonester_acm_gui_sel_crn_war = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_crown
     has_character_flag = skonester_acm_crown_war
   }
@@ -615,14 +615,14 @@ skonester_acm_gui_sel_crn_war = {
 
 skonester_acm_gui_pick_crn_tribal = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_crown_tribal_effect = yes }
 }
 
 skonester_acm_gui_sel_crn_tribal = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_crown
     has_character_flag = skonester_acm_crown_tribal
   }
@@ -631,14 +631,14 @@ skonester_acm_gui_sel_crn_tribal = {
 
 skonester_acm_gui_pick_reg_scepter = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_reg_scepter_effect = yes }
 }
 
 skonester_acm_gui_sel_reg_scepter = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_regalia
     has_character_flag = skonester_acm_reg_scepter
   }
@@ -647,14 +647,14 @@ skonester_acm_gui_sel_reg_scepter = {
 
 skonester_acm_gui_pick_reg_orb = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_reg_orb_effect = yes }
 }
 
 skonester_acm_gui_sel_reg_orb = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_regalia
     has_character_flag = skonester_acm_reg_orb
   }
@@ -663,14 +663,14 @@ skonester_acm_gui_sel_reg_orb = {
 
 skonester_acm_gui_pick_reg_seal = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_reg_seal_effect = yes }
 }
 
 skonester_acm_gui_sel_reg_seal = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_regalia
     has_character_flag = skonester_acm_reg_seal
   }
@@ -679,14 +679,14 @@ skonester_acm_gui_sel_reg_seal = {
 
 skonester_acm_gui_pick_reg_stole = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_reg_stole_effect = yes }
 }
 
 skonester_acm_gui_sel_reg_stole = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_regalia
     has_character_flag = skonester_acm_reg_stole
   }
@@ -695,14 +695,14 @@ skonester_acm_gui_sel_reg_stole = {
 
 skonester_acm_gui_pick_reg_cloak = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_reg_cloak_effect = yes }
 }
 
 skonester_acm_gui_sel_reg_cloak = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_regalia
     has_character_flag = skonester_acm_reg_cloak
   }
@@ -711,14 +711,14 @@ skonester_acm_gui_sel_reg_cloak = {
 
 skonester_acm_gui_pick_reg_oil = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_reg_oil_effect = yes }
 }
 
 skonester_acm_gui_sel_reg_oil = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_regalia
     has_character_flag = skonester_acm_reg_oil
   }
@@ -727,14 +727,14 @@ skonester_acm_gui_sel_reg_oil = {
 
 skonester_acm_gui_pick_reg_chalice = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_reg_chalice_effect = yes }
 }
 
 skonester_acm_gui_sel_reg_chalice = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_regalia
     has_character_flag = skonester_acm_reg_chalice
   }
@@ -743,14 +743,14 @@ skonester_acm_gui_sel_reg_chalice = {
 
 skonester_acm_gui_pick_trk_ring = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_trink_ring_effect = yes }
 }
 
 skonester_acm_gui_sel_trk_ring = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_trinket
     has_character_flag = skonester_acm_trink_ring
   }
@@ -759,14 +759,14 @@ skonester_acm_gui_sel_trk_ring = {
 
 skonester_acm_gui_pick_trk_necklace = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_trink_necklace_effect = yes }
 }
 
 skonester_acm_gui_sel_trk_necklace = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_trinket
     has_character_flag = skonester_acm_trink_necklace
   }
@@ -775,14 +775,14 @@ skonester_acm_gui_sel_trk_necklace = {
 
 skonester_acm_gui_pick_trk_brooch = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_trink_brooch_effect = yes }
 }
 
 skonester_acm_gui_sel_trk_brooch = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_trinket
     has_character_flag = skonester_acm_trink_brooch
   }
@@ -791,14 +791,14 @@ skonester_acm_gui_sel_trk_brooch = {
 
 skonester_acm_gui_pick_trk_earring = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_trink_earring_effect = yes }
 }
 
 skonester_acm_gui_sel_trk_earring = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_trinket
     has_character_flag = skonester_acm_trink_earring
   }
@@ -807,14 +807,14 @@ skonester_acm_gui_sel_trk_earring = {
 
 skonester_acm_gui_pick_trk_charm = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_trink_charm_effect = yes }
 }
 
 skonester_acm_gui_sel_trk_charm = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_trinket
     has_character_flag = skonester_acm_trink_charm
   }
@@ -823,14 +823,14 @@ skonester_acm_gui_sel_trk_charm = {
 
 skonester_acm_gui_pick_trk_perfume = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_trink_perfume_effect = yes }
 }
 
 skonester_acm_gui_sel_trk_perfume = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_trinket
     has_character_flag = skonester_acm_trink_perfume
   }
@@ -839,14 +839,14 @@ skonester_acm_gui_sel_trk_perfume = {
 
 skonester_acm_gui_pick_trk_relic = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_trink_relic_effect = yes }
 }
 
 skonester_acm_gui_sel_trk_relic = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_trinket
     has_character_flag = skonester_acm_trink_relic
   }
@@ -855,14 +855,14 @@ skonester_acm_gui_sel_trk_relic = {
 
 skonester_acm_gui_pick_trk_figurine = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_trink_figurine_effect = yes }
 }
 
 skonester_acm_gui_sel_trk_figurine = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_trinket
     has_character_flag = skonester_acm_trink_figurine
   }
@@ -871,14 +871,14 @@ skonester_acm_gui_sel_trk_figurine = {
 
 skonester_acm_gui_pick_book_martial = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_book_martial_effect = yes }
 }
 
 skonester_acm_gui_sel_book_martial = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_book
     has_character_flag = skonester_acm_book_martial
   }
@@ -887,14 +887,14 @@ skonester_acm_gui_sel_book_martial = {
 
 skonester_acm_gui_pick_book_steward = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_book_steward_effect = yes }
 }
 
 skonester_acm_gui_sel_book_steward = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_book
     has_character_flag = skonester_acm_book_steward
   }
@@ -903,14 +903,14 @@ skonester_acm_gui_sel_book_steward = {
 
 skonester_acm_gui_pick_book_dynasty = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_book_dynasty_effect = yes }
 }
 
 skonester_acm_gui_sel_book_dynasty = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_book
     has_character_flag = skonester_acm_book_dynasty
   }
@@ -919,14 +919,14 @@ skonester_acm_gui_sel_book_dynasty = {
 
 skonester_acm_gui_pick_book_diplo = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_book_diplo_effect = yes }
 }
 
 skonester_acm_gui_sel_book_diplo = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_book
     has_character_flag = skonester_acm_book_diplo
   }
@@ -935,14 +935,14 @@ skonester_acm_gui_sel_book_diplo = {
 
 skonester_acm_gui_pick_crt_throne_gold = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_crt_throne_gold_effect = yes }
 }
 
 skonester_acm_gui_sel_crt_throne_gold = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_court
     has_character_flag = skonester_acm_crt_throne_gold
   }
@@ -951,14 +951,14 @@ skonester_acm_gui_sel_crt_throne_gold = {
 
 skonester_acm_gui_pick_crt_throne_empire = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_crt_throne_empire_effect = yes }
 }
 
 skonester_acm_gui_sel_crt_throne_empire = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_court
     has_character_flag = skonester_acm_crt_throne_empire
   }
@@ -967,14 +967,14 @@ skonester_acm_gui_sel_crt_throne_empire = {
 
 skonester_acm_gui_pick_crt_banner_gratitude = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_crt_banner_gratitude_effect = yes }
 }
 
 skonester_acm_gui_sel_crt_banner_gratitude = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_court
     has_character_flag = skonester_acm_crt_banner_gratitude
   }
@@ -983,14 +983,14 @@ skonester_acm_gui_sel_crt_banner_gratitude = {
 
 skonester_acm_gui_pick_crt_family_tree = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_crt_family_tree_effect = yes }
 }
 
 skonester_acm_gui_sel_crt_family_tree = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_court
     has_character_flag = skonester_acm_crt_family_tree
   }
@@ -999,14 +999,14 @@ skonester_acm_gui_sel_crt_family_tree = {
 
 skonester_acm_gui_pick_crt_tapestry = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_crt_tapestry_effect = yes }
 }
 
 skonester_acm_gui_sel_crt_tapestry = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_court
     has_character_flag = skonester_acm_crt_tapestry
   }
@@ -1015,14 +1015,14 @@ skonester_acm_gui_sel_crt_tapestry = {
 
 skonester_acm_gui_pick_crt_banner_crusade = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_crt_banner_crusade_effect = yes }
 }
 
 skonester_acm_gui_sel_crt_banner_crusade = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_court
     has_character_flag = skonester_acm_crt_banner_crusade
   }
@@ -1031,14 +1031,14 @@ skonester_acm_gui_sel_crt_banner_crusade = {
 
 skonester_acm_gui_pick_crt_banner_dragon = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_crt_banner_dragon_effect = yes }
 }
 
 skonester_acm_gui_sel_crt_banner_dragon = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_court
     has_character_flag = skonester_acm_crt_banner_dragon
   }
@@ -1047,14 +1047,14 @@ skonester_acm_gui_sel_crt_banner_dragon = {
 
 skonester_acm_gui_pick_crt_divan_persian = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_crt_divan_persian_effect = yes }
 }
 
 skonester_acm_gui_sel_crt_divan_persian = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_court
     has_character_flag = skonester_acm_crt_divan_persian
   }
@@ -1063,14 +1063,14 @@ skonester_acm_gui_sel_crt_divan_persian = {
 
 skonester_acm_gui_pick_crt_ivory_cabinet = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_crt_ivory_cabinet_effect = yes }
 }
 
 skonester_acm_gui_sel_crt_ivory_cabinet = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_court
     has_character_flag = skonester_acm_crt_ivory_cabinet
   }
@@ -1079,14 +1079,14 @@ skonester_acm_gui_sel_crt_ivory_cabinet = {
 
 skonester_acm_gui_pick_crt_ring_angelica = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_crt_ring_angelica_effect = yes }
 }
 
 skonester_acm_gui_sel_crt_ring_angelica = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_court
     has_character_flag = skonester_acm_crt_ring_angelica
   }
@@ -1095,14 +1095,14 @@ skonester_acm_gui_sel_crt_ring_angelica = {
 
 skonester_acm_gui_pick_arm_leather = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_armor_leather_effect = yes }
 }
 
 skonester_acm_gui_sel_arm_leather = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_armor
     has_character_flag = skonester_acm_arm_leather
   }
@@ -1111,14 +1111,14 @@ skonester_acm_gui_sel_arm_leather = {
 
 skonester_acm_gui_pick_arm_chain = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_armor_chain_effect = yes }
 }
 
 skonester_acm_gui_sel_arm_chain = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_armor
     has_character_flag = skonester_acm_arm_chain
   }
@@ -1127,14 +1127,14 @@ skonester_acm_gui_sel_arm_chain = {
 
 skonester_acm_gui_pick_arm_scale = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_armor_scale_effect = yes }
 }
 
 skonester_acm_gui_sel_arm_scale = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_armor
     has_character_flag = skonester_acm_arm_scale
   }
@@ -1143,14 +1143,14 @@ skonester_acm_gui_sel_arm_scale = {
 
 skonester_acm_gui_pick_arm_plate = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_armor_plate_effect = yes }
 }
 
 skonester_acm_gui_sel_arm_plate = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_armor
     has_character_flag = skonester_acm_arm_plate
   }
@@ -1159,14 +1159,14 @@ skonester_acm_gui_sel_arm_plate = {
 
 skonester_acm_gui_pick_arm_halfplate = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_armor_halfplate_effect = yes }
 }
 
 skonester_acm_gui_sel_arm_halfplate = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_armor
     has_character_flag = skonester_acm_arm_halfplate
   }
@@ -1175,14 +1175,14 @@ skonester_acm_gui_sel_arm_halfplate = {
 
 skonester_acm_gui_pick_arm_fullplate = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_armor_fullplate_effect = yes }
 }
 
 skonester_acm_gui_sel_arm_fullplate = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_armor
     has_character_flag = skonester_acm_arm_fullplate
   }
@@ -1191,14 +1191,14 @@ skonester_acm_gui_sel_arm_fullplate = {
 
 skonester_acm_gui_pick_arm_sacred = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_armor_sacred_effect = yes }
 }
 
 skonester_acm_gui_sel_arm_sacred = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_armor
     has_character_flag = skonester_acm_arm_sacred
   }
@@ -1207,14 +1207,14 @@ skonester_acm_gui_sel_arm_sacred = {
 
 skonester_acm_gui_pick_crn_noble = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_crown_noble_effect = yes }
 }
 
 skonester_acm_gui_sel_crn_noble = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_crown
     has_character_flag = skonester_acm_crown_noble
   }
@@ -1223,14 +1223,14 @@ skonester_acm_gui_sel_crn_noble = {
 
 skonester_acm_gui_pick_crn_royal = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_crown_royal_effect = yes }
 }
 
 skonester_acm_gui_sel_crn_royal = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_crown
     has_character_flag = skonester_acm_crown_royal
   }
@@ -1239,14 +1239,14 @@ skonester_acm_gui_sel_crn_royal = {
 
 skonester_acm_gui_pick_crn_kingdom = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_crown_kingdom_effect = yes }
 }
 
 skonester_acm_gui_sel_crn_kingdom = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_crown
     has_character_flag = skonester_acm_crown_kingdom
   }
@@ -1255,14 +1255,14 @@ skonester_acm_gui_sel_crn_kingdom = {
 
 skonester_acm_gui_pick_crn_empire = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_crown_empire_effect = yes }
 }
 
 skonester_acm_gui_sel_crn_empire = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_crown
     has_character_flag = skonester_acm_crown_empire
   }
@@ -1271,14 +1271,14 @@ skonester_acm_gui_sel_crn_empire = {
 
 skonester_acm_gui_pick_crn_holy = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_crown_holy_effect = yes }
 }
 
 skonester_acm_gui_sel_crn_holy = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_crown
     has_character_flag = skonester_acm_crown_holy
   }
@@ -1287,14 +1287,14 @@ skonester_acm_gui_sel_crn_holy = {
 
 skonester_acm_gui_pick_crn_war = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_crown_war_effect = yes }
 }
 
 skonester_acm_gui_sel_crn_war = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_crown
     has_character_flag = skonester_acm_crown_war
   }
@@ -1303,14 +1303,14 @@ skonester_acm_gui_sel_crn_war = {
 
 skonester_acm_gui_pick_crn_tribal = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_crown_tribal_effect = yes }
 }
 
 skonester_acm_gui_sel_crn_tribal = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_crown
     has_character_flag = skonester_acm_crown_tribal
   }
@@ -1319,14 +1319,14 @@ skonester_acm_gui_sel_crn_tribal = {
 
 skonester_acm_gui_pick_reg_scepter = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_reg_scepter_effect = yes }
 }
 
 skonester_acm_gui_sel_reg_scepter = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_regalia
     has_character_flag = skonester_acm_reg_scepter
   }
@@ -1335,14 +1335,14 @@ skonester_acm_gui_sel_reg_scepter = {
 
 skonester_acm_gui_pick_reg_orb = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_reg_orb_effect = yes }
 }
 
 skonester_acm_gui_sel_reg_orb = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_regalia
     has_character_flag = skonester_acm_reg_orb
   }
@@ -1351,14 +1351,14 @@ skonester_acm_gui_sel_reg_orb = {
 
 skonester_acm_gui_pick_reg_seal = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_reg_seal_effect = yes }
 }
 
 skonester_acm_gui_sel_reg_seal = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_regalia
     has_character_flag = skonester_acm_reg_seal
   }
@@ -1367,14 +1367,14 @@ skonester_acm_gui_sel_reg_seal = {
 
 skonester_acm_gui_pick_reg_stole = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_reg_stole_effect = yes }
 }
 
 skonester_acm_gui_sel_reg_stole = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_regalia
     has_character_flag = skonester_acm_reg_stole
   }
@@ -1383,14 +1383,14 @@ skonester_acm_gui_sel_reg_stole = {
 
 skonester_acm_gui_pick_reg_cloak = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_reg_cloak_effect = yes }
 }
 
 skonester_acm_gui_sel_reg_cloak = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_regalia
     has_character_flag = skonester_acm_reg_cloak
   }
@@ -1399,14 +1399,14 @@ skonester_acm_gui_sel_reg_cloak = {
 
 skonester_acm_gui_pick_reg_oil = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_reg_oil_effect = yes }
 }
 
 skonester_acm_gui_sel_reg_oil = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_regalia
     has_character_flag = skonester_acm_reg_oil
   }
@@ -1415,14 +1415,14 @@ skonester_acm_gui_sel_reg_oil = {
 
 skonester_acm_gui_pick_reg_chalice = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_reg_chalice_effect = yes }
 }
 
 skonester_acm_gui_sel_reg_chalice = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_regalia
     has_character_flag = skonester_acm_reg_chalice
   }
@@ -1431,14 +1431,14 @@ skonester_acm_gui_sel_reg_chalice = {
 
 skonester_acm_gui_pick_trk_ring = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_trink_ring_effect = yes }
 }
 
 skonester_acm_gui_sel_trk_ring = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_trinket
     has_character_flag = skonester_acm_trink_ring
   }
@@ -1447,14 +1447,14 @@ skonester_acm_gui_sel_trk_ring = {
 
 skonester_acm_gui_pick_trk_necklace = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_trink_necklace_effect = yes }
 }
 
 skonester_acm_gui_sel_trk_necklace = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_trinket
     has_character_flag = skonester_acm_trink_necklace
   }
@@ -1463,14 +1463,14 @@ skonester_acm_gui_sel_trk_necklace = {
 
 skonester_acm_gui_pick_trk_brooch = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_trink_brooch_effect = yes }
 }
 
 skonester_acm_gui_sel_trk_brooch = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_trinket
     has_character_flag = skonester_acm_trink_brooch
   }
@@ -1479,14 +1479,14 @@ skonester_acm_gui_sel_trk_brooch = {
 
 skonester_acm_gui_pick_trk_earring = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_trink_earring_effect = yes }
 }
 
 skonester_acm_gui_sel_trk_earring = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_trinket
     has_character_flag = skonester_acm_trink_earring
   }
@@ -1495,14 +1495,14 @@ skonester_acm_gui_sel_trk_earring = {
 
 skonester_acm_gui_pick_trk_charm = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_trink_charm_effect = yes }
 }
 
 skonester_acm_gui_sel_trk_charm = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_trinket
     has_character_flag = skonester_acm_trink_charm
   }
@@ -1511,14 +1511,14 @@ skonester_acm_gui_sel_trk_charm = {
 
 skonester_acm_gui_pick_trk_perfume = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_trink_perfume_effect = yes }
 }
 
 skonester_acm_gui_sel_trk_perfume = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_trinket
     has_character_flag = skonester_acm_trink_perfume
   }
@@ -1527,14 +1527,14 @@ skonester_acm_gui_sel_trk_perfume = {
 
 skonester_acm_gui_pick_trk_relic = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_trink_relic_effect = yes }
 }
 
 skonester_acm_gui_sel_trk_relic = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_trinket
     has_character_flag = skonester_acm_trink_relic
   }
@@ -1543,14 +1543,14 @@ skonester_acm_gui_sel_trk_relic = {
 
 skonester_acm_gui_pick_trk_figurine = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_trink_figurine_effect = yes }
 }
 
 skonester_acm_gui_sel_trk_figurine = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_trinket
     has_character_flag = skonester_acm_trink_figurine
   }
@@ -1559,14 +1559,14 @@ skonester_acm_gui_sel_trk_figurine = {
 
 skonester_acm_gui_pick_book_martial = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_book_martial_effect = yes }
 }
 
 skonester_acm_gui_sel_book_martial = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_book
     has_character_flag = skonester_acm_book_martial
   }
@@ -1575,14 +1575,14 @@ skonester_acm_gui_sel_book_martial = {
 
 skonester_acm_gui_pick_book_steward = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_book_steward_effect = yes }
 }
 
 skonester_acm_gui_sel_book_steward = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_book
     has_character_flag = skonester_acm_book_steward
   }
@@ -1591,14 +1591,14 @@ skonester_acm_gui_sel_book_steward = {
 
 skonester_acm_gui_pick_book_dynasty = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_book_dynasty_effect = yes }
 }
 
 skonester_acm_gui_sel_book_dynasty = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_book
     has_character_flag = skonester_acm_book_dynasty
   }
@@ -1607,14 +1607,14 @@ skonester_acm_gui_sel_book_dynasty = {
 
 skonester_acm_gui_pick_book_diplo = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = { skonester_acm_pick_book_diplo_effect = yes }
 }
 
 skonester_acm_gui_sel_book_diplo = {
   scope = character
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     has_character_flag = skonester_artifact_kind_book
     has_character_flag = skonester_acm_book_diplo
   }

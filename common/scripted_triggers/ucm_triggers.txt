@@ -1,0 +1,31 @@
+# Unified Cheat Menu: shared triggers.
+
+# The mod is single-player only. Every interaction, decision, scripted GUI and
+# cheat pulse checks this. GUI-only elements use [Not( GameHasMultiplePlayers )].
+ucm_single_player_trigger = {
+	has_multiple_players = no
+}
+
+# Group actions: is this member (a county or character) one the action would change?
+# Root = player, see ucm_effects.txt.
+ucm_group_member_eligible_trigger = {
+	trigger_if = {
+		limit = { root.var:ucm_group_action = flag:max_development }
+		development_level < 100
+	}
+	trigger_else_if = {
+		limit = { root.var:ucm_group_action = flag:max_control }
+		county_control < 100
+	}
+	trigger_else_if = {
+		limit = { root.var:ucm_group_action = flag:clear_stress }
+		stress > 0
+	}
+	trigger_else = { always = no }
+}
+
+# Main menu buttons that act on the clicked target.
+ucm_menu_target_valid_trigger = {
+	exists = var:ucm_target
+	var:ucm_target = { is_alive = yes }
+}

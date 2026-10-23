@@ -1,6 +1,7 @@
 ﻿# Ported from advcm_culture_sgui.txt (#2752613114) — tradition picker only
 
 skonester_cw_tradition_dlc_check = {
+	is_shown = { ucm_single_player_trigger = yes }
 
   scope = character
 
@@ -134,6 +135,7 @@ skonester_cw_tradition_dlc_check = {
 }
 
 skonester_cw_tradition_category_list_maker = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
 
   saved_scopes = { tradition }
@@ -188,6 +190,7 @@ skonester_cw_tradition_category_list_maker = {
 }
 
 skonester_cw_add_tradition = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
 
   saved_scopes = { tradition }
@@ -201,6 +204,7 @@ skonester_cw_add_tradition = {
 }
 
 skonester_cw_remove_tradition = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
 
   saved_scopes = { tradition }
@@ -214,6 +218,7 @@ skonester_cw_remove_tradition = {
 }
 
 skonester_cw_culture_has_tradition = {
+	is_shown = { ucm_single_player_trigger = yes }
 
   scope = character
 
@@ -226,18 +231,19 @@ skonester_cw_culture_has_tradition = {
 
 skonester_cw_tradition_picker_visible = {
   scope = character
-  is_shown = { has_character_flag = skonester_cw_tradition_picker_open }
+  is_shown = { ucm_single_player_trigger = yes  has_character_flag = skonester_cw_tradition_picker_open }
 }
 
 skonester_cw_open_tradition_picker_window = {
   scope = character
-  is_shown = { is_ai = no }
+  is_shown = { ucm_single_player_trigger = yes  is_ai = no }
   is_valid = {
     exists = var:skonester_selected_culture_var
   }
 }
 
 skonester_cw_close_tradition_picker_window = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   is_valid = { always = yes }
   effect = {

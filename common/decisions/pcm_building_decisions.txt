@@ -12,7 +12,7 @@ pcm_b_add_building_slot_7_sub_realm_decision = {
 	ai_will_do = { base = 0 }
 	ai_check_interval = 0
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		is_landed = yes
 		is_ai = no
 		has_character_flag = pcm_b_show_decision_flag
@@ -88,7 +88,7 @@ pcm_b_max_all_buildings_sub_realm_decision = {
     selection_tooltip = pcm_b_max_all_buildings_sub_realm_decision_tooltip
     confirm_text = pcm_b_max_all_buildings_sub_realm_decision_ct
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
 		is_ai = no
 	    has_character_flag = pcm_b_show_decision_flag
     }
@@ -1242,7 +1242,7 @@ pcm_b_lucky_7_sub_realm_decision = {
     selection_tooltip = pcm_b_lucky_7_sub_realm_decision_tooltip
     confirm_text = pcm_b_lucky_7_sub_realm_decision_ct
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
 		is_ai = no
 	    has_character_flag = pcm_b_show_decision_flag
     }
@@ -1797,7 +1797,7 @@ pcm_b_show_decision = {
     selection_tooltip = pcm_b_show_decision_tooltip
     confirm_text = pcm_b_show_decision_ct
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
 	    NOT = { has_character_flag = pcm_b_show_decision_flag }
     }
 
@@ -1820,7 +1820,7 @@ pcm_b_hide_decision = {
     selection_tooltip = pcm_b_hide_decision_tooltip
     confirm_text = pcm_b_hide_decision_ct
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
 	    has_character_flag = pcm_b_show_decision_flag
     }
 

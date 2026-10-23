@@ -8,6 +8,7 @@ monthly_global_pulse = {
 }
 
 skonester_celestial_governor_rotation_january_backup_pulse = {
+	trigger = { ucm_single_player_trigger = yes }
   effect = {
     if = {
       limit = {

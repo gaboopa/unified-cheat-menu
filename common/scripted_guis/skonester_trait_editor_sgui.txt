@@ -3,17 +3,19 @@
 
 skonester_trait_gui_visible = {
   scope = character
-  is_shown = { has_character_flag = skonester_trait_gui_open }
+  is_shown = { ucm_single_player_trigger = yes  has_character_flag = skonester_trait_gui_open }
   is_valid = { always = yes }
 }
 
 skonester_trait_gui_close = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   is_valid = { always = yes }
   effect = { skonester_close_trait_editor_gui_effect = yes }
 }
 
 skonester_trait_gui_has = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   saved_scopes = { trait_flag }
   is_valid = {
@@ -1225,6 +1227,7 @@ skonester_trait_gui_has = {
 }
 
 skonester_trait_gui_toggle = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   saved_scopes = { trait_flag }
   is_valid = { always = yes }

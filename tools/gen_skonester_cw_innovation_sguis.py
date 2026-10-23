@@ -41,7 +41,7 @@ def emit(kind, effect, keys):
         lines += [
             f"skonester_cw_{kind}_{k} = {{",
             "  scope = character",
-            "  is_shown = { is_ai = no }",
+            "  is_shown = { ucm_single_player_trigger = yes is_ai = no }",
             "  is_valid = { always = yes }",
             "  saved_scopes = { culture }",
             "  effect = {",

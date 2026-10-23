@@ -4,7 +4,7 @@
 skonester_cw_edit_heritage = {
   scope = character
   saved_scopes = { culture }
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     is_ai = no
   }
   is_valid = {
@@ -33,7 +33,7 @@ skonester_cw_edit_heritage = {
 skonester_cw_edit_language = {
   scope = character
   saved_scopes = { culture }
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     is_ai = no
   }
   is_valid = {
@@ -62,7 +62,7 @@ skonester_cw_edit_language = {
 skonester_cw_edit_martial = {
   scope = character
   saved_scopes = { culture }
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     is_ai = no
   }
   is_valid = {
@@ -91,7 +91,7 @@ skonester_cw_edit_martial = {
 skonester_cw_edit_ethos = {
   scope = character
   saved_scopes = { culture }
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     is_ai = no
   }
   is_valid = {
@@ -121,7 +121,7 @@ skonester_cw_edit_ethos = {
 skonester_cw_edit_aesthetics = {
   scope = character
   saved_scopes = { culture }
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     is_ai = no
   }
   is_valid = {
@@ -147,7 +147,7 @@ skonester_cw_edit_aesthetics = {
 skonester_cw_open_tradition_picker = {
   scope = character
   saved_scopes = { culture }
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     is_ai = no
   }
   is_valid = {
@@ -175,7 +175,7 @@ skonester_cw_open_tradition_picker = {
 skonester_cw_adopt_culture = {
   scope = character
   saved_scopes = { culture }
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     is_ai = no
   }
   is_valid = {

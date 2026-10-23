@@ -16,7 +16,7 @@
 
     # CK3 1.20: decisions have no `major` field (decision_group_type decides). major = no
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
         is_ai = no
         has_character_flag = zhuge_juese_menu_01
     }
@@ -46,7 +46,7 @@ dynasty_of_many_crowns_decision = {
 	decision_group_type = major
 	ai_check_interval = 120
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		is_landless_adventurer = no
 		is_lowborn = no
 		NOT = {
@@ -111,7 +111,7 @@ zhuge_huangzu_add = {
 	ai_check_interval = 0
 	decision_group_type = skonester_realm_tools
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		is_ai = no
 		has_character_flag = daddy_pika_cheat_menu
 		has_character_flag = zhuge_juese_menu_01
@@ -198,7 +198,7 @@ change_sansi_government = {
 
 	decision_group_type = skonester_realm_tools
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
 		is_ai = no
         has_character_flag = daddy_pika_cheat_menu
         has_character_flag = zhuge_sansi_menu_02
@@ -228,7 +228,7 @@ start_searching_for_water_of_life_decision = {
 	decision_group_type = skonester_realm_tools
 	
 	# CK3 1.20: merged two is_shown blocks; only the first one was being read.
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		is_ai = no
 		has_character_flag = daddy_pika_cheat_menu
 		has_character_flag = zhuge_juese_menu_01

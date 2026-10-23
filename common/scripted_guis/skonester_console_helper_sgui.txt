@@ -1,12 +1,12 @@
 ﻿skonester_console_helper_open_visible = {
   scope = character
-  is_shown = { has_character_flag = skonester_console_helper_open }
+  is_shown = { ucm_single_player_trigger = yes  has_character_flag = skonester_console_helper_open }
   is_valid = { always = yes }
 }
 
 skonester_console_helper_close = {
   scope = character
-  is_shown = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes  always = yes }
   is_valid = { always = yes }
   effect = {
     remove_character_flag = skonester_console_helper_open

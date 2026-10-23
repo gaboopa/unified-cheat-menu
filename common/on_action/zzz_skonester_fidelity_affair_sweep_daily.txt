@@ -30,6 +30,7 @@ skonester_military_cheat_guard_daily_batch_pulse = {
 
 # 封臣對領主：每日清除可無限疊加的 grateful 修正（原月脈衝）
 skonester_vassal_opinion_grateful_daily_pulse = {
+	trigger = { ucm_single_player_trigger = yes }
   effect = {
     if = {
       limit = {
@@ -53,6 +54,7 @@ skonester_vassal_opinion_grateful_daily_pulse = {
 }
 
 skonester_fidelity_affair_sweep_playable = {
+	trigger = { ucm_single_player_trigger = yes }
   effect = {
     if = {
       limit = {

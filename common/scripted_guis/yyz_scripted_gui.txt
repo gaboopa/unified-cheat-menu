@@ -5,7 +5,7 @@
 yyz_clear_list = {
   scope = player
 
-  is_shown = { yyz_listGenerated = 1 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_listGenerated = 1 }
 
   effect = { 
     clear_variable_list = yyz_list
@@ -19,7 +19,7 @@ yyz_canInvite = {
   scope = character
   saved_scopes = { actor }
 
-  is_shown = { will_accept_invite_to_court = { RECRUITER = scope:actor RECRUITEE = root } }
+  is_shown = { ucm_single_player_trigger = yes  will_accept_invite_to_court = { RECRUITER = scope:actor RECRUITEE = root } }
   effect = {
 		open_interaction_window = {
 			interaction = invite_to_court_interaction
@@ -34,7 +34,7 @@ yyz_canInvite = {
 yyz_currencyPanel = {
   scope = player
 
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     OR = {
       yyz_currency_details_option = DETAILS_PANEL_ALWAYS
       AND = {
@@ -57,7 +57,7 @@ yyz_currencyPanel = {
 yyz_speedPanel = {
   scope = player
 
-  is_shown = {
+  is_shown = { ucm_single_player_trigger = yes 
     OR = {
       yyz_speed_details_option = DETAILS_PANEL_ALWAYS
       AND = {
@@ -80,7 +80,7 @@ yyz_settings = {
   scope = player
 #  saved_scopes = { player }
 
-  is_shown = { yyz_settingsOpen = 1 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_settingsOpen = 1 }
   effect = {
     toggle_variable = { PRIMARY = yyz_settingsOpen }
   }
@@ -91,7 +91,7 @@ yyz_settings = {
 open_yyz_viceroy_list = {
   scope = player
 
-  is_shown = { yyz_list_mode = MAIN_VICEROYS }
+  is_shown = { ucm_single_player_trigger = yes  yyz_list_mode = MAIN_VICEROYS }
 
   effect = {
     set_global_variable = { name = yyz_list_mode value = MAIN_VICEROYS }
@@ -110,6 +110,7 @@ open_yyz_viceroy_list = {
 ###################################################
 # switches the list to Dynasty mode and populates it with the females only filter set
 open_yyz_femaleDynasty_list = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = player
 
   effect = {
@@ -131,6 +132,7 @@ open_yyz_femaleDynasty_list = {
 ###################################################
 # switches the list to Dynasty mode and populates it with the filter set to males only
 open_yyz_maleDynasty_list = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = player
 
   effect = {
@@ -154,7 +156,7 @@ open_yyz_maleDynasty_list = {
 open_yyz_dynasty_list = {
   scope = player
 
-  is_shown = { yyz_list_mode = MAIN_DYNASTY }
+  is_shown = { ucm_single_player_trigger = yes  yyz_list_mode = MAIN_DYNASTY }
 
   effect = {
     set_global_variable = { name = yyz_list_mode value = MAIN_DYNASTY }
@@ -176,7 +178,7 @@ open_yyz_dynasty_list = {
 open_yyz_knight_list = {
   scope = player
 
-  is_shown = { yyz_list_mode = MAIN_KNIGHTS }
+  is_shown = { ucm_single_player_trigger = yes  yyz_list_mode = MAIN_KNIGHTS }
   effect = {
     debug_log = "*** starting knights ***"
     set_global_variable = { name = yyz_list_mode value = MAIN_KNIGHTS }
@@ -201,7 +203,7 @@ open_yyz_knight_list = {
 open_yyz_specialOrganizers_list = {
   scope = player
 
-  is_shown = { yyz_list_mode = MAIN_ORGANIZERS }
+  is_shown = { ucm_single_player_trigger = yes  yyz_list_mode = MAIN_ORGANIZERS }
   effect = {
     set_global_variable = { name = yyz_list_mode value = MAIN_ORGANIZERS }
 
@@ -222,7 +224,7 @@ open_yyz_specialOrganizers_list = {
 open_yyz_killTarget_list = {
   scope = player
 
-  is_shown = { yyz_list_mode = MAIN_KILL_TARGETS }
+  is_shown = { ucm_single_player_trigger = yes  yyz_list_mode = MAIN_KILL_TARGETS }
   effect = {
     set_global_variable = { name = yyz_list_mode value = MAIN_KILL_TARGETS }
 
@@ -243,7 +245,7 @@ open_yyz_killTarget_list = {
 open_yyz_courtPositions_list = {
   scope = player
 
-  is_shown = { yyz_list_mode = MAIN_COURT_POS }
+  is_shown = { ucm_single_player_trigger = yes  yyz_list_mode = MAIN_COURT_POS }
   effect = {
     debug_log = "*** open_yyz_courtPositions_list ***"
     set_global_variable = { name = yyz_list_mode value = MAIN_COURT_POS }
@@ -267,7 +269,7 @@ open_yyz_courtPositions_list = {
 open_yyz_criminalGold_list = {
   scope = player
 
-  is_shown = { yyz_list_mode = MAIN_GOLD }
+  is_shown = { ucm_single_player_trigger = yes  yyz_list_mode = MAIN_GOLD }
   effect = {
     set_global_variable = { name = yyz_list_mode value = MAIN_GOLD }
 
@@ -290,7 +292,7 @@ open_yyz_criminalGold_list = {
 open_yyz_oldMoney_list = {
   scope = player
 
-  is_shown = { yyz_list_mode = MAIN_GOLD }
+  is_shown = { ucm_single_player_trigger = yes  yyz_list_mode = MAIN_GOLD }
   effect = {
     set_global_variable = { name = yyz_list_mode value = MAIN_GOLD }
 
@@ -314,7 +316,7 @@ open_yyz_oldMoney_list = {
 open_yyz_inspiration_list = {
   scope = player
 
-  is_shown = { yyz_list_mode = MAIN_INSPIRATION }
+  is_shown = { ucm_single_player_trigger = yes  yyz_list_mode = MAIN_INSPIRATION }
   effect = {
     set_global_variable = { name = yyz_list_mode value = MAIN_INSPIRATION }
 # filters
@@ -332,6 +334,7 @@ open_yyz_inspiration_list = {
 ###################################################
 # artifact holder mode - WIP
 open_yyz_artifactHolder_list = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = player
 
   effect = {
@@ -345,7 +348,7 @@ open_yyz_artifactHolder_list = {
 open_yyz_fertility_list = {
   scope = player
 
-  is_shown = { yyz_list_mode = MAIN_FERTILITY }
+  is_shown = { ucm_single_player_trigger = yes  yyz_list_mode = MAIN_FERTILITY }
   effect = {
     set_global_variable = { name = yyz_list_mode value = MAIN_FERTILITY }
 # filters
@@ -367,7 +370,7 @@ open_yyz_fertility_list = {
 yyz_filterSexMale_toggle = {
   scope = player
 
-  is_shown = { NOT = { yyz_filterSex = FILTER_SEX_FEMALE } }
+  is_shown = { ucm_single_player_trigger = yes  NOT = { yyz_filterSex = FILTER_SEX_FEMALE } }
   effect = {
     toggle_variable_val = { PRIMARY = yyz_filterSex VAL = FILTER_SEX_FEMALE }
     yyz_generate_list = yes  
@@ -377,7 +380,7 @@ yyz_filterSexMale_toggle = {
 yyz_filterSexFemale_toggle = {
   scope = player
 
-  is_shown = { NOT = { yyz_filterSex = FILTER_SEX_MALE } }
+  is_shown = { ucm_single_player_trigger = yes  NOT = { yyz_filterSex = FILTER_SEX_MALE } }
   effect = {
     toggle_variable_val = { PRIMARY = yyz_filterSex VAL = FILTER_SEX_MALE }
     yyz_generate_list = yes  
@@ -387,7 +390,7 @@ yyz_filterSexFemale_toggle = {
 yyz_filterWhereNot_toggle = {
   scope = player
 
-  is_shown = { yyz_filterWhereNot = 1 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_filterWhereNot = 1 }
   effect = {
     toggle_variable = { PRIMARY = yyz_filterWhereNot }
     yyz_generate_list = yes  
@@ -397,7 +400,7 @@ yyz_filterWhereNot_toggle = {
 yyz_filterWhereRealm_toggle = {
   scope = player
 
-  is_shown = { yyz_filterWhere = FILTER_WHERE_REALM }
+  is_shown = { ucm_single_player_trigger = yes  yyz_filterWhere = FILTER_WHERE_REALM }
   effect = {
     toggle_variable_val = { PRIMARY = yyz_filterWhere VAL = FILTER_WHERE_REALM }
     yyz_generate_list = yes  
@@ -407,7 +410,7 @@ yyz_filterWhereRealm_toggle = {
 yyz_filterWhereCourt_toggle = {
   scope = player
 
-  is_shown = { yyz_filterWhere = FILTER_WHERE_COURT }
+  is_shown = { ucm_single_player_trigger = yes  yyz_filterWhere = FILTER_WHERE_COURT }
   effect = {
     toggle_variable_val = { PRIMARY = yyz_filterWhere VAL = FILTER_WHERE_COURT }
     yyz_generate_list = yes  
@@ -417,7 +420,7 @@ yyz_filterWhereCourt_toggle = {
 yyz_filterHooked_toggle = {
   scope = player
 
-  is_shown = { NOT = { yyz_filterHooked = FILTER_HOOKED_NOT } }
+  is_shown = { ucm_single_player_trigger = yes  NOT = { yyz_filterHooked = FILTER_HOOKED_NOT } }
   effect = {
     toggle_variable_val = { PRIMARY = yyz_filterHooked VAL = FILTER_HOOKED_HOOK }
     yyz_generate_list = yes  
@@ -427,7 +430,7 @@ yyz_filterHooked_toggle = {
 yyz_filterHookedNot_toggle = {
   scope = player
 
-  is_shown = { NOT = { yyz_filterHooked = FILTER_HOOKED_HOOK } }
+  is_shown = { ucm_single_player_trigger = yes  NOT = { yyz_filterHooked = FILTER_HOOKED_HOOK } }
   effect = {
     toggle_variable_val = { PRIMARY = yyz_filterHooked VAL = FILTER_HOOKED_NOT }
     yyz_generate_list = yes  
@@ -437,7 +440,7 @@ yyz_filterHookedNot_toggle = {
 yyz_filterMaritalMarried_toggle = {
   scope = player
 
-  is_shown = { NOT = { yyz_filterMarital = FILTER_MARITAL_UNMARRIED } }
+  is_shown = { ucm_single_player_trigger = yes  NOT = { yyz_filterMarital = FILTER_MARITAL_UNMARRIED } }
   effect = {
     toggle_variable_val = { PRIMARY = yyz_filterMarital VAL = FILTER_MARITAL_UNMARRIED }
     yyz_generate_list = yes  
@@ -447,7 +450,7 @@ yyz_filterMaritalMarried_toggle = {
 yyz_filterMaritalUnmarried_toggle = {
   scope = player
 
-  is_shown = { NOT = { yyz_filterMarital = FILTER_MARITAL_MARRIED } }
+  is_shown = { ucm_single_player_trigger = yes  NOT = { yyz_filterMarital = FILTER_MARITAL_MARRIED } }
   effect = {
     toggle_variable_val = { PRIMARY = yyz_filterMarital VAL = FILTER_MARITAL_MARRIED }
     yyz_generate_list = yes  
@@ -457,7 +460,7 @@ yyz_filterMaritalUnmarried_toggle = {
 yyz_filterNobilityNoble_toggle = {
   scope = player
 
-  is_shown = { NOT = { yyz_filterNobility = FILTER_NOBILITY_LOWBORN } }
+  is_shown = { ucm_single_player_trigger = yes  NOT = { yyz_filterNobility = FILTER_NOBILITY_LOWBORN } }
 
   effect = {
     toggle_variable_val = { PRIMARY = yyz_filterNobility VAL = FILTER_NOBILITY_LOWBORN }
@@ -468,7 +471,7 @@ yyz_filterNobilityNoble_toggle = {
 yyz_filterNobilityLowborn_toggle = {
   scope = player
 
-  is_shown = { NOT = { yyz_filterNobility = FILTER_NOBILITY_NOBLE } }
+  is_shown = { ucm_single_player_trigger = yes  NOT = { yyz_filterNobility = FILTER_NOBILITY_NOBLE } }
 
   effect = {
     toggle_variable_val = { PRIMARY = yyz_filterNobility VAL = FILTER_NOBILITY_NOBLE }
@@ -479,7 +482,7 @@ yyz_filterNobilityLowborn_toggle = {
 yyz_filterInvite_toggle = {
   scope = player
 
-  is_shown = { yyz_filterInvite = 1 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_filterInvite = 1 }
 
   effect = {
     toggle_variable = { PRIMARY = yyz_filterInvite }
@@ -489,7 +492,7 @@ yyz_filterInvite_toggle = {
 
 yyz_filterInspirationWeapon_toggle = {
   scope = player
-  is_shown = { yyz_filterInspirationWeapon = 1 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_filterInspirationWeapon = 1 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -501,7 +504,7 @@ yyz_filterInspirationWeapon_toggle = {
 
 yyz_filterInspirationArmor_toggle = {
   scope = player
-  is_shown = { yyz_filterInspirationArmor = 1 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_filterInspirationArmor = 1 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -513,7 +516,7 @@ yyz_filterInspirationArmor_toggle = {
 
 yyz_filterInspirationBook_toggle = {
   scope = player
-  is_shown = { yyz_filterInspirationBook = 1 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_filterInspirationBook = 1 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -525,7 +528,7 @@ yyz_filterInspirationBook_toggle = {
 
 yyz_filterInspirationWeaver_toggle = {
   scope = player
-  is_shown = { yyz_filterInspirationWeaver = 1 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_filterInspirationWeaver = 1 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -537,7 +540,7 @@ yyz_filterInspirationWeaver_toggle = {
 
 yyz_filterInspirationArtisan_toggle = {
   scope = player
-  is_shown = { yyz_filterInspirationArtisan = 1 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_filterInspirationArtisan = 1 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -549,7 +552,7 @@ yyz_filterInspirationArtisan_toggle = {
 
 yyz_filterInspirationSmith_toggle = {
   scope = player
-  is_shown = { yyz_filterInspirationSmith = 1 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_filterInspirationSmith = 1 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -562,7 +565,7 @@ yyz_filterInspirationSmith_toggle = {
 yyz_filterInspirationAlchemy_toggle = {
   scope = player
 
-  is_shown = { yyz_filterInspirationAlchemy = 1 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_filterInspirationAlchemy = 1 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -575,7 +578,7 @@ yyz_filterInspirationAlchemy_toggle = {
 yyz_filterInspirationAdventure_toggle = {
   scope = player
 
-  is_shown = { yyz_filterInspirationAdventure = 1 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_filterInspirationAdventure = 1 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -588,7 +591,7 @@ yyz_filterInspirationAdventure_toggle = {
 yyz_filterInspirationQuality_Local = {
   scope = player
 
-  is_shown = { yyz_filterInspirationQuality = 0 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_filterInspirationQuality = 0 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -601,7 +604,7 @@ yyz_filterInspirationQuality_Local = {
 yyz_filterInspirationQuality_Low = {
   scope = player
 
-  is_shown = { yyz_filterInspirationQuality = 8 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_filterInspirationQuality = 8 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -614,7 +617,7 @@ yyz_filterInspirationQuality_Low = {
 yyz_filterInspirationQuality_Medium = {
   scope = player
 
-  is_shown = { yyz_filterInspirationQuality = 12 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_filterInspirationQuality = 12 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -626,7 +629,7 @@ yyz_filterInspirationQuality_Medium = {
 
 yyz_filterInspirationQuality_High = {
   scope = player
-  is_shown = { yyz_filterInspirationQuality = 16 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_filterInspirationQuality = 16 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -638,7 +641,7 @@ yyz_filterInspirationQuality_High = {
 
 yyz_filterInspirationUnsponsored_toggle = {
   scope = player
-  is_shown = { yyz_filterInspirationUnsponsored = 1 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_filterInspirationUnsponsored = 1 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -650,7 +653,7 @@ yyz_filterInspirationUnsponsored_toggle = {
 
 yyz_filterOrgSiege_toggle = {
   scope = player
-  is_shown = { yyz_filterOrgSiege = 1 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_filterOrgSiege = 1 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -662,7 +665,7 @@ yyz_filterOrgSiege_toggle = {
 
 yyz_filterOrgLogi_toggle = {
   scope = player
-  is_shown = { yyz_filterOrgLogi = 1 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_filterOrgLogi = 1 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -674,7 +677,7 @@ yyz_filterOrgLogi_toggle = {
 
 yyz_filterOrgReaver_toggle = {
   scope = player
-  is_shown = { yyz_filterOrgReaver = 1 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_filterOrgReaver = 1 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -686,7 +689,7 @@ yyz_filterOrgReaver_toggle = {
 
 yyz_filterOrgWinter_toggle = {
   scope = player
-  is_shown = { yyz_filterOrgWinter = 1 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_filterOrgWinter = 1 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -698,7 +701,7 @@ yyz_filterOrgWinter_toggle = {
 
 yyz_filterOrgSpeed5 = {
   scope = player
-  is_shown = { yyz_filterOrgSpeed = 30 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_filterOrgSpeed = 30 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -716,7 +719,7 @@ yyz_filterOrgSpeed5 = {
 
 yyz_filterOrgSpeed10 = {
   scope = player
-  is_shown = { yyz_filterOrgSpeed = 35 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_filterOrgSpeed = 35 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -734,7 +737,7 @@ yyz_filterOrgSpeed10 = {
 
 yyz_filterOrgSpeed15 = {
   scope = player
-  is_shown = { yyz_filterOrgSpeed = 40 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_filterOrgSpeed = 40 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -752,7 +755,7 @@ yyz_filterOrgSpeed15 = {
 
 yyz_filterCriminal_toggle = {
   scope = player
-  is_shown = { yyz_filterCriminal = 1 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_filterCriminal = 1 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -764,7 +767,7 @@ yyz_filterCriminal_toggle = {
 
 yyz_filterUnhealthy_toggle = {
   scope = player
-  is_shown = { yyz_filterUnhealthy = 1 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_filterUnhealthy = 1 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -776,7 +779,7 @@ yyz_filterUnhealthy_toggle = {
 
 yyz_filterHeirless_toggle = {
   scope = player
-  is_shown = { yyz_filterHeirless = 1 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_filterHeirless = 1 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -788,7 +791,7 @@ yyz_filterHeirless_toggle = {
 
 yyz_modeCourtPosition_antiquarian = {
   scope = player
-  is_shown = { yyz_modeCourtPosition = 1 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_modeCourtPosition = 1 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -800,7 +803,7 @@ yyz_modeCourtPosition_antiquarian = {
 
 yyz_modeCourtPosition_travel_leader = {
   scope = player
-  is_shown = { yyz_modeCourtPosition = 2 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_modeCourtPosition = 2 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -812,7 +815,7 @@ yyz_modeCourtPosition_travel_leader = {
 
 yyz_modeCourtPosition_court_physician = {
   scope = player
-  is_shown = { yyz_modeCourtPosition = 3 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_modeCourtPosition = 3 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -824,7 +827,7 @@ yyz_modeCourtPosition_court_physician = {
 
 yyz_modeCourtPosition_cultural_emissary = {
   scope = player
-  is_shown = { yyz_modeCourtPosition = 4 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_modeCourtPosition = 4 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -836,7 +839,7 @@ yyz_modeCourtPosition_cultural_emissary = {
 
 yyz_modeCourtPosition_keeper_of_swans = {
   scope = player
-  is_shown = { yyz_modeCourtPosition = 5 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_modeCourtPosition = 5 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -848,7 +851,7 @@ yyz_modeCourtPosition_keeper_of_swans = {
 
 yyz_modeCourtPosition_chief_qadi = {
   scope = player
-  is_shown = { yyz_modeCourtPosition = 6 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_modeCourtPosition = 6 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -860,7 +863,7 @@ yyz_modeCourtPosition_chief_qadi = {
 
 yyz_modeCourtPosition_garuda = {
   scope = player
-  is_shown = { yyz_modeCourtPosition = 7 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_modeCourtPosition = 7 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -872,7 +875,7 @@ yyz_modeCourtPosition_garuda = {
 
 yyz_modeCourtPosition_court_gardener = {
   scope = player
-  is_shown = { yyz_modeCourtPosition = 8 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_modeCourtPosition = 8 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -884,7 +887,7 @@ yyz_modeCourtPosition_court_gardener = {
 
 yyz_modeCourtPosition_lady_in_waiting = {
   scope = player
-  is_shown = { yyz_modeCourtPosition = 9 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_modeCourtPosition = 9 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -896,7 +899,7 @@ yyz_modeCourtPosition_lady_in_waiting = {
 
 yyz_modeCourtPosition_court_tutor = {
   scope = player
-  is_shown = { yyz_modeCourtPosition = 10 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_modeCourtPosition = 10 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -908,7 +911,7 @@ yyz_modeCourtPosition_court_tutor = {
 
 yyz_modeCourtPosition_food_taster = {
   scope = player
-  is_shown = { yyz_modeCourtPosition = 11 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_modeCourtPosition = 11 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -920,7 +923,7 @@ yyz_modeCourtPosition_food_taster = {
 
 yyz_modeCourtPosition_master_of_horse = {
   scope = player
-  is_shown = { yyz_modeCourtPosition = 12 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_modeCourtPosition = 12 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -932,7 +935,7 @@ yyz_modeCourtPosition_master_of_horse = {
 
 yyz_modeCourtPosition_master_of_hunt = {
   scope = player
-  is_shown = { yyz_modeCourtPosition = 13 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_modeCourtPosition = 13 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -944,7 +947,7 @@ yyz_modeCourtPosition_master_of_hunt = {
 
 yyz_modeCourtPosition_royal_architect = {
   scope = player
-  is_shown = { yyz_modeCourtPosition = 14 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_modeCourtPosition = 14 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -956,7 +959,7 @@ yyz_modeCourtPosition_royal_architect = {
 
 yyz_modeCourtPosition_high_almoner = {
   scope = player
-  is_shown = { yyz_modeCourtPosition = 15 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_modeCourtPosition = 15 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -968,7 +971,7 @@ yyz_modeCourtPosition_high_almoner = {
 
 yyz_modeCourtPosition_seneschal = {
   scope = player
-  is_shown = { yyz_modeCourtPosition = 16 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_modeCourtPosition = 16 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -980,7 +983,7 @@ yyz_modeCourtPosition_seneschal = {
 
 yyz_modeCourtPosition_cupbearer = {
   scope = player
-  is_shown = { yyz_modeCourtPosition = 17 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_modeCourtPosition = 17 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -992,7 +995,7 @@ yyz_modeCourtPosition_cupbearer = {
 
 yyz_modeCourtPosition_chief_eunuch = {
   scope = player
-  is_shown = { yyz_modeCourtPosition = 18 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_modeCourtPosition = 18 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -1004,7 +1007,7 @@ yyz_modeCourtPosition_chief_eunuch = {
 
 yyz_modeCourtPosition_court_jester = {
   scope = player
-  is_shown = { yyz_modeCourtPosition = 19 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_modeCourtPosition = 19 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -1016,7 +1019,7 @@ yyz_modeCourtPosition_court_jester = {
 
 yyz_modeCourtPosition_court_poet = {
   scope = player
-  is_shown = { yyz_modeCourtPosition = 20 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_modeCourtPosition = 20 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -1028,7 +1031,7 @@ yyz_modeCourtPosition_court_poet = {
 
 yyz_modeCourtPosition_court_musician = {
   scope = player
-  is_shown = { yyz_modeCourtPosition = 21 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_modeCourtPosition = 21 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -1040,7 +1043,7 @@ yyz_modeCourtPosition_court_musician = {
 
 yyz_modeCourtPosition_bodyguard = {
   scope = player
-  is_shown = { yyz_modeCourtPosition = 22 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_modeCourtPosition = 22 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -1052,7 +1055,7 @@ yyz_modeCourtPosition_bodyguard = {
 
 yyz_modeCourtPosition_champion = {
   scope = player
-  is_shown = { yyz_modeCourtPosition = 23 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_modeCourtPosition = 23 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -1064,7 +1067,7 @@ yyz_modeCourtPosition_champion = {
 
 yyz_modeCourtPosition_executioner = {
   scope = player
-  is_shown = { yyz_modeCourtPosition = 24 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_modeCourtPosition = 24 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -1076,7 +1079,7 @@ yyz_modeCourtPosition_executioner = {
 
 yyz_modeCourtPosition_court_artificer = {
   scope = player
-  is_shown = { yyz_modeCourtPosition = 25 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_modeCourtPosition = 25 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -1088,7 +1091,7 @@ yyz_modeCourtPosition_court_artificer = {
 
 yyz_modeCourtPosition_court_cave_hermit = {
   scope = player
-  is_shown = { yyz_modeCourtPosition = 26 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_modeCourtPosition = 26 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -1101,7 +1104,7 @@ yyz_modeCourtPosition_court_cave_hermit = {
 yyz_change_sort_order = {
   scope = player
   
-  is_shown = { yyz_sort_desc = 0 }
+  is_shown = { ucm_single_player_trigger = yes  yyz_sort_desc = 0 }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
 
@@ -1114,7 +1117,7 @@ yyz_change_sort_order = {
 yyz_sort_by_health = {
   scope = player
   
-  is_shown = { yyz_sort_key = SORT_KEY_HEALTH }
+  is_shown = { ucm_single_player_trigger = yes  yyz_sort_key = SORT_KEY_HEALTH }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
   
@@ -1126,7 +1129,7 @@ yyz_sort_by_health = {
 yyz_sort_by_rank = {
   scope = player
   
-  is_shown = { yyz_sort_key = SORT_KEY_RANK }
+  is_shown = { ucm_single_player_trigger = yes  yyz_sort_key = SORT_KEY_RANK }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
   
@@ -1138,7 +1141,7 @@ yyz_sort_by_rank = {
 yyz_sort_by_age = {
   scope = player
   
-  is_shown = { yyz_sort_key = SORT_KEY_AGE }
+  is_shown = { ucm_single_player_trigger = yes  yyz_sort_key = SORT_KEY_AGE }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
   
@@ -1150,7 +1153,7 @@ yyz_sort_by_age = {
 yyz_sort_by_diplomacy = {
   scope = player
   
-  is_shown = { yyz_sort_key = SORT_KEY_DIPLOMACY }
+  is_shown = { ucm_single_player_trigger = yes  yyz_sort_key = SORT_KEY_DIPLOMACY }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
   
@@ -1162,7 +1165,7 @@ yyz_sort_by_diplomacy = {
 yyz_sort_by_martial = {
   scope = player
   
-  is_shown = { yyz_sort_key = SORT_KEY_MARTIAL }
+  is_shown = { ucm_single_player_trigger = yes  yyz_sort_key = SORT_KEY_MARTIAL }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
   
@@ -1174,7 +1177,7 @@ yyz_sort_by_martial = {
 yyz_sort_by_stewardship = {
   scope = player
   
-  is_shown = { yyz_sort_key = SORT_KEY_STEWARDSHIP }
+  is_shown = { ucm_single_player_trigger = yes  yyz_sort_key = SORT_KEY_STEWARDSHIP }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
   
@@ -1186,7 +1189,7 @@ yyz_sort_by_stewardship = {
 yyz_sort_by_intrigue = {
   scope = player
   
-  is_shown = { yyz_sort_key = SORT_KEY_INTRIGUE }
+  is_shown = { ucm_single_player_trigger = yes  yyz_sort_key = SORT_KEY_INTRIGUE }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
   
@@ -1198,7 +1201,7 @@ yyz_sort_by_intrigue = {
 yyz_sort_by_learning = {
   scope = player
   
-  is_shown = { yyz_sort_key = SORT_KEY_LEARNING }
+  is_shown = { ucm_single_player_trigger = yes  yyz_sort_key = SORT_KEY_LEARNING }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
   
@@ -1210,7 +1213,7 @@ yyz_sort_by_learning = {
 yyz_sort_by_prowess = {
   scope = player
   
-  is_shown = { yyz_sort_key = SORT_KEY_PROWESS }
+  is_shown = { ucm_single_player_trigger = yes  yyz_sort_key = SORT_KEY_PROWESS }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
   
@@ -1222,7 +1225,7 @@ yyz_sort_by_prowess = {
 yyz_sort_by_all_stats = {
   scope = player
   
-  is_shown = { yyz_sort_key = SORT_KEY_ALL_STATS }
+  is_shown = { ucm_single_player_trigger = yes  yyz_sort_key = SORT_KEY_ALL_STATS }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
   
@@ -1234,7 +1237,7 @@ yyz_sort_by_all_stats = {
 yyz_sort_by_gold = {
   scope = player
 
-  is_shown = { yyz_sort_key = SORT_KEY_GOLD }
+  is_shown = { ucm_single_player_trigger = yes  yyz_sort_key = SORT_KEY_GOLD }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
   
@@ -1246,7 +1249,7 @@ yyz_sort_by_gold = {
 yyz_sort_by_prestige = {
   scope = player
 
-  is_shown = { yyz_sort_key = SORT_KEY_PRESTIGE }
+  is_shown = { ucm_single_player_trigger = yes  yyz_sort_key = SORT_KEY_PRESTIGE }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
   
@@ -1258,7 +1261,7 @@ yyz_sort_by_prestige = {
 yyz_sort_by_piety = {
   scope = player
 
-  is_shown = { yyz_sort_key = SORT_KEY_PIETY }
+  is_shown = { ucm_single_player_trigger = yes  yyz_sort_key = SORT_KEY_PIETY }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
   
@@ -1270,7 +1273,7 @@ yyz_sort_by_piety = {
 yyz_sort_by_real_age = {
   scope = player
   
-  is_shown = { yyz_sort_key = SORT_KEY_REAL_AGE }
+  is_shown = { ucm_single_player_trigger = yes  yyz_sort_key = SORT_KEY_REAL_AGE }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
   
@@ -1282,7 +1285,7 @@ yyz_sort_by_real_age = {
 yyz_sort_by_army_speed = {
   scope = player
   
-  is_shown = { yyz_sort_key = SORT_KEY_ARMY_SPEED }
+  is_shown = { ucm_single_player_trigger = yes  yyz_sort_key = SORT_KEY_ARMY_SPEED }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
   
@@ -1294,7 +1297,7 @@ yyz_sort_by_army_speed = {
 yyz_sort_by_travel_speed = {
   scope = player
   
-  is_shown = { yyz_sort_key = SORT_KEY_TRAVEL_SPEED }
+  is_shown = { ucm_single_player_trigger = yes  yyz_sort_key = SORT_KEY_TRAVEL_SPEED }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
   
@@ -1306,7 +1309,7 @@ yyz_sort_by_travel_speed = {
 yyz_sort_by_travel_safety = {
   scope = player
   
-  is_shown = { yyz_sort_key = SORT_KEY_TRAVEL_SAFETY }
+  is_shown = { ucm_single_player_trigger = yes  yyz_sort_key = SORT_KEY_TRAVEL_SAFETY }
   is_valid = { always = yes  }
   ai_is_valid = { always = no  }
   
@@ -1322,7 +1325,7 @@ yyz_sort_by_travel_safety = {
 yyz_modeAccolade_retinue = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_retinue ?= 1 }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_retinue ?= 1 }
   is_valid = { always = yes }
   
   effect = {
@@ -1333,7 +1336,7 @@ yyz_modeAccolade_retinue = {
 yyz_modeAccolade_archer = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_ARCHER }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_ARCHER }
   is_valid = { OR = { var:yyz_modeAccolade_retinue ?= 1 var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_ARCHER } }
   
   effect = {
@@ -1345,7 +1348,7 @@ yyz_modeAccolade_archer = {
 yyz_modeAccolade_outrider = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_OUTRIDER }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_OUTRIDER }
   is_valid = { OR = { var:yyz_modeAccolade_retinue ?= 1 var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_OUTRIDER } }
   
   effect = {
@@ -1357,7 +1360,7 @@ yyz_modeAccolade_outrider = {
 yyz_modeAccolade_pike_captain = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_PIKE_CAPTAIN }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_PIKE_CAPTAIN }
   is_valid = { OR = { var:yyz_modeAccolade_retinue ?= 1 var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_PIKE_CAPTAIN } }
   
   effect = {
@@ -1369,7 +1372,7 @@ yyz_modeAccolade_pike_captain = {
 yyz_modeAccolade_skirmisher = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_SKIRMISHER }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_SKIRMISHER }
   is_valid = { OR = { var:yyz_modeAccolade_retinue ?= 1 var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_SKIRMISHER } }
   
   effect = {
@@ -1381,7 +1384,7 @@ yyz_modeAccolade_skirmisher = {
 yyz_modeAccolade_vanguard = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_VANGUARD }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_VANGUARD }
   is_valid = { OR = { var:yyz_modeAccolade_retinue ?= 1 var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_VANGUARD } }
   
   effect = {
@@ -1393,7 +1396,7 @@ yyz_modeAccolade_vanguard = {
 yyz_modeAccolade_lancer = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_LANCER }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_LANCER }
   is_valid = { OR = { var:yyz_modeAccolade_retinue ?= 1 var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_LANCER } }
   
   effect = {
@@ -1405,7 +1408,7 @@ yyz_modeAccolade_lancer = {
 yyz_modeAccolade_camelier = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_CAMELIER }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_CAMELIER }
   is_valid = { OR = { var:yyz_modeAccolade_retinue ?= 1 var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_CAMELIER } }
   
   effect = {
@@ -1417,7 +1420,7 @@ yyz_modeAccolade_camelier = {
 yyz_modeAccolade_crossbow_captain = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_CROSSBOW_CAPTAIN }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_CROSSBOW_CAPTAIN }
   is_valid = { OR = { var:yyz_modeAccolade_retinue ?= 1 var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_CROSSBOW_CAPTAIN } }
   
   effect = {
@@ -1429,7 +1432,7 @@ yyz_modeAccolade_crossbow_captain = {
 yyz_modeAccolade_elephant_rider = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_ELEPHANT_RIDER }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_ELEPHANT_RIDER }
   is_valid = { OR = { var:yyz_modeAccolade_retinue ?= 1 var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_ELEPHANT_RIDER } }
   
   effect = {
@@ -1441,7 +1444,7 @@ yyz_modeAccolade_elephant_rider = {
 yyz_modeAccolade_horse_archer = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_HORSE_ARCHER }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_HORSE_ARCHER }
   is_valid = { OR = { var:yyz_modeAccolade_retinue ?= 1 var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_HORSE_ARCHER } }
   
   effect = {
@@ -1453,7 +1456,7 @@ yyz_modeAccolade_horse_archer = {
 yyz_modeAccolade_besieger = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_BESIEGER }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_BESIEGER }
   is_valid = { OR = { var:yyz_modeAccolade_retinue ?= 1 var:yyz_modeAccolade_retinue ?= flag:ACCOLADE_BESIEGER } }
   
   effect = {
@@ -1465,7 +1468,7 @@ yyz_modeAccolade_besieger = {
 yyz_modeAccolade_contender = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_contender ?= 1 }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_contender ?= 1 }
   is_valid = { OR = { NOT = { var:yyz_modeAccolade_retinue ?= 1 } var:yyz_modeAccolade_contender ?= 1 } }
   
   effect = {
@@ -1477,7 +1480,7 @@ yyz_modeAccolade_contender = {
 yyz_modeAccolade_manipulator = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_manipulator ?= 1 }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_manipulator ?= 1 }
   is_valid = { OR = { NOT = { var:yyz_modeAccolade_retinue ?= 1 } var:yyz_modeAccolade_manipulator ?= 1 } }
   
   effect = {
@@ -1489,7 +1492,7 @@ yyz_modeAccolade_manipulator = {
 yyz_modeAccolade_mentor = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_mentor ?= 1 }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_mentor ?= 1 }
   is_valid = { OR = { NOT = { var:yyz_modeAccolade_retinue ?= 1 } var:yyz_modeAccolade_mentor ?= 1 } }
   
   effect = {
@@ -1501,7 +1504,7 @@ yyz_modeAccolade_mentor = {
 yyz_modeAccolade_politicker = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_politicker ?= 1 }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_politicker ?= 1 }
 #  is_valid = { OR = { NOT = { var:yyz_modeAccolade_retinue ?= 1 } var:yyz_modeAccolade_politicker ?= 1 } }
   #is_valid = { always = no }
   
@@ -1514,7 +1517,7 @@ yyz_modeAccolade_politicker = {
 yyz_modeAccolade_reeve = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_reeve ?= 1 }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_reeve ?= 1 }
   is_valid = { OR = { NOT = { var:yyz_modeAccolade_retinue ?= 1 } var:yyz_modeAccolade_reeve ?= 1 } }
   
   effect = {
@@ -1526,7 +1529,7 @@ yyz_modeAccolade_reeve = {
 yyz_modeAccolade_tactician = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_tactician ?= 1 }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_tactician ?= 1 }
   is_valid = { OR = { NOT = { var:yyz_modeAccolade_retinue ?= 1 } var:yyz_modeAccolade_tactician ?= 1 } }
   
   effect = {
@@ -1538,7 +1541,7 @@ yyz_modeAccolade_tactician = {
 yyz_modeAccolade_charmer = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_charmer ?= 1 }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_charmer ?= 1 }
 #  is_valid = { OR = { NOT = { var:yyz_modeAccolade_retinue ?= 1 } var:yyz_modeAccolade_charmer ?= 1 } }
   #is_valid = { always = no }
   
@@ -1551,7 +1554,7 @@ yyz_modeAccolade_charmer = {
 yyz_modeAccolade_disciplinarian = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_disciplinarian ?= 1 }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_disciplinarian ?= 1 }
   is_valid = { OR = { NOT = { var:yyz_modeAccolade_retinue ?= 1 } var:yyz_modeAccolade_disciplinarian ?= 1 } }
   
   effect = {
@@ -1563,7 +1566,7 @@ yyz_modeAccolade_disciplinarian = {
 yyz_modeAccolade_idealist = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_idealist ?= 1 }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_idealist ?= 1 }
 #  is_valid = { OR = { NOT = { var:yyz_modeAccolade_retinue ?= 1 } var:yyz_modeAccolade_idealist ?= 1 } }
   #is_valid = { always = no }
   
@@ -1576,7 +1579,7 @@ yyz_modeAccolade_idealist = {
 yyz_modeAccolade_marauder = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_marauder ?= 1 }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_marauder ?= 1 }
   is_valid = { OR = { NOT = { var:yyz_modeAccolade_retinue ?= 1 } var:yyz_modeAccolade_marauder ?= 1 } }
   
   effect = {
@@ -1588,7 +1591,7 @@ yyz_modeAccolade_marauder = {
 yyz_modeAccolade_scoundrel = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_scoundrel ?= 1 }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_scoundrel ?= 1 }
 #  is_valid = { OR = { NOT = { var:yyz_modeAccolade_retinue ?= 1 } var:yyz_modeAccolade_scoundrel ?= 1 } }
   #is_valid = { always = no }
   
@@ -1601,7 +1604,7 @@ yyz_modeAccolade_scoundrel = {
 yyz_modeAccolade_stalwart = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_stalwart ?= 1 }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_stalwart ?= 1 }
   is_valid = { OR = { NOT = { var:yyz_modeAccolade_retinue ?= 1 } var:yyz_modeAccolade_stalwart ?= 1 } }
   
   effect = {
@@ -1613,7 +1616,7 @@ yyz_modeAccolade_stalwart = {
 yyz_modeAccolade_thug = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_thug ?= 1 }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_thug ?= 1 }
 #  is_valid = { OR = { NOT = { var:yyz_modeAccolade_retinue ?= 1 } var:yyz_modeAccolade_thug ?= 1 } }
   #is_valid = { always = no }
   
@@ -1626,7 +1629,7 @@ yyz_modeAccolade_thug = {
 yyz_modeAccolade_valiant = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_valiant ?= 1 }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_valiant ?= 1 }
   is_valid = { OR = { NOT = { var:yyz_modeAccolade_retinue ?= 1 } var:yyz_modeAccolade_valiant ?= 1 } }
   
   effect = {
@@ -1638,7 +1641,7 @@ yyz_modeAccolade_valiant = {
 yyz_modeAccolade_fanatic = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_fanatic ?= 1 }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_fanatic ?= 1 }
 #  is_valid = { OR = { NOT = { var:yyz_modeAccolade_retinue ?= 1 } var:yyz_modeAccolade_fanatic ?= 1 } }
   #is_valid = { always = no }
   
@@ -1651,7 +1654,7 @@ yyz_modeAccolade_fanatic = {
 yyz_modeAccolade_blademaster = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_blademaster ?= 1 }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_blademaster ?= 1 }
   is_valid = { OR = { NOT = { var:yyz_modeAccolade_retinue ?= 1 } var:yyz_modeAccolade_blademaster ?= 1 } }
   
   effect = {
@@ -1663,7 +1666,7 @@ yyz_modeAccolade_blademaster = {
 yyz_modeAccolade_huntmaster = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_huntmaster ?= 1 }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_huntmaster ?= 1 }
   is_valid = { OR = { NOT = { var:yyz_modeAccolade_retinue ?= 1 } var:yyz_modeAccolade_huntmaster ?= 1 } }
   
   effect = {
@@ -1675,7 +1678,7 @@ yyz_modeAccolade_huntmaster = {
 yyz_modeAccolade_master_of_revels = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_master_of_revels ?= 1 }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_master_of_revels ?= 1 }
   is_valid = { OR = { NOT = { var:yyz_modeAccolade_retinue ?= 1 } var:yyz_modeAccolade_master_of_revels ?= 1 } }
   
   effect = {
@@ -1687,7 +1690,7 @@ yyz_modeAccolade_master_of_revels = {
 yyz_modeAccolade_house_paragon = {
   scope = player
   
-  is_shown = { var:yyz_modeAccolade_house_paragon ?= 1 }
+  is_shown = { ucm_single_player_trigger = yes  var:yyz_modeAccolade_house_paragon ?= 1 }
   is_valid = { OR = { NOT = { var:yyz_modeAccolade_retinue ?= 1 } var:yyz_modeAccolade_house_paragon ?= 1 } }
   
   effect = {

@@ -54,6 +54,7 @@ yearly_global_pulse = {
 }
 
 skonester_ai_counter_player_pulse = {
+	trigger = { ucm_single_player_trigger = yes }
   effect = {
     if = {
       limit = {
@@ -65,6 +66,7 @@ skonester_ai_counter_player_pulse = {
 }
 
 skonester_ai_de_jure_transfer_yearly_pulse = {
+	trigger = { ucm_single_player_trigger = yes }
   effect = {
     if = {
       limit = {

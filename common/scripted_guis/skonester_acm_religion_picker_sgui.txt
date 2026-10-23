@@ -2,11 +2,12 @@
 
 skonester_acm_religion_picker_visible = {
   scope = character
-  is_shown = { has_character_flag = skonester_acm_religion_picker_open }
+  is_shown = { ucm_single_player_trigger = yes  has_character_flag = skonester_acm_religion_picker_open }
   is_valid = { always = yes }
 }
 
 skonester_acm_religion_list_load = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   is_valid = { always = yes }
   effect = {
@@ -15,6 +16,7 @@ skonester_acm_religion_list_load = {
 }
 
 skonester_acm_religion_picker_close = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   is_valid = { always = yes }
   effect = {
@@ -23,6 +25,7 @@ skonester_acm_religion_picker_close = {
 }
 
 skonester_acm_faith_pick = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   saved_scopes = { selected_faith }
   is_valid = { always = yes }
@@ -33,6 +36,7 @@ skonester_acm_faith_pick = {
 }
 
 skonester_acm_faith_pick_edit = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   saved_scopes = { selected_faith }
   is_valid = { always = yes }
@@ -42,6 +46,7 @@ skonester_acm_faith_pick_edit = {
 }
 
 skonester_acm_religion_picker_continue_edit = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   is_valid = {
     has_variable = skonester_selected_faith_var
@@ -56,6 +61,7 @@ skonester_acm_religion_picker_continue_edit = {
 }
 
 skonester_acm_faith_apply_to_target = {
+	is_shown = { ucm_single_player_trigger = yes }
   scope = character
   is_valid = {
     has_variable = skonester_selected_faith_var

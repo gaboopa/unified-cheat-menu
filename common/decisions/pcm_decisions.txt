@@ -6,7 +6,7 @@
     selection_tooltip = pcm_money_decision_tooltip
     confirm_text = pcm_money_decision_ct
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		is_ai = no
 		has_character_flag = pcm_show_decision_flag
 	}
@@ -31,7 +31,7 @@ pcm_convert_subrealm_to_culture_decision = {
     selection_tooltip = pcm_subrealm_to_culture_decision_tooltip
     confirm_text = pcm_subrealm_to_culture_decision_ct
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		is_ai = no
 		has_character_flag = pcm_show_decision_flag
 	}
@@ -83,7 +83,7 @@ pcm_convert_subrealm_to_religion_decision = {
     selection_tooltip = pcm_convert_subrealm_to_religion_decision_tooltip
     confirm_text = pcm_convert_subrealm_to_religion_decision_ct
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		is_ai = no
 		has_character_flag = pcm_show_decision_flag
 	}
@@ -128,7 +128,7 @@ pcm_show_decision = {
     selection_tooltip = pcm_show_decision_tooltip
     confirm_text = pcm_show_decision_ct
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
 		is_ai = no
 	    NOT = { has_character_flag = pcm_show_decision_flag }
     }
@@ -149,7 +149,7 @@ pcm_hide_decision = {
     selection_tooltip = pcm_hide_decision_tooltip
     confirm_text = pcm_hide_decision_ct
 
-    is_shown = {
+    is_shown = { ucm_single_player_trigger = yes 
 		is_ai = no
 	    has_character_flag = pcm_show_decision_flag
     }
@@ -169,7 +169,7 @@ pcm_cure_pox_decision = {
     selection_tooltip = pcm_cure_pox_decision_tooltip
     confirm_text = pcm_cure_pox_decision_ct
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		is_ai = no
 		has_character_flag = pcm_show_decision_flag
 	}
@@ -263,7 +263,7 @@ pcm_cure_all_decision = {
     selection_tooltip = pcm_cure_all_decision_tooltip
     confirm_text = pcm_cure_all_decision_ct
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		is_ai = no
 		has_character_flag = pcm_show_decision_flag
 	}
@@ -396,7 +396,7 @@ pcm_cure_inbred_decision = {
 	selection_tooltip = pcm_cure_inbred_decision_tooltip
 	confirm_text = pcm_cure_inbred_decision_ct
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		is_ai = no
 		has_character_flag = pcm_show_decision_flag
 	}
@@ -461,7 +461,7 @@ yyz_open_menu_decision = {
     decision_group_type = skonester_talent_finder
     picture = { reference = "gfx/interface/illustrations/decisions/menu.dds" }
     
-    is_shown = { 
+    is_shown = { ucm_single_player_trigger = yes  
         always = yes 
     }
     
@@ -486,7 +486,7 @@ Artifact_1000 = {
 	desc = cheat_description_artifact
 	confirm_text = cheat_decition_accept
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		is_ai = no
 		has_character_flag = pcm_show_decision_flag
 	}
@@ -724,7 +724,7 @@ culture_cheat = {
 	# CK3 1.20: decisions have no music field.
 	# music = "event:/DLC/Arctic_Attire/MUSIC/cuetracks/longing_for_the_land"
 	
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		has_character_flag = pcm_show_decision_flag
 	}
 	

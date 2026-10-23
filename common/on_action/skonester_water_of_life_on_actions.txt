@@ -9,6 +9,7 @@ monthly_global_pulse = {
     on_actions = { skonester_water_of_life_restore_all }
 }
 skonester_water_of_life_restore_all = {
+	trigger = { ucm_single_player_trigger = yes }
     effect = {
         every_living_character = {
             limit = { has_trait = water_of_life }

@@ -13,7 +13,7 @@ sol_war_without_bounds_interaction = {
 	ignores_pending_interaction_block = yes
 	use_diplomatic_range = no
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = skonester_character_interaction_menu_open }
 		NOT = {
 			scope:recipient = scope:actor
@@ -65,7 +65,7 @@ sol_expansion_war_interaction = {
 
 	use_diplomatic_range = no
 
-	is_shown = {
+	is_shown = { ucm_single_player_trigger = yes 
 		scope:actor = { has_character_flag = sol_war_without_bounds_open }
 		NOT = {
 			scope:recipient = scope:actor

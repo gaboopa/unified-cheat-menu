@@ -1068,7 +1068,652 @@ window = {
             layoutpolicy_horizontal = expanding
             spacing = 4
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_TAB_TITLES" using = Font_Size_Big default_format = "#high" }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_TAB_LATER" default_format = "#low" }
+            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_CLAIMS" using = Font_Size_Medium default_format = "#high" }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              text = "ucm_target_claims_second_title"
+              tooltip = "ucm_target_claims_second_title_tt"
+              enabled = "[GetScriptedGui( 'ucm_target_claims_second_title' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              onclick = "[GetScriptedGui( 'ucm_target_claims_second_title' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'daddy_pika_usurpy_surp' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'daddy_pika_usurpy_surp' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'daddy_pika_usurpy_surp' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'daddy_pika_usurpy_surp' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'daddy_pika_usurpy_surp' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'daddy_pika_claim_title' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'daddy_pika_claim_title' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'daddy_pika_claim_title' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'daddy_pika_claim_title' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'daddy_pika_claim_title' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'daddy_pika_revoke_title' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'daddy_pika_revoke_title' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'daddy_pika_revoke_title' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'daddy_pika_revoke_title' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'daddy_pika_revoke_title' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'take_title_interaction' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'take_title_interaction' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'take_title_interaction' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'take_title_interaction' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'take_title_interaction' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'take_title_and_vassals_interaction' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'take_title_and_vassals_interaction' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'take_title_and_vassals_interaction' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'take_title_and_vassals_interaction' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'take_title_and_vassals_interaction' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'take_domain_interaction' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'take_domain_interaction' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'take_domain_interaction' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'take_domain_interaction' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'take_domain_interaction' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'take_realm_interaction' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'take_realm_interaction' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'take_realm_interaction' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'take_realm_interaction' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'take_realm_interaction' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'get_claim_interaction' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'get_claim_interaction' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'get_claim_interaction' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'get_claim_interaction' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'get_claim_interaction' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'get_claim_on_all_creatable_interaction' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'get_claim_on_all_creatable_interaction' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'get_claim_on_all_creatable_interaction' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'get_claim_on_all_creatable_interaction' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'get_claim_on_all_creatable_interaction' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'ucm_create_titular' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'ucm_create_titular' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'ucm_create_titular' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'ucm_create_titular' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'ucm_create_titular' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'mt_merge_titles_interaction' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'mt_merge_titles_interaction' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'mt_merge_titles_interaction' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'mt_merge_titles_interaction' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'mt_merge_titles_interaction' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'mt_clear_selection_interaction' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'mt_clear_selection_interaction' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'mt_clear_selection_interaction' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'mt_clear_selection_interaction' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'mt_clear_selection_interaction' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'destroy_title_interaction' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'destroy_title_interaction' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'destroy_title_interaction' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'destroy_title_interaction' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'destroy_title_interaction' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'zhuge_destroy_title' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'zhuge_destroy_title' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'zhuge_destroy_title' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'zhuge_destroy_title' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'zhuge_destroy_title' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'become_conqueror_interaction' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'become_conqueror_interaction' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'become_conqueror_interaction' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'become_conqueror_interaction' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'become_conqueror_interaction' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'remove_conqueror_interaction' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'remove_conqueror_interaction' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'remove_conqueror_interaction' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'remove_conqueror_interaction' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'remove_conqueror_interaction' )]"
+            }
+            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_DEJURE" using = Font_Size_Medium default_format = "#high" }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'zhuge_organize_titles' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'zhuge_organize_titles' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'zhuge_organize_titles' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'zhuge_organize_titles' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'zhuge_organize_titles' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'ucm_one_click_transfer_vassals_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_VASSALS" using = Font_Size_Medium default_format = "#high" }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_target_independent"
+                tooltip = "ucm_target_independent_tt"
+                enabled = "[GetScriptedGui( 'ucm_target_independent' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_target_independent' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_target_vassal_of_second"
+                tooltip = "ucm_target_vassal_of_second_tt"
+                enabled = "[GetScriptedGui( 'ucm_target_vassal_of_second' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_target_vassal_of_second' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'daddy_pika_offer_vassal_inter' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'daddy_pika_offer_vassal_inter' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'daddy_pika_offer_vassal_inter' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'daddy_pika_offer_vassal_inter' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'daddy_pika_offer_vassal_inter' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'daddy_pika_char_modify_vassal_contract_inter' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'daddy_pika_char_modify_vassal_contract_inter' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'daddy_pika_char_modify_vassal_contract_inter' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'daddy_pika_char_modify_vassal_contract_inter' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'daddy_pika_char_modify_vassal_contract_inter' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'daddy_pika_vassal_mod_vassal_contract_inter' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'daddy_pika_vassal_mod_vassal_contract_inter' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'daddy_pika_vassal_mod_vassal_contract_inter' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'daddy_pika_vassal_mod_vassal_contract_inter' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'daddy_pika_vassal_mod_vassal_contract_inter' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'zhuge_mpo_qiyue' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'zhuge_mpo_qiyue' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'zhuge_mpo_qiyue' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'zhuge_mpo_qiyue' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'zhuge_mpo_qiyue' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'ucm_imprison_vassals_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'ucm_dynasty_grant_titles_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'ucm_one_click_grant_titles_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'ucm_official_land_cap_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'ucm_one_click_strip_official_titles_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_GOVERNMENT" using = Font_Size_Medium default_format = "#high" }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_gov_feudal"
+                tooltip = "ucm_gov_feudal_tt"
+                enabled = "[GetScriptedGui( 'ucm_gov_feudal' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_gov_feudal' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_gov_clan"
+                tooltip = "ucm_gov_clan_tt"
+                enabled = "[GetScriptedGui( 'ucm_gov_clan' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_gov_clan' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_gov_tribal"
+                tooltip = "ucm_gov_tribal_tt"
+                enabled = "[GetScriptedGui( 'ucm_gov_tribal' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_gov_tribal' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_gov_administrative"
+                tooltip = "ucm_gov_administrative_tt"
+                enabled = "[GetScriptedGui( 'ucm_gov_administrative' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_gov_administrative' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_gov_republic"
+                tooltip = "ucm_gov_republic_tt"
+                enabled = "[GetScriptedGui( 'ucm_gov_republic' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_gov_republic' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_gov_theocracy"
+                tooltip = "ucm_gov_theocracy_tt"
+                enabled = "[GetScriptedGui( 'ucm_gov_theocracy' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_gov_theocracy' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_gov_nomadic"
+                tooltip = "ucm_gov_nomadic_tt"
+                enabled = "[GetScriptedGui( 'ucm_gov_nomadic' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_gov_nomadic' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_gov_herder"
+                tooltip = "ucm_gov_herder_tt"
+                enabled = "[GetScriptedGui( 'ucm_gov_herder' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_gov_herder' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_gov_celestial"
+                tooltip = "ucm_gov_celestial_tt"
+                enabled = "[GetScriptedGui( 'ucm_gov_celestial' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_gov_celestial' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_gov_meritocratic"
+                tooltip = "ucm_gov_meritocratic_tt"
+                enabled = "[GetScriptedGui( 'ucm_gov_meritocratic' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_gov_meritocratic' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_gov_mandala"
+                tooltip = "ucm_gov_mandala_tt"
+                enabled = "[GetScriptedGui( 'ucm_gov_mandala' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_gov_mandala' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_gov_steppe_admin"
+                tooltip = "ucm_gov_steppe_admin_tt"
+                enabled = "[GetScriptedGui( 'ucm_gov_steppe_admin' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_gov_steppe_admin' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_gov_japan_feudal"
+                tooltip = "ucm_gov_japan_feudal_tt"
+                enabled = "[GetScriptedGui( 'ucm_gov_japan_feudal' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_gov_japan_feudal' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_gov_japan_administrative"
+                tooltip = "ucm_gov_japan_administrative_tt"
+                enabled = "[GetScriptedGui( 'ucm_gov_japan_administrative' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_gov_japan_administrative' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'zhuge_set_authority_inter' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'zhuge_set_authority_inter' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'zhuge_set_authority_inter' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'zhuge_set_authority_inter' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'zhuge_set_authority_inter' )]"
+            }
+            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_YOUR_SUCCESSION" using = Font_Size_Medium default_format = "#high" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_DECISIONS_NOTE" default_format = "#low" }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'change_Realm_succession_law_mod_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'change_succession_single' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'change_succession_single_youngest' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'gender_Succession_events_mod_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'dynasty_of_many_crowns_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'change_sansi_government' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_DIPLOMACY" using = Font_Size_Medium default_format = "#high" }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_ally_second"
+                tooltip = "ucm_ally_second_tt"
+                enabled = "[GetScriptedGui( 'ucm_ally_second' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_ally_second' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_break_alliance_second"
+                tooltip = "ucm_break_alliance_second_tt"
+                enabled = "[GetScriptedGui( 'ucm_break_alliance_second' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_break_alliance_second' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_truce_second"
+                tooltip = "ucm_truce_second_tt"
+                enabled = "[GetScriptedGui( 'ucm_truce_second' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_truce_second' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'debug_alliance_interaction' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'debug_alliance_interaction' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'debug_alliance_interaction' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'debug_alliance_interaction' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'debug_alliance_interaction' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'zhuge_add_truce_interaction' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'zhuge_add_truce_interaction' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'zhuge_add_truce_interaction' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'zhuge_add_truce_interaction' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'zhuge_add_truce_interaction' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'debug_add_truce_interaction' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'debug_add_truce_interaction' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'debug_add_truce_interaction' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'debug_add_truce_interaction' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'debug_add_truce_interaction' )]"
+            }
+            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_WARS" using = Font_Size_Medium default_format = "#high" }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              text = "ucm_end_wars_white_peace"
+              tooltip = "ucm_end_wars_white_peace_tt"
+              enabled = "[GetScriptedGui( 'ucm_end_wars_white_peace' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              onclick = "[GetScriptedGui( 'ucm_end_wars_white_peace' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'sol_war_without_bounds_interaction' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'sol_war_without_bounds_interaction' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'sol_war_without_bounds_interaction' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'sol_war_without_bounds_interaction' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'sol_war_without_bounds_interaction' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'sol_expansion_war_interaction' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'sol_expansion_war_interaction' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'sol_expansion_war_interaction' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'sol_expansion_war_interaction' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'sol_expansion_war_interaction' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'dp_debug_start_great_holy_war_interaction' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'dp_debug_start_great_holy_war_interaction' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'dp_debug_start_great_holy_war_interaction' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'dp_debug_start_great_holy_war_interaction' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'dp_debug_start_great_holy_war_interaction' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'dp_debug_start_era_of_crusades_interaction' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'dp_debug_start_era_of_crusades_interaction' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'dp_debug_start_era_of_crusades_interaction' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'dp_debug_start_era_of_crusades_interaction' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'dp_debug_start_era_of_crusades_interaction' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'dp_debug_start_era_of_jihads_interaction' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'dp_debug_start_era_of_jihads_interaction' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'dp_debug_start_era_of_jihads_interaction' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'dp_debug_start_era_of_jihads_interaction' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'dp_debug_start_era_of_jihads_interaction' )]"
+            }
+            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_AI" using = Font_Size_Medium default_format = "#high" }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'ucm_ai_yearly_pulse_toggle_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'ucm_ai_yearly_de_jure_transfer_toggle_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'ucm_ai_yearly_admin_conversion_toggle_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'ucm_ai_boost_toggle_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'ucm_world_ai_boost_pause_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'ucm_world_ai_boost_resume_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'ucm_boost_world_ai_rulers_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
           }
         }
       }
@@ -1080,6 +1725,7 @@ window = {
             layoutpolicy_horizontal = expanding
             spacing = 4
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_TAB_FAITH_CULTURE" using = Font_Size_Big default_format = "#high" }
+            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_EDITORS" using = Font_Size_Medium default_format = "#high" }
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
@@ -1104,7 +1750,205 @@ window = {
               enabled = "[GetScriptedGui( 'ucm_open_tradition_picker' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_open_tradition_picker' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
             }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_TAB_LATER" default_format = "#low" }
+            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_FAITH" using = Font_Size_Medium default_format = "#high" }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              text = "ucm_adopt_second_faith"
+              tooltip = "ucm_adopt_second_faith_tt"
+              enabled = "[GetScriptedGui( 'ucm_adopt_second_faith' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              onclick = "[GetScriptedGui( 'ucm_adopt_second_faith' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'daddy_pika_change_religion' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'daddy_pika_change_religion' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'daddy_pika_change_religion' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'daddy_pika_change_religion' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'daddy_pika_change_religion' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_religionconvert_interaction' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'toc_religionconvert_interaction' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'toc_religionconvert_interaction' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'toc_religionconvert_interaction' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'toc_religionconvert_interaction' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_yapaconvert_interaction' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'toc_yapaconvert_interaction' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'toc_yapaconvert_interaction' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'toc_yapaconvert_interaction' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'toc_yapaconvert_interaction' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'daddy_pika_excommunicate' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'daddy_pika_excommunicate' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'daddy_pika_excommunicate' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'daddy_pika_excommunicate' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'daddy_pika_excommunicate' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'daddy_pika_remove_excommunication' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'daddy_pika_remove_excommunication' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'daddy_pika_remove_excommunication' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'daddy_pika_remove_excommunication' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'daddy_pika_remove_excommunication' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'pope_select_interaction' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'pope_select_interaction' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'pope_select_interaction' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'pope_select_interaction' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'pope_select_interaction' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'grandmaster_select_interaction' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'grandmaster_select_interaction' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'grandmaster_select_interaction' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'grandmaster_select_interaction' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'grandmaster_select_interaction' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'dynasty_pope_0_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'dynasty_grandmaster_0_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_CULTURE" using = Font_Size_Medium default_format = "#high" }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              text = "ucm_adopt_second_culture"
+              tooltip = "ucm_adopt_second_culture_tt"
+              enabled = "[GetScriptedGui( 'ucm_adopt_second_culture' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              onclick = "[GetScriptedGui( 'ucm_adopt_second_culture' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              text = "ucm_culture_all_innovations"
+              tooltip = "ucm_culture_all_innovations_tt"
+              enabled = "[GetScriptedGui( 'ucm_culture_all_innovations' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              onclick = "[GetScriptedGui( 'ucm_culture_all_innovations' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'daddy_pika_change_culture' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'daddy_pika_change_culture' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'daddy_pika_change_culture' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'daddy_pika_change_culture' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'daddy_pika_change_culture' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'change_cultural_acceptance_debug_interaction' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'change_cultural_acceptance_debug_interaction' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'change_cultural_acceptance_debug_interaction' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'change_cultural_acceptance_debug_interaction' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'change_cultural_acceptance_debug_interaction' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'learn_language_debug_interaction' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'learn_language_debug_interaction' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'learn_language_debug_interaction' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'learn_language_debug_interaction' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'learn_language_debug_interaction' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'zhuge_buff_04' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'zhuge_buff_04' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'zhuge_buff_04' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'zhuge_buff_04' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'zhuge_buff_04' )]"
+            }
+            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_REALM_CONVERSION" using = Font_Size_Medium default_format = "#high" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_DECISIONS_NOTE" default_format = "#low" }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'convert_religion' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'convert_culture' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'pcm_convert_subrealm_to_religion_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'pcm_convert_subrealm_to_culture_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'culture_cheat' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'X_unify' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
           }
         }
       }
@@ -1116,6 +1960,7 @@ window = {
             layoutpolicy_horizontal = expanding
             spacing = 4
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_TAB_REALM" using = Font_Size_Big default_format = "#high" }
+            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_GROUPS" using = Font_Size_Medium default_format = "#high" }
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
@@ -1132,7 +1977,246 @@ window = {
               enabled = "[GetScriptedGui( 'ucm_group_sub_realm_max_control' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_group_sub_realm_max_control' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
             }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_TAB_LATER" default_format = "#low" }
+            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_COUNTIES" using = Font_Size_Medium default_format = "#high" }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_county_modifier_interaction' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'toc_county_modifier_interaction' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'toc_county_modifier_interaction' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'toc_county_modifier_interaction' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'toc_county_modifier_interaction' )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'debug_change_every_county' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'debug_change_every_county' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'debug_change_every_county' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'debug_change_every_county' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'debug_change_every_county' )]"
+            }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_DECISIONS_NOTE" default_format = "#low" }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'realm_control' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'realm_development' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_HOLDINGS" using = Font_Size_Medium default_format = "#high" }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'ch_convert_holding_to_castle_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'ch_convert_holding_to_city_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'ch_convert_holding_to_temple_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'ch_convert_holding_to_temple_citadel_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'ch_convert_holding_to_tribal_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'ch_convert_holding_to_nomad_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'ucm_realm_repair_holding_bases_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_BUILDINGS" using = Font_Size_Medium default_format = "#high" }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'pcm_b_max_all_buildings_sub_realm_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'pcm_b_add_building_slot_7_sub_realm_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'pcm_b_lucky_7_sub_realm_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'X_build' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'X_city' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'X_temple' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'X_castle' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_ECONOMY" using = Font_Size_Medium default_format = "#high" }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'pcm_money_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'ucm_fiscal_treasury_officials_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'ucm_population_management_hub_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_OFFICIALS" using = Font_Size_Medium default_format = "#high" }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'ucm_one_click_purge_bad_governors_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'ucm_one_click_imperial_examination_promote_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'ucm_learn_all_realm_officials_secrets_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'ucm_seduce_shield_for_consorts_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              datacontext = "[GetDecisionWithKey( 'ucm_daming_ming_gov_menu_unlock_decision' )]"
+              visible = "[Decision.IsShownForPlayer]"
+              text = "[Decision.GetTitleForPlayer]"
+              tooltip = "[Decision.GetShortDescForPlayer]"
+              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+            }
           }
         }
       }

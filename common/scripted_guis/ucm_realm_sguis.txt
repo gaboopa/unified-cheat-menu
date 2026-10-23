@@ -1,0 +1,174 @@
+﻿# Unified Cheat Menu: Titles, Faith & Culture and Realm tabs (spec 4.3-4.5). Root = player.
+# Target: var:ucm_target. Second character: global_var:ucm_crozier_cheats_other.
+
+# --- Titles, claims, vassals ----------------------------------------------------
+ucm_target_claims_second_title = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_pair_valid_trigger = yes global_var:ucm_crozier_cheats_other = { is_landed = yes } NOT = { var:ucm_target = { has_claim_on = global_var:ucm_crozier_cheats_other.primary_title } } }
+	effect = { var:ucm_target = { add_pressed_claim = global_var:ucm_crozier_cheats_other.primary_title } }
+}
+
+ucm_target_independent = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_landed = yes is_independent_ruler = no } }
+	effect = { var:ucm_target = { create_title_and_vassal_change = { type = independency save_scope_as = ucm_change add_claim_on_loss = no } becomes_independent = { change = scope:ucm_change } resolve_title_and_vassal_change = scope:ucm_change } }
+}
+
+ucm_target_vassal_of_second = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { is_landed = yes } global_var:ucm_crozier_cheats_other = { is_landed = yes NOT = { any_liege_or_above = { this = var:ucm_target } } } NOT = { var:ucm_target.liege ?= global_var:ucm_crozier_cheats_other } }
+	effect = { var:ucm_target = { create_title_and_vassal_change = { type = swear_fealty save_scope_as = ucm_change add_claim_on_loss = no } change_liege = { liege = global_var:ucm_crozier_cheats_other change = scope:ucm_change } resolve_title_and_vassal_change = scope:ucm_change } }
+}
+
+# --- Government of the target --------------------------------------------------
+ucm_gov_feudal = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_landed = yes } }
+	effect = { var:ucm_target = { ucm_convert_character_to_feudal_government_effect = yes } }
+}
+
+ucm_gov_clan = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_landed = yes } }
+	effect = { var:ucm_target = { ucm_convert_character_to_clan_government_effect = yes } }
+}
+
+ucm_gov_tribal = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_landed = yes } }
+	effect = { var:ucm_target = { ucm_convert_character_to_tribal_government_effect = yes } }
+}
+
+ucm_gov_administrative = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_landed = yes } }
+	effect = { var:ucm_target = { ucm_convert_character_to_administrative_government_effect = yes } }
+}
+
+ucm_gov_republic = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_landed = yes } }
+	effect = { var:ucm_target = { ucm_convert_character_to_republic_government_effect = yes } }
+}
+
+ucm_gov_theocracy = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_landed = yes } }
+	effect = { var:ucm_target = { ucm_convert_character_to_theocracy_government_effect = yes } }
+}
+
+ucm_gov_nomadic = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_landed = yes } }
+	effect = { var:ucm_target = { ucm_convert_character_to_nomadic_government_effect = yes } }
+}
+
+ucm_gov_herder = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_landed = yes } }
+	effect = { var:ucm_target = { ucm_convert_character_to_herder_government_effect = yes } }
+}
+
+ucm_gov_celestial = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_landed = yes } }
+	effect = { var:ucm_target = { ucm_convert_character_to_celestial_government_effect = yes } }
+}
+
+ucm_gov_meritocratic = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_landed = yes } }
+	effect = { var:ucm_target = { ucm_convert_character_to_meritocratic_government_effect = yes } }
+}
+
+ucm_gov_mandala = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_landed = yes } }
+	effect = { var:ucm_target = { ucm_convert_character_to_mandala_government_effect = yes } }
+}
+
+ucm_gov_steppe_admin = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_landed = yes } }
+	effect = { var:ucm_target = { ucm_convert_character_to_steppe_admin_government_effect = yes } }
+}
+
+ucm_gov_japan_feudal = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_landed = yes } }
+	effect = { var:ucm_target = { ucm_convert_character_to_japan_feudal_government_effect = yes } }
+}
+
+ucm_gov_japan_administrative = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_landed = yes } }
+	effect = { var:ucm_target = { ucm_convert_character_to_japan_administrative_government_effect = yes } }
+}
+
+# --- Alliances, truces, wars -----------------------------------------------------
+ucm_ally_second = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { is_ruler = yes NOT = { is_allied_to = global_var:ucm_crozier_cheats_other } } global_var:ucm_crozier_cheats_other = { is_ruler = yes } }
+	effect = { var:ucm_target = { create_alliance = { target = global_var:ucm_crozier_cheats_other allied_through_owner = var:ucm_target allied_through_target = global_var:ucm_crozier_cheats_other } } }
+}
+
+ucm_break_alliance_second = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { is_allied_to = global_var:ucm_crozier_cheats_other } }
+	effect = { var:ucm_target = { break_alliance = global_var:ucm_crozier_cheats_other } }
+}
+
+ucm_truce_second = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { is_ruler = yes } global_var:ucm_crozier_cheats_other = { is_ruler = yes } }
+	effect = { var:ucm_target = { add_truce_both_ways = { character = global_var:ucm_crozier_cheats_other years = 10 override = yes } } }
+}
+
+ucm_end_wars_white_peace = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_at_war = yes } }
+	effect = { var:ucm_target = { every_character_war = { end_war = white_peace } } }
+}
+
+# --- Faith & culture -------------------------------------------------------------
+ucm_adopt_second_faith = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_pair_valid_trigger = yes NOT = { var:ucm_target.faith = global_var:ucm_crozier_cheats_other.faith } }
+	effect = { var:ucm_target = { set_character_faith = global_var:ucm_crozier_cheats_other.faith } }
+}
+
+ucm_adopt_second_culture = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_pair_valid_trigger = yes NOT = { var:ucm_target.culture = global_var:ucm_crozier_cheats_other.culture } }
+	effect = { var:ucm_target = { set_culture_same_as = global_var:ucm_crozier_cheats_other } }
+}
+
+ucm_culture_all_innovations = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes exists = var:ucm_target.culture }
+	effect = { var:ucm_target.culture = { save_scope_as = ucm_culture } every_culture_innovation = { limit = { NOT = { scope:ucm_culture = { has_innovation = prev } } } scope:ucm_culture = { add_innovation = prev } } }
+}

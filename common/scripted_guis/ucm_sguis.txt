@@ -123,26 +123,3 @@ ucm_second_clear = {
 	is_valid = { exists = global_var:ucm_crozier_cheats_other }
 	effect = { remove_global_variable = ucm_crozier_cheats_other }
 }
-
-# --- Group actions (confirmation event ucm_group.1) --------------------------
-
-ucm_group_sub_realm_max_development = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { ucm_group_start_effect = { GROUP = sub_realm_counties ACTION = max_development } }
-}
-
-ucm_group_sub_realm_max_control = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { ucm_group_start_effect = { GROUP = sub_realm_counties ACTION = max_control } }
-}
-
-ucm_group_courtiers_clear_stress = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { ucm_group_start_effect = { GROUP = courtiers ACTION = clear_stress } }
-}

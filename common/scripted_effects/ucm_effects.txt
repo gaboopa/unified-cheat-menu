@@ -111,10 +111,13 @@ ucm_open_tradition_picker_effect = {
 # ---------------------------------------------------------------------------
 # Group actions (spec Section 5). Root = player throughout.
 #   var:ucm_target       the clicked character the group comes from
-#   var:ucm_group        flag:sub_realm_counties | flag:courtiers
-#   var:ucm_group_action flag:max_development | flag:max_control | flag:clear_stress
-# Adding an action: a branch in ucm_group_member_eligible_trigger, a branch in
-# ucm_group_apply_member_effect, a scripted GUI that starts it, and loc.
+#   var:ucm_group        one of the groups in ucm_group_for_each_effect
+#   var:ucm_group_pick   the group picked in the menu's group-action picker
+#   var:ucm_group_action one of the actions in ucm_group_apply_member_effect
+# Adding a group: a branch below, ucm_group_is_county_trigger if it holds counties,
+# pick scripted GUIs (common/scripted_guis/ucm_group_sguis.txt), loc.
+# Adding an action: a branch in ucm_group_member_eligible_trigger and in
+# ucm_group_apply_member_effect, a run scripted GUI, loc.
 # ---------------------------------------------------------------------------
 
 ucm_group_start_effect = {
@@ -123,14 +126,69 @@ ucm_group_start_effect = {
 	trigger_event = ucm_group.1
 }
 
+# Runs ACTION on the group picked in the menu.
+ucm_group_start_picked_effect = {
+	set_variable = { name = ucm_group value = var:ucm_group_pick }
+	set_variable = { name = ucm_group_action value = flag:$ACTION$ }
+	trigger_event = ucm_group.1
+}
+
 ucm_group_for_each_effect = {
 	if = {
+		limit = { var:ucm_group = flag:courtiers }
+		var:ucm_target = { every_courtier = { $DO$ = yes } }
+	}
+	else_if = {
+		limit = { var:ucm_group = flag:vassals }
+		var:ucm_target = { every_vassal = { $DO$ = yes } }
+	}
+	else_if = {
+		limit = { var:ucm_group = flag:all_vassals }
+		var:ucm_target = { every_vassal_or_below = { $DO$ = yes } }
+	}
+	else_if = {
+		limit = { var:ucm_group = flag:councillors }
+		var:ucm_target = { every_councillor = { $DO$ = yes } }
+	}
+	else_if = {
+		limit = { var:ucm_group = flag:knights }
+		var:ucm_target = { every_knight = { $DO$ = yes } }
+	}
+	else_if = {
+		limit = { var:ucm_group = flag:children }
+		var:ucm_target = { every_child = { $DO$ = yes } }
+	}
+	else_if = {
+		limit = { var:ucm_group = flag:close_family }
+		var:ucm_target = { every_close_family_member = { $DO$ = yes } }
+	}
+	else_if = {
+		limit = { var:ucm_group = flag:spouses }
+		var:ucm_target = { every_spouse = { $DO$ = yes } }
+	}
+	else_if = {
+		limit = { var:ucm_group = flag:house }
+		var:ucm_target = { house ?= { every_house_member = { $DO$ = yes } } }
+	}
+	else_if = {
+		limit = { var:ucm_group = flag:dynasty }
+		var:ucm_target = { dynasty ?= { every_dynasty_member = { $DO$ = yes } } }
+	}
+	else_if = {
 		limit = { var:ucm_group = flag:sub_realm_counties }
 		var:ucm_target = { every_sub_realm_county = { $DO$ = yes } }
 	}
 	else_if = {
-		limit = { var:ucm_group = flag:courtiers }
-		var:ucm_target = { every_courtier = { $DO$ = yes } }
+		limit = { var:ucm_group = flag:dejure_counties }
+		var:ucm_target = { primary_title ?= { every_de_jure_county = { $DO$ = yes } } }
+	}
+	else_if = {
+		limit = { var:ucm_group = flag:culture_counties }
+		var:ucm_target = { culture ?= { every_culture_county = { $DO$ = yes } } }
+	}
+	else_if = {
+		limit = { var:ucm_group = flag:faith_counties }
+		var:ucm_target = { faith ?= { every_faith_county = { $DO$ = yes } } }
 	}
 }
 
@@ -158,6 +216,7 @@ ucm_group_apply_effect = {
 ucm_group_apply_member_effect = {
 	if = {
 		limit = { ucm_group_member_eligible_trigger = yes }
+		# Counties
 		if = {
 			limit = { root.var:ucm_group_action = flag:max_development }
 			change_development_level = 100
@@ -167,8 +226,43 @@ ucm_group_apply_member_effect = {
 			change_county_control = 100
 		}
 		else_if = {
+			limit = { root.var:ucm_group_action = flag:county_faith }
+			set_county_faith = root.var:ucm_target.faith
+		}
+		else_if = {
+			limit = { root.var:ucm_group_action = flag:county_culture }
+			set_county_culture = root.var:ucm_target.culture
+		}
+		# Characters
+		else_if = {
 			limit = { root.var:ucm_group_action = flag:clear_stress }
 			add_stress = -1000
+		}
+		else_if = {
+			limit = { root.var:ucm_group_action = flag:skills_up }
+			add_diplomacy_skill = ucm_step_value
+			add_martial_skill = ucm_step_value
+			add_stewardship_skill = ucm_step_value
+			add_intrigue_skill = ucm_step_value
+			add_learning_skill = ucm_step_value
+			add_prowess_skill = ucm_step_value
+			force_character_skill_recalculation = yes
+		}
+		else_if = {
+			limit = { root.var:ucm_group_action = flag:gold }
+			add_gold = 1000
+		}
+		else_if = {
+			limit = { root.var:ucm_group_action = flag:convert_faith }
+			set_character_faith = root.var:ucm_target.faith
+		}
+		else_if = {
+			limit = { root.var:ucm_group_action = flag:convert_culture }
+			set_culture_same_as = root.var:ucm_target
+		}
+		else_if = {
+			limit = { root.var:ucm_group_action = flag:max_opinion }
+			add_opinion = { target = root.var:ucm_target modifier = ucm_loyal_vassal_opinion years = 100 }
 		}
 		root = { change_variable = { name = ucm_group_changed add = 1 } }
 	}

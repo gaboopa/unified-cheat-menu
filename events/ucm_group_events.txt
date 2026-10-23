@@ -6,9 +6,32 @@ ucm_group.1 = {
 	title = ucm_group.1.t
 	desc = {
 		first_valid = {
-			triggered_desc = { trigger = { var:ucm_group_action = flag:max_development } desc = ucm_group.1.desc.max_development }
-			triggered_desc = { trigger = { var:ucm_group_action = flag:max_control } desc = ucm_group.1.desc.max_control }
-			triggered_desc = { trigger = { var:ucm_group_action = flag:clear_stress } desc = ucm_group.1.desc.clear_stress }
+			triggered_desc = { trigger = { var:ucm_group_action = flag:clear_stress } desc = ucm_group.1.action.clear_stress }
+			triggered_desc = { trigger = { var:ucm_group_action = flag:skills_up } desc = ucm_group.1.action.skills_up }
+			triggered_desc = { trigger = { var:ucm_group_action = flag:gold } desc = ucm_group.1.action.gold }
+			triggered_desc = { trigger = { var:ucm_group_action = flag:convert_faith } desc = ucm_group.1.action.convert_faith }
+			triggered_desc = { trigger = { var:ucm_group_action = flag:convert_culture } desc = ucm_group.1.action.convert_culture }
+			triggered_desc = { trigger = { var:ucm_group_action = flag:max_opinion } desc = ucm_group.1.action.max_opinion }
+			triggered_desc = { trigger = { var:ucm_group_action = flag:max_development } desc = ucm_group.1.action.max_development }
+			triggered_desc = { trigger = { var:ucm_group_action = flag:max_control } desc = ucm_group.1.action.max_control }
+			triggered_desc = { trigger = { var:ucm_group_action = flag:county_faith } desc = ucm_group.1.action.county_faith }
+			triggered_desc = { trigger = { var:ucm_group_action = flag:county_culture } desc = ucm_group.1.action.county_culture }
+		}
+		first_valid = {
+			triggered_desc = { trigger = { var:ucm_group = flag:courtiers } desc = ucm_group.1.group.courtiers }
+			triggered_desc = { trigger = { var:ucm_group = flag:vassals } desc = ucm_group.1.group.vassals }
+			triggered_desc = { trigger = { var:ucm_group = flag:all_vassals } desc = ucm_group.1.group.all_vassals }
+			triggered_desc = { trigger = { var:ucm_group = flag:councillors } desc = ucm_group.1.group.councillors }
+			triggered_desc = { trigger = { var:ucm_group = flag:knights } desc = ucm_group.1.group.knights }
+			triggered_desc = { trigger = { var:ucm_group = flag:children } desc = ucm_group.1.group.children }
+			triggered_desc = { trigger = { var:ucm_group = flag:close_family } desc = ucm_group.1.group.close_family }
+			triggered_desc = { trigger = { var:ucm_group = flag:spouses } desc = ucm_group.1.group.spouses }
+			triggered_desc = { trigger = { var:ucm_group = flag:house } desc = ucm_group.1.group.house }
+			triggered_desc = { trigger = { var:ucm_group = flag:dynasty } desc = ucm_group.1.group.dynasty }
+			triggered_desc = { trigger = { var:ucm_group = flag:sub_realm_counties } desc = ucm_group.1.group.sub_realm_counties }
+			triggered_desc = { trigger = { var:ucm_group = flag:dejure_counties } desc = ucm_group.1.group.dejure_counties }
+			triggered_desc = { trigger = { var:ucm_group = flag:culture_counties } desc = ucm_group.1.group.culture_counties }
+			triggered_desc = { trigger = { var:ucm_group = flag:faith_counties } desc = ucm_group.1.group.faith_counties }
 		}
 		desc = ucm_group.1.desc.counts
 	}

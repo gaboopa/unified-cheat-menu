@@ -13,6 +13,8 @@ Each tab is a list of items:
     ("cz", name)          the Crozier cheat panel's button(s) for ucm_crozier_cheats_sg_<name>,
                           copied from gui/window_character.gui and pointed at the target
     ("czrow", [name, ...], label_key)  the same at their original size, side by side
+    ("picks", [group, ...])  group-action picker buttons (ucm_group_pick_<group>), shown pressed
+                          when that group is picked
     ("steps",)            step-size selector (ucm_step_*)
     ("skill", name)       skill row: value, minus and plus (ucm_skill_<name>_down/_up)
 
@@ -197,8 +199,13 @@ TABS = [
         ("dec", "culture_cheat"), ("dec", "X_unify"),
     ]),
     ("realm", [
-        ("h", "UCM_SEC_GROUPS"),
-        ("sg", "ucm_group_sub_realm_max_development"), ("sg", "ucm_group_sub_realm_max_control"),
+        ("h", "UCM_SEC_GROUP_PICKER"),
+        ("t", "UCM_GROUP_PICKER_NOTE"),
+        ("t", "UCM_GROUP_COUNTIES"),
+        ("picks", ["sub_realm_counties", "dejure_counties", "culture_counties", "faith_counties"]),
+        ("t", "UCM_GROUP_COUNTY_ACTIONS"),
+        ("row", ["ucm_group_run_max_development", "ucm_group_run_max_control"]),
+        ("row", ["ucm_group_run_county_faith", "ucm_group_run_county_culture"]),
         ("h", "UCM_SEC_COUNTIES"),
         ("ia", "toc_county_modifier_interaction"), ("ia", "debug_change_every_county"),
         ("t", "UCM_DECISIONS_NOTE"),
@@ -245,6 +252,13 @@ TABS = [
         ("cz", "do_forge_crown"), ("dec", "Artifact_1000"),
     ]),
     ("court", [
+        ("h", "UCM_SEC_GROUP_PICKER"),
+        ("t", "UCM_GROUP_PICKER_NOTE"),
+        ("t", "UCM_GROUP_CHARACTERS"),
+        ("picks", ["courtiers", "vassals", "all_vassals", "councillors", "knights", "children", "close_family", "spouses", "house", "dynasty"]),
+        ("t", "UCM_GROUP_CHAR_ACTIONS"),
+        ("row", ["ucm_group_run_clear_stress", "ucm_group_run_skills_up", "ucm_group_run_gold"]),
+        ("row", ["ucm_group_run_convert_faith", "ucm_group_run_convert_culture", "ucm_group_run_max_opinion"]),
         ("h", "UCM_SEC_GENERATION"),
         ("ia", "daddy_pika_character_spawner"), ("ia", "toc_spawn_character_interaction"), ("ia", "toc_addcharacter_interaction"),
         ("ia", "toc_addcourtier_interaction"), ("ia", "toc_addwombmancourtier_interaction"), ("ia", "spawn_courtier_interaction"),
@@ -252,7 +266,6 @@ TABS = [
         ("h", "UCM_SEC_COURT"),
         ("ia", "daddy_pika_add_to_court"), ("ia", "add_to_court_interaction"), ("ia", "jkm_send_courtier_interaction"),
         ("cz", "t_t_guest"), ("ia", "antagonise_court"),
-        ("sg", "ucm_group_courtiers_clear_stress"),
         ("h", "UCM_SEC_COUNCIL"),
         ("cz", "t_t_councillor_chancellor"), ("cz", "t_t_councillor_steward"), ("cz", "t_t_councillor_marshal"),
         ("cz", "t_t_councillor_spymaster"), ("cz", "t_t_councillor_court_chaplain"),
@@ -378,6 +391,19 @@ def crozier_buttons(name, ind, keep_size=False):
 def item(it, ind):
     if it[0] == "cz":
         return crozier_buttons(it[1], ind)
+    if it[0] == "picks":
+        lines = [f"{ind}flowcontainer = {{", f"{ind}  layoutpolicy_horizontal = expanding", f"{ind}  spacing = 4"]
+        for g in it[1]:
+            lines += [
+                f"{ind}  button_standard = {{",
+                f"{ind}    size = {{ 150 28 }}",
+                f'{ind}    text = "ucm_group_pick_{g}"',
+                f'{ind}    tooltip = "ucm_group_pick_{g}_tt"',
+                f"{ind}    down = \"[GetScriptedGui( 'ucm_group_picked_{g}' ).IsShown( {R} )]\"",
+                f"{ind}    onclick = \"[GetScriptedGui( 'ucm_group_pick_{g}' ).Execute( {R} )]\"",
+                f"{ind}  }}",
+            ]
+        return lines + [f"{ind}}}"]
     if it[0] == "czrow":
         lines = [f"{ind}hbox = {{", f"{ind}  spacing = 2"]
         if len(it) > 2:

@@ -2056,22 +2056,81 @@ window = {
             layoutpolicy_horizontal = expanding
             spacing = 4
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_TAB_REALM" using = Font_Size_Big default_format = "#high" }
-            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_GROUPS" using = Font_Size_Medium default_format = "#high" }
-            button_standard = {
+            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_GROUP_PICKER" using = Font_Size_Medium default_format = "#high" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_GROUP_PICKER_NOTE" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_GROUP_COUNTIES" default_format = "#low" }
+            flowcontainer = {
               layoutpolicy_horizontal = expanding
-              size = { 0 30 }
-              text = "ucm_group_sub_realm_max_development"
-              tooltip = "ucm_group_sub_realm_max_development_tt"
-              enabled = "[GetScriptedGui( 'ucm_group_sub_realm_max_development' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-              onclick = "[GetScriptedGui( 'ucm_group_sub_realm_max_development' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              spacing = 4
+              button_standard = {
+                size = { 150 28 }
+                text = "ucm_group_pick_sub_realm_counties"
+                tooltip = "ucm_group_pick_sub_realm_counties_tt"
+                down = "[GetScriptedGui( 'ucm_group_picked_sub_realm_counties' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_group_pick_sub_realm_counties' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                size = { 150 28 }
+                text = "ucm_group_pick_dejure_counties"
+                tooltip = "ucm_group_pick_dejure_counties_tt"
+                down = "[GetScriptedGui( 'ucm_group_picked_dejure_counties' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_group_pick_dejure_counties' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                size = { 150 28 }
+                text = "ucm_group_pick_culture_counties"
+                tooltip = "ucm_group_pick_culture_counties_tt"
+                down = "[GetScriptedGui( 'ucm_group_picked_culture_counties' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_group_pick_culture_counties' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                size = { 150 28 }
+                text = "ucm_group_pick_faith_counties"
+                tooltip = "ucm_group_pick_faith_counties_tt"
+                down = "[GetScriptedGui( 'ucm_group_picked_faith_counties' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_group_pick_faith_counties' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
             }
-            button_standard = {
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_GROUP_COUNTY_ACTIONS" default_format = "#low" }
+            hbox = {
               layoutpolicy_horizontal = expanding
-              size = { 0 30 }
-              text = "ucm_group_sub_realm_max_control"
-              tooltip = "ucm_group_sub_realm_max_control_tt"
-              enabled = "[GetScriptedGui( 'ucm_group_sub_realm_max_control' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-              onclick = "[GetScriptedGui( 'ucm_group_sub_realm_max_control' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              spacing = 4
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_group_run_max_development"
+                tooltip = "ucm_group_run_max_development_tt"
+                enabled = "[GetScriptedGui( 'ucm_group_run_max_development' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_group_run_max_development' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_group_run_max_control"
+                tooltip = "ucm_group_run_max_control_tt"
+                enabled = "[GetScriptedGui( 'ucm_group_run_max_control' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_group_run_max_control' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_group_run_county_faith"
+                tooltip = "ucm_group_run_county_faith_tt"
+                enabled = "[GetScriptedGui( 'ucm_group_run_county_faith' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_group_run_county_faith' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_group_run_county_culture"
+                tooltip = "ucm_group_run_county_culture_tt"
+                enabled = "[GetScriptedGui( 'ucm_group_run_county_culture' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_group_run_county_culture' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
             }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_COUNTIES" using = Font_Size_Medium default_format = "#high" }
             button_standard = {
@@ -2534,6 +2593,140 @@ window = {
             layoutpolicy_horizontal = expanding
             spacing = 4
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_TAB_COURT" using = Font_Size_Big default_format = "#high" }
+            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_GROUP_PICKER" using = Font_Size_Medium default_format = "#high" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_GROUP_PICKER_NOTE" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_GROUP_CHARACTERS" default_format = "#low" }
+            flowcontainer = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              button_standard = {
+                size = { 150 28 }
+                text = "ucm_group_pick_courtiers"
+                tooltip = "ucm_group_pick_courtiers_tt"
+                down = "[GetScriptedGui( 'ucm_group_picked_courtiers' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_group_pick_courtiers' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                size = { 150 28 }
+                text = "ucm_group_pick_vassals"
+                tooltip = "ucm_group_pick_vassals_tt"
+                down = "[GetScriptedGui( 'ucm_group_picked_vassals' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_group_pick_vassals' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                size = { 150 28 }
+                text = "ucm_group_pick_all_vassals"
+                tooltip = "ucm_group_pick_all_vassals_tt"
+                down = "[GetScriptedGui( 'ucm_group_picked_all_vassals' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_group_pick_all_vassals' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                size = { 150 28 }
+                text = "ucm_group_pick_councillors"
+                tooltip = "ucm_group_pick_councillors_tt"
+                down = "[GetScriptedGui( 'ucm_group_picked_councillors' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_group_pick_councillors' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                size = { 150 28 }
+                text = "ucm_group_pick_knights"
+                tooltip = "ucm_group_pick_knights_tt"
+                down = "[GetScriptedGui( 'ucm_group_picked_knights' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_group_pick_knights' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                size = { 150 28 }
+                text = "ucm_group_pick_children"
+                tooltip = "ucm_group_pick_children_tt"
+                down = "[GetScriptedGui( 'ucm_group_picked_children' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_group_pick_children' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                size = { 150 28 }
+                text = "ucm_group_pick_close_family"
+                tooltip = "ucm_group_pick_close_family_tt"
+                down = "[GetScriptedGui( 'ucm_group_picked_close_family' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_group_pick_close_family' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                size = { 150 28 }
+                text = "ucm_group_pick_spouses"
+                tooltip = "ucm_group_pick_spouses_tt"
+                down = "[GetScriptedGui( 'ucm_group_picked_spouses' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_group_pick_spouses' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                size = { 150 28 }
+                text = "ucm_group_pick_house"
+                tooltip = "ucm_group_pick_house_tt"
+                down = "[GetScriptedGui( 'ucm_group_picked_house' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_group_pick_house' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                size = { 150 28 }
+                text = "ucm_group_pick_dynasty"
+                tooltip = "ucm_group_pick_dynasty_tt"
+                down = "[GetScriptedGui( 'ucm_group_picked_dynasty' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_group_pick_dynasty' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+            }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_GROUP_CHAR_ACTIONS" default_format = "#low" }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_group_run_clear_stress"
+                tooltip = "ucm_group_run_clear_stress_tt"
+                enabled = "[GetScriptedGui( 'ucm_group_run_clear_stress' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_group_run_clear_stress' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_group_run_skills_up"
+                tooltip = "ucm_group_run_skills_up_tt"
+                enabled = "[GetScriptedGui( 'ucm_group_run_skills_up' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_group_run_skills_up' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_group_run_gold"
+                tooltip = "ucm_group_run_gold_tt"
+                enabled = "[GetScriptedGui( 'ucm_group_run_gold' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_group_run_gold' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_group_run_convert_faith"
+                tooltip = "ucm_group_run_convert_faith_tt"
+                enabled = "[GetScriptedGui( 'ucm_group_run_convert_faith' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_group_run_convert_faith' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_group_run_convert_culture"
+                tooltip = "ucm_group_run_convert_culture_tt"
+                enabled = "[GetScriptedGui( 'ucm_group_run_convert_culture' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_group_run_convert_culture' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text = "ucm_group_run_max_opinion"
+                tooltip = "ucm_group_run_max_opinion_tt"
+                enabled = "[GetScriptedGui( 'ucm_group_run_max_opinion' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_group_run_max_opinion' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+            }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_GENERATION" using = Font_Size_Medium default_format = "#high" }
             button_standard = {
               layoutpolicy_horizontal = expanding
@@ -2628,14 +2821,6 @@ window = {
               text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'antagonise_court' )]"
               tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'antagonise_court' )]"
               onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'antagonise_court' )]"
-            }
-            button_standard = {
-              layoutpolicy_horizontal = expanding
-              size = { 0 30 }
-              text = "ucm_group_courtiers_clear_stress"
-              tooltip = "ucm_group_courtiers_clear_stress_tt"
-              enabled = "[GetScriptedGui( 'ucm_group_courtiers_clear_stress' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-              onclick = "[GetScriptedGui( 'ucm_group_courtiers_clear_stress' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
             }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_COUNCIL" using = Font_Size_Medium default_format = "#high" }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } enabled = "[GetScriptedGui( 'ucm_crozier_cheats_sg_t_t_councillor_chancellor' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'ucm_crozier_cheats_char', GetPlayer.MakeScope.Var( 'ucm_target' ).Char.MakeScope ).End )]" tooltip = "UCM_CROZIER_CHEATS_B_t_councillor_chancellor_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_t_t_councillor_chancellor' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'ucm_crozier_cheats_char', GetPlayer.MakeScope.Var( 'ucm_target' ).Char.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_t_councillor_chancellor" max_width = 460 fontsize_min = 9 using = Font_Size_Small } }

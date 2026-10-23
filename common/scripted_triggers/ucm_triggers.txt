@@ -7,7 +7,7 @@ ucm_single_player_trigger = {
 }
 
 # Group actions: is this member (a county or character) one the action would change?
-# Root = player, see ucm_effects.txt.
+# Root = player, see ucm_effects.txt. Character groups never include the target itself.
 ucm_group_member_eligible_trigger = {
 	trigger_if = {
 		limit = { root.var:ucm_group_action = flag:max_development }
@@ -18,10 +18,49 @@ ucm_group_member_eligible_trigger = {
 		county_control < 100
 	}
 	trigger_else_if = {
+		limit = { root.var:ucm_group_action = flag:county_faith }
+		NOT = { faith = root.var:ucm_target.faith }
+	}
+	trigger_else_if = {
+		limit = { root.var:ucm_group_action = flag:county_culture }
+		NOT = { culture = root.var:ucm_target.culture }
+	}
+	trigger_else_if = {
 		limit = { root.var:ucm_group_action = flag:clear_stress }
+		NOT = { this = root.var:ucm_target }
 		stress > 0
 	}
+	trigger_else_if = {
+		limit = { root.var:ucm_group_action = flag:convert_faith }
+		NOT = { this = root.var:ucm_target }
+		NOT = { faith = root.var:ucm_target.faith }
+	}
+	trigger_else_if = {
+		limit = { root.var:ucm_group_action = flag:convert_culture }
+		NOT = { this = root.var:ucm_target }
+		NOT = { culture = root.var:ucm_target.culture }
+	}
+	trigger_else_if = {
+		limit = {
+			OR = {
+				root.var:ucm_group_action = flag:skills_up
+				root.var:ucm_group_action = flag:gold
+				root.var:ucm_group_action = flag:max_opinion
+			}
+		}
+		NOT = { this = root.var:ucm_target }
+	}
 	trigger_else = { always = no }
+}
+
+# Does the picked group hold counties (rather than characters)?
+ucm_group_pick_is_county_trigger = {
+	OR = {
+		var:ucm_group_pick = flag:sub_realm_counties
+		var:ucm_group_pick = flag:dejure_counties
+		var:ucm_group_pick = flag:culture_counties
+		var:ucm_group_pick = flag:faith_counties
+	}
 }
 
 # Main menu buttons that act on the clicked target.

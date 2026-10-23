@@ -141,7 +141,7 @@ ucm_truce_second = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { is_ruler = yes } global_var:ucm_crozier_cheats_other = { is_ruler = yes } }
-	effect = { var:ucm_target = { add_truce_both_ways = { character = global_var:ucm_crozier_cheats_other years = 10 override = yes } } }
+	effect = { var:ucm_target = { add_truce_both_ways = { character = global_var:ucm_crozier_cheats_other years = 10 override = yes name = ucm_truce_name } } }
 }
 
 ucm_end_wars_white_peace = {

@@ -30,7 +30,6 @@ MOD_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(MOD_DIR, "gui", "ucm_main_menu.gui")
 R = "GuiScope.SetRoot( GetPlayer.MakeScope ).End"
 C = "GetPlayer.MakeScope.Var( 'ucm_target' ).Char"
-LATER = ("t", "UCM_TAB_LATER")
 
 TABS = [
     ("quick", [

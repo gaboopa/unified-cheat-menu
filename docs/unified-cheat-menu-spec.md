@@ -5,7 +5,7 @@
 **Target:** Crusader Kings III 1.20.x "Crozier" (verified against 1.20.1.2 game files)\
 **Baseline:** Skonester Cheat Menu Gold, forked at upstream commit `bfcb175` (CC BY 4.0)\
 **Feature reference:** Divine Intervention Cheat Menu (behavior only; no code or assets)\
-**Status:** Proposed design; implementation and compatibility validation required
+**Status:** Implemented through Phase 7 (see the phase notes in docs/). Static checks and load tests pass; most features still need in-game testing.
 
 ### Changes from 1.2
 
@@ -1522,7 +1522,7 @@ All ten feature categories are in the final scope, but development proceeds in c
 5. Recover or rewrite the missing `gen_ucm_cw_innovation_sguis.py` generator.
 6. Click through each existing feature and record whether it works, using the "Verify" notes in `agent.md`.
 
-Phase 0 progress and findings are recorded in [phase0-baseline.md](phase0-baseline.md). Phase 1 is described in [phase1-foundation.md](phase1-foundation.md), Phase 2 in [phase2-characters.md](phase2-characters.md), Phase 3 in [phase3-realm.md](phase3-realm.md), Phase 4 in [phase4-military-artifacts.md](phase4-military-artifacts.md), Phase 5 in [phase5-court-dlc.md](phase5-court-dlc.md), Phase 6 in [phase6-group-actions.md](phase6-group-actions.md).
+Phase 0 progress and findings are recorded in [phase0-baseline.md](phase0-baseline.md). Phase 1 is described in [phase1-foundation.md](phase1-foundation.md), Phase 2 in [phase2-characters.md](phase2-characters.md), Phase 3 in [phase3-realm.md](phase3-realm.md), Phase 4 in [phase4-military-artifacts.md](phase4-military-artifacts.md), Phase 5 in [phase5-court-dlc.md](phase5-court-dlc.md), Phase 6 in [phase6-group-actions.md](phase6-group-actions.md), Phase 7 in [phase7-hardening.md](phase7-hardening.md).
 
 Keep a usable build at the end of every phase.
 

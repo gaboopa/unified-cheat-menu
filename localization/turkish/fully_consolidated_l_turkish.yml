@@ -204,10 +204,10 @@ Orta Çağ'da, birçok fuar geçici pazarlar olarak gelişti ve özellikle uzun 
  building_db_rabbi_council_03_desc:0 "Lord, Konseyi genişleterek daha fazla alanda profesyonel tavsiye alabildi."
  ### From: DP_information_l_english.yml
  daddy_pika_information:0 "Unified Cheat Menu"
- information_desc:0 "Bu, Unified Cheat Menu için GitHub test yapısıdır. Bazı özellikler tamamlanmamış veya kararsız olabilir. Tüm hataları ve betik hatalarını GitHub'da CK3 error.log dosyanız, mod yükleme sıranız ve yeniden oluşturma adımlarıyla birlikte bildirin."
- information_TT:0 "By God Alone GitHub test yapısı hakkındaki bilgileri görüntülemek için tıklayın."
+ information_desc:0 "CK3 1.20 için Unified Cheat Menu. Herhangi bir karaktere sağ tıklayıp Hile Menüsünü Aç’ı seçin. Yalnızca tek oyunculu."
+ information_TT:0 "Unified Cheat Menu hakkındaki bilgileri görmek için tıklayın."
  dp_information.changelog.t:0 "Unified Cheat Menu"
- dp_information.changelog.d:0 "By God Alone (CK3 1.20 Crozier) için GitHub test yapısı. Yeni ayin ve inanç ilkesi sistemi, yeni yasa ve seçim biçimleri ve By God Alone etkileşim menüsü için güncellendi. Bozuk menüleri, eksik yerelleştirmeleri, etkinlik hatalarını, çökmeleri ve beklenmeyen davranışları GitHub'da bildirin."
+ dp_information.changelog.d:0 "CK3 1.20 Crozier için: ayin ve inanç ilkesi sistemi, yeni yasa ve seçim biçimleri ve By God Alone etkileşim menüsü."
  dp_information.useful_tips.t:0 "Yararlı İpuçları"
  dp_information.useful_tips.d:0 "Özellik Menüsü
 - Eklemek için bir kez tıklayın, kaldırmak için tekrar tıklayın.
@@ -215,8 +215,8 @@ Orta Çağ'da, birçok fuar geçici pazarlar olarak gelişti ve özellikle uzun 
 - DLC faktörleri nedeniyle bazı etkileşimler belirli karakterlerde görünmeyebilir.
 - Şövalyekan özellikleri, rastgele NPC'nin ilginç istatistiklerini vermek için yeni oyun başlangıcında küçük dozlarda rastgele eklenir. İnsanlar buna ısınmazsa çıkaracağım.
 - Bu mod, sürüm düşürmeniz gerekiyorsa oyunun eski sürümlerini de destekleyecektir."
- dp_information.locations.t:0 "GitHub Test Yapısı — Hata Bildirimleri"
- dp_information.locations.d:0 "Hataları GitHub'da bildirin. Neye tıkladığınızı, ne olduğunu, ne beklediğinizi, mod yükleme sıranızı ve Documents/Paradox Interactive/Crusader Kings III/logs/error.log dosyasındaki ilgili satırları ekleyin."
+ dp_information.locations.t:0 "Sorun Bildirme"
+ dp_information.locations.d:0 "Bir şey bozulursa neye tıkladığınızı, ne olduğunu ve ne beklediğinizi not edin ve Documents/Paradox Interactive/Crusader Kings III/logs/error.log dosyasındaki ilgili satırları saklayın."
  use_new_system:0 "Yeni Sistem"
  use_new_system_desc:0 "Eski sistemin yerini yenisi aldı. Denemek ister misin?"
  use_new_system_tooltip:0 "Buna tıklamak bir olayı tetikleyecektir."
@@ -1760,7 +1760,6 @@ Orta Çağ'da, birçok fuar geçici pazarlar olarak gelişti ve özellikle uzun 
  zhuge_buff_05_delete02_tt:0 "Şanı sıfırla."
  daddy_pika_add_strong_hook:0 "Güçlü Koz Kazan"
  daddy_pika_add_strong_hook_desc:0 "Bu ruh üzerinde gizli bir nüfuz sağla, görünmez ama kırılmaz bir zincir."
- strong_test_hook:0 "İlahi Bağlılık"
  strong_hook:0 "İlahi Bağlılık"
  strong_hook_desc:0 "Bu ruh görülmeyen bir güce hararetli dualar sunuyor, ancak tanrıların buna kulak mı verdiği yoksa içkilerinin başında alay mı ettiği karanlığa gömülü bir gizem."
  zhuge_bloodline_03:0 "Barbara Tarafından Meshedilmiş"

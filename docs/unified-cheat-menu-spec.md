@@ -1362,7 +1362,7 @@ Use CK3's existing modding mechanisms:
 **Generated catalogs.** Script can't loop over all game objects (traits, buildings, men-at-arms types, innovations, traditions) at runtime. The only exception found is `every_trait_in_category`, which loops over traits within one category. Picker lists and their one-button scripted GUIs are **generated offline** from the game files by scripts in `tools/`, as the baseline already does:
 
 - `tools/gen_cw_tradition_picker_lists.py` produces `skonester_cw_tradition_picker_lists_generated.txt`.
-- Innovation unlock/remove scripted GUIs are generated (their header names `tools/gen_skonester_cw_innovation_sguis.py`, which isn't in the repository and needs to be recovered or rewritten).
+- `tools/gen_skonester_cw_innovation_sguis.py` produces the innovation unlock/remove scripted GUIs (rewritten in Phase 0; see [phase0-baseline.md](phase0-baseline.md)).
 
 Generated files say "do not edit by hand" and are rebuilt whenever the target game version or a supported mod changes. Read-only catalogs may live in global variable lists because they're the same for every player.
 
@@ -1537,6 +1537,8 @@ All ten feature categories are in the final scope, but development proceeds in c
 4. List every global variable that holds per-player state, for migration in Phase 1.
 5. Recover or rewrite the missing `gen_skonester_cw_innovation_sguis.py` generator.
 6. Click through each existing feature and record whether it works, using the "Verify" notes in `agent.md`.
+
+Phase 0 progress and findings are recorded in [phase0-baseline.md](phase0-baseline.md).
 
 Keep a usable build at the end of every phase.
 

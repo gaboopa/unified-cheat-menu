@@ -4,8 +4,8 @@ Baseline: upstream `bfcb175`, CK3 1.20.1.2. Tasks refer to [spec](unified-cheat-
 
 | # | Task | Status |
 | --- | --- | --- |
-| 1 | Error.log baseline (vanilla + this mod only) | **Needs an in-game run** (see "How to run the baseline") |
-| 2 | `script_docs` dump | **Needs an in-game run** |
+| 1 | Error.log baseline (vanilla + this mod only) | Done: **2,717 entries** (below) |
+| 2 | `script_docs` dump | Done: spec v1.2 corrected from it (below) |
 | 3 | Vanilla overrides and global defines review | Done (below) |
 | 4 | Per-player global variable inventory | Done (below) |
 | 5 | Innovation generator | Done: rewritten |
@@ -23,6 +23,38 @@ The repo is registered as a local mod: `Documents/Paradox Interactive/Crusader K
 The existing log (2,892 lines, from Community Flavor Pack + Divine Intervention, without this mod) isn't usable as a baseline.
 
 Note: `mod/Skonester_Cheat_Menu_Gold/` is an old **1.19** build (`9.27.26-PreBGA`) with no `.mod` file, so the launcher doesn't load it. It can be deleted.
+
+## Error.log baseline (task 1)
+
+Run on 2026-10-23: CK3 1.20.1.2, all DLC, playset with only this mod (`dlc_load.json` confirms), new game, one month, `script_docs`.
+
+**2,717 error entries** (3,855 lines). This is the number to beat. `agent.md` reported 11,577 after the port, so later upstream fixes already cut most of them. No vanilla-only run was done, but nearly every entry traces to the mod:
+
+- **982 entries cite a file:** 666 are mod files and 316 are vanilla paths. 282 of the vanilla-path ones are in `00_building_effects.txt`, called by the mod's domicile presets (`skonester_cheat_menu_domicile_preset_effects.txt:3262`) with bad arguments.
+- **Most of the rest are load-time warnings about mod names:** "variable/flag used but never set" and "set but never used" (1,312 entries). 1,294 of them name variables or flags that appear in mod files.
+
+**Biggest groups:**
+
+| Count | What | Where |
+| --- | --- | --- |
+| 1,198 | Variable/flag used but never set | Mod variables and flags throughout |
+| 377 | Script system error (bad trigger/effect arguments) | Mostly the domicile presets (158), `dp_char_editor.txt` (36), `skonester_government_bianshen_daming_effects.txt` (30), `GM_value_on_action.txt` (29) |
+| 185 | Landed title not found | `yan_on_action.txt` (78), `GM_value_on_action.txt` (52), authority/expansion title effects. These reference titles from other mods |
+| 135 | Tradition not found | `skonester_cw_tradition_picker_lists_generated.txt`: AGOT-only keys, expected per the file header. Goes away when the picker uses `every_culture_tradition` |
+| 92 | Variable set but never used | Mod variables |
+| 67 | Orphaned events | `skonester_cheat_menu.*` and others |
+| 54 | Missing characters `character:yannv*` / `yannan*` | `yan_on_action.txt` |
+
+**Quick wins:** `yan_on_action.txt` + `GM_value_on_action.txt` (about 300 entries combined, compatibility code for other mods running unguarded), the domicile presets (about 200), and the generated tradition list (135).
+
+## script_docs results (task 2)
+
+The engine's documentation overturned two claims that were based on searching game files:
+
+- **Characters can be renamed:** `change_first_name = <dynamic_description>`.
+- **Script can loop over the database** for traits, innovations, traditions, pillars, tenets, doctrines, government, holding, court position, CB, accolade, legend and activity types, and more. Only building types, men-at-arms types, and artifact templates lack a loop.
+
+Also found: `set_culture_name`, `set_faith_name`, `set_rite_name`, `add_rite_tenet`; `set_immortal_age` only works on characters who are already immortal; `personal_tenet_slot_add` is a modifier. No baby-sex parameter on `make_pregnant`. The spec is updated to v1.2 and Appendix A now cites the engine docs.
 
 ## Vanilla overrides (task 3)
 

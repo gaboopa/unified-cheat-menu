@@ -1,11 +1,20 @@
 # Unified CK3 Cheat Menu
 
-**Proposed Functional and Interface Specification — Version 1.1**
+**Proposed Functional and Interface Specification — Version 1.2**
 
 **Target:** Crusader Kings III 1.20.x "Crozier" (verified against 1.20.1.2 game files)\
 **Baseline:** Skonester Cheat Menu Gold, forked at upstream commit `bfcb175` (CC BY 4.0)\
 **Feature reference:** Divine Intervention Cheat Menu (behavior only; no code or assets)\
 **Status:** Proposed design; implementation and compatibility validation required
+
+### Changes from 1.1
+
+Corrections from the game's own `script_docs` output (1.20.1.2), which replaces the earlier file-search evidence:
+
+- **Rename character is back in scope.** `change_first_name = <dynamic_description>` exists, so typed text can rename characters the same way it renames titles.
+- **Script can loop over many database types:** traits, innovations, traditions, tenets, doctrines, government types, holding types, court position types, and more. Pickers for these build their lists at game start, so modded content appears automatically. Buildings, men-at-arms types, and artifact templates still have no loop and keep generated lists.
+- Added rename for cultures, faiths, and rites (`set_culture_name`, `set_faith_name`, `set_rite_name`).
+- Clarified that `set_immortal_age` only works on characters who are already immortal, and that `personal_tenet_slot_add` is a modifier, not an effect.
 
 ### Changes from 1.0
 
@@ -223,6 +232,7 @@ An in-game history may record completed actions, but it must not imply that all 
 
 | Action                    | Functional requirement                                 | Engine support |
 | ------------------------- | ------------------------------------------------------ | -------------- |
+| Rename character          | Change a character's first name with typed text        | `change_first_name = <dynamic_description>` plus the text-entry widget (Section 7.3) |
 | Change age                | Increase/decrease age or use age presets               | Baseline has it (`skonester_change_age_interaction.txt`) |
 | Change sexuality          | Heterosexual, homosexual, bisexual, asexual            | `set_sexuality` |
 | Change weight             | Adjustable weight modification                         | `change_current_weight` |
@@ -231,8 +241,6 @@ An in-game history may record completed actions, but it must not imply that all 
 | Change culture            | Open culture picker                                    | Baseline has it |
 | Change faith              | Open faith picker                                      | Baseline has it |
 | Change house/dynasty      | Assign valid house or dynasty membership               | Verify |
-
-**Out of scope: renaming characters.** No vanilla effect sets a character's first name. Typed text can only rename things that take a localization key: titles (`set_title_name`), artifacts (`set_artifact_name`), houses (`set_house_name`), and adventurer titles (`create_adventurer_title`).
 
 ### Attributes
 
@@ -272,7 +280,7 @@ Organize traits into:
 Required functions:
 
 - Add/remove individual traits.
-- Filter traits by category. Lists come from generated catalogs (Section 7.3). Script can only loop over traits within a category (`every_trait_in_category`), not over every trait in the game.
+- Filter traits by category. The list is built at game start with `every_trait` (Section 7.3), so traits added by other mods appear automatically.
 - Modify congenital trait tiers.
 - Remove negative congenital traits.
 - Grant all selected positive congenital traits.
@@ -293,7 +301,7 @@ Provide:
 - Remove negative health modifiers.
 - Adjust fertility.
 - Enable/disable fertility.
-- Grant/remove immortality (`set_immortal_age`).
+- Grant/remove immortality. `set_immortal_age` only changes the age of a character who is already immortal (check with `is_immortal`), so granting immortality needs a separate effect.
 - Toggle age-related protection.
 - Lock/unlock stress.
 - Lock/unlock dread.
@@ -594,11 +602,12 @@ War operations must check existing wars, war objectives, character status, and p
 Required controls:
 
 - Select culture.
+- Rename culture (`set_culture_name`).
 - Change ethos.
 - Change heritage.
 - Change language.
 - Change martial customs.
-- Add/remove traditions (generated tradition lists: `skonester_cw_tradition_picker_lists_generated.txt`).
+- Add/remove traditions. Baseline uses generated lists (`skonester_cw_tradition_picker_lists_generated.txt`); `every_culture_tradition` can replace them.
 - Replace traditions.
 - Change cultural acceptance.
 - Trigger supported hybridization/divergence workflows.
@@ -610,8 +619,8 @@ Editing a culture changes the shared culture definition, not just the character 
 
 Provide:
 
-- Add individual innovation (generated: `skonester_cw_innovation_unlock_generated.txt`).
-- Remove individual innovation (generated: `skonester_cw_innovation_remove_generated.txt`).
+- Add individual innovation. Baseline uses one generated scripted GUI per innovation (`skonester_cw_innovation_unlock_generated.txt`). `add_innovation` accepts a `culture_innovation` target, so one scripted GUI taking the innovation as a scope could replace all of them, if the GUI can pass the innovation as a scope the way the tradition picker does (verify).
+- Remove individual innovation (same; `skonester_cw_innovation_remove_generated.txt`).
 - Add all eligible innovations.
 - Complete innovations by era.
 - Change cultural fascination/head where supported.
@@ -637,9 +646,10 @@ CK3 1.20 restructured religion. Faiths now work through **Rites**, tenets moved 
 Provide:
 
 - View the existing faith and rite definition.
-- Edit core tenets.
+- Rename faith or rite (`set_faith_name`, `set_rite_name`).
+- Edit core tenets (`add_rite_tenet`, `remove_rite_tenet`).
 - Replace/remove tenets.
-- Add **personal** tenet slots (`personal_tenet_slot_add`, `free_personal_tenet_slots`).
+- Add **personal** tenet slots (the `personal_tenet_slot_add` modifier; `free_personal_tenet_slots`).
 - Edit doctrines by doctrine group.
 - Edit marriage/family doctrines.
 - Edit crime doctrines.
@@ -648,7 +658,7 @@ Provide:
 - Select sins and virtues (the game keeps at most `MAX_VIRTUES_SINS = 7`, chosen from core and approved tenets).
 - Preserve Skonester's empty-tenet-slot fill and cleanup tools (`skonester_acm_faith_fill_empty_tenet_slots_effect`, `skonester_acm_faith_clear_empty_tenet_slots_effect`).
 
-**Unverified: extra core tenet slots.** No 1.20 effect or define for adding core tenet slots has been found yet. Treat it as experimental until verified in game.
+**Unverified: extra core tenets.** There's no slot-adding effect or define, but `add_rite_tenet` documents no limit. Whether a rite can hold more core tenets than usual has to be tested in game. Treat it as experimental until then.
 
 ### Faith Conversion
 
@@ -933,7 +943,7 @@ Configurable fields:
 - Character count
 - Destination court/camp
 
-Generated characters get their names from the game's culture name lists. Players can't type names (Section 4.1).
+Generated characters get their names from the game's culture name lists. Players can rename them afterwards (Section 4.1).
 
 ### Family Generator
 
@@ -1359,18 +1369,22 @@ Use CK3's existing modding mechanisms:
 - Localization for all visible text.
 - Scripted triggers for eligibility and DLC checks.
 
-**Generated catalogs.** Script can't loop over all game objects (traits, buildings, men-at-arms types, innovations, traditions) at runtime. The only exception found is `every_trait_in_category`, which loops over traits within one category. Picker lists and their one-button scripted GUIs are **generated offline** from the game files by scripts in `tools/`, as the baseline already does:
+**Runtime lists.** Script can loop over many database types: `every_trait`, `every_culture_innovation`, `every_culture_tradition`, `every_culture_pillar`, `every_tenet`, `every_doctrine`, `every_government_type`, `every_holding_type`, `every_court_position_type`, `every_casus_belli_type`, `every_accolade_type`, `every_legend_type`, `every_activity_type`, and others (see `logs/effects.log` from `script_docs`). Pickers for these types build their lists at game start (and on reload) into read-only global variable lists, so content from other mods appears automatically.
+
+**Generated catalogs.** There's no loop over building types, men-at-arms types, or artifact templates (`every_maa_regiment` and `every_artifact` cover existing regiments and artifacts, not the definitions). Pickers for those are **generated offline** from the game files by scripts in `tools/`, as the baseline already does:
 
 - `tools/gen_cw_tradition_picker_lists.py` produces `skonester_cw_tradition_picker_lists_generated.txt`.
 - `tools/gen_skonester_cw_innovation_sguis.py` produces the innovation unlock/remove scripted GUIs (rewritten in Phase 0; see [phase0-baseline.md](phase0-baseline.md)).
 
 Generated files say "do not edit by hand" and are rebuilt whenever the target game version or a supported mod changes. Read-only catalogs may live in global variable lists because they're the same for every player.
 
-**Text entry.** CK3's event text-entry widget (`event_window_widget_enter_text`) stores typed text, which localization can then display. It can rename things whose name is a localization key: titles, artifacts, houses, and adventurer titles. It can't rename characters or be read as a number.
+The baseline's tradition and innovation generators can be retired once those pickers move to runtime lists.
+
+**Text entry.** CK3's event text-entry widget (`event_window_widget_enter_text`) stores typed text, which localization can then display. Any effect that takes a localization key or dynamic description can use it: `change_first_name` (characters), `set_title_name_dynamic`, `set_artifact_name`, `set_house_name`, `set_dynasty_name`, `set_culture_name`, `set_faith_name`, `set_rite_name`, and `create_adventurer_title`. Typed text can't be read as a number.
 
 Ordinary menu use must not require debug mode.
 
-Don't promise generic console-command execution, typed numeric input, character renaming, or universal rollback.
+Don't promise generic console-command execution, typed numeric input, or universal rollback.
 
 ## 7.4 Compatibility and module isolation
 
@@ -1498,7 +1512,7 @@ The architecture accommodates modded content, particularly:
 - Custom men-at-arms.
 - Custom title structures.
 
-Because pickers use generated catalogs (Section 7.3), modded traits, buildings, units, innovations, and traditions **don't appear automatically**. Supporting a content mod means running the generators against it and shipping the output as a compatibility patch.
+Traits, cultures, faiths, innovations, traditions, tenets, doctrines, and government types added by other mods appear automatically, because those pickers use runtime lists (Section 7.3). **Buildings, men-at-arms types, and artifact templates don't.** Supporting those from a content mod means running the generators against it and shipping the output as a compatibility patch.
 
 Don't claim AGOT or other total-conversion compatibility without dedicated testing. As of the baseline, AGOT targets 1.19 and crashes 1.20 at startup even without this mod.
 
@@ -1643,20 +1657,23 @@ The governing design principle:
 
 # Appendix A — Engine verification (CK3 1.20.1.2)
 
-Checked by searching the installed game's `game/` folder and the baseline. "Verified" means the effect or mechanism is used in vanilla or baseline script. It hasn't necessarily been tested in game.
+Checked against the game's own documentation (`script_docs` output: `logs/effects.log`, `triggers.log`, `modifiers.log`), plus the vanilla and baseline script that uses each effect. "Verified" means documented by the engine. It hasn't necessarily been tested in game.
 
 | Claim | Result | Evidence |
 | --- | --- | --- |
-| Script can loop over all traits, buildings, or MAA types | ❌ No | No `every_*` iterator over database objects except `every_trait_in_category`. Vanilla GUI has no such data functions either. Baseline uses generated lists. |
-| Typed text can rename titles, artifacts, houses | ✅ Verified | `event_window_widget_enter_text.gui`, `accolade_events.txt` (stores text in `var:new_laamp_title_name`), `07_dlc_ep3_scripted_effects.txt` (`create_adventurer_title = { name = new_laamp_title_name_entered_text }`) |
-| Typed text can rename characters | ❌ No | No vanilla effect sets a character's name. Newborn naming is handled by the game engine itself. |
-| Typed text can be read as a number | ❌ No | The text controller stores a string shown through localization. |
-| Pregnancy with chosen father and number of children | ✅ Verified | `make_pregnant = { father = … number_of_children = … }` in vanilla events |
-| Choosing the baby's sex | ❌ Not found | No parameter in vanilla or baseline usage |
-| Biological father | ✅ Verified | `set_real_father` (3 uses), `set_father`, `set_mother` |
-| Sexuality, weight, immortality | ✅ Verified | `set_sexuality`, `change_current_weight`, `set_immortal_age` |
-| Personal tenet slots | ✅ Verified | `personal_tenet_slot_add`, `free_personal_tenet_slots` |
-| Extra core tenet slots | ⚠️ Not found | No 1.20 effect or define located. Mark experimental. |
+| Script can loop over traits, innovations, traditions, tenets, doctrines | ✅ Verified | `every_trait`, `every_culture_innovation`, `every_culture_tradition`, `every_tenet`, `every_doctrine` ("Iterate through every … in the database") |
+| Script can loop over building types, MAA types, artifact templates | ❌ No | No database iterator for these; `every_maa_regiment` and `every_artifact` cover existing instances only |
+| Typed text can rename titles, artifacts, houses, cultures, faiths, rites | ✅ Verified | `set_title_name_dynamic`, `set_artifact_name`, `set_house_name`, `set_culture_name`, `set_faith_name`, `set_rite_name`; text-entry pattern in `accolade_events.txt` and `07_dlc_ep3_scripted_effects.txt` |
+| Typed text can rename characters | ✅ Verified | `change_first_name = <dynamic_description>` (or `{ template_character = … }`) |
+| Typed text can be read as a number | ❌ No | The text controller stores a string shown through localization |
+| Pregnancy with chosen father and number of children | ✅ Verified | `make_pregnant` / `make_pregnant_no_checks`: `father`, `number_of_children`, `known_bastard` |
+| Choosing the baby's sex | ❌ No | Not among the documented `make_pregnant` parameters |
+| Biological father | ✅ Verified | `set_real_father`, `set_father`, `set_mother` |
+| Sexuality, weight | ✅ Verified | `set_sexuality`, `change_current_weight` |
+| Immortality | ⚠️ Partial | `set_immortal_age` only works if already immortal; `is_immortal` trigger exists. Granting immortality needs another effect (verify) |
+| Personal tenet slots | ✅ Verified | `personal_tenet_slot_add` is a modifier; `set_personal_tenet`, `force_set_personal_tenet` effects |
+| Extra core tenets | ⚠️ Unverified | `add_rite_tenet` exists with no documented limit; test in game |
+| Single scripted GUI for innovations | ⚠️ Likely | `add_innovation` accepts a `culture_innovation` target; GUI scope passing needs verifying |
 | Virtue/sin cap | ✅ Verified | `MAX_VIRTUES_SINS = 7` in `00_defines.txt` |
 | Mod disables achievements | ⚠️ Assumed | Standard checksum behavior for `common/` changes; confirm in game |
 

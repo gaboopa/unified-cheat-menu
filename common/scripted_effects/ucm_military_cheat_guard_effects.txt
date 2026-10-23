@@ -57,33 +57,3 @@ ucm_military_cheat_strip_on_character_effect = {
     remove_character_flag = ucm_military_cheat_player_authorized
   }
 }
-
-ucm_military_cheat_strip_all_unauthorized_effect = {
-  every_living_character = {
-    limit = {
-      ucm_has_any_military_cheat_modifier_trigger = yes
-      NOT = { has_character_flag = ucm_military_cheat_player_authorized }
-    }
-    ucm_military_cheat_strip_on_character_effect = yes
-  }
-}
-
-ucm_military_cheat_strip_unauthorized_batch_effect = {
-  while = {
-    count = 250
-    limit = {
-      any_living_character = {
-        ucm_has_any_military_cheat_modifier_trigger = yes
-        NOT = { has_character_flag = ucm_military_cheat_player_authorized }
-      }
-    }
-    random_living_character = {
-      limit = {
-        ucm_has_any_military_cheat_modifier_trigger = yes
-        NOT = { has_character_flag = ucm_military_cheat_player_authorized }
-      }
-      weight = { base = 1 }
-      ucm_military_cheat_strip_on_character_effect = yes
-    }
-  }
-}

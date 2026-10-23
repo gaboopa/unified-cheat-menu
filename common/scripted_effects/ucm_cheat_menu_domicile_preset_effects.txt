@@ -3095,33 +3095,33 @@ ucm_domicile_finish_internals_after_preset_effect = {
 
 # --- 移除外槽（链式降级 + 原版随机拆除扫尾；不触碰主宅与内建）---
 ucm_domicile_clear_external_estate_buildings_effect = {
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = grain_field }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = grain_field MAX = 6 }
   ucm_domicile_clear_external_branch_chain_fully_effect = { CHAIN = workshop_carpenter FIRST = 03 HELPER = 2_6 }
   ucm_domicile_clear_external_branch_chain_fully_effect = { CHAIN = workshop_mason FIRST = 03 HELPER = 2_6 }
   ucm_domicile_clear_external_branch_chain_fully_effect = { CHAIN = workshop_textile FIRST = 03 HELPER = 2_6 }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = workshop }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = workshop MAX = 2 }
   ucm_domicile_clear_external_branch_chain_fully_effect = { CHAIN = storage_warehouse FIRST = 03 HELPER = 2_4 }
   ucm_domicile_clear_external_branch_chain_fully_effect = { CHAIN = storage_granary FIRST = 03 HELPER = 2_4 }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = storage }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = market }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = tea }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = vineyard }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = olive }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = storage MAX = 2 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = market MAX = 6 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = tea MAX = 6 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = vineyard MAX = 6 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = olive MAX = 6 }
   ucm_domicile_clear_external_branch_chain_fully_effect = { CHAIN = stable_grand FIRST = 04 HELPER = 3_6 }
   ucm_domicile_clear_external_branch_chain_fully_effect = { CHAIN = stable_kennel FIRST = 04 HELPER = 3_6 }
   ucm_domicile_clear_external_branch_chain_fully_effect = { CHAIN = stable_chariot FIRST = 04 HELPER = 3_6 }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = stable }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = guardhouse }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = barracks }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = watchtower }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = grazing_land }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = stable MAX = 3 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = guardhouse MAX = 4 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = barracks MAX = 6 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = watchtower MAX = 6 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = grazing_land MAX = 6 }
   ucm_domicile_clear_external_branch_chain_fully_effect = { CHAIN = garden_leisure FIRST = 04 HELPER = 3_6 }
   ucm_domicile_clear_external_branch_chain_fully_effect = { CHAIN = garden_fruit FIRST = 04 HELPER = 3_6 }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = garden }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = rice_field }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = silk }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = garden MAX = 3 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = rice_field MAX = 6 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = silk MAX = 6 }
   # CK3 1.20: health / courier_posthouse / night_watch only exist as east_asian_estate_* buildings
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = temple_small }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = temple_small MAX = 3 }
   ucm_domicile_clear_external_estate_sweep_effect = yes
 }
 
@@ -3157,32 +3157,32 @@ OR = {
 }
 
 ucm_domicile_clear_external_east_asian_estate_buildings_effect = {
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_rice_field }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_tea }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_market }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_health }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_silk }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_barracks }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_watchtower }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_grazing_land }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_gate }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_rice_field MAX = 6 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_tea MAX = 6 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_market MAX = 6 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_health MAX = 6 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_silk MAX = 6 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_barracks MAX = 6 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_watchtower MAX = 6 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_grazing_land MAX = 6 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_gate MAX = 6 }
   ucm_domicile_clear_external_branch_chain_fully_effect = { CHAIN = east_asian_estate_garden_leisure FIRST = 04 HELPER = 3_6 }
   ucm_domicile_clear_external_branch_chain_fully_effect = { CHAIN = east_asian_estate_garden_fruit FIRST = 04 HELPER = 3_6 }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_garden }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_garden MAX = 3 }
   ucm_domicile_clear_external_branch_chain_fully_effect = { CHAIN = east_asian_estate_stable_grand FIRST = 04 HELPER = 3_6 }
   ucm_domicile_clear_external_branch_chain_fully_effect = { CHAIN = east_asian_estate_stable_kennel FIRST = 04 HELPER = 3_6 }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_stable }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_stable MAX = 3 }
   ucm_domicile_clear_external_branch_chain_fully_effect = { CHAIN = east_asian_estate_workshop_carpenter FIRST = 03 HELPER = 2_6 }
   ucm_domicile_clear_external_branch_chain_fully_effect = { CHAIN = east_asian_estate_workshop_mason FIRST = 03 HELPER = 2_6 }
   ucm_domicile_clear_external_branch_chain_fully_effect = { CHAIN = east_asian_estate_workshop_textile FIRST = 03 HELPER = 2_6 }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_workshop }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_workshop MAX = 2 }
   ucm_domicile_clear_external_branch_chain_fully_effect = { CHAIN = east_asian_estate_storage_warehouse FIRST = 03 HELPER = 2_6 }
   ucm_domicile_clear_external_branch_chain_fully_effect = { CHAIN = east_asian_estate_storage_granary FIRST = 03 HELPER = 2_6 }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_storage }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_courier_posthouse }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_vintner_halls }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_wine_press }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_night_watch }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_storage MAX = 2 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_courier_posthouse MAX = 4 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_vintner_halls MAX = 4 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_wine_press MAX = 4 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = east_asian_estate_night_watch MAX = 4 }
   ucm_domicile_clear_external_east_asian_estate_sweep_effect = yes
 }
 
@@ -3219,18 +3219,18 @@ OR = {
 }
 
 ucm_domicile_clear_external_japanese_manor_buildings_effect = {
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = japanese_fields }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = japanese_workshop }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = japanese_tea_plantation }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = japanese_stables }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = japanese_tea_house }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = japanese_garden }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = japanese_armory }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = japanese_horse_pastures }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = japanese_watch_house }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = japanese_shrine }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = japanese_brewery }
-  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = japanese_archive }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = japanese_fields MAX = 6 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = japanese_workshop MAX = 6 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = japanese_tea_plantation MAX = 6 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = japanese_stables MAX = 6 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = japanese_tea_house MAX = 6 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = japanese_garden MAX = 6 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = japanese_armory MAX = 6 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = japanese_horse_pastures MAX = 6 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = japanese_watch_house MAX = 6 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = japanese_shrine MAX = 6 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = japanese_brewery MAX = 6 }
+  ucm_domicile_clear_external_chain_fully_effect = { CHAIN = japanese_archive MAX = 6 }
   ucm_domicile_clear_external_japanese_manor_sweep_effect = yes
 }
 
@@ -3259,7 +3259,7 @@ ucm_domicile_clear_external_chain_fully_effect = {
   while = {
     count = 12
     limit = { has_domicile_building_or_higher = $CHAIN$_01 }
-    destroy_or_downgrade_estate_building_6_effect = { BUILDING = $CHAIN$ }
+    destroy_or_downgrade_estate_building_$MAX$_effect = { BUILDING = $CHAIN$ }
   }
 }
 

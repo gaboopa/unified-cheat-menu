@@ -1,0 +1,163 @@
+# Called monthly from ucm_monthly_tick.0001 (events/ucm_monthly_tick_events.txt). root/this = the player with ucm_seduce_shield_active.
+ucm_fidelity_affair_sweep_effect = {
+  every_spouse = {
+    limit = { is_alive = yes }
+    save_scope_as = ucm_fid_ward
+    # 入向
+    every_targeting_scheme = {
+      if = {
+        limit = {
+          OR = {
+            scheme_type = seduce
+            scheme_type = romance
+            scheme_type = abduct
+            scheme_type = elope
+          }
+          scope:ucm_fid_ward = {
+            ucm_seduce_shield_active_for_target_trigger = yes
+          }
+          scheme_owner = {
+            NOR = {
+              is_spouse_of = scope:ucm_fid_ward
+              AND = {
+                scope:ucm_fid_ward = { is_concubine = yes }
+                this = scope:ucm_fid_ward.concubinist
+              }
+            }
+          }
+        }
+        end_scheme = yes
+      }
+    }
+    # 出向（与 ucm_seduce_scheme_blocked_outgoing 等义：家主护持 + 非对配偶/对妾主关系）
+    every_scheme = {
+      scheme_target_character = { save_scope_as = ucm_fid_paramour }
+      if = {
+        limit = {
+          OR = {
+            scheme_type = seduce
+            scheme_type = romance
+            scheme_type = abduct
+            scheme_type = elope
+          }
+          scheme_owner = { this = scope:ucm_fid_ward }
+          scope:ucm_fid_ward = { ucm_fidelity_ward_is_shielded_harem_of_patron_trigger = yes }
+          NOT = {
+            OR = {
+              scope:ucm_fid_ward = { is_spouse_of = scope:ucm_fid_paramour }
+              scope:ucm_fid_ward = { is_concubine_of = scope:ucm_fid_paramour }
+            }
+          }
+        }
+        end_scheme = yes
+      }
+    }
+  }
+  every_concubine = {
+    limit = { is_alive = yes }
+    save_scope_as = ucm_fid_ward
+    every_targeting_scheme = {
+      if = {
+        limit = {
+          OR = {
+            scheme_type = seduce
+            scheme_type = romance
+            scheme_type = abduct
+            scheme_type = elope
+          }
+          scope:ucm_fid_ward = {
+            ucm_seduce_shield_active_for_target_trigger = yes
+          }
+          scheme_owner = {
+            NOR = {
+              is_spouse_of = scope:ucm_fid_ward
+              AND = {
+                scope:ucm_fid_ward = { is_concubine = yes }
+                this = scope:ucm_fid_ward.concubinist
+              }
+            }
+          }
+        }
+        end_scheme = yes
+      }
+    }
+    every_scheme = {
+      scheme_target_character = { save_scope_as = ucm_fid_paramour }
+      if = {
+        limit = {
+          OR = {
+            scheme_type = seduce
+            scheme_type = romance
+            scheme_type = abduct
+            scheme_type = elope
+          }
+          scheme_owner = { this = scope:ucm_fid_ward }
+          scope:ucm_fid_ward = { ucm_fidelity_ward_is_shielded_harem_of_patron_trigger = yes }
+          NOT = {
+            OR = {
+              scope:ucm_fid_ward = { is_spouse_of = scope:ucm_fid_paramour }
+              scope:ucm_fid_ward = { is_concubine_of = scope:ucm_fid_paramour }
+            }
+          }
+        }
+        end_scheme = yes
+      }
+    }
+  }
+  ucm_seduce_shield_grant_chastity_traits_to_consorts_effect = yes
+  ucm_seduce_shield_strip_non_patron_lovers_from_consorts_effect = yes
+  ucm_seduce_shield_enforce_global_ai_fidelity_rules_effect = yes
+}
+
+# Marriage ban: break betrothals of the player/courtiers that involve a banned (or vowed) character. root/this = the player.
+ucm_marriage_ban_betrothal_sweep_effect = {
+  if = {
+    limit = {
+      has_trait = ucm_trait_marriage_ban
+      is_betrothed = yes
+    }
+    betrothed = {
+      break_betrothal = prev
+    }
+  }
+  if = {
+    limit = {
+      is_betrothed = yes
+      betrothed = {
+        OR = {
+          has_trait = ucm_trait_marriage_ban
+          has_character_flag = ucm_no_marry_vow
+        }
+      }
+    }
+    betrothed = {
+      break_betrothal = prev
+    }
+  }
+  every_courtier = {
+    limit = {
+      OR = {
+        has_trait = ucm_trait_marriage_ban
+        has_character_flag = ucm_no_marry_vow
+      }
+      is_betrothed = yes
+    }
+    betrothed = {
+      break_betrothal = prev
+    }
+  }
+  every_courtier = {
+    limit = {
+      is_betrothed = yes
+      betrothed = {
+        OR = {
+          has_trait = ucm_trait_marriage_ban
+          has_character_flag = ucm_no_marry_vow
+        }
+      }
+    }
+    betrothed = {
+      break_betrothal = prev
+    }
+  }
+}

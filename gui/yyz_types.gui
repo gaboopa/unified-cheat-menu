@@ -165,9 +165,7 @@ types yyz_character_list_types {
   # used for the 0 0 size hidden buttons backing the shortcut keys to get our window open
   #######################################################################################
   type yyz_character_list_shortcut = button_normal {
-    block "command" {
-      datacontext = "[GetScriptedGui('open_yyz_YYZ_list')]"                   
-    }
+    block "command" {}
     
     block "cmd_key" {
       shortcut = "NO_DEFAULT_KEY"
@@ -243,7 +241,6 @@ types yyz_character_list_types {
           vbox = {                
             name = "characters_grid"
             datamodel = "[GetPlayer.MakeScope.GetList('yyz_list')]"
-#            visible = "[GetScriptedGui('yyz_window').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
             layoutpolicy_horizontal = expanding
              
             item = {
@@ -341,13 +338,6 @@ types yyz_character_list_types {
     datacontext = "[Scope.GetCharacter]"
     size = { 200 94 }
 
-    background = {
-      visible = "[GetScriptedGui( 'yyz_even_index' ).IsShown( GuiScope.SetRoot( Character.MakeScope ).End ) ]"
-      using = Background_Area_Dark
-      margin_top = -4
-      margin_bottom = 2
-      alpha = 0.5
-    }
     block "divider" {}
     block "widget" {}
 

@@ -19,7 +19,7 @@ ucm_target_independent = {
 ucm_target_vassal_of_second = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { is_landed = yes } global_var:ucm_crozier_cheats_other = { is_landed = yes NOT = { any_liege_or_above = { this = var:ucm_target } } } NOT = { var:ucm_target.liege ?= global_var:ucm_crozier_cheats_other } }
+	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { is_landed = yes } global_var:ucm_crozier_cheats_other = { is_landed = yes highest_held_title_tier > root.var:ucm_target.highest_held_title_tier NOT = { any_liege_or_above = { this = root.var:ucm_target } } } NOT = { var:ucm_target.liege ?= global_var:ucm_crozier_cheats_other } }
 	effect = { var:ucm_target = { create_title_and_vassal_change = { type = swear_fealty save_scope_as = ucm_change add_claim_on_loss = no } change_liege = { liege = global_var:ucm_crozier_cheats_other change = scope:ucm_change } resolve_title_and_vassal_change = scope:ucm_change } }
 }
 
@@ -127,7 +127,7 @@ ucm_ally_second = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { is_ruler = yes NOT = { is_allied_to = global_var:ucm_crozier_cheats_other } } global_var:ucm_crozier_cheats_other = { is_ruler = yes } }
-	effect = { var:ucm_target = { create_alliance = { target = global_var:ucm_crozier_cheats_other allied_through_owner = var:ucm_target allied_through_target = global_var:ucm_crozier_cheats_other } } }
+	effect = { var:ucm_target = { create_alliance = { target = global_var:ucm_crozier_cheats_other allied_through_owner = this allied_through_target = global_var:ucm_crozier_cheats_other } } }
 }
 
 ucm_break_alliance_second = {
@@ -148,7 +148,7 @@ ucm_end_wars_white_peace = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_at_war = yes } }
-	effect = { var:ucm_target = { every_character_war = { end_war = white_peace } } }
+	effect = { var:ucm_target = { every_character_war = { limit = { OR = { primary_attacker = prev primary_defender = prev } } end_war = white_peace } } }
 }
 
 # --- Faith & culture -------------------------------------------------------------

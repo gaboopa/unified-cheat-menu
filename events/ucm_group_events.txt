@@ -35,6 +35,7 @@ ucm_group.1 = {
 		}
 		desc = ucm_group.1.desc.counts
 	}
+	trigger = { ucm_single_player_trigger = yes }
 	theme = stewardship
 	left_portrait = { character = var:ucm_target }
 
@@ -42,7 +43,7 @@ ucm_group.1 = {
 
 	option = {
 		name = ucm_group.1.a
-		trigger = { var:ucm_group_eligible > 0 }
+		trigger = { ucm_menu_target_valid_trigger = yes var:ucm_group_eligible > 0 }
 		ucm_group_apply_effect = yes
 		trigger_event = ucm_group.2
 	}
@@ -57,6 +58,7 @@ ucm_group.2 = {
 	type = character_event
 	title = ucm_group.2.t
 	desc = ucm_group.2.desc
+	trigger = { ucm_single_player_trigger = yes }
 	theme = stewardship
 	left_portrait = { character = var:ucm_target }
 

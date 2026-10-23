@@ -1,11 +1,5 @@
-﻿# Append scoped upkeep to the existing engine hooks; no vanilla overrides.
-on_game_start = {
-    on_actions = { ucm_water_of_life_restore_all }
-}
-on_game_start_after_lobby = {
-    on_actions = { ucm_water_of_life_restore_all }
-}
-monthly_global_pulse = {
+# Monthly upkeep for characters holding the water_of_life trait (initial pass is in ucm_startup_sweep.txt).
+ucm_monthly_tick = {
     on_actions = { ucm_water_of_life_restore_all }
 }
 ucm_water_of_life_restore_all = {

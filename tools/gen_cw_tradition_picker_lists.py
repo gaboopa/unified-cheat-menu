@@ -1,52 +1,39 @@
 """Regenerate common/scripted_effects/ucm_cw_tradition_picker_lists_generated.txt.
 
 The tradition picker GUI shows global lists of culture traditions. CK3 has no way to
-iterate the tradition database from script, so the keys are written out here: one list
-for vanilla and one for A Game of Thrones (AGOT). At runtime the AGOT list is used when
-ucm_compat_agot_loaded_trigger is true, otherwise the vanilla list.
+iterate the tradition database from script, so the keys are written out here.
+
+The generated file lists vanilla (and Skonester) traditions only. It also defines
+ucm_cw_build_tradition_picker_lists_agot_effect as a stub that falls back to the vanilla list,
+because plain CK3 loads every file in common/scripted_effects and AGOT-only keys
+(culture_tradition:tradition_agot_*) would log one "Failed to find" error each.
+
+With --agot-dir, the A Game of Thrones list is written as a separate compatch,
+<out>/tools/out/agot/common/scripted_effects/ucm_cw_tradition_picker_lists_agot_compatch.txt.
+Drop it into an AGOT compat build of the mod, loaded after the main file, so that it replaces the
+stub; ucm_compat_agot_loaded_trigger then selects it at runtime.
 
 Run after a CK3 or AGOT update:
-    python tools/gen_cw_tradition_picker_lists.py --game-dir <CK3>/game --agot-dir <workshop>/2962333032
-or set CK3_GAME_DIR and CK3_AGOT_DIR instead of passing the flags.
+    python tools/gen_cw_tradition_picker_lists.py --game-dir <CK3>/game [--agot-dir <workshop>/2962333032] [--out DIR]
+or set CK3_GAME_DIR and CK3_AGOT_DIR instead of passing the flags. --out defaults to this repo.
 """
 import argparse
-import glob
 import os
 import re
 import sys
 
+from ck3parse import effective_files, top_level_objects
+
 MOD_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUT = os.path.join(MOD_DIR, "common", "scripted_effects", "ucm_cw_tradition_picker_lists_generated.txt")
 SUB = os.path.join("common", "culture", "traditions")
+OUT_REL = os.path.join("common", "scripted_effects", "ucm_cw_tradition_picker_lists_generated.txt")
+AGOT_REL = os.path.join("tools", "out", "agot", "common", "scripted_effects", "ucm_cw_tradition_picker_lists_agot_compatch.txt")
 
 CATEGORIES = ["realm", "combat", "societal", "ritual", "regional"]
 # Hidden traditions (is_shown = { always = no }) are listed on purpose: this is a cheat menu.
 # Never listed: the mod's own player-only tradition, the decision-only oath tradition that the
 # original list never had, and AGOT's debug tradition.
 EXCLUDE = {"zhuge_chuantong", "oath_mend_the_fracture_tradition", "tradition_agot_debug"}
-
-
-def top_level_objects(path):
-    """Yield (key, body) for each top-level `key = { ... }` block in a script file."""
-    text = open(path, encoding="utf-8-sig", errors="replace").read()
-    text = re.sub(r"#[^\n]*", "", text)
-    start = re.compile(r"(?m)^([A-Za-z_]\w*)\s*=\s*\{")
-    pos = 0
-    while True:
-        m = start.search(text, pos)
-        if not m:
-            return
-        depth, i = 0, m.end() - 1
-        while i < len(text):
-            if text[i] == "{":
-                depth += 1
-            elif text[i] == "}":
-                depth -= 1
-                if depth == 0:
-                    break
-            i += 1
-        yield m.group(1), text[m.end():i]
-        pos = i + 1
 
 
 def direct_child(body, key):
@@ -85,15 +72,6 @@ def traditions(files):
     return out
 
 
-def effective_files(*dirs):
-    """Files as the game loads them: a later dir's file replaces an earlier one with the same name."""
-    by_name = {}
-    for d in dirs:
-        for f in glob.glob(os.path.join(d, SUB, "*.txt")):
-            by_name[os.path.basename(f)] = f
-    return [by_name[n] for n in sorted(by_name)]
-
-
 def emit_effect(name, trads):
     lines = [f"{name} = {{"]
     for cat in CATEGORIES:
@@ -106,23 +84,29 @@ def emit_effect(name, trads):
     return lines
 
 
+def write(path, lines):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "wb") as fh:  # UTF-8 with BOM, LF (the committed form)
+        fh.write(b"\xef\xbb\xbf" + "\n".join(lines).encode("utf-8"))
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--game-dir", default=os.environ.get("CK3_GAME_DIR"), help="CK3 game/ directory (or CK3_GAME_DIR)")
-    ap.add_argument("--agot-dir", default=os.environ.get("CK3_AGOT_DIR"), help="AGOT workshop directory (or CK3_AGOT_DIR)")
+    ap.add_argument("--agot-dir", default=os.environ.get("CK3_AGOT_DIR"), help="AGOT workshop directory (or CK3_AGOT_DIR); optional")
+    ap.add_argument("--out", default=MOD_DIR, help="output root (default: this repo)")
     args = ap.parse_args()
-    for flag, val in (("--game-dir", args.game_dir), ("--agot-dir", args.agot_dir)):
-        if not val or not os.path.isdir(os.path.join(val, SUB)):
-            sys.exit(f"{flag}: no {SUB} under {val!r}")
+    if not args.game_dir or not os.path.isdir(os.path.join(args.game_dir, SUB)):
+        sys.exit(f"--game-dir: no {SUB} under {args.game_dir!r}")
+    if args.agot_dir and not os.path.isdir(os.path.join(args.agot_dir, SUB)):
+        sys.exit(f"--agot-dir: no {SUB} under {args.agot_dir!r}")
 
-    vanilla = traditions(effective_files(args.game_dir, MOD_DIR))
-    agot = traditions(effective_files(args.game_dir, args.agot_dir, MOD_DIR))
-
+    vanilla = traditions(effective_files(SUB, args.game_dir, MOD_DIR))
     out = [
-        "# AUTO-GENERATED by tools/gen_cw_tradition_picker_lists.py from CK3, A Game of Thrones and Skonester",
-        "# culture tradition definitions. Rebuild this file when a game or AGOT update adds or removes traditions.",
-        "# AGOT-only keys do not exist in vanilla, so vanilla logs one harmless \"Failed to find\" error per key at",
-        "# load; the AGOT branch never runs there.",
+        "# AUTO-GENERATED by tools/gen_cw_tradition_picker_lists.py from CK3 and Skonester culture tradition",
+        "# definitions. Rebuild this file when a game update adds or removes traditions.",
+        "# A Game of Thrones traditions are not listed here (their keys would log errors without AGOT); an AGOT",
+        "# compat build replaces ucm_cw_build_tradition_picker_lists_agot_effect with the generated compatch.",
         "",
         "ucm_cw_build_tradition_picker_lists_effect = {",
         "  ucm_cw_clear_tradition_picker_lists_effect = yes",
@@ -135,15 +119,29 @@ def main():
         "  }",
         "}",
         "",
+        "# Stub: the AGOT compatch redefines this with the AGOT tradition list.",
+        "ucm_cw_build_tradition_picker_lists_agot_effect = {",
+        "  ucm_cw_build_tradition_picker_lists_vanilla_effect = yes",
+        "}",
+        "",
     ]
     out += emit_effect("ucm_cw_build_tradition_picker_lists_vanilla_effect", vanilla)
     out.append("")
-    out += emit_effect("ucm_cw_build_tradition_picker_lists_agot_effect", agot)
-    out.append("")
+    write(os.path.join(args.out, OUT_REL), out)
+    print(f"vanilla={len(vanilla)} -> {OUT_REL}")
 
-    with open(OUT, "wb") as fh:
-        fh.write(b"\xef\xbb\xbf" + "\n".join(out).encode("utf-8"))
-    print(f"vanilla={len(vanilla)} agot={len(agot)} -> {os.path.relpath(OUT, MOD_DIR)}")
+    if args.agot_dir:
+        agot = traditions(effective_files(SUB, args.game_dir, args.agot_dir, MOD_DIR))
+        comp = [
+            "# AUTO-GENERATED by tools/gen_cw_tradition_picker_lists.py from CK3, A Game of Thrones and Skonester",
+            "# culture tradition definitions. AGOT COMPATCH: only load this with AGOT, after the main mod file, so it",
+            "# replaces the stub of the same name. Plain CK3 would log one \"Failed to find\" error per tradition_agot_* key.",
+            "",
+        ]
+        comp += emit_effect("ucm_cw_build_tradition_picker_lists_agot_effect", agot)
+        comp.append("")
+        write(os.path.join(args.out, AGOT_REL), comp)
+        print(f"agot={len(agot)} -> {AGOT_REL}")
 
 
 if __name__ == "__main__":

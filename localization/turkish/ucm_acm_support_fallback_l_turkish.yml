@@ -75,7 +75,6 @@
  ucm_acm_gui_weapon_spear: "Spear"
  ucm_acm_gui_weapon_sword: "Sword"
  ucm_acm_gui_window_title_modify: "Modify Artifact"
- ucm_acm_modify.8001.t:0 "Modify Artifact"
  ucm_acm_religion_picker_footer_edit: "Open Selected Faith Details"
  ucm_acm_religion_picker_footer_edit_tt: "Launch the editor for your selected faith"
  ucm_acm_religion_picker_list_caption: "Religion Groups (Click to Expand Faiths)"

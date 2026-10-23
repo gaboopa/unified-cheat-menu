@@ -8,12 +8,12 @@ A single-player cheat menu for **Crusader Kings III 1.20 "Crozier"**. It's built
 2. Add a `.mod` file next to it pointing at the folder, for example `path="mod/unified_cheat_menu"`.
 3. Enable **Unified Cheat Menu** in a launcher playset.
 
-Having the mod enabled doesn't turn off achievements, so you can play Ironman with it. What does turn them off, as in vanilla:
+Achievements: since CK3 1.9 neither Ironman nor an unmodified checksum is required to keep them ([Paradox wiki](https://ck3.paradoxwikis.com/Achievements)), so loading the mod should not by itself block them. This is from the wiki, not tested in-game with this mod. What does turn them off, as in vanilla:
 - turning on debug mode or using console commands (the debug-mode buttons say so);
 - switching to another character (the switch and play-as cheats say so);
 - multiplayer, observer mode, or game rules that block achievements.
 
-The cheats themselves don't affect achievement eligibility.
+The cheats themselves don't block achievements, but the mod does change game data (checksum), so check the in-game achievement indicator before relying on it.
 
 ## Use
 
@@ -40,8 +40,23 @@ English, German, Russian, Simplified Chinese and Turkish.
 | `tools/gen_ucm_main_menu.py` | Generates `gui/ucm_main_menu.gui` from a list of tabs and buttons |
 | `tools/gen_ucm_translations.py` | Generates the German, Russian, Chinese and Turkish menu text from the English |
 | `tools/gen_ucm_cw_innovation_sguis.py`, `tools/gen_cw_tradition_picker_lists.py` | Regenerate the innovation and tradition pickers after a game update |
+| `tools/icon_pipeline/` | Trait icon regeneration scripts (V + ComfyUI), kept out of `gfx/`. See its README |
 
-The menu's own files are `common/**/ucm_*` (scripted GUIs, effects, triggers, interactions), `events/ucm_*`, `gui/ucm_main_menu.gui` and `localization/*/ucm_l_*.yml`.
+Only the generators above are in the repo. The other big `*_generated.txt` files (faith editor, trait editor, culture/faith casting, crafting modifiers, lifestyle, court positions, treasure-maker stat tiers, beauty companion) came from upstream scripts that upstream never published, so edit those files by hand.
+
+`ucm_` is the mod's namespace; upstream files were renamed into it too, so not every `ucm_` file is new. The genuinely new menu files are:
+- `common/scripted_guis/ucm_{sguis,character_sguis,court_sguis,group_sguis,military_sguis,realm_sguis}.txt`
+- `common/scripted_effects/ucm_effects.txt`, `common/scripted_triggers/ucm_triggers.txt`, `common/script_values/ucm_values.txt`
+- `common/on_action/ucm_on_actions.txt`, `common/character_interactions/ucm_interactions.txt`
+- `events/ucm_group_events.txt`
+- `gui/ucm_main_menu.gui`, `gui/scripted_widgets/ucm_scripted_widgets.txt`
+- `localization/*/ucm_l_*.yml` and `localization/replace/*`
+
+`music/skonegold.ogg` (the alternate main-menu theme) comes from upstream with no recorded source or license; it is not covered by the CC BY 4.0 grant until that is known.
+
+## Releasing
+
+`git archive --format=zip HEAD -o release.zip` gives a clean mod folder; `.gitattributes` marks docs, tools and repo files `export-ignore`.
 
 ## Credits and license
 

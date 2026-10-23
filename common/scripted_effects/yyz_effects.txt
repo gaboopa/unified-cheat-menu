@@ -69,21 +69,6 @@ reset_filters = {
   set_variable = { name = yyz_modeRetinueRole_house_paragon     value = 0 }
 }
 
-# toggles the value of $PRIMARY$ between 0 and 1.  if $PIMARY$ is 0, force $SECONDARY$ to 1 
-toggle_variable_linked_pair = {
-  if = {
-    limit = { $PRIMARY$ = 1 }                            # toggle primary filter off
-    set_variable = { name = $PRIMARY$ value = 0 }
-    if = {                                                   # if secondary is off as well toggle it on as it makes
-      limit = { $SECONDARY$ = 0 }                        # no sense for both of them to be off
-      set_variable = { name = $SECONDARY$ value = 1 }
-    }
-  }
-  else = {                                                   # toggle primary filter on
-    set_variable = { name = $PRIMARY$ value = 1 }
-  }
-}
-
 # toggles the value of $PRIMARY$ between 0 and 1.
 toggle_variable = {
   toggle_variable_val = { PRIMARY = $PRIMARY$ VAL = 1 }

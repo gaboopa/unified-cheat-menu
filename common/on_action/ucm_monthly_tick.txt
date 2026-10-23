@@ -1,0 +1,59 @@
+# Monthly scheduler. The engine has no usable per-month global hook (monthly_global_pulse /
+# monthly_playable_pulse are never fired), so this on_action re-schedules itself every month.
+# Other files append their global once-a-month work to `on_actions` here; per-player work lives in
+# events/ucm_monthly_tick_events.txt (fired for each player below).
+#
+# Started by on_game_start_after_lobby (new game and load) and re-checked yearly: the heartbeat
+# variable expires after 100 days, so a broken chain is restarted and a healthy one is never doubled.
+
+ucm_monthly_tick = {
+	trigger = { ucm_single_player_trigger = yes }
+	effect = {
+		set_global_variable = {
+			name = ucm_monthly_tick_alive
+			value = yes
+			days = 100
+		}
+		# Delayed triggers need a character to hold them (vanilla never delays from global scope);
+		# single-player, so the one player anchors the chain.
+		random_player = {
+			trigger_event = {
+				on_action = ucm_monthly_tick
+				months = 1
+			}
+		}
+		every_player = {
+			trigger_event = ucm_monthly_tick.0001
+		}
+	}
+}
+
+ucm_monthly_tick_start = {
+	trigger = {
+		ucm_single_player_trigger = yes
+		NOT = { has_global_variable = ucm_monthly_tick_alive }
+	}
+	effect = {
+		set_global_variable = {
+			name = ucm_monthly_tick_alive
+			value = yes
+			days = 100
+		}
+		# Delayed triggers need a character to hold them (vanilla never delays from global scope);
+		# single-player, so the one player anchors the chain.
+		random_player = {
+			trigger_event = {
+				on_action = ucm_monthly_tick
+				months = 1
+			}
+		}
+	}
+}
+
+on_game_start_after_lobby = {
+	on_actions = { ucm_monthly_tick_start }
+}
+
+yearly_global_pulse = {
+	on_actions = { ucm_monthly_tick_start }
+}

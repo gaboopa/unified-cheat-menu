@@ -1,6 +1,6 @@
-﻿# 属性100：每月校正持有特质的角色六维（仅追加 monthly_global_pulse）
+# 属性100：每月校正持有特质的角色六维（仅追加 ucm_monthly_tick）
 
-monthly_global_pulse = {
+ucm_monthly_tick = {
   on_actions = {
     ucm_stats_100_locked_monthly_pulse
   }

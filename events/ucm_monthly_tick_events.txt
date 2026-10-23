@@ -1,0 +1,58 @@
+# Monthly per-player maintenance, fired once per player per month by on_action ucm_monthly_tick
+# (common/on_action/ucm_monthly_tick.txt). root = the player. Every step is a no-op unless the
+# player switched the matching feature on.
+
+namespace = ucm_monthly_tick
+
+ucm_monthly_tick.0001 = {
+	type = character_event
+	hidden = yes
+
+	trigger = {
+		is_ai = no
+		ucm_single_player_trigger = yes
+	}
+
+	immediate = {
+		# Fidelity shield: end seduce/romance/abduct/elope schemes against and from the harem.
+		if = {
+			limit = { has_character_flag = ucm_seduce_shield_active }
+			ucm_fidelity_affair_sweep_effect = yes
+		}
+
+		# Marriage ban: dissolve betrothals that involve a banned character.
+		ucm_marriage_ban_betrothal_sweep_effect = yes
+
+		# Strong deterrence: only while some vassal still carries this player's deterrence marker.
+		if = {
+			limit = {
+				any_vassal_or_below = { var:ucm_strong_deterrence_liege ?= prev }
+			}
+			ucm_cheat_menu_strong_deterrence_monthly_on_liege_effect = yes
+		}
+
+		# World deterrence (the effect checks its own flag).
+		ucm_cheat_menu_world_deterrence_monthly_on_liege_effect = yes
+
+		# Realm authority lock.
+		if = {
+			limit = { has_character_flag = ucm_realm_authority_locked }
+			ucm_cheat_menu_maintain_locked_realm_authority_effect = yes
+			ucm_dissolve_liberty_factions_targeting_root_effect = yes
+			ucm_clear_authority_rollback_variables_effect = yes
+		}
+		else_if = {
+			limit = {
+				has_variable = ucm_realm_authority_desired_level
+				is_independent_ruler = yes
+			}
+			ucm_cheat_menu_maintain_desired_realm_authority_effect = yes
+		}
+
+		# Government lock: maintain only for players already locked by a menu action.
+		if = {
+			limit = { has_character_flag = ucm_player_government_locked }
+			ucm_player_government_lock_maintain_effect = yes
+		}
+	}
+}

@@ -1,11 +1,12 @@
 """Regenerate localization/<lang>/ucm_l_<lang>.yml (German, Russian, Simplified Chinese, Turkish)
 from the English keys in localization/english/ucm_l_english.yml and the translations below.
 Run after adding English keys (it stops and lists any key without a translation):
-    python tools/gen_ucm_translations.py .
+    python tools/gen_ucm_translations.py [mod_dir]      (default: the repo this script lives in)
+Also checks that localization/replace/<lang>/ has exactly the English replace key set.
 """
-import re, sys
+import os, re, sys
 
-MOD = sys.argv[1]
+MOD = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BS = chr(92) + "n"
 TGT = "[GetPlayer.MakeScope.Var('ucm_target').Char.GetShortUINameNoTooltip]"
 SEC = "[GetGlobalVariable('ucm_crozier_cheats_other').Char.GetShortUINameNoTooltip]"
@@ -62,13 +63,13 @@ LANGS["german"] = dict(
     actions={"clear_stress": ("Stress entfernen", "allen Stress entfernen"),
              "skills_up": ("Alle Fertigkeiten +Schritt", "alle sechs Fertigkeiten um die Schrittweite erhöhen (unter Charakter & Genetik einstellbar)"),
              "gold": ("+1.000 Gold", "1.000 Gold geben"),
-             "convert_faith": ("Zum Glauben des Ziels bekehren", "zum Glauben von {E} bekehren"),
-             "convert_culture": ("Zur Kultur des Ziels wechseln", "zur Kultur von {E} wechseln"),
-             "max_opinion": ("Maximale Meinung vom Ziel", "ihnen die höchste Meinung über {E} geben"),
+             "convert_faith": ("Zum Glauben des Ziels bekehren", "zum Glauben von {E} bekehren", "zum Glauben des Ziels bekehren"),
+             "convert_culture": ("Zur Kultur des Ziels wechseln", "zur Kultur von {E} wechseln", "zur Kultur des Ziels wechseln"),
+             "max_opinion": ("Maximale Meinung vom Ziel", "ihnen die höchste Meinung über {E} geben", "ihnen die höchste Meinung über das Ziel geben"),
              "max_development": ("Maximale Entwicklung", "die Entwicklung auf die höchste Stufe anheben"),
              "max_control": ("Maximale Kontrolle", "die Kontrolle auf 100 setzen"),
-             "county_faith": ("Zum Glauben des Ziels bekehren", "die Grafschaft zum Glauben von {E} bekehren"),
-             "county_culture": ("Zur Kultur des Ziels wechseln", "die Kultur der Grafschaft auf die Kultur von {E} ändern")},
+             "county_faith": ("Zum Glauben des Ziels bekehren", "die Grafschaft zum Glauben von {E} bekehren", "die Grafschaft zum Glauben des Ziels bekehren"),
+             "county_culture": ("Zur Kultur des Ziels wechseln", "die Kultur der Grafschaft auf die Kultur von {E} ändern", "die Kultur der Grafschaft auf die Kultur des Ziels ändern")},
     action_desc="Aktion: {d}.", run_tt="Für jedes Mitglied der gewählten Gruppe: {d}. Zeigt vorher eine Übersicht.",
     the_target="dem Ziel", target_gen="des Ziels",
     single={
@@ -217,13 +218,13 @@ LANGS["russian"] = dict(
     actions={"clear_stress": ("Снять стресс", "снять весь стресс"),
              "skills_up": ("Все навыки +шаг", "повысить все шесть навыков на шаг (задаётся во вкладке «Персонаж и генетика»)"),
              "gold": ("+1000 золота", "дать 1000 золота"),
-             "convert_faith": ("Обратить в веру цели", "обратить в веру {E}"),
-             "convert_culture": ("Перевести в культуру цели", "перевести в культуру {E}"),
-             "max_opinion": ("Максимальное мнение о цели", "дать им наилучшее мнение о {E}"),
+             "convert_faith": ("Обратить в веру цели", "обратить в веру {E}", "обратить в веру цели"),
+             "convert_culture": ("Перевести в культуру цели", "перевести в культуру {E}", "перевести в культуру цели"),
+             "max_opinion": ("Максимальное мнение о цели", "дать им наилучшее мнение о {E}", "дать им наилучшее мнение о цели"),
              "max_development": ("Максимальное развитие", "поднять развитие до максимума"),
              "max_control": ("Максимальный контроль", "установить контроль на 100"),
-             "county_faith": ("Обратить в веру цели", "обратить графство в веру {E}"),
-             "county_culture": ("Перевести в культуру цели", "перевести графство в культуру {E}")},
+             "county_faith": ("Обратить в веру цели", "обратить графство в веру {E}", "обратить графство в веру цели"),
+             "county_culture": ("Перевести в культуру цели", "перевести графство в культуру {E}", "перевести графство в культуру цели")},
     action_desc="Действие: {d}.", run_tt="Для каждого члена выбранной группы: {d}. Сначала показывает сводку.",
     single={
         "ucm_open_cheat_menu": "Открыть чит-меню",
@@ -370,13 +371,13 @@ LANGS["simp_chinese"] = dict(
     actions={"clear_stress": ("清除压力", "清除全部压力"),
              "skills_up": ("全部能力 +步长", "将六项能力按步长提高（步长在“人物与遗传”中设置）"),
              "gold": ("+1,000 金钱", "给予 1,000 金钱"),
-             "convert_faith": ("改信目标的信仰", "改信{E}的信仰"),
-             "convert_culture": ("改为目标的文化", "改为{E}的文化"),
-             "max_opinion": ("对目标的好感最大化", "使其对{E}的好感达到最高"),
+             "convert_faith": ("改信目标的信仰", "改信{E}的信仰", "改信目标的信仰"),
+             "convert_culture": ("改为目标的文化", "改为{E}的文化", "改为目标的文化"),
+             "max_opinion": ("对目标的好感最大化", "使其对{E}的好感达到最高", "使其对目标的好感达到最高"),
              "max_development": ("发展度最大化", "将发展度提高到最高"),
              "max_control": ("控制度最大化", "将控制度设为 100"),
-             "county_faith": ("改信目标的信仰", "使该伯爵领改信{E}的信仰"),
-             "county_culture": ("改为目标的文化", "使该伯爵领改为{E}的文化")},
+             "county_faith": ("改信目标的信仰", "使该伯爵领改信{E}的信仰", "使该伯爵领改信目标的信仰"),
+             "county_culture": ("改为目标的文化", "使该伯爵领改为{E}的文化", "使该伯爵领改为目标的文化")},
     action_desc="行动：{d}。", run_tt="对所选群体的每个成员：{d}。会先显示摘要。",
     single={
         "ucm_open_cheat_menu": "打开作弊菜单",
@@ -523,13 +524,13 @@ LANGS["turkish"] = dict(
     actions={"clear_stress": ("Stresi Temizle", "tüm stresi kaldır"),
              "skills_up": ("Tüm Beceriler +Adım", "altı becerinin hepsini adım kadar artır (adım Karakter ve Genetik sekmesinde ayarlanır)"),
              "gold": ("+1.000 Altın", "1.000 altın ver"),
-             "convert_faith": ("Hedefin İnancına Döndür", "{E} inancına döndür"),
-             "convert_culture": ("Hedefin Kültürüne Geçir", "{E} kültürüne geçir"),
-             "max_opinion": ("Hedef Hakkında En Yüksek Görüş", "{E} hakkındaki görüşlerini en yükseğe çıkar"),
+             "convert_faith": ("Hedefin İnancına Döndür", "{E} inancına döndür", "hedefin inancına döndür"),
+             "convert_culture": ("Hedefin Kültürüne Geçir", "{E} kültürüne geçir", "hedefin kültürüne geçir"),
+             "max_opinion": ("Hedef Hakkında En Yüksek Görüş", "{E} hakkındaki görüşlerini en yükseğe çıkar", "hedefin hakkındaki görüşlerini en yükseğe çıkar"),
              "max_development": ("En Yüksek Gelişim", "gelişimi en yüksek seviyeye çıkar"),
              "max_control": ("En Yüksek Kontrol", "kontrolü 100 yap"),
-             "county_faith": ("Hedefin İnancına Döndür", "kontluğu {E} inancına döndür"),
-             "county_culture": ("Hedefin Kültürüne Geçir", "kontluğun kültürünü {E} kültürüne çevir")},
+             "county_faith": ("Hedefin İnancına Döndür", "kontluğu {E} inancına döndür", "kontluğu hedefin inancına döndür"),
+             "county_culture": ("Hedefin Kültürüne Geçir", "kontluğun kültürünü {E} kültürüne çevir", "kontluğun kültürünü hedefin kültürüne çevir")},
     action_desc="Eylem: {d}.", run_tt="Seçili grubun her üyesi için: {d}. Önce bir özet gösterir.",
     single={
         "ucm_open_cheat_menu": "Hile Menüsünü Aç",
@@ -650,7 +651,7 @@ def build(lang, d):
         out[f"UCM_SKILL_{s.upper()}"] = d["skills"][s]
         out[f"ucm_skill_{s}_down"] = "−"
         out[f"ucm_skill_{s}_up"] = "+"
-        name = d["skills"][s] if lang in ("russian", "turkish", "simp_chinese") else d["skills"][s]
+        name = d["skills"][s]
         out[f"ucm_skill_{s}_down_tt"] = d["skill_down"].format(x=name)
         out[f"ucm_skill_{s}_up_tt"] = d["skill_up"].format(x=name)
     for s in SEX:
@@ -671,25 +672,42 @@ def build(lang, d):
         out[f"ucm_group_pick_{g}_tt"] = d["group_tt"].format(d=tt)
         out[f"ucm_group.1.group.{g}"] = BS + d["group_desc"].format(d=desc.format(E=E))
     for a in ACTIONS:
-        label, desc = d["actions"][a]
+        label, desc, *rest = d["actions"][a]
         out[f"ucm_group_run_{a}"] = label
         out[f"ucm_group.1.action.{a}"] = d["action_desc"].format(d=desc.format(E=E))
-        tt_desc = desc.replace("von {E}", "des Ziels").replace("über {E}", "über das Ziel") if lang == "german" else desc
-        tt_desc = tt_desc.replace("{E}", {"german": "dem Ziel", "russian": "цели", "simp_chinese": "目标", "turkish": "hedefin"}[lang])
+        tt_desc = rest[0] if rest else desc  # tooltip form: explicit 3rd tuple item where desc contains {E}
+        if "{E}" in tt_desc:
+            raise SystemExit(f"{lang}: action {a} needs an explicit tooltip string (no {{E}} in tooltips)")
         out[f"ucm_group_run_{a}_tt"] = d["run_tt"].format(d=tt_desc)
     out["ucm_open_console_helper_tt"] += BS + BS + "$UCM_DEBUG_ACHIEVEMENT_WARNING$"
     return out
 
 
+AUTOGEN = "# AUTO-GENERATED by tools/gen_ucm_translations.py — edit the script, not this file"
+KEY = re.compile(r"^\s+([^\s:]+):", re.M)
+
+
+def loc_keys(path):
+    return KEY.findall(open(path, "rb").read().decode("utf-8-sig"))
+
+
 en_lines = open(MOD + "/localization/english/ucm_l_english.yml", "rb").read().decode("utf-8-sig").split("\n")
 keys = [re.match(r"^ ([\w.\-]+):", l).group(1) for l in en_lines[1:] if re.match(r"^ ([\w.\-]+):", l)]
+en_replace = loc_keys(f"{MOD}/localization/replace/english/ucm_debug_l_english.yml")
+pending = []
 for lang, d in LANGS.items():
     tr = build(lang, d)
     missing = [k for k in keys if k not in tr]
     extra = [k for k in tr if k not in keys]
-    assert not missing, (lang, missing)
-    assert not extra, (lang, extra)
+    if missing or extra:
+        raise SystemExit(f"{lang}: missing translations {missing}, unknown keys {extra}")
+    rp = loc_keys(f"{MOD}/localization/replace/{lang}/ucm_debug_l_{lang}.yml")
+    if set(rp) != set(en_replace) or len(rp) != len(set(rp)):
+        raise SystemExit(f"{lang}: localization/replace key set differs from English: "
+                         f"missing {sorted(set(en_replace) - set(rp))}, extra {sorted(set(rp) - set(en_replace))}")
     body = "\n".join(' %s: "%s"' % (k, tr[k].replace('"', "'")) for k in keys)
     path = f"{MOD}/localization/{lang}/ucm_l_{lang}.yml"
-    open(path, "wb").write(b"\xef\xbb\xbf" + (f"l_{lang}:\n" + body + "\n").encode("utf-8"))
+    pending.append((lang, path, b"\xef\xbb\xbf" + (f"l_{lang}:\n{AUTOGEN}\n" + body + "\n").encode("utf-8")))
+for lang, path, data in pending:  # write only after every language validated
+    open(path, "wb").write(data)
     print(lang, len(keys), "keys ->", path)

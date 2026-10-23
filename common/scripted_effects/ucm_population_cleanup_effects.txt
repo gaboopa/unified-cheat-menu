@@ -55,31 +55,50 @@ ucm_world_purge_landless_ai_effect = {
     }
   }
 
-  every_living_character = {
+  # 世界只扫一次建名单，再 while 最多取 25 个（旧写法的批量计数放在 every_ 的 limit 里，并不能封顶）
+  if = {
     limit = {
-      ucm_world_purge_landless_base_eligible_trigger = yes
       root = {
         has_character_flag = ucm_world_purge_active
         has_variable = ucm_world_purge_remaining
-        var:ucm_world_purge_remaining > 0
-        var:ucm_world_purge_batch_kills < 25
       }
     }
-
-    root = {
-      change_variable = {
-        name = ucm_world_purge_remaining
-        add = -1
+    every_living_character = {
+      limit = { ucm_world_purge_landless_base_eligible_trigger = yes }
+      add_to_temporary_list = ucm_world_purge_pool
+    }
+    while = {
+      limit = {
+        root = {
+          var:ucm_world_purge_remaining > 0
+          var:ucm_world_purge_batch_kills < 25
+        }
+        any_in_list = {
+          list = ucm_world_purge_pool
+          count >= 1
+        }
       }
-      change_variable = {
-        name = ucm_world_purge_batch_kills
-        add = 1
+
+      random_in_list = {
+        list = ucm_world_purge_pool
+        remove_from_list = ucm_world_purge_pool
+
+        root = {
+          change_variable = {
+            name = ucm_world_purge_remaining
+            add = -1
+          }
+          change_variable = {
+            name = ucm_world_purge_batch_kills
+            add = 1
+          }
+        }
+
+        # Pool characters have no active place in the simulation. Removing them
+        # silently avoids death events, notifications, memories and on-action cascades.
+        silent_disappearance_effect = yes
       }
     }
-
-    # Pool characters have no active place in the simulation. Removing them
-    # silently avoids death events, notifications, memories and on-action cascades.
-    silent_disappearance_effect = yes
   }
 
   root = {

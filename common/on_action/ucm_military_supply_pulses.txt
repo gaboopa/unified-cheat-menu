@@ -1,6 +1,6 @@
-﻿# 无限补给·零损耗：战争与每月为已开启者拉满全部军团补给（不改编制人数）
+# 无限补给·零损耗：战争与每月为已开启者拉满全部军团补给（不改编制人数）
 
-monthly_global_pulse = {
+ucm_monthly_tick = {
   on_actions = { ucm_military_supply_monthly_pulse }
 }
 

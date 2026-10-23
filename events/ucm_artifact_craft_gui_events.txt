@@ -18,16 +18,3 @@ ucm_artifact_craft_gui.9001 = {
   }
 }
 
-# 宝物制作窗：对所选宝物重新套用当前修饰
-ucm_artifact_craft_gui.9002 = {
-  type = character_event
-  hidden = yes
-
-  immediate = {
-    root = {
-      save_scope_as = actor
-      save_scope_as = ucm_acm_craft_creator
-    }
-    ucm_acm_gui_finish_modify_effect = yes
-  }
-}

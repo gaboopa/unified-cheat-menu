@@ -1077,23 +1077,7 @@ ucm_cheat_menu.0150 = {
 
 
 
-  option = {
-
-    name = ucm_cheat_menu.0150.undo_last
-
-    scope:actor = {
-
-      ucm_tradition_undo_last_effect = yes
-
-    }
-
-    scope:actor = { trigger_event = ucm_cheat_menu.0150 }
-
-  }
-
-
-
-  # 婵犵妲呴崑鍛熆濡皷鍋撳鐓庣仸妞ゃ垺鐟╁鎾偐閸忓摜鐟濋梻浣瑰缁嬫垹鈧凹鍙冨畷?
+# 婵犵妲呴崑鍛熆濡皷鍋撳鐓庣仸妞ゃ垺鐟╁鎾偐閸忓摜鐟濋梻浣瑰缁嬫垹鈧凹鍙冨畷?
 
   option = { name = ucm_cheat_menu.0150.presets scope:actor = { trigger_event = ucm_cheat_menu.0151 }}
 
@@ -2845,6 +2829,7 @@ ucm_cheat_menu.0003 = {
             is_ai = yes
 
             NOT = { this = scope:actor }
+            NOT = { is_close_or_extended_family_of = scope:actor }
 
           }
 
@@ -12307,39 +12292,6 @@ ucm_cheat_menu.5040 = {
   option = {
 
     name = ucm_cheat_menu.5040.back
-
-    root = { trigger_event = ucm_cheat_menu.5001 }
-
-  }
-
-
-
-  option = { name = ucm_cheat_menu.00x.close }
-
-}
-
-
-
-## 婵犵妲呴崑鍛熆濡皷鍋撳鐓庣仸妞ゃ垺鐟╁鎾閿涘嫬甯庨柣搴＄畭閸庡崬煤閵娾晛鍑犻柛宀€鍋為悡鐘绘煙缁嬫寧鎹ｉ柣顓烇功閳?
-
-ucm_cheat_menu.5050 = {
-
-  type = character_event
-
-  title = ucm_cheat_menu.5050.t
-
-  desc = ucm_cheat_menu.5050.desc
-
-  theme = learning
-
-
-
-  # Harvest shipped these three buttons pointing at events 5051-5053, but
-  # those events never existed. Presets are handled by the current tradition
-  # editor; keep this legacy page as a safe return target for old save chains.
-  option = {
-
-    name = ucm_cheat_menu.5050.back
 
     root = { trigger_event = ucm_cheat_menu.5001 }
 

@@ -8,7 +8,7 @@ ucm_ensure_castle_holding_base_castle_building = {
       has_holding_type = castle_holding
       NOT = { has_building_or_higher = castle_01 }
     }
-    add_next_building_tier_effect = { BUILDING = castle }
+    add_building = castle_01
   }
 }
 ucm_ensure_city_holding_base_city_building = {
@@ -17,7 +17,7 @@ ucm_ensure_city_holding_base_city_building = {
       has_holding_type = city_holding
       NOT = { has_building_or_higher = city_01 }
     }
-    add_next_building_tier_effect = { BUILDING = city }
+    add_building = city_01
   }
 }
 ucm_ensure_church_holding_base_temple_building = {
@@ -26,7 +26,7 @@ ucm_ensure_church_holding_base_temple_building = {
       has_holding_type = church_holding
       NOT = { has_building_or_higher = temple_01 }
     }
-    add_next_building_tier_effect = { BUILDING = temple }
+    add_building = temple_01
   }
 }
 ucm_ensure_tribal_holding_base_tribe_building = {
@@ -35,7 +35,7 @@ ucm_ensure_tribal_holding_base_tribe_building = {
       has_holding_type = tribal_holding
       NOT = { has_building_or_higher = tribe_01 }
     }
-    add_next_building_tier_effect = { BUILDING = tribe }
+    add_building = tribe_01
   }
 }
 

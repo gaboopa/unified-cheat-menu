@@ -1393,11 +1393,6 @@ change_govt_celestial: "更改政体：天朝"
 
  ### 来自：leech_mc_events_l_english.yml
  leech_mc_event.common.exit:0 "退出"
- leech_mc_event.truce.t:0 "战后谈判"
- leech_mc_event.truce.desc:0 "协商结束 [recipient.GetShortUIName] 与 [secondary_recipient.GetShortUIName] 之间的战争"
- leech_mc_event.truce.attacker:0 "进攻方获胜"
- leech_mc_event.truce.white_peace:0 "白和平"
- leech_mc_event.truce.defender:0 "防御方获胜"
  leech_mc_event.simple_action.t:0 "：子菜单"
  leech_mc_event.simple_action.desc:0 "让 [recipient.GetShortUIName] 对 [secondary_recipient.GetShortUIName] 执行以下操作"
  leech_mc_event.simple_action.vassalize:0 "让 [recipient.GetShortUIName] 使 [secondary_recipient.GetShortUIName] 成为封臣"

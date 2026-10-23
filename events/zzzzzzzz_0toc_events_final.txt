@@ -133,46 +133,6 @@ tocmod.0002 = {
 
 
 
-tocmod.0005 = {
-	type = character_event
-	title = tocmod.0005.t
-	desc = tocmod.0005.desc
-	theme = default
-	left_portrait = scope:recipient
-
-	immediate = {
-		#		scope:actor.liege = {
-		#	imprison = {
-		#		target = scope:recipient
-		#		type = house_arrest
-		#	}
-		#}
-	}
-
-	#Normal pregnancy
-	option = {
-		name = tocmod.0005.a
-		
-		#scope:mother = {
-		#	make_pregnant = {
-		#		father = scope:father
-		#	}
-		#}
-				scope:recipient.liege = {
-			imprison = {
-				target = scope:recipient
-				type = house_arrest
-			}
-		}
-
-	}
-
-
-
-}
-
-
-
 #### addcharacter
 
 tocmod.1000 = {

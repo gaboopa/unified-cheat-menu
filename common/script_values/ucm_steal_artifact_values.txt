@@ -11,9 +11,3 @@ ucm_steal_next_page_min_total_value = {
   multiply = 3
 }
 
-# CK3 1.20 cleanup: the artifact modify picker (ucm_artifact_craft_gui.8001) pages through this value, but it
-# was never defined. Same shape as ucm_steal_page_offset_value: three artifacts per page.
-ucm_acm_modify_page_offset_value = {
-  value = var:ucm_acm_modify_page
-  multiply = 3
-}

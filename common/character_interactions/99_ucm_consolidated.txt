@@ -1620,10 +1620,6 @@ grandmaster_select_interaction = {
 				trigger = yes
 				scope:grandmaster_select_flag = {
 					scope:actor  = {
-						trigger_event = {
-							id = holy_dynasty.0004
-							days = { 10 20 }
-						}
 						create_story = 	dynasty_grandmaster_completed_story
 						faith = {
 							random_faith_holy_order = {
@@ -1691,10 +1687,6 @@ pope_select_interaction = {
 				trigger = yes
 				scope:pope_select_flag = {
 					scope:actor  = {
-						trigger_event = {
-							id = holy_dynasty.0003
-							days = { 10 20 }
-						}
 						create_story = 	dynasty_pope_completed_story
 						scope:actor.faith.religious_head = {
 							every_held_title = {

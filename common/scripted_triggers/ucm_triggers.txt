@@ -27,16 +27,21 @@ ucm_group_member_eligible_trigger = {
 	}
 	trigger_else_if = {
 		limit = { root.var:ucm_group_action = flag:clear_stress }
+		is_alive = yes
 		NOT = { this = root.var:ucm_target }
 		stress > 0
 	}
 	trigger_else_if = {
 		limit = { root.var:ucm_group_action = flag:convert_faith }
+		is_alive = yes
+		NOT = { this = root }
 		NOT = { this = root.var:ucm_target }
 		NOT = { faith = root.var:ucm_target.faith }
 	}
 	trigger_else_if = {
 		limit = { root.var:ucm_group_action = flag:convert_culture }
+		is_alive = yes
+		NOT = { this = root }
 		NOT = { this = root.var:ucm_target }
 		NOT = { culture = root.var:ucm_target.culture }
 	}
@@ -48,6 +53,7 @@ ucm_group_member_eligible_trigger = {
 				root.var:ucm_group_action = flag:max_opinion
 			}
 		}
+		is_alive = yes
 		NOT = { this = root.var:ucm_target }
 	}
 	trigger_else = { always = no }

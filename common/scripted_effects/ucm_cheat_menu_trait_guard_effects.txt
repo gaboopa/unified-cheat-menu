@@ -67,35 +67,6 @@ ucm_traits_authorize_recipient_if_player_actor_effect = {
   }
 }
 
-# 全图剥除未获玩家Skonester菜单授权的自制特质
-ucm_cheat_menu_strip_all_unauthorized_ucm_traits_effect = {
-  every_living_character = {
-    limit = {
-      ucm_cheat_menu_must_strip_ucm_traits_trigger = yes
-    }
-    ucm_cheat_menu_strip_oob_ucm_traits_on_this_character_effect = yes
-  }
-}
-
-# 分批快扫：每日补刀（与 daily_global_pulse + ai_character_pulse 双保险）
-ucm_cheat_menu_strip_unauthorized_ucm_traits_batch_effect = {
-  while = {
-    count = 2000
-    limit = {
-      any_living_character = {
-        ucm_cheat_menu_must_strip_ucm_traits_trigger = yes
-      }
-    }
-    random_living_character = {
-      limit = {
-        ucm_cheat_menu_must_strip_ucm_traits_trigger = yes
-      }
-      weight = { base = 1 }
-      ucm_cheat_menu_strip_oob_ucm_traits_on_this_character_effect = yes
-    }
-  }
-}
-
 # 对 root = 当前角色：移除全部Skonester特质及延年丹相关状态（与 ucm_cheat_menu.0015.disable_all Skonester段对齐）。
 ucm_cheat_menu_strip_oob_ucm_traits_on_this_character_effect = {
   if = {

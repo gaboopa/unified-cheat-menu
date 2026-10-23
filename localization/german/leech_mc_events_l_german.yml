@@ -2,11 +2,6 @@
 
  leech_mc_event.common.exit:0 "Schließen"
 
- leech_mc_event.truce.t:0 "Verhandlungen zum Kriegsende"
- leech_mc_event.truce.desc:0 "Verhandelt ein Ende des Krieges zwischen [recipient.GetShortUIName] und [secondary_recipient.GetShortUIName]"
- leech_mc_event.truce.attacker:0 "Angreifer siegt"
- leech_mc_event.truce.white_peace:0 "Weißer Frieden"
- leech_mc_event.truce.defender:0 "Verteidiger siegt"
 
  leech_mc_event.simple_action.t:0 ": Untermenü"
  leech_mc_event.simple_action.desc:0 "Lass [recipient.GetShortUIName] folgende Aktion gegenüber [secondary_recipient.GetShortUIName] ausführen"

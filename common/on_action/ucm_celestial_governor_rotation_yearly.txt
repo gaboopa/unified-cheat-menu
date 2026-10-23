@@ -24,7 +24,11 @@ yearly_global_pulse = {
 }
 
 ucm_celestial_governor_rotation_pulse = {
-	trigger = { ucm_single_player_trigger = yes }
+	# 默认关闭：须在「人口与统辖」菜单开启 ucm_celestial_governor_rotation_enabled
+	trigger = {
+		ucm_single_player_trigger = yes
+		has_global_variable = ucm_celestial_governor_rotation_enabled
+	}
   effect = {
     if = {
       limit = { has_global_variable = ucm_celestial_governor_rotation_grace_skip }

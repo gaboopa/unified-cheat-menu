@@ -146,6 +146,10 @@
 
  ucm_officials.9071.opt_9999: "9999"
 
+ ucm_officials.9080.option_gov_rotation_on:0 "Enable Celestial Governor 3-Year Rotation"
+ ucm_officials.9080.option_gov_rotation_off:0 "Disable Celestial Governor 3-Year Rotation"
+ ucm_officials.9080.option_loose_court_on:0 "Enable Loose Court Appointments"
+ ucm_officials.9080.option_loose_court_off:0 "Disable Loose Court Appointments"
  ucm_officials.9080.close: "Close"
 
  ucm_officials.9081.back: "Back"
@@ -156,7 +160,6 @@
 
  ucm_officials.9085.back: "Back to Population & Oversight"
 
- ucm_officials.9087.back: "Back to Population & Oversight"
 
  ucm_cheat_menu.0015.close: "@cross_icon! Close"
 

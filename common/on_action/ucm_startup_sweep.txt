@@ -1,0 +1,28 @@
+# One world scan on game start / load (replaces separate trait-guard, military-guard and
+# water-of-life scans that each looped over every living character, twice).
+on_game_start_after_lobby = {
+  on_actions = { ucm_startup_sweep }
+}
+
+ucm_startup_sweep = {
+  trigger = { ucm_single_player_trigger = yes }
+  effect = {
+    every_living_character = {
+      if = {
+        limit = { ucm_cheat_menu_must_strip_ucm_traits_trigger = yes }
+        ucm_cheat_menu_strip_oob_ucm_traits_on_this_character_effect = yes
+      }
+      if = {
+        limit = {
+          ucm_has_any_military_cheat_modifier_trigger = yes
+          NOT = { has_character_flag = ucm_military_cheat_player_authorized }
+        }
+        ucm_military_cheat_strip_on_character_effect = yes
+      }
+      if = {
+        limit = { has_trait = water_of_life }
+        ucm_water_of_life_restore_effect = yes
+      }
+    }
+  }
+}

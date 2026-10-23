@@ -178,7 +178,7 @@ stewardship_per_stress_level_neg = {
 	stewardship_per_stress_level = -1
 	stacking = yes
 }
-intrigue_per_piety_level = {
+intrigue_per_stress_level = {
 	icon = intrigue_positive
 	intrigue_per_stress_level = 1
 	stacking = yes

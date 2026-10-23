@@ -117,6 +117,7 @@ ucm_cheat_menu_strong_deterrence_monthly_on_liege_effect = {
     }
     else_if = {
       limit = {
+        var:ucm_strong_deterrence_liege ?= scope:ucm_deterrence_liege
         scope:ucm_deterrence_liege = { has_strong_hook = scope:ucm_deterrence_vassal }
       }
       scope:ucm_deterrence_liege = {

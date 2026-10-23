@@ -124,27 +124,6 @@ ucm_cheat_menu_open_exterminate_effect = {
   scope:actor = { trigger_event = ucm_cheat_menu.0003 }
 }
 
-# 灭族：目标宗族所有在世成员（不杀右键发起者 scope:actor）
-ucm_cheat_menu_exterminate_dynasty_effect = {
-  ucm_cheat_menu_sync_target_effect = yes
-  if = {
-    limit = { exists = scope:ucm_cheat_menu_target }
-    scope:ucm_cheat_menu_target = {
-      dynasty = {
-        every_dynasty_member = {
-          limit = {
-            is_alive = yes
-            NOT = { this = scope:actor }
-          }
-          death = {
-            death_reason = death_natural_causes
-          }
-        }
-      }
-    }
-  }
-}
-
 ucm_cheat_menu_open_age_edit_effect = {
   ucm_cheat_menu_lock_recipient_effect = yes
   scope:actor = { trigger_event = ucm_cheat_menu.0075 }

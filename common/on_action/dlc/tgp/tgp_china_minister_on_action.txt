@@ -1,5 +1,5 @@
 ﻿# Copied from CK3 1.20.1.2 game/common/on_action/dlc/tgp/tgp_china_minister_on_action.txt (re-merge after game updates).
-# Unified Cheat Menu: for a player's court, the minister may also appoint anyone who passes
+# Unified Cheat Menu: for a player's court (only when global var ucm_loose_court_appointment_enabled is set; default off = vanilla), the minister may also appoint anyone who passes
 # ucm_positions_loose_court_appointment_candidate_trigger. AI courts keep vanilla rules.
 
 tgp_minister_manage_talent_on_action = {
@@ -68,7 +68,7 @@ tgp_minister_manage_talent_on_action = {
 							ordered_in_list = {
 								list = court_position_candidates
 								limit = {
-									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = court_physician_court_position } AND = { ucm_single_player_trigger = yes scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
+									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = court_physician_court_position } AND = { ucm_single_player_trigger = yes has_global_variable = ucm_loose_court_appointment_enabled scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
 								}
 								order_by = aptitude:court_physician_court_position
 								save_scope_as = new_court_position_holder
@@ -86,7 +86,7 @@ tgp_minister_manage_talent_on_action = {
 							ordered_in_list = {
 								list = court_position_candidates
 								limit = {
-									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = travel_leader_court_position } AND = { ucm_single_player_trigger = yes scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
+									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = travel_leader_court_position } AND = { ucm_single_player_trigger = yes has_global_variable = ucm_loose_court_appointment_enabled scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
 								}
 								order_by = aptitude:travel_leader_court_position
 								save_scope_as = new_court_position_holder
@@ -104,7 +104,7 @@ tgp_minister_manage_talent_on_action = {
 							ordered_in_list = {
 								list = court_position_candidates
 								limit = {
-									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = grand_mentor_court_position } AND = { ucm_single_player_trigger = yes scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
+									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = grand_mentor_court_position } AND = { ucm_single_player_trigger = yes has_global_variable = ucm_loose_court_appointment_enabled scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
 								}
 								order_by = aptitude:grand_mentor_court_position
 								save_scope_as = new_court_position_holder
@@ -122,7 +122,7 @@ tgp_minister_manage_talent_on_action = {
 							ordered_in_list = {
 								list = court_position_candidates
 								limit = {
-									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = grand_preceptor_court_position } AND = { ucm_single_player_trigger = yes scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
+									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = grand_preceptor_court_position } AND = { ucm_single_player_trigger = yes has_global_variable = ucm_loose_court_appointment_enabled scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
 								}
 								order_by = aptitude:grand_preceptor_court_position
 								save_scope_as = new_court_position_holder
@@ -140,7 +140,7 @@ tgp_minister_manage_talent_on_action = {
 							ordered_in_list = {
 								list = court_position_candidates
 								limit = {
-									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = court_tutor_court_position } AND = { ucm_single_player_trigger = yes scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
+									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = court_tutor_court_position } AND = { ucm_single_player_trigger = yes has_global_variable = ucm_loose_court_appointment_enabled scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
 								}
 								order_by = aptitude:court_tutor_court_position
 								save_scope_as = new_court_position_holder
@@ -158,7 +158,7 @@ tgp_minister_manage_talent_on_action = {
 							ordered_in_list = {
 								list = court_position_candidates
 								limit = {
-									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = keeper_of_the_harem_court_position } AND = { ucm_single_player_trigger = yes scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
+									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = keeper_of_the_harem_court_position } AND = { ucm_single_player_trigger = yes has_global_variable = ucm_loose_court_appointment_enabled scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
 								}
 								order_by = aptitude:keeper_of_the_harem_court_position
 								save_scope_as = new_court_position_holder
@@ -176,7 +176,7 @@ tgp_minister_manage_talent_on_action = {
 							ordered_in_list = {
 								list = court_position_candidates
 								limit = {
-									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = chief_eunuch_court_position } AND = { ucm_single_player_trigger = yes scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
+									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = chief_eunuch_court_position } AND = { ucm_single_player_trigger = yes has_global_variable = ucm_loose_court_appointment_enabled scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
 								}
 								order_by = aptitude:chief_eunuch_court_position
 								save_scope_as = new_court_position_holder
@@ -194,7 +194,7 @@ tgp_minister_manage_talent_on_action = {
 							ordered_in_list = {
 								list = court_position_candidates
 								limit = {
-									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = royal_architect_court_position } AND = { ucm_single_player_trigger = yes scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
+									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = royal_architect_court_position } AND = { ucm_single_player_trigger = yes has_global_variable = ucm_loose_court_appointment_enabled scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
 								}
 								order_by = aptitude:royal_architect_court_position
 								save_scope_as = new_court_position_holder
@@ -212,7 +212,7 @@ tgp_minister_manage_talent_on_action = {
 							ordered_in_list = {
 								list = court_position_candidates
 								limit = {
-									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = seneschal_court_position } AND = { ucm_single_player_trigger = yes scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
+									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = seneschal_court_position } AND = { ucm_single_player_trigger = yes has_global_variable = ucm_loose_court_appointment_enabled scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
 								}
 								order_by = aptitude:seneschal_court_position
 								save_scope_as = new_court_position_holder
@@ -230,7 +230,7 @@ tgp_minister_manage_talent_on_action = {
 							ordered_in_list = {
 								list = court_position_candidates
 								limit = {
-									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = court_poet_court_position } AND = { ucm_single_player_trigger = yes scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
+									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = court_poet_court_position } AND = { ucm_single_player_trigger = yes has_global_variable = ucm_loose_court_appointment_enabled scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
 								}
 								order_by = aptitude:court_poet_court_position
 								save_scope_as = new_court_position_holder
@@ -248,7 +248,7 @@ tgp_minister_manage_talent_on_action = {
 							ordered_in_list = {
 								list = court_position_candidates
 								limit = {
-									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = grand_guardian_court_position } AND = { ucm_single_player_trigger = yes scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
+									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = grand_guardian_court_position } AND = { ucm_single_player_trigger = yes has_global_variable = ucm_loose_court_appointment_enabled scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
 								}
 								order_by = aptitude:grand_guardian_court_position
 								save_scope_as = new_court_position_holder
@@ -266,7 +266,7 @@ tgp_minister_manage_talent_on_action = {
 							ordered_in_list = {
 								list = court_position_candidates
 								limit = {
-									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = fire_dragon_engineer_court_position } AND = { ucm_single_player_trigger = yes scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
+									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = fire_dragon_engineer_court_position } AND = { ucm_single_player_trigger = yes has_global_variable = ucm_loose_court_appointment_enabled scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
 								}
 								order_by = aptitude:fire_dragon_engineer_court_position
 								save_scope_as = new_court_position_holder
@@ -284,7 +284,7 @@ tgp_minister_manage_talent_on_action = {
 							ordered_in_list = {
 								list = court_position_candidates
 								limit = {
-									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = chronicler_court_position } AND = { ucm_single_player_trigger = yes scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
+									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = chronicler_court_position } AND = { ucm_single_player_trigger = yes has_global_variable = ucm_loose_court_appointment_enabled scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
 								}
 								order_by = aptitude:chronicler_court_position
 								save_scope_as = new_court_position_holder
@@ -302,7 +302,7 @@ tgp_minister_manage_talent_on_action = {
 							ordered_in_list = {
 								list = court_position_candidates
 								limit = {
-									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = court_artificer_court_position } AND = { ucm_single_player_trigger = yes scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
+									OR = { would_be_valid_for_court_position = { employer = scope:councillor_liege court_position = court_artificer_court_position } AND = { ucm_single_player_trigger = yes has_global_variable = ucm_loose_court_appointment_enabled scope:councillor_liege = { is_ai = no } ucm_positions_loose_court_appointment_candidate_trigger = yes } }
 								}
 								order_by = aptitude:court_artificer_court_position
 								save_scope_as = new_court_position_holder

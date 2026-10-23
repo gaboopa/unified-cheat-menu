@@ -1,6 +1,6 @@
 ﻿namespace = ucm_officials
 
-# 天朝制：总督主头衔满三整年（title_held_years ≥3）后元日强制卸任；同条件另有一月分脉冲备份。效果对齐辞任总督决议与 ep3 辞任类 modifier。
+# 天朝制：总督主头衔满三整年（title_held_years ≥3）后元日强制卸任；同条件须在菜单开启（全局变量 ucm_celestial_governor_rotation_enabled）。效果对齐辞任总督决议与 ep3 辞任类 modifier。
 ucm_officials.0003 = {
   type = character_event
   hidden = yes
@@ -138,6 +138,34 @@ ucm_officials.9080 = {
   option = {
     name = ucm_officials.9080.option_samge
     trigger_event = { id = ucm_officials.9085 days = 0 }
+  }
+
+  option = {
+    name = ucm_officials.9080.option_gov_rotation_on
+    trigger = { NOT = { has_global_variable = ucm_celestial_governor_rotation_enabled } }
+    set_global_variable = { name = ucm_celestial_governor_rotation_enabled value = yes }
+    trigger_event = { id = ucm_officials.9080 days = 0 }
+  }
+
+  option = {
+    name = ucm_officials.9080.option_gov_rotation_off
+    trigger = { has_global_variable = ucm_celestial_governor_rotation_enabled }
+    remove_global_variable = ucm_celestial_governor_rotation_enabled
+    trigger_event = { id = ucm_officials.9080 days = 0 }
+  }
+
+  option = {
+    name = ucm_officials.9080.option_loose_court_on
+    trigger = { NOT = { has_global_variable = ucm_loose_court_appointment_enabled } }
+    set_global_variable = { name = ucm_loose_court_appointment_enabled value = yes }
+    trigger_event = { id = ucm_officials.9080 days = 0 }
+  }
+
+  option = {
+    name = ucm_officials.9080.option_loose_court_off
+    trigger = { has_global_variable = ucm_loose_court_appointment_enabled }
+    remove_global_variable = ucm_loose_court_appointment_enabled
+    trigger_event = { id = ucm_officials.9080 days = 0 }
   }
 
   option = {
@@ -337,19 +365,6 @@ ucm_officials.9084 = {
   }
 }
 
-# 人口与统辖：旧版独立窗口；现并入 9084，保留 id 供旧存档或外部引用
-ucm_officials.9087 = {
-  type = character_event
-  hidden = yes
-
-  immediate = {
-    trigger_event = {
-      id = ucm_officials.9084
-      days = 0
-    }
-  }
-}
-
 # 人口与统辖：厉鬼勾魂；「开启」= 立即执行一轮 9086，执行完毕由 9086 清全局开关（旧存档年循环可仍由 on_action 触发 9086，同轮一并清理）
 ucm_officials.9085 = {
   type = character_event
@@ -397,6 +412,17 @@ ucm_officials.9086 = {
         value = 0
       }
     }
+    # 候选名单只扫一次世界；排除玩家本人及其近亲/远亲（配偶不在此列，另行排除）
+    every_living_character = {
+      limit = {
+        is_ai = yes
+        NOT = { this = root }
+        top_liege = root.top_liege
+        NOT = { is_close_or_extended_family_of = root }
+        NOT = { is_spouse_of = root }
+      }
+      add_to_temporary_list = ucm_samge_pool
+    }
     while = {
       limit = {
         root = {
@@ -412,24 +438,15 @@ ucm_officials.9086 = {
       }
       if = {
         limit = {
-          any_living_character = {
-            is_ai = yes
-            is_alive = yes
-            NOT = { this = root }
-            top_liege = root.top_liege
+          any_in_list = {
+            list = ucm_samge_pool
+            count >= 1
           }
         }
-        random_living_character = {
-          limit = {
-            is_ai = yes
-            is_alive = yes
-            NOT = { this = root }
-            top_liege = root.top_liege
-          }
-          weight = {
-            base = 1
-          }
+        random_in_list = {
+          list = ucm_samge_pool
           save_scope_as = ucm_samge_victim
+          remove_from_list = ucm_samge_pool
           root = {
             if = {
               limit = { is_ai = no }
@@ -577,52 +594,6 @@ ucm_officials.9102 = {
   }
 }
 
-# CK 包工头 9110：全领智能建造入队；9112 每日脉冲逐批执行（效果同原单帧，防大领地卡顿）
-ucm_officials.9110 = {
-  type = character_event
-  hidden = yes
-  immediate = {
-    if = {
-      limit = {
-        is_alive = yes
-        is_landed = yes
-        NOT = { has_character_flag = ucm_foreman_realm_build_active }
-      }
-      ucm_foreman_realm_batch_start_effect = yes
-    }
-  }
-}
-
-ucm_officials.9112 = {
-  type = character_event
-  hidden = yes
-  immediate = {
-    if = {
-      limit = {
-        is_alive = yes
-        is_landed = yes
-        has_character_flag = ucm_foreman_realm_build_active
-      }
-      ucm_foreman_realm_batch_step_effect = yes
-      if = {
-        limit = {
-          variable_list_size = {
-            name = ucm_foreman_realm_county_queue
-            value > 0
-          }
-        }
-        trigger_event = { id = ucm_officials.9112 days = 1 }
-      }
-      else = {
-        ucm_foreman_realm_batch_finish_effect = yes
-      }
-    }
-    else = {
-      ucm_foreman_realm_batch_finish_effect = yes
-    }
-  }
-}
-
 # 法理转封：9130 分批脉冲（点击即跑首批；每轮 12 封臣 + 20 郡，隔日续跑）
 ucm_officials.9130 = {
   type = character_event
@@ -680,15 +651,6 @@ ucm_officials.9140 = {
     else = {
       ucm_land_cap_batch_finish_effect = yes
     }
-  }
-}
-
-# 右击 9111：仅对方直属地 foremen（不先全图主建补；需时另点全国修补或手改）
-ucm_officials.9111 = {
-  type = character_event
-  hidden = yes
-  immediate = {
-    ucm_foreman_beneficiary_demesne_unified_effect = yes
   }
 }
 

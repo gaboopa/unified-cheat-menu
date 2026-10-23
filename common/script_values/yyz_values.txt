@@ -142,27 +142,6 @@ yyz_filterInspirationAdventure        = { value = 0 if = { limit = { exists = va
 yyz_filterInspirationQuality          = { value = 0 if = { limit = { exists = var:yyz_filterInspirationQuality } add = var:yyz_filterInspirationQuality } }
 yyz_filterInspirationUnsponsored      = { value = 0 if = { limit = { exists = var:yyz_filterInspirationUnsponsored } add = var:yyz_filterInspirationUnsponsored } }
 
-# modes - accolade values
-yyz_modeRETINUE_ROLE_retinue              = { value = 0 if = { limit = { exists = var:yyz_modeRETINUE_ROLE_retinue } add = var:yyz_modeRETINUE_ROLE_retinue } }
-yyz_modeRETINUE_ROLE_contender            = { value = 0 if = { limit = { exists = var:yyz_modeRETINUE_ROLE_contender } add = var:yyz_modeRETINUE_ROLE_contender } }
-yyz_modeRETINUE_ROLE_manipulator          = { value = 0 if = { limit = { exists = var:yyz_modeRETINUE_ROLE_manipulator } add = var:yyz_modeRETINUE_ROLE_manipulator } }
-yyz_modeRETINUE_ROLE_mentor               = { value = 0 if = { limit = { exists = var:yyz_modeRETINUE_ROLE_mentor } add = var:yyz_modeRETINUE_ROLE_mentor } }
-yyz_modeRETINUE_ROLE_politicker           = { value = 0 if = { limit = { exists = var:yyz_modeRETINUE_ROLE_politicker } add = var:yyz_modeRETINUE_ROLE_politicker } }
-yyz_modeRETINUE_ROLE_reeve                = { value = 0 if = { limit = { exists = var:yyz_modeRETINUE_ROLE_reeve } add = var:yyz_modeRETINUE_ROLE_reeve } }
-yyz_modeRETINUE_ROLE_tactician            = { value = 0 if = { limit = { exists = var:yyz_modeRETINUE_ROLE_tactician } add = var:yyz_modeRETINUE_ROLE_tactician } }
-yyz_modeRETINUE_ROLE_charmer              = { value = 0 if = { limit = { exists = var:yyz_modeRETINUE_ROLE_charmer } add = var:yyz_modeRETINUE_ROLE_charmer } }
-yyz_modeRETINUE_ROLE_disciplinarian       = { value = 0 if = { limit = { exists = var:yyz_modeRETINUE_ROLE_disciplinarian } add = var:yyz_modeRETINUE_ROLE_disciplinarian } }
-yyz_modeRETINUE_ROLE_idealist             = { value = 0 if = { limit = { exists = var:yyz_modeRETINUE_ROLE_idealist } add = var:yyz_modeRETINUE_ROLE_idealist } }
-yyz_modeRETINUE_ROLE_marauder             = { value = 0 if = { limit = { exists = var:yyz_modeRETINUE_ROLE_marauder } add = var:yyz_modeRETINUE_ROLE_marauder } }
-yyz_modeRETINUE_ROLE_scoundrel            = { value = 0 if = { limit = { exists = var:yyz_modeRETINUE_ROLE_scoundrel } add = var:yyz_modeRETINUE_ROLE_scoundrel } }
-yyz_modeRETINUE_ROLE_stalwart             = { value = 0 if = { limit = { exists = var:yyz_modeRETINUE_ROLE_stalwart } add = var:yyz_modeRETINUE_ROLE_stalwart } }
-yyz_modeRETINUE_ROLE_thug                 = { value = 0 if = { limit = { exists = var:yyz_modeRETINUE_ROLE_thug } add = var:yyz_modeRETINUE_ROLE_thug } }
-yyz_modeRETINUE_ROLE_valiant              = { value = 0 if = { limit = { exists = var:yyz_modeRETINUE_ROLE_valiant } add = var:yyz_modeRETINUE_ROLE_valiant } }
-yyz_modeRETINUE_ROLE_fanatic              = { value = 0 if = { limit = { exists = var:yyz_modeRETINUE_ROLE_fanatic } add = var:yyz_modeRETINUE_ROLE_fanatic } }
-yyz_modeRETINUE_ROLE_blademaster          = { value = 0 if = { limit = { exists = var:yyz_modeRETINUE_ROLE_blademaster } add = var:yyz_modeRETINUE_ROLE_blademaster } }
-yyz_modeRETINUE_ROLE_huntmaster           = { value = 0 if = { limit = { exists = var:yyz_modeRETINUE_ROLE_huntmaster } add = var:yyz_modeRETINUE_ROLE_huntmaster } }
-yyz_modeRETINUE_ROLE_master_of_revels     = { value = 0 if = { limit = { exists = var:yyz_modeRETINUE_ROLE_master_of_revels } add = var:yyz_modeRETINUE_ROLE_master_of_revels } }
-yyz_modeRETINUE_ROLE_house_paragon        = { value = 0 if = { limit = { exists = var:yyz_modeRETINUE_ROLE_house_paragon } add = var:yyz_modeRETINUE_ROLE_house_paragon } }
 
 #####################################################################
 # calculated values

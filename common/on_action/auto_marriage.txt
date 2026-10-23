@@ -1,4 +1,9 @@
-﻿random_yearly_everyone_pulse = {
+random_yearly_everyone_pulse = {
+	on_actions = { ucm_auto_marriage_yearly }
+}
+
+ucm_auto_marriage_yearly = {
+	trigger = { ucm_single_player_trigger = yes }
 	events = {
 		auto_marriage.0001
 		auto_marriage.0002

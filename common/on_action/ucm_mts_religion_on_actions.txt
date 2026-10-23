@@ -1,7 +1,6 @@
 ﻿# More Tenets Slots：创建信仰时清除占位空槽
 # CK3 1.20: on_faith_created now runs with ROOT = the new faith (in 1.19 ROOT was the creating character),
 # so the cleanup runs as an effect in faith scope instead of firing a character event.
-# (ucm_mts_faith_creation.001 is kept for reference but no longer hooked.)
 
 on_faith_created = {
   on_actions = { ucm_on_mts_faith_creation }

@@ -35,7 +35,7 @@ ucm_ai_apply_counter_player_pressure_global_effect = {
         limit = {
           is_ai = yes
           is_landed = yes
-          is_powerful_vassal_of = root
+          is_powerful_vassal_of = prev
         }
         ucm_ai_apply_counter_player_pressure_to_character_effect = yes
       }

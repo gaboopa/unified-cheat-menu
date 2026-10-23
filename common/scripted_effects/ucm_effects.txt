@@ -54,6 +54,7 @@ ucm_menu_open_effect = {
 
 ucm_menu_close_effect = {
 	remove_character_flag = ucm_menu_open
+	remove_variable = ucm_group_pick
 	ucm_menu_flag_off_effect = { FLAG = ucm_character_interaction_menu_open }
 	ucm_menu_flag_off_effect = { FLAG = bone_cheat_interactions_flag }
 	ucm_menu_flag_off_effect = { FLAG = toc_showdebsflag }
@@ -119,12 +120,6 @@ ucm_open_tradition_picker_effect = {
 # Adding an action: a branch in ucm_group_member_eligible_trigger and in
 # ucm_group_apply_member_effect, a run scripted GUI, loc.
 # ---------------------------------------------------------------------------
-
-ucm_group_start_effect = {
-	set_variable = { name = ucm_group value = flag:$GROUP$ }
-	set_variable = { name = ucm_group_action value = flag:$ACTION$ }
-	trigger_event = ucm_group.1
-}
 
 # Runs ACTION on the group picked in the menu.
 ucm_group_start_picked_effect = {

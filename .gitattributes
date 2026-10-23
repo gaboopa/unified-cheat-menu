@@ -1,0 +1,19 @@
+* text=auto
+
+# Binary assets
+*.dds binary
+*.png binary
+*.ogg binary
+
+# Generated files: pin eol to what the generators in tools/ write, so regeneration doesn't diff
+gui/ucm_main_menu.gui text eol=crlf
+common/scripted_guis/ucm_cw_innovation_*_generated.txt text eol=crlf
+common/scripted_effects/ucm_cw_tradition_picker_lists_generated.txt text eol=lf
+localization/*/ucm_l_*.yml text eol=lf
+
+# Keep dev-only files out of `git archive` (release zips)
+docs/ export-ignore
+tools/ export-ignore
+README.md export-ignore
+.gitignore export-ignore
+.gitattributes export-ignore

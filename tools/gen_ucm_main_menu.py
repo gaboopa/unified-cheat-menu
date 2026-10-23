@@ -371,6 +371,8 @@ def crozier_buttons(name, ind, keep_size=False):
             depth += (t[e] == "{") - (t[e] == "}")
             if depth == 0:
                 break
+        if s < 0 or e < pos:  # unbalanced braces / key outside any button: would loop forever
+            raise ValueError(f"cannot parse Crozier button block for {name} near offset {pos}")
         block = " ".join(t[s:e + 1].split())
         if block not in found:
             found.append(block)

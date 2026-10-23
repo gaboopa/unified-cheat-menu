@@ -1,16 +1,5 @@
-﻿# 军事管理增益：月度全图 + 每日分批 + 每年补扫 + 开局清一次（仅 ucm_military_* Skonester修正）
-
-monthly_global_pulse = {
-  on_actions = {
-    ucm_military_cheat_guard_monthly_pulse
-  }
-}
-
-ucm_military_cheat_guard_monthly_pulse = {
-  effect = {
-    ucm_military_cheat_strip_all_unauthorized_effect = yes
-  }
-}
+# 军事管理增益：每年补扫（仅 ucm_military_* Skonester修正）；开局全图清一次见 ucm_startup_sweep.txt
+# (monthly_global_pulse / daily_playable_pulse hooks were never fired by the engine; removed.)
 
 random_yearly_everyone_pulse = {
   on_actions = {
@@ -19,31 +8,12 @@ random_yearly_everyone_pulse = {
 }
 
 ucm_military_cheat_guard_yearly_spot_pulse = {
+  trigger = {
+    ucm_single_player_trigger = yes
+    ucm_has_any_military_cheat_modifier_trigger = yes
+    NOT = { has_character_flag = ucm_military_cheat_player_authorized }
+  }
   effect = {
-    if = {
-      limit = {
-        ucm_has_any_military_cheat_modifier_trigger = yes
-        NOT = { has_character_flag = ucm_military_cheat_player_authorized }
-      }
-      ucm_military_cheat_strip_on_character_effect = yes
-    }
-  }
-}
-
-on_game_start = {
-  on_actions = {
-    ucm_military_cheat_guard_startup_pulse
-  }
-}
-
-on_game_start_after_lobby = {
-  on_actions = {
-    ucm_military_cheat_guard_startup_pulse
-  }
-}
-
-ucm_military_cheat_guard_startup_pulse = {
-  effect = {
-    ucm_military_cheat_strip_all_unauthorized_effect = yes
+    ucm_military_cheat_strip_on_character_effect = yes
   }
 }

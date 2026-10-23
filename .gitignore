@@ -1,0 +1,4 @@
+*.bak
+*.vsix
+__pycache__/
+release/

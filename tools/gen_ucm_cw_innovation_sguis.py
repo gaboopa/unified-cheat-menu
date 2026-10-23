@@ -6,27 +6,22 @@ from script, so the keys are written out here from the game's innovation files.
 
 Run after a CK3 update:
     python tools/gen_ucm_cw_innovation_sguis.py --game-dir <CK3>/game
-or set CK3_GAME_DIR instead of passing the flag.
+or set CK3_GAME_DIR instead of passing the flag. --out defaults to this repo.
 """
 import argparse
-import glob
 import os
 import sys
 
-from gen_cw_tradition_picker_lists import MOD_DIR, top_level_objects
+from ck3parse import effective_files, top_level_objects
 
+MOD_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SUB = os.path.join("common", "culture", "innovations")
-OUT_DIR = os.path.join(MOD_DIR, "common", "scripted_guis")
 KINDS = {"unlock": "add_innovation", "remove": "remove_innovation"}
 
 
 def innovations(*dirs):
     """Sorted innovation keys; a later dir's file replaces an earlier one with the same name."""
-    by_name = {}
-    for d in dirs:
-        for f in glob.glob(os.path.join(d, SUB, "*.txt")):
-            by_name[os.path.basename(f)] = f
-    return sorted({key for f in by_name.values() for key, _ in top_level_objects(f)})
+    return sorted({key for f in effective_files(SUB, *dirs) for key, _ in top_level_objects(f)})
 
 
 def emit(kind, effect, keys):
@@ -58,17 +53,20 @@ def emit(kind, effect, keys):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--game-dir", default=os.environ.get("CK3_GAME_DIR"), help="CK3 game/ directory (or CK3_GAME_DIR)")
+    ap.add_argument("--out", default=MOD_DIR, help="output root (default: this repo)")
     args = ap.parse_args()
     if not args.game_dir or not os.path.isdir(os.path.join(args.game_dir, SUB)):
         sys.exit(f"--game-dir: no {SUB} under {args.game_dir!r}")
 
     keys = innovations(args.game_dir, MOD_DIR)
+    out_dir = os.path.join(args.out, "common", "scripted_guis")
+    os.makedirs(out_dir, exist_ok=True)
     for kind, effect in KINDS.items():
-        out = os.path.join(OUT_DIR, f"ucm_cw_innovation_{kind}_generated.txt")
+        out = os.path.join(out_dir, f"ucm_cw_innovation_{kind}_generated.txt")
         # Match the original files: UTF-8 with BOM, CRLF.
         with open(out, "wb") as fh:
             fh.write(b"\xef\xbb\xbf" + "\r\n".join(emit(kind, effect, keys) + [""]).encode("utf-8"))
-        print(f"{len(keys)} innovations -> {os.path.relpath(out, MOD_DIR)}")
+        print(f"{len(keys)} innovations -> {os.path.relpath(out, args.out)}")
 
 
 if __name__ == "__main__":

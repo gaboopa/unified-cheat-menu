@@ -17,7 +17,7 @@
 
 Corrections from the game's own `script_docs` output (1.20.1.2), which replaces the earlier file-search evidence:
 
-- **Rename character is back in scope.** `change_first_name = <dynamic_description>` exists, so typed text can rename characters the same way it renames titles.
+- **Rename character was back in scope** because `change_first_name = <dynamic_description>` exists. It was later dropped after failing in game (Appendix A).
 - **Script can loop over many database types:** traits, innovations, traditions, tenets, doctrines, government types, holding types, court position types, and more. Pickers for these build their lists at game start, so modded content appears automatically. Buildings, men-at-arms types, and artifact templates still have no loop and keep generated lists.
 - Added rename for cultures, faiths, and rites (`set_culture_name`, `set_faith_name`, `set_rite_name`).
 - Clarified that `set_immortal_age` only works on characters who are already immortal, and that `personal_tenet_slot_add` is a modifier, not an effect.
@@ -228,7 +228,6 @@ An in-game history may record completed actions, but it must not imply that all 
 
 | Action                    | Functional requirement                                 | Engine support |
 | ------------------------- | ------------------------------------------------------ | -------------- |
-| Rename character          | Change a character's first name with typed text        | `change_first_name = <dynamic_description>` plus the text-entry widget (Section 7.3) |
 | Change age                | Increase/decrease age or use age presets               | Baseline has it (`skonester_change_age_interaction.txt`) |
 | Change sexuality          | Heterosexual, homosexual, bisexual, asexual            | `set_sexuality` |
 | Change weight             | Adjustable weight modification                         | `change_current_weight` |
@@ -938,7 +937,7 @@ Configurable fields:
 - Character count
 - Destination court/camp
 
-Generated characters get their names from the game's culture name lists. Players can rename them afterwards (Section 4.1).
+Generated characters get their names from the game's culture name lists.
 
 ### Family Generator
 
@@ -1351,7 +1350,7 @@ Generated files say "do not edit by hand" and are rebuilt whenever the target ga
 
 The baseline's tradition and innovation generators can be retired once those pickers move to runtime lists.
 
-**Text entry.** CK3's event text-entry widget (`event_window_widget_enter_text`) stores typed text, which localization can then display. Any effect that takes a localization key or dynamic description can use it: `change_first_name` (characters), `set_title_name_dynamic`, `set_artifact_name`, `set_house_name`, `set_dynasty_name`, `set_culture_name`, `set_faith_name`, `set_rite_name`, and `create_adventurer_title`. Typed text can't be read as a number.
+**Text entry.** CK3's event text-entry widget (`event_window_widget_enter_text`) stores typed text, which localization can then display. Effects that take a localization key or dynamic description may be able to use it: `set_title_name_dynamic`, `set_artifact_name`, `set_house_name`, `set_dynasty_name`, `set_culture_name`, `set_faith_name`, `set_rite_name`, and `create_adventurer_title`. Typed text can't be read as a number. Only vanilla's own uses (artifacts, adventurer titles, houses) are proven. Feeding typed text to `change_first_name` failed in Phase 2 testing, so character renaming was dropped.
 
 Ordinary menu use must not require debug mode.
 
@@ -1523,7 +1522,7 @@ All ten feature categories are in the final scope, but development proceeds in c
 5. Recover or rewrite the missing `gen_skonester_cw_innovation_sguis.py` generator.
 6. Click through each existing feature and record whether it works, using the "Verify" notes in `agent.md`.
 
-Phase 0 progress and findings are recorded in [phase0-baseline.md](phase0-baseline.md). Phase 1 is described in [phase1-foundation.md](phase1-foundation.md).
+Phase 0 progress and findings are recorded in [phase0-baseline.md](phase0-baseline.md). Phase 1 is described in [phase1-foundation.md](phase1-foundation.md), Phase 2 in [phase2-characters.md](phase2-characters.md).
 
 Keep a usable build at the end of every phase.
 
@@ -1635,7 +1634,7 @@ Checked against the game's own documentation (`script_docs` output: `logs/effect
 | Script can loop over traits, innovations, traditions, tenets, doctrines | ✅ Verified | `every_trait`, `every_culture_innovation`, `every_culture_tradition`, `every_tenet`, `every_doctrine` ("Iterate through every … in the database") |
 | Script can loop over building types, MAA types, artifact templates | ❌ No | No database iterator for these; `every_maa_regiment` and `every_artifact` cover existing instances only |
 | Typed text can rename titles, artifacts, houses, cultures, faiths, rites | ✅ Verified | `set_title_name_dynamic`, `set_artifact_name`, `set_house_name`, `set_culture_name`, `set_faith_name`, `set_rite_name`; text-entry pattern in `accolade_events.txt` and `07_dlc_ep3_scripted_effects.txt` |
-| Typed text can rename characters | ✅ Verified | `change_first_name = <dynamic_description>` (or `{ template_character = … }`) |
+| Typed text can rename characters | ❌ Failed in game | `change_first_name = <dynamic_description>` exists, but in Phase 2 testing it rejected typed text ("Name is too long", then "Couldn't find new first name"). Dropped at the user's request |
 | Typed text can be read as a number | ❌ No | The text controller stores a string shown through localization |
 | Pregnancy with chosen father and number of children | ✅ Verified | `make_pregnant` / `make_pregnant_no_checks`: `father`, `number_of_children`, `known_bastard` |
 | Choosing the baby's sex | ❌ No | Not among the documented `make_pregnant` parameters |

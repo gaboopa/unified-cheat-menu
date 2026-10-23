@@ -1,4 +1,4 @@
-# Unified Cheat Menu: forget targets that die (spec Section 3.1).
+﻿# Unified Cheat Menu: forget targets that die (spec Section 3.1).
 
 on_death = {
 	on_actions = { ucm_on_death }
@@ -13,7 +13,7 @@ ucm_on_death = {
 		every_player = {
 			limit = { var:ucm_target ?= root }
 			remove_variable = ucm_target
-			remove_character_flag = ucm_menu_open
+			ucm_menu_close_effect = yes
 		}
 	}
 }

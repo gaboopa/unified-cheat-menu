@@ -1,4 +1,4 @@
-# Unified Cheat Menu: main menu window (gui/ucm_main_menu.gui). Root = player.
+﻿# Unified Cheat Menu: main menu window (gui/ucm_main_menu.gui). Root = player.
 
 ucm_menu_visible = {
 	scope = character
@@ -8,7 +8,7 @@ ucm_menu_visible = {
 ucm_menu_close = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	effect = { remove_character_flag = ucm_menu_open }
+	effect = { ucm_menu_close_effect = yes }
 }
 
 # --- Editor launchers: reuse the baseline's interaction effects -------------

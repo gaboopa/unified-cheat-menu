@@ -1,4 +1,4 @@
-namespace = ucm_group
+﻿namespace = ucm_group
 
 # Group action confirmation (spec Section 5.3). Root = player; see ucm_effects.txt.
 ucm_group.1 = {

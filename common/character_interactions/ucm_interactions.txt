@@ -1,4 +1,4 @@
-# Unified Cheat Menu: Layer 1 right-click entries (spec Section 2).
+﻿# Unified Cheat Menu: Layer 1 right-click entries (spec Section 2).
 
 ucm_open_cheat_menu = {
 	category = interaction_category_uncategorized
@@ -18,7 +18,7 @@ ucm_open_cheat_menu = {
 		skonester_cheat_menu_lock_recipient_effect = yes
 		scope:actor = {
 			set_variable = { name = ucm_target value = scope:recipient }
-			add_character_flag = ucm_menu_open
+			ucm_menu_open_effect = yes
 		}
 	}
 	ai_will_do = 0

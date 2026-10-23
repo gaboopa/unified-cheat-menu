@@ -1,4 +1,4 @@
-# Unified Cheat Menu: shared triggers.
+﻿# Unified Cheat Menu: shared triggers.
 
 # The mod is single-player only. Every interaction, decision, scripted GUI and
 # cheat pulse checks this. GUI-only elements use [Not( GameHasMultiplePlayers )].
@@ -28,4 +28,24 @@ ucm_group_member_eligible_trigger = {
 ucm_menu_target_valid_trigger = {
 	exists = var:ucm_target
 	var:ucm_target = { is_alive = yes }
+}
+
+# Buttons that act on the target and the second character together.
+ucm_menu_pair_valid_trigger = {
+	ucm_menu_target_valid_trigger = yes
+	exists = global_var:skonester_crozier_cheats_other
+	global_var:skonester_crozier_cheats_other = { is_alive = yes }
+	NOT = { global_var:skonester_crozier_cheats_other = var:ucm_target }
+}
+
+# Making the second character a parent of the target must not create a loop:
+# the target can't already be one of the second character's ancestors.
+# ponytail: any_ancestor only looks 5 generations up; deeper loops aren't caught.
+ucm_second_can_be_parent_trigger = {
+	ucm_menu_pair_valid_trigger = yes
+	NOT = {
+		global_var:skonester_crozier_cheats_other = {
+			any_ancestor = { this = root.var:ucm_target }
+		}
+	}
 }

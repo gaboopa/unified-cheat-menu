@@ -1,0 +1,9 @@
+﻿# Unified Cheat Menu: the main menu's step size (spec Section 3.3). Root = player.
+ucm_step_value = {
+	value = root.var:ucm_step
+}
+
+ucm_step_negative_value = {
+	value = root.var:ucm_step
+	multiply = -1
+}

@@ -1,4 +1,4 @@
-# Unified Cheat Menu: shared effects.
+﻿# Unified Cheat Menu: shared effects.
 
 # Main menu buttons run with root = player. The baseline's editor launchers expect
 # scope:actor and scope:recipient, as set by a character interaction.
@@ -7,6 +7,41 @@ ucm_menu_scopes_effect = {
 	if = {
 		limit = { exists = var:ucm_target }
 		var:ucm_target = { save_scope_as = recipient }
+	}
+}
+
+# Open/close the main menu. Scope = player. Skonester's own interactions only show
+# while its two right-click toggles are on, so the menu turns them on while it's
+# open (and the right-click menu shows them too), then restores what was there.
+ucm_menu_open_effect = {
+	add_character_flag = ucm_menu_open
+	if = {
+		limit = { NOT = { exists = var:ucm_step } }
+		set_variable = { name = ucm_step value = 1 }
+	}
+	if = {
+		limit = { NOT = { has_character_flag = skonester_character_interaction_menu_open } }
+		add_character_flag = skonester_character_interaction_menu_open
+		add_character_flag = ucm_added_tools_flag
+	}
+	if = {
+		limit = { NOT = { has_character_flag = bone_cheat_interactions_flag } }
+		add_character_flag = bone_cheat_interactions_flag
+		add_character_flag = ucm_added_cheats_flag
+	}
+}
+
+ucm_menu_close_effect = {
+	remove_character_flag = ucm_menu_open
+	if = {
+		limit = { has_character_flag = ucm_added_tools_flag }
+		remove_character_flag = skonester_character_interaction_menu_open
+		remove_character_flag = ucm_added_tools_flag
+	}
+	if = {
+		limit = { has_character_flag = ucm_added_cheats_flag }
+		remove_character_flag = bone_cheat_interactions_flag
+		remove_character_flag = ucm_added_cheats_flag
 	}
 }
 

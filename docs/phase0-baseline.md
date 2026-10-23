@@ -9,7 +9,7 @@ Baseline: upstream `bfcb175`, CK3 1.20.1.2. Tasks refer to [spec](unified-cheat-
 | 3 | Vanilla overrides and global defines review | Done (below) |
 | 4 | Per-player global variable inventory | Done (below) |
 | 5 | Innovation generator | Done: rewritten |
-| 6 | Feature click-through | **Needs in-game play**; use `agent.md` *Verify* notes |
+| 6 | Feature click-through | Accepted based on prior play with the base mod; no separate click-through of this build. Domicile presets have known errors (see baseline) |
 
 ## How to run the baseline (tasks 1, 2)
 
@@ -86,7 +86,9 @@ Finding for the spec: GUI can call `ExecuteConsoleCommand`. That's narrower than
 
 114 global variable names are set in `common/` and `events/`.
 
-**Per-player state that must move to the player's character (Phase 1):**
+> **Update (spec v1.3):** The mod is now single-player only, so none of this needs migrating. The inventory is kept for reference. Phase 1 instead hides every entry point while `has_multiple_players = yes`.
+
+**Per-player state (would only matter in multiplayer):**
 
 - **Targets:** `skonester_crozier_cheats_other`, `skonester_crozier_cheats_prev_char`, `skonester_cheat_menu_recipient`, `skonester_acm_recipient`, `skonester_acm_repair_target`. The primary target is already a character variable (`var:skonester_crozier_cheats_target`), so only the secondary targets are global.
 - **Persistent cheat toggles:** 32 cheats, each with three globals: `skonester_crozier_cheats_on_<cheat>` (flag), `_fx_<cheat>` and `_lv_<cheat>` (numbers). Cheats include income, health, stress, skills, immortal, levy, legend spread, and auto-ascension. In multiplayer, one player enabling a cheat enables it for everyone the tick applies to.

@@ -1,11 +1,17 @@
 # Unified CK3 Cheat Menu
 
-**Proposed Functional and Interface Specification — Version 1.2**
+**Proposed Functional and Interface Specification — Version 1.3**
 
 **Target:** Crusader Kings III 1.20.x "Crozier" (verified against 1.20.1.2 game files)\
 **Baseline:** Skonester Cheat Menu Gold, forked at upstream commit `bfcb175` (CC BY 4.0)\
 **Feature reference:** Divine Intervention Cheat Menu (behavior only; no code or assets)\
 **Status:** Proposed design; implementation and compatibility validation required
+
+### Changes from 1.2
+
+- **No pins.** Removed pin lists, pinned titles, the Character A/B/C slots, the Selection Manager, and the Bulk Editor window. Every action applies to what you right-clicked, plus at most **one saved second character** for two-character actions.
+- **Group actions instead of bulk selection.** Actions can apply to built-in groups taken from the clicked target, such as your vassals or your realm's counties (Section 5).
+- **Single-player only.** The menu is disabled when another player is connected (`has_multiple_players`). The multiplayer-safety requirement and the plan to move per-player global variables onto the player's character are dropped.
 
 ### Changes from 1.1
 
@@ -32,7 +38,7 @@ Corrections from the game's own `script_docs` output (1.20.1.2), which replaces 
 
 Keep Skonester's character-interaction workflow, organized submenus, and convenient one-click cheats, and add Divine Intervention's more advanced editing capabilities.
 
-Use a hybrid interface rather than merging both mods' menus wholesale. Most actions stay accessible by right-clicking a character, as in Skonester. More complicated operations, such as bulk character editing, artifact construction, and detailed diplomacy, open dedicated editors without requiring a separate permanent HUD.
+Use a hybrid interface rather than merging both mods' menus wholesale. Most actions stay accessible by right-clicking a character, as in Skonester. More complicated operations, such as artifact construction and detailed diplomacy, open dedicated editors without requiring a separate permanent HUD.
 
 This specification is a proposed design. It doesn't claim these features already work together.
 
@@ -51,12 +57,12 @@ The resulting mod must work standalone. Players shouldn't need to install either
 3. **Context-aware actions.** The menu identifies the relevant character, realm, title, culture, faith, or other target automatically.
 4. **Minimal clutter.** Don't flood the normal character interaction menu with hundreds of cheats.
 5. **Comprehensive coverage.** Support all ten feature categories, including advanced DLC systems.
-6. **Bulk editing.** Provide a unified way to select multiple characters and titles and apply compatible operations.
+6. **Click to target, groups for scale.** Every action applies to the thing you right-clicked. Actions on many targets use built-in groups derived from it, never a manual selection list.
 7. **Explicit targeting.** Every operation clearly identifies who or what will be modified.
 8. **No silent destructive actions.** Dangerous operations require confirmation and disclose their scope.
 9. **Modular implementation.** Organize functionality into independently maintainable modules.
 10. **Compatibility awareness.** Account for game version, installed DLC, government types, and content supplied by other mods.
-11. **Multiplayer safety.** One player's targets, pins, and menu state must never affect another player's.
+11. **Single-player only.** It's a cheat mod. All entry points (interactions, decisions, windows) are hidden while `has_multiple_players = yes`, and persistent cheats stop applying.
 
 ### 1.2 Preservation policy
 
@@ -92,7 +98,7 @@ When you right-click a character, you see a compact set of cheat entries.
 
 - **Open Cheat Menu** opens the main categorized menu for the selected character.
 - **Quick Cheats** opens commonly used immediate actions.
-- **Pin/Unpin Character** adds or removes the character from the active selection.
+- **Set as Second Character** saves the character for two-character actions (Section 3.1).
 
 Players who prefer more direct shortcuts can enable additional entries in Settings.
 
@@ -102,10 +108,9 @@ Ordinary cheat operations must not require debug mode.
 
 The main cheat menu shows:
 
-**Target:** Selected character\
+**Target:** Clicked character\
 **Player:** Current playable character\
-**Selection:** Single Target\
-**Pinned:** 0 characters, 0 titles
+**Second character:** None
 
 **Main Menu**
 
@@ -119,8 +124,9 @@ The main cheat menu shows:
 8. Artifacts & Equipment
 9. Court & Character Generation
 10. DLC & Advanced Systems
-11. Bulk Editor & Target Selection
-12. Settings & Utilities
+11. Settings & Utilities
+
+Group actions (Section 5) live inside the category they belong to. For example, "Max development in every realm county" is under Realm, Holdings & Construction, not in a separate menu.
 
 Each category opens a focused submenu. Complex categories may open a dedicated GUI editor.
 
@@ -133,15 +139,14 @@ Use dedicated editing windows for operations that involve large lists, many valu
 | Editor               | Intended functionality                                             | Skonester starting point                       |
 | -------------------- | ------------------------------------------------------------------ | ---------------------------------------------- |
 | Character Editor     | Skills, traits, genetics, health, sexuality, age, perks, modifiers | `skonester_trait_editor.gui`, `skonester_lifestyle.gui`, `skonester_cheat_trait_editor.gui` |
-| Relationship Editor  | Multiple characters, relationship status, family relationships     | None                                           |
-| Title Manager        | Title selection, de jure editing, claims, transfers                | None                                           |
+| Relationship Editor  | Clicked and second character: relationship status, family relationships | None                                      |
+| Title Manager        | Clicked title: de jure editing, claims, transfers                  | None                                           |
 | Culture Editor       | Traditions, pillars, innovations, conversions                      | `skonester_acm_culture_picker.gui`, `skonester_culture_tradition_picker.gui` |
 | Faith Editor         | Rites, tenets, doctrines, sins, virtues, conversions               | `skonester_acm_faith_editor.gui` and related pickers |
 | Construction Manager | Holdings, building chains, building slots                          | None                                           |
 | Army Manager         | Unit types, quantities, regiments, combat modifiers                | `skonester_sand_soldiers.gui`                  |
 | Artifact Workshop    | Artifact creation and editing                                      | `skonester_artifact_craft.gui`, `skonester_artifact_repair.gui` |
 | Character Generator  | Family, council, court, and custom character generation            | Existing generation interactions               |
-| Bulk Editor          | Selection sets, batch operations, execution summaries              | None                                           |
 
 Editors must not become a competing navigation system. Each editor keeps its parent menu context and has an obvious way back.
 
@@ -151,28 +156,20 @@ Editors must not become a competing navigation system. Each editor keeps its par
 
 ### 3.1 Targeting system
 
-All actions use a common targeting model.
+All actions use one simple targeting model: **you click the thing you want to change.**
 
-**Available target modes:**
+**Targets:**
 
-- **Self:** the current player character.
-- **Selected:** the character opened through right-click.
-- **Character A:** primary saved target.
-- **Character B:** secondary saved target.
-- **Character C:** optional tertiary saved target.
-- **Pinned Characters:** all members of the active character selection.
-- **Pinned Titles:** selected titles in the Title Manager.
-- **Realm Selection:** a dynamically resolved realm, sub-realm, or county group.
+- **Clicked target:** the character you right-clicked, or the title, county, culture, or faith you opened the menu from.
+- **Self:** the current player character, only when an action explicitly says so.
+- **Second character:** one saved character for actions that need two (marriage, relationships, transfers, wars between two NPCs). Right-click a character and choose **Set as Second Character**. It stays saved until replaced or cleared, and is cleared automatically if the character dies.
+- **Group:** a built-in group derived from the clicked target, such as your vassals or your realm's counties (Section 5).
 
-To assign a character to A, B, or C, right-click their portrait and choose the matching selection interaction.
+There are no pins, saved selection lists, or extra target slots.
 
-The current player character and the selected character must never be silently swapped for each other.
+The current player character and the clicked target must never be silently swapped for each other. Every two-character action shows both names before it runs.
 
-**Storage:** All per-player state, including A/B/C targets, pin lists, menu tabs, and per-player cheat toggles, is stored as variables or variable lists **on the player's own character**. Only read-only catalogs (Section 7.3) and deliberately world-wide settings may use global variables.
-
-> **Baseline note:** Skonester currently stores targets and toggles in global variables (for example `skonester_crozier_cheats_other`, `skonester_crozier_cheats_prev_char`, `skonester_crozier_cheats_fx_*`, `yyz_list_mode`). In multiplayer, one player's selection overwrites another's. Moving this to character scope is a Phase 1 task.
-
-Because player character variables don't carry over when the player switches characters, the Switch Playable Character action (Section 4.1) must copy menu state to the new character or clear it explicitly.
+**Storage:** Because the mod is single-player only (Section 1.1, requirement 11), menu state can stay in global variables, as the baseline does (`skonester_crozier_cheats_other` already holds the second character). No migration is needed.
 
 ### 3.2 Navigation consistency
 
@@ -181,11 +178,10 @@ Every submenu provides:
 - Back to Previous Menu
 - Back to Main Menu
 - Close Menu
-- Current Target
-- Current Selection Scope
+- Current Target (and second character, if set)
 - Action-specific tooltips
 
-Where relevant, add **Apply to Selected** and **Apply to Pinned** options.
+Where a group version of an action exists, it sits next to the single-target version (for example, "Max development" and "Max development in every realm county").
 
 ### 3.3 Adjustable values
 
@@ -204,7 +200,7 @@ Use buttons and increment selectors. **Typed numeric input isn't available:** CK
 | Low-risk                 | Execute immediately and display a short result                  |
 | Significant              | Display target, old value, new value, and confirmation          |
 | High-risk                | Require explicit confirmation and provide a consequence warning |
-| Bulk                     | Show affected count, skipped count, scope, and a confirmation   |
+| Group                    | Show the group, affected count, skipped count, and a confirmation |
 | Potentially irreversible | Clearly state that restoring a save may be necessary            |
 
 An in-game history may record completed actions, but it must not imply that all CK3 effects can be undone.
@@ -237,7 +233,7 @@ An in-game history may record completed actions, but it must not imply that all 
 | Change sexuality          | Heterosexual, homosexual, bisexual, asexual            | `set_sexuality` |
 | Change weight             | Adjustable weight modification                         | `change_current_weight` |
 | Change nickname           | Choose from predefined nicknames                       | `give_nickname` / nickname effects |
-| Switch playable character | Transfer player control to an eligible selected character | Verify; see Section 3.1 storage note |
+| Switch playable character | Transfer player control to an eligible selected character | Verify |
 | Change culture            | Open culture picker                                    | Baseline has it |
 | Change faith              | Open faith picker                                      | Baseline has it |
 | Change house/dynasty      | Assign valid house or dynasty membership               | Verify |
@@ -381,8 +377,8 @@ Required functions:
 - Create relationship.
 - Remove relationship.
 - Replace conflicting relationship.
-- Establish relationship between Characters A and B.
-- Apply eligible relationships between a primary character and a selected group.
+- Establish relationship between the clicked character and the second character.
+- Apply eligible relationships between the clicked character and a built-in group (for example, make every courtier a friend).
 
 Directional relationships must keep the correct actor/recipient orientation.
 
@@ -398,7 +394,7 @@ Provide:
 - Force divorce.
 - Remove marriage restrictions when explicitly selected.
 - Add/remove concubines where supported.
-- Marry two saved NPC targets, not only the player and the selected character.
+- Marry the clicked character to the second character, so two NPCs can be married, not only the player and the clicked character.
 
 Warn about incompatible characters, existing marriages, invalid succession states, and restrictions that can't safely be bypassed.
 
@@ -450,11 +446,11 @@ Provide:
 
 ### Advanced Relationship Editor
 
-Use Character A and Character B as the primary pair, with optional Character C.
+Uses the clicked character and the second character as the pair.
 
 The editor shows relationship status, marriage status, family relationships, opinions, hooks, alliances, and existing changes.
 
-Bulk operations need their own explicit targeting rules. They must not create all-to-all relationships just because multiple characters are pinned.
+Group relationship actions always pair one character with each group member. They never create all-to-all relationships within a group.
 
 ---
 
@@ -481,7 +477,7 @@ Provide:
 - Remove claims.
 - Take selected title.
 - Take all eligible titles.
-- Transfer title to Character A or B.
+- Transfer title to the second character.
 - Create title (baseline: `skonester_create_titular_interactions.txt`).
 - Rename title (`set_title_name` with the text-entry widget; see Section 7.3).
 - Destroy title.
@@ -574,7 +570,7 @@ Provide:
 - Force white peace.
 - End one war.
 - End all wars involving a selected character.
-- Start eligible wars between Characters A and B.
+- Start eligible wars between the clicked character and the second character.
 
 War operations must check existing wars, war objectives, character status, and participating sides.
 
@@ -631,13 +627,12 @@ Support applicable DLC-era innovations.
 
 Available scopes:
 
-- Selected character.
-- Pinned characters.
-- Selected county/counties.
-- Selected court.
-- Selected vassals.
-- Selected sub-realm.
-- Entire selected realm.
+- Clicked character.
+- Clicked character's county.
+- Clicked character's court.
+- Clicked character's vassals.
+- Clicked character's sub-realm.
+- Clicked character's entire realm.
 
 ### Faith & Rite Editor
 
@@ -1113,45 +1108,30 @@ Label experimental actions clearly.
 
 ---
 
-# 5. Unified Bulk Editing System
+# 5. Group Actions
 
-The Bulk Editor is the most significant new shared system.
+There's no manual selection system: no pins and no saved selection lists. Instead, an action can apply to a **built-in group** taken from the thing you right-clicked. The group is worked out when the action runs, so there's nothing to set up beforehand or to clear afterwards.
 
-Rather than building separate bulk-editing controls into every editor, use one common selection and execution mechanism.
+## 5.1 Built-in groups
 
-## 5.1 Selecting targets
+| Clicked target | Groups offered                                                               | Iterator used |
+| -------------- | ---------------------------------------------------------------------------- | ------------- |
+| Character      | Children, close family, extended family                                      | `every_child`, `every_close_family_member`, `every_extended_family_member` |
+| Character      | House members, dynasty members                                               | `every_house_member`, `every_dynasty_member` |
+| Ruler          | Direct vassals, all vassals and tributaries, courtiers, councillors, knights | `every_vassal`, `every_subject`, `every_courtier`, `every_councillor`, `every_knight` |
+| Ruler          | Every county in the realm, every county in the sub-realm, held titles        | `every_realm_county`, `every_sub_realm_county`, `every_held_title` |
+| Character      | Spouses, lovers, friends                                                     | `every_spouse`, relationship iterators |
+| Title          | De jure counties, de jure vassal titles                                      | `every_de_jure_county`, `every_direct_de_jure_vassal_title` |
+| Culture        | Counties of the culture                                                      | `every_culture_county` |
+| Faith          | Counties of the faith                                                        | `every_faith_county` |
 
-**Selection sources**
+Each group action may add fixed filters where they matter, such as adults only, landed only, AI only, or "exclude myself". These are part of the action's definition, not something the player sets up.
 
-| Source     | Selection options                                            |
-| ---------- | ------------------------------------------------------------ |
-| Manual     | Pin/unpin individual characters or titles                    |
-| Family     | Children, close family, extended family                      |
-| Dynasty    | House, dynasty, cadet branch                                 |
-| Realm      | Direct vassals, all vassals, courtiers, councillors          |
-| Society    | Culture, faith, lovers, friends                              |
-| Military   | Eligible commanders, knights, war participants               |
-| Titles     | Holder titles, vassal titles, sub-realm titles, realm titles |
-| Geographic | Selected counties, holdings, or title-defined regions        |
+World-wide groups (every living character, every county in the world) aren't offered by default. They're only available in Advanced/Experimental mode and always need confirmation.
 
-Filter targets by:
+## 5.2 Group-compatible operations
 
-- Living/deceased eligibility.
-- Ruler/courtier status.
-- Adult/minor status where relevant.
-- Character sex where relevant.
-- Landed/unlanded status.
-- Player/AI status.
-- House, dynasty, culture, and faith.
-- Government, rank, and title type.
-
-Set union/intersection and exclusions are desirable advanced options. The first implementation can focus on basic pinning and filtering.
-
-Pin lists are variable lists on the player's character (Section 3.1).
-
-## 5.2 Bulk edit operations
-
-Bulk operations cover appropriate actions across:
+Group actions cover appropriate operations across:
 
 - Skills
 - Traits
@@ -1168,17 +1148,17 @@ Bulk operations cover appropriate actions across:
 - Eligible character relationships
 - Court and military management
 
-Not every single-target action can be applied in bulk.
+Not every single-target action has a group version.
 
-For example, giving a trait to twenty characters is simple. Making twenty characters the same person's spouse or heir needs extra rules and may be invalid.
+For example, giving a trait to all your courtiers is simple. Making every vassal the same person's spouse or heir makes no sense and isn't offered.
 
-## 5.3 Bulk execution workflow
+## 5.3 Group execution workflow
 
-**Select Targets → Choose Action → Configure → Preview → Confirm → Execute → Review Results**
+**Right-click → Choose group action → Configure → Preview → Confirm → Execute → Review results**
 
 Before execution, show:
 
-- Total selected.
+- The group and how many members it has.
 - Eligible targets.
 - Ineligible targets.
 - Changes to be applied.
@@ -1192,17 +1172,7 @@ After execution, show:
 - Failed.
 - Why each skipped or failed target was skipped, when that can be detected.
 
-A bulk operation must not stop at the first invalid target.
-
-## 5.4 Selection persistence
-
-Selections stay available while moving between editors.
-
-Clear Character Pins, Clear Title Pins, and Clear All Pins controls are required.
-
-Validate pinned targets before use. Dead, removed, or otherwise invalid game entities must not cause the menu to act on an unintended replacement.
-
-Guard against enormous world-wide selections. World-scale operations must be explicitly opted into.
+A group action must not stop at the first invalid target.
 
 ---
 
@@ -1263,13 +1233,13 @@ Every editor shows its target prominently.
 For example:
 
 **Character Editor — Duke Robert**\
-Target: Duke Robert | Mode: Selected Character
+Target: Duke Robert | Second character: Lady Matilda
 
 **Culture Editor — Anglo-Saxon**\
 Editing: Anglo-Saxon Culture | Scope: Global Culture Definition
 
-**Bulk Editor — 36 Characters**\
-Target: Pinned Characters | Valid: 34 | Skipped: 2
+**Max Development — Realm Counties**\
+Group: Every county in Duke Robert's realm | Valid: 34 | Skipped: 2
 
 These labels are illustrations, not interface requirements.
 
@@ -1281,17 +1251,17 @@ Right-click Character → Open Cheat Menu → Character & Genetics → Attribute
 
 **Changing an NPC relationship**
 
-Right-click Character A → Set as Character A → Right-click Character B → Set as Character B → Relationships & Family → Relationship Editor → Choose Relationship → Confirm.
+Right-click Character B → Set as Second Character → Right-click Character A → Open Cheat Menu → Relationships & Family → Relationship Editor → Choose Relationship → Confirm.
 
-**Changing multiple counties**
+**Changing every county in a realm**
 
-Right-click Ruler → Open Cheat Menu → Realm, Holdings & Construction → Select Counties → Maximize Development → Preview → Apply.
+Right-click Ruler → Open Cheat Menu → Realm, Holdings & Construction → Max Development in Every Realm County → Preview → Apply.
 
 **Creating an artifact**
 
 Right-click Recipient → Open Cheat Menu → Artifacts → Artifact Workshop → Configure Type, Quality, Modifiers → Create.
 
-Every flow returns to the original target or parent menu without resetting selections unnecessarily.
+Every flow returns to the original target or parent menu without clearing the second character unnecessarily.
 
 ---
 
@@ -1307,7 +1277,7 @@ Recommended responsibilities:
 | ------------------- | ------------------------------------------------------------------------------- |
 | Interaction Layer   | Right-click entries, context-sensitive access, target assignment                |
 | Navigation Layer    | Category menus, back/close behavior, opening editors                            |
-| Selection Manager   | Character/title pinning, scope validation, group selection                      |
+| Target Resolver     | Clicked target, second character, built-in groups, single-player check          |
 | Action Registry     | Stable IDs, required targets, supported values, guards                          |
 | Gameplay Modules    | Character, relationship, realm, military, artifact, culture, faith, DLC effects |
 | Validation Layer    | Target eligibility, game/DLC conditions, legal scope checks                     |
@@ -1329,7 +1299,7 @@ Every action has a documented specification with:
 - Gameplay effect.
 - Eligibility conditions.
 - DLC/version dependency.
-- Single-target and bulk compatibility.
+- Which built-in groups it supports, if any.
 - Confirmation level.
 - Reversal or cleanup capability.
 - Test cases.
@@ -1339,7 +1309,7 @@ Example:
 **Action ID:** `character.attribute.adjust`
 
 - Context: Character
-- Target: One character or a valid pinned set
+- Target: The clicked character, or a built-in group such as courtiers or vassals
 - Parameters: Attribute, signed increment
 - Behavior: Change the chosen attribute
 - Validation: Character exists and the selected value is valid
@@ -1365,9 +1335,10 @@ Use CK3's existing modding mechanisms:
 - Events/decision-based menus where appropriate.
 - Custom GUI windows for complex editors.
 - Scripted GUI and effects for UI-triggered operations.
-- Variables on the player's character for selected targets and pins (Section 3.1).
+- A global variable for the second character (Section 3.1).
 - Localization for all visible text.
 - Scripted triggers for eligibility and DLC checks.
+- One shared single-player trigger (`has_multiple_players = no`) used by every interaction's `is_shown`, every decision's `is_shown`, every scripted GUI's `is_shown`, and every persistent-cheat tick.
 
 **Runtime lists.** Script can loop over many database types: `every_trait`, `every_culture_innovation`, `every_culture_tradition`, `every_culture_pillar`, `every_tenet`, `every_doctrine`, `every_government_type`, `every_holding_type`, `every_court_position_type`, `every_casus_belli_type`, `every_accolade_type`, `every_legend_type`, `every_activity_type`, and others (see `logs/effects.log` from `script_docs`). Pickers for these types build their lists at game start (and on reload) into read-only global variable lists, so content from other mods appears automatically.
 
@@ -1376,7 +1347,7 @@ Use CK3's existing modding mechanisms:
 - `tools/gen_cw_tradition_picker_lists.py` produces `skonester_cw_tradition_picker_lists_generated.txt`.
 - `tools/gen_skonester_cw_innovation_sguis.py` produces the innovation unlock/remove scripted GUIs (rewritten in Phase 0; see [phase0-baseline.md](phase0-baseline.md)).
 
-Generated files say "do not edit by hand" and are rebuilt whenever the target game version or a supported mod changes. Read-only catalogs may live in global variable lists because they're the same for every player.
+Generated files say "do not edit by hand" and are rebuilt whenever the target game version or a supported mod changes. Catalogs live in global variable lists.
 
 The baseline's tradition and innovation generators can be retired once those pickers move to runtime lists.
 
@@ -1535,12 +1506,12 @@ All ten feature categories are in the final scope, but development proceeds in c
 | Phase                | Scope                                                                                | Exit requirement                              |
 | -------------------- | ------------------------------------------------------------------------------------ | --------------------------------------------- |
 | 0 — Baseline         | Audit Skonester, establish a clean test build, inventory working behavior, record the error.log baseline, review vanilla overrides and global defines | Existing-feature regression baseline and recorded error count |
-| 1 — Foundation       | Navigation, unified targeting, pinning, validation, execution, confirmations; move per-player state to character scope | Stable single-target and basic bulk workflows; two-player multiplayer smoke test passes |
+| 1 — Foundation       | Navigation, clicked-target and second-character targeting, group-action framework, single-player gate, validation, execution, confirmations | Stable single-target and group workflows; menu hidden when a second player connects |
 | 2 — Characters       | Attributes, traits, genetics, health, lifestyle, relationships, family               | Character and relationship tests pass         |
 | 3 — Realm            | Titles, government, diplomacy, culture, faith/rite, construction                     | Realm-changing effects validated              |
 | 4 — Military & Items | Armies, war operations, artifacts, modifiers                                         | Military and artifact tests pass              |
 | 5 — Court & DLC      | Spawning, automated appointments, legends, activities, schemes, regencies, domiciles | DLC-dependent tests pass                      |
-| 6 — Advanced Bulk    | Group targeting across supported modules, large-selection handling                   | Bulk correctness and performance tests pass   |
+| 6 — Group Actions    | Group versions of actions across supported modules, large-group handling             | Group correctness and performance tests pass  |
 | 7 — Hardening        | Localization, compatibility, accessibility, packaging, regressions, catalog regeneration | Release acceptance suite passes           |
 
 ### Phase 0 tasks
@@ -1548,7 +1519,7 @@ All ten feature categories are in the final scope, but development proceeds in c
 1. Load vanilla 1.20.1.2 plus the baseline only. Start a new game, reach the map, and record the number of `error.log` lines attributed to the mod's files. The baseline's own notes report about 11,600 errors after the 1.20 port (`agent.md`).
 2. Run `script_docs` in the in-game console and keep the generated effect/trigger/data-type logs as the reference for verifying everything marked "verify" in this spec.
 3. Review each vanilla override in Section 7.4.1 and each define in Section 7.4.2, and decide whether to keep, minimize, or remove it.
-4. List every global variable that holds per-player state, for migration in Phase 1.
+4. List every global variable that holds per-player state. (Done; migration no longer needed since v1.3 made the mod single-player only.)
 5. Recover or rewrite the missing `gen_skonester_cw_innovation_sguis.py` generator.
 6. Click through each existing feature and record whether it works, using the "Verify" notes in `agent.md`.
 
@@ -1570,16 +1541,16 @@ Don't combine large structural changes with unrelated feature additions in the s
 - Existing artifacts can still be created, edited, and repaired.
 - Culture, faith, title, and succession editors still work.
 - DLC-specific functionality remains gated.
-- Earlier menu selections don't leak between contexts.
+- Menu state from one target doesn't leak into another.
 
 ## 11.2 Targeting
 
-- A right-click action changes the selected target, not the player, unless explicitly requested.
-- A/B/C selection keeps the correct character identity.
+- A right-click action changes the clicked target, not the player, unless explicitly requested.
+- The second character keeps the correct identity and is cleared when that character dies.
 - Invalid, removed, or dead targets are handled gracefully.
-- Bulk selection can't silently change scope.
+- A group action affects exactly the group it names, worked out when it runs.
 - No action runs on an unintended title or character.
-- In multiplayer, one player's targets, pins, and toggles never change another player's.
+- With a second player connected, no interaction, decision, or window from the mod is shown, and persistent cheats stop applying.
 
 ## 11.3 Game-state integrity
 
@@ -1595,7 +1566,7 @@ Don't combine large structural changes with unrelated feature additions in the s
 
 - Opening menus doesn't cause lasting frame-rate drops.
 - Large character or title lists aren't recalculated unnecessarily every game tick.
-- Bulk actions produce deterministic counts and completed-action reports.
+- Group actions produce deterministic counts and completed-action reports.
 - Unrelated characters and realms stay unchanged.
 - Automated features don't spawn unlimited courtiers or recurring event loops.
 - No new `error.log` lines attributed to the mod's files compared to the Phase 0 baseline. Each phase should also reduce the baseline count.
@@ -1609,7 +1580,7 @@ Test at minimum:
 - A new save.
 - An existing save made with the baseline mod.
 - Alternate government and landless characters.
-- A two-player multiplayer session.
+- A two-player multiplayer session, to confirm the mod is disabled.
 - Representative modded traits, buildings, units, cultures, and faiths, using regenerated catalogs.
 - Relevant total-conversion combinations, tested separately.
 - At least one popular UI mod, to check conflicts with the overrides in Section 7.4.1.
@@ -1685,4 +1656,4 @@ Checked against the game's own documentation (`script_docs` output: `logs/effect
 - **Size:** about 159 scripted-effect files, 53 scripted-trigger files, 61 event files, 27 GUI files, 22 scripted-GUI files, 17 character-interaction files, and localization in five languages.
 - **Entry points:** right-click → "Open Skonester Character Tools"; Decisions → Realm & Government Tools → Open Sub Menu Editor.
 - **Known state:** ported to 1.20 and reaches the map with vanilla. Features still need clicking through (`agent.md`).
-- **Risks:** 10 vanilla file overrides (Section 7.4.1), global defines changes (Section 7.4.2), global-variable targeting that isn't multiplayer-safe (Section 3.1), large starting error count (Section 10), missing innovation generator script (Section 7.3).
+- **Risks:** 10 vanilla file overrides (Section 7.4.1), global defines changes (Section 7.4.2), global-variable targeting that isn't multiplayer-safe (moot since v1.3: single-player only), large starting error count (Section 10), missing innovation generator script (Section 7.3).

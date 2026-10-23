@@ -286,7 +286,7 @@
  sarc_char_design.continue.religion:0 "Продолжить выбор религии."
  sarc_char_design_decision:1 "Редактор персонажа" 
  sarc_char_design_decision_tooltip:0 "Используйте это решение, чтобы запустить цепочку событий дизайна пользовательского персонажа."
- sarc_char_design_decision_desc:0 "Используйте это решение, чтобы запустить цепочку событий дизайна пользовательского персонажа."
+ sarc_char_design_decision_desc:0 "Используйте это решение, чтобы запустить цепочку событий дизайна пользовательского персонажа.\n\n$ACHIEVEMENTS_WILL_BE_DISABLED_SWITCH_CHARACTER$"
  sarc_char_design_decision_confirm:0 "Подтвердить"
  sarc_char_design.culture.itself.indo_aryan.more:0 "Другие индоарийские культуры."
  sarc_char_design.culture.itself.turkic.more:0 "Еще тюркские культуры."

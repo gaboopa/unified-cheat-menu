@@ -13,7 +13,7 @@
  ucm_console_helper_title: "控制台助手"
  ucm_console_helper_body: "点击下方按钮切换游戏的调试模式。调试模式开启后，方可使用控制台输入作弊命令。"
  ucm_console_helper_toggle_debug: "切换调试模式"
- ucm_console_helper_toggle_debug_tt: "等同控制台命令 debug_mode；再次点击可关闭调试模式。"
+ ucm_console_helper_toggle_debug_tt: "等同控制台命令 debug_mode；再次点击可关闭调试模式。\n\n$UCM_DEBUG_ACHIEVEMENT_WARNING$"
  ucm_console_helper_hotkey_hint: "调试模式开启后：按 `（波浪号键）或 Shift+Alt+C 打开/关闭控制台。"
  ucm_cheat_menu_castrate_interaction: "阉割"
  ucm_cheat_menu_castrate_interaction_desc: "移除目标生殖能力"

@@ -49,7 +49,7 @@
  ucm_open_artifact_repair: "Artifact Editor"
  ucm_open_artifact_repair_tt: "Repair or edit the target's artifacts."
  ucm_open_console_helper: "Debug Mode Helper"
- ucm_open_console_helper_tt: "Open the helper for turning CK3's debug mode on or off."
+ ucm_open_console_helper_tt: "Open the helper for turning CK3's debug mode on or off.\n\n$UCM_DEBUG_ACHIEVEMENT_WARNING$"
  ucm_group.1.t: "Confirm Group Action"
  ucm_group.1.desc.counts: "\n\nIn the group: #high [ROOT.Char.MakeScope.Var('ucm_group_total').GetValue|0]#!\nWill change: #high [ROOT.Char.MakeScope.Var('ucm_group_eligible').GetValue|0]#!\n\nThis can't be undone except by loading a save."
  ucm_group.1.a: "Apply"
@@ -372,3 +372,4 @@
  ucm_group_run_county_culture: "Convert to Target's Culture"
  ucm_group_run_county_culture_tt: "For each member of the picked group: change the county's culture to the target's culture. Shows a summary first."
  ucm_truce_name: "Cheat Menu Truce"
+ UCM_DEBUG_ACHIEVEMENT_WARNING: "@warning_icon! #X Turning on debug mode or using console commands disables achievements for this playthrough.#!"

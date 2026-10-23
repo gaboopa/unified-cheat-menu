@@ -49,7 +49,7 @@
  ucm_open_artifact_repair: "Eser Düzenleyici"
  ucm_open_artifact_repair_tt: "Hedefin eserlerini onarır veya düzenler."
  ucm_open_console_helper: "Hata Ayıklama Modu Yardımcısı"
- ucm_open_console_helper_tt: "CK3 hata ayıklama modunu açıp kapatmak için yardımcıyı açar."
+ ucm_open_console_helper_tt: "CK3 hata ayıklama modunu açıp kapatmak için yardımcıyı açar.\n\n$UCM_DEBUG_ACHIEVEMENT_WARNING$"
  ucm_group.1.t: "Grup Eylemini Onayla"
  ucm_group.1.desc.counts: "\n\nGruptaki üye: #high [ROOT.Char.MakeScope.Var('ucm_group_total').GetValue|0]#!\nDeğişecek: #high [ROOT.Char.MakeScope.Var('ucm_group_eligible').GetValue|0]#!\n\nBu yalnızca bir kayıt yüklenerek geri alınabilir."
  ucm_group.1.a: "Uygula"
@@ -372,3 +372,4 @@
  ucm_group_run_county_culture: "Hedefin Kültürüne Geçir"
  ucm_group_run_county_culture_tt: "Seçili grubun her üyesi için: kontluğun kültürünü hedefin kültürüne çevir. Önce bir özet gösterir."
  ucm_truce_name: "Hile Menüsü Ateşkesi"
+ UCM_DEBUG_ACHIEVEMENT_WARNING: "@warning_icon! #X Hata ayıklama modunu açmak veya konsol komutları kullanmak bu oyunda başarımları devre dışı bırakır.#!"

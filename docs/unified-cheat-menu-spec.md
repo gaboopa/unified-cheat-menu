@@ -1103,7 +1103,7 @@ Provide:
 
 Label experimental actions clearly.
 
-**Achievements:** The mod changes `common/` game files, which normally changes the game checksum and disables achievements and ironman whether or not cheats are used. State this once in the mod description. Individual debug warnings about achievements aren't needed. Not yet confirmed in game.
+**Achievements:** Enabling the mod doesn't block achievements. CK3 1.20 only blocks them for multiplayer, observer mode, switching character, debug mode or console commands, game rules flagged `blocks_achievements`, and over-budget Ruler Designer characters (vanilla `ACHIEVEMENTS_EXPLANATION`). The mod's game rules carry no such flag. Buttons that run console commands other than `debug_mode` (fog of war, quicksave/quickload hotkeys) only appear in debug mode, and the debug and character-switch buttons warn that they disable achievements.
 
 ---
 
@@ -1645,7 +1645,7 @@ Checked against the game's own documentation (`script_docs` output: `logs/effect
 | Extra core tenets | ⚠️ Unverified | `add_rite_tenet` exists with no documented limit; test in game |
 | Single scripted GUI for innovations | ⚠️ Likely | `add_innovation` accepts a `culture_innovation` target; GUI scope passing needs verifying |
 | Virtue/sin cap | ✅ Verified | `MAX_VIRTUES_SINS = 7` in `00_defines.txt` |
-| Mod disables achievements | ⚠️ Assumed | Standard checksum behavior for `common/` changes; confirm in game |
+| Mod disables achievements | ❌ No | Vanilla `ACHIEVEMENTS_EXPLANATION` lists no mod or checksum condition; Divine Intervention (also changes `common/`) documents only debug mode as disabling them. Not yet confirmed in an Ironman game |
 
 # Appendix B — Baseline audit summary
 

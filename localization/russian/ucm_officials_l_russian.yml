@@ -12,7 +12,7 @@
  ucm_console_helper_title: "Помощник консоли"
  ucm_console_helper_body: "Нажмите кнопку ниже для переключения режима отладки. Командная консоль работает только при активном отладочном режиме."
  ucm_console_helper_toggle_debug: "Переключить режим отладки"
- ucm_console_helper_toggle_debug_tt: "Аналог консольной команды debug mode; повторное нажатие отключает режим отладки."
+ ucm_console_helper_toggle_debug_tt: "Аналог консольной команды debug mode; повторное нажатие отключает режим отладки.\n\n$UCM_DEBUG_ACHIEVEMENT_WARNING$"
  ucm_console_helper_hotkey_hint: "При активном режиме отладки нажмите ` или Shift+Alt+C, чтобы открыть или закрыть консоль."
  ucm_cheat_menu_castrate_interaction: "Кастрировать"
  ucm_cheat_menu_castrate_interaction_desc: "Лишить персонажа способности к зачатию потомства"

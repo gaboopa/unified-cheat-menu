@@ -8,7 +8,12 @@ A single-player cheat menu for **Crusader Kings III 1.20 "Crozier"**. It's built
 2. Add a `.mod` file next to it pointing at the folder, for example `path="mod/unified_cheat_menu"`.
 3. Enable **Unified Cheat Menu** in a launcher playset.
 
-The mod changes game files, so achievements and ironman are off while it's enabled.
+Having the mod enabled doesn't turn off achievements, so you can play Ironman with it. What does turn them off, as in vanilla:
+- turning on debug mode or using console commands (the debug-mode buttons say so);
+- switching to another character (the switch and play-as cheats say so);
+- multiplayer, observer mode, or game rules that block achievements.
+
+The cheats themselves don't affect achievement eligibility.
 
 ## Use
 

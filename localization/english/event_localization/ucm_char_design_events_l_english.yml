@@ -288,7 +288,7 @@
  sarc_char_design.continue.religion:0 "Continue on to religion selection."
  sarc_char_design_decision:1 "Character Designer"
  sarc_char_design_decision_tooltip:0 "Use this decision to start the custom character design event chain."
- sarc_char_design_decision_desc:0 "Use this decision to start the custom character design event chain."
+ sarc_char_design_decision_desc:0 "Use this decision to start the custom character design event chain.\n\n$ACHIEVEMENTS_WILL_BE_DISABLED_SWITCH_CHARACTER$"
  sarc_char_design_decision_confirm:0 "Confirm"
  sarc_char_design.culture.itself.indo_aryan.more:0 "More Indo-Aryan Cultures."
  sarc_char_design.culture.itself.turkic.more:0 "More Turkic Cultures."

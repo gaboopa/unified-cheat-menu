@@ -12,7 +12,7 @@
  ucm_console_helper_title: "Konsolenhilfe"
  ucm_console_helper_body: "Klicken Sie auf die unten stehende Schaltfläche, um den Spiel-Debug-Modus umzuschalten. Die Befehlskonsole funktioniert nur bei aktiviertem Debug-Modus."
  ucm_console_helper_toggle_debug: "Debug-Modus umschalten"
- ucm_console_helper_toggle_debug_tt: "Entspricht dem Konsolenbefehl zum Aktivieren des Debug-Modus; erneut klicken zum Deaktivieren."
+ ucm_console_helper_toggle_debug_tt: "Entspricht dem Konsolenbefehl zum Aktivieren des Debug-Modus; erneut klicken zum Deaktivieren.\n\n$UCM_DEBUG_ACHIEVEMENT_WARNING$"
  ucm_console_helper_hotkey_hint: "Bei aktiviertem Debug-Modus: Drücken Sie ` (Akutzeichen) oder Umschalt+Alt+C, um die Konsole zu öffnen oder zu schließen."
  ucm_cheat_menu_castrate_interaction: "Fruchtbarkeit entfernen"
  ucm_cheat_menu_castrate_interaction_desc: "Entfernt die Fruchtbarkeit des Zielcharakters"

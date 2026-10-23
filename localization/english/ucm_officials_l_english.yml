@@ -12,7 +12,7 @@
  ucm_console_helper_title: "Console Helper"
  ucm_console_helper_body: "Click the button below to toggle debug mode. The command console only functions while debug mode is active."
  ucm_console_helper_toggle_debug: "Toggle Debug Mode"
- ucm_console_helper_toggle_debug_tt: "Equivalent to the debug_mode console command. Click again to disable debug mode."
+ ucm_console_helper_toggle_debug_tt: "Equivalent to the debug_mode console command. Click again to disable debug mode.\n\n$UCM_DEBUG_ACHIEVEMENT_WARNING$"
  ucm_console_helper_hotkey_hint: "With debug mode enabled: press ` (Backtick) or Shift+Alt+C to show or hide the console."
 
  ucm_cheat_menu_castrate_interaction: "Sterilize"

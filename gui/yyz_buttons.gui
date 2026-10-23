@@ -103,6 +103,7 @@ widget = {
   # 0 size button for shortcut to work
   button_normal = {
     name = "yyz_quicksave"
+    visible = "[InDebugMode]" # console commands disable achievements outside debug mode
   
     onclick = "[ExecuteConsoleCommand('save quicksave')]"
     shortcut = "yyz_quicksave_cmd"
@@ -110,6 +111,7 @@ widget = {
   # 0 size button for shortcut to work
   button_normal = {
     name = "yyz_quickload"
+    visible = "[InDebugMode]" # console commands disable achievements outside debug mode
   
     onclick = "[ExecuteConsoleCommand('load quicksave')]"
     shortcut = "yyz_quickload_cmd"

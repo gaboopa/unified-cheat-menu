@@ -49,7 +49,7 @@
  ucm_open_artifact_repair: "Artefakt-Editor"
  ucm_open_artifact_repair_tt: "Repariert oder bearbeitet die Artefakte des Ziels."
  ucm_open_console_helper: "Debug-Modus-Helfer"
- ucm_open_console_helper_tt: "Öffnet den Helfer zum Ein- und Ausschalten des Debug-Modus von CK3."
+ ucm_open_console_helper_tt: "Öffnet den Helfer zum Ein- und Ausschalten des Debug-Modus von CK3.\n\n$UCM_DEBUG_ACHIEVEMENT_WARNING$"
  ucm_group.1.t: "Gruppenaktion bestätigen"
  ucm_group.1.desc.counts: "\n\nIn der Gruppe: #high [ROOT.Char.MakeScope.Var('ucm_group_total').GetValue|0]#!\nWird geändert: #high [ROOT.Char.MakeScope.Var('ucm_group_eligible').GetValue|0]#!\n\nDas lässt sich nur durch Laden eines Spielstands rückgängig machen."
  ucm_group.1.a: "Anwenden"
@@ -372,3 +372,4 @@
  ucm_group_run_county_culture: "Zur Kultur des Ziels wechseln"
  ucm_group_run_county_culture_tt: "Für jedes Mitglied der gewählten Gruppe: die Kultur der Grafschaft auf die Kultur des Ziels ändern. Zeigt vorher eine Übersicht."
  ucm_truce_name: "Cheat-Menü-Waffenstillstand"
+ UCM_DEBUG_ACHIEVEMENT_WARNING: "@warning_icon! #X Debug-Modus oder Konsolenbefehle deaktivieren Errungenschaften für diesen Spieldurchgang.#!"

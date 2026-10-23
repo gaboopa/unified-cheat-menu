@@ -303,7 +303,7 @@
  sarc_char_design.continue.religion:0 "Weiter zur Religionsauswahl."
  sarc_char_design_decision:1 "Charakterdesigner"
  sarc_char_design_decision_tooltip:0 "Starte mit dieser Entscheidung die Ereigniskette des Charakterdesigners."
- sarc_char_design_decision_desc:0 "Starte mit dieser Entscheidung die Ereigniskette des Charakterdesigners."
+ sarc_char_design_decision_desc:0 "Starte mit dieser Entscheidung die Ereigniskette des Charakterdesigners.\n\n$ACHIEVEMENTS_WILL_BE_DISABLED_SWITCH_CHARACTER$"
  sarc_char_design_decision_confirm:0 "Bestätigen"
  sarc_char_design.culture.itself.indo_aryan.more:0 "Weitere indo-arische Kulturen."
  sarc_char_design.culture.itself.turkic.more:0 "Weitere türkische Kulturen."

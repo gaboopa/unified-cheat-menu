@@ -49,7 +49,7 @@
  ucm_open_artifact_repair: "珍宝编辑器"
  ucm_open_artifact_repair_tt: "修理或编辑目标的珍宝。"
  ucm_open_console_helper: "调试模式助手"
- ucm_open_console_helper_tt: "打开用于开关 CK3 调试模式的助手。"
+ ucm_open_console_helper_tt: "打开用于开关 CK3 调试模式的助手。\n\n$UCM_DEBUG_ACHIEVEMENT_WARNING$"
  ucm_group.1.t: "确认群体操作"
  ucm_group.1.desc.counts: "\n\n群体人数：#high [ROOT.Char.MakeScope.Var('ucm_group_total').GetValue|0]#!\n将被更改：#high [ROOT.Char.MakeScope.Var('ucm_group_eligible').GetValue|0]#!\n\n只有读取存档才能撤销。"
  ucm_group.1.a: "应用"
@@ -372,3 +372,4 @@
  ucm_group_run_county_culture: "改为目标的文化"
  ucm_group_run_county_culture_tt: "对所选群体的每个成员：使该伯爵领改为目标的文化。会先显示摘要。"
  ucm_truce_name: "作弊菜单停战"
+ UCM_DEBUG_ACHIEVEMENT_WARNING: "@warning_icon! #X 开启调试模式或使用控制台命令会使本次游戏无法获得成就。#!"

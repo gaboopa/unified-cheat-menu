@@ -49,7 +49,7 @@
  ucm_open_artifact_repair: "Редактор артефактов"
  ucm_open_artifact_repair_tt: "Чинит или редактирует артефакты цели."
  ucm_open_console_helper: "Помощник режима отладки"
- ucm_open_console_helper_tt: "Открывает помощник для включения и выключения режима отладки CK3."
+ ucm_open_console_helper_tt: "Открывает помощник для включения и выключения режима отладки CK3.\n\n$UCM_DEBUG_ACHIEVEMENT_WARNING$"
  ucm_group.1.t: "Подтверждение группового действия"
  ucm_group.1.desc.counts: "\n\nВ группе: #high [ROOT.Char.MakeScope.Var('ucm_group_total').GetValue|0]#!\nБудет изменено: #high [ROOT.Char.MakeScope.Var('ucm_group_eligible').GetValue|0]#!\n\nОтменить это можно только загрузкой сохранения."
  ucm_group.1.a: "Применить"
@@ -372,3 +372,4 @@
  ucm_group_run_county_culture: "Перевести в культуру цели"
  ucm_group_run_county_culture_tt: "Для каждого члена выбранной группы: перевести графство в культуру цели. Сначала показывает сводку."
  ucm_truce_name: "Перемирие из чит-меню"
+ UCM_DEBUG_ACHIEVEMENT_WARNING: "@warning_icon! #X Режим отладки или консольные команды отключают достижения для этой партии.#!"

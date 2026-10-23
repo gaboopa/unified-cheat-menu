@@ -176,7 +176,7 @@ LANGS["german"] = dict(
         "ucm_diarchy_swing_up": "Macht +Schritt", "ucm_diarchy_swing_up_tt": "Verschiebt das Machtgleichgewicht der Diarchie des Ziels um die Schrittweite in die andere Richtung.",
         "ucm_diarchy_end": "Diarchie beenden", "ucm_diarchy_end_tt": "Beendet die Regentschaft oder Diarchie des Ziels.",
         "ucm_menu_reset": "Menü zurücksetzen", "ucm_menu_reset_tt": "Vergisst die zweite Person und setzt die Schrittweite auf 1 zurück.",
-        "UCM_SEC_GROUP_PICKER": "Gruppenaktionen",
+        "UCM_DEBUG_ACHIEVEMENT_WARNING": "@warning_icon! #X Debug-Modus oder Konsolenbefehle deaktivieren Errungenschaften für diesen Spieldurchgang.#!", "UCM_SEC_GROUP_PICKER": "Gruppenaktionen",
         "UCM_GROUP_PICKER_NOTE": "Wähle eine Gruppe des Ziels, dann eine Aktion. Vor jeder Änderung siehst du, wie viele Mitglieder betroffen sind. Gruppen enthalten nie das Ziel selbst.",
         "UCM_GROUP_CHARACTERS": "Personengruppen:", "UCM_GROUP_COUNTIES": "Grafschaftsgruppen:",
         "UCM_GROUP_CHAR_ACTIONS": "Aktionen für Personengruppen:", "UCM_GROUP_COUNTY_ACTIONS": "Aktionen für Grafschaftsgruppen:",
@@ -330,7 +330,7 @@ LANGS["russian"] = dict(
         "ucm_diarchy_swing_up": "Власть +шаг", "ucm_diarchy_swing_up_tt": "Сдвигает баланс власти в диархии цели на шаг в другую сторону.",
         "ucm_diarchy_end": "Завершить диархию", "ucm_diarchy_end_tt": "Завершает регентство или диархию цели.",
         "ucm_menu_reset": "Сбросить меню", "ucm_menu_reset_tt": "Забывает второго персонажа и возвращает шаг к 1.",
-        "UCM_SEC_GROUP_PICKER": "Групповые действия",
+        "UCM_DEBUG_ACHIEVEMENT_WARNING": "@warning_icon! #X Режим отладки или консольные команды отключают достижения для этой партии.#!", "UCM_SEC_GROUP_PICKER": "Групповые действия",
         "UCM_GROUP_PICKER_NOTE": "Выберите группу цели, затем действие. Перед изменениями вы увидите, сколько членов это затронет. Сама цель в группы не входит.",
         "UCM_GROUP_CHARACTERS": "Группы персонажей:", "UCM_GROUP_COUNTIES": "Группы графств:",
         "UCM_GROUP_CHAR_ACTIONS": "Действия для групп персонажей:", "UCM_GROUP_COUNTY_ACTIONS": "Действия для групп графств:",
@@ -483,7 +483,7 @@ LANGS["simp_chinese"] = dict(
         "ucm_diarchy_swing_up": "权力 +步长", "ucm_diarchy_swing_up_tt": "按步长向另一侧调整目标双头政治的权力平衡。",
         "ucm_diarchy_end": "结束双头政治", "ucm_diarchy_end_tt": "结束目标的摄政或双头政治。",
         "ucm_menu_reset": "重置菜单", "ucm_menu_reset_tt": "忘记第二人物，并将步长恢复为 1。",
-        "UCM_SEC_GROUP_PICKER": "群体操作",
+        "UCM_DEBUG_ACHIEVEMENT_WARNING": "@warning_icon! #X 开启调试模式或使用控制台命令会使本次游戏无法获得成就。#!", "UCM_SEC_GROUP_PICKER": "群体操作",
         "UCM_GROUP_PICKER_NOTE": "先选择目标的一个群体，再选择操作。更改前会显示受影响的成员数量。群体从不包括目标本人。",
         "UCM_GROUP_CHARACTERS": "人物群体：", "UCM_GROUP_COUNTIES": "伯爵领群体：",
         "UCM_GROUP_CHAR_ACTIONS": "人物群体的操作：", "UCM_GROUP_COUNTY_ACTIONS": "伯爵领群体的操作：",
@@ -636,7 +636,7 @@ LANGS["turkish"] = dict(
         "ucm_diarchy_swing_up": "Güç +Adım", "ucm_diarchy_swing_up_tt": "Hedefin çift başlı yönetimindeki güç dengesini adım kadar diğer yöne kaydırır.",
         "ucm_diarchy_end": "Çift Başlı Yönetimi Bitir", "ucm_diarchy_end_tt": "Hedefin naipliğini veya çift başlı yönetimini sona erdirir.",
         "ucm_menu_reset": "Menüyü Sıfırla", "ucm_menu_reset_tt": "İkinci karakteri unutur ve adımı 1'e döndürür.",
-        "UCM_SEC_GROUP_PICKER": "Grup Eylemleri",
+        "UCM_DEBUG_ACHIEVEMENT_WARNING": "@warning_icon! #X Hata ayıklama modunu açmak veya konsol komutları kullanmak bu oyunda başarımları devre dışı bırakır.#!", "UCM_SEC_GROUP_PICKER": "Grup Eylemleri",
         "UCM_GROUP_PICKER_NOTE": "Hedeften bir grup, sonra bir eylem seç. Bir şey değişmeden önce kaç üyenin etkileneceğini görürsün. Gruplar hedefin kendisini asla içermez.",
         "UCM_GROUP_CHARACTERS": "Karakter grupları:", "UCM_GROUP_COUNTIES": "Kontluk grupları:",
         "UCM_GROUP_CHAR_ACTIONS": "Karakter grupları için eylemler:", "UCM_GROUP_COUNTY_ACTIONS": "Kontluk grupları için eylemler:",
@@ -677,6 +677,7 @@ def build(lang, d):
         tt_desc = desc.replace("von {E}", "des Ziels").replace("über {E}", "über das Ziel") if lang == "german" else desc
         tt_desc = tt_desc.replace("{E}", {"german": "dem Ziel", "russian": "цели", "simp_chinese": "目标", "turkish": "hedefin"}[lang])
         out[f"ucm_group_run_{a}_tt"] = d["run_tt"].format(d=tt_desc)
+    out["ucm_open_console_helper_tt"] += BS + BS + "$UCM_DEBUG_ACHIEVEMENT_WARNING$"
     return out
 
 

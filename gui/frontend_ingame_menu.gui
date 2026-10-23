@@ -106,6 +106,7 @@
 					
 					dockable_button = {
 						size = { 150 30 }
+						visible = "[And( InDebugMode, Not( GameHasMultiplePlayers ) )]"
 						text = "UCM_FOG_OF_WAR"
 						onclick = "[ExecuteConsoleCommand('tweak FogOfWar.Enable')]"
 						tintcolor = { 0.5 0.5 0.5 0.8 }

@@ -10,6 +10,9 @@ Each tab is a list of items:
                           shown/enabled/named exactly as the interaction itself
     ("dec", decision)     button opening an existing decision's detail view; decisions
                           always act on the player, not the target
+    ("cz", name)          the Crozier cheat panel's button(s) for ucm_crozier_cheats_sg_<name>,
+                          copied from gui/window_character.gui and pointed at the target
+    ("czrow", [name, ...], label_key)  the same at their original size, side by side
     ("steps",)            step-size selector (ucm_step_*)
     ("skill", name)       skill row: value, minus and plus (ucm_skill_<name>_down/_up)
 
@@ -17,6 +20,9 @@ Run after editing TABS:
     python tools/gen_ucm_main_menu.py
 """
 import os
+import re
+
+re_size = re.compile(r"size = \{ \d+ \d+ \}")
 
 MOD_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(MOD_DIR, "gui", "ucm_main_menu.gui")
@@ -25,7 +31,46 @@ C = "GetPlayer.MakeScope.Var( 'ucm_target' ).Char"
 LATER = ("t", "UCM_TAB_LATER")
 
 TABS = [
-    ("quick", [("sg", "ucm_quick_gold"), ("sg", "ucm_quick_prestige"), ("sg", "ucm_quick_piety"), ("sg", "ucm_clear_stress")]),
+    ("quick", [
+        ("sg", "ucm_quick_gold"), ("sg", "ucm_quick_prestige"), ("sg", "ucm_quick_piety"), ("sg", "ucm_clear_stress"),
+        ("h", "UCM_SEC_ALWAYS_ON"),
+        ("t", "UCM_ALWAYS_ON_NOTE"),
+        ("czrow", ["pow_1", "pow_2", "pow_3", "pow_4", "pow_5", "pow_6", "pow_7"], "UCM_CROZIER_CHEATS_POW_LABEL"),
+        ("czrow", ["tier_1", "tier_2", "tier_3"], "UCM_CROZIER_CHEATS_TIER_LABEL"),
+        ("czrow", ["do_freq_week", "do_freq_month", "do_freq_quarter"]),
+        ("czrow", ["pon_char_self", "poff_char_self"]),
+        ("cz", "tog_income"),
+        ("cz", "tog_monthly_gold"),
+        ("cz", "tog_domain"),
+        ("cz", "tog_vassals"),
+        ("cz", "tog_prestige"),
+        ("cz", "tog_prestige_mult"),
+        ("cz", "tog_piety"),
+        ("cz", "tog_renown"),
+        ("cz", "tog_renown_mult"),
+        ("cz", "tog_influence"),
+        ("cz", "tog_merit_gain"),
+        ("cz", "tog_legit_gain"),
+        ("cz", "tog_health"),
+        ("cz", "tog_stress"),
+        ("cz", "tog_life"),
+        ("cz", "tog_immortal_player"),
+        ("cz", "tog_disease_player"),
+        ("cz", "tog_long_reign"),
+        ("cz", "tog_skills"),
+        ("cz", "tog_skills_mult"),
+        ("cz", "tog_lifestyle_xp"),
+        ("cz", "tog_innovation"),
+        ("cz", "tog_slots"),
+        ("cz", "tog_travel_safe"),
+        ("cz", "tog_legend_spread"),
+        ("cz", "tog_auto_gold_floor"),
+        ("cz", "tog_auto_prestige_floor"),
+        ("cz", "tog_auto_no_prison"),
+        ("cz", "tog_auto_ascension"),
+        ("cz", "tog_auto_forever_young"),
+        ("cz", "do_toasts_toggle"),
+    ]),
     ("character", [
         ("h", "UCM_SEC_EDITORS"),
         ("sg", "ucm_open_trait_editor"), ("sg", "ucm_open_cheat_trait_editor"), ("sg", "ucm_open_lifestyle_editor"),
@@ -175,8 +220,30 @@ TABS = [
         ("dec", "ucm_learn_all_realm_officials_secrets_decision"), ("dec", "ucm_seduce_shield_for_consorts_decision"),
         ("dec", "ucm_daming_ming_gov_menu_unlock_decision"),
     ]),
-    ("military", [("sg", "ucm_open_army_spawner"), LATER]),
-    ("artifacts", [("sg", "ucm_open_artifact_crafter"), ("sg", "ucm_open_artifact_repair"), LATER]),
+    ("military", [
+        ("h", "UCM_SEC_ARMIES"),
+        ("sg", "ucm_open_army_spawner"),
+        ("ia", "inheritable_optroop_interaction"), ("ia", "non_inheritable_optroop_interaction"),
+        ("ia", "toc_givearmyhorde_interaction"),
+        ("cz", "do_combo_army"), ("cz", "tog_levy"), ("cz", "t_t_armies_to"),
+        ("h", "UCM_SEC_ENEMY_ARMIES"),
+        ("cz", "t_enemy_commander"), ("cz", "t_enemy_deplete"), ("cz", "t_enemy_supply"),
+        ("h", "UCM_SEC_KNIGHTS"),
+        ("ia", "zhuge_buff_05"), ("ia", "add_glory_interaction"), ("ia", "zhuge_buff_02"),
+        ("cz", "t_t_knight_force"), ("cz", "t_t_knight_off"),
+    ]),
+    ("artifacts", [
+        ("h", "UCM_SEC_EDITORS"),
+        ("sg", "ucm_open_artifact_crafter"), ("sg", "ucm_open_artifact_repair"),
+        ("h", "UCM_SEC_TARGET_ARTIFACTS"),
+        ("row", ["ucm_artifacts_repair_all", "ucm_artifacts_all_illustrious"]),
+        ("ia", "add_artifact_interaction"), ("ia", "take_artifact_interaction"), ("ia", "add_artifact_claim_interaction"),
+        ("ia", "debug_destroy_artifact_interaction"), ("ia", "generate_artifact_with_history_interaction"),
+        ("ia", "zhuge_set_artifact_interaction"), ("ia", "zhuge_huoqu_artifact_interaction"),
+        ("cz", "t_t_rob_artifacts"), ("cz", "t_t_artifact_claims"),
+        ("h", "UCM_SEC_YOUR_ARTIFACTS"),
+        ("cz", "do_forge_crown"), ("dec", "Artifact_1000"),
+    ]),
     ("court", [("sg", "ucm_group_courtiers_clear_stress"), LATER]),
     ("dlc", [LATER]),
     ("settings", [("sg", "ucm_open_console_helper"), ("sg", "ucm_second_clear")]),
@@ -202,7 +269,52 @@ def sgui_button(name, ind, width="0", expand=True):
     ]
 
 
+_PANEL = None
+
+
+def crozier_buttons(name, ind, keep_size=False):
+    """Copy the Crozier cheat panel's button(s) for scripted GUI `ucm_crozier_cheats_sg_<name>`
+    from gui/window_character.gui, retargeted from the character window's character to the
+    menu's target. Toggles come as an on/off pair of buttons; both are copied."""
+    global _PANEL
+    if _PANEL is None:
+        with open(os.path.join(MOD_DIR, "gui", "window_character.gui"), encoding="utf-8-sig") as fh:
+            _PANEL = fh.read()
+    t, key, found = _PANEL, f"'ucm_crozier_cheats_sg_{name}'", []
+    pos = t.find(key)
+    while pos >= 0:
+        s = t.rfind("button_standard = {", 0, pos)
+        depth, e = 0, s
+        for e in range(t.find("{", s), len(t)):
+            depth += (t[e] == "{") - (t[e] == "}")
+            if depth == 0:
+                break
+        block = " ".join(t[s:e + 1].split())
+        if block not in found:
+            found.append(block)
+        pos = t.find(key, e)
+    if not found:
+        raise ValueError(f"no Crozier button for {name}")
+    out = []
+    for b in found:
+        b = re.sub(r"\bCharacter\.", C + ".", b)
+        if not keep_size:
+            b = b.replace("button_standard = { size = {", "button_standard = { layoutpolicy_horizontal = expanding size = {", 1)
+            b = re_size.sub("size = { 0 28 }", b, count=1)
+        out.append(ind + b)
+    return out
+
+
 def item(it, ind):
+    if it[0] == "cz":
+        return crozier_buttons(it[1], ind)
+    if it[0] == "czrow":
+        lines = [f"{ind}hbox = {{", f"{ind}  spacing = 2"]
+        if len(it) > 2:
+            lines.append(f'{ind}  text_single = {{ text = "{it[2]}" using = Font_Size_Small }}')
+        for name in it[1]:
+            lines += crozier_buttons(name, ind + "  ", keep_size=True)
+        return lines + [f"{ind}  expand = {{}}", f"{ind}}}"]
     kind = it[0]
     if kind == "h":
         return [f'{ind}text_single = {{ layoutpolicy_horizontal = expanding text = "{it[1]}" using = Font_Size_Medium default_format = "#high" }}']

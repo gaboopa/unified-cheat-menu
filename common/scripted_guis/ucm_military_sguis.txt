@@ -1,0 +1,15 @@
+﻿# Unified Cheat Menu: Military & Artifacts tabs (spec 4.6, 4.7). Root = player; target var:ucm_target.
+
+ucm_artifacts_repair_all = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { any_character_artifact = { always = yes } } }
+	effect = { var:ucm_target = { every_character_artifact = { add_durability = 10000 } } }
+}
+
+ucm_artifacts_all_illustrious = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { any_character_artifact = { always = yes } } }
+	effect = { var:ucm_target = { every_character_artifact = { set_artifact_rarity = illustrious } } }
+}

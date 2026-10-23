@@ -1,0 +1,59 @@
+﻿# Unified Cheat Menu: Court and DLC & Advanced tabs (spec 4.8, 4.9). Root = player.
+
+# --- Regencies & diarchies of the target -------------------------------------------
+ucm_diarchy_start_regency = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_ruler = yes has_active_diarchy = no } }
+	effect = { var:ucm_target = { try_start_diarchy = regency } }
+}
+
+ucm_diarchy_start_co_monarchy = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_ruler = yes has_active_diarchy = no } }
+	effect = { var:ucm_target = { try_start_diarchy = co_monarchy } }
+}
+
+ucm_diarchy_start_vizierate = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_ruler = yes has_active_diarchy = no } }
+	effect = { var:ucm_target = { try_start_diarchy = vizierate } }
+}
+
+ucm_diarchy_second_as_diarch = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { has_active_diarchy = yes } }
+	effect = { var:ucm_target = { set_diarch = global_var:ucm_crozier_cheats_other } }
+}
+
+ucm_diarchy_swing_up = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { has_active_diarchy = yes } }
+	effect = { var:ucm_target = { change_diarchy_swing = ucm_step_value } }
+}
+
+ucm_diarchy_swing_down = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { has_active_diarchy = yes } }
+	effect = { var:ucm_target = { change_diarchy_swing = ucm_step_negative_value } }
+}
+
+ucm_diarchy_end = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { has_active_diarchy = yes } }
+	effect = { var:ucm_target = { end_diarchy = yes } }
+}
+
+# --- Settings ------------------------------------------------------------------------
+ucm_menu_reset = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { always = yes }
+	effect = { remove_global_variable = ucm_crozier_cheats_other set_variable = { name = ucm_step value = 1 } }
+}

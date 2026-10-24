@@ -1,4 +1,4 @@
-# 每月一检：同步反玩家压力；独立有地 AI 内政/宗教文化/军事派系分项修饰（详见 ucm_ai_monthly_audit_effects）
+﻿# 每月一检：同步反玩家压力；独立有地 AI 内政/宗教文化/军事派系分项修饰（详见 ucm_ai_monthly_audit_effects）
 # 仅追加 ucm_monthly_tick（见 ucm_monthly_tick.txt）；总开关 ucm_ai_yearly_pulse_disabled 关闭时全部停止
 
 ucm_monthly_tick = {
@@ -13,6 +13,7 @@ ucm_monthly_tick = {
 ucm_ai_monthly_independent_ai_audit_pulse = {
 	trigger = {
 		ucm_single_player_trigger = yes
+		has_global_variable = ucm_ai_defaults_written
 		NOT = { has_global_variable = ucm_ai_yearly_pulse_disabled }
 	}
   effect = {
@@ -39,6 +40,7 @@ ucm_ai_monthly_independent_ai_audit_pulse = {
 ucm_ai_counter_player_quarterly_refresh_pulse = {
 	trigger = {
 		ucm_single_player_trigger = yes
+		has_global_variable = ucm_ai_defaults_written
 		NOT = { has_global_variable = ucm_ai_yearly_pulse_disabled }
 	}
   effect = {
@@ -53,6 +55,7 @@ ucm_ai_counter_player_quarterly_refresh_pulse = {
 ucm_ai_player_vassal_opposition_quarterly_pulse = {
 	trigger = {
 		ucm_single_player_trigger = yes
+		has_global_variable = ucm_ai_defaults_written
 		NOT = { has_global_variable = ucm_ai_yearly_pulse_disabled }
 	}
   effect = {
@@ -95,7 +98,10 @@ ucm_ai_player_vassal_opposition_quarterly_pulse = {
 # 强有地AI强化：分批发放（避免决议一次性全图遍历造成卡顿）
 # 开启后每月补发一批给尚未获得 modifier 的有地 AI（含封臣 AI），直至覆盖完毕；优先从玩家领地向外扩散。
 ucm_ai_world_ai_boost_spread_pulse = {
-	trigger = { ucm_single_player_trigger = yes }
+	trigger = {
+		ucm_single_player_trigger = yes
+		has_global_variable = ucm_ai_defaults_written
+	}
   effect = {
     if = {
       limit = {

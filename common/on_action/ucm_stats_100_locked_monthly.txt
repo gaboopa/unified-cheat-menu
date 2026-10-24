@@ -1,4 +1,4 @@
-# 属性100：每月校正持有特质的角色六维（仅追加 ucm_monthly_tick）
+﻿# 属性100：每月校正持有特质的角色六维（仅追加 ucm_monthly_tick）
 
 ucm_monthly_tick = {
   on_actions = {

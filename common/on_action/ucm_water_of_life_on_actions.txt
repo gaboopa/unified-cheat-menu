@@ -1,4 +1,4 @@
-# Monthly upkeep for characters holding the water_of_life trait (initial pass is in ucm_startup_sweep.txt).
+﻿# Monthly upkeep for characters holding the water_of_life trait (initial pass is in ucm_startup_sweep.txt).
 ucm_monthly_tick = {
     on_actions = { ucm_water_of_life_restore_all }
 }

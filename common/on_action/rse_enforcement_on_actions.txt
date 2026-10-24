@@ -1,4 +1,4 @@
-quarterly_playable_pulse = {
+﻿quarterly_playable_pulse = {
 	on_actions = {
 		rse_enforcement_sub_pulse
 	}

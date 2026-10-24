@@ -1,4 +1,4 @@
-# 独立、有地 AI：每年 ucm_officials.9200——常备扩张 + 扩张猛攻 + 铁腕改革（无控制力/派系门槛）/（可选）法理转封。
+﻿# 独立、有地 AI：每年 ucm_officials.9200——常备扩张 + 扩张猛攻 + 铁腕改革（无控制力/派系门槛）/（可选）法理转封。
 # 玩家版图威胁：`ucm_ai_counter_player_pressure`（反玩家结盟/谍报权重）由本文件年脉冲 + ucm_ai_monthly_strategic_audit.txt 月脉冲共同刷新。
 # 新局首年跳过 9200（grace）；总开关见 ucm_ai_yearly_pulse_toggle_decision；子项：法理转封（默认关）、改行政（默认关）。
 
@@ -9,34 +9,11 @@ on_game_start = {
 }
 
 # Opt-in guard: the toggles are stored as "...disabled" globals (decisions own them), so absence means ON.
-# To keep AI buffs off in a save that never had this mod, the defaults are written once (marker
-# ucm_ai_defaults_written) on a new game AND on the first load of any save lacking the marker.
-# Later loads never overwrite what the player chose.
+# Defaults are written once (marker ucm_ai_defaults_written). on_game_start(_after_lobby) only fire for new
+# games, so every AI pulse also calls ucm_ai_write_defaults_once_effect first, and a quarterly player
+# pulse writes them on loaded saves. Later loads never overwrite what the player chose.
 ucm_ai_features_new_campaign_defaults_pulse = {
-  trigger = { NOT = { has_global_variable = ucm_ai_defaults_written } }
-  effect = {
-    set_global_variable = {
-      name = ucm_ai_defaults_written
-      value = yes
-    }
-    set_global_variable = {
-      name = ucm_ai_yearly_pulse_disabled
-      value = yes
-    }
-    set_global_variable = {
-      name = ucm_ai_yearly_admin_conversion_disabled
-      value = yes
-    }
-    set_global_variable = {
-      name = ucm_ai_boost_disabled
-      value = yes
-    }
-    # Explicitly keep the annual de-jure transfer sub-feature disabled.
-    if = {
-      limit = { has_global_variable = ucm_ai_yearly_de_jure_transfer_enabled }
-      remove_global_variable = ucm_ai_yearly_de_jure_transfer_enabled
-    }
-  }
+  effect = { ucm_ai_write_defaults_once_effect = yes }
 }
 
 on_game_start_after_lobby = {
@@ -65,6 +42,7 @@ yearly_global_pulse = {
 ucm_ai_counter_player_pulse = {
 	trigger = { ucm_single_player_trigger = yes }
   effect = {
+    ucm_ai_write_defaults_once_effect = yes
     if = {
       limit = {
         NOT = { has_global_variable = ucm_ai_yearly_pulse_disabled }
@@ -77,6 +55,7 @@ ucm_ai_counter_player_pulse = {
 ucm_ai_de_jure_transfer_yearly_pulse = {
 	trigger = { ucm_single_player_trigger = yes }
   effect = {
+    ucm_ai_write_defaults_once_effect = yes
     if = {
       limit = {
         NOT = { has_global_variable = ucm_ai_yearly_pulse_disabled }

@@ -1,4 +1,4 @@
-# Skonester特质防护：获封/失封头衔时补刀（部分随机池在 title 变更后赋 trait）
+﻿# Skonester特质防护：获封/失封头衔时补刀（部分随机池在 title 变更后赋 trait）
 # (daily_global_pulse / ai_character_pulse hooks were never fired by the engine; removed.)
 
 on_title_gain = {

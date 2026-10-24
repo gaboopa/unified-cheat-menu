@@ -1,4 +1,4 @@
-# 文化加速
+﻿# 文化加速
 # CK3 1.20: disabled - this was a verbatim copy of vanilla on_tradition_added `effect`, so it only replaced
 # (or was replaced by) the vanilla 1.20 effect. Vanilla already runs this logic.
 # on_tradition_added = {

@@ -1,4 +1,4 @@
-# Called monthly from ucm_monthly_tick.0001 (events/ucm_monthly_tick_events.txt). root/this = the player with ucm_seduce_shield_active.
+﻿# Called monthly from ucm_monthly_tick.0001 (events/ucm_monthly_tick_events.txt). root/this = the player with ucm_seduce_shield_active.
 ucm_fidelity_affair_sweep_effect = {
   every_spouse = {
     limit = { is_alive = yes }
@@ -9,7 +9,7 @@ ucm_fidelity_affair_sweep_effect = {
         limit = {
           OR = {
             scheme_type = seduce
-            scheme_type = romance
+            scheme_type = courting
             scheme_type = abduct
             scheme_type = elope
           }
@@ -36,7 +36,7 @@ ucm_fidelity_affair_sweep_effect = {
         limit = {
           OR = {
             scheme_type = seduce
-            scheme_type = romance
+            scheme_type = courting
             scheme_type = abduct
             scheme_type = elope
           }
@@ -61,7 +61,7 @@ ucm_fidelity_affair_sweep_effect = {
         limit = {
           OR = {
             scheme_type = seduce
-            scheme_type = romance
+            scheme_type = courting
             scheme_type = abduct
             scheme_type = elope
           }
@@ -87,7 +87,7 @@ ucm_fidelity_affair_sweep_effect = {
         limit = {
           OR = {
             scheme_type = seduce
-            scheme_type = romance
+            scheme_type = courting
             scheme_type = abduct
             scheme_type = elope
           }

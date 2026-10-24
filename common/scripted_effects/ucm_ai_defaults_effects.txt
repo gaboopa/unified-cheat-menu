@@ -1,0 +1,14 @@
+﻿# AI enhancement features default to off. Written once per save; see ucm_ai_de_jure_transfer_yearly.txt.
+ucm_ai_write_defaults_once_effect = {
+  if = {
+    limit = { NOT = { has_global_variable = ucm_ai_defaults_written } }
+    set_global_variable = { name = ucm_ai_defaults_written value = yes }
+    set_global_variable = { name = ucm_ai_yearly_pulse_disabled value = yes }
+    set_global_variable = { name = ucm_ai_yearly_admin_conversion_disabled value = yes }
+    set_global_variable = { name = ucm_ai_boost_disabled value = yes }
+    if = {
+      limit = { has_global_variable = ucm_ai_yearly_de_jure_transfer_enabled }
+      remove_global_variable = ucm_ai_yearly_de_jure_transfer_enabled
+    }
+  }
+}

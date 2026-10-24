@@ -1,4 +1,4 @@
-# 军事管理增益：每年补扫（仅 ucm_military_* Skonester修正）；开局全图清一次见 ucm_startup_sweep.txt
+﻿# 军事管理增益：每年补扫（仅 ucm_military_* Skonester修正）；开局全图清一次见 ucm_startup_sweep.txt
 # (monthly_global_pulse / daily_playable_pulse hooks were never fired by the engine; removed.)
 
 random_yearly_everyone_pulse = {

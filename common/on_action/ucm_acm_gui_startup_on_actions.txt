@@ -1,4 +1,4 @@
-# 进入地图时清理 GUI 挂起：开局/读档的 GUI 标志清理由 ucm_cheat_menu_on_actions.txt 统一完成（只扫 every_player）；
+﻿# 进入地图时清理 GUI 挂起：开局/读档的 GUI 标志清理由 ucm_cheat_menu_on_actions.txt 统一完成（只扫 every_player）；
 # 这里只负责读档后延迟触发一次信仰 GUI 事件。
 # 只挂接 on_actions 列表（可叠加），不直接写 effect，避免覆盖原版/AGOT 的开局 effect
 

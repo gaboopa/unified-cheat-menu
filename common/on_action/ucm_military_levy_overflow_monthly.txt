@@ -1,4 +1,4 @@
-# 征兵×100 + 零维护费：每月重同步叠层（征召规模与维护费减免分开叠）
+﻿# 征兵×100 + 零维护费：每月重同步叠层（征召规模与维护费减免分开叠）
 
 ucm_monthly_tick = {
   on_actions = { ucm_military_levy_overflow_monthly_pulse }

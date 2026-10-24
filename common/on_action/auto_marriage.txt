@@ -1,4 +1,4 @@
-random_yearly_everyone_pulse = {
+﻿random_yearly_everyone_pulse = {
 	on_actions = { ucm_auto_marriage_yearly }
 }
 

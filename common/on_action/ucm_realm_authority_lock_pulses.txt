@@ -1,4 +1,4 @@
-# 君权固化：年度维护、读档、玩家死亡传位给继承人（月度维护见 events/ucm_monthly_tick_events.txt）
+﻿# 君权固化：年度维护、读档、玩家死亡传位给继承人（月度维护见 events/ucm_monthly_tick_events.txt）
 
 yearly_playable_pulse = {
   on_actions = {

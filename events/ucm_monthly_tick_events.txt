@@ -1,4 +1,4 @@
-# Monthly per-player maintenance, fired once per player per month by on_action ucm_monthly_tick
+﻿# Monthly per-player maintenance, fired once per player per month by on_action ucm_monthly_tick
 # (common/on_action/ucm_monthly_tick.txt). root = the player. Every step is a no-op unless the
 # player switched the matching feature on.
 

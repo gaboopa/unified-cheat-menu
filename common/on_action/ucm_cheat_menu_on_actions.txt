@@ -1,4 +1,4 @@
-# CK3 1.20: chained via on_actions instead of a second `effect` block (only one effect per on-action survives;
+﻿# CK3 1.20: chained via on_actions instead of a second `effect` block (only one effect per on-action survives;
 # the collision was dropping vanilla 1.20 logic or this mod logic).
 on_pregnancy_mother = {
   on_actions = { ucm_on_pregnancy_mother_clear_bgp }

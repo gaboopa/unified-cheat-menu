@@ -45,7 +45,6 @@ bloodline_god_3 = { # Divine Bloodline (Highest Tier)
     herd_capacity_mult = 9                          # Herd capacity multiplier
     monthly_legitimacy_add = 30                     # Adds 30 legitimacy per month
 
-    genetic = yes                                   # Congenital/genetic trait
     # CK3 1.20: `random` is not a trait field or modifier. random = no                                     # Cannot be randomly assigned
     # CK3 1.20: `inheritable` is not a trait field or modifier. inheritable = yes                               # Can be inherited
     parent_inheritance_sex = male                   # Can only be inherited from the father's bloodline
@@ -98,7 +97,6 @@ bloodline_god_2 = { # Diluted Bloodline (Mid Tier)
 
     ai_war_cooldown = -0.5                          # Reduces AI war declaration cooldown by 30%
     # CK3 1.20: `random` is not a trait field or modifier. random = no                                     # Cannot be randomly assigned
-    genetic = yes                                   # Congenital/genetic trait
     # CK3 1.20: `inheritable` is not a trait field or modifier. inheritable = yes                               # Can be inherited
     parent_inheritance_sex = male                   # Can only be inherited from the father's bloodline
     inherit_chance = 30                             # 30% inheritance chance
@@ -149,7 +147,6 @@ bloodline_god_1 = { # Divine Bloodline (Tier 1)
     herd_gain_mult = 0.5                            # Herd gain multiplier
     herd_capacity_mult = 1                          # Herd capacity multiplier
 
-    genetic = yes                                   # Congenital/genetic trait
     # CK3 1.20: `random` is not a trait field or modifier. random = no                                     # Cannot be randomly assigned
     # CK3 1.20: `inheritable` is not a trait field or modifier. inheritable = yes                               # Can be inherited
     inherit_chance = 60                             # 60% inheritance chance

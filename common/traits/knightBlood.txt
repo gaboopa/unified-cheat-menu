@@ -22,7 +22,6 @@
 	
 	physical = yes
 	
-	genetic = yes
 	good = yes
 	
 	
@@ -103,7 +102,6 @@ blood_ancester_2 = { # 犬之忠勇
 	
 	physical = yes
 	
-	genetic = yes
 	good = yes
 	
 	#level = 2
@@ -185,7 +183,6 @@ blood_ancester_6 = { #暗夜
 	
 	physical = yes
 	
-	genetic = yes
 	good = yes
 	
 	#level = 4
@@ -256,7 +253,6 @@ blood_art_1 = { #太极
 	
 	physical = yes
 	
-	genetic = yes
 	good = yes
 	
 	level = 1
@@ -309,7 +305,6 @@ blood_ancester_4 = { #月光
 	
 	physical = yes
 	
-	genetic = yes
 	good = yes
 	
 	#level = 4
@@ -383,7 +378,6 @@ blood_ancester_5 = { #野猪
 	
 	physical = yes
 	
-	genetic = yes
 	good = yes
 	
 	#level = 4
@@ -463,7 +457,6 @@ blood_ancester_7 = { #windrunner
 	
 	physical = yes
 	
-	genetic = yes
 	good = yes
 	
 	#level = 4
@@ -538,7 +531,6 @@ blood_ancester_8 = { #晨星
 	
 	physical = yes
 	
-	genetic = yes
 	good = yes
 	
 	attacker_advantage = 15
@@ -621,7 +613,6 @@ blood_ancester_9 = { #小丑
 	
 	physical = yes
 	
-	genetic = yes
 	good = yes
 	
 	attacker_advantage = 15
@@ -701,7 +692,6 @@ blood_ancester_10 = { #渡鸦
 	attraction_opinion = -10
 	physical = yes
 	
-	genetic = yes
 	good = yes
 	
 	opposites = {
@@ -782,7 +772,6 @@ blood_ancester_11 = { #银龙
 	attraction_opinion = -10
 	physical = yes
 	
-	genetic = yes
 	good = yes
 	
 	opposites = {
@@ -854,7 +843,6 @@ blood_knight_1 = {
 	physical = yes
 	
 	genetic = no
-	good = yes
 	
 	level = 1
 	group = blood_knight
@@ -904,7 +892,6 @@ blood_knight_2 = {
 	physical = yes
 	
 	genetic = no
-	good = yes
 	
 	level = 2
 	group = blood_knight
@@ -954,7 +941,6 @@ blood_knight_3 = {
 	physical = yes
 	
 	genetic = no
-	good = yes
 	
 	no_prowess_loss_from_age = yes
 	level = 3
@@ -1005,7 +991,6 @@ blood_knight_4 = {
 	physical = yes
 	
 	genetic = no
-	good = yes
 	no_prowess_loss_from_age = yes
 	
 	level = 4

@@ -233,13 +233,8 @@ Primogeniture_rse_mod:0 "Primogenitur"
 Ultimogeniture_rse_mod:0 "Ultimogenitur"
 House_Seniority_rse_mod:0 "Hausältestenschaft"
 
-rule_change_Realm_succession_law_game_mod:0 "Reichserbfolge ändern"
 
-setting_change_Realm_succession_law_game_mod_off:0 "Reichserbfolge deaktiviert"
-setting_change_Realm_succession_law_game_mod_off_desc:0 "Erbfolgegesetze richten sich nach der Kultur."
 
-setting_change_Realm_succession_law_game_mod_on:0 "Reichserbfolge aktiviert"
-setting_change_Realm_succession_law_game_mod_on_desc:0 "Erbfolgegesetze sind unabhängig von der Kultur."
 
 gender_Succession_events_mod_decision_title:0 "Geschlechter-Erbfolgeereignis auslösen"
 gender_Succession_events_mod_decision_desc:0 "Löst das Geschlechter-Erbfolgeereignis manuell aus, um die entsprechenden Spielmechaniken zu testen."

@@ -5,3 +5,14 @@
 	remove_character_flag = rse_flag_female_preference
 	remove_character_flag = rse_flag_female_only
 }
+
+# Realm succession counterpart: clear every realm-law flag before setting the new one,
+# so rse_enforce_laws_effect only ever re-applies the latest pick.
+realm_rse_flag_cleanup = {
+	remove_character_flag = rse_flag_confederate_partition
+	remove_character_flag = rse_flag_partition
+	remove_character_flag = rse_flag_high_partition
+	remove_character_flag = rse_flag_primogeniture
+	remove_character_flag = rse_flag_ultimogeniture
+	remove_character_flag = rse_flag_house_seniority
+}

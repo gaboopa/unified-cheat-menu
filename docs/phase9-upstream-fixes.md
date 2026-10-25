@@ -36,6 +36,19 @@ Fixes the Critical items C1–C10 from [upstream-review.md](upstream-review.md) 
 
 **Japan administrative: kept.** The review said `japan_administrative_government` was missing from 1.20.1.2. That was wrong: it is defined on line 1 of vanilla `common/governments/01_japan_government_types.txt`, after a BOM. Every government the mod now references exists in vanilla.
 
+## Follow-up after the first load test
+
+The load test came back at 725 errors at the main menu (995 in Phase 8) and 853 with a save loaded (1,091). Three months of play added none. These are the follow-up fixes:
+
+| Was | Now |
+| --- | --- |
+| `ucm_chenzhi_target_vassals` / `ucm_chenzhi_force_mass_feudal` "used but never set", left over from the deleted reform menu | The 12 mass-conversion limits and the feudal-conversion branches that checked them reduce to their real condition. No behaviour change |
+| Realm succession menu: 8 checks of a game rule that doesn't exist, and 6 checks of `innovation_visigothic_codes` / `innovation_theme_system`, which aren't in 1.20 (28 error lines) | Innovation gating removed: the options are always shown. The "unlock innovation" page (`.1010`) and its loc are gone. The opener decision now uses the same conditions as the event (not landless, not administrative) |
+| "Only me" and "Me and vassals" set the new law flag without clearing the old one, so the quarterly enforcement kept reapplying the old law | New `realm_rse_flag_cleanup` effect (next to `gender_rse_flag_cleanup`), called before every flag is set. It also replaces 12 copy-pasted blocks |
+| 28 traits set as both genetic and with an `inherit_chance` | `genetic = yes` dropped. They keep their explicit chance and parent sex (e.g. 30%, male line) |
+| 20 traits marked `good` that are neither genetic nor inherited | `good = yes` dropped. It only affects genetic display |
+| `category = intrigue` / `stewardship` (not valid categories) | Removed |
+
 ## Checks run
 
 - Every edited file has the same BOM state and net brace balance as before, and no stray CR bytes.
@@ -51,3 +64,6 @@ Fixes the Critical items C1–C10 from [upstream-review.md](upstream-review.md) 
 - [ ] Ctrl+Y does nothing special on the main map.
 - [ ] Sand soldiers window: no empty gaps where the Ming tiles were.
 - [ ] Main menu Realm and Military tabs: no blank buttons.
+- [ ] Realm succession: pick Primogeniture "Only me", then Partition "Only me". After a quarter you still have Partition.
+- [ ] Realm succession menu opens for a culture with no succession innovations.
+- [ ] Re-run the load test. Expect no `trait.cpp`, `Realm_Succession_events_mod` or `ucm_chenzhi` entries.

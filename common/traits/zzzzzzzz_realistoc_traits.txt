@@ -20,7 +20,6 @@
 	vassal_opinion = 10
 	
 	physical = yes
-	genetic = yes
 	#both_parent_has_trait_inherit_chance = 100
 	inherit_chance = 100
 	good = yes
@@ -60,7 +59,6 @@ gigasuperseed = {
 
 	monthly_lifestyle_xp_gain_mult = 3
 	
-	genetic = yes
 	physical = yes
 	good = yes
 	inherit_chance = 100
@@ -109,7 +107,6 @@ greatest_lord_np = {
 	inherit_from_real_father = no
 	category = fame # CK3 1.20: was fame = yes
 	inherit_chance = 0
-	good = yes
 
 	desc = {
 		first_valid = {
@@ -218,7 +215,6 @@ insane_generale = {
 
 	category = fame # CK3 1.20: was fame = yes
 	inherit_chance = 0
-	good = yes
 	scheme_discovery_chance_mult = 0.1
 	flag = lower_chance_of_dying_in_combat
 
@@ -256,7 +252,6 @@ insane_opinion_fv = {
 
 	category = fame # CK3 1.20: was fame = yes
 	inherit_chance = 0
-	good = yes
 
 	vassal_opinion = 3400
 
@@ -268,7 +263,6 @@ insane_opinion_fa = {
 
 	category = fame # CK3 1.20: was fame = yes
 	inherit_chance = 0
-	good = yes
 
 	general_opinion = 3400
 
@@ -280,7 +274,6 @@ crazyminded_psycho = {
 
 	category = fame # CK3 1.20: was fame = yes
 	inherit_chance = 0
-	good = yes
 
 ai_honor = -300
 ai_zeal = -300
@@ -302,7 +295,6 @@ goodguy_toc = {
 
 	category = fame # CK3 1.20: was fame = yes
 	inherit_chance = 0
-	good = yes
 
 ai_honor = 300
 ai_zeal = 300
@@ -322,7 +314,6 @@ pantokratorus_a = {
 
 	category = fame # CK3 1.20: was fame = yes
 	inherit_chance = 0
-	good = yes
 
 general_opinion = 3400
 ai_war_cooldown = -0.99
@@ -458,7 +449,6 @@ pantokratorus_ablood = {
 	index = 55808
 
 	# fame = yes
-	genetic = yes
 	inherit_chance = 100
 	good = yes
 
@@ -586,7 +576,6 @@ monthly_lifestyle_xp_gain_mult = 2
 #vassal_opinion = 10
 	
 physical = yes
-genetic = yes
 #both_parent_has_trait_inherit_chance = 100
 inherit_chance = 100
 good = yes
@@ -616,7 +605,6 @@ first_bloodline1 = {
 	index = 55558
 
 physical = yes
-genetic = yes
 inherit_chance = 100
 good = yes
 
@@ -639,7 +627,6 @@ second_bloodline2 = {
 	index = 55559
 
 physical = yes
-genetic = yes
 inherit_chance = 100
 good = yes
 
@@ -665,7 +652,6 @@ third_bloodline3 = {
 	index = 55560
 
 physical = yes
-genetic = yes
 inherit_chance = 100
 good = yes
 
@@ -693,7 +679,6 @@ fourth_bloodline4 = {
 	index = 55561
 
 physical = yes
-genetic = yes
 inherit_chance = 100
 good = yes
 
@@ -722,7 +707,6 @@ fifth_bloodline5 = {
 	index = 55562
 
 physical = yes
-genetic = yes
 inherit_chance = 100
 good = yes
 
@@ -753,7 +737,6 @@ toc_gamerblood0 = {
 
 	#fame = yes
 	physical = yes
-	genetic = yes
 	inherit_chance = 100
 	good = yes
 
@@ -829,7 +812,6 @@ toc_gamer0 = {
 	physical = yes
 	#genetic = yes
 	#inherit_chance = 100
-	good = yes
 
 ai_war_cooldown = -0.99
 tyranny_gain_mult = -0.99
@@ -904,7 +886,6 @@ toc_patrilinealblood = {
 	index = 55565
 
 physical = yes
-genetic = yes
 inherit_from_real_father = yes
 inherit_from_real_mother = no
 parent_inheritance_sex = male
@@ -936,7 +917,6 @@ toc_patrilinealblood2 = {
 	index = 55566
 
 physical = yes
-genetic = yes
 inherit_from_real_father = yes
 inherit_from_real_mother = no
 parent_inheritance_sex = male
@@ -972,7 +952,6 @@ toc_patrilinealblood3 = {
 	index = 55567
 
 physical = yes
-genetic = yes
 inherit_from_real_father = yes
 inherit_from_real_mother = no
 parent_inheritance_sex = male
@@ -1047,7 +1026,6 @@ toc_immortalblood = {
 	index = 55570
 
 physical = yes
-genetic = yes
 inherit_chance = 100
 good = yes
 
@@ -1064,7 +1042,6 @@ toc_immortal = {
 physical = yes
 #genetic = yes
 inherit_chance = 0
-good = yes
 
 immortal = yes
 

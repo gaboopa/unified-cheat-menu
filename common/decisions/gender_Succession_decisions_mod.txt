@@ -33,18 +33,9 @@ change_Realm_succession_law_mod_decision = {
         NOT = { is_ai = yes }
         has_character_flag = daddy_pika_cheat_menu
         has_character_flag = govt_menu
-        or = {
-            culture = {
-                or = {
-                    has_innovation = innovation_heraldry
-                    has_innovation = innovation_hereditary_rule
-                    has_innovation = innovation_visigothic_codes
-                    has_innovation = innovation_gavelkind
-                    has_innovation = innovation_primogeniture
-                    has_innovation = innovation_table_of_princes
-                }
-            }
-        }
+        # same conditions as the event's trigger, so the button never does nothing
+        is_landless_adventurer = no
+        NOT = { has_government = administrative_government }
     }
 
     effect = {

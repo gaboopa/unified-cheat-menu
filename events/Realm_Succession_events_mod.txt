@@ -15,62 +15,12 @@ change_Realm_succession_law_mod.1001 = {
 		#Multiple Heirs
 		name = multiple_heirs_rse_mod
 		trigger_event = change_Realm_succession_law_mod.1002
-		trigger = {
-			or = {
-				has_game_rule = change_Realm_succession_law_game_mod_on
-				culture = {
-					or = {
-						has_innovation = innovation_heraldry
-						has_innovation = innovation_hereditary_rule
-						has_innovation = innovation_visigothic_codes
-						has_innovation = innovation_gavelkind
-					}
-				}
-			}
-		}
 	}
 	option = {
 		#Single Heir
 		name = single_Heir_rse_mod
 		trigger_event = change_Realm_succession_law_mod.1006
-		trigger = {
-			or = {
-				has_game_rule = change_Realm_succession_law_game_mod_on
-				culture = {
-					or = {
-						has_cultural_pillar = heritage_west_slavic
-						has_innovation = innovation_primogeniture
-						has_innovation = innovation_heraldry
-						has_innovation = innovation_table_of_princes
-						has_innovation = innovation_theme_system
-					}
-				}
-			}
-		}
 	}
-	option = {
-		name = rse_mod_unlock_innovation
-		trigger_event = change_Realm_succession_law_mod.1010
-		trigger = {
-			nand = {
-				root.culture = {
-					has_innovation = innovation_hereditary_rule
-				}
-				root.culture = {
-					has_innovation = innovation_heraldry
-				}
-				root.culture = {
-					has_innovation = innovation_primogeniture
-				}
-				root.culture = {
-					has_innovation = innovation_theme_system
-				}
-			}
-		}
-	}
-	# option = {#Elective Succession
-	# name = Elective_rse_mod
-	# trigger_event = change_Realm_succession_law_mod.1010}
 }
 
 change_Realm_succession_law_mod.1002 = {
@@ -82,43 +32,16 @@ change_Realm_succession_law_mod.1002 = {
 		#Confederate Partition
 		name = Confederate_Partition_rse_mod
 		trigger_event = change_Realm_succession_law_mod.1003
-		trigger = {
-			or = {
-				has_game_rule = change_Realm_succession_law_game_mod_on
-				culture = {
-					has_innovation = innovation_gavelkind
-				}
-			}
-		}
 	}
 	option = {
 		#Partition
 		name = Partition_rse_mod
 		trigger_event = change_Realm_succession_law_mod.1004
-		trigger = {
-			or = {
-				has_game_rule = change_Realm_succession_law_game_mod_on
-				culture = {
-					has_innovation = innovation_hereditary_rule
-				}
-			}
-		}
 	}
 	option = {
 		#High Partition
 		name = High_Partition_rse_mod
 		trigger_event = change_Realm_succession_law_mod.1005
-		trigger = {
-			or = {
-				has_game_rule = change_Realm_succession_law_game_mod_on
-				culture = {
-					or = {
-						has_innovation = innovation_heraldry
-						has_innovation = innovation_visigothic_codes
-					}
-				}
-			}
-		}
 	}
 }
 
@@ -130,11 +53,14 @@ change_Realm_succession_law_mod.1003 = {
 	option = {
 		name = Only_Me_gse_mod
 		add_realm_law_skip_effects = confederate_partition_succession_law
+		realm_rse_flag_cleanup = yes
 		add_character_flag = rse_flag_confederate_partition
 	}
 	option = {
 		name = Me_and_Vassals_gse_mod
 		add_realm_law_skip_effects = confederate_partition_succession_law
+		realm_rse_flag_cleanup = yes
+		add_character_flag = rse_flag_confederate_partition
 		every_vassal_or_below = {
 			limit = {
 				or = {
@@ -145,12 +71,7 @@ change_Realm_succession_law_mod.1003 = {
 				is_landless_adventurer = no
 			}
 			add_realm_law_skip_effects = confederate_partition_succession_law
-			remove_character_flag = rse_flag_confederate_partition
-			remove_character_flag = rse_flag_partition
-			remove_character_flag = rse_flag_high_partition
-			remove_character_flag = rse_flag_primogeniture
-			remove_character_flag = rse_flag_ultimogeniture
-			remove_character_flag = rse_flag_house_seniority
+			realm_rse_flag_cleanup = yes
 			add_character_flag = rse_flag_confederate_partition
 		}
 	}
@@ -166,12 +87,7 @@ change_Realm_succession_law_mod.1003 = {
 				is_landless_adventurer = no
 			}
 			add_realm_law_skip_effects = confederate_partition_succession_law
-			remove_character_flag = rse_flag_confederate_partition
-			remove_character_flag = rse_flag_partition
-			remove_character_flag = rse_flag_high_partition
-			remove_character_flag = rse_flag_primogeniture
-			remove_character_flag = rse_flag_ultimogeniture
-			remove_character_flag = rse_flag_house_seniority
+			realm_rse_flag_cleanup = yes
 			add_character_flag = rse_flag_confederate_partition
 		}
 	}
@@ -188,11 +104,14 @@ change_Realm_succession_law_mod.1004 = {
 	option = {
 		name = Only_Me_gse_mod
 		add_realm_law_skip_effects = partition_succession_law
+		realm_rse_flag_cleanup = yes
 		add_character_flag = rse_flag_partition
 	}
 	option = {
 		name = Me_and_Vassals_gse_mod
 		add_realm_law_skip_effects = partition_succession_law
+		realm_rse_flag_cleanup = yes
+		add_character_flag = rse_flag_partition
 		every_vassal_or_below = {
 			limit = {
 				or = {
@@ -203,12 +122,7 @@ change_Realm_succession_law_mod.1004 = {
 				is_landless_adventurer = no
 			}
 			add_realm_law_skip_effects = partition_succession_law
-			remove_character_flag = rse_flag_confederate_partition
-			remove_character_flag = rse_flag_partition
-			remove_character_flag = rse_flag_high_partition
-			remove_character_flag = rse_flag_primogeniture
-			remove_character_flag = rse_flag_ultimogeniture
-			remove_character_flag = rse_flag_house_seniority
+			realm_rse_flag_cleanup = yes
 			add_character_flag = rse_flag_partition
 		}
 	}
@@ -224,12 +138,7 @@ change_Realm_succession_law_mod.1004 = {
 				is_landless_adventurer = no
 			}
 			add_realm_law_skip_effects = partition_succession_law
-			remove_character_flag = rse_flag_confederate_partition
-			remove_character_flag = rse_flag_partition
-			remove_character_flag = rse_flag_high_partition
-			remove_character_flag = rse_flag_primogeniture
-			remove_character_flag = rse_flag_ultimogeniture
-			remove_character_flag = rse_flag_house_seniority
+			realm_rse_flag_cleanup = yes
 			add_character_flag = rse_flag_partition
 		}
 	}
@@ -246,11 +155,14 @@ change_Realm_succession_law_mod.1005 = {
 	option = {
 		name = Only_Me_gse_mod
 		add_realm_law_skip_effects = high_partition_succession_law
+		realm_rse_flag_cleanup = yes
 		add_character_flag = rse_flag_high_partition
 	}
 	option = {
 		name = Me_and_Vassals_gse_mod
 		add_realm_law_skip_effects = high_partition_succession_law
+		realm_rse_flag_cleanup = yes
+		add_character_flag = rse_flag_high_partition
 		every_vassal_or_below = {
 			limit = {
 				or = {
@@ -261,12 +173,7 @@ change_Realm_succession_law_mod.1005 = {
 				is_landless_adventurer = no
 			}
 			add_realm_law_skip_effects = high_partition_succession_law
-			remove_character_flag = rse_flag_confederate_partition
-			remove_character_flag = rse_flag_partition
-			remove_character_flag = rse_flag_high_partition
-			remove_character_flag = rse_flag_primogeniture
-			remove_character_flag = rse_flag_ultimogeniture
-			remove_character_flag = rse_flag_house_seniority
+			realm_rse_flag_cleanup = yes
 			add_character_flag = rse_flag_high_partition # Flag to track change
 		}
 	}
@@ -282,12 +189,7 @@ change_Realm_succession_law_mod.1005 = {
 				is_landless_adventurer = no
 			}
 			add_realm_law_skip_effects = high_partition_succession_law
-			remove_character_flag = rse_flag_confederate_partition
-			remove_character_flag = rse_flag_partition
-			remove_character_flag = rse_flag_high_partition
-			remove_character_flag = rse_flag_primogeniture
-			remove_character_flag = rse_flag_ultimogeniture
-			remove_character_flag = rse_flag_house_seniority
+			realm_rse_flag_cleanup = yes
 			add_character_flag = rse_flag_high_partition # Flag to track change
 		}
 	}
@@ -305,44 +207,16 @@ change_Realm_succession_law_mod.1006 = {
 		#Primogeniture
 		name = Primogeniture_rse_mod
 		trigger_event = change_Realm_succession_law_mod.1007
-		trigger = {
-			or = {
-				has_game_rule = change_Realm_succession_law_game_mod_on
-				culture = {
-					has_innovation = innovation_primogeniture
-				}
-			}
-		}
 	}
 	option = {
 		#Ultimogeniture
 		name = Ultimogeniture_rse_mod
 		trigger_event = change_Realm_succession_law_mod.1008
-		trigger = {
-			or = {
-				has_game_rule = change_Realm_succession_law_game_mod_on
-				culture = {
-					has_innovation = innovation_primogeniture
-				}
-			}
-		}
 	}
 	option = {
 		#House Seniority
 		name = House_Seniority_rse_mod
 		trigger_event = change_Realm_succession_law_mod.1009
-		trigger = {
-			or = {
-				has_game_rule = change_Realm_succession_law_game_mod_on
-				culture = {
-					or = {
-						has_cultural_pillar = heritage_west_slavic
-						has_innovation = innovation_heraldry
-						has_innovation = innovation_table_of_princes
-					}
-				}
-			}
-		}
 	}
 }
 
@@ -354,11 +228,14 @@ change_Realm_succession_law_mod.1007 = {
 	option = {
 		name = Only_Me_gse_mod
 		add_realm_law_skip_effects = single_heir_succession_law
+		realm_rse_flag_cleanup = yes
 		add_character_flag = rse_flag_primogeniture
 	}
 	option = {
 		name = Me_and_Vassals_gse_mod
 		add_realm_law_skip_effects = single_heir_succession_law
+		realm_rse_flag_cleanup = yes
+		add_character_flag = rse_flag_primogeniture
 		every_vassal_or_below = {
 			limit = {
 				or = {
@@ -369,12 +246,7 @@ change_Realm_succession_law_mod.1007 = {
 				is_landless_adventurer = no
 			}
 			add_realm_law_skip_effects = single_heir_succession_law
-			remove_character_flag = rse_flag_confederate_partition
-			remove_character_flag = rse_flag_partition
-			remove_character_flag = rse_flag_high_partition
-			remove_character_flag = rse_flag_primogeniture
-			remove_character_flag = rse_flag_ultimogeniture
-			remove_character_flag = rse_flag_house_seniority
+			realm_rse_flag_cleanup = yes
 			add_character_flag = rse_flag_primogeniture
 		}
 	}
@@ -390,12 +262,7 @@ change_Realm_succession_law_mod.1007 = {
 				is_landless_adventurer = no
 			}
 			add_realm_law_skip_effects = single_heir_succession_law
-			remove_character_flag = rse_flag_confederate_partition
-			remove_character_flag = rse_flag_partition
-			remove_character_flag = rse_flag_high_partition
-			remove_character_flag = rse_flag_primogeniture
-			remove_character_flag = rse_flag_ultimogeniture
-			remove_character_flag = rse_flag_house_seniority
+			realm_rse_flag_cleanup = yes
 			add_character_flag = rse_flag_primogeniture
 		}
 	}
@@ -412,11 +279,14 @@ change_Realm_succession_law_mod.1008 = {
 	option = {
 		name = Only_Me_gse_mod
 		add_realm_law_skip_effects = single_heir_succession_law_youngest
+		realm_rse_flag_cleanup = yes
 		add_character_flag = rse_flag_ultimogeniture
 	}
 	option = {
 		name = Me_and_Vassals_gse_mod
 		add_realm_law_skip_effects = single_heir_succession_law_youngest
+		realm_rse_flag_cleanup = yes
+		add_character_flag = rse_flag_ultimogeniture
 		every_vassal_or_below = {
 			limit = {
 				or = {
@@ -427,12 +297,7 @@ change_Realm_succession_law_mod.1008 = {
 				is_landless_adventurer = no
 			}
 			add_realm_law_skip_effects = single_heir_succession_law_youngest
-			remove_character_flag = rse_flag_confederate_partition
-			remove_character_flag = rse_flag_partition
-			remove_character_flag = rse_flag_high_partition
-			remove_character_flag = rse_flag_primogeniture
-			remove_character_flag = rse_flag_ultimogeniture
-			remove_character_flag = rse_flag_house_seniority
+			realm_rse_flag_cleanup = yes
 			add_character_flag = rse_flag_ultimogeniture
 		}
 	}
@@ -448,12 +313,7 @@ change_Realm_succession_law_mod.1008 = {
 				is_landless_adventurer = no
 			}
 			add_realm_law_skip_effects = single_heir_succession_law_youngest
-			remove_character_flag = rse_flag_confederate_partition
-			remove_character_flag = rse_flag_partition
-			remove_character_flag = rse_flag_high_partition
-			remove_character_flag = rse_flag_primogeniture
-			remove_character_flag = rse_flag_ultimogeniture
-			remove_character_flag = rse_flag_house_seniority
+			realm_rse_flag_cleanup = yes
 			add_character_flag = rse_flag_ultimogeniture
 		}
 	}
@@ -470,11 +330,14 @@ change_Realm_succession_law_mod.1009 = {
 	option = {
 		name = Only_Me_gse_mod
 		add_realm_law_skip_effects = single_heir_dynasty_house
+		realm_rse_flag_cleanup = yes
 		add_character_flag = rse_flag_house_seniority
 	}
 	option = {
 		name = Me_and_Vassals_gse_mod
 		add_realm_law_skip_effects = single_heir_dynasty_house
+		realm_rse_flag_cleanup = yes
+		add_character_flag = rse_flag_house_seniority
 		every_vassal_or_below = {
 			limit = {
 				or = {
@@ -485,12 +348,7 @@ change_Realm_succession_law_mod.1009 = {
 				is_landless_adventurer = no
 			}
 			add_realm_law_skip_effects = single_heir_dynasty_house
-			remove_character_flag = rse_flag_confederate_partition
-			remove_character_flag = rse_flag_partition
-			remove_character_flag = rse_flag_high_partition
-			remove_character_flag = rse_flag_primogeniture
-			remove_character_flag = rse_flag_ultimogeniture
-			remove_character_flag = rse_flag_house_seniority
+			realm_rse_flag_cleanup = yes
 			add_character_flag = rse_flag_house_seniority
 		}
 	}
@@ -506,12 +364,7 @@ change_Realm_succession_law_mod.1009 = {
 				is_landless_adventurer = no
 			}
 			add_realm_law_skip_effects = single_heir_dynasty_house
-			remove_character_flag = rse_flag_confederate_partition
-			remove_character_flag = rse_flag_partition
-			remove_character_flag = rse_flag_high_partition
-			remove_character_flag = rse_flag_primogeniture
-			remove_character_flag = rse_flag_ultimogeniture
-			remove_character_flag = rse_flag_house_seniority
+			realm_rse_flag_cleanup = yes
 			add_character_flag = rse_flag_house_seniority
 		}
 	}
@@ -520,64 +373,3 @@ change_Realm_succession_law_mod.1009 = {
 	}
 }
 
-change_Realm_succession_law_mod.1010 = {
-	type = character_event
-	theme = default
-	title = rse_mod_innovation_t
-	desc = rse_mod_unlock_innovation
-	option = {
-		name = innovation_hereditary_rule
-		trigger = {
-			not = {
-				root.culture = {
-					has_innovation = innovation_hereditary_rule
-				}
-			}
-		}
-		root.culture = {
-			add_innovation = innovation_hereditary_rule
-		}
-	}
-	option = {
-		name = innovation_heraldry
-		trigger = {
-			not = {
-				root.culture = {
-					has_innovation = innovation_heraldry
-				}
-			}
-		}
-		root.culture = {
-			add_innovation = innovation_heraldry
-		}
-	}
-	option = {
-		name = innovation_primogeniture
-		trigger = {
-			not = {
-				root.culture = {
-					has_innovation = innovation_primogeniture 
-				}
-			}
-		}
-		root.culture = {
-			add_innovation = innovation_primogeniture 
-		}
-	}
-	option = {
-		name = rse_mod_theme_system
-		trigger = {
-			not = {
-				root.culture = {
-					has_innovation = innovation_theme_system
-				}
-			}
-		}
-		root.culture = {
-			add_innovation = innovation_theme_system
-		}
-	}
-	option = {
-		name = rse_mod_close
-	}
-}

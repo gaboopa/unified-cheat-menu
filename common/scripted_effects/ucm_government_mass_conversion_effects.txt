@@ -172,10 +172,7 @@ ucm_mass_convert_vassals_to_celestial_effect = {
       has_tgp_dlc_trigger = yes
       ucm_mass_gov_conversion_target_trigger = yes
       NOT = { has_government = celestial_government }
-      OR = {
-        root = { has_character_flag = ucm_chenzhi_target_vassals }
-        NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
-      }
+      NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
     }
     ucm_convert_character_to_celestial_government_effect = yes
   }
@@ -187,10 +184,7 @@ ucm_mass_convert_vassals_to_meritocratic_effect = {
       has_tgp_dlc_trigger = yes
       ucm_mass_gov_conversion_target_trigger = yes
       NOT = { has_government = meritocratic_government }
-      OR = {
-        root = { has_character_flag = ucm_chenzhi_target_vassals }
-        NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
-      }
+      NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
     }
     ucm_convert_character_to_meritocratic_government_effect = yes
   }
@@ -201,10 +195,7 @@ ucm_mass_convert_vassals_to_administrative_effect = {
     limit = {
       ucm_mass_gov_conversion_target_trigger = yes
       NOT = { has_government = administrative_government }
-      OR = {
-        root = { has_character_flag = ucm_chenzhi_target_vassals }
-        NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
-      }
+      NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
     }
     ucm_convert_character_to_administrative_government_effect = yes
   }
@@ -217,10 +208,7 @@ ucm_mass_convert_vassals_to_japan_administrative_effect = {
       ucm_mass_gov_conversion_target_trigger = yes
       NOT = { has_government = japan_administrative_government }
       tgp_can_become_japan_administrative_trigger = yes
-      OR = {
-        root = { has_character_flag = ucm_chenzhi_target_vassals }
-        NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
-      }
+      NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
     }
     ucm_convert_character_to_japan_administrative_government_effect = yes
   }
@@ -232,10 +220,7 @@ ucm_mass_convert_vassals_to_steppe_admin_effect = {
       has_tgp_dlc_trigger = yes
       ucm_mass_gov_conversion_target_trigger = yes
       NOT = { has_government = steppe_admin_government }
-      OR = {
-        root = { has_character_flag = ucm_chenzhi_target_vassals }
-        NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
-      }
+      NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
     }
     ucm_convert_character_to_steppe_admin_government_effect = yes
   }
@@ -247,10 +232,6 @@ ucm_convert_character_to_feudal_government_effect = {
       NOT = { has_government = feudal_government }
       OR = {
         has_character_flag = ucm_chenzhi_force_feudal_conversion
-        AND = {
-          exists = liege
-          liege = { has_character_flag = ucm_chenzhi_force_mass_feudal }
-        }
         NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
       }
       # 修复：开局日本律令（japan_administrative_government）不应被通用“转封建”误改
@@ -310,12 +291,6 @@ ucm_convert_character_to_feudal_government_effect = {
       NOT = { has_government = feudal_government }
       ucm_protected_from_forced_feudal_conversion_trigger = yes
       NOT = { has_character_flag = ucm_chenzhi_force_feudal_conversion }
-      NOR = {
-        AND = {
-          exists = liege
-          liege = { has_character_flag = ucm_chenzhi_force_mass_feudal }
-        }
-      }
     }
     ucm_player_government_feudal_blocked_notify_effect = yes
   }
@@ -496,10 +471,7 @@ ucm_mass_convert_vassals_to_feudal_effect = {
     limit = {
       ucm_mass_gov_conversion_target_trigger = yes
       NOT = { has_government = feudal_government }
-      OR = {
-        root = { has_character_flag = ucm_chenzhi_force_mass_feudal }
-        NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
-      }
+      NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
     }
     ucm_convert_character_to_feudal_government_effect = yes
   }
@@ -510,10 +482,7 @@ ucm_mass_convert_vassals_to_tribal_effect = {
     limit = {
       ucm_mass_gov_conversion_target_trigger = yes
       NOT = { has_government = tribal_government }
-      OR = {
-        root = { has_character_flag = ucm_chenzhi_target_vassals }
-        NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
-      }
+      NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
     }
     ucm_convert_character_to_tribal_government_effect = yes
   }
@@ -524,10 +493,7 @@ ucm_mass_convert_vassals_to_clan_effect = {
     limit = {
       ucm_mass_gov_conversion_target_trigger = yes
       NOT = { has_government = clan_government }
-      OR = {
-        root = { has_character_flag = ucm_chenzhi_target_vassals }
-        NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
-      }
+      NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
     }
     ucm_convert_character_to_clan_government_effect = yes
   }
@@ -538,10 +504,7 @@ ucm_mass_convert_vassals_to_republic_effect = {
     limit = {
       ucm_mass_gov_conversion_target_trigger = yes
       NOT = { has_government = republic_government }
-      OR = {
-        root = { has_character_flag = ucm_chenzhi_target_vassals }
-        NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
-      }
+      NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
     }
     ucm_convert_character_to_republic_government_effect = yes
   }
@@ -587,10 +550,7 @@ ucm_mass_convert_vassals_to_theocracy_effect = {
     limit = {
       ucm_mass_gov_conversion_target_trigger = yes
       NOT = { government_has_flag = government_is_theocracy }
-      OR = {
-        root = { has_character_flag = ucm_chenzhi_target_vassals }
-        NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
-      }
+      NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
     }
     ucm_convert_character_to_theocracy_government_effect = yes
   }
@@ -635,10 +595,7 @@ ucm_mass_convert_vassals_to_japan_feudal_effect = {
       has_tgp_dlc_trigger = yes
       ucm_mass_gov_conversion_target_trigger = yes
       NOT = { has_government = japan_feudal_government }
-      OR = {
-        root = { has_character_flag = ucm_chenzhi_target_vassals }
-        NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
-      }
+      NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
     }
     ucm_convert_character_to_japan_feudal_government_effect = yes
   }
@@ -681,10 +638,7 @@ ucm_mass_convert_vassals_to_herder_effect = {
     limit = {
       ucm_mass_gov_conversion_target_trigger = yes
       NOT = { has_government = herder_government }
-      OR = {
-        root = { has_character_flag = ucm_chenzhi_target_vassals }
-        NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
-      }
+      NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
     }
     ucm_convert_character_to_herder_government_effect = yes
   }

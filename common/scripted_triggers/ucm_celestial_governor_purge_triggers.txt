@@ -53,21 +53,11 @@ ucm_purge_eligible_non_governor_vassal_base_trigger = {
   ucm_purge_has_succession_candidate_trigger = yes
 }
 
-# 武官契约：军事+勇武；否则文官：外交+管理+学识
-# 变身大明政体优先按政府类型分文武，并扣除政体固定技能加成后再比阈值
+# Military-appointment contracts: martial + prowess; otherwise civil: diplomacy + stewardship + learning
 
 ucm_governor_is_mediocre_by_branch_trigger = {
   OR = {
     AND = {
-      ucm_is_gm_yan_military_government_trigger = yes
-      ucm_military_skill_sum_for_purge_effective_value < ucm_military_mediocre_threshold_value
-    }
-    AND = {
-      ucm_is_gm_yan_civil_government_trigger = yes
-      ucm_civil_skill_sum_for_purge_effective_value < ucm_civil_mediocre_threshold_value
-    }
-    AND = {
-      NOT = { ucm_is_gm_yan_government_trigger = yes }
       OR = {
         vassal_contract_has_flag = celestial_military_appointment
         vassal_contract_has_flag = meritocratic_military_appointment
@@ -75,7 +65,6 @@ ucm_governor_is_mediocre_by_branch_trigger = {
       ucm_military_skill_sum_for_purge_value < ucm_military_mediocre_threshold_value
     }
     AND = {
-      NOT = { ucm_is_gm_yan_government_trigger = yes }
       NOR = {
         vassal_contract_has_flag = celestial_military_appointment
         vassal_contract_has_flag = meritocratic_military_appointment

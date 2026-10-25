@@ -13,6 +13,7 @@ oligarchic_elective_succession_law = {
 			government_has_flag = government_is_clan
 		}
 		highest_held_title_tier >= tier_duchy
+		is_ai = no # cheat law: players only
 	}
 	can_pass = {
 		can_change_title_law_trigger = yes
@@ -43,6 +44,7 @@ peasant_elective_succession_law = {
 			government_has_flag = government_is_clan
 		}
 		highest_held_title_tier >= tier_duchy
+		is_ai = no # cheat law: players only
 	}
 	can_pass = {
 		can_change_title_law_trigger = yes
@@ -73,6 +75,7 @@ skone_theocratic_elective_succession_law = {
 			government_has_flag = government_is_theocracy
 		}
 		highest_held_title_tier >= tier_duchy
+		is_ai = no # cheat law: players only
 	}
 	can_pass = {
 		can_change_title_law_trigger = yes

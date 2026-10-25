@@ -631,7 +631,7 @@ ucm_crozier_cheats_do_stress_zero = {
 }
 
 ucm_crozier_cheats_do_target_kill = {
-	scope:ucm_crozier_cheats_t = { death = { death_reason = death_murder killer = scope:ucm_crozier_cheats_p } }
+	scope:ucm_crozier_cheats_t = { if = { limit = { ucm_crozier_cheats_target_unprotected_trigger = yes } death = { death_reason = death_murder killer = scope:ucm_crozier_cheats_p } } }
 }
 
 ucm_crozier_cheats_do_target_stress = {
@@ -863,7 +863,7 @@ ucm_crozier_cheats_do_capital_dev = {
 }
 
 ucm_crozier_cheats_do_t_execute = {
-	scope:ucm_crozier_cheats_t = { death = { death_reason = death_execution killer = scope:ucm_crozier_cheats_p } }
+	scope:ucm_crozier_cheats_t = { if = { limit = { ucm_crozier_cheats_target_unprotected_trigger = yes } death = { death_reason = death_execution killer = scope:ucm_crozier_cheats_p } } }
 }
 
 ucm_crozier_cheats_do_t_blind = {
@@ -1311,11 +1311,11 @@ ucm_crozier_cheats_do_cooldowns_reset = {
 }
 
 ucm_crozier_cheats_do_t_depose = {
-	scope:ucm_crozier_cheats_t = { depose = yes }
+	scope:ucm_crozier_cheats_t = { if = { limit = { ucm_crozier_cheats_target_unprotected_trigger = yes } depose = yes } }
 }
 
 ucm_crozier_cheats_do_t_banish = {
-	scope:ucm_crozier_cheats_t = { banish = yes }
+	scope:ucm_crozier_cheats_t = { if = { limit = { ucm_crozier_cheats_target_unprotected_trigger = yes } banish = yes } }
 }
 
 ucm_crozier_cheats_do_t_primary_spouse = {

@@ -192,11 +192,6 @@ ucm_positions_upgrade_core_named_court_positions_if_better_effect = {
   }
 }
 
-ucm_positions_upgrade_daming_named_court_positions_if_better_effect = {
-  scope:ucm_pos_reshuffle_liege = {
-  }
-}
-
 ucm_positions_upgrade_orient_named_court_positions_if_better_effect = {
   scope:ucm_pos_reshuffle_liege = {
   }
@@ -205,10 +200,6 @@ ucm_positions_upgrade_orient_named_court_positions_if_better_effect = {
 ucm_positions_upgrade_all_named_court_positions_if_better_effect = {
   scope:ucm_pos_reshuffle_liege = {
     ucm_positions_upgrade_core_named_court_positions_if_better_effect = yes
-    if = {
-      limit = { ucm_compat_daming_loaded_trigger = yes }
-      ucm_positions_upgrade_daming_named_court_positions_if_better_effect = yes
-    }
     if = {
       limit = { ucm_compat_orient_loaded_trigger = yes }
       ucm_positions_upgrade_orient_named_court_positions_if_better_effect = yes
@@ -269,11 +260,6 @@ ucm_positions_appoint_core_named_court_positions_strict_loose_spawn_effect = {
   }
 }
 
-ucm_positions_appoint_daming_named_court_positions_strict_loose_spawn_effect = {
-  scope:ucm_pos_reshuffle_liege = {
-  }
-}
-
 ucm_positions_appoint_orient_named_court_positions_strict_loose_spawn_effect = {
   scope:ucm_pos_reshuffle_liege = {
   }
@@ -282,10 +268,6 @@ ucm_positions_appoint_orient_named_court_positions_strict_loose_spawn_effect = {
 ucm_positions_appoint_all_named_court_positions_strict_loose_spawn_effect = {
   scope:ucm_pos_reshuffle_liege = {
     ucm_positions_appoint_core_named_court_positions_strict_loose_spawn_effect = yes
-    if = {
-      limit = { ucm_compat_daming_loaded_trigger = yes }
-      ucm_positions_appoint_daming_named_court_positions_strict_loose_spawn_effect = yes
-    }
     if = {
       limit = { ucm_compat_orient_loaded_trigger = yes }
       ucm_positions_appoint_orient_named_court_positions_strict_loose_spawn_effect = yes

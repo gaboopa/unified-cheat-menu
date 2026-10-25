@@ -14,7 +14,6 @@
  LIT_learned_trait_check_max_TT:0 "该特质进度已达上限。"
  LIT_learned_trait_check_missing_TT:0 "角色没有该特质，因此未增加经验。"
  dp_char_editor.traits.lifestyle_TT:0 "浏览生活方式特质。"
- dp_char_editor_dragon_birth:0 "龙之诞生"
  dead_group:0 "已消亡文化"
  tribal_regional_innovation_decision:0 "部落时代地区革新"
  early_regional_innovation_decision:0 "中世纪早期地区革新"

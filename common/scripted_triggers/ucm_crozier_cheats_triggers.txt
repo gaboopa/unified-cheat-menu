@@ -33,3 +33,11 @@
 		has_global_variable = ucm_crozier_cheats_on_auto_forever_young
 	}
 }
+
+# Kill/execute/depose/banish never hit the player, their spouse or close/extended family.
+# Scope: the target character. Needs scope:ucm_crozier_cheats_p (set by ucm_crozier_cheats_setup).
+ucm_crozier_cheats_target_unprotected_trigger = {
+	NOT = { this = scope:ucm_crozier_cheats_p }
+	NOT = { is_spouse_of = scope:ucm_crozier_cheats_p }
+	NOT = { is_close_or_extended_family_of = scope:ucm_crozier_cheats_p }
+}

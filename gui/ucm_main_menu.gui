@@ -1627,15 +1627,6 @@ window = {
               tooltip = "[Decision.GetShortDescForPlayer]"
               onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
             }
-            button_standard = {
-              layoutpolicy_horizontal = expanding
-              size = { 0 30 }
-              datacontext = "[GetDecisionWithKey( 'change_sansi_government' )]"
-              visible = "[Decision.IsShownForPlayer]"
-              text = "[Decision.GetTitleForPlayer]"
-              tooltip = "[Decision.GetShortDescForPlayer]"
-              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
-            }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_DIPLOMACY" using = Font_Size_Medium default_format = "#high" }
             hbox = {
               layoutpolicy_horizontal = expanding
@@ -2358,15 +2349,6 @@ window = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
               datacontext = "[GetDecisionWithKey( 'ucm_seduce_shield_for_consorts_decision' )]"
-              visible = "[Decision.IsShownForPlayer]"
-              text = "[Decision.GetTitleForPlayer]"
-              tooltip = "[Decision.GetShortDescForPlayer]"
-              onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
-            }
-            button_standard = {
-              layoutpolicy_horizontal = expanding
-              size = { 0 30 }
-              datacontext = "[GetDecisionWithKey( 'ucm_daming_ming_gov_menu_unlock_decision' )]"
               visible = "[Decision.IsShownForPlayer]"
               text = "[Decision.GetTitleForPlayer]"
               tooltip = "[Decision.GetShortDescForPlayer]"
@@ -3350,15 +3332,6 @@ window = {
               text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'zhuge_ymbuff_02' )]"
               tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'zhuge_ymbuff_02' )]"
               onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'zhuge_ymbuff_02' )]"
-            }
-            button_standard = {
-              layoutpolicy_horizontal = expanding
-              size = { 0 30 }
-              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'zhuge_daming_currency_menu' )]"
-              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'zhuge_daming_currency_menu' )]"
-              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'zhuge_daming_currency_menu' )]"
-              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'zhuge_daming_currency_menu' )]"
-              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'zhuge_daming_currency_menu' )]"
             }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_EVENTS" using = Font_Size_Medium default_format = "#high" }
             button_standard = {

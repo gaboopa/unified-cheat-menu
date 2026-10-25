@@ -1,5 +1,4 @@
 ﻿# 庸碌判定：文官看外交+管理+学识；武官看军事+勇武（与总督契约文武一致）
-# 变身大明政体 character_modifier 的固定技能加值不计入庸碌（如布政司制 stewardship +5）
 
 ucm_civil_skill_sum_for_purge_value = {
   value = 0
@@ -12,22 +11,6 @@ ucm_military_skill_sum_for_purge_value = {
   value = 0
   add = martial
   add = prowess
-}
-
-ucm_civil_skill_sum_for_purge_effective_value = {
-  value = ucm_civil_skill_sum_for_purge_value
-  if = {
-    limit = { government_has_flag = sansizhi_gov }
-    subtract = 5
-  }
-}
-
-ucm_military_skill_sum_for_purge_effective_value = {
-  value = ucm_military_skill_sum_for_purge_value
-  if = {
-    limit = { government_has_flag = weisuozhi_gov }
-    subtract = 5
-  }
 }
 
 # 与「三项均约低于中等」相当：3 × medium_skill_rating

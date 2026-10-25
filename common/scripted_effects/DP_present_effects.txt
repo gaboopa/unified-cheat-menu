@@ -771,9 +771,3 @@ innovation_late_medival_regional_effect = {
 	innovation_late_medival_effect = yes
 }
 
-HQ_change = {
-	change_variable = {
-		name = huangquan
-		add = $CHANGE$
-	}
-}

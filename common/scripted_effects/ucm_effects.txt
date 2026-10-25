@@ -45,7 +45,6 @@ ucm_menu_open_effect = {
 	ucm_menu_flag_on_effect = { FLAG = govt_menu }
 	ucm_menu_flag_on_effect = { FLAG = covt_menu }
 	ucm_menu_flag_on_effect = { FLAG = zhuge_juese_menu_01 }
-	ucm_menu_flag_on_effect = { FLAG = zhuge_sansi_menu_02 }
 	ucm_menu_flag_on_effect = { FLAG = pcm_show_decision_flag }
 	ucm_menu_flag_on_effect = { FLAG = pcm_b_show_decision_flag }
 	ucm_menu_flag_on_effect = { FLAG = open_optroop_menu }
@@ -64,7 +63,6 @@ ucm_menu_close_effect = {
 	ucm_menu_flag_off_effect = { FLAG = govt_menu }
 	ucm_menu_flag_off_effect = { FLAG = covt_menu }
 	ucm_menu_flag_off_effect = { FLAG = zhuge_juese_menu_01 }
-	ucm_menu_flag_off_effect = { FLAG = zhuge_sansi_menu_02 }
 	ucm_menu_flag_off_effect = { FLAG = pcm_show_decision_flag }
 	ucm_menu_flag_off_effect = { FLAG = pcm_b_show_decision_flag }
 	ucm_menu_flag_off_effect = { FLAG = open_optroop_menu }

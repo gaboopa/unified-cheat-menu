@@ -30,11 +30,10 @@ ucm_edit_resources_can_change_influence_trigger = {
   }
 }
 
-# 贤能值：仅天朝、贤能制、宫帐制（草原行政）及变身大明等有品级政体的目标显示
+# 贤能值：仅天朝、贤能制、宫帐制（草原行政）的目标显示
 ucm_edit_resources_can_change_merit_trigger = {
   scope:recipient = {
     OR = {
-      ucm_is_gm_yan_government_trigger = yes
       AND = {
         has_tgp_dlc_trigger = yes
         OR = {

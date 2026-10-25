@@ -450,19 +450,7 @@ ucm_sand_maa_populate_catalog_effect = {
   }
   add_to_global_variable_list = {
     name = ucm_sand_maa_list_all
-    target = flag:alihachaoha
-  }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_all
-    target = flag:alihachaohaa
-  }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_all
     target = flag:asia_tunguse_ss
-  }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_all
-    target = flag:cangtou_jun
   }
   add_to_global_variable_list = {
     name = ucm_sand_maa_list_all
@@ -486,19 +474,7 @@ ucm_sand_maa_populate_catalog_effect = {
   }
   add_to_global_variable_list = {
     name = ucm_sand_maa_list_all
-    target = flag:da_bing
-  }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_all
     target = flag:fanshang_suwei
-  }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_all
-    target = flag:folangjipao
-  }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_all
-    target = flag:guanning_jun
   }
   add_to_global_variable_list = {
     name = ucm_sand_maa_list_all
@@ -510,23 +486,11 @@ ucm_sand_maa_populate_catalog_effect = {
   }
   add_to_global_variable_list = {
     name = ucm_sand_maa_list_all
-    target = flag:lang_bing
-  }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_all
     target = flag:liao_pishijun
   }
   add_to_global_variable_list = {
     name = ucm_sand_maa_list_all
     target = flag:liao_woluduojun
-  }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_all
-    target = flag:niaochongshou
-  }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_all
-    target = flag:paoche
   }
   add_to_global_variable_list = {
     name = ucm_sand_maa_list_all
@@ -558,31 +522,11 @@ ucm_sand_maa_populate_catalog_effect = {
   }
   add_to_global_variable_list = {
     name = ucm_sand_maa_list_all
-    target = flag:tianxiong_jun
-  }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_all
-    target = flag:wo_ding
-  }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_all
     target = flag:xia_qianjun
   }
   add_to_global_variable_list = {
     name = ucm_sand_maa_list_all
     target = flag:xia_tieyaozi
-  }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_all
-    target = flag:xinjun
-  }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_all
-    target = flag:xinjun_jiqiang
-  }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_all
-    target = flag:xinjun_pao
   }
   clear_global_variable_list = ucm_sand_maa_list_infantry
   add_to_global_variable_list = {
@@ -727,10 +671,6 @@ ucm_sand_maa_populate_catalog_effect = {
   }
   add_to_global_variable_list = {
     name = ucm_sand_maa_list_infantry
-    target = flag:cangtou_jun
-  }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_infantry
     target = flag:china_centre_jj
   }
   add_to_global_variable_list = {
@@ -755,10 +695,6 @@ ucm_sand_maa_populate_catalog_effect = {
   }
   add_to_global_variable_list = {
     name = ucm_sand_maa_list_infantry
-    target = flag:lang_bing
-  }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_infantry
     target = flag:song_burenjia
   }
   add_to_global_variable_list = {
@@ -768,10 +704,6 @@ ucm_sand_maa_populate_catalog_effect = {
   add_to_global_variable_list = {
     name = ucm_sand_maa_list_infantry
     target = flag:tang_beiyajinjun
-  }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_infantry
-    target = flag:wo_ding
   }
   add_to_global_variable_list = {
     name = ucm_sand_maa_list_infantry
@@ -908,23 +840,7 @@ ucm_sand_maa_populate_catalog_effect = {
   }
   add_to_global_variable_list = {
     name = ucm_sand_maa_list_cavalry
-    target = flag:alihachaoha
-  }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_cavalry
-    target = flag:alihachaohaa
-  }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_cavalry
     target = flag:cathay_ps
-  }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_cavalry
-    target = flag:da_bing
-  }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_cavalry
-    target = flag:guanning_jun
   }
   add_to_global_variable_list = {
     name = ucm_sand_maa_list_cavalry
@@ -1011,26 +927,6 @@ ucm_sand_maa_populate_catalog_effect = {
     name = ucm_sand_maa_list_archers
     target = flag:asia_tunguse_ss
   }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_archers
-    target = flag:folangjipao
-  }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_archers
-    target = flag:niaochongshou
-  }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_archers
-    target = flag:tianxiong_jun
-  }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_archers
-    target = flag:xinjun
-  }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_archers
-    target = flag:xinjun_jiqiang
-  }
   clear_global_variable_list = ucm_sand_maa_list_special_terrain
   add_to_global_variable_list = {
     name = ucm_sand_maa_list_special_terrain
@@ -1091,15 +987,7 @@ ucm_sand_maa_populate_catalog_effect = {
   }
   add_to_global_variable_list = {
     name = ucm_sand_maa_list_siege
-    target = flag:paoche
-  }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_siege
     target = flag:thunder
-  }
-  add_to_global_variable_list = {
-    name = ucm_sand_maa_list_siege
-    target = flag:xinjun_pao
   }
   clear_global_variable_list = ucm_sand_maa_list_accolade
   add_to_global_variable_list = {

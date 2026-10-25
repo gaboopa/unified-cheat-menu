@@ -136,8 +136,6 @@
  conv_realm_religion_tt:0 "Religion bekehren"
  conv_realm_culture_tt:0 "Kultur ändern"
 
- zhuge_gm_fczh_TT:0 "Vasallen bekehren"
- zhuge_gm_fczh_desc:0 "Bringe Eure Vasallen dazu, denselben Weg zu beschreiten."
 
  max_realm_development_TT:0 "Entwicklung maximieren"
  max_realm_control_TT:0 "Kontrolle maximieren"
@@ -161,10 +159,8 @@
  change_govt_landless_adventurer:0 "Zu landlosem Abenteurer wechseln"
  change_govt_nomad:0 "Zu Nomaden wechseln"
 
- change_sansi_government:0 "Untertanenregierung ändern"
 
  change_govt_desc:0 "Ordnet die Regierungsform neu."
- change_sansi1_desc:0 "Ändert die Regierungsform Eures Untertanen."
 
  daddy_pika_GENERIC_EFFECT_DESC:0 ""
 
@@ -172,7 +168,6 @@
  title_government_menu:0 "-Regierungsmenü-"
  title_convert_menu:0 "-Reichsmenü-"
  zhuge_juese_menu:0 "-Charaktermenü-"
- zhuge_sansi_menu:0 "-Hauptmenü-"
 
 
  manage_titles:0 "Titel verwalten"

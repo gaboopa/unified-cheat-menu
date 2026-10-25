@@ -14,7 +14,6 @@
  LIT_learned_trait_check_max_TT:0 "This trait track is already at its maximum."
  LIT_learned_trait_check_missing_TT:0 "The character does not have this trait, so no experience was added."
  dp_char_editor.traits.lifestyle_TT:0 "Browse lifestyle traits."
- dp_char_editor_dragon_birth:0 "Dragon Birth"
  dead_group:0 "Extinct Cultures"
  tribal_regional_innovation_decision:0 "Tribal Era Regional Innovations"
  early_regional_innovation_decision:0 "Early Medieval Regional Innovations"

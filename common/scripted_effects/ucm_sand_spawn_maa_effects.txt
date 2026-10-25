@@ -1022,41 +1022,11 @@ ucm_sand_set_stack_from_pick_effect = {
   }
   else_if = {
     limit = {
-      var:ucm_sand_maa_pick = flag:alihachaoha
-      ucm_compat_daming_loaded_trigger = yes
-    }
-    set_variable = {
-      name = ucm_sand_maa_stack
-      value = 100
-    }
-  }
-  else_if = {
-    limit = {
-      var:ucm_sand_maa_pick = flag:alihachaohaa
-      ucm_compat_daming_loaded_trigger = yes
-    }
-    set_variable = {
-      name = ucm_sand_maa_stack
-      value = 100
-    }
-  }
-  else_if = {
-    limit = {
       var:ucm_sand_maa_pick = flag:asia_tunguse_ss
     }
     set_variable = {
       name = ucm_sand_maa_stack
       value = 100
-    }
-  }
-  else_if = {
-    limit = {
-      var:ucm_sand_maa_pick = flag:cangtou_jun
-      ucm_compat_daming_loaded_trigger = yes
-    }
-    set_variable = {
-      name = ucm_sand_maa_stack
-      value = 200
     }
   }
   else_if = {
@@ -1106,41 +1076,11 @@ ucm_sand_set_stack_from_pick_effect = {
   }
   else_if = {
     limit = {
-      var:ucm_sand_maa_pick = flag:da_bing
-      ucm_compat_daming_loaded_trigger = yes
-    }
-    set_variable = {
-      name = ucm_sand_maa_stack
-      value = 100
-    }
-  }
-  else_if = {
-    limit = {
       var:ucm_sand_maa_pick = flag:fanshang_suwei
     }
     set_variable = {
       name = ucm_sand_maa_stack
       value = 100
-    }
-  }
-  else_if = {
-    limit = {
-      var:ucm_sand_maa_pick = flag:folangjipao
-      ucm_compat_daming_loaded_trigger = yes
-    }
-    set_variable = {
-      name = ucm_sand_maa_stack
-      value = 25
-    }
-  }
-  else_if = {
-    limit = {
-      var:ucm_sand_maa_pick = flag:guanning_jun
-      ucm_compat_daming_loaded_trigger = yes
-    }
-    set_variable = {
-      name = ucm_sand_maa_stack
-      value = 50
     }
   }
   else_if = {
@@ -1163,16 +1103,6 @@ ucm_sand_set_stack_from_pick_effect = {
   }
   else_if = {
     limit = {
-      var:ucm_sand_maa_pick = flag:lang_bing
-      ucm_compat_daming_loaded_trigger = yes
-    }
-    set_variable = {
-      name = ucm_sand_maa_stack
-      value = 100
-    }
-  }
-  else_if = {
-    limit = {
       var:ucm_sand_maa_pick = flag:liao_pishijun
     }
     set_variable = {
@@ -1187,26 +1117,6 @@ ucm_sand_set_stack_from_pick_effect = {
     set_variable = {
       name = ucm_sand_maa_stack
       value = 50
-    }
-  }
-  else_if = {
-    limit = {
-      var:ucm_sand_maa_pick = flag:niaochongshou
-      ucm_compat_daming_loaded_trigger = yes
-    }
-    set_variable = {
-      name = ucm_sand_maa_stack
-      value = 100
-    }
-  }
-  else_if = {
-    limit = {
-      var:ucm_sand_maa_pick = flag:paoche
-      ucm_compat_daming_loaded_trigger = yes
-    }
-    set_variable = {
-      name = ucm_sand_maa_stack
-      value = 25
     }
   }
   else_if = {
@@ -1274,26 +1184,6 @@ ucm_sand_set_stack_from_pick_effect = {
   }
   else_if = {
     limit = {
-      var:ucm_sand_maa_pick = flag:tianxiong_jun
-      ucm_compat_daming_loaded_trigger = yes
-    }
-    set_variable = {
-      name = ucm_sand_maa_stack
-      value = 100
-    }
-  }
-  else_if = {
-    limit = {
-      var:ucm_sand_maa_pick = flag:wo_ding
-      ucm_compat_daming_loaded_trigger = yes
-    }
-    set_variable = {
-      name = ucm_sand_maa_stack
-      value = 100
-    }
-  }
-  else_if = {
-    limit = {
       var:ucm_sand_maa_pick = flag:xia_qianjun
     }
     set_variable = {
@@ -1308,36 +1198,6 @@ ucm_sand_set_stack_from_pick_effect = {
     set_variable = {
       name = ucm_sand_maa_stack
       value = 60
-    }
-  }
-  else_if = {
-    limit = {
-      var:ucm_sand_maa_pick = flag:xinjun
-      ucm_compat_daming_loaded_trigger = yes
-    }
-    set_variable = {
-      name = ucm_sand_maa_stack
-      value = 150
-    }
-  }
-  else_if = {
-    limit = {
-      var:ucm_sand_maa_pick = flag:xinjun_jiqiang
-      ucm_compat_daming_loaded_trigger = yes
-    }
-    set_variable = {
-      name = ucm_sand_maa_stack
-      value = 6
-    }
-  }
-  else_if = {
-    limit = {
-      var:ucm_sand_maa_pick = flag:xinjun_pao
-      ucm_compat_daming_loaded_trigger = yes
-    }
-    set_variable = {
-      name = ucm_sand_maa_stack
-      value = 6
     }
   }
 }

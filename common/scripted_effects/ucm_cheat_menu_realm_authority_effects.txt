@@ -351,18 +351,6 @@ ucm_cheat_menu_clear_authority_rollback_state_effect = {
   ucm_clear_authority_rollback_variables_effect = yes
 }
 
-# 权限帝号授予后：直接拉满当前政体可用的最高君权/行政档。
-ucm_authority_title_post_grant_bootstrap_effect = {
-  if = {
-    limit = { is_independent_ruler = yes }
-    ucm_apply_max_realm_authority_effect = yes
-  }
-  if = {
-    limit = { is_ruler = yes }
-    ucm_maximize_direct_vassal_contract_obligations_effect = yes
-  }
-}
-
 # 尽可能抬高直属封臣契约义务（可修改者连升多档）。
 ucm_maximize_direct_vassal_contract_obligations_effect = {
   every_vassal = {

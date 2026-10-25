@@ -206,20 +206,3 @@ ucm_player_government_feudal_blocked_notify_effect = {
   }
 }
 
-ucm_chenzhi_clear_menu_target_flags_effect = {
-  remove_character_flag = ucm_chenzhi_target_self
-  remove_character_flag = ucm_chenzhi_target_vassals
-}
-
-ucm_chenzhi_clear_menu_pending_effect = {
-  remove_character_flag = ucm_chenzhi_menu_pending
-  ucm_chenzhi_clear_menu_target_flags_effect = yes
-}
-
-ucm_chenzhi_finish_menu_option_effect = {
-  if = {
-    limit = { has_character_flag = ucm_chenzhi_target_self }
-    ucm_player_government_lock_sync_from_character_effect = yes
-  }
-  ucm_chenzhi_clear_menu_pending_effect = yes
-}

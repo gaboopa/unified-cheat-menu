@@ -34,95 +34,50 @@
 
  ucm_court_positions.8001.opt_revoke_all_tt: "@skill_learning_icon! Remove all holders from every court office within [ucm_pos_reshuffle_liege.GetShortUINamePossessive] court with no reappointments. Council seats are preserved, and multi-slot offices will be fully cleared."
 
- ucm_officials.0011.back: "Back"
 
- ucm_officials.0011.close: "Close"
 
- ucm_officials.0011.next_page: "Next Page"
 
- ucm_officials.0011.opt_administrative: "Administrative Government"
 
- ucm_officials.0011.opt_administrative_tt: "Requires Roads to Power DLC."
 
- ucm_officials.0011.opt_celestial: "Celestial Government"
 
- ucm_officials.0011.opt_celestial_tt: "Requires Tours & Tournaments DLC."
 
- ucm_officials.0011.opt_feudal: "Feudal Government"
 
- ucm_officials.0011.opt_feudal_tt: "Tribal, Herder and Nomad capitals will be converted to Castles first."
 
- ucm_officials.0011.opt_herder: "Herder Government"
 
- ucm_officials.0011.opt_herder_tt: "Requires the Herder Government expansion. If the capital is not a Herder holding, it will be converted automatically. Distinct from Yurt Government."
 
- ucm_officials.0011.opt_japan_admin: "Ritsuryō Administration"
 
- ucm_officials.0011.opt_japan_admin_tt: "Requires Tours & Tournaments DLC. Must meet vanilla requirements for Japanese administration. Ineligible vassals will be skipped."
 
- ucm_officials.0011.opt_meritocratic: "Meritocratic Government"
 
- ucm_officials.0011.opt_meritocratic_tt: "Requires Tours & Tournaments DLC."
 
- ucm_officials.0011.opt_republic: "Republican Government"
 
- ucm_officials.0011.opt_republic_tt: "Debug tool. May not function properly in certain scenarios."
 
- ucm_officials.0011.opt_steppe_admin: "Yurt Government"
 
- ucm_officials.0011.opt_steppe_admin_tt: "Requires Tours & Tournaments DLC. Vanilla Steppe administration, separate from Nomad government."
 
- ucm_officials.0011.opt_theocracy: "Theocratic Government"
 
- ucm_officials.0011.opt_theocracy_tt: "Vanilla Bishopric theocracy. Succession and offices differ from secular realms. For debug use only."
 
- ucm_officials.0011.opt_tribal: "Tribal Government"
 
- ucm_officials.0011.opt_tribal_tt: "Castle, City and Church capitals will be converted to Tribal holdings first."
 
- ucm_officials.0012.prev_page: "Previous Page"
 
- ucm_officials.0013.opt_gm_baqizhi: "Eight Banners System"
 
- ucm_officials.0013.opt_gm_baqizhi_tt: "Tribal, Herder and Nomad capitals will be converted to Castles first."
 
- ucm_officials.0013.opt_gm_daiyizhi: "Banner Service System"
 
- ucm_officials.0013.opt_gm_daiyizhi_tt: "Tribal, Herder and Nomad capitals will be converted to Castles first."
 
- ucm_officials.0013.opt_gm_neige: "Grand Secretariat"
 
- ucm_officials.0013.opt_gm_neige_tt: "Only applies to your own realm. Cannot be used on vassals. Landed rulers may still convert. Use with caution."
 
- ucm_officials.0013.opt_gm_pirate: "Pirate Government"
 
- ucm_officials.0013.opt_gm_pirate_tt: "Castle, City and Church capitals will be converted to Tribal holdings first. Matches the Great Ming mod settings."
 
- ucm_officials.0013.opt_gm_sansizhi: "Provincial Three Offices"
 
- ucm_officials.0013.opt_gm_sansizhi_tt: ""
 
- ucm_officials.0013.opt_gm_tusizhi: "Native Chieftain System"
 
- ucm_officials.0013.opt_gm_tusizhi_tt: "Castle, City and Church capitals will be converted to Tribal holdings first."
 
- ucm_officials.0013.opt_gm_weisuozhi: "Garrison System"
 
- ucm_officials.0013.opt_gm_weisuozhi_tt: "Tribal, Herder and Nomad capitals will be converted to Castles first."
 
- ucm_officials.0013.opt_gm_zhimin: "Colonial Settlement System"
 
- ucm_officials.0013.opt_gm_zhimin_tt: "If the capital is not a City holding, it will be converted into a City automatically."
 
- ucm_officials.0013.opt_gm_zongfan: "Imperial Kin Fief System"
 
- ucm_officials.0013.opt_gm_zongfan_tt: "Tribal, Herder and Nomad capitals will be converted to Castles first."
 
- ucm_officials.0013.opt_gm_zuzhi: "Communal Organization"
 
- ucm_officials.0013.opt_gm_zuzhi_tt: "Only for unlanded characters holding at least a Barony. Cannot be applied to vassals in bulk."
 
- ucm_officials.0013.prev_page: "Previous (Vanilla Governments)"
 
  ucm_officials.9040.close: "Close"
 

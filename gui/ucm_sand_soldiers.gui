@@ -1709,37 +1709,6 @@ window = {
                           }
                         }
                       }
-                      button_standard_hover = {
-                        layoutpolicy_horizontal = fixed
-                        minimumsize = { 248 58 }
-                        maximumsize = { 248 58 }
-                        tooltip = ucm_sand_tile_click_tt
-                        visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                        onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('cangtou_jun')).End)]"
-                        down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('cangtou_jun')).End)]"
-                        background = {
-                          using = Background_Area_Dark
-                          alpha = 0.4
-                          visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('cangtou_jun')).End)]"
-                        }
-                        hbox = {
-                          margin = { 8 4 }
-                          spacing = 10
-                          highlight_icon = {
-                            alwaystransparent = yes
-                            size = { 40 40 }
-                            texture = "gfx/interface/icons/regimenttypes/jiabing_01.dds"
-                          }
-                          text_single = {
-                            alwaystransparent = yes
-                            layoutpolicy_horizontal = expanding
-                            raw_text = "cangtou_jun"
-                            default_format = "#clickable"
-                            autoresize = no
-                            max_width = 188
-                          }
-                        }
-                      }
                     }
                     hbox = {
                       layoutpolicy_horizontal = expanding
@@ -1943,37 +1912,6 @@ window = {
                         minimumsize = { 248 58 }
                         maximumsize = { 248 58 }
                         tooltip = ucm_sand_tile_click_tt
-                        visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                        onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('lang_bing')).End)]"
-                        down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('lang_bing')).End)]"
-                        background = {
-                          using = Background_Area_Dark
-                          alpha = 0.4
-                          visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('lang_bing')).End)]"
-                        }
-                        hbox = {
-                          margin = { 8 4 }
-                          spacing = 10
-                          highlight_icon = {
-                            alwaystransparent = yes
-                            size = { 40 40 }
-                            texture = "gfx/interface/icons/regimenttypes/mountaineer.dds"
-                          }
-                          text_single = {
-                            alwaystransparent = yes
-                            layoutpolicy_horizontal = expanding
-                            raw_text = "lang_bing"
-                            default_format = "#clickable"
-                            autoresize = no
-                            max_width = 188
-                          }
-                        }
-                      }
-                      button_standard_hover = {
-                        layoutpolicy_horizontal = fixed
-                        minimumsize = { 248 58 }
-                        maximumsize = { 248 58 }
-                        tooltip = ucm_sand_tile_click_tt
                         visible = "[And(GetScriptedGui('ucm_sand_show_orient_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), GetScriptedGui('ucm_sand_show_orient_expansion_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
                         onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('song_burenjia')).End)]"
                         down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('song_burenjia')).End)]"
@@ -2060,37 +1998,6 @@ window = {
                             alwaystransparent = yes
                             layoutpolicy_horizontal = expanding
                             raw_text = "tang_beiyajinjun"
-                            default_format = "#clickable"
-                            autoresize = no
-                            max_width = 188
-                          }
-                        }
-                      }
-                      button_standard_hover = {
-                        layoutpolicy_horizontal = fixed
-                        minimumsize = { 248 58 }
-                        maximumsize = { 248 58 }
-                        tooltip = ucm_sand_tile_click_tt
-                        visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                        onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('wo_ding')).End)]"
-                        down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('wo_ding')).End)]"
-                        background = {
-                          using = Background_Area_Dark
-                          alpha = 0.4
-                          visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('wo_ding')).End)]"
-                        }
-                        hbox = {
-                          margin = { 8 4 }
-                          spacing = 10
-                          highlight_icon = {
-                            alwaystransparent = yes
-                            size = { 40 40 }
-                            texture = "gfx/interface/icons/regimenttypes/jiabing_04.dds"
-                          }
-                          text_single = {
-                            alwaystransparent = yes
-                            layoutpolicy_horizontal = expanding
-                            raw_text = "wo_ding"
                             default_format = "#clickable"
                             autoresize = no
                             max_width = 188
@@ -3407,68 +3314,6 @@ window = {
                           }
                         }
                       }
-                      button_standard_hover = {
-                        layoutpolicy_horizontal = fixed
-                        minimumsize = { 248 58 }
-                        maximumsize = { 248 58 }
-                        tooltip = ucm_sand_tile_click_tt
-                        visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                        onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('alihachaoha')).End)]"
-                        down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('alihachaoha')).End)]"
-                        background = {
-                          using = Background_Area_Dark
-                          alpha = 0.4
-                          visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('alihachaoha')).End)]"
-                        }
-                        hbox = {
-                          margin = { 8 4 }
-                          spacing = 10
-                          highlight_icon = {
-                            alwaystransparent = yes
-                            size = { 40 40 }
-                            texture = "gfx/interface/icons/regimenttypes/alihachaoha.dds"
-                          }
-                          text_single = {
-                            alwaystransparent = yes
-                            layoutpolicy_horizontal = expanding
-                            raw_text = "alihachaoha"
-                            default_format = "#clickable"
-                            autoresize = no
-                            max_width = 188
-                          }
-                        }
-                      }
-                      button_standard_hover = {
-                        layoutpolicy_horizontal = fixed
-                        minimumsize = { 248 58 }
-                        maximumsize = { 248 58 }
-                        tooltip = ucm_sand_tile_click_tt
-                        visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                        onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('alihachaohaa')).End)]"
-                        down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('alihachaohaa')).End)]"
-                        background = {
-                          using = Background_Area_Dark
-                          alpha = 0.4
-                          visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('alihachaohaa')).End)]"
-                        }
-                        hbox = {
-                          margin = { 8 4 }
-                          spacing = 10
-                          highlight_icon = {
-                            alwaystransparent = yes
-                            size = { 40 40 }
-                            texture = "gfx/interface/icons/regimenttypes/alihachaoha.dds"
-                          }
-                          text_single = {
-                            alwaystransparent = yes
-                            layoutpolicy_horizontal = expanding
-                            raw_text = "alihachaohaa"
-                            default_format = "#clickable"
-                            autoresize = no
-                            max_width = 188
-                          }
-                        }
-                      }
                     }
                     hbox = {
                       layoutpolicy_horizontal = expanding
@@ -3498,68 +3343,6 @@ window = {
                             alwaystransparent = yes
                             layoutpolicy_horizontal = expanding
                             raw_text = "cathay_ps"
-                            default_format = "#clickable"
-                            autoresize = no
-                            max_width = 188
-                          }
-                        }
-                      }
-                      button_standard_hover = {
-                        layoutpolicy_horizontal = fixed
-                        minimumsize = { 248 58 }
-                        maximumsize = { 248 58 }
-                        tooltip = ucm_sand_tile_click_tt
-                        visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                        onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('da_bing')).End)]"
-                        down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('da_bing')).End)]"
-                        background = {
-                          using = Background_Area_Dark
-                          alpha = 0.4
-                          visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('da_bing')).End)]"
-                        }
-                        hbox = {
-                          margin = { 8 4 }
-                          spacing = 10
-                          highlight_icon = {
-                            alwaystransparent = yes
-                            size = { 40 40 }
-                            texture = "gfx/interface/icons/regimenttypes/jiabing_06.dds"
-                          }
-                          text_single = {
-                            alwaystransparent = yes
-                            layoutpolicy_horizontal = expanding
-                            raw_text = "da_bing"
-                            default_format = "#clickable"
-                            autoresize = no
-                            max_width = 188
-                          }
-                        }
-                      }
-                      button_standard_hover = {
-                        layoutpolicy_horizontal = fixed
-                        minimumsize = { 248 58 }
-                        maximumsize = { 248 58 }
-                        tooltip = ucm_sand_tile_click_tt
-                        visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                        onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('guanning_jun')).End)]"
-                        down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('guanning_jun')).End)]"
-                        background = {
-                          using = Background_Area_Dark
-                          alpha = 0.4
-                          visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('guanning_jun')).End)]"
-                        }
-                        hbox = {
-                          margin = { 8 4 }
-                          spacing = 10
-                          highlight_icon = {
-                            alwaystransparent = yes
-                            size = { 40 40 }
-                            texture = "gfx/interface/icons/regimenttypes/jiabing_05.dds"
-                          }
-                          text_single = {
-                            alwaystransparent = yes
-                            layoutpolicy_horizontal = expanding
-                            raw_text = "guanning_jun"
                             default_format = "#clickable"
                             autoresize = no
                             max_width = 188
@@ -4409,169 +4192,6 @@ window = {
                     hbox = {
                       layoutpolicy_horizontal = expanding
                       spacing = 8
-                      button_standard_hover = {
-                        layoutpolicy_horizontal = fixed
-                        minimumsize = { 372 58 }
-                        maximumsize = { 372 58 }
-                        tooltip = ucm_sand_tile_click_tt
-                        visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                        onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('folangjipao')).End)]"
-                        down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('folangjipao')).End)]"
-                        background = {
-                          using = Background_Area_Dark
-                          alpha = 0.4
-                          visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('folangjipao')).End)]"
-                        }
-                        hbox = {
-                          margin = { 8 4 }
-                          spacing = 10
-                          highlight_icon = {
-                            alwaystransparent = yes
-                            size = { 40 40 }
-                            texture = "gfx/interface/icons/regimenttypes/folangjipao.dds"
-                          }
-                          text_single = {
-                            alwaystransparent = yes
-                            layoutpolicy_horizontal = expanding
-                            raw_text = "folangjipao"
-                            default_format = "#clickable"
-                            autoresize = no
-                            max_width = 312
-                          }
-                        }
-                      }
-                      button_standard_hover = {
-                        layoutpolicy_horizontal = fixed
-                        minimumsize = { 372 58 }
-                        maximumsize = { 372 58 }
-                        tooltip = ucm_sand_tile_click_tt
-                        visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                        onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('niaochongshou')).End)]"
-                        down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('niaochongshou')).End)]"
-                        background = {
-                          using = Background_Area_Dark
-                          alpha = 0.4
-                          visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('niaochongshou')).End)]"
-                        }
-                        hbox = {
-                          margin = { 8 4 }
-                          spacing = 10
-                          highlight_icon = {
-                            alwaystransparent = yes
-                            size = { 40 40 }
-                            texture = "gfx/interface/icons/regimenttypes/musketeer.dds"
-                          }
-                          text_single = {
-                            alwaystransparent = yes
-                            layoutpolicy_horizontal = expanding
-                            raw_text = "niaochongshou"
-                            default_format = "#clickable"
-                            autoresize = no
-                            max_width = 312
-                          }
-                        }
-                      }
-                    }
-                    hbox = {
-                      layoutpolicy_horizontal = expanding
-                      spacing = 8
-                      button_standard_hover = {
-                        layoutpolicy_horizontal = fixed
-                        minimumsize = { 372 58 }
-                        maximumsize = { 372 58 }
-                        tooltip = ucm_sand_tile_click_tt
-                        visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                        onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('tianxiong_jun')).End)]"
-                        down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('tianxiong_jun')).End)]"
-                        background = {
-                          using = Background_Area_Dark
-                          alpha = 0.4
-                          visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('tianxiong_jun')).End)]"
-                        }
-                        hbox = {
-                          margin = { 8 4 }
-                          spacing = 10
-                          highlight_icon = {
-                            alwaystransparent = yes
-                            size = { 40 40 }
-                            texture = "gfx/interface/icons/regimenttypes/jiabing_07.dds"
-                          }
-                          text_single = {
-                            alwaystransparent = yes
-                            layoutpolicy_horizontal = expanding
-                            raw_text = "tianxiong_jun"
-                            default_format = "#clickable"
-                            autoresize = no
-                            max_width = 312
-                          }
-                        }
-                      }
-                      button_standard_hover = {
-                        layoutpolicy_horizontal = fixed
-                        minimumsize = { 372 58 }
-                        maximumsize = { 372 58 }
-                        tooltip = ucm_sand_tile_click_tt
-                        visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                        onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('xinjun')).End)]"
-                        down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('xinjun')).End)]"
-                        background = {
-                          using = Background_Area_Dark
-                          alpha = 0.4
-                          visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('xinjun')).End)]"
-                        }
-                        hbox = {
-                          margin = { 8 4 }
-                          spacing = 10
-                          highlight_icon = {
-                            alwaystransparent = yes
-                            size = { 40 40 }
-                            texture = "gfx/interface/icons/regimenttypes/riflemen.dds"
-                          }
-                          text_single = {
-                            alwaystransparent = yes
-                            layoutpolicy_horizontal = expanding
-                            raw_text = "xinjun"
-                            default_format = "#clickable"
-                            autoresize = no
-                            max_width = 312
-                          }
-                        }
-                      }
-                    }
-                    hbox = {
-                      layoutpolicy_horizontal = expanding
-                      spacing = 8
-                      button_standard_hover = {
-                        layoutpolicy_horizontal = fixed
-                        minimumsize = { 372 58 }
-                        maximumsize = { 372 58 }
-                        tooltip = ucm_sand_tile_click_tt
-                        visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                        onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('xinjun_jiqiang')).End)]"
-                        down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('xinjun_jiqiang')).End)]"
-                        background = {
-                          using = Background_Area_Dark
-                          alpha = 0.4
-                          visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('xinjun_jiqiang')).End)]"
-                        }
-                        hbox = {
-                          margin = { 8 4 }
-                          spacing = 10
-                          highlight_icon = {
-                            alwaystransparent = yes
-                            size = { 40 40 }
-                            texture = "gfx/interface/icons/regimenttypes/machinegun.dds"
-                          }
-                          text_single = {
-                            alwaystransparent = yes
-                            layoutpolicy_horizontal = expanding
-                            raw_text = "xinjun_jiqiang"
-                            default_format = "#clickable"
-                            autoresize = no
-                            max_width = 312
-                          }
-                        }
-                      }
                       widget = {
                         size = { 372 58 }
                       }
@@ -5238,37 +4858,6 @@ window = {
                         minimumsize = { 360 60 }
                         maximumsize = { 360 60 }
                         tooltip = ucm_sand_tile_click_tt
-                        visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                        onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('paoche')).End)]"
-                        down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('paoche')).End)]"
-                        background = {
-                          using = Background_Area_Dark
-                          alpha = 0.4
-                          visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('paoche')).End)]"
-                        }
-                        hbox = {
-                          margin = { 8 4 }
-                          spacing = 10
-                          highlight_icon = {
-                            alwaystransparent = yes
-                            size = { 40 40 }
-                            texture = "gfx/interface/icons/regimenttypes/bombard.dds"
-                          }
-                          text_single = {
-                            alwaystransparent = yes
-                            layoutpolicy_horizontal = expanding
-                            raw_text = "paoche"
-                            default_format = "#clickable"
-                            autoresize = no
-                            max_width = 300
-                          }
-                        }
-                      }
-                      button_standard_hover = {
-                        layoutpolicy_horizontal = fixed
-                        minimumsize = { 360 60 }
-                        maximumsize = { 360 60 }
-                        tooltip = ucm_sand_tile_click_tt
                         visible = "[GetScriptedGui('ucm_sand_show_orient_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
                         onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('thunder')).End)]"
                         down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('thunder')).End)]"
@@ -5299,37 +4888,6 @@ window = {
                     hbox = {
                       layoutpolicy_horizontal = expanding
                       spacing = 8
-                      button_standard_hover = {
-                        layoutpolicy_horizontal = fixed
-                        minimumsize = { 360 60 }
-                        maximumsize = { 360 60 }
-                        tooltip = ucm_sand_tile_click_tt
-                        visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                        onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('xinjun_pao')).End)]"
-                        down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('xinjun_pao')).End)]"
-                        background = {
-                          using = Background_Area_Dark
-                          alpha = 0.4
-                          visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('xinjun_pao')).End)]"
-                        }
-                        hbox = {
-                          margin = { 8 4 }
-                          spacing = 10
-                          highlight_icon = {
-                            alwaystransparent = yes
-                            size = { 40 40 }
-                            texture = "gfx/interface/icons/regimenttypes/cannon.dds"
-                          }
-                          text_single = {
-                            alwaystransparent = yes
-                            layoutpolicy_horizontal = expanding
-                            raw_text = "xinjun_pao"
-                            default_format = "#clickable"
-                            autoresize = no
-                            max_width = 300
-                          }
-                        }
-                      }
                       widget = {
                         size = { 360 60 }
                       }
@@ -7519,37 +7077,6 @@ window = {
                       }
                     }
                   }
-                  button_standard_hover = {
-                    layoutpolicy_horizontal = fixed
-                    minimumsize = { 248 58 }
-                    maximumsize = { 248 58 }
-                    tooltip = ucm_sand_tile_click_tt
-                    visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                    onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('cangtou_jun')).End)]"
-                    down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('cangtou_jun')).End)]"
-                    background = {
-                      using = Background_Area_Dark
-                      alpha = 0.4
-                      visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('cangtou_jun')).End)]"
-                    }
-                    hbox = {
-                      margin = { 8 4 }
-                      spacing = 10
-                      highlight_icon = {
-                        alwaystransparent = yes
-                        size = { 40 40 }
-                        texture = "gfx/interface/icons/regimenttypes/jiabing_01.dds"
-                      }
-                      text_single = {
-                        alwaystransparent = yes
-                        layoutpolicy_horizontal = expanding
-                        raw_text = "cangtou_jun"
-                        default_format = "#clickable"
-                        autoresize = no
-                        max_width = 188
-                      }
-                    }
-                  }
                 }
                 hbox = {
                   layoutpolicy_horizontal = expanding
@@ -7753,37 +7280,6 @@ window = {
                     minimumsize = { 248 58 }
                     maximumsize = { 248 58 }
                     tooltip = ucm_sand_tile_click_tt
-                    visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                    onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('lang_bing')).End)]"
-                    down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('lang_bing')).End)]"
-                    background = {
-                      using = Background_Area_Dark
-                      alpha = 0.4
-                      visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('lang_bing')).End)]"
-                    }
-                    hbox = {
-                      margin = { 8 4 }
-                      spacing = 10
-                      highlight_icon = {
-                        alwaystransparent = yes
-                        size = { 40 40 }
-                        texture = "gfx/interface/icons/regimenttypes/mountaineer.dds"
-                      }
-                      text_single = {
-                        alwaystransparent = yes
-                        layoutpolicy_horizontal = expanding
-                        raw_text = "lang_bing"
-                        default_format = "#clickable"
-                        autoresize = no
-                        max_width = 188
-                      }
-                    }
-                  }
-                  button_standard_hover = {
-                    layoutpolicy_horizontal = fixed
-                    minimumsize = { 248 58 }
-                    maximumsize = { 248 58 }
-                    tooltip = ucm_sand_tile_click_tt
                     visible = "[And(GetScriptedGui('ucm_sand_show_orient_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), GetScriptedGui('ucm_sand_show_orient_expansion_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
                     onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('song_burenjia')).End)]"
                     down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('song_burenjia')).End)]"
@@ -7870,37 +7366,6 @@ window = {
                         alwaystransparent = yes
                         layoutpolicy_horizontal = expanding
                         raw_text = "tang_beiyajinjun"
-                        default_format = "#clickable"
-                        autoresize = no
-                        max_width = 188
-                      }
-                    }
-                  }
-                  button_standard_hover = {
-                    layoutpolicy_horizontal = fixed
-                    minimumsize = { 248 58 }
-                    maximumsize = { 248 58 }
-                    tooltip = ucm_sand_tile_click_tt
-                    visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                    onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('wo_ding')).End)]"
-                    down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('wo_ding')).End)]"
-                    background = {
-                      using = Background_Area_Dark
-                      alpha = 0.4
-                      visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('wo_ding')).End)]"
-                    }
-                    hbox = {
-                      margin = { 8 4 }
-                      spacing = 10
-                      highlight_icon = {
-                        alwaystransparent = yes
-                        size = { 40 40 }
-                        texture = "gfx/interface/icons/regimenttypes/jiabing_04.dds"
-                      }
-                      text_single = {
-                        alwaystransparent = yes
-                        layoutpolicy_horizontal = expanding
-                        raw_text = "wo_ding"
                         default_format = "#clickable"
                         autoresize = no
                         max_width = 188
@@ -9185,68 +8650,6 @@ window = {
                       }
                     }
                   }
-                  button_standard_hover = {
-                    layoutpolicy_horizontal = fixed
-                    minimumsize = { 248 58 }
-                    maximumsize = { 248 58 }
-                    tooltip = ucm_sand_tile_click_tt
-                    visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                    onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('alihachaoha')).End)]"
-                    down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('alihachaoha')).End)]"
-                    background = {
-                      using = Background_Area_Dark
-                      alpha = 0.4
-                      visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('alihachaoha')).End)]"
-                    }
-                    hbox = {
-                      margin = { 8 4 }
-                      spacing = 10
-                      highlight_icon = {
-                        alwaystransparent = yes
-                        size = { 40 40 }
-                        texture = "gfx/interface/icons/regimenttypes/alihachaoha.dds"
-                      }
-                      text_single = {
-                        alwaystransparent = yes
-                        layoutpolicy_horizontal = expanding
-                        raw_text = "alihachaoha"
-                        default_format = "#clickable"
-                        autoresize = no
-                        max_width = 188
-                      }
-                    }
-                  }
-                  button_standard_hover = {
-                    layoutpolicy_horizontal = fixed
-                    minimumsize = { 248 58 }
-                    maximumsize = { 248 58 }
-                    tooltip = ucm_sand_tile_click_tt
-                    visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                    onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('alihachaohaa')).End)]"
-                    down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('alihachaohaa')).End)]"
-                    background = {
-                      using = Background_Area_Dark
-                      alpha = 0.4
-                      visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('alihachaohaa')).End)]"
-                    }
-                    hbox = {
-                      margin = { 8 4 }
-                      spacing = 10
-                      highlight_icon = {
-                        alwaystransparent = yes
-                        size = { 40 40 }
-                        texture = "gfx/interface/icons/regimenttypes/alihachaoha.dds"
-                      }
-                      text_single = {
-                        alwaystransparent = yes
-                        layoutpolicy_horizontal = expanding
-                        raw_text = "alihachaohaa"
-                        default_format = "#clickable"
-                        autoresize = no
-                        max_width = 188
-                      }
-                    }
-                  }
                 }
                 hbox = {
                   layoutpolicy_horizontal = expanding
@@ -9276,68 +8679,6 @@ window = {
                         alwaystransparent = yes
                         layoutpolicy_horizontal = expanding
                         raw_text = "cathay_ps"
-                        default_format = "#clickable"
-                        autoresize = no
-                        max_width = 188
-                      }
-                    }
-                  }
-                  button_standard_hover = {
-                    layoutpolicy_horizontal = fixed
-                    minimumsize = { 248 58 }
-                    maximumsize = { 248 58 }
-                    tooltip = ucm_sand_tile_click_tt
-                    visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                    onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('da_bing')).End)]"
-                    down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('da_bing')).End)]"
-                    background = {
-                      using = Background_Area_Dark
-                      alpha = 0.4
-                      visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('da_bing')).End)]"
-                    }
-                    hbox = {
-                      margin = { 8 4 }
-                      spacing = 10
-                      highlight_icon = {
-                        alwaystransparent = yes
-                        size = { 40 40 }
-                        texture = "gfx/interface/icons/regimenttypes/jiabing_06.dds"
-                      }
-                      text_single = {
-                        alwaystransparent = yes
-                        layoutpolicy_horizontal = expanding
-                        raw_text = "da_bing"
-                        default_format = "#clickable"
-                        autoresize = no
-                        max_width = 188
-                      }
-                    }
-                  }
-                  button_standard_hover = {
-                    layoutpolicy_horizontal = fixed
-                    minimumsize = { 248 58 }
-                    maximumsize = { 248 58 }
-                    tooltip = ucm_sand_tile_click_tt
-                    visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                    onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('guanning_jun')).End)]"
-                    down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('guanning_jun')).End)]"
-                    background = {
-                      using = Background_Area_Dark
-                      alpha = 0.4
-                      visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('guanning_jun')).End)]"
-                    }
-                    hbox = {
-                      margin = { 8 4 }
-                      spacing = 10
-                      highlight_icon = {
-                        alwaystransparent = yes
-                        size = { 40 40 }
-                        texture = "gfx/interface/icons/regimenttypes/jiabing_05.dds"
-                      }
-                      text_single = {
-                        alwaystransparent = yes
-                        layoutpolicy_horizontal = expanding
-                        raw_text = "guanning_jun"
                         default_format = "#clickable"
                         autoresize = no
                         max_width = 188
@@ -10155,169 +9496,6 @@ window = {
                 hbox = {
                   layoutpolicy_horizontal = expanding
                   spacing = 8
-                  button_standard_hover = {
-                    layoutpolicy_horizontal = fixed
-                    minimumsize = { 372 58 }
-                    maximumsize = { 372 58 }
-                    tooltip = ucm_sand_tile_click_tt
-                    visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                    onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('folangjipao')).End)]"
-                    down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('folangjipao')).End)]"
-                    background = {
-                      using = Background_Area_Dark
-                      alpha = 0.4
-                      visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('folangjipao')).End)]"
-                    }
-                    hbox = {
-                      margin = { 8 4 }
-                      spacing = 10
-                      highlight_icon = {
-                        alwaystransparent = yes
-                        size = { 40 40 }
-                        texture = "gfx/interface/icons/regimenttypes/folangjipao.dds"
-                      }
-                      text_single = {
-                        alwaystransparent = yes
-                        layoutpolicy_horizontal = expanding
-                        raw_text = "folangjipao"
-                        default_format = "#clickable"
-                        autoresize = no
-                        max_width = 312
-                      }
-                    }
-                  }
-                  button_standard_hover = {
-                    layoutpolicy_horizontal = fixed
-                    minimumsize = { 372 58 }
-                    maximumsize = { 372 58 }
-                    tooltip = ucm_sand_tile_click_tt
-                    visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                    onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('niaochongshou')).End)]"
-                    down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('niaochongshou')).End)]"
-                    background = {
-                      using = Background_Area_Dark
-                      alpha = 0.4
-                      visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('niaochongshou')).End)]"
-                    }
-                    hbox = {
-                      margin = { 8 4 }
-                      spacing = 10
-                      highlight_icon = {
-                        alwaystransparent = yes
-                        size = { 40 40 }
-                        texture = "gfx/interface/icons/regimenttypes/musketeer.dds"
-                      }
-                      text_single = {
-                        alwaystransparent = yes
-                        layoutpolicy_horizontal = expanding
-                        raw_text = "niaochongshou"
-                        default_format = "#clickable"
-                        autoresize = no
-                        max_width = 312
-                      }
-                    }
-                  }
-                }
-                hbox = {
-                  layoutpolicy_horizontal = expanding
-                  spacing = 8
-                  button_standard_hover = {
-                    layoutpolicy_horizontal = fixed
-                    minimumsize = { 372 58 }
-                    maximumsize = { 372 58 }
-                    tooltip = ucm_sand_tile_click_tt
-                    visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                    onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('tianxiong_jun')).End)]"
-                    down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('tianxiong_jun')).End)]"
-                    background = {
-                      using = Background_Area_Dark
-                      alpha = 0.4
-                      visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('tianxiong_jun')).End)]"
-                    }
-                    hbox = {
-                      margin = { 8 4 }
-                      spacing = 10
-                      highlight_icon = {
-                        alwaystransparent = yes
-                        size = { 40 40 }
-                        texture = "gfx/interface/icons/regimenttypes/jiabing_07.dds"
-                      }
-                      text_single = {
-                        alwaystransparent = yes
-                        layoutpolicy_horizontal = expanding
-                        raw_text = "tianxiong_jun"
-                        default_format = "#clickable"
-                        autoresize = no
-                        max_width = 312
-                      }
-                    }
-                  }
-                  button_standard_hover = {
-                    layoutpolicy_horizontal = fixed
-                    minimumsize = { 372 58 }
-                    maximumsize = { 372 58 }
-                    tooltip = ucm_sand_tile_click_tt
-                    visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                    onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('xinjun')).End)]"
-                    down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('xinjun')).End)]"
-                    background = {
-                      using = Background_Area_Dark
-                      alpha = 0.4
-                      visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('xinjun')).End)]"
-                    }
-                    hbox = {
-                      margin = { 8 4 }
-                      spacing = 10
-                      highlight_icon = {
-                        alwaystransparent = yes
-                        size = { 40 40 }
-                        texture = "gfx/interface/icons/regimenttypes/riflemen.dds"
-                      }
-                      text_single = {
-                        alwaystransparent = yes
-                        layoutpolicy_horizontal = expanding
-                        raw_text = "xinjun"
-                        default_format = "#clickable"
-                        autoresize = no
-                        max_width = 312
-                      }
-                    }
-                  }
-                }
-                hbox = {
-                  layoutpolicy_horizontal = expanding
-                  spacing = 8
-                  button_standard_hover = {
-                    layoutpolicy_horizontal = fixed
-                    minimumsize = { 372 58 }
-                    maximumsize = { 372 58 }
-                    tooltip = ucm_sand_tile_click_tt
-                    visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                    onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('xinjun_jiqiang')).End)]"
-                    down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('xinjun_jiqiang')).End)]"
-                    background = {
-                      using = Background_Area_Dark
-                      alpha = 0.4
-                      visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('xinjun_jiqiang')).End)]"
-                    }
-                    hbox = {
-                      margin = { 8 4 }
-                      spacing = 10
-                      highlight_icon = {
-                        alwaystransparent = yes
-                        size = { 40 40 }
-                        texture = "gfx/interface/icons/regimenttypes/machinegun.dds"
-                      }
-                      text_single = {
-                        alwaystransparent = yes
-                        layoutpolicy_horizontal = expanding
-                        raw_text = "xinjun_jiqiang"
-                        default_format = "#clickable"
-                        autoresize = no
-                        max_width = 312
-                      }
-                    }
-                  }
                   widget = {
                     size = { 372 58 }
                   }
@@ -10920,37 +10098,6 @@ window = {
                     minimumsize = { 360 60 }
                     maximumsize = { 360 60 }
                     tooltip = ucm_sand_tile_click_tt
-                    visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                    onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('paoche')).End)]"
-                    down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('paoche')).End)]"
-                    background = {
-                      using = Background_Area_Dark
-                      alpha = 0.4
-                      visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('paoche')).End)]"
-                    }
-                    hbox = {
-                      margin = { 8 4 }
-                      spacing = 10
-                      highlight_icon = {
-                        alwaystransparent = yes
-                        size = { 40 40 }
-                        texture = "gfx/interface/icons/regimenttypes/bombard.dds"
-                      }
-                      text_single = {
-                        alwaystransparent = yes
-                        layoutpolicy_horizontal = expanding
-                        raw_text = "paoche"
-                        default_format = "#clickable"
-                        autoresize = no
-                        max_width = 300
-                      }
-                    }
-                  }
-                  button_standard_hover = {
-                    layoutpolicy_horizontal = fixed
-                    minimumsize = { 360 60 }
-                    maximumsize = { 360 60 }
-                    tooltip = ucm_sand_tile_click_tt
                     visible = "[GetScriptedGui('ucm_sand_show_orient_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
                     onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('thunder')).End)]"
                     down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('thunder')).End)]"
@@ -10981,37 +10128,6 @@ window = {
                 hbox = {
                   layoutpolicy_horizontal = expanding
                   spacing = 8
-                  button_standard_hover = {
-                    layoutpolicy_horizontal = fixed
-                    minimumsize = { 360 60 }
-                    maximumsize = { 360 60 }
-                    tooltip = ucm_sand_tile_click_tt
-                    visible = "[GetScriptedGui('ucm_sand_show_daming_tab').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                    onclick = "[GetScriptedGui('ucm_sand_pick_maa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('xinjun_pao')).End)]"
-                    down = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('xinjun_pao')).End)]"
-                    background = {
-                      using = Background_Area_Dark
-                      alpha = 0.4
-                      visible = "[GetScriptedGui('ucm_sand_is_picked_maa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('maa_flag', MakeScopeFlag('xinjun_pao')).End)]"
-                    }
-                    hbox = {
-                      margin = { 8 4 }
-                      spacing = 10
-                      highlight_icon = {
-                        alwaystransparent = yes
-                        size = { 40 40 }
-                        texture = "gfx/interface/icons/regimenttypes/cannon.dds"
-                      }
-                      text_single = {
-                        alwaystransparent = yes
-                        layoutpolicy_horizontal = expanding
-                        raw_text = "xinjun_pao"
-                        default_format = "#clickable"
-                        autoresize = no
-                        max_width = 300
-                      }
-                    }
-                  }
                   widget = {
                     size = { 360 60 }
                   }

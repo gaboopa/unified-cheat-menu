@@ -17,8 +17,8 @@
 	parent_inheritance_sex = male	#父母遗传性别（男）
 	#inherit_from_real_father = no #从真正的父亲那里继承该特质，默认yes
 	inherit_from_real_father = yes
-	birth = 0.03
-	random_creation = 0.03
+	birth = 0
+	random_creation = 0
 	
 	physical = yes
 	
@@ -98,8 +98,8 @@ blood_ancester_2 = { # 犬之忠勇
 	parent_inheritance_sex = male	#父母遗传性别（男）
 	#inherit_from_real_father = no #从真正的父亲那里继承该特质，默认yes
 	
-	birth = 0.03
-	random_creation = 0.03 #开局随机分配该特质给人物几率
+	birth = 0
+	random_creation = 0 #开局随机分配该特质给人物几率
 	
 	physical = yes
 	
@@ -177,8 +177,8 @@ blood_ancester_6 = { #暗夜
 	#inherit_from_real_father = no #从真正的父亲那里继承该特质，默认yes
 	movement_speed = 0.1
 	
-	birth = 0.03
-	random_creation = 0.03 #开局随机分配该特质给人物几率
+	birth = 0
+	random_creation = 0 #开局随机分配该特质给人物几率
 	
 	enemy_hostile_scheme_success_chance_add = -30 # CK3 1.20: was intrigue_scheme_resistance = 30
 	owned_hostile_scheme_success_chance_add = 30 # CK3 1.20: was intrigue_scheme_power
@@ -252,7 +252,7 @@ blood_art_1 = { #太极
 	#inherit_from_real_father = no #从真正的父亲那里继承该特质，默认yes
 	
 	birth = 0
-	random_creation = 0.01
+	random_creation = 0
 	
 	physical = yes
 	
@@ -304,8 +304,8 @@ blood_ancester_4 = { #月光
 	#inherit_from_real_father = no #从真正的父亲那里继承该特质，默认yes
 	movement_speed = 0.3
 	
-	birth = 0.03
-	random_creation = 0.03 #开局随机分配该特质给人物几率
+	birth = 0
+	random_creation = 0 #开局随机分配该特质给人物几率
 	
 	physical = yes
 	
@@ -378,8 +378,8 @@ blood_ancester_5 = { #野猪
 	dynasty_opinion = 10
 	enemy_hard_casualty_modifier = 0.5
 	
-	birth = 0.03
-	random_creation = 0.03 #开局随机分配该特质给人物几率
+	birth = 0
+	random_creation = 0 #开局随机分配该特质给人物几率
 	
 	physical = yes
 	
@@ -455,8 +455,8 @@ blood_ancester_7 = { #windrunner
 	jungle_advantage  = 15
 	forest_advantage  = 15
 	
-	birth = 0.03
-	random_creation = 0.03 #开局随机分配该特质给人物几率
+	birth = 0
+	random_creation = 0 #开局随机分配该特质给人物几率
 	
 	min_combat_roll = 4
 	max_combat_roll = 7
@@ -533,8 +533,8 @@ blood_ancester_8 = { #晨星
 	dynasty_opinion = 100
 	same_faith_opinion = 50
 	
-	birth = 0.03
-	random_creation = 0.03 #开局随机分配该特质给人物几率
+	birth = 0
+	random_creation = 0 #开局随机分配该特质给人物几率
 	
 	physical = yes
 	
@@ -616,8 +616,8 @@ blood_ancester_9 = { #小丑
 	liege_opinion = 30
 	dynasty_opinion = 20
 	attraction_opinion = -30
-	birth = 0.03
-	random_creation = 0.03 #开局随机分配该特质给人物几率
+	birth = 0
+	random_creation = 0 #开局随机分配该特质给人物几率
 	
 	physical = yes
 	
@@ -696,8 +696,8 @@ blood_ancester_10 = { #渡鸦
 	
 	development_growth_factor = 0.5
 
-	birth = 0.03
-	random_creation = 0.03
+	birth = 0
+	random_creation = 0
 	attraction_opinion = -10
 	physical = yes
 	
@@ -777,8 +777,8 @@ blood_ancester_11 = { #银龙
 	
 	development_growth_factor = 0.1
 
-	birth = 0.03
-	random_creation = 0.03
+	birth = 0
+	random_creation = 0
 	attraction_opinion = -10
 	physical = yes
 	
@@ -849,7 +849,7 @@ blood_knight_1 = {
 	#inherit_from_real_father = no #从真正的父亲那里继承该特质，默认yes	
 
 	birth = 0
-	random_creation = 2		
+	random_creation = 0		
 	
 	physical = yes
 	
@@ -899,7 +899,7 @@ blood_knight_2 = {
 	#inherit_from_real_father = no #从真正的父亲那里继承该特质，默认yes	
 
 	birth = 0
-	random_creation = 0.5		
+	random_creation = 0		
 	
 	physical = yes
 	
@@ -949,7 +949,7 @@ blood_knight_3 = {
 	#inherit_from_real_father = no #从真正的父亲那里继承该特质，默认yes	
 
 	birth = 0
-	random_creation = 0.1		
+	random_creation = 0		
 	
 	physical = yes
 	
@@ -1000,7 +1000,7 @@ blood_knight_4 = {
 	#inherit_from_real_father = no #从真正的父亲那里继承该特质，默认yes	
 
 	birth = 0
-	random_creation = 0.02		
+	random_creation = 0		
 	
 	physical = yes
 	

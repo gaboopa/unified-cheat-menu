@@ -14,7 +14,6 @@
  LIT_learned_trait_check_max_TT:0 "Diese Eigenschaftsstufe ist bereits auf dem Maximum."
  LIT_learned_trait_check_missing_TT:0 "Der Charakter hat diese Eigenschaft nicht, daher wurde keine Erfahrung hinzugefügt."
  dp_char_editor.traits.lifestyle_TT:0 "Lebensstil-Eigenschaften durchsuchen."
- dp_char_editor_dragon_birth:0 "Drachengeburt"
  dead_group:0 "Ausgestorbene Kulturen"
  tribal_regional_innovation_decision:0 "Regionale Innovationen der Stammeszeit"
  early_regional_innovation_decision:0 "Regionale Innovationen des Frühmittelalters"

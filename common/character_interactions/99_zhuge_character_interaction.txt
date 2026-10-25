@@ -1055,37 +1055,6 @@ zhuge_add_truce_interaction = {
     }
 }
 
-##############
-# å¤§æ˜Žè´§å¸èœå•ï¼ˆä»…å¯¹â€œå¤§æ˜Žçš‡å¸â€ç›®æ ‡å¯è§ï¼‰
-##############
-zhuge_daming_currency_menu = {
-    category = interaction_category_uncategorized
-    desc      = zhuge_daming_currency_menu_desc
-    icon      = icon_gold
-    common_interaction = yes
-    interface_priority = 10992
-
-    auto_accept = yes
-    use_diplomatic_range = no
-    ignores_pending_interaction_block = yes
-
-    is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
-        scope:actor = {
-            is_ai = no
-            has_character_flag = bone_cheat_interactions_flag 
-        }
-        scope:recipient = {
-            primary_title = { this = title:e_greatming } 
-        }
-    }
-
-    on_send = {
-        scope:recipient = { save_scope_as = currency_scope }
-        scope:actor     = { trigger_event = zhuge_curry_interactions.1 }
-    }
-}
-
 
 
 ##############

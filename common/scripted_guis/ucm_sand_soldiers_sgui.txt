@@ -1,11 +1,5 @@
 ﻿# 撒豆成兵
 
-ucm_sand_show_daming_tab = {
-  scope = character
-  is_shown = { ucm_single_player_trigger = yes  ucm_compat_daming_loaded_trigger = yes }
-  is_valid = { always = yes }
-}
-
 ucm_sand_show_orient_tab = {
   scope = character
   is_shown = { ucm_single_player_trigger = yes 

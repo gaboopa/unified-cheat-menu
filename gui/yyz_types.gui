@@ -161,18 +161,6 @@ types yyz_character_list_types {
     margin_left = 10
   }
 
-  #######################################################################################
-  # used for the 0 0 size hidden buttons backing the shortcut keys to get our window open
-  #######################################################################################
-  type yyz_character_list_shortcut = button_normal {
-    block "command" {}
-    
-    block "cmd_key" {
-      shortcut = "NO_DEFAULT_KEY"
-    }
-    onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-  }
-
   ##############################################################################################
   # used by our main toolbar - hopefully this will get merged into one of the other button types
   ############################################################################################## 

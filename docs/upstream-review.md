@@ -4,7 +4,7 @@ A read-only review of the code inherited from Skonester Cheat Menu Gold. It cove
 
 **Method.** Five reviewers each took one area. They checked it against vanilla CK3 1.20.1.2, grepped the whole repo for references, and traced which events can be reached. The Phase 8 load-test error.log was overwritten when the game was later launched with a different playset, so the findings come from static checks. A few early error.log categories were matched to causes before it was overwritten. Every Critical item, and a sample of the Required items, was checked by hand.
 
-**Status:** C1–C10 are done, and the Great Ming, titular-title and dragon-page code is removed; see [phase9-upstream-fixes.md](phase9-upstream-fixes.md).
+**Status:** C1–C10 are done, and the Great Ming, titular-title and dragon-page code is removed; see [phase9-upstream-fixes.md](phase9-upstream-fixes.md). Dead code: `refresh_active_doctrine_lists` and `remove_doctrine_from_selected` are deleted from `ucm_acm_faith_doctrine_lists_effects.txt` (40,354 lines; the `ucm_acm_fe_active_*` lists they filled had no readers). The fill/clear empty-tenet effects are kept because the spec lists them, though nothing calls them yet.
 
 Severity: **Critical** changes the game for everyone or is broken in a way players will hit. **Required** is a bug, a stale vanilla copy, or content the AI gets. **Optional** is duplication or performance. **Nit** is cleanup.
 

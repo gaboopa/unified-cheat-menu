@@ -1344,7 +1344,7 @@ Use CK3's existing modding mechanisms:
 **Generated catalogs.** There's no loop over building types, men-at-arms types, or artifact templates (`every_maa_regiment` and `every_artifact` cover existing regiments and artifacts, not the definitions). Pickers for those are **generated offline** from the game files by scripts in `tools/`, as the baseline already does:
 
 - `tools/gen_cw_tradition_picker_lists.py` produces `ucm_cw_tradition_picker_lists_generated.txt`.
-- `tools/gen_ucm_cw_innovation_sguis.py` produces the innovation unlock/remove scripted GUIs (rewritten in Phase 0; see [phase0-baseline.md](phase0-baseline.md)).
+- ~~`tools/gen_ucm_cw_innovation_sguis.py`~~ removed in Phase 10: no GUI ever called the innovation scripted GUIs it generated.
 
 Generated files say "do not edit by hand" and are rebuilt whenever the target game version or a supported mod changes. Catalogs live in global variable lists.
 

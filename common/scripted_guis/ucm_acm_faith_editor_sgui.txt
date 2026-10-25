@@ -1,12 +1,5 @@
 ﻿# 宗教编辑：信仰详情 + 教义库
 
-ucm_acm_faith_view_open_safety = {
-	is_shown = { ucm_single_player_trigger = yes }
-  scope = character
-  is_valid = { always = yes }
-  effect = { ucm_acm_faith_view_only_safety_effect = yes }
-}
-
 ucm_acm_faith_editor_visible = {
   scope = character
   is_shown = { ucm_single_player_trigger = yes 
@@ -22,25 +15,6 @@ ucm_acm_faith_editor_close = {
   is_valid = { always = yes }
   effect = {
     ucm_close_acm_faith_editor_effect = yes
-  }
-}
-
-ucm_acm_faith_editor_close_from_window = {
-	is_shown = { ucm_single_player_trigger = yes }
-  scope = character
-  is_valid = { has_character_flag = ucm_acm_faith_editor_open }
-  effect = {
-    ucm_close_acm_faith_editor_effect = yes
-  }
-}
-
-ucm_acm_faith_editor_init = {
-	is_shown = { ucm_single_player_trigger = yes }
-  scope = character
-  is_valid = { always = yes }
-  effect = {
-    ucm_acm_faith_init_group_catalog_effect = yes
-    ucm_acm_faith_refresh_display_lists_effect = yes
   }
 }
 
@@ -141,41 +115,6 @@ ucm_acm_faith_reselect = {
     ucm_close_acm_faith_editor_effect = yes
     ucm_open_acm_religion_picker_effect = yes
   }
-}
-
-ucm_acm_faith_pick_open_core_tenets = {
-	is_shown = { ucm_single_player_trigger = yes }
-  scope = character
-  is_valid = { always = yes }
-  effect = { ucm_acm_faith_pick_open_core_tenets_effect = yes }
-}
-
-ucm_acm_faith_pick_open_main_group = {
-	is_shown = { ucm_single_player_trigger = yes }
-  scope = character
-  is_valid = { always = yes }
-  effect = { ucm_acm_faith_pick_open_main_group_effect = yes }
-}
-
-ucm_acm_faith_pick_open_marriage = {
-	is_shown = { ucm_single_player_trigger = yes }
-  scope = character
-  is_valid = { always = yes }
-  effect = { ucm_acm_faith_pick_open_marriage_effect = yes }
-}
-
-ucm_acm_faith_pick_open_crimes = {
-	is_shown = { ucm_single_player_trigger = yes }
-  scope = character
-  is_valid = { always = yes }
-  effect = { ucm_acm_faith_pick_open_crimes_effect = yes }
-}
-
-ucm_acm_faith_pick_open_clergy = {
-	is_shown = { ucm_single_player_trigger = yes }
-  scope = character
-  is_valid = { always = yes }
-  effect = { ucm_acm_faith_pick_open_clergy_effect = yes }
 }
 
 # CK3 1.20: tenets (TenetType) and doctrines (DoctrineType) are different GUI data types.

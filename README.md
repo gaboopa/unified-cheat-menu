@@ -39,7 +39,7 @@ English, German, Russian, Simplified Chinese and Turkish.
 | `docs/upstream/` | The original project's README and development notes |
 | `tools/gen_ucm_main_menu.py` | Generates `gui/ucm_main_menu.gui` from a list of tabs and buttons |
 | `tools/gen_ucm_translations.py` | Generates the German, Russian, Chinese and Turkish menu text from the English |
-| `tools/gen_ucm_cw_innovation_sguis.py`, `tools/gen_cw_tradition_picker_lists.py` | Regenerate the innovation and tradition pickers after a game update |
+| `tools/gen_cw_tradition_picker_lists.py` | Regenerates the tradition picker lists after a game update |
 | `tools/icon_pipeline/` | Trait icon regeneration scripts (V + ComfyUI), kept out of `gfx/`. See its README |
 
 Only the generators above are in the repo. The other big `*_generated.txt` files (faith editor, trait editor, culture/faith casting, crafting modifiers, lifestyle, court positions, treasure-maker stat tiers, beauty companion) came from upstream scripts that upstream never published, so edit those files by hand.

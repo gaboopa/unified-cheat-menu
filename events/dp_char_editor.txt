@@ -639,7 +639,6 @@ dp_char_editor.10 = {
 		trigger_event = dp_char_editor.26
 	}
 
-
 	option = {
 		name = dp_char_editor.traits.health.t
 		trigger = { scope:char_editor = { has_character_flag = trait_menu_pg_1 } }
@@ -14916,55 +14915,6 @@ dp_char_editor.66 = {
 }
 
 ### Innovation Regional ###
-
-dp_char_editor.67 = {
-	type = character_event
-	title = dp_char_editor_presents_innovation_regional.t
-	desc = dp_char_editor.presents.innovation_regional.d
-	theme = default
-	left_portrait = {
-		character = scope:char_editor
-		animation = personality_bold
-	}
-	override_background = { reference = temple }
-
-	option = {
-		name = tribal_regional_innovation_decision
-		scope:char_editor = {
-			innovation_tribal_regional_effect = yes
-		}
-		trigger_event = dp_char_editor.67
-	}
-	
-	option = {
-		name = early_regional_innovation_decision
-		scope:char_editor = {
-			innovation_early_medival_regional_effect = yes
-		}
-		trigger_event = dp_char_editor.67
-	}
-	
-	option = {
-		name = high_regional_innovation_decision
-		scope:char_editor = {
-			innovation_high_medival_regional_effect = yes
-		}
-		trigger_event = dp_char_editor.67
-	}
-
-	option = {
-		name = late_regional_innovation_decision
-		scope:char_editor = {
-			innovation_late_medival_regional_effect = yes
-		}
-		trigger_event = dp_char_editor.67
-	}
-
-	option = {
-		name = dp_char_editor_back
-		trigger_event = dp_char_editor.49
-	}
-}
 
 ### TRAIT MENU LEARNED TRAITS ADD XP ###
 

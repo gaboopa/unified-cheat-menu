@@ -134,61 +134,6 @@ ucm_cw_tradition_dlc_check = {
   }
 }
 
-ucm_cw_tradition_category_list_maker = {
-	is_shown = { ucm_single_player_trigger = yes }
-  scope = character
-
-  saved_scopes = { tradition }
-
-  effect = {
-    if = {
-      limit = {
-        scope:tradition = {
-          has_tradition_category = realm
-        }
-      }
-
-      add_to_global_variable_list = { name = ucm_cw_realm_tradition_list target = scope:tradition}
-    }
-    else_if = {
-      limit = {
-        scope:tradition = {
-          has_tradition_category = combat
-        }
-      }
-
-      add_to_global_variable_list = { name = ucm_cw_combat_tradition_list target = scope:tradition}
-    }
-    else_if = {
-      limit = {
-        scope:tradition = {
-          has_tradition_category = societal
-        }
-      }
-
-      add_to_global_variable_list = { name = ucm_cw_societal_tradition_list target = scope:tradition}
-    }
-    else_if = {
-      limit = {
-        scope:tradition = {
-          has_tradition_category = ritual
-        }
-      }
-
-      add_to_global_variable_list = { name = ucm_cw_ritual_tradition_list target = scope:tradition}
-    }
-    else_if = {
-      limit = {
-        scope:tradition = {
-          has_tradition_category = regional
-        }
-      }
-
-      add_to_global_variable_list = { name = ucm_cw_regional_tradition_list target = scope:tradition}
-    }
-  }
-}
-
 ucm_cw_add_tradition = {
 	is_shown = { ucm_single_player_trigger = yes }
   scope = character
@@ -232,14 +177,6 @@ ucm_cw_culture_has_tradition = {
 ucm_cw_tradition_picker_visible = {
   scope = character
   is_shown = { ucm_single_player_trigger = yes  has_character_flag = ucm_cw_tradition_picker_open }
-}
-
-ucm_cw_open_tradition_picker_window = {
-  scope = character
-  is_shown = { ucm_single_player_trigger = yes  is_ai = no }
-  is_valid = {
-    exists = var:ucm_selected_culture_var
-  }
 }
 
 ucm_cw_close_tradition_picker_window = {

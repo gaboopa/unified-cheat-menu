@@ -2,8 +2,6 @@
 
 namespace = ucm_cheat_menu
 
-
-
 ## 濠电姷鏁搁崑娑㈡嚐椤栨熬鑰块梺顒€绉撮弸浣肝旈敐鍛殲闁稿顑囬惀顏堫敇閻愭潙娅ｇ紓浣瑰姈閻╊垶寮婚妶澶婄閹艰揪绲块悡鈧柣搴ゎ潐濞叉粓宕伴弽顓炴瀬鐎广儱顦柋鍥ㄧ節婵犲倹顥戦柟灏佸墲娣囧﹪鎮欓鍕ㄥ亾濡ゅ懌鈧倿顢欓悙顒夋綗?110 婵犵數鍋為崹鍫曞箰閹间礁鐤い鎰剁畱妗呴梺鎼炲労閸撴岸宕戠€ｎ剛妫い鎾跺仦閸ｅ湱绱掗幇顓犳创闁?111 婵犵數鍋為崹鍫曞箰閹间絸鍥ㄥ閺夋嚦銉╂煕鐏炴儳鍤柛銈呯墦閹綊宕崟顒佸創闁诲函绲洪崑鎾斥攽閻愭潙鐏﹂柟鍛婂劤閳诲秹濮€閵忊槅娼熼柡澶婄墐閺呮繈鎯屾径濞掑綊鏁愰崨顓ф闂佺粯鎸搁妶鎼佸箖瀹勬壋鏋庨幖娣焺濡倿鏌ｆ惔銊︽锭闁活厼鍊搁悾宄邦潩椤戔晜妫冨畷鐔煎煘閹傚闂佸憡鍔忛弲婵嬨€呴弻銉︾厵闁绘垶锚閻忋儳鎮悢鍏尖拺?
 
 ucm_cheat_menu.0110 = {
@@ -15,8 +13,6 @@ ucm_cheat_menu.0110 = {
   desc = ucm_ui_no_hover_tooltip
 
   theme = learning
-
-
 
   right_portrait = scope:ucm_trait_edit_target
   immediate = {
@@ -44,12 +40,9 @@ ucm_cheat_menu.0110 = {
 
     }
 
-
     scope:actor = { trigger_event = ucm_cheat_menu.0110 }
 
   }
-
-
 
   option = {
 
@@ -57,7 +50,6 @@ ucm_cheat_menu.0110 = {
 
     custom_tooltip = ucm_cheat_menu.0015.toggle_warlord_tt
     scope:ucm_trait_edit_target = { if = { limit = { has_trait = trait_warlord_eternal } remove_trait = trait_warlord_eternal } else = { ucm_cheat_menu_grant_cheat_trait_effect = { TRAIT = trait_warlord_eternal } } }
-
 
     scope:actor = { trigger_event = ucm_cheat_menu.0110 }
 
@@ -70,7 +62,6 @@ ucm_cheat_menu.0110 = {
     custom_tooltip = ucm_cheat_menu.0015.toggle_wealth_tt
     scope:ucm_trait_edit_target = { if = { limit = { has_trait = trait_wealth_sovereign_max } remove_trait = trait_wealth_sovereign_max } else = { ucm_cheat_menu_grant_cheat_trait_effect = { TRAIT = trait_wealth_sovereign_max } } }
 
-
     scope:actor = { trigger_event = ucm_cheat_menu.0110 }
 
   }
@@ -82,12 +73,9 @@ ucm_cheat_menu.0110 = {
     custom_tooltip = ucm_cheat_menu.0015.toggle_intrigue_tt
     scope:ucm_trait_edit_target = { if = { limit = { has_trait = trait_ultimate_intrigue_master } remove_trait = trait_ultimate_intrigue_master } else = { ucm_cheat_menu_grant_cheat_trait_effect = { TRAIT = trait_ultimate_intrigue_master } } }
 
-
     scope:actor = { trigger_event = ucm_cheat_menu.0110 }
 
   }
-
-
 
   option = {
 
@@ -96,12 +84,9 @@ ucm_cheat_menu.0110 = {
     custom_tooltip = ucm_cheat_menu.0015.toggle_great_builder_tt
     scope:ucm_trait_edit_target = { if = { limit = { has_trait = trait_great_builder_god } remove_trait = trait_great_builder_god } else = { ucm_cheat_menu_grant_cheat_trait_effect = { TRAIT = trait_great_builder_god } } }
 
-
     scope:actor = { trigger_event = ucm_cheat_menu.0110 }
 
   }
-
-
 
   option = {
 
@@ -110,12 +95,9 @@ ucm_cheat_menu.0110 = {
     custom_tooltip = ucm_cheat_menu.0015.toggle_nether_lord_tt
     scope:ucm_trait_edit_target = { if = { limit = { has_trait = trait_nether_conspiracy_lord } remove_trait = trait_nether_conspiracy_lord } else = { ucm_cheat_menu_grant_cheat_trait_effect = { TRAIT = trait_nether_conspiracy_lord } } }
 
-
     scope:actor = { trigger_event = ucm_cheat_menu.0110 }
 
   }
-
-
 
   option = {
 
@@ -124,12 +106,9 @@ ucm_cheat_menu.0110 = {
     custom_tooltip = ucm_cheat_menu.0015.toggle_eternal_nether_tt
     scope:ucm_trait_edit_target = { if = { limit = { has_trait = trait_eternal_nether_lord } remove_trait = trait_eternal_nether_lord } else = { ucm_cheat_menu_grant_cheat_trait_effect = { TRAIT = trait_eternal_nether_lord } } }
 
-
     scope:actor = { trigger_event = ucm_cheat_menu.0110 }
 
   }
-
-
 
   option = {
 
@@ -139,13 +118,9 @@ ucm_cheat_menu.0110 = {
 
   }
 
-
-
   option = { name = ucm_cheat_menu.00x.close }
 
 }
-
-
 
 ucm_cheat_menu.0096 = {
 
@@ -157,19 +132,13 @@ ucm_cheat_menu.0096 = {
 
   theme = diplomacy
 
-
-
   immediate = {
 
     ucm_cheat_menu_sync_relation_target_effect = yes
 
   }
 
-
-
   right_portrait = scope:ucm_relation_target
-
-
 
   option = {
 
@@ -191,8 +160,6 @@ ucm_cheat_menu.0096 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.0096.lover
@@ -204,8 +171,6 @@ ucm_cheat_menu.0096 = {
     trigger_event = ucm_cheat_menu.0096
 
   }
-
-
 
   option = {
 
@@ -227,8 +192,6 @@ ucm_cheat_menu.0096 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.0096.nemesis
@@ -249,13 +212,9 @@ ucm_cheat_menu.0096 = {
 
   }
 
-
-
   option = { name = ucm_cheat_menu.00x.close }
 
 }
-
-
 
 ucm_cheat_menu.0098 = {
 
@@ -263,11 +222,7 @@ ucm_cheat_menu.0098 = {
 
   hidden = yes
 
-
-
   immediate = {
-
-
 
     if = {
       limit = { NOT = { has_variable = ucm_heir_ui_refresh_counter } }
@@ -280,8 +235,6 @@ ucm_cheat_menu.0098 = {
   }
 
 }
-
-
 
 ucm_cheat_menu.0099 = {
 
@@ -321,8 +274,6 @@ ucm_cheat_menu.0099 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.0099.cancel
@@ -330,8 +281,6 @@ ucm_cheat_menu.0099 = {
   }
 
 }
-
-
 
 ## 濠电姷鏁搁崑娑㈡嚐椤栨熬鑰块梺顒€绉撮弸浣肝旈敐鍛殲闁稿顑囬惀顏堫敇閻愭潙娅ｇ紓浣瑰姈閻╊垶寮婚妶澶婄閹艰揪绲块悡鈧柣搴ゎ潐濞叉粓宕伴弽顓炴瀬鐎广儱顦柋鍥煏韫囧﹥娅呴柛鎾规珪缁绘稓鈧稒顭囬惌濠囨煟椤撶偛鈧寧淇婄€涙ê绶為柟閭﹀幗濞呮牕鈹戦鏂や緵闁稿妫濋幃鐤疀閺傚墽绠氬┑掳鍊曢鍥礆閻楀牏绠鹃柛鈩冨姇閻忔煡鏌ｅ☉鍗炴灓缂佽鲸鐟╅幃鈺呭传閸曨剙鈧洟姊?
 
@@ -345,8 +294,6 @@ ucm_cheat_menu.0111 = {
 
   theme = learning
 
-
-
   right_portrait = scope:ucm_trait_edit_target
   immediate = {
     ucm_cheat_menu_sync_trait_edit_target_effect = yes
@@ -357,8 +304,6 @@ ucm_cheat_menu.0111 = {
   option = { name = ucm_cheat_menu.0015.toggle_yannian_2 custom_tooltip = ucm_cheat_menu.0015.toggle_yannian_2_tt trigger = { NOT = { has_global_variable = ucm_cheat_menu_menu_disabled } } scope:ucm_trait_edit_target = { if = { limit = { has_character_flag = ucm_yannian_dan_mid_active } remove_character_flag = ucm_yannian_dan_mid_active if = { limit = { has_variable = ucm_yannian_dan_mid_original_age } set_age = var:ucm_yannian_dan_mid_original_age } if = { limit = { has_variable = ucm_yannian_dan_mid_original_age } remove_variable = ucm_yannian_dan_mid_original_age } if = { limit = { has_trait = ucm_trait_yannian_dan_mid } remove_trait = ucm_trait_yannian_dan_mid } } else = { add_character_flag = ucm_yannian_dan_mid_active if = { limit = { NOT = { has_variable = ucm_yannian_dan_mid_original_age } } set_variable = { name = ucm_yannian_dan_mid_original_age value = age } } set_age = 25 if = { limit = { has_trait = incapable } remove_trait = incapable } add_trait = ucm_trait_yannian_dan_mid } } ucm_traits_authorize_recipient_if_player_actor_effect = yes scope:actor = { trigger_event = ucm_cheat_menu.0111 }}
 
   option = { name = ucm_cheat_menu.0015.toggle_yannian_3 custom_tooltip = ucm_cheat_menu.0015.toggle_yannian_3_tt trigger = { NOT = { has_global_variable = ucm_cheat_menu_menu_disabled } } scope:ucm_trait_edit_target = { if = { limit = { has_character_flag = ucm_yannian_dan_best_active } remove_character_flag = ucm_yannian_dan_best_active if = { limit = { has_variable = ucm_yannian_dan_best_original_age } set_age = var:ucm_yannian_dan_best_original_age } if = { limit = { has_variable = ucm_yannian_dan_best_original_age } remove_variable = ucm_yannian_dan_best_original_age } if = { limit = { has_trait = ucm_trait_yannian_dan_best } remove_trait = ucm_trait_yannian_dan_best } } else = { add_character_flag = ucm_yannian_dan_best_active if = { limit = { NOT = { has_variable = ucm_yannian_dan_best_original_age } } set_variable = { name = ucm_yannian_dan_best_original_age value = age } } set_age = 25 if = { limit = { has_trait = incapable } remove_trait = incapable } add_trait = ucm_trait_yannian_dan_best } } ucm_traits_authorize_recipient_if_player_actor_effect = yes scope:actor = { trigger_event = ucm_cheat_menu.0111 }}
-
-
 
   option = {
 
@@ -388,12 +333,9 @@ ucm_cheat_menu.0111 = {
 
     }
 
-
     scope:actor = { trigger_event = ucm_cheat_menu.0111 }
 
   }
-
-
 
   option = {
 
@@ -421,12 +363,9 @@ ucm_cheat_menu.0111 = {
 
     }
 
-
     scope:actor = { trigger_event = ucm_cheat_menu.0111 }
 
   }
-
-
 
   option = {
 
@@ -462,12 +401,9 @@ ucm_cheat_menu.0111 = {
 
     }
 
-
     scope:actor = { trigger_event = ucm_cheat_menu.0111 }
 
   }
-
-
 
   option = {
 
@@ -497,12 +433,9 @@ ucm_cheat_menu.0111 = {
 
     }
 
-
     scope:actor = { trigger_event = ucm_cheat_menu.0111 }
 
   }
-
-
 
   option = {
 
@@ -512,13 +445,9 @@ ucm_cheat_menu.0111 = {
 
   }
 
-
-
   option = { name = ucm_cheat_menu.00x.close }
 
 }
-
-
 
 # 闂傚倷鐒﹂惇褰掑垂婵犳艾绐楅柟鐗堟緲閸ㄥ倹鎱ㄥ鍡楀⒒闁搞倕鐗撻弻锝夊Χ鎼达紕浠╁┑鐐茬墑閸旀垿寮婚妸銉㈡婵炲棙鍔楀▓銈夋⒑缁嬫鍎滅紒鎻掓健閹噣宕滆鐎氭岸鏌ょ喊鍗炲幋闁稿鎹囬幃婊堟寠婢跺矈鏀ㄩ梻浣告啞閸旀洖顕ｉ崼鏇犲彆妞ゆ帒瀚悡蹇涙煕閳╁喚娈欓悗姘閹叉悂鎮ч崼鐔封偓鎰版煛鐏炶濮傛い銏＄懇閹瑩顢楅崒婊冪倞闂傚倷绀侀幖顐ょ矓閺夋嚚娲閵堝懐鍔﹀銈嗗坊閸嬫挾绱掓径瀣唉妞ゃ垺鐟╁畷鎺戭潩閻撳孩鐣煎┑锛勫仜椤戝懐鈧稈鏅犲鏌ュ箹娴ｅ湱鍘甸柣搴㈢⊕閿氬┑顔ㄥ懐纾奸梺顒€绉抽幉鐐殽閻愨晛浜鹃柣鐔哥矊缁夌懓鐣峰ú顏勫耿婵☆垰鐨烽弸鏍⒑闁偛鑻晶瀵糕偓娈垮枛閻栧ジ寮幘缁樺亹妞ゆ劦婢€婢规洘绻濋姀锝呯厫闁告梹鍨块崺鈧い鎺嗗亾缂佸鎳撻悾鐑芥倻閽樺）鈺冩喐鎼达絿鐜绘俊銈呮噺閻撴稓鈧箍鍎遍幊蹇曠矚閸ф鈷掑┑鐐靛亾濞呭棛绱掔€ｎ亶妲圭紒缁樼箞瀹曟帒顫濋幍浣镐壕濠靛倸鎲￠悡娆愵殽閻愯尙浠㈤柣蹇ｅ櫍閺?婵?
 
@@ -532,19 +461,13 @@ ucm_cheat_menu.0155 = {
 
   theme = default
 
-
-
   immediate = {
 
     ucm_char_gen_sync_recipient_to_scope_effect = yes
 
   }
 
-
-
   right_portrait = scope:ucm_char_gen_target
-
-
 
   option = {
 
@@ -581,8 +504,6 @@ ucm_cheat_menu.0155 = {
     scope:actor = { trigger_event = ucm_cheat_menu.0155 }
 
   }
-
-
 
   option = {
 
@@ -670,8 +591,6 @@ ucm_cheat_menu.0155 = {
 
 }
 
-
-
 # 佳丽帅哥：文化菜单为 ucm_beauty_companion_classified_generated（3500+ 地理分层）；本页切换性别；「生成」再创建廷臣
 
 ucm_cheat_menu.0180 = {
@@ -683,8 +602,6 @@ ucm_cheat_menu.0180 = {
   desc = ucm_ui_no_hover_tooltip
 
   theme = default
-
-
 
   immediate = {
 
@@ -712,11 +629,7 @@ ucm_cheat_menu.0180 = {
 
   }
 
-
-
   right_portrait = scope:ucm_char_gen_target
-
-
 
   option = {
 
@@ -727,8 +640,6 @@ ucm_cheat_menu.0180 = {
     scope:actor = { trigger_event = ucm_cheat_menu.3500 }
 
   }
-
-
 
   option = {
 
@@ -766,8 +677,6 @@ ucm_cheat_menu.0180 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.0180.opt_spawn_now
@@ -783,8 +692,6 @@ ucm_cheat_menu.0180 = {
     scope:actor = { trigger_event = ucm_cheat_menu.0180 }
 
   }
-
-
 
   option = {
 
@@ -808,8 +715,6 @@ ucm_cheat_menu.0180 = {
 
 }
 
-
-
 # 原版文化侧栏 · 模组快捷条：与本体窗口同开，可反复进入支柱/传统（不限次数）；0180 已用于佳丽帅哥故用 0181
 
 ucm_cheat_menu.0181 = {
@@ -829,8 +734,6 @@ ucm_cheat_menu.0181 = {
 
   right_portrait = scope:ucm_cheat_menu_target
 
-
-
   option = {
 
     name = ucm_cheat_menu.0181.reopen_vanilla
@@ -844,8 +747,6 @@ ucm_cheat_menu.0181 = {
     }
 
   }
-
-
 
   option = { name = ucm_cheat_menu.0171.section_heritage root = { trigger_event = ucm_cheat_menu.2680 }}
 
@@ -867,11 +768,7 @@ ucm_cheat_menu.0181 = {
 
   }
 
-
-
   option = { name = ucm_cheat_menu.0171.section_traditions_pillars root = { trigger_event = ucm_cheat_menu.0177 }}
-
-
 
   option = {
 
@@ -882,8 +779,6 @@ ucm_cheat_menu.0181 = {
     root = { trigger_event = ucm_cheat_menu.0150 }
 
   }
-
-
 
   option = {
 
@@ -900,8 +795,6 @@ ucm_cheat_menu.0181 = {
     }
 
   }
-
-
 
   option = {
 
@@ -921,8 +814,6 @@ ucm_cheat_menu.0181 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.00x.close
@@ -937,13 +828,9 @@ ucm_cheat_menu.0181 = {
 
 }
 
-
-
 ## =========================
 
 ## 婵犵數鍋為崹鍫曞箰閹间絸鍥敍濠婂嫷娼熼梺鍓插亝濞叉﹢宕戦幋鐐簻闁圭儤鍨甸埀顒佹閵囨劕鐣濋崟顒傚幘闂佸湱顭堝ù鐑芥儗婵犲嫧鍋撶憴鍕闁哥姵鐗犲顐㈩吋婢跺﹪鍞堕梺闈涱槶閸庢煡顢旈悢鍏尖拺闁告繂瀚埀顒傛嚀椤灝螣閼姐値娴勫┑鐐村灟閸ㄦ椽寮查鈧…鍧楁嚋閻㈢偣鈧帞绱掗幇顓ф疁闁哄矉绻濆畷鎺戭潩椤撶喐鍊烽梺?/ 闂傚倸鍊搁崐鎼佹偋閸愵喖鐤炬繝濠傜墕閽?/ 闂備浇顕у锕傦綖婢跺本宕查柛鏇ㄥ墯濞?## 闂傚倷绀侀幉锛勬暜閹烘嚦娑樜旈崨顔煎壋?+ 闂傚倷娴囧銊╂嚄閼稿灚娅犳俊銈傚亾闁伙絽鐏氶幏鍛寸嵁婢跺摜娉婇梻浣告啞椤ㄥ牓宕戝☉婊庢澖闂傚倷鐒︾€笛呯矙閹烘鍤屽Δ锝呭暙閺嬩線鏌″搴″箺闁绘挸鍊块悡顐﹀炊閵婏附鍎庡┑鈩冨絻椤兘寮婚敐澶涚稏妞ゆ巻鍋撳┑鈥炽偢閺屾盯骞嬮婊呯槇闂佽鍠曠划娆撳箖閵忋垻鐭欓悹鎭掑妺濞寸兘姊绘担鍦菇闁告柨鐬奸埀顒佸嚬閸撶喎鐣风憴鍕劅妞ゎ偒鍏涚花濠氭⒑缁嬭法绠伴柟鑺ョ矒閹啴骞嬪?## =========================
-
-
 
 ucm_cheat_menu.0120 = {
 
@@ -955,17 +842,9 @@ ucm_cheat_menu.0120 = {
 
   theme = default
 
-
-
   right_portrait = scope:ucm_ability_edit_target
 
-
-
   option = { name = ucm_cheat_menu.0120.ethos scope:actor = { trigger_event = ucm_cheat_menu.0162 }}
-
-
-
-
 
   option = {
 
@@ -981,11 +860,7 @@ ucm_cheat_menu.0120 = {
 
   }
 
-
-
   # 闂傚倷绀侀幖顐﹀磹缁嬫５娲Χ閸ワ絽浜鹃梻鍫熺☉缁狙囨倵闂堟稏鍋㈤柟顔规櫊閹粙妫冨☉姘箯缂傚倸鍊搁崐鎼佸磹瑜版帗鍋嬮柣鎰仛椤愯姤銇勯幇鍓佺暠闂傚偆鍨遍妵鍕敇閻旈顑傜紓浣插亾闁告洦鍋€濡插牓鏌熼悙顒€澧柛搴℃捣缁辨帡寮捄銊︽喖缂備礁鍊圭敮锟犲极閹邦垳鐤€闁哄洨濮峰畷鍫曟⒒娓氣偓閳ь剚绋戠€氬酣鏌涙繝鍐疄鐎?婵犵妲呴崑鍛熆濡皷鍋撳鐓庣仸妞?闂傚倷绀侀幉锛勬暜閹烘嚦娑樷攽鐎ｎ€儱顭块懜闈涘缂佲偓閸℃稒鐓曢柍鈺佸暟閹冲棙銇勯顒傜暤闁?  option = { name = ucm_cheat_menu.0120.traditions_editor scope:actor = { trigger_event = ucm_cheat_menu.0150 }}
-
-
 
   option = {
 
@@ -1001,8 +876,6 @@ ucm_cheat_menu.0120 = {
 
   }
 
-
-
   # 闂傚倷绀侀幖顐﹀磹缁嬫５娲Χ閸ワ絽浜鹃柛顭戝亞閸欌偓濠碘槅鍋勯崯鎾春閿熺姴纾兼繛鎴炶壘鐢酣姊绘担鐟邦嚋缂佸甯￠幊婵嬪礈瑜岄悞濠冦亜閺嶎偄浠滈柡?闂?婵犵數鍋熼ˉ鎰板磻閹邦厽鍙忛柛顭戝亞閻?闂?闂傚倷绀侀幖顐﹀磹缁嬫５娲Χ閸ワ絽浜鹃柛顭戝亞閸欌偓闂?360闂傚倷鐒︾€笛呯矙閹次层劑鍩€椤掑倻纾奸梺顒€绉抽幉楣冩煟濞戝崬娅嶆鐐查叄閹崇偤濡烽敃鈧▓妯肩磽閸屾瑦顦风紒灞界埣瀹曞綊宕烽鐕佹綗闂佸啿鎼崐濠氥€呮搴樺亾楠炲灝鍔氶柟鍐叉捣閹峰骞撻幑妤€缍婇幃鈺呭矗婢跺﹥鏁俊鐐€栧ú妯虹暆閹间礁钃熺憸鏃堢嵁閹达箑绠涙い鏃傝檸閸熷姊绘担渚劸缂佽鐗撳畷鏇㈡嚒閵堝棭娼熼梺鍛婎殘閸婏綁鎮㈤崗鍏兼珫闂佸憡娲﹂崢楣冩偂娓氣偓濮婅櫣鎮伴垾鍏呭婵＄偑鍊栭悧妤冪矙閹捐鐭?婵犵數鍋犻幓顏嗗緤閸撗冨灊鐎光偓閳ь剙危閹邦兘妲堟慨姗嗗幖閺?0130
 
   option = {
@@ -1012,8 +885,6 @@ ucm_cheat_menu.0120 = {
     scope:actor = { trigger_event = ucm_cheat_menu.1360 }
 
   }
-
-
 
   option = {
 
@@ -1028,8 +899,6 @@ ucm_cheat_menu.0120 = {
     }
 
   }
-
-
 
   option = {
 
@@ -1055,8 +924,6 @@ ucm_cheat_menu.0120 = {
 
 }
 
-
-
 ## 闂傚倷绀侀幖顐﹀磹缁嬫５娲Χ閸ワ絽浜鹃梻鍫熺☉缁狙囨倵闂堟稏鍋㈤柟顔规櫊閹粙妫冨☉姘箯缂傚倸鍊搁崐鎼佸磹瑜版帗鍋嬮柣鎰仛椤愯姤銇勯幇鍓佺暠闂傚偆鍨遍妵鍕敇閻旈顑傜紓浣插亾闁告洦鍋€濡插牓鏌熼悙顒€澧柛搴℃捣缁辨帡寮捄銊︽喖缂備礁鍊圭敮锟犲极閹版澘绀嬫い鎾跺椤忓懍绻嗛柕鍫濇搐瀛濋梺娲诲幖椤﹀崬危閹邦厼顕遍柡澶嬪灩椤旀帡姊洪棃娑氬妞わ缚鍗冲?/ 婵犵妲呴崑鍛熆濡皷鍋撳鐓庣仸妞?/ 闂傚倷绀侀幉锛勬暜閹烘嚦娑樷槈濮橆厼浠忓銈嗗姧缁犳垹绮堥崱娑欑厱闁斥晛鍟伴埣銈夋煃瑜滈崜娆撍囬悽绋挎瀬?
 
 ucm_cheat_menu.0150 = {
@@ -1069,19 +936,11 @@ ucm_cheat_menu.0150 = {
 
   theme = default
 
-
-
   right_portrait = scope:ucm_ability_edit_target
-
-
-
-
 
 # 婵犵妲呴崑鍛熆濡皷鍋撳鐓庣仸妞ゃ垺鐟╁鎾偐閸忓摜鐟濋梻浣瑰缁嬫垹鈧凹鍙冨畷?
 
   option = { name = ucm_cheat_menu.0150.presets scope:actor = { trigger_event = ucm_cheat_menu.0151 }}
-
-
 
   # 闂傚倷绀侀幉锛勬暜閹烘嚦娑樷槈濮橆厼浠忓銈嗗姧缁犳垹绮堥崒鐐寸厪濠㈣泛鐗嗛崝姘辩磽瀹ュ棙宕岄柡灞诲妼閳藉螣閻撳寒鏆梻浣告啞閸╁﹦鎹㈠┑鍡欐殾婵娉涢獮銏＄箾閹寸偟澧ら柛瀣尰瀵板嫰骞囬鐔哥彨?800/0850/0880/0920/0940闂?  option = { name = ucm_cheat_menu.0150.realm scope:actor = { trigger_event = ucm_cheat_menu.0051 }}
 
@@ -1092,8 +951,6 @@ ucm_cheat_menu.0150 = {
   option = { name = ucm_cheat_menu.0150.ritual scope:actor = { trigger_event = ucm_cheat_menu.0054 }}
 
   option = { name = ucm_cheat_menu.0150.regional scope:actor = { trigger_event = ucm_cheat_menu.0055 }}
-
-
 
   option = {
 
@@ -1123,8 +980,6 @@ ucm_cheat_menu.0150 = {
 
 }
 
-
-
 ucm_cheat_menu.0151 = {
 
   type = character_event
@@ -1135,11 +990,7 @@ ucm_cheat_menu.0151 = {
 
   theme = default
 
-
-
   right_portrait = scope:ucm_ability_edit_target
-
-
 
   option = { name = ucm_cheat_menu.0151.p1_save scope:actor = { ucm_tradition_preset1_save_effect = yes } scope:actor = { trigger_event = ucm_cheat_menu.0151 }}
 
@@ -1147,27 +998,19 @@ ucm_cheat_menu.0151 = {
 
   option = { name = ucm_cheat_menu.0151.p1_clear scope:actor = { ucm_tradition_preset1_clear_effect = yes } scope:actor = { trigger_event = ucm_cheat_menu.0151 }}
 
-
-
   option = { name = ucm_cheat_menu.0151.p2_save scope:actor = { ucm_tradition_preset2_save_effect = yes } scope:actor = { trigger_event = ucm_cheat_menu.0151 }}
 
   option = { name = ucm_cheat_menu.0151.p2_load scope:actor = { ucm_tradition_preset2_load_effect = yes } scope:actor = { trigger_event = ucm_cheat_menu.0151 }}
 
   option = { name = ucm_cheat_menu.0151.p2_clear scope:actor = { ucm_tradition_preset2_clear_effect = yes } scope:actor = { trigger_event = ucm_cheat_menu.0151 }}
 
-
-
   option = { name = ucm_cheat_menu.page_next trigger = { NOT = { has_global_variable = ucm_cheat_menu_menu_disabled } } scope:actor = { trigger_event = ucm_cheat_menu.0195 }}
-
-
 
   option = { name = ucm_cheat_menu.00x.back scope:actor = { trigger_event = ucm_cheat_menu.0150 }}
 
   option = { name = ucm_cheat_menu.00x.close }
 
 }
-
-
 
 ucm_cheat_menu.0195 = {
 
@@ -1179,19 +1022,13 @@ ucm_cheat_menu.0195 = {
 
   theme = default
 
-
-
   right_portrait = scope:ucm_ability_edit_target
-
-
 
   option = { name = ucm_cheat_menu.0151.p3_save scope:actor = { ucm_tradition_preset3_save_effect = yes } scope:actor = { trigger_event = ucm_cheat_menu.0195 }}
 
   option = { name = ucm_cheat_menu.0151.p3_load scope:actor = { ucm_tradition_preset3_load_effect = yes } scope:actor = { trigger_event = ucm_cheat_menu.0195 }}
 
   option = { name = ucm_cheat_menu.0151.p3_clear scope:actor = { ucm_tradition_preset3_clear_effect = yes } scope:actor = { trigger_event = ucm_cheat_menu.0195 }}
-
-
 
   option = { name = ucm_cheat_menu.page_prev trigger = { NOT = { has_global_variable = ucm_cheat_menu_menu_disabled } } scope:actor = { trigger_event = ucm_cheat_menu.0151 }}
 
@@ -1200,8 +1037,6 @@ ucm_cheat_menu.0195 = {
   option = { name = ucm_cheat_menu.00x.close }
 
 }
-
-
 
 ucm_cheat_menu.0130 = {
 
@@ -1213,13 +1048,7 @@ ucm_cheat_menu.0130 = {
 
   theme = learning
 
-
-
   right_portrait = scope:ucm_ability_edit_target
-
-
-
-
 
   option = {
 
@@ -1235,8 +1064,6 @@ ucm_cheat_menu.0130 = {
 
   }
 
-
-
   option = { name = ucm_cheat_menu.0130.era_tribal scope:actor = { trigger_event = ucm_cheat_menu.0022 }}
 
   option = { name = ucm_cheat_menu.0130.era_early scope:actor = { trigger_event = ucm_cheat_menu.0023 }}
@@ -1244,10 +1071,6 @@ ucm_cheat_menu.0130 = {
   option = { name = ucm_cheat_menu.0130.era_high scope:actor = { trigger_event = ucm_cheat_menu.0024 }}
 
   option = { name = ucm_cheat_menu.0130.era_late scope:actor = { trigger_event = ucm_cheat_menu.0025 }}
-
-
-
-
 
   option = {
 
@@ -1262,8 +1085,6 @@ ucm_cheat_menu.0130 = {
     }
 
   }
-
-
 
   # 闂佽娴烽幊鎾诲箟闄囬妵鎰板礃椤帟鈧寧銇勮箛鎾村櫣妞ゆ洟浜堕弻锝呂熼崫鍕瘣濡炪們鍎抽崑鐐垫崲濞戙垹绾ч柟瀵稿Х椤旀垵顪冮妶搴′簻缂佸鎳撻悾鐑藉箮閽樺）鈺呮煏閸繄澧曟鐐╁亾闂傚倸鍊风欢锟犲磻閸曨垁鍥х暦閸ャ劌搴婇梺鍛婂姦閸犳牕螞濮椻偓閺屾盯濡烽幋婵嗘灓闁搞倖鐟╁娲传閸曨偅娈哄銈嗘⒐閸旀危閹邦厼顕遍柡澶嬪灩椤撳ジ姊虹憴鍕姢缁剧虎鍘炬竟鏇犵磼濡湱绠氬銈嗙墦閸婃澹曠捄銊х＜妞ゆ棁鍋愭牎缂備礁顑呴ˇ鐢搞€佸鈧幃銏℃姜閻楀牊绶氶梻鍌欑劍鐎笛呯矙閹达附鍋嬪┑鐘叉搐閺嬩焦銇勯弴妤€浜鹃悗?婵犵數鍋熼ˉ鎰板磻閹邦厽鍙忓瀣閸?闂傚倷绀佸﹢閬嶁€﹂崼銉嬪洭寮跺▎鐐瘜闂佺鏈粙鎾汇€呴悜鑺ョ叆婵犻潧妫楅顐ょ磼鐎ｎ亷鍔熼柍褜鍓氶鏍窗閺嶎厽鏅濇い蹇撳閻掕棄鈹戦悩瀹犲婵☆偅锕㈤弻鐔封枔閸喗鐏撻梺鍦帶閵堟悂寮婚妸銉㈡婵妫欓鍡欑磽娴ｄ粙鍝虹紒璇插暣閳ユ棃鍩€椤掍椒绻嗘い鏍ㄤ緱閸庛儵鏌涘顒佸缂佺粯绋撶槐娆撴偐閸濆嫬甯梻浣哥枃椤曆囧Χ缁嬭法鏆﹂柨婵嗩樈閺佸倿鏌涢弴銊ュ箻闁?vanilla
 
@@ -1284,8 +1105,6 @@ ucm_cheat_menu.0130 = {
     }
 
   }
-
-
 
   option = {
 
@@ -1357,8 +1176,6 @@ ucm_cheat_menu.0130 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.0130.close
@@ -1368,8 +1185,6 @@ ucm_cheat_menu.0130 = {
     scope:actor = { ucm_quick_modifications_innovation_close_effect = yes }
 
   }
-
-
 
   option = {
 
@@ -1388,83 +1203,7 @@ ucm_cheat_menu.0130 = {
 
 }
 
-
-
 ## 闂傚倷鑳堕…鍫㈡崲閸儱绀夌€光偓閸曨剙鍓冲銈嗗笒鐎氼參藟閸儲鐓冮柛婵嗗閳ь剙缍婇幃锟犲焵椤掑嫭鈷掗柛灞炬皑婢ф垿鏌涢妸銉︽儓妞ゎ厼鐏濋～婊堝焵椤掑嫬鏋佺€广儱鎷嬪鈺傘亜閹烘埈妲告繛鍫熸倐濮婄粯绗熼崶褌绨诲銈忓瘜閸ｏ綁骞婂▎鎾崇闁挎棁妫勯崜顓㈡⒑閸涘﹥澶勯柛鎾村哺閹顢氶埀顒勫蓟濞戙垹鍐€闁靛ě鍐炬缂傚倷娴囨ご鎼佹偘閳虹劇pe:ucm_selected_culture闂傚倷鐒︾€笛呯矙閹次诲洭鏌嗗鍛€梺瑙勫礃椤曆囧几?
-
-ucm_cheat_menu.0170 = {
-
-  type = character_event
-
-  title = ucm_cheat_menu.0170.t
-
-  desc = ucm_ui_no_hover_tooltip
-
-  theme = learning
-
-  immediate = {
-    ucm_cheat_menu_sync_target_effect = yes
-    ucm_restore_ucm_selected_culture_scope_effect = yes
-  }
-
-
-  option = {
-
-    name = ucm_cheat_menu.0170.unlock_all
-
-    root = { ucm_unlock_all_innovations_on_selected_culture_effect = yes }
-
-    root = { trigger_event = ucm_cheat_menu.0170 }
-
-  }
-
-
-
-
-
-  option = {
-
-    name = ucm_cheat_menu.0170.open_era_menu
-
-    trigger = { root = { has_character_flag = ucm_culture_global_edit_active } }
-
-    root = {
-
-      remove_character_flag = ucm_culture_innov_from_0120
-
-      add_character_flag = ucm_culture_innov_from_global_selected
-
-      trigger_event = ucm_cheat_menu.0130
-
-    }
-
-  }
-
-
-
-  option = {
-
-    name = ucm_cheat_menu.0170.open_era_menu
-
-    trigger = { root = { NOT = { has_character_flag = ucm_culture_global_edit_active } } }
-
-    root = {
-
-      remove_character_flag = ucm_culture_innov_from_0120
-
-      trigger_event = ucm_cheat_menu.0130
-
-    }
-
-  }
-
-
-
-  option = { name = ucm_cheat_menu.00x.close }
-
-}
-
-
 
 ## 闂傚倷鑳堕…鍫㈡崲閸儱绀夌€光偓閸曨剙鍓冲銈嗗笒鐎氼參鎮炵拠宸唵閻犺桨璀﹀Σ濂告煕濮楀棗澧撮柡宀嬬節瀹曟帒顫濋鐔稿€烽梺璇查閻忔岸鎮￠垾宕囨殾闁靛闄勯崕鐔兼煥濠靛棙顥犻柡鍡欏Х缁辨捇宕掑顑藉亾瑜版帗鍋嬮柣鎰仛椤愯姤銇勯幇鍓佹偧闁崇粯姊归妵鍕箻鐠虹儤鐏佹繛瀛樼矊閵堟悂寮婚妸銉㈡婵☆垳鍘ч。娲⒑閹肩偛濡兼繛瀵稿厴閹噣鎮欓鍌滅槇濠殿喗锕徊鑺ョ閹岀唵閻犺櫣灏ㄥ銉х磼閳?闂?闂傚倷绀侀幖顐︽偋濠婂牆绀堟慨妯挎硾閸戠娀鏌涢幇闈涙灈缂佲偓?闂?濠电姵顔栭崰妤冪紦閸ф纾归柡鍥ｆ嚍閸ヮ剙鐓涢柛娑卞枟濞?
 
@@ -1485,8 +1224,6 @@ ucm_cheat_menu.0171 = {
 
   right_portrait = scope:ucm_cheat_menu_target
 
-
-
   option = {
 
     name = ucm_cheat_menu.0171.back_vanilla_toolbar
@@ -1496,8 +1233,6 @@ ucm_cheat_menu.0171 = {
     root = { trigger_event = ucm_cheat_menu.0181 }
 
   }
-
-
 
   option = {
 
@@ -1512,8 +1247,6 @@ ucm_cheat_menu.0171 = {
     }
 
   }
-
-
 
   option = { name = ucm_cheat_menu.0171.section_traditions_pillars root = { trigger_event = ucm_cheat_menu.0177 }}
 
@@ -1537,11 +1270,7 @@ ucm_cheat_menu.0171 = {
 
   }
 
-
-
   option = { name = ucm_cheat_menu.0170.unlock_all root = { ucm_unlock_all_innovations_on_selected_culture_effect = yes } root = { trigger_event = ucm_cheat_menu.0171 } }
-
-
 
   option = {
 
@@ -1559,8 +1288,6 @@ ucm_cheat_menu.0171 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.0171.back_browser
@@ -1575,8 +1302,6 @@ ucm_cheat_menu.0171 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.00x.close
@@ -1586,8 +1311,6 @@ ucm_cheat_menu.0171 = {
   }
 
 }
-
-
 
 ## 闂傚倷绶氬褍螞濡や胶闄勯柡鍐ㄥ€归～鏇㈡煕閹捐尪鍏岀痪鎯с偢閺岋綁寮崹顕呮殺闂佽崵鍠嗛崹浠嬪蓟閿熺姴鐒垫い鎺戝閺佸秵绻涢幋鐐跺鐟滅増妞藉娲濞戞瑯妫炵紓浣割槹閹告娊骞冮崫鍕ㄦ瀻闁圭偓娼欏▓銊モ攽閻樿宸ラ柛鐕佸亞缁牏鈧綆鍠楅悡銉︾箾閹寸偟鎳呮い锝嗙叀閺岋紕鈧綆浜滈弳锝団偓瑙勬礈婵炩偓鐎殿喕绮欓弫鍌炲礈瑜嶉埀顒傚仧缁辨捇宕掑▎鎺戝帯闂佸摜濮撮柊锝呯暦鐟欏嫭鍎熸い顐厸缁?+ 闂傚倷绀侀幖顐ょ矓閸洍鈧箓宕奸姀銏㈠婵°倧绲介崯顖炲磻閻樼粯鐓曢柍鈺佸枤濞堟棃鏌熼鑲┬ч柡灞诲妼閳藉螣閼姐値鍟倀hos闂?
 
@@ -1608,13 +1331,9 @@ ucm_cheat_menu.0177 = {
 
   right_portrait = scope:ucm_cheat_menu_target
 
-
-
   option = { name = ucm_cheat_menu.0177.open_traditions root = { trigger_event = ucm_cheat_menu.2600 }}
 
   option = { name = ucm_cheat_menu.0177.open_ethos root = { trigger_event = ucm_cheat_menu.2731 }}
-
-
 
   option = {
 
@@ -1643,58 +1362,6 @@ ucm_cheat_menu.0177 = {
   option = { name = ucm_cheat_menu.00x.close }
 
 }
-
-
-
-ucm_cheat_menu.0140 = {
-
-  type = character_event
-
-  title = ucm_cheat_menu.0140.t
-
-  desc = ucm_ui_no_hover_tooltip
-
-  theme = default
-
-
-
-  right_portrait = scope:ucm_ability_edit_target
-
-
-
-
-
-  option = {
-
-    name = ucm_cheat_menu.0140.craft
-
-    hidden_effect = { scope:actor = { add_character_flag = ucm_craft_from_0140 } }
-
-    scope:actor = { trigger_event = ucm_cheat_menu.0030 }
-
-  }
-
-
-
-
-
-  option = {
-
-    name = ucm_cheat_menu.0140.make_now
-
-    hidden_effect = { scope:actor = { add_character_flag = ucm_craft_from_0140 } }
-
-    scope:actor = { trigger_event = ucm_cheat_menu.0030 }
-
-  }
-
-
-
-  option = { name = ucm_cheat_menu.0140.close }
-
-}
-
-
 
 # 闂傚倷绀侀幉锟犳偡閿旂晫绠惧┑鐘叉搐閺嬩焦銇勯幘鍗炵仼鏉╂繈鏌ｈ箛鏇炰沪鐎规洘顭堝Λ銏ゆ⒒娴ｅ湱婀介柛銊ユ惈鍗遍柟鐑樻磸娴滃湱鈧箍鍎遍ˇ顖滄兜閳ь剟姊洪崫鍕閼裤倝鏌涚€ｎ偅灏い鎾瑰缁犳盯寮撮悩闈涚倞闂備浇顕х€涒晝绮欓幒鎳ㄦ椽寮介婧惧亾閸涙惌鏁嗛柛灞剧矆缁楀姊洪幐搴ｂ槈閻庢凹鍙冨畷?闂?闂傚倷鑳堕崢褔宕幐搴闁归棿绀佺粈澶屾喐閻楀牆绗掔紒鐘冲灩閹茬顓兼径濠冩К闂佺硶鍓濈粙鎴ｇ箽濠电偠鎻徊鍧椻€﹂崼銉﹀珔闁绘柨鍚嬮悡鐘碘偓瑙勬礀濞层倖绂掗埡鍛厱閹兼番鍨婚幊鍥р攽閳ュ磭鎽犻柟宄版嚇瀹曨偊濡烽‖顕呬邯濮婃椽宕崟顐ｆ闂佺閰ｆ禍璺虹暦鐟欏嫭鍎熼柕蹇嬪灮椤旀洟姊哄畷鍥ㄥ殌缂併劑浜跺畷鎴﹀箻鐎涙ê顎撻柣鐔哥懃鐎氬憡顨ヨ箛娑欌拺婵懓娲ら崝婊呯磼鐎ｎ偄绗х紒顔硷躬閺佸倿鎮惧畝濠冮敜闁荤喐绮嶇换鍕ｉ幇顑芥瀻闁规儳纾悡鎴︽⒑缁嬫寧婀扮紒娲畺瀹?2859903263 闂傚倷鐒﹂惇褰掑礉瀹€鈧埀顒佸嚬閸撶喖骞冮崸妤€绀嬫い鏍ㄧ☉娴犮垽鏌ｉ姀鈺佺伇闁哥姵姘ㄧ划?
 
@@ -1756,8 +1423,6 @@ ucm_cheat_menu.0001 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.0001.male
@@ -1800,8 +1465,6 @@ ucm_cheat_menu.0001 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.0001.twins
@@ -1842,8 +1505,6 @@ ucm_cheat_menu.0001 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.0001.deliver_today
@@ -1871,8 +1532,6 @@ ucm_cheat_menu.0001 = {
     }
 
   }
-
-
 
   option = {
 
@@ -1913,8 +1572,6 @@ ucm_cheat_menu.0001 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.00x.back
@@ -1927,8 +1584,6 @@ ucm_cheat_menu.0001 = {
 
 }
 
-
-
 # 闂佽崵鍠愮划搴㈡櫠濡ゅ懎绠伴悹鍥у棘濞戙垹鐓涢柛娑卞幘椤︻偊姊虹化鏇炲⒉妞わ箑顭烽、鏇㈡晜閼恒儲鐝繝娈垮枟椤牊銇旈幖浣告辈?ucm_cheat_menu_instant_deliver_today_effect 闂佽娴烽崑锝夊磹閺嶎厼纾块柤娴嬫櫆瀹曞弶绻濇繝鍌涘櫤闁哥姴妫濋弻銊╁即濡も偓娴滈箖鎮峰鍕凡闁稿﹤娼″顐㈩吋閸涱亝顫嶅┑鈽嗗灡濡叉帡宕ラ锔界厽閹兼番鍨婚埊鏇熺箾閸欏澧甸柕?root 婵犵數鍋為崹鍫曞箰閹间焦鏅濋柕澶涢檮濞呯娀鏌ｉ敐鍛拱闁稿锕㈤幃姗€鎮欓棃娑樺Е闂佺顑嗛幑鍥х暦閹烘埈娼╅弶鍫涘妽閸熴垹鈹戦悩缁樻锭闁稿﹥鎮傚畷顖炲锤濡や礁浠兼繝鐢靛У閼瑰墽鐚惧澶屽彄闁搞儯鍎遍崝銈囩磼閹邦収娈滈柡宀嬬節瀹曠厧鈹戦幇顓夈儵鏌ｆ惔銊︽锭闁活厼鍊垮缁樼節閸屻倕鎮戦梺鍛婁緱閸撴稒寰勯崟顒傜闁瑰鍋炵亸鐗堜繆椤愩垹鏆ｇ€规洏鍨芥俊鑸靛緞婵犲嫸绱遍梻浣藉亹椤牓鎮樺杈╀笉闁圭儤顨嗛崐鐢告偡濞嗗繐顏存繛鍫熸礃娣囧﹪顢曢姀銏㈠姱闂佺硶鏅涘Λ婵嬬嵁閹烘嚦鏃€绗熼崶褎鍊曢梻鍌氬€烽悞锕€顭垮Ο鑲╃煋閻庢稒锚椤曢亶鏌熼幆褏浜柛瀣尵閹叉挳宕熼崹顐ゆ殾婵犵妲呴崑鍕儗閸岀偛鏋佺€广儱鎳夊Σ鍫熶繆椤栨繍鍤欓柛鎾卞姂濮婃椽宕ㄦ繝鍌滅懖闂佽崵鍟块弲娑㈠煝閹捐顫呴柣妯簧戠敮鎺楊敇婵傜绀嬫い鎾跺仧婢ь垶姊虹拠鍙夊攭妞ゎ偄顦甸妴鍐幢濡炪垺绋戦悾婵嬪礋椤掍焦鐝梻浣稿閸嬪懐鎹㈤崒婊勫床濞撴埃鍋撻柡灞剧洴楠炴帡寮撮悙闈涘缚闂備線鈧偛鑻崢鎾煕鐎ｎ偅宕岄柟顔筋殔閳藉鈻庨幇顕呮К闂備浇顕栭崰妤呫€冩径鎰﹂柟鐗堟緲缁犲鎮楀☉娆欏叕缂佽鲸宀稿娲川婵犲倻鐟ㄥ┑鈽嗗亝椤ㄥ懘鍩呴悜鑺モ拺闁圭娴烽埥澶嬨亜閿旇寮柛鈹惧亾?
 
 ucm_cheat_menu.8010 = {
@@ -1939,15 +1594,11 @@ ucm_cheat_menu.8010 = {
 
   theme = pregnancy
 
-
-
   trigger = {
 
     has_trait = pregnant
 
   }
-
-
 
   immediate = {
 
@@ -2656,8 +2307,6 @@ ucm_cheat_menu.8010 = {
 
 }
 
-
-
 # 闂佽崵鍠愮划搴㈡櫠濡ゅ懎绠伴悹鍥у棘濞戙垹鐓涢柛娑卞幘椤︻偊姊虹化鏇炲⒉妞わ箑顭烽、鏇㈡晝閳ь剛鎲撮敃鍌氱婵烇綆鍓欓悘顔姐亜韫囨梹鍊愰柡宀嬬秮閹瑩宕ｆ径妯伙紒闂佽崵鍋炵粙蹇涘磿閻㈢绠栧ù鐘差儏閸欏﹪鐓崶銊﹀碍濠㈣妫冨铏圭矙閸噮鍔夐柣搴ｇ懗閸パ呭姦濡炪倖鍩堥崜娆撳疮椤愶附鍊?闂傚倷绀侀幉锟犳偡閵夆晜鍎楀〒姘ｅ亾鐎规洘娲熼、鏃堝醇閻旈攱鐣遍梺鐟板悑閻ｎ亪宕硅ぐ鎺撳剨妞ゆ牜鍋為悡娑㈡煕閹般劍娅撴繛鍫悼缁辨帗娼忛妸褎鍣紓浣割儏椤︻垶顢樻總绋垮窛妞ゆ挆鍕靛數闂?vanilla 婵犵數濮烽。浠嬪焵椤掑偆鍔滅€规悶鍎查妵鍕敇閻愭惌妫﹂悗娈垮櫘閸犳牞鐏冮柣搴秵閸撴盯藝椤曗偓濮?pregnancy_cleanup 闂傚倷绀侀幉锟犳偡鏉堛劋绻嗛柛銉墻閺佸洭鏌熼梻瀵稿妽闁?
 
 ucm_cheat_menu.8011 = {
@@ -2667,8 +2316,6 @@ ucm_cheat_menu.8011 = {
   hidden = yes
 
   theme = pregnancy
-
-
 
   immediate = {
 
@@ -2683,8 +2330,6 @@ ucm_cheat_menu.8011 = {
   }
 
 }
-
-
 
 # 闂傚倷绀侀幉锟犳偡閿旂晫绠惧┑鐘叉搐閺嬩焦銇勯幘鍗炵仼鏉╂繈鏌ｈ箛鏇炰沪鐎规洘顭堝Λ銏ゆ⒒娴ｅ湱婀介柛銊ユ惈鍗遍柟鐑樻磸娴滃湱鈧箍鍎遍ˇ顖滄兜閳ь剟姊洪崫鍕閼裤倝鏌涚€ｎ偅灏い鎾瑰缁犳盯寮撮悩闈涚倞闂備浇宕垫慨鎾敄閸涙惌鏁勯柛鈩冾殢閻掍粙鏌涢幇闈涙灍闁哄拋鍓熼弻娑㈩敃閿濆洨顓煎┑鈽嗗灠椤戝洨妲愰幒鎾崇窞濠电姴瀚呴敐鍡愪簻闁圭儤鎸荤亸锔锯偓瑙勬礀閻栧ジ骞冮鍫濆窛妞ゆ牗绮犲Σ?
 
@@ -2706,13 +2351,7 @@ ucm_cheat_menu.0002 = {
 
   }
 
-
-
-
-
   right_portrait = scope:ucm_cheat_menu_target
-
-
 
   option = {
 
@@ -2732,8 +2371,6 @@ ucm_cheat_menu.0002 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.0002.disease
@@ -2749,8 +2386,6 @@ ucm_cheat_menu.0002 = {
     }
 
   }
-
-
 
   option = {
 
@@ -2768,8 +2403,6 @@ ucm_cheat_menu.0002 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.0002.cancel
@@ -2780,11 +2413,7 @@ ucm_cheat_menu.0002 = {
 
 }
 
-
-
 # 右键「Skonester菜单」：灭族（清空目标 AI 的全族）
-
-
 
 # --- restored from desktop reference ---
 
@@ -2804,13 +2433,7 @@ ucm_cheat_menu.0003 = {
 
   }
 
-
-
-
-
   right_portrait = scope:ucm_cheat_menu_target
-
-
 
   option = {
 
@@ -2847,8 +2470,6 @@ ucm_cheat_menu.0003 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.0003.cancel
@@ -2859,11 +2480,7 @@ ucm_cheat_menu.0003 = {
 
 }
 
-
-
 # 右键「Skonester菜单」：年龄修改（+10/+20/+30 岁；−10/−20/−30 岁，最低 0 岁）。set_age 不重算年龄相关健康，故另用变量 + 永久 modifier 同步健康条（见 ucm_cheat_menu_age_edit_health_effects）。
-
-
 
 # --- restored from desktop reference ---
 
@@ -2883,13 +2500,7 @@ ucm_cheat_menu.0075 = {
 
   }
 
-
-
-
-
   right_portrait = scope:ucm_cheat_menu_target
-
-
 
   option = {
 
@@ -3047,8 +2658,6 @@ ucm_cheat_menu.0075 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.00x.close
@@ -3059,11 +2668,7 @@ ucm_cheat_menu.0075 = {
 
 }
 
-
-
 # 右键「Skonester菜单」：六维属性修改（全 +10 / 全 -10，再六维分项 ±1/±5/±10）
-
-
 
 # --- restored from desktop reference ---
 
@@ -3083,13 +2688,7 @@ ucm_cheat_menu.0080 = {
 
   }
 
-
-
-
-
   right_portrait = scope:ucm_cheat_menu_target
-
-
 
   option = {
 
@@ -3139,8 +2738,6 @@ ucm_cheat_menu.0080 = {
 
   }
 
-
-
   option = { name = ucm_cheat_menu.0080.diplomacy scope:actor = { trigger_event = ucm_cheat_menu.0081 }}
 
   option = { name = ucm_cheat_menu.0080.martial scope:actor = { trigger_event = ucm_cheat_menu.0082 }}
@@ -3153,8 +2750,6 @@ ucm_cheat_menu.0080 = {
 
   option = { name = ucm_cheat_menu.0080.prowess scope:actor = { trigger_event = ucm_cheat_menu.0086 }}
 
-
-
   option = {
 
     name = ucm_cheat_menu.0080.close
@@ -3164,8 +2759,6 @@ ucm_cheat_menu.0080 = {
   }
 
 }
-
-
 
 # --- restored from desktop reference ---
 
@@ -3185,11 +2778,7 @@ ucm_cheat_menu.0081 = {
 
   }
 
-
-
   right_portrait = scope:ucm_cheat_menu_target
-
-
 
   option = { name = ucm_cheat_menu.008x.plus_1 scope:ucm_cheat_menu_target = { add_diplomacy_skill = 1 } scope:actor = { trigger_event = ucm_cheat_menu.0081 }}
 
@@ -3203,15 +2792,11 @@ ucm_cheat_menu.0081 = {
 
   option = { name = ucm_cheat_menu.008x.minus_10 scope:ucm_cheat_menu_target = { add_diplomacy_skill = -10 } scope:actor = { trigger_event = ucm_cheat_menu.0081 }}
 
-
-
   option = { name = ucm_cheat_menu.008x.back scope:actor = { trigger_event = ucm_cheat_menu.0080 }}
 
   option = { name = ucm_cheat_menu.008x.close }
 
 }
-
-
 
 # --- restored from desktop reference ---
 
@@ -3231,11 +2816,7 @@ ucm_cheat_menu.0082 = {
 
   }
 
-
-
   right_portrait = scope:ucm_cheat_menu_target
-
-
 
   option = { name = ucm_cheat_menu.008x.plus_1 scope:ucm_cheat_menu_target = { add_martial_skill = 1 } scope:actor = { trigger_event = ucm_cheat_menu.0082 }}
 
@@ -3249,15 +2830,11 @@ ucm_cheat_menu.0082 = {
 
   option = { name = ucm_cheat_menu.008x.minus_10 scope:ucm_cheat_menu_target = { add_martial_skill = -10 } scope:actor = { trigger_event = ucm_cheat_menu.0082 }}
 
-
-
   option = { name = ucm_cheat_menu.008x.back scope:actor = { trigger_event = ucm_cheat_menu.0080 }}
 
   option = { name = ucm_cheat_menu.008x.close }
 
 }
-
-
 
 # --- restored from desktop reference ---
 
@@ -3277,11 +2854,7 @@ ucm_cheat_menu.0083 = {
 
   }
 
-
-
   right_portrait = scope:ucm_cheat_menu_target
-
-
 
   option = { name = ucm_cheat_menu.008x.plus_1 scope:ucm_cheat_menu_target = { add_stewardship_skill = 1 } scope:actor = { trigger_event = ucm_cheat_menu.0083 }}
 
@@ -3295,15 +2868,11 @@ ucm_cheat_menu.0083 = {
 
   option = { name = ucm_cheat_menu.008x.minus_10 scope:ucm_cheat_menu_target = { add_stewardship_skill = -10 } scope:actor = { trigger_event = ucm_cheat_menu.0083 }}
 
-
-
   option = { name = ucm_cheat_menu.008x.back scope:actor = { trigger_event = ucm_cheat_menu.0080 }}
 
   option = { name = ucm_cheat_menu.008x.close }
 
 }
-
-
 
 # --- restored from desktop reference ---
 
@@ -3323,11 +2892,7 @@ ucm_cheat_menu.0084 = {
 
   }
 
-
-
   right_portrait = scope:ucm_cheat_menu_target
-
-
 
   option = { name = ucm_cheat_menu.008x.plus_1 scope:ucm_cheat_menu_target = { add_intrigue_skill = 1 } scope:actor = { trigger_event = ucm_cheat_menu.0084 }}
 
@@ -3341,15 +2906,11 @@ ucm_cheat_menu.0084 = {
 
   option = { name = ucm_cheat_menu.008x.minus_10 scope:ucm_cheat_menu_target = { add_intrigue_skill = -10 } scope:actor = { trigger_event = ucm_cheat_menu.0084 }}
 
-
-
   option = { name = ucm_cheat_menu.008x.back scope:actor = { trigger_event = ucm_cheat_menu.0080 }}
 
   option = { name = ucm_cheat_menu.008x.close }
 
 }
-
-
 
 # --- restored from desktop reference ---
 
@@ -3369,11 +2930,7 @@ ucm_cheat_menu.0085 = {
 
   }
 
-
-
   right_portrait = scope:ucm_cheat_menu_target
-
-
 
   option = { name = ucm_cheat_menu.008x.plus_1 scope:ucm_cheat_menu_target = { add_learning_skill = 1 } scope:actor = { trigger_event = ucm_cheat_menu.0085 }}
 
@@ -3387,15 +2944,11 @@ ucm_cheat_menu.0085 = {
 
   option = { name = ucm_cheat_menu.008x.minus_10 scope:ucm_cheat_menu_target = { add_learning_skill = -10 } scope:actor = { trigger_event = ucm_cheat_menu.0085 }}
 
-
-
   option = { name = ucm_cheat_menu.008x.back scope:actor = { trigger_event = ucm_cheat_menu.0080 }}
 
   option = { name = ucm_cheat_menu.008x.close }
 
 }
-
-
 
 # --- restored from desktop reference ---
 
@@ -3415,11 +2968,7 @@ ucm_cheat_menu.0086 = {
 
   }
 
-
-
   right_portrait = scope:ucm_cheat_menu_target
-
-
 
   option = { name = ucm_cheat_menu.008x.plus_1 scope:ucm_cheat_menu_target = { add_prowess_skill = 1 } scope:actor = { trigger_event = ucm_cheat_menu.0086 }}
 
@@ -3433,135 +2982,17 @@ ucm_cheat_menu.0086 = {
 
   option = { name = ucm_cheat_menu.008x.minus_10 scope:ucm_cheat_menu_target = { add_prowess_skill = -10 } scope:actor = { trigger_event = ucm_cheat_menu.0086 }}
 
-
-
   option = { name = ucm_cheat_menu.008x.back scope:actor = { trigger_event = ucm_cheat_menu.0080 }}
 
   option = { name = ucm_cheat_menu.008x.close }
 
 }
 
-
-
 # 右键「Skonester菜单」：增加优秀身体特质（倾城/多产/强壮等）
-
-
 
 # --- restored from desktop reference ---
 
-ucm_cheat_menu.0004 = {
-
-  type = character_event
-
-  title = ucm_cheat_menu.0004.t
-
-  desc = ucm_ui_no_hover_tooltip
-
-  theme = default
-
-
-
-  right_portrait = scope:recipient
-
-
-
-  option = {
-
-    name = ucm_cheat_menu.0004.beauty
-
-    scope:recipient = {
-
-      if = { limit = { has_trait = beauty_bad_1 } remove_trait = beauty_bad_1 }
-
-      if = { limit = { has_trait = beauty_bad_2 } remove_trait = beauty_bad_2 }
-
-      if = { limit = { has_trait = beauty_bad_3 } remove_trait = beauty_bad_3 }
-
-      if = { limit = { has_trait = beauty_good_1 } remove_trait = beauty_good_1 }
-
-      if = { limit = { has_trait = beauty_good_2 } remove_trait = beauty_good_2 }
-
-      add_trait = beauty_good_3
-
-    }
-
-    scope:actor = { trigger_event = ucm_cheat_menu.0004 }
-
-  }
-
-
-
-  option = {
-
-    name = ucm_cheat_menu.0004.fecund
-
-    scope:recipient = {
-
-      add_trait = fecund
-
-    }
-
-    scope:actor = { trigger_event = ucm_cheat_menu.0004 }
-
-  }
-
-
-
-  option = {
-
-    name = ucm_cheat_menu.0004.physique
-
-    scope:recipient = {
-
-      if = { limit = { has_trait = physique_bad_1 } remove_trait = physique_bad_1 }
-
-      if = { limit = { has_trait = physique_bad_2 } remove_trait = physique_bad_2 }
-
-      if = { limit = { has_trait = physique_bad_3 } remove_trait = physique_bad_3 }
-
-      if = { limit = { has_trait = weak } remove_trait = weak }
-
-      add_trait = physique_good_3
-
-    }
-
-    scope:actor = { trigger_event = ucm_cheat_menu.0004 }
-
-  }
-
-
-
-  option = {
-
-    name = ucm_cheat_menu.0004.strong
-
-    scope:recipient = {
-
-      if = { limit = { has_trait = weak } remove_trait = weak }
-
-      add_trait = strong
-
-    }
-
-    scope:actor = { trigger_event = ucm_cheat_menu.0004 }
-
-  }
-
-
-
-  option = {
-
-    name = ucm_cheat_menu.0004.cancel
-
-  }
-
-}
-
-
-
 ## 右键「Skonester菜单」：爱爱（两阶段：闺房互动 → 事后；怀孕在确认后进行，不再显示「已怀孕」字样）
-
-
 
 # --- restored from desktop reference ---
 
@@ -3576,8 +3007,6 @@ ucm_cheat_menu.0010 = {
   theme = love
 
   override_background = { reference = bedchamber }
-
-
 
   left_portrait = {
 
@@ -3594,8 +3023,6 @@ ucm_cheat_menu.0010 = {
     animation = flirtation_left
 
   }
-
-
 
   option = {
 
@@ -3693,8 +3120,6 @@ ucm_cheat_menu.0010 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.0010.cancel
@@ -3702,8 +3127,6 @@ ucm_cheat_menu.0010 = {
   }
 
 }
-
-
 
 # --- restored from desktop reference ---
 
@@ -3718,8 +3141,6 @@ ucm_cheat_menu.0012 = {
   theme = love
 
   override_background = { reference = bedchamber }
-
-
 
   left_portrait = {
 
@@ -3736,8 +3157,6 @@ ucm_cheat_menu.0012 = {
     animation = ecstasy
 
   }
-
-
 
   option = {
 
@@ -3759,11 +3178,7 @@ ucm_cheat_menu.0012 = {
 
 }
 
-
-
 ## 右键「Skonester菜单」：修改特质（单独修改窗口：点击=增加/失去）
-
-
 
 ## AUTO: restored missing page 0022
 
@@ -3776,8 +3191,6 @@ ucm_cheat_menu.0022 = {
   desc = ucm_cheat_menu.0022.desc
 
   theme = learning
-
-
 
   option = {
 
@@ -3837,8 +3250,6 @@ ucm_cheat_menu.0022 = {
 
   }
 
-
-
   option = { name = ucm_innov_menu.innovation_african_canoes if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_african_canoes } remove_innovation = innovation_african_canoes } else = { add_innovation = innovation_african_canoes } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_african_canoes } remove_innovation = innovation_african_canoes } else = { add_innovation = innovation_african_canoes } } } } scope:actor = { trigger_event = ucm_cheat_menu.0022 } }
 
   option = { name = ucm_innov_menu.innovation_all_things if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_all_things } remove_innovation = innovation_all_things } else = { add_innovation = innovation_all_things } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_all_things } remove_innovation = innovation_all_things } else = { add_innovation = innovation_all_things } } } } scope:actor = { trigger_event = ucm_cheat_menu.0022 } }
@@ -3852,8 +3263,6 @@ ucm_cheat_menu.0022 = {
   option = { name = ucm_innov_menu.innovation_block_printing if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_block_printing } remove_innovation = innovation_block_printing } else = { add_innovation = innovation_block_printing } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_block_printing } remove_innovation = innovation_block_printing } else = { add_innovation = innovation_block_printing } } } } scope:actor = { trigger_event = ucm_cheat_menu.0022 } }
 
   option = { name = ucm_innov_menu.innovation_caballeros if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_caballeros } remove_innovation = innovation_caballeros } else = { add_innovation = innovation_caballeros } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_caballeros } remove_innovation = innovation_caballeros } else = { add_innovation = innovation_caballeros } } } } scope:actor = { trigger_event = ucm_cheat_menu.0022 } }
-
-
 
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0026 } }
 
@@ -3874,8 +3283,6 @@ ucm_cheat_menu.0026 = {
   desc = ucm_cheat_menu.0026.desc
 
   theme = learning
-
-
 
   option = {
 
@@ -3931,8 +3338,6 @@ ucm_cheat_menu.0026 = {
 
   }
 
-
-
   option = { name = ucm_innov_menu.innovation_casus_belli if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_casus_belli } remove_innovation = innovation_casus_belli } else = { add_innovation = innovation_casus_belli } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_casus_belli } remove_innovation = innovation_casus_belli } else = { add_innovation = innovation_casus_belli } } } } scope:actor = { trigger_event = ucm_cheat_menu.0026 } }
 
   option = { name = ucm_innov_menu.innovation_catapult if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_catapult } remove_innovation = innovation_catapult } else = { add_innovation = innovation_catapult } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_catapult } remove_innovation = innovation_catapult } else = { add_innovation = innovation_catapult } } } } scope:actor = { trigger_event = ucm_cheat_menu.0026 } }
@@ -3944,8 +3349,6 @@ ucm_cheat_menu.0026 = {
   option = { name = ucm_innov_menu.innovation_coking if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_coking } remove_innovation = innovation_coking } else = { add_innovation = innovation_coking } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_coking } remove_innovation = innovation_coking } else = { add_innovation = innovation_coking } } } } scope:actor = { trigger_event = ucm_cheat_menu.0026 } }
 
   option = { name = ucm_innov_menu.innovation_composite_crossbow if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_composite_crossbow } remove_innovation = innovation_composite_crossbow } else = { add_innovation = innovation_composite_crossbow } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_composite_crossbow } remove_innovation = innovation_composite_crossbow } else = { add_innovation = innovation_composite_crossbow } } } } scope:actor = { trigger_event = ucm_cheat_menu.0026 } }
-
-
 
   option = { name = ucm_cheat_menu.page_prev scope:actor = { trigger_event = ucm_cheat_menu.0022 } }
 
@@ -3966,8 +3369,6 @@ ucm_cheat_menu.0027 = {
   desc = ucm_cheat_menu.0027.desc
 
   theme = learning
-
-
 
   option = {
 
@@ -4147,8 +3548,6 @@ ucm_cheat_menu.0027 = {
 
   }
 
-
-
   option = { name = ucm_innov_menu.innovation_crop_rotation if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_crop_rotation } remove_innovation = innovation_crop_rotation } else = { add_innovation = innovation_crop_rotation } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_crop_rotation } remove_innovation = innovation_crop_rotation } else = { add_innovation = innovation_crop_rotation } } } } scope:actor = { trigger_event = ucm_cheat_menu.0027 } }
 
   option = { name = ucm_innov_menu.innovation_cupellation if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_cupellation } remove_innovation = innovation_cupellation } else = { add_innovation = innovation_cupellation } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_cupellation } remove_innovation = innovation_cupellation } else = { add_innovation = innovation_cupellation } } } } scope:actor = { trigger_event = ucm_cheat_menu.0027 } }
@@ -4161,8 +3560,6 @@ ucm_cheat_menu.0027 = {
 
   option = { name = ucm_innov_menu.innovation_elephantry if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_elephantry } remove_innovation = innovation_elephantry } else = { add_innovation = innovation_elephantry } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_elephantry } remove_innovation = innovation_elephantry } else = { add_innovation = innovation_elephantry } } } } scope:actor = { trigger_event = ucm_cheat_menu.0027 } }
 
-
-
   option = { name = ucm_cheat_menu.page_prev scope:actor = { trigger_event = ucm_cheat_menu.0026 } }
 
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0028 } }
@@ -4172,8 +3569,6 @@ ucm_cheat_menu.0027 = {
   option = { name = ucm_cheat_menu.002x.close scope:actor = { ucm_quick_modifications_innovation_close_effect = yes } }
 
 }
-
-
 
 ## AUTO: innovations tribal page 4/6
 
@@ -4186,8 +3581,6 @@ ucm_cheat_menu.0028 = {
   desc = ucm_cheat_menu.0028.desc
 
   theme = learning
-
-
 
   option = {
 
@@ -4367,8 +3760,6 @@ ucm_cheat_menu.0028 = {
 
   }
 
-
-
   option = { name = ucm_innov_menu.innovation_gavelkind if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_gavelkind } remove_innovation = innovation_gavelkind } else = { add_innovation = innovation_gavelkind } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_gavelkind } remove_innovation = innovation_gavelkind } else = { add_innovation = innovation_gavelkind } } } } scope:actor = { trigger_event = ucm_cheat_menu.0028 } }
 
   option = { name = ucm_innov_menu.innovation_lacquered_armor if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_lacquered_armor } remove_innovation = innovation_lacquered_armor } else = { add_innovation = innovation_lacquered_armor } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_lacquered_armor } remove_innovation = innovation_lacquered_armor } else = { add_innovation = innovation_lacquered_armor } } } } scope:actor = { trigger_event = ucm_cheat_menu.0028 } }
@@ -4381,8 +3772,6 @@ ucm_cheat_menu.0028 = {
 
   option = { name = ucm_innov_menu.innovation_mustering_grounds if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_mustering_grounds } remove_innovation = innovation_mustering_grounds } else = { add_innovation = innovation_mustering_grounds } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_mustering_grounds } remove_innovation = innovation_mustering_grounds } else = { add_innovation = innovation_mustering_grounds } } } } scope:actor = { trigger_event = ucm_cheat_menu.0028 } }
 
-
-
   option = { name = ucm_cheat_menu.page_prev scope:actor = { trigger_event = ucm_cheat_menu.0027 } }
 
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0197 } }
@@ -4392,8 +3781,6 @@ ucm_cheat_menu.0028 = {
   option = { name = ucm_cheat_menu.002x.close scope:actor = { ucm_quick_modifications_innovation_close_effect = yes } }
 
 }
-
-
 
 ## AUTO: innovations tribal page 5/6
 
@@ -4406,8 +3793,6 @@ ucm_cheat_menu.0197 = {
   desc = ucm_cheat_menu.0197.desc
 
   theme = learning
-
-
 
   option = {
 
@@ -4587,8 +3972,6 @@ ucm_cheat_menu.0197 = {
 
   }
 
-
-
   option = { name = ucm_innov_menu.innovation_pharmacopoeia if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_pharmacopoeia } remove_innovation = innovation_pharmacopoeia } else = { add_innovation = innovation_pharmacopoeia } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_pharmacopoeia } remove_innovation = innovation_pharmacopoeia } else = { add_innovation = innovation_pharmacopoeia } } } } scope:actor = { trigger_event = ucm_cheat_menu.0197 } }
 
   option = { name = ucm_innov_menu.innovation_plenary_assemblies if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_plenary_assemblies } remove_innovation = innovation_plenary_assemblies } else = { add_innovation = innovation_plenary_assemblies } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_plenary_assemblies } remove_innovation = innovation_plenary_assemblies } else = { add_innovation = innovation_plenary_assemblies } } } } scope:actor = { trigger_event = ucm_cheat_menu.0197 } }
@@ -4601,8 +3984,6 @@ ucm_cheat_menu.0197 = {
 
   option = { name = ucm_innov_menu.innovation_sahel_horsemen if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_sahel_horsemen } remove_innovation = innovation_sahel_horsemen } else = { add_innovation = innovation_sahel_horsemen } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_sahel_horsemen } remove_innovation = innovation_sahel_horsemen } else = { add_innovation = innovation_sahel_horsemen } } } } scope:actor = { trigger_event = ucm_cheat_menu.0197 } }
 
-
-
   option = { name = ucm_cheat_menu.page_prev scope:actor = { trigger_event = ucm_cheat_menu.0028 } }
 
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0198 } }
@@ -4612,8 +3993,6 @@ ucm_cheat_menu.0197 = {
   option = { name = ucm_cheat_menu.002x.close scope:actor = { ucm_quick_modifications_innovation_close_effect = yes } }
 
 }
-
-
 
 ## AUTO: innovations tribal page 6/6
 
@@ -4626,8 +4005,6 @@ ucm_cheat_menu.0198 = {
   desc = ucm_cheat_menu.0198.desc
 
   theme = learning
-
-
 
   option = {
 
@@ -4807,8 +4184,6 @@ ucm_cheat_menu.0198 = {
 
   }
 
-
-
   option = { name = ucm_innov_menu.innovation_sericulture if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_sericulture } remove_innovation = innovation_sericulture } else = { add_innovation = innovation_sericulture } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_sericulture } remove_innovation = innovation_sericulture } else = { add_innovation = innovation_sericulture } } } } scope:actor = { trigger_event = ucm_cheat_menu.0198 } }
 
   option = { name = ucm_innov_menu.innovation_table_of_princes if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_table_of_princes } remove_innovation = innovation_table_of_princes } else = { add_innovation = innovation_table_of_princes } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_table_of_princes } remove_innovation = innovation_table_of_princes } else = { add_innovation = innovation_table_of_princes } } } } scope:actor = { trigger_event = ucm_cheat_menu.0198 } }
@@ -4823,8 +4198,6 @@ ucm_cheat_menu.0198 = {
 
   option = { name = ucm_innov_menu.innovation_wootz_steel if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_wootz_steel } remove_innovation = innovation_wootz_steel } else = { add_innovation = innovation_wootz_steel } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_wootz_steel } remove_innovation = innovation_wootz_steel } else = { add_innovation = innovation_wootz_steel } } } } scope:actor = { trigger_event = ucm_cheat_menu.0198 } }
 
-
-
   option = { name = ucm_cheat_menu.page_prev scope:actor = { trigger_event = ucm_cheat_menu.0197 } }
 
   option = { name = ucm_cheat_menu.002x.back scope:actor = { ucm_cheat_menu_culture_innovation_era_menu_back_effect = yes } }
@@ -4832,8 +4205,6 @@ ucm_cheat_menu.0198 = {
   option = { name = ucm_cheat_menu.002x.close scope:actor = { ucm_quick_modifications_innovation_close_effect = yes } }
 
 }
-
-
 
 ## AUTO: innovations early_medieval page 1/4
 
@@ -4846,8 +4217,6 @@ ucm_cheat_menu.0023 = {
   desc = ucm_cheat_menu.0023.desc
 
   theme = learning
-
-
 
   option = {
 
@@ -4967,8 +4336,6 @@ ucm_cheat_menu.0023 = {
 
   }
 
-
-
   option = { name = ucm_innov_menu.innovation_arched_saddle if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_arched_saddle } remove_innovation = innovation_arched_saddle } else = { add_innovation = innovation_arched_saddle } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_arched_saddle } remove_innovation = innovation_arched_saddle } else = { add_innovation = innovation_arched_saddle } } } } scope:actor = { trigger_event = ucm_cheat_menu.0023 } }
 
   option = { name = ucm_innov_menu.innovation_armilary_sphere if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_armilary_sphere } remove_innovation = innovation_armilary_sphere } else = { add_innovation = innovation_armilary_sphere } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_armilary_sphere } remove_innovation = innovation_armilary_sphere } else = { add_innovation = innovation_armilary_sphere } } } } scope:actor = { trigger_event = ucm_cheat_menu.0023 } }
@@ -4983,8 +4350,6 @@ ucm_cheat_menu.0023 = {
 
   option = { name = ucm_innov_menu.innovation_chronicle_writing if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_chronicle_writing } remove_innovation = innovation_chronicle_writing } else = { add_innovation = innovation_chronicle_writing } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_chronicle_writing } remove_innovation = innovation_chronicle_writing } else = { add_innovation = innovation_chronicle_writing } } } } scope:actor = { trigger_event = ucm_cheat_menu.0023 } }
 
-
-
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0029 } }
 
   option = { name = ucm_cheat_menu.002x.back scope:actor = { ucm_cheat_menu_culture_innovation_era_menu_back_effect = yes } }
@@ -4992,8 +4357,6 @@ ucm_cheat_menu.0023 = {
   option = { name = ucm_cheat_menu.002x.close scope:actor = { ucm_quick_modifications_innovation_close_effect = yes } }
 
 }
-
-
 
 ## AUTO: innovations early_medieval page 2/4
 
@@ -5006,8 +4369,6 @@ ucm_cheat_menu.0029 = {
   desc = ucm_cheat_menu.0029.desc
 
   theme = learning
-
-
 
   option = {
 
@@ -5127,8 +4488,6 @@ ucm_cheat_menu.0029 = {
 
   }
 
-
-
   option = { name = ucm_innov_menu.innovation_compass if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_compass } remove_innovation = innovation_compass } else = { add_innovation = innovation_compass } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_compass } remove_innovation = innovation_compass } else = { add_innovation = innovation_compass } } } } scope:actor = { trigger_event = ucm_cheat_menu.0029 } }
 
   option = { name = ucm_innov_menu.innovation_currency_02 if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_currency_02 } remove_innovation = innovation_currency_02 } else = { add_innovation = innovation_currency_02 } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_currency_02 } remove_innovation = innovation_currency_02 } else = { add_innovation = innovation_currency_02 } } } } scope:actor = { trigger_event = ucm_cheat_menu.0029 } }
@@ -5141,8 +4500,6 @@ ucm_cheat_menu.0029 = {
 
   option = { name = ucm_innov_menu.innovation_ghilman if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_ghilman } remove_innovation = innovation_ghilman } else = { add_innovation = innovation_ghilman } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_ghilman } remove_innovation = innovation_ghilman } else = { add_innovation = innovation_ghilman } } } } scope:actor = { trigger_event = ucm_cheat_menu.0029 } }
 
-
-
   option = { name = ucm_cheat_menu.page_prev scope:actor = { trigger_event = ucm_cheat_menu.0023 } }
 
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0074 } }
@@ -5152,8 +4509,6 @@ ucm_cheat_menu.0029 = {
   option = { name = ucm_cheat_menu.002x.close scope:actor = { ucm_quick_modifications_innovation_close_effect = yes } }
 
 }
-
-
 
 ## AUTO: innovations early_medieval page 3/4
 
@@ -5166,8 +4521,6 @@ ucm_cheat_menu.0074 = {
   desc = ucm_cheat_menu.0074.desc
 
   theme = learning
-
-
 
   option = {
 
@@ -5287,8 +4640,6 @@ ucm_cheat_menu.0074 = {
 
   }
 
-
-
   option = { name = ucm_innov_menu.innovation_grenades if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_grenades } remove_innovation = innovation_grenades } else = { add_innovation = innovation_grenades } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_grenades } remove_innovation = innovation_grenades } else = { add_innovation = innovation_grenades } } } } scope:actor = { trigger_event = ucm_cheat_menu.0074 } }
 
   option = { name = ucm_innov_menu.innovation_hereditary_rule if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_hereditary_rule } remove_innovation = innovation_hereditary_rule } else = { add_innovation = innovation_hereditary_rule } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_hereditary_rule } remove_innovation = innovation_hereditary_rule } else = { add_innovation = innovation_hereditary_rule } } } } scope:actor = { trigger_event = ucm_cheat_menu.0074 } }
@@ -5301,8 +4652,6 @@ ucm_cheat_menu.0074 = {
 
   option = { name = ucm_innov_menu.innovation_manorialism if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_manorialism } remove_innovation = innovation_manorialism } else = { add_innovation = innovation_manorialism } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_manorialism } remove_innovation = innovation_manorialism } else = { add_innovation = innovation_manorialism } } } } scope:actor = { trigger_event = ucm_cheat_menu.0074 } }
 
-
-
   option = { name = ucm_cheat_menu.page_prev scope:actor = { trigger_event = ucm_cheat_menu.0029 } }
 
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0199 } }
@@ -5312,8 +4661,6 @@ ucm_cheat_menu.0074 = {
   option = { name = ucm_cheat_menu.002x.close scope:actor = { ucm_quick_modifications_innovation_close_effect = yes } }
 
 }
-
-
 
 ## AUTO: innovations early_medieval page 4/4
 
@@ -5326,8 +4673,6 @@ ucm_cheat_menu.0199 = {
   desc = ucm_cheat_menu.0199.desc
 
   theme = learning
-
-
 
   option = {
 
@@ -5447,15 +4792,11 @@ ucm_cheat_menu.0199 = {
 
   }
 
-
-
   option = { name = ucm_innov_menu.innovation_reconquista if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_reconquista } remove_innovation = innovation_reconquista } else = { add_innovation = innovation_reconquista } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_reconquista } remove_innovation = innovation_reconquista } else = { add_innovation = innovation_reconquista } } } } scope:actor = { trigger_event = ucm_cheat_menu.0199 } }
 
   option = { name = ucm_innov_menu.innovation_royal_prerogative if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_royal_prerogative } remove_innovation = innovation_royal_prerogative } else = { add_innovation = innovation_royal_prerogative } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_royal_prerogative } remove_innovation = innovation_royal_prerogative } else = { add_innovation = innovation_royal_prerogative } } } } scope:actor = { trigger_event = ucm_cheat_menu.0199 } }
 
   option = { name = ucm_innov_menu.innovation_stem_duchies if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_stem_duchies } remove_innovation = innovation_stem_duchies } else = { add_innovation = innovation_stem_duchies } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_stem_duchies } remove_innovation = innovation_stem_duchies } else = { add_innovation = innovation_stem_duchies } } } } scope:actor = { trigger_event = ucm_cheat_menu.0199 } }
-
-
 
   option = { name = ucm_cheat_menu.page_prev scope:actor = { trigger_event = ucm_cheat_menu.0074 } }
 
@@ -5465,11 +4806,7 @@ ucm_cheat_menu.0199 = {
 
 }
 
-
-
 ## AUTO-GENERATED END (culture_innovations_paged)
-
-
 
 ## 闂傚倷绀侀幉锟犳偡閿旂晫绠惧┑鐘叉搐閺嬩焦銇勯幘鍗炵仼鏉╂繈鏌ｈ箛鏇炰沪鐎规洘顭堝Λ銏ゆ⒒娴ｅ湱婀介柛銊ユ惈鍗遍柟鐑樻磸娴滃湱鈧箍鍎遍ˇ顖滄兜閳ь剟姊洪崫鍕閼裤倝鏌涚€ｎ偅灏い鎾瑰缁犳盯寮撮悩闈涚倞闂傚倷绀侀幖顐﹀磹缁嬫５娲Χ閸ワ絽浜鹃柛顭戝亞閸欌偓濠碘槅鍋勯崯鎾春閿熺姴纾兼繛鎴炶壘鐢?- 闂傚倷鑳堕崕鐢稿疾濠婂懐鐭欓柟鐑樺煀閼板潡鏌嶉埡浣告殶闁崇粯姊归妵鍕箻鐎靛摜鐣奸梺鑽ゅ櫏閸ㄥ磭妲愰幒鏃傜＜妞ゎ偒鍘介崐锝囩磽娴ｄ粙鍝洪柣鐔叉櫅閻ｅ嘲顫濈捄鍝勮€垮┑鐐村灦閻楁垿宕戦幘鏉戠窞闁归偊鍘藉▍?# 闂?tools/generate_culture_innovations_paged.py 闂傚倷鐒﹂惇褰掑垂婵犳艾绐楅柟鐗堟緲閸ㄥ倹鎱ㄥΟ鍨厫闁哄拋鍓氱换娑㈠箣閻愬灚鍣┑鈥崇湴閸斿矂鈥旈崘顔嘉ч柛銉ㄥ煐濮ｅ本绻?1婵?
 
@@ -5484,8 +4821,6 @@ ucm_cheat_menu.0024 = {
   desc = ucm_cheat_menu.0024.desc
 
   theme = learning
-
-
 
   option = {
 
@@ -5609,8 +4944,6 @@ ucm_cheat_menu.0024 = {
 
   }
 
-
-
   option = { name = ucm_innov_menu.innovation_advanced_bowmaking if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_advanced_bowmaking } remove_innovation = innovation_advanced_bowmaking } else = { add_innovation = innovation_advanced_bowmaking } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_advanced_bowmaking } remove_innovation = innovation_advanced_bowmaking } else = { add_innovation = innovation_advanced_bowmaking } } } } scope:actor = { trigger_event = ucm_cheat_menu.0024 } }
 
   option = { name = ucm_innov_menu.innovation_castle_baileys if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_castle_baileys } remove_innovation = innovation_castle_baileys } else = { add_innovation = innovation_castle_baileys } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_castle_baileys } remove_innovation = innovation_castle_baileys } else = { add_innovation = innovation_castle_baileys } } } } scope:actor = { trigger_event = ucm_cheat_menu.0024 } }
@@ -5625,8 +4958,6 @@ ucm_cheat_menu.0024 = {
 
   option = { name = ucm_innov_menu.innovation_east_settling if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_east_settling } remove_innovation = innovation_east_settling } else = { add_innovation = innovation_east_settling } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_east_settling } remove_innovation = innovation_east_settling } else = { add_innovation = innovation_east_settling } } } } scope:actor = { trigger_event = ucm_cheat_menu.0024 } }
 
-
-
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0070 } }
 
   option = { name = ucm_cheat_menu.002x.back scope:actor = { ucm_cheat_menu_culture_innovation_era_menu_back_effect = yes } }
@@ -5634,8 +4965,6 @@ ucm_cheat_menu.0024 = {
   option = { name = ucm_cheat_menu.002x.close scope:actor = { ucm_quick_modifications_innovation_close_effect = yes } }
 
 }
-
-
 
 ## AUTO: innovations high_medieval page 2/4
 
@@ -5648,8 +4977,6 @@ ucm_cheat_menu.0070 = {
   desc = ucm_cheat_menu.0070.desc
 
   theme = learning
-
-
 
   option = {
 
@@ -5773,8 +5100,6 @@ ucm_cheat_menu.0070 = {
 
   }
 
-
-
   option = { name = ucm_innov_menu.innovation_french_peerage if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_french_peerage } remove_innovation = innovation_french_peerage } else = { add_innovation = innovation_french_peerage } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_french_peerage } remove_innovation = innovation_french_peerage } else = { add_innovation = innovation_french_peerage } } } } scope:actor = { trigger_event = ucm_cheat_menu.0070 } }
 
   option = { name = ucm_innov_menu.innovation_guilds if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_guilds } remove_innovation = innovation_guilds } else = { add_innovation = innovation_guilds } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_guilds } remove_innovation = innovation_guilds } else = { add_innovation = innovation_guilds } } } } scope:actor = { trigger_event = ucm_cheat_menu.0070 } }
@@ -5787,8 +5112,6 @@ ucm_cheat_menu.0070 = {
 
   option = { name = ucm_innov_menu.innovation_knighthood if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_knighthood } remove_innovation = innovation_knighthood } else = { add_innovation = innovation_knighthood } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_knighthood } remove_innovation = innovation_knighthood } else = { add_innovation = innovation_knighthood } } } } scope:actor = { trigger_event = ucm_cheat_menu.0070 } }
 
-
-
   option = { name = ucm_cheat_menu.page_prev scope:actor = { trigger_event = ucm_cheat_menu.0024 } }
 
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0073 } }
@@ -5798,8 +5121,6 @@ ucm_cheat_menu.0070 = {
   option = { name = ucm_cheat_menu.002x.close scope:actor = { ucm_quick_modifications_innovation_close_effect = yes } }
 
 }
-
-
 
 ## AUTO: innovations high_medieval page 3/4
 
@@ -5812,8 +5133,6 @@ ucm_cheat_menu.0073 = {
   desc = ucm_cheat_menu.0073.desc
 
   theme = learning
-
-
 
   option = {
 
@@ -5937,8 +5256,6 @@ ucm_cheat_menu.0073 = {
 
   }
 
-
-
   option = { name = ucm_innov_menu.innovation_land_grants if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_land_grants } remove_innovation = innovation_land_grants } else = { add_innovation = innovation_land_grants } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_land_grants } remove_innovation = innovation_land_grants } else = { add_innovation = innovation_land_grants } } } } scope:actor = { trigger_event = ucm_cheat_menu.0073 } }
 
   option = { name = ucm_innov_menu.innovation_men_at_arms if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_men_at_arms } remove_innovation = innovation_men_at_arms } else = { add_innovation = innovation_men_at_arms } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_men_at_arms } remove_innovation = innovation_men_at_arms } else = { add_innovation = innovation_men_at_arms } } } } scope:actor = { trigger_event = ucm_cheat_menu.0073 } }
@@ -5951,8 +5268,6 @@ ucm_cheat_menu.0073 = {
 
   option = { name = ucm_innov_menu.innovation_sarawit if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_sarawit } remove_innovation = innovation_sarawit } else = { add_innovation = innovation_sarawit } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_sarawit } remove_innovation = innovation_sarawit } else = { add_innovation = innovation_sarawit } } } } scope:actor = { trigger_event = ucm_cheat_menu.0073 } }
 
-
-
   option = { name = ucm_cheat_menu.page_prev scope:actor = { trigger_event = ucm_cheat_menu.0070 } }
 
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0200 } }
@@ -5962,8 +5277,6 @@ ucm_cheat_menu.0073 = {
   option = { name = ucm_cheat_menu.002x.close scope:actor = { ucm_quick_modifications_innovation_close_effect = yes } }
 
 }
-
-
 
 ## AUTO: innovations high_medieval page 4/4
 
@@ -5976,8 +5289,6 @@ ucm_cheat_menu.0200 = {
   desc = ucm_cheat_menu.0200.desc
 
   theme = learning
-
-
 
   option = {
 
@@ -6101,8 +5412,6 @@ ucm_cheat_menu.0200 = {
 
   }
 
-
-
   option = { name = ucm_innov_menu.innovation_scutage if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_scutage } remove_innovation = innovation_scutage } else = { add_innovation = innovation_scutage } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_scutage } remove_innovation = innovation_scutage } else = { add_innovation = innovation_scutage } } } } scope:actor = { trigger_event = ucm_cheat_menu.0200 } }
 
   option = { name = ucm_innov_menu.innovation_seigneurialism if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_seigneurialism } remove_innovation = innovation_seigneurialism } else = { add_innovation = innovation_seigneurialism } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_seigneurialism } remove_innovation = innovation_seigneurialism } else = { add_innovation = innovation_seigneurialism } } } } scope:actor = { trigger_event = ucm_cheat_menu.0200 } }
@@ -6111,8 +5420,6 @@ ucm_cheat_menu.0200 = {
 
   option = { name = ucm_innov_menu.innovation_windmills if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_windmills } remove_innovation = innovation_windmills } else = { add_innovation = innovation_windmills } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_windmills } remove_innovation = innovation_windmills } else = { add_innovation = innovation_windmills } } } } scope:actor = { trigger_event = ucm_cheat_menu.0200 } }
 
-
-
   option = { name = ucm_cheat_menu.page_prev scope:actor = { trigger_event = ucm_cheat_menu.0073 } }
 
   option = { name = ucm_cheat_menu.002x.back scope:actor = { ucm_cheat_menu_culture_innovation_era_menu_back_effect = yes } }
@@ -6120,8 +5427,6 @@ ucm_cheat_menu.0200 = {
   option = { name = ucm_cheat_menu.002x.close scope:actor = { ucm_quick_modifications_innovation_close_effect = yes } }
 
 }
-
-
 
 ## 闂傚倷绀侀幉锟犳偡閿旂晫绠惧┑鐘叉搐閺嬩焦銇勯幘鍗炵仼鏉╂繈鏌ｈ箛鏇炰沪鐎规洘顭堝Λ銏ゆ⒒娴ｅ湱婀介柛銊ユ惈鍗遍柟鐑樻磸娴滃湱鈧箍鍎遍ˇ顖滄兜閳ь剟姊洪崫鍕閼裤倝鏌涚€ｎ偅灏い鎾瑰缁犳盯寮撮悩闈涚倞闂傚倷绀侀幖顐﹀磹缁嬫５娲Χ閸ワ絽浜鹃柛顭戝亞閸欌偓濠碘槅鍋勯崯鎾春閿熺姴纾兼繛鎴炶壘鐢?- 闂傚倷绀侀幖顐﹀箠韫囨洖鏋堢€广儱鎷戦懓鍧楁煃閳轰礁鏆熼柍缁樻⒐閵囧嫰骞樼€靛摜鐣奸梺鑽ゅ櫏閸ㄥ磭妲愰幒鏃傜＜妞ゎ偒鍘介崐锝囩磽娴ｄ粙鍝洪柣鐔叉櫅閻ｅ嘲顫濈捄鍝勮€垮┑鐐村灦閻楁垿宕戦幘鏉戠窞闁归偊鍘藉▍?# 闂?tools/generate_culture_innovations_paged.py 闂傚倷鐒﹂惇褰掑垂婵犳艾绐楅柟鐗堟緲閸ㄥ倹鎱ㄥΟ鍨厫闁哄拋鍓氱换娑㈠箣閻愬灚鍣┑鈥崇湴閸斿矂鈥旈崘顔嘉ч柛銉ㄥ煐濮ｅ本绻?1婵?
 
@@ -6136,8 +5441,6 @@ ucm_cheat_menu.0025 = {
   desc = ucm_cheat_menu.0025.desc
 
   theme = learning
-
-
 
   option = {
 
@@ -6261,8 +5564,6 @@ ucm_cheat_menu.0025 = {
 
   }
 
-
-
   option = { name = ucm_innov_menu.innovation_adaptive_militia if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_adaptive_militia } remove_innovation = innovation_adaptive_militia } else = { add_innovation = innovation_adaptive_militia } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_adaptive_militia } remove_innovation = innovation_adaptive_militia } else = { add_innovation = innovation_adaptive_militia } } } } scope:actor = { trigger_event = ucm_cheat_menu.0025 } }
 
   option = { name = ucm_innov_menu.innovation_condottieri if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_condottieri } remove_innovation = innovation_condottieri } else = { add_innovation = innovation_condottieri } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_condottieri } remove_innovation = innovation_condottieri } else = { add_innovation = innovation_condottieri } } } } scope:actor = { trigger_event = ucm_cheat_menu.0025 } }
@@ -6277,8 +5578,6 @@ ucm_cheat_menu.0025 = {
 
   option = { name = ucm_innov_menu.innovation_development_04 if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_development_04 } remove_innovation = innovation_development_04 } else = { add_innovation = innovation_development_04 } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_development_04 } remove_innovation = innovation_development_04 } else = { add_innovation = innovation_development_04 } } } } scope:actor = { trigger_event = ucm_cheat_menu.0025 } }
 
-
-
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0071 } }
 
   option = { name = ucm_cheat_menu.002x.back scope:actor = { ucm_cheat_menu_culture_innovation_era_menu_back_effect = yes } }
@@ -6286,8 +5585,6 @@ ucm_cheat_menu.0025 = {
   option = { name = ucm_cheat_menu.002x.close scope:actor = { ucm_quick_modifications_innovation_close_effect = yes } }
 
 }
-
-
 
 ## AUTO: innovations late_medieval page 2/4
 
@@ -6300,8 +5597,6 @@ ucm_cheat_menu.0071 = {
   desc = ucm_cheat_menu.0071.desc
 
   theme = learning
-
-
 
   option = {
 
@@ -6425,8 +5720,6 @@ ucm_cheat_menu.0071 = {
 
   }
 
-
-
   option = { name = ucm_innov_menu.innovation_ermine_cloaks if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_ermine_cloaks } remove_innovation = innovation_ermine_cloaks } else = { add_innovation = innovation_ermine_cloaks } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_ermine_cloaks } remove_innovation = innovation_ermine_cloaks } else = { add_innovation = innovation_ermine_cloaks } } } } scope:actor = { trigger_event = ucm_cheat_menu.0071 } }
 
   option = { name = ucm_innov_menu.innovation_gunpowder if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_gunpowder } remove_innovation = innovation_gunpowder } else = { add_innovation = innovation_gunpowder } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_gunpowder } remove_innovation = innovation_gunpowder } else = { add_innovation = innovation_gunpowder } } } } scope:actor = { trigger_event = ucm_cheat_menu.0071 } }
@@ -6439,8 +5732,6 @@ ucm_cheat_menu.0071 = {
 
   option = { name = ucm_innov_menu.innovation_plate_armor if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_plate_armor } remove_innovation = innovation_plate_armor } else = { add_innovation = innovation_plate_armor } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_plate_armor } remove_innovation = innovation_plate_armor } else = { add_innovation = innovation_plate_armor } } } } scope:actor = { trigger_event = ucm_cheat_menu.0071 } }
 
-
-
   option = { name = ucm_cheat_menu.page_prev scope:actor = { trigger_event = ucm_cheat_menu.0025 } }
 
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0072 } }
@@ -6450,8 +5741,6 @@ ucm_cheat_menu.0071 = {
   option = { name = ucm_cheat_menu.002x.close scope:actor = { ucm_quick_modifications_innovation_close_effect = yes } }
 
 }
-
-
 
 ## AUTO: innovations late_medieval page 3/4
 
@@ -6464,8 +5753,6 @@ ucm_cheat_menu.0072 = {
   desc = ucm_cheat_menu.0072.desc
 
   theme = learning
-
-
 
   option = {
 
@@ -6589,8 +5876,6 @@ ucm_cheat_menu.0072 = {
 
   }
 
-
-
   option = { name = ucm_innov_menu.innovation_primogeniture if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_primogeniture } remove_innovation = innovation_primogeniture } else = { add_innovation = innovation_primogeniture } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_primogeniture } remove_innovation = innovation_primogeniture } else = { add_innovation = innovation_primogeniture } } } } scope:actor = { trigger_event = ucm_cheat_menu.0072 } }
 
   option = { name = ucm_innov_menu.innovation_rectilinear_schiltron if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_rectilinear_schiltron } remove_innovation = innovation_rectilinear_schiltron } else = { add_innovation = innovation_rectilinear_schiltron } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_rectilinear_schiltron } remove_innovation = innovation_rectilinear_schiltron } else = { add_innovation = innovation_rectilinear_schiltron } } } } scope:actor = { trigger_event = ucm_cheat_menu.0072 } }
@@ -6603,8 +5888,6 @@ ucm_cheat_menu.0072 = {
 
   option = { name = ucm_innov_menu.innovation_sappers if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_sappers } remove_innovation = innovation_sappers } else = { add_innovation = innovation_sappers } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_sappers } remove_innovation = innovation_sappers } else = { add_innovation = innovation_sappers } } } } scope:actor = { trigger_event = ucm_cheat_menu.0072 } }
 
-
-
   option = { name = ucm_cheat_menu.page_prev scope:actor = { trigger_event = ucm_cheat_menu.0071 } }
 
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0201 } }
@@ -6614,8 +5897,6 @@ ucm_cheat_menu.0072 = {
   option = { name = ucm_cheat_menu.002x.close scope:actor = { ucm_quick_modifications_innovation_close_effect = yes } }
 
 }
-
-
 
 ## AUTO: innovations late_medieval page 4/4
 
@@ -6628,8 +5909,6 @@ ucm_cheat_menu.0201 = {
   desc = ucm_cheat_menu.0201.desc
 
   theme = learning
-
-
 
   option = {
 
@@ -6753,8 +6032,6 @@ ucm_cheat_menu.0201 = {
 
   }
 
-
-
   option = { name = ucm_innov_menu.innovation_standing_armies if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_standing_armies } remove_innovation = innovation_standing_armies } else = { add_innovation = innovation_standing_armies } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_standing_armies } remove_innovation = innovation_standing_armies } else = { add_innovation = innovation_standing_armies } } } } scope:actor = { trigger_event = ucm_cheat_menu.0201 } }
 
   option = { name = ucm_innov_menu.innovation_valets if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_valets } remove_innovation = innovation_valets } else = { add_innovation = innovation_valets } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_valets } remove_innovation = innovation_valets } else = { add_innovation = innovation_valets } } } } scope:actor = { trigger_event = ucm_cheat_menu.0201 } }
@@ -6763,8 +6040,6 @@ ucm_cheat_menu.0201 = {
 
   option = { name = ucm_innov_menu.innovation_zweihanders if = { limit = { exists = scope:ucm_selected_culture } scope:ucm_selected_culture = { if = { limit = { has_innovation = innovation_zweihanders } remove_innovation = innovation_zweihanders } else = { add_innovation = innovation_zweihanders } } } else = { scope:actor = { culture = { if = { limit = { has_innovation = innovation_zweihanders } remove_innovation = innovation_zweihanders } else = { add_innovation = innovation_zweihanders } } } } scope:actor = { trigger_event = ucm_cheat_menu.0201 } }
 
-
-
   option = { name = ucm_cheat_menu.page_prev scope:actor = { trigger_event = ucm_cheat_menu.0072 } }
 
   option = { name = ucm_cheat_menu.002x.back scope:actor = { ucm_cheat_menu_culture_innovation_era_menu_back_effect = yes } }
@@ -6772,8 +6047,6 @@ ucm_cheat_menu.0201 = {
   option = { name = ucm_cheat_menu.002x.close scope:actor = { ucm_quick_modifications_innovation_close_effect = yes } }
 
 }
-
-
 
 ## 闂傚倷绀侀幉锟犳偡閿旂晫绠惧┑鐘叉搐閺嬩焦銇勯幘鍗炵仼鏉╂繈鏌ｈ箛鏇炰沪鐎规洘顭堝Λ銏ゆ⒒娴ｅ湱婀介柛銊ユ惈鍗遍柟鐑樻磸娴滃湱鈧箍鍎遍ˇ顖滄兜閳ь剟姊洪崫鍕閼裤倝鏌涚€ｎ偅灏い鎾瑰缁犳盯寮撮悩闈涚倞闂傚倷绀侀幖顐﹀磹缁嬫５娲Χ閸ワ絽浜鹃柛顭戝亞閸欌偓閻庢鍠撻崝蹇涘Φ閹版澘绠抽柟鎯у级閸炲姊绘担鐟邦嚋缂佸鍨块幃褔宕卞Δ鍐╂闂佺粯鏌ㄩ崥瀣磻閹寸偑浜滈柟瀵稿仜椤曟粓鏌涘▎蹇曠闁哄矉绻濋崺鈧い鎺戝閹硅埖銇勯幘璺盒㈤柣鎰躬濮婃椽宕ㄦ繝鍕殏缂傚倸绉村ú銊ノｉ幇鐗堝亱闁割偅绻嶉崵銈夋⒑缂佹﹩鐒介柡浣规倐瀹?濠电姷鏁搁崕鎴犲緤娴犲搴婇柡灞诲劚缁?濠电姷鏁搁崑鐐哄箰閹间礁绠犻柟鐗堟緲缁犳牕鈹戦悩鍙夊闁?
 
@@ -6786,8 +6059,6 @@ ucm_cheat_menu.0021 = {
   desc = ucm_ui_no_hover_tooltip
 
   theme = default
-
-
 
   option = {
 
@@ -6805,8 +6076,6 @@ ucm_cheat_menu.0021 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.0021.browse_all_cultures
@@ -6820,8 +6089,6 @@ ucm_cheat_menu.0021 = {
     }
 
   }
-
-
 
   option = {
 
@@ -6837,8 +6104,6 @@ ucm_cheat_menu.0021 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.0021.traditions_menu
@@ -6847,8 +6112,6 @@ ucm_cheat_menu.0021 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.0021.culture_tradition_editor
@@ -6856,8 +6119,6 @@ ucm_cheat_menu.0021 = {
     root = { trigger_event = ucm_cheat_menu.5000 }
 
   }
-
-
 
   option = {
 
@@ -6869,8 +6130,6 @@ ucm_cheat_menu.0021 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.0021.random_add_1
@@ -6879,8 +6138,6 @@ ucm_cheat_menu.0021 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.0021.random_remove_1
@@ -6888,8 +6145,6 @@ ucm_cheat_menu.0021 = {
     scope:actor = { culture = { remove_random_culture_tradition = yes } }
 
   }
-
-
 
   option = {
 
@@ -6905,8 +6160,6 @@ ucm_cheat_menu.0021 = {
 
 }
 
-
-
 ## 闂傚倷绀侀幉锟犳偡閿旂晫绠惧┑鐘叉搐閺嬩焦銇勯幘鍗炵仼鏉╂繈鏌ｈ箛鏇炰沪鐎规洘顭堝Λ銏ゆ⒒娴ｅ湱婀介柛銊ユ惈鍗遍柟鐑樻磸娴滃湱鈧箍鍎遍ˇ顖滄兜閳ь剟姊洪崫鍕閼裤倝鏌涚€ｎ偅灏い鎾瑰缁犳盯寮撮悩闈涚倞闂傚倷绀侀幖顐﹀磹缁嬫５娲Χ閸ワ絽浜鹃柛顭戝亞閸欌偓閻庢鍠撻崝鎴︺€佸☉妯锋婵﹩鍓欓懗鍫曟⒒娴ｇ懓顕滅紒瀣灴閹囧川椤栨侗娼熼梺鍓插亝濞叉牜绮?/ 闂備浇宕垫慨鏉懨归崒鐐茬煑闁逞屽墴閺?/ 闂傚倷绀侀幉锟犲礉閺嶎偆鐭欓柟閭﹀枦婵?/ 闂傚倷绀侀幖顐﹀磹缁嬫５娲Χ閸ワ絽浜鹃梻鍫熺☉缁狙囨煥濞戞瑥濮嶇€规洖宕～婵嬪礂閸忚偐妲楅梻鍌欑閹诧紕鏁崶顒€纾归柡鍥ュ灪閸嬧晛螖閿濆懎鏆為柡?
 
 ucm_cheat_menu.0040 = {
@@ -6919,8 +6172,6 @@ ucm_cheat_menu.0040 = {
 
   theme = default
 
-
-
   option = { name = ucm_cheat_menu.0040.heritage scope:actor = { trigger_event = ucm_cheat_menu.0041 }}
 
   option = { name = ucm_cheat_menu.0040.language scope:actor = { trigger_event = ucm_cheat_menu.0042 }}
@@ -6928,8 +6179,6 @@ ucm_cheat_menu.0040 = {
   option = { name = ucm_cheat_menu.0040.martial scope:actor = { trigger_event = ucm_cheat_menu.0043 }}
 
   option = { name = ucm_cheat_menu.0040.culture_head scope:actor = { trigger_event = ucm_cheat_menu.0163 }}
-
-
 
   option = {
 
@@ -6947,8 +6196,6 @@ ucm_cheat_menu.0040 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.00x.back
@@ -6959,13 +6206,9 @@ ucm_cheat_menu.0040 = {
 
   }
 
-
-
   option = { name = ucm_cheat_menu.00x.close }
 
 }
-
-
 
 ucm_cheat_menu.0041 = {
 
@@ -6976,8 +6219,6 @@ ucm_cheat_menu.0041 = {
   desc = ucm_ui_no_hover_tooltip
 
   theme = default
-
-
 
   # 闂傚倷绀侀幉锛勬暜閹烘嚦娑樷攽鐎ｎ€儱顭块懜闈涘闁哄拋鍓氶幈銊ヮ潨閸℃绠诲┑鈥崇湴閸斿矂鈥旈崘顔嘉ч柛娑卞灟缁潧鈹戦悙瀛樺磩闁糕晜鐗曢?10 闂?  option = { name = heritage_ainuic_name scope:actor = { set_culture_pillar = heritage_ainuic } }
 
@@ -6999,19 +6240,13 @@ ucm_cheat_menu.0041 = {
 
   option = { name = heritage_brythonic_name scope:actor = { set_culture_pillar = heritage_brythonic } }
 
-
-
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0740 }}
-
-
 
   option = { name = ucm_cheat_menu.00x.back scope:actor = { trigger_event = ucm_cheat_menu.0040 }}
 
   option = { name = ucm_cheat_menu.00x.close }
 
 }
-
-
 
 ucm_cheat_menu.0740 = {
 
@@ -7022,8 +6257,6 @@ ucm_cheat_menu.0740 = {
   desc = ucm_ui_no_hover_tooltip
 
   theme = default
-
-
 
   option = { name = heritage_burman_name scope:actor = { set_culture_pillar = heritage_burman } }
 
@@ -7045,8 +6278,6 @@ ucm_cheat_menu.0740 = {
 
   option = { name = heritage_east_slavic_name scope:actor = { set_culture_pillar = heritage_east_slavic } }
 
-
-
   option = { name = ucm_cheat_menu.page_prev scope:actor = { trigger_event = ucm_cheat_menu.0041 }}
 
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0741 }}
@@ -7057,8 +6288,6 @@ ucm_cheat_menu.0740 = {
 
 }
 
-
-
 ucm_cheat_menu.0741 = {
 
   type = character_event
@@ -7068,8 +6297,6 @@ ucm_cheat_menu.0741 = {
   desc = ucm_ui_no_hover_tooltip
 
   theme = default
-
-
 
   option = { name = heritage_egyptian_name scope:actor = { set_culture_pillar = heritage_egyptian } }
 
@@ -7091,8 +6318,6 @@ ucm_cheat_menu.0741 = {
 
   option = { name = heritage_israelite_name scope:actor = { set_culture_pillar = heritage_israelite } }
 
-
-
   option = { name = ucm_cheat_menu.page_prev scope:actor = { trigger_event = ucm_cheat_menu.0740 }}
 
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0742 }}
@@ -7103,8 +6328,6 @@ ucm_cheat_menu.0741 = {
 
 }
 
-
-
 ucm_cheat_menu.0742 = {
 
   type = character_event
@@ -7114,8 +6337,6 @@ ucm_cheat_menu.0742 = {
   desc = ucm_ui_no_hover_tooltip
 
   theme = default
-
-
 
   option = { name = heritage_japonic_name scope:actor = { set_culture_pillar = heritage_japonic } }
 
@@ -7137,8 +6358,6 @@ ucm_cheat_menu.0742 = {
 
   option = { name = heritage_qiangic_name scope:actor = { set_culture_pillar = heritage_qiangic } }
 
-
-
   option = { name = ucm_cheat_menu.page_prev scope:actor = { trigger_event = ucm_cheat_menu.0741 }}
 
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0743 }}
@@ -7149,8 +6368,6 @@ ucm_cheat_menu.0742 = {
 
 }
 
-
-
 ucm_cheat_menu.0743 = {
 
   type = character_event
@@ -7160,8 +6377,6 @@ ucm_cheat_menu.0743 = {
   desc = ucm_ui_no_hover_tooltip
 
   theme = default
-
-
 
   option = { name = heritage_sahelian_name scope:actor = { set_culture_pillar = heritage_sahelian } }
 
@@ -7183,8 +6398,6 @@ ucm_cheat_menu.0743 = {
 
   option = { name = heritage_turkic_name scope:actor = { set_culture_pillar = heritage_turkic } }
 
-
-
   option = { name = ucm_cheat_menu.page_prev scope:actor = { trigger_event = ucm_cheat_menu.0742 }}
 
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0744 }}
@@ -7195,8 +6408,6 @@ ucm_cheat_menu.0743 = {
 
 }
 
-
-
 ucm_cheat_menu.0744 = {
 
   type = character_event
@@ -7206,8 +6417,6 @@ ucm_cheat_menu.0744 = {
   desc = ucm_ui_no_hover_tooltip
 
   theme = default
-
-
 
   option = { name = heritage_ugro_permian_name scope:actor = { set_culture_pillar = heritage_ugro_permian } }
 
@@ -7225,8 +6434,6 @@ ucm_cheat_menu.0744 = {
 
   option = { name = heritage_yoruba_name scope:actor = { set_culture_pillar = heritage_yoruba } }
 
-
-
   option = { name = ucm_cheat_menu.page_prev scope:actor = { trigger_event = ucm_cheat_menu.0743 }}
 
   option = { name = ucm_cheat_menu.00x.back scope:actor = { trigger_event = ucm_cheat_menu.0040 }}
@@ -7234,8 +6441,6 @@ ucm_cheat_menu.0744 = {
   option = { name = ucm_cheat_menu.00x.close }
 
 }
-
-
 
 ucm_cheat_menu.0042 = {
 
@@ -7246,8 +6451,6 @@ ucm_cheat_menu.0042 = {
   desc = ucm_ui_no_hover_tooltip
 
   theme = default
-
-
 
   # 闂備浇宕垫慨鏉懨归崒鐐茬煑闁逞屽墴閺屽秶鎷犻懠顒€鈪甸悗娈垮枛閻栧ジ寮澶婄妞ゆ帒鍊诲畷鍫曟⒑閸濆嫷妲搁柣妤€妫濆畷顖烆敃浣嶉崶顒€閿ゆ俊銈勭劍濞呮牕鈹戦鐭亞澹曢鐘典笉鐟滅増甯楅埛鎴︽煙缂佹ê绗ч柣蹇氶哺缁绘盯骞撻幒鎾充淮濡ょ姷鍋炵敮鈩冧繆閻戣棄唯闁靛／鍌滄硦闂傚倷绀侀幉锟犲垂閻㈢绠规い鎰剁畱閻鐓崶銊р姇闁绘帡绠栭弻鏇熺箾閸喖濮庨柣鐘辩劍閻撯€愁潖濞差亶鏁冮柕蹇婃櫆姝囨俊鐐€栧ú蹇涘垂婵犳艾绠犳繛鎴欏灩閻掑灚銇勯幒鎴濐仾闁哄拋鍓熼弻娑㈩敃閻樿尙浠兼繛瀵稿閸ㄥ爼寮诲☉銏犵闁挎繂楠稿▓顓㈡倵鐟欏嫭灏俊顐ｇ箓閻ｅ嘲顫濈捄铏瑰€為梺闈涱焾閸庤京鑺遍妷鈺傜厽闁绘ê寮剁粊鈺呮煕濞嗗苯浜鹃梻浣哥枃椤曆囨偋閹炬剚鍤曢柕濞炬櫓閺佸秵绻涢幋鐐跺鐟滅増妞藉?  # 闂傚倷绀侀幉锛勬暜閹烘嚦娑樷攽鐎ｎ€儱顭块懜闈涘闁哄拋鍓氶幈銊ヮ潨閸℃绠诲┑鈥崇湴閸斿矂鈥旈崘顔嘉ч柛娑卞灟缁潧鈹戦悙瀛樺磩闁糕晜鐗曢?10 闂?  option = { name = language_ainu_name scope:actor = { set_culture_pillar = language_ainu } }
 
@@ -7269,19 +6472,13 @@ ucm_cheat_menu.0042 = {
 
   option = { name = language_baltic_name scope:actor = { set_culture_pillar = language_baltic } }
 
-
-
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0745 }}
-
-
 
   option = { name = ucm_cheat_menu.00x.back scope:actor = { trigger_event = ucm_cheat_menu.0040 }}
 
   option = { name = ucm_cheat_menu.00x.close }
 
 }
-
-
 
 ucm_cheat_menu.0745 = {
 
@@ -7292,8 +6489,6 @@ ucm_cheat_menu.0745 = {
   desc = ucm_ui_no_hover_tooltip
 
   theme = default
-
-
 
   option = { name = language_basque_name scope:actor = { set_culture_pillar = language_basque } }
 
@@ -7315,8 +6510,6 @@ ucm_cheat_menu.0745 = {
 
   option = { name = language_cushitic_name scope:actor = { set_culture_pillar = language_cushitic } }
 
-
-
   option = { name = ucm_cheat_menu.page_prev scope:actor = { trigger_event = ucm_cheat_menu.0042 }}
 
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0746 }}
@@ -7327,8 +6520,6 @@ ucm_cheat_menu.0745 = {
 
 }
 
-
-
 ucm_cheat_menu.0746 = {
 
   type = character_event
@@ -7338,8 +6529,6 @@ ucm_cheat_menu.0746 = {
   desc = ucm_ui_no_hover_tooltip
 
   theme = default
-
-
 
   option = { name = language_czech_slovak_name scope:actor = { set_culture_pillar = language_czech_slovak } }
 
@@ -7361,8 +6550,6 @@ ucm_cheat_menu.0746 = {
 
   option = { name = language_goidelic_name scope:actor = { set_culture_pillar = language_goidelic } }
 
-
-
   option = { name = ucm_cheat_menu.page_prev scope:actor = { trigger_event = ucm_cheat_menu.0745 }}
 
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0747 }}
@@ -7373,8 +6560,6 @@ ucm_cheat_menu.0746 = {
 
 }
 
-
-
 ucm_cheat_menu.0747 = {
 
   type = character_event
@@ -7384,8 +6569,6 @@ ucm_cheat_menu.0747 = {
   desc = ucm_ui_no_hover_tooltip
 
   theme = default
-
-
 
   option = { name = language_greek_name scope:actor = { set_culture_pillar = language_greek } }
 
@@ -7407,8 +6590,6 @@ ucm_cheat_menu.0747 = {
 
   option = { name = language_japonic_name scope:actor = { set_culture_pillar = language_japonic } }
 
-
-
   option = { name = ucm_cheat_menu.page_prev scope:actor = { trigger_event = ucm_cheat_menu.0746 }}
 
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0748 }}
@@ -7419,8 +6600,6 @@ ucm_cheat_menu.0747 = {
 
 }
 
-
-
 ucm_cheat_menu.0748 = {
 
   type = character_event
@@ -7430,8 +6609,6 @@ ucm_cheat_menu.0748 = {
   desc = ucm_ui_no_hover_tooltip
 
   theme = default
-
-
 
   option = { name = language_kannada_name scope:actor = { set_culture_pillar = language_kannada } }
 
@@ -7453,8 +6630,6 @@ ucm_cheat_menu.0748 = {
 
   option = { name = language_magyar_name scope:actor = { set_culture_pillar = language_magyar } }
 
-
-
   option = { name = ucm_cheat_menu.page_prev scope:actor = { trigger_event = ucm_cheat_menu.0747 }}
 
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0749 }}
@@ -7465,8 +6640,6 @@ ucm_cheat_menu.0748 = {
 
 }
 
-
-
 ucm_cheat_menu.0749 = {
 
   type = character_event
@@ -7476,8 +6649,6 @@ ucm_cheat_menu.0749 = {
   desc = ucm_ui_no_hover_tooltip
 
   theme = default
-
-
 
   option = { name = language_manding_name scope:actor = { set_culture_pillar = language_manding } }
 
@@ -7499,8 +6670,6 @@ ucm_cheat_menu.0749 = {
 
   option = { name = language_omotic_name scope:actor = { set_culture_pillar = language_omotic } }
 
-
-
   option = { name = ucm_cheat_menu.page_prev scope:actor = { trigger_event = ucm_cheat_menu.0748 }}
 
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0750 }}
@@ -7511,8 +6680,6 @@ ucm_cheat_menu.0749 = {
 
 }
 
-
-
 ucm_cheat_menu.0750 = {
 
   type = character_event
@@ -7522,8 +6689,6 @@ ucm_cheat_menu.0750 = {
   desc = ucm_ui_no_hover_tooltip
 
   theme = default
-
-
 
   option = { name = language_pahari_name scope:actor = { set_culture_pillar = language_pahari } }
 
@@ -7545,8 +6710,6 @@ ucm_cheat_menu.0750 = {
 
   option = { name = language_scythian_name scope:actor = { set_culture_pillar = language_scythian } }
 
-
-
   option = { name = ucm_cheat_menu.page_prev scope:actor = { trigger_event = ucm_cheat_menu.0749 }}
 
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0751 }}
@@ -7557,8 +6720,6 @@ ucm_cheat_menu.0750 = {
 
 }
 
-
-
 ucm_cheat_menu.0751 = {
 
   type = character_event
@@ -7568,8 +6729,6 @@ ucm_cheat_menu.0751 = {
   desc = ucm_ui_no_hover_tooltip
 
   theme = default
-
-
 
   option = { name = language_senegambian_name scope:actor = { set_culture_pillar = language_senegambian } }
 
@@ -7591,8 +6750,6 @@ ucm_cheat_menu.0751 = {
 
   option = { name = language_tibetan_name scope:actor = { set_culture_pillar = language_tibetan } }
 
-
-
   option = { name = ucm_cheat_menu.page_prev scope:actor = { trigger_event = ucm_cheat_menu.0750 }}
 
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0752 }}
@@ -7603,8 +6760,6 @@ ucm_cheat_menu.0751 = {
 
 }
 
-
-
 ucm_cheat_menu.0752 = {
 
   type = character_event
@@ -7614,8 +6769,6 @@ ucm_cheat_menu.0752 = {
   desc = ucm_ui_no_hover_tooltip
 
   theme = default
-
-
 
   option = { name = language_tocharian_name scope:actor = { set_culture_pillar = language_tocharian } }
 
@@ -7637,8 +6790,6 @@ ucm_cheat_menu.0752 = {
 
   option = { name = language_yoruba_name scope:actor = { set_culture_pillar = language_yoruba } }
 
-
-
   option = { name = ucm_cheat_menu.page_prev scope:actor = { trigger_event = ucm_cheat_menu.0751 }}
 
   option = { name = ucm_cheat_menu.00x.back scope:actor = { trigger_event = ucm_cheat_menu.0040 }}
@@ -7646,8 +6797,6 @@ ucm_cheat_menu.0752 = {
   option = { name = ucm_cheat_menu.00x.close }
 
 }
-
-
 
 ucm_cheat_menu.0043 = {
 
@@ -7659,21 +6808,15 @@ ucm_cheat_menu.0043 = {
 
   theme = default
 
-
-
   option = { name = martial_custom_equal scope:actor = { set_culture_pillar = martial_custom_equal } }
 
   option = { name = martial_custom_male_only scope:actor = { set_culture_pillar = martial_custom_male_only } }
 
   option = { name = martial_custom_female_only scope:actor = { set_culture_pillar = martial_custom_female_only } }
 
-
-
   option = { name = ucm_cheat_menu.00x.close }
 
 }
-
-
 
 # 闂傚倷绀侀幖顐ょ矓閸洍鈧箓宕奸姀銏㈠婵°倧绲介崯顖炲磻閻樼粯鐓曢柍鈺佸枤濞堟棃鏌熼鑲┬ч柡灞诲妼閳藉螣閼姐値鍟倀hos闂傚倷鐒︾€笛呯矙閹次层劑鍩€椤掑倻纾奸弶鍫氭櫅椤ｈ偐绱掔€ｎ亶妲归柟顖涙閸ㄩ箖鎼归锝囦紜闂傚倷鑳剁划顖炪€冮崨瀛樺亱濠电姴娲ら崙鐘绘煕閹伴潧鏋涚紒鈧畝鍕厸鐎广儱楠告禍婵囩箾閸涱喗绀嬫慨濠傤煼瀹曠厧鈽夊Ο闂寸棯闂備焦鍎冲Λ娆撱€冮妷鈺傚€烽柛娆忣槸濞呫垻绱撴担瑙勨拹闁瑰憡濞婇獮濠傗槈濞嗘劗绉堕梺鍛婃寙閸愵厸鍋撻崸妤佲拺闁告稑锕ら崵顒勬煕鐎ｎ亜顏€规洩缍€缁犳稑鈽夊▎鎴濆Ъ?7 缂?ethos闂?
 
@@ -7686,8 +6829,6 @@ ucm_cheat_menu.0162 = {
   desc = ucm_ui_no_hover_tooltip
 
   theme = default
-
-
 
   option = { name = ethos_bellicose scope:actor = { set_culture_pillar = ethos_bellicose } }
 
@@ -7703,15 +6844,11 @@ ucm_cheat_menu.0162 = {
 
   option = { name = ethos_stoic scope:actor = { set_culture_pillar = ethos_stoic } }
 
-
-
   option = { name = ucm_cheat_menu.00x.back scope:actor = { ucm_cheat_menu_culture_editor_hub_return_effect = yes }}
 
   option = { name = ucm_cheat_menu.00x.close }
 
 }
-
-
 
 # 缂傚倸鍊烽悞锕傘€冭箛娑樼婵炲棗绶峰ú顏勭閻犲洩灏欓崫妤€顪冮妶鍡欏缂佸鎹囧畷锝夊箻椤旂晫鍙嗗┑鐐村灦閻熝囥€傞弻銉︾厸閻庯綆浜滈弳锝団偓瑙勬礈婵炩偓鐎殿喕绮欓、妯款槼婵炲牜鍙冮弻锝夋倷鐎靛壊鏆￠梺缁橆殕椤ㄥ牓鍩€椤掆偓閻忔氨鍒掗幘璇茬畾闁告洦鍘奸ˉ姘舵倵閿濆骸澧撮柟椋庣帛娣囧﹪顢曢敐鍡欏嚒濠碘槅鍋呴〃鍛存晝閵忋倕绠绘い鏂垮悑閻庮剟姊虹紒姗嗘當闁绘妫濋幃妯何旈崨顔惧幗闂佹寧绻傚Λ娑㈡儗瀹€鍕厱闊洤顑呴悘顕€鏌熼崣澶嬪唉鐎规洜鍠栭、鏍偄閸撲胶鐛㈤悗瑙勬礃瀹€鍛婁繆閸洖宸濇い鏍ㄧ⊕閻︾偤姊绘担鐟邦嚋缂佸鍨块幃褔宕ㄩ婊呯暥閻庡厜鍋撻柛鏇ㄥ亜閸嬪秹姊虹紒妯荤叆闁圭⒈鍋婇妴?head_determination 婵犵數鍋為崹鍫曞箰閹绢喖纾婚柟鍓х帛閻撶娀鏌ｉ妶搴＄仭鐟滄妸鍛＜?
 
@@ -7725,21 +6862,15 @@ ucm_cheat_menu.0163 = {
 
   theme = default
 
-
-
   option = { name = head_determination_domain scope:actor = { set_culture_pillar = head_determination_domain } }
 
   option = { name = head_determination_herd scope:actor = { set_culture_pillar = head_determination_herd } }
-
-
 
   option = { name = ucm_cheat_menu.00x.back scope:actor = { trigger_event = ucm_cheat_menu.0040 }}
 
   option = { name = ucm_cheat_menu.00x.close }
 
 }
-
-
 
 ## 闂傚倷绀侀幉锟犳偡閿旂晫绠惧┑鐘叉搐閺嬩焦銇勯幘鍗炵仼鏉╂繈鏌ｈ箛鏇炰沪鐎规洘顭堝Λ銏ゆ⒒娴ｅ湱婀介柛銊ユ惈鍗遍柟鐑樻磸娴滃湱鈧箍鍎遍ˇ顖滄兜閳ь剟姊洪崫鍕閼裤倝鏌涚€ｎ偅灏い鎾瑰缁犳盯寮撮悩闈涚倞闂傚倷绀侀幖顐﹀磹缁嬫５娲Χ閸ワ絽浜鹃梻鍫熺☉缁狙囨倵闂堟稏鍋㈤柟顔规櫊閹粙妫冨☉姘箯闂傚倷鐒︾€笛呯矙閹达附鍋嬮柛鈩冪☉閸ㄥ倿骞栨潏鍓ф偧閻忓繘娼ч湁闁稿繗鍋愰幊鍛磼閹邦収娈旈摶鐐烘煛婢跺顕滄い銉︾矋缁绘繈鍩€?/ 闂傚倷鑳堕幊鎾绘偤閵娧勭畳缂?/ 缂傚倸鍊风拋鏌ュ磻閹剧粯鐓曟繛鍡楃Т閸斻倗绱?/ 缂傚倸鍊风拋鏌ュ磻閹剧粯鈷掗柛灞剧⊕缂嶆垹鈧?/ 闂傚倷绀侀幉锟犳偋閺囥垹绠规い鎰堕檮閸嬪倹绻涢崱妯诲鞍闁?
 
@@ -7753,8 +6884,6 @@ ucm_cheat_menu.0050 = {
 
   theme = default
 
-
-
   option = { name = ucm_cheat_menu.0050.realm scope:actor = { trigger_event = ucm_cheat_menu.0051 }}
 
   option = { name = ucm_cheat_menu.0050.combat scope:actor = { trigger_event = ucm_cheat_menu.0052 }}
@@ -7765,15 +6894,11 @@ ucm_cheat_menu.0050 = {
 
   option = { name = ucm_cheat_menu.0050.regional scope:actor = { trigger_event = ucm_cheat_menu.0055 }}
 
-
-
   option = { name = ucm_cheat_menu.00x.back scope:actor = { trigger_event = ucm_cheat_menu.0021 }}
 
   option = { name = ucm_cheat_menu.00x.close }
 
 }
-
-
 
 ucm_cheat_menu.0051 = {
 
@@ -7784,8 +6909,6 @@ ucm_cheat_menu.0051 = {
   desc = ucm_ui_no_hover_tooltip
 
   theme = default
-
-
 
   # 闂傚倷绀侀幉锟犮€冮崱妞曟椽寮介鐐叉優?濠电姷鏁搁崕鎴犵礊閳ь剚銇勯弴鍡楀閸欏繘鏌ｉ幇顔煎妺闁哄拋鍓氱换娑㈠箣閻忔椿浜鎻掆枎閹邦喚顔曢梺绯曟閸樺墽澹曢崸妤佺厱閻庯絽澧庣粔顔锯偓?缂傚倸鍊风粈渚€藝椤栫偐鈧箑鐣￠幍铏€洪柟鍏肩暘閸斿秹寮查鍕厱妞ゆ劦鍓涢幃鑲╃磼閻欌偓閸犳牠婀侀梺缁樻尭濞村嘲袙閻愮儤鐓冪憸婊堝礈濮樺崬鍨濋悘鐐垫櫕閺嗭箓鏌ｉ弮鍌氬付缂佲偓閸曨偀鏀介柣妯哄暱閻掑綊鏌涚€ｎ偅灏扮€垫澘瀚埀顒婄秵娴滆埖绂?闂傚倷绀侀幉锟犳偡閵夆晜鍤愭い鏍仜閸氳銇勯弴妤€浜鹃悗瑙勬穿缂嶄礁顕ｆ禒瀣╂い顒夊枔閸庣敻寮诲澶娢ㄩ柨鏂垮⒔椤斿洨绱?
   option = {
@@ -7910,18 +7033,13 @@ ucm_cheat_menu.0051 = {
     }
   }
 
-
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0051 }}
-
-
 
   option = { name = ucm_cheat_menu.00x.back scope:actor = { trigger_event = ucm_cheat_menu.0050 }}
 
   option = { name = ucm_cheat_menu.00x.close }
 
 }
-
-
 
 ucm_cheat_menu.0052 = {
 
@@ -7932,8 +7050,6 @@ ucm_cheat_menu.0052 = {
   desc = ucm_ui_no_hover_tooltip
 
   theme = default
-
-
 
   option = {
 
@@ -8175,19 +7291,13 @@ ucm_cheat_menu.0052 = {
 
   }
 
-
-
   option = { name = ucm_cheat_menu.page_next scope:actor = { trigger_event = ucm_cheat_menu.0052 }}
-
-
 
   option = { name = ucm_cheat_menu.00x.back scope:actor = { trigger_event = ucm_cheat_menu.0050 }}
 
   option = { name = ucm_cheat_menu.00x.close }
 
 }
-
-
 
 ucm_cheat_menu.0053 = {
 
@@ -8198,8 +7308,6 @@ ucm_cheat_menu.0053 = {
   desc = ucm_ui_no_hover_tooltip
 
   theme = default
-
-
 
   # 闂傚倷绀侀幉锟犮€冮崱妞曟椽寮介鐐叉優?濠电姷鏁搁崕鎴犵礊閳ь剚銇勯弴鍡楀閸欏繘鏌ｉ幇顔煎妺闁哄拋鍓氱换娑㈠箣閻忔椿浜鎻掆枎閹邦喚顔曢梺绯曟閸樺墽澹曢崸妤佺厱閻庯絽澧庣粔顔锯偓?缂傚倸鍊风粈渚€藝椤栫偐鈧箑鐣￠幍铏€洪柟鍏肩暘閸斿秹寮查鍕厱妞ゆ劦鍓涢幃鑲╃磼閻欌偓閸犳牠婀侀梺缁樻尭濞村嘲袙閻愮儤鐓冪憸婊堝礈濮樺崬鍨濋悘鐐垫櫕閺嗭箓鏌ｉ弮鍌氬付缂佲偓閸曨偀鏀介柣妯哄暱閻掑綊鏌涚€ｎ偅灏扮€垫澘瀚埀顒婄秵娴滆埖绂?闂傚倷绀侀幉锟犳偡閵夆晜鍤愭い鏍仜閸氳銇勯弴妤€浜鹃悗瑙勬穿缂嶄礁顕ｆ禒瀣╂い顒夊枔閸庣敻寮诲澶娢ㄩ柨鏂垮⒔椤斿洨绱?
   option = {
@@ -9127,15 +8235,11 @@ ucm_cheat_menu.0053 = {
 
   }
 
-
-
   option = { name = ucm_cheat_menu.00x.back scope:actor = { trigger_event = ucm_cheat_menu.0050 }}
 
   option = { name = ucm_cheat_menu.00x.close }
 
 }
-
-
 
 ucm_cheat_menu.0054 = {
 
@@ -9146,8 +8250,6 @@ ucm_cheat_menu.0054 = {
   desc = ucm_ui_no_hover_tooltip
 
   theme = default
-
-
 
   option = {
 
@@ -9629,15 +8731,11 @@ ucm_cheat_menu.0054 = {
 
   }
 
-
-
   option = { name = ucm_cheat_menu.00x.back scope:actor = { trigger_event = ucm_cheat_menu.0050 }}
 
   option = { name = ucm_cheat_menu.00x.close }
 
 }
-
-
 
 ucm_cheat_menu.0055 = {
 
@@ -9648,8 +8746,6 @@ ucm_cheat_menu.0055 = {
   desc = ucm_ui_no_hover_tooltip
 
   theme = default
-
-
 
   option = {
 
@@ -11355,571 +10451,35 @@ ucm_cheat_menu.0055 = {
 
   }
 
-
-
   option = { name = ucm_cheat_menu.00x.back scope:actor = { trigger_event = ucm_cheat_menu.0050 }}
 
   option = { name = ucm_cheat_menu.00x.close }
 
 }
 
-
-
 ## 闂傚倷绀侀幉锟犳偡閿旂晫绠惧┑鐘叉搐閺嬩焦銇勯幘鍗炵仼鏉╂繈鏌ｈ箛鏇炰沪鐎规洘顭堝Λ銏ゆ⒒娴ｅ湱婀介柛銊ユ惈鍗遍柟鐑樻磸娴滃湱鈧箍鍎遍ˇ顖滄兜閳ь剟姊洪崫鍕閼裤倝鏌涚€ｎ偅灏い鎾瑰缁犳盯寮撮悩闈涚倞闂傚倷绀侀幉锛勬暜濡も偓閿曘垽宕烽鐘殿槸闂佸搫鍟崐鐢稿磻閹捐埖鍠嗛柛鏇ㄥ幘閻ｅ吋绻濋埛鈧崘鈺佷淮闂佽桨绀佺粔鐟扮暦婵傜顫呴柣娆屽亾濞寸姴澧界槐鎾存媴鐟欏嫮鍙嗗銈嗗灥濞差參骞冩导鏉懳ㄩ柍杞拌兌閻撴垿姊洪幐搴ｇ畵缂佺粯甯炵划?
-
-ucm_cheat_menu.0030 = {
-
-  type = character_event
-
-  title = ucm_cheat_menu.0030.t
-
-  desc = ucm_cheat_menu.0030.desc
-
-  theme = default
-
-  right_portrait = scope:actor
-
-
-
-  option = {
-
-    name = ucm_cheat_menu.0030.owner_self
-
-    trigger = { exists = scope:recipient NOT = { scope:recipient = { this = scope:actor } } }
-
-    scope:actor = {
-
-      remove_character_flag = ucm_craft_give_to_recipient
-
-      trigger_event = ucm_cheat_menu.0030
-
-    }
-
-  }
-
-
-
-  option = {
-
-    name = ucm_cheat_menu.0030.owner_recipient
-
-    trigger = { exists = scope:recipient NOT = { scope:recipient = { this = scope:actor } } }
-
-    scope:actor = {
-
-      add_character_flag = ucm_craft_give_to_recipient
-
-      trigger_event = ucm_cheat_menu.0030
-
-    }
-
-  }
-
-
-
-  option = {
-
-    name = ucm_cheat_menu.0030.kind_weapon
-
-    scope:actor = { trigger_event = ucm_cheat_menu.0031 }
-
-  }
-
-
-
-  option = {
-
-    name = ucm_cheat_menu.0030.kind_armor
-
-    scope:actor = { trigger_event = ucm_cheat_menu.0032 }
-
-  }
-
-
-
-  option = {
-
-    name = ucm_cheat_menu.0030.kind_regalia
-
-    scope:actor = { trigger_event = ucm_cheat_menu.0033 }
-
-  }
-
-
-
-  option = {
-
-    name = ucm_cheat_menu.0030.kind_trinket
-
-    scope:actor = { trigger_event = ucm_cheat_menu.0034 }
-
-  }
-
-
-
-  option = {
-
-    name = ucm_cheat_menu.0030.kind_book
-
-    scope:actor = { trigger_event = ucm_cheat_menu.0035 }
-
-  }
-
-
-
-  option = {
-
-    name = ucm_cheat_menu.0030.kind_court
-
-    scope:actor = { trigger_event = ucm_cheat_menu.0038 }
-
-  }
-
-
-
-  option = {
-
-    name = ucm_cheat_menu.0030.quality
-
-    scope:actor = { trigger_event = ucm_cheat_menu.0036 }
-
-  }
-
-
-
-  option = {
-
-    name = ucm_cheat_menu.0030.mod_slot_1
-
-    scope:actor = { trigger_event = ucm_cheat_menu.0106 }
-
-  }
-
-
-
-  option = {
-
-    name = ucm_cheat_menu.0030.mod_slot_2
-
-    scope:actor = { trigger_event = ucm_cheat_menu.0107 }
-
-  }
-
-
-
-  option = {
-
-    name = ucm_cheat_menu.0030.mod_slot_3
-
-    scope:actor = { trigger_event = ucm_cheat_menu.0108 }
-
-  }
-
-
-
-  option = {
-
-    name = ucm_cheat_menu.0030.mod_slot_4
-
-    scope:actor = { trigger_event = ucm_cheat_menu.0109 }
-
-  }
-
-
-
-  option = {
-
-    name = ucm_cheat_menu.0030.decay
-
-    scope:actor = { trigger_event = ucm_cheat_menu.0037 }
-
-  }
-
-
-
-  option = {
-
-    name = ucm_cheat_menu.0030.make_now
-
-    hidden_effect = {
-
-      scope:actor = {
-
-        ucm_acm_run_make_now_body_effect = yes
-
-      }
-
-    }
-
-  }
-
-
-
-  option = {
-
-    name = ucm_cheat_menu.00x.back
-
-    scope:actor = { trigger_event = ucm_cheat_menu.0140 }
-
-  }
-
-
-
-  option = {
-
-    name = ucm_cheat_menu.0030.cancel
-
-  }
-
-}
-
-
 
 ## 闂傚倷绀侀幉锛勬暜濡も偓閿曘垽宕烽鐘殿槸闂佸搫鍟崐鐢稿磻閹捐埖鍠嗛柛鏇ㄥ幘閻ｅ吋绻濋埛鈧崘鈺佷淮闂佽桨绀佺粔鎾綖濠靛鏁冮柨婵嗘噹娴煎骸鈹戞幊閸婃牠銆冮崱妯肩彾闁糕剝渚楅弫?1
 
-ucm_cheat_menu.0106 = {
-
-  type = character_event
-
-  title = ucm_cheat_menu.0106.t
-
-  desc = ucm_cheat_menu.0106.desc
-
-  theme = default
-
-
-
-  option = { name = ucm_cheat_menu.0106.none scope:actor = { set_variable = { name = ucm_craft_m1 value = 0 } trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.0106.diplomacy scope:actor = { set_variable = { name = ucm_craft_m1 value = 2 } trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.0106.martial scope:actor = { set_variable = { name = ucm_craft_m1 value = 1 } trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.0106.stewardship scope:actor = { set_variable = { name = ucm_craft_m1 value = 3 } trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.0106.intrigue scope:actor = { set_variable = { name = ucm_craft_m1 value = 4 } trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.0106.learning scope:actor = { set_variable = { name = ucm_craft_m1 value = 5 } trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.00x.back scope:actor = { trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.00x.close }
-
-}
-
-
-
 ## 闂傚倷绀侀幉锛勬暜濡も偓閿曘垽宕烽鐘殿槸闂佸搫鍟崐鐢稿磻閹捐埖鍠嗛柛鏇ㄥ幘閻ｅ吋绻濋埛鈧崘鈺佷淮闂佽桨绀佺粔鎾綖濠靛鏁冮柨婵嗘噹娴煎骸鈹戞幊閸婃牠銆冮崱妯肩彾闁糕剝渚楅弫?2
-
-ucm_cheat_menu.0107 = {
-
-  type = character_event
-
-  title = ucm_cheat_menu.0107.t
-
-  desc = ucm_cheat_menu.0107.desc
-
-  theme = default
-
-
-
-  option = { name = ucm_cheat_menu.0106.none scope:actor = { set_variable = { name = ucm_craft_m2 value = 0 } trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.0106.diplomacy scope:actor = { set_variable = { name = ucm_craft_m2 value = 2 } trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.0106.martial scope:actor = { set_variable = { name = ucm_craft_m2 value = 1 } trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.0106.stewardship scope:actor = { set_variable = { name = ucm_craft_m2 value = 3 } trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.0106.intrigue scope:actor = { set_variable = { name = ucm_craft_m2 value = 4 } trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.0106.learning scope:actor = { set_variable = { name = ucm_craft_m2 value = 5 } trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.00x.back scope:actor = { trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.00x.close }
-
-}
-
-
 
 ## 闂傚倷绀侀幉锛勬暜濡も偓閿曘垽宕烽鐘殿槸闂佸搫鍟崐鐢稿磻閹捐埖鍠嗛柛鏇ㄥ幘閻ｅ吋绻濋埛鈧崘鈺佷淮闂佽桨绀佺粔鎾綖濠靛鏁冮柨婵嗘噹娴煎骸鈹戞幊閸婃牠銆冮崱妯肩彾闁糕剝渚楅弫?3
 
-ucm_cheat_menu.0108 = {
-
-  type = character_event
-
-  title = ucm_cheat_menu.0108.t
-
-  desc = ucm_cheat_menu.0108.desc
-
-  theme = default
-
-
-
-  option = { name = ucm_cheat_menu.0106.none scope:actor = { set_variable = { name = ucm_craft_m3 value = 0 } trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.0106.diplomacy scope:actor = { set_variable = { name = ucm_craft_m3 value = 2 } trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.0106.martial scope:actor = { set_variable = { name = ucm_craft_m3 value = 1 } trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.0106.stewardship scope:actor = { set_variable = { name = ucm_craft_m3 value = 3 } trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.0106.intrigue scope:actor = { set_variable = { name = ucm_craft_m3 value = 4 } trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.0106.learning scope:actor = { set_variable = { name = ucm_craft_m3 value = 5 } trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.00x.back scope:actor = { trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.00x.close }
-
-}
-
-
-
 ## 闂傚倷绀侀幉锛勬暜濡も偓閿曘垽宕烽鐘殿槸闂佸搫鍟崐鐢稿磻閹捐埖鍠嗛柛鏇ㄥ幘閻ｅ吋绻濋埛鈧崘鈺佷淮闂佽桨绀佺粔鎾綖濠靛鏁冮柨婵嗘噹娴煎骸鈹戞幊閸婃牠銆冮崱妯肩彾闁糕剝渚楅弫?4
-
-ucm_cheat_menu.0109 = {
-
-  type = character_event
-
-  title = ucm_cheat_menu.0109.t
-
-  desc = ucm_cheat_menu.0109.desc
-
-  theme = default
-
-
-
-  option = { name = ucm_cheat_menu.0106.none scope:actor = { set_variable = { name = ucm_craft_m4 value = 0 } trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.0106.diplomacy scope:actor = { set_variable = { name = ucm_craft_m4 value = 2 } trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.0106.martial scope:actor = { set_variable = { name = ucm_craft_m4 value = 1 } trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.0106.stewardship scope:actor = { set_variable = { name = ucm_craft_m4 value = 3 } trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.0106.intrigue scope:actor = { set_variable = { name = ucm_craft_m4 value = 4 } trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.0106.learning scope:actor = { set_variable = { name = ucm_craft_m4 value = 5 } trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.00x.back scope:actor = { trigger_event = ucm_cheat_menu.0030 } }
-
-  option = { name = ucm_cheat_menu.00x.close }
-
-}
-
-
 
 ## 闂傚倷绀侀幉锛勬暜濡も偓閿曘垽宕烽鐘殿槸闂佸搫鍟崐鐢稿磻閹捐埖鍠嗛柛鏇ㄥ幘閻ｅ吋绻濋埛鈧崘鈺佷淮闂佽桨绀佺粔鎾綖濠靛鏁囩憸宥嗕繆閹惰姤鈷戦梻鍫氭櫇缁夌敻鏌ｉ幘鎰佹Ш婵″弶鍔曢埢搴ㄥ箣閻樺弶娈梺鑽ゅТ濞测晝浜稿▎鎾崇劦妞ゆ帒鍊搁崢鎾煛?
 
-ucm_cheat_menu.0031 = {
-
-  type = character_event
-
-  title = ucm_cheat_menu.0031.t
-
-  desc = ucm_ui_no_hover_tooltip
-
-  theme = default
-
-
-
-  option = { name = ucm_cheat_menu.0031.sword hidden_effect = { scope:actor = { remove_character_flag = ucm_artifact_kind_armor remove_character_flag = ucm_artifact_kind_crown remove_character_flag = ucm_artifact_kind_regalia remove_character_flag = ucm_artifact_kind_trinket remove_character_flag = ucm_artifact_kind_book remove_character_flag = ucm_artifact_kind_court add_character_flag = ucm_artifact_kind_weapon add_character_flag = ucm_artifact_kind_set remove_character_flag = ucm_artifact_subtype_axe remove_character_flag = ucm_artifact_subtype_spear add_character_flag = ucm_artifact_subtype_sword add_character_flag = ucm_artifact_subtype_set } } }
-
-  option = { name = ucm_cheat_menu.0031.axe hidden_effect = { scope:actor = { remove_character_flag = ucm_artifact_kind_armor remove_character_flag = ucm_artifact_kind_crown remove_character_flag = ucm_artifact_kind_regalia remove_character_flag = ucm_artifact_kind_trinket remove_character_flag = ucm_artifact_kind_book remove_character_flag = ucm_artifact_kind_court add_character_flag = ucm_artifact_kind_weapon add_character_flag = ucm_artifact_kind_set remove_character_flag = ucm_artifact_subtype_sword remove_character_flag = ucm_artifact_subtype_spear add_character_flag = ucm_artifact_subtype_axe add_character_flag = ucm_artifact_subtype_set } } }
-
-  option = { name = ucm_cheat_menu.0031.spear hidden_effect = { scope:actor = { remove_character_flag = ucm_artifact_kind_armor remove_character_flag = ucm_artifact_kind_crown remove_character_flag = ucm_artifact_kind_regalia remove_character_flag = ucm_artifact_kind_trinket remove_character_flag = ucm_artifact_kind_book remove_character_flag = ucm_artifact_kind_court add_character_flag = ucm_artifact_kind_weapon add_character_flag = ucm_artifact_kind_set remove_character_flag = ucm_artifact_subtype_sword remove_character_flag = ucm_artifact_subtype_axe add_character_flag = ucm_artifact_subtype_spear add_character_flag = ucm_artifact_subtype_set } } }
-
-
-
-  option = { name = ucm_cheat_menu.00x.back scope:actor = { trigger_event = ucm_cheat_menu.0030 }}
-
-  option = { name = ucm_cheat_menu.00x.close }
-
-}
-
-
-
 ## 闂傚倷绀侀幉锛勬暜濡も偓閿曘垽宕烽鐘殿槸闂佸搫鍟崐鐢稿磻閹捐埖鍠嗛柛鏇ㄥ幘閻ｅ吋绻濋埛鈧崘鈺佷淮闂佽桨绀佺粔鎾綖濠靛鏁囬柣鎰姈閸ㄥ潡寮婚敐澶婎潊闁挎繂楠稿▓婵堢磽娴ｄ粙鍝洪柣鐔濆洦鍋栭柛鎾楀嫬鐝伴梺鑲┾拡閸忔﹢宕戦幘缁樺€婚柤鎭掑劜濞?
-
-ucm_cheat_menu.0032 = {
-
-  type = character_event
-
-  title = ucm_cheat_menu.0032.t
-
-  desc = ucm_ui_no_hover_tooltip
-
-  theme = default
-
-
-
-  option = { name = ucm_cheat_menu.0032.armor hidden_effect = { scope:actor = { remove_character_flag = ucm_artifact_kind_weapon remove_character_flag = ucm_artifact_kind_crown remove_character_flag = ucm_artifact_kind_regalia remove_character_flag = ucm_artifact_kind_trinket remove_character_flag = ucm_artifact_kind_book remove_character_flag = ucm_artifact_kind_court add_character_flag = ucm_artifact_kind_armor add_character_flag = ucm_artifact_kind_set add_character_flag = ucm_artifact_subtype_set } }}
-
-  option = { name = ucm_cheat_menu.00x.back scope:actor = { trigger_event = ucm_cheat_menu.0030 }}
-
-  option = { name = ucm_cheat_menu.00x.close }
-
-}
-
-
 
 ## 闂傚倷绀侀幉锛勬暜濡も偓閿曘垽宕烽鐘殿槸闂佸搫鍟崐鐢稿磻閹捐埖鍠嗛柛鏇ㄥ幘閻ｅ吋绻濋埛鈧崘鈺佷淮闂佽桨绀佺粔鎾綖濠靛洨鐟瑰璺烘憸娑撳秹姊绘笟鈧鑽ょ礊閸℃稒鍋傚璺烘湰椤洘绻涢崱妯虹仼閻忓繒鏁婚幃褰掑炊椤忓嫮姣㈤梺閫炲苯澧伴柛蹇旓耿瀵?
 
-ucm_cheat_menu.0033 = {
-
-  type = character_event
-
-  title = ucm_cheat_menu.0033.t
-
-  desc = ucm_ui_no_hover_tooltip
-
-  theme = default
-
-
-
-  option = { name = ucm_cheat_menu.0033.crown hidden_effect = { scope:actor = { remove_character_flag = ucm_artifact_kind_weapon remove_character_flag = ucm_artifact_kind_armor remove_character_flag = ucm_artifact_kind_regalia remove_character_flag = ucm_artifact_kind_trinket remove_character_flag = ucm_artifact_kind_book remove_character_flag = ucm_artifact_kind_court add_character_flag = ucm_artifact_kind_crown add_character_flag = ucm_artifact_kind_set add_character_flag = ucm_artifact_subtype_set } }}
-
-  option = { name = ucm_cheat_menu.0033.regalia hidden_effect = { scope:actor = { remove_character_flag = ucm_artifact_kind_weapon remove_character_flag = ucm_artifact_kind_armor remove_character_flag = ucm_artifact_kind_crown remove_character_flag = ucm_artifact_kind_trinket remove_character_flag = ucm_artifact_kind_book remove_character_flag = ucm_artifact_kind_court add_character_flag = ucm_artifact_kind_regalia add_character_flag = ucm_artifact_kind_set add_character_flag = ucm_artifact_subtype_set } }}
-
-  option = { name = ucm_cheat_menu.00x.back scope:actor = { trigger_event = ucm_cheat_menu.0030 }}
-
-  option = { name = ucm_cheat_menu.00x.close }
-
-}
-
-
-
 ## 闂傚倷绀侀幉锛勬暜濡も偓閿曘垽宕烽鐘殿槸闂佸搫鍟崐鐢稿磻閹捐埖鍠嗛柛鏇ㄥ幘閻ｅ吋绻濋埛鈧崘鈺佷淮闂佽桨绀佺粔鎾綖濠靛鍙曢柟缁樺笂缁囨⒒娴ｅ憡鍟炵紒鐑╁亾缂備浇缈伴崐妤€危閹邦兘鏋庨柟瀵稿Т閺嗘鏌ｉ悩鍙夌┛閻忓繑鐟╅崺鈧い鎺戝€搁崢鎾煛?
-
-ucm_cheat_menu.0034 = {
-
-  type = character_event
-
-  title = ucm_cheat_menu.0034.t
-
-  desc = ucm_ui_no_hover_tooltip
-
-  theme = default
-
-
-
-  option = { name = ucm_cheat_menu.0034.trinket hidden_effect = { scope:actor = { remove_character_flag = ucm_artifact_kind_weapon remove_character_flag = ucm_artifact_kind_armor remove_character_flag = ucm_artifact_kind_crown remove_character_flag = ucm_artifact_kind_regalia remove_character_flag = ucm_artifact_kind_book remove_character_flag = ucm_artifact_kind_court add_character_flag = ucm_artifact_kind_trinket add_character_flag = ucm_artifact_kind_set add_character_flag = ucm_artifact_subtype_set } }}
-
-  option = { name = ucm_cheat_menu.00x.back scope:actor = { trigger_event = ucm_cheat_menu.0030 }}
-
-  option = { name = ucm_cheat_menu.00x.close }
-
-}
-
-
 
 ## 闂傚倷绀侀幉锛勬暜濡も偓閿曘垽宕烽鐘殿槸闂佸搫鍟崐鐢稿磻閹捐埖鍠嗛柛鏇ㄥ幘閻ｅ吋绻濋埛鈧崘鈺佷淮闂佽桨绀佺粔鎾綖濠靛鏁嗛柍褜鍓熼獮鍐╂媴閾忓湱锛滃銈嗗姂閸ㄥ鍩㈠畝鈧槐鎺撴綇閵娧勫櫘闂佺粯鑹炬晶浠嬪箯閻樼粯鍤戞い鎴ｆ娴滈箖鏌ｉ幋锝呅撻柡?
 
-ucm_cheat_menu.0035 = {
-
-  type = character_event
-
-  title = ucm_cheat_menu.0035.t
-
-  desc = ucm_ui_no_hover_tooltip
-
-  theme = default
-
-
-
-  option = { name = ucm_cheat_menu.0035.book hidden_effect = { scope:actor = { remove_character_flag = ucm_artifact_kind_weapon remove_character_flag = ucm_artifact_kind_armor remove_character_flag = ucm_artifact_kind_crown remove_character_flag = ucm_artifact_kind_regalia remove_character_flag = ucm_artifact_kind_trinket remove_character_flag = ucm_artifact_kind_court add_character_flag = ucm_artifact_kind_book add_character_flag = ucm_artifact_kind_set add_character_flag = ucm_artifact_subtype_set } }}
-
-  option = { name = ucm_cheat_menu.00x.back scope:actor = { trigger_event = ucm_cheat_menu.0030 }}
-
-  option = { name = ucm_cheat_menu.00x.close }
-
-}
-
-
-
 ## 闂傚倷绀侀幉锛勬暜濡も偓閿曘垽宕烽鐘殿槸闂佸搫鍟崐鐢稿磻閹捐埖鍠嗛柛鏇ㄥ幘閻ｅ吋绻濋埛鈧崘鈺佷淮闂佽桨绀佺粔鎾綖濠靛鏁嗗ù锝囨嚀閸擃剟姊?
 
-ucm_cheat_menu.0036 = {
-
-  type = character_event
-
-  title = ucm_cheat_menu.0036.t
-
-  desc = ucm_ui_no_hover_tooltip
-
-  theme = default
-
-
-
-  option = { name = ucm_cheat_menu.0036.common hidden_effect = { scope:actor = { remove_character_flag = ucm_artifact_quality_masterwork remove_character_flag = ucm_artifact_quality_famed remove_character_flag = ucm_artifact_quality_illustrious add_character_flag = ucm_artifact_quality_common add_character_flag = ucm_artifact_quality_set } }}
-
-  option = { name = ucm_cheat_menu.0036.masterwork hidden_effect = { scope:actor = { remove_character_flag = ucm_artifact_quality_common remove_character_flag = ucm_artifact_quality_famed remove_character_flag = ucm_artifact_quality_illustrious add_character_flag = ucm_artifact_quality_masterwork add_character_flag = ucm_artifact_quality_set } }}
-
-  option = { name = ucm_cheat_menu.0036.famed hidden_effect = { scope:actor = { remove_character_flag = ucm_artifact_quality_common remove_character_flag = ucm_artifact_quality_masterwork remove_character_flag = ucm_artifact_quality_illustrious add_character_flag = ucm_artifact_quality_famed add_character_flag = ucm_artifact_quality_set } }}
-
-  option = { name = ucm_cheat_menu.0036.illustrious hidden_effect = { scope:actor = { remove_character_flag = ucm_artifact_quality_common remove_character_flag = ucm_artifact_quality_masterwork remove_character_flag = ucm_artifact_quality_famed add_character_flag = ucm_artifact_quality_illustrious add_character_flag = ucm_artifact_quality_set } }}
-
-
-
-  option = { name = ucm_cheat_menu.00x.back scope:actor = { trigger_event = ucm_cheat_menu.0030 }}
-
-  option = { name = ucm_cheat_menu.00x.close }
-
-}
-
-
-
 ## 闂傚倷绀侀幉锛勬暜濡も偓閿曘垽宕烽鐘殿槸闂佸搫鍟崐鐢稿磻閹捐埖鍠嗛柛鏇ㄥ幘閻ｅ吋绻濋埛鈧崘鈺佷淮闂佽桨绀佺粔鎾綖濠靛绀冮柟缁樺笧缁变即姊绘担鍛婃儓闁绘锕鎼佹嚒閵堝棭娼熷┑鐐叉閹告悂宕ｆ繝鍐︿簻闁哄秲鍔庨。鏌ユ煕鎼粹槄宸ラ棁澶愭煕韫囨稒锛熷ù婧垮灲閺屽秹濡烽敂鍓х厜閻庤娲橀悷銊х不濞戙垹唯鐟滃繘藝?
-
-ucm_cheat_menu.0037 = {
-
-  type = character_event
-
-  title = ucm_cheat_menu.0037.t
-
-  desc = ucm_ui_no_hover_tooltip
-
-  theme = default
-
-
-
-  option = { name = ucm_cheat_menu.0037.no_decay hidden_effect = { scope:actor = { remove_character_flag = ucm_artifact_decay_yes add_character_flag = ucm_artifact_no_decay add_character_flag = ucm_artifact_decay_set } }}
-
-  option = { name = ucm_cheat_menu.0037.decay_yes hidden_effect = { scope:actor = { remove_character_flag = ucm_artifact_no_decay add_character_flag = ucm_artifact_decay_yes add_character_flag = ucm_artifact_decay_set } }}
-
-
-
-  option = { name = ucm_cheat_menu.00x.back scope:actor = { trigger_event = ucm_cheat_menu.0030 }}
-
-  option = { name = ucm_cheat_menu.00x.close }
-
-}
-
-
-
-ucm_cheat_menu.0038 = {
-
-  type = character_event
-
-  title = ucm_cheat_menu.0038.t
-
-  desc = ucm_ui_no_hover_tooltip
-
-  theme = default
-
-
-
-  option = { name = ucm_cheat_menu.0038.court hidden_effect = { scope:actor = { ucm_acm_set_kind_court_effect = yes } }}
-
-  option = { name = ucm_cheat_menu.00x.back scope:actor = { trigger_event = ucm_cheat_menu.0030 }}
-
-  option = { name = ucm_cheat_menu.00x.close }
-
-}
-
-
 
 ## 闂傚倷绀侀幖顐﹀磹缁嬫５娲Χ閸ワ絽浜鹃柛顭戝亞閸欌偓濠碘槅鍋勯崯鎾春閿熺姴纾兼繛鎴炶壘鐢海绱撻崒姘偓鎼佸磹瑜版帗鍋嬮柣鎰仛椤愯姤銇勯幇鍓佺暠闂傚偆鍨遍妵鍕敇閻旈顑傜紓浣瑰姈椤ㄥ﹤顫忓ú顏嶆晝闁靛繆鏅滄晥闂佽瀛╅崫搴ㄥ礉閹存繍鍤曟い鎺戝閻愬﹦鎲稿澶樻晪?
 
@@ -11933,8 +10493,6 @@ ucm_cheat_menu.5000 = {
 
   theme = learning
 
-
-
   option = {
 
     name = ucm_cheat_menu.5000.my_culture
@@ -11944,8 +10502,6 @@ ucm_cheat_menu.5000 = {
     root = { trigger_event = ucm_cheat_menu.5001 }
 
   }
-
-
 
   option = {
 
@@ -11961,8 +10517,6 @@ ucm_cheat_menu.5000 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.5000.back
@@ -11971,13 +10525,9 @@ ucm_cheat_menu.5000 = {
 
   }
 
-
-
   option = { name = ucm_cheat_menu.00x.close }
 
 }
-
-
 
 ## 闂傚倷绀侀幖顐﹀磹缁嬫５娲Χ閸ワ絽浜鹃柛顭戝亞閸欌偓濠碘槅鍋勯崯鎾春閿熺姴纾兼繛鎴炶壘鐢海绱撻崒姘偓鎼佸磹瑜版帗鍋嬮柣鎰仛椤愯姤銇勯幇鍓佺暠闂傚偆鍨遍妵鍕敇閻旈顑傜紓浣瑰姈椤ㄥ懘鍩ユ径鎰閻庢稒锕╁锟犳偡濠婂嫭绶茬紒澶屾嚀閻?
 
@@ -11991,8 +10541,6 @@ ucm_cheat_menu.5001 = {
 
   theme = learning
 
-
-
   option = {
 
     name = ucm_cheat_menu.5001.add_traditions
@@ -12000,8 +10548,6 @@ ucm_cheat_menu.5001 = {
     root = { trigger_event = ucm_cheat_menu.5020 }
 
   }
-
-
 
   option = {
 
@@ -12011,8 +10557,6 @@ ucm_cheat_menu.5001 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.5001.clear_all
@@ -12020,8 +10564,6 @@ ucm_cheat_menu.5001 = {
     root = { trigger_event = ucm_cheat_menu.5040 }
 
   }
-
-
 
   option = {
 
@@ -12031,13 +10573,9 @@ ucm_cheat_menu.5001 = {
 
   }
 
-
-
   option = { name = ucm_cheat_menu.00x.close }
 
 }
-
-
 
 ## 闂傚倷绀侀幖顐﹀磹缁嬫５娲Χ閸ワ絽浜鹃柛顭戝亞閸欌偓闂佸搫鑻幊蹇擃嚗閸曨厸鍋撻敐搴濇喚濞寸姵鎸冲?
 
@@ -12050,8 +10588,6 @@ ucm_cheat_menu.5010 = {
   desc = ucm_cheat_menu.5010.desc
 
   theme = learning
-
-
 
   option = {
 
@@ -12067,13 +10603,9 @@ ucm_cheat_menu.5010 = {
 
   }
 
-
-
   option = { name = ucm_cheat_menu.00x.close }
 
 }
-
-
 
 ## 濠电姷鏁搁崕鎴犵礊閳ь剚銇勯弴鍡楀閸欏繘鏌ｉ幇顔煎妺妞ゃ儱鐗撻弻宥夊传閸曨偀鍋撹ぐ鎺撳亗闁逞屽墴濮婃椽宕楅悡搴殝缂備緡鍠栭懟顖炴偩?
 
@@ -12087,8 +10619,6 @@ ucm_cheat_menu.5020 = {
 
   theme = learning
 
-
-
   option = {
 
     name = ucm_cheat_menu.5020.realm
@@ -12096,8 +10626,6 @@ ucm_cheat_menu.5020 = {
     root = { trigger_event = ucm_cheat_menu.0051 }
 
   }
-
-
 
   option = {
 
@@ -12107,8 +10635,6 @@ ucm_cheat_menu.5020 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.5020.societal
@@ -12116,8 +10642,6 @@ ucm_cheat_menu.5020 = {
     root = { trigger_event = ucm_cheat_menu.0053 }
 
   }
-
-
 
   option = {
 
@@ -12127,8 +10651,6 @@ ucm_cheat_menu.5020 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.5020.regional
@@ -12136,8 +10658,6 @@ ucm_cheat_menu.5020 = {
     root = { trigger_event = ucm_cheat_menu.0055 }
 
   }
-
-
 
   option = {
 
@@ -12147,13 +10667,9 @@ ucm_cheat_menu.5020 = {
 
   }
 
-
-
   option = { name = ucm_cheat_menu.00x.close }
 
 }
-
-
 
 ## 缂傚倸鍊风粈渚€藝椤栫偐鈧箑鐣￠幍铏€洪柟鍏肩暘閸斿秹藟閸儲鐓冮柛婵嗗閳ь剙缍婇幃锟犲焵椤掑嫭鈷戦柛蹇曞帶椤曟粎绱掗鑹板闁?
 
@@ -12167,8 +10683,6 @@ ucm_cheat_menu.5030 = {
 
   theme = learning
 
-
-
   option = {
 
     name = ucm_cheat_menu.5030.realm
@@ -12176,8 +10690,6 @@ ucm_cheat_menu.5030 = {
     root = { trigger_event = ucm_cheat_menu.0051 }
 
   }
-
-
 
   option = {
 
@@ -12187,8 +10699,6 @@ ucm_cheat_menu.5030 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.5030.societal
@@ -12196,8 +10706,6 @@ ucm_cheat_menu.5030 = {
     root = { trigger_event = ucm_cheat_menu.0053 }
 
   }
-
-
 
   option = {
 
@@ -12207,8 +10715,6 @@ ucm_cheat_menu.5030 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.5030.regional
@@ -12216,8 +10722,6 @@ ucm_cheat_menu.5030 = {
     root = { trigger_event = ucm_cheat_menu.0055 }
 
   }
-
-
 
   option = {
 
@@ -12227,13 +10731,9 @@ ucm_cheat_menu.5030 = {
 
   }
 
-
-
   option = { name = ucm_cheat_menu.00x.close }
 
 }
-
-
 
 ## 濠电姷鏁搁崑鐐哄箰閹间礁绠犳俊顖濄€€閺嬪秹骞栧ǎ顒€濡肩紒鐘劦閺屽秷顧侀柛鎾跺枎椤曪綁宕归銏㈢獮闂佸綊鍋婇崢鍝勵潩閿曞倹鈷?
 
@@ -12246,8 +10746,6 @@ ucm_cheat_menu.5040 = {
   desc = ucm_cheat_menu.5040.desc
 
   theme = learning
-
-
 
   option = {
 
@@ -12287,8 +10785,6 @@ ucm_cheat_menu.5040 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.5040.back
@@ -12297,13 +10793,9 @@ ucm_cheat_menu.5040 = {
 
   }
 
-
-
   option = { name = ucm_cheat_menu.00x.close }
 
 }
-
-
 
 ucm_cheat_menu.0190 = {
 
@@ -12315,11 +10807,7 @@ ucm_cheat_menu.0190 = {
 
   theme = love
 
-
-
   right_portrait = scope:ucm_force_betrothal_recipient
-
-
 
   option = {
 
@@ -12471,8 +10959,6 @@ ucm_cheat_menu.0190 = {
     }
 
   }
-
-
 
   option = {
 
@@ -12626,13 +11112,9 @@ ucm_cheat_menu.0190 = {
 
   }
 
-
-
   option = { name = ucm_cheat_menu.00x.close }
 
 }
-
-
 
 ## 闂傚倷绀侀幖顐﹀磹缁嬫５娲Χ閸ワ絽浜惧ù锝呭暙閻ㄨ櫣绱掓潏銊﹀磳鐎殿喕绮欓、妤呭磼濮橀硸浼栨繝鐢靛仦閸ㄥ爼骞愮拠鍙傦綁骞掗弴妯规睏閻庡箍鍎遍ˇ顖滄兜閳ь剟姊洪崫鍕ォ濞存粎鍋熺划鍫ュ礋椤愨偓瑜版帗鍋愰柤纰卞墮閸ゎ剙鈹戦鏂ゅ叕闂傚嫬瀚划瀣吋婢跺﹦顔婇梺鐟扮摠缁诲倸效閺屻儲鈷戦柛娑橈功閹虫洜绱撳浣镐壕缂傚倷鑳剁划顖炴晝閵忕姷鏆︽俊銈呮噹鍞銈嗙墬缁酣藝?
 
@@ -12654,8 +11136,6 @@ ucm_cheat_menu.2900 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.2900.select_culture
@@ -12663,8 +11143,6 @@ ucm_cheat_menu.2900 = {
     ucm_open_acm_culture_picker_effect = yes
 
   }
-
-
 
   option = {
 
@@ -12676,8 +11154,6 @@ ucm_cheat_menu.2900 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.2900.edit_martial
@@ -12687,8 +11163,6 @@ ucm_cheat_menu.2900 = {
     trigger_event = { id = ucm_cheat_menu.2730 days = 0 }
 
   }
-
-
 
   option = {
 
@@ -12700,8 +11174,6 @@ ucm_cheat_menu.2900 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.2900.edit_language
@@ -12712,8 +11184,6 @@ ucm_cheat_menu.2900 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.2900.edit_heritage
@@ -12723,8 +11193,6 @@ ucm_cheat_menu.2900 = {
     trigger_event = { id = ucm_cheat_menu.2680 days = 0 }
 
   }
-
-
 
   option = {
 
@@ -12738,8 +11206,6 @@ ucm_cheat_menu.2900 = {
 
   }
 
-
-
   option = {
 
     name = ucm_cheat_menu.2900.back_select
@@ -12747,8 +11213,6 @@ ucm_cheat_menu.2900 = {
     ucm_open_acm_culture_picker_effect = yes
 
   }
-
-
 
   option = { name = ucm_cheat_menu.00x.close }
 

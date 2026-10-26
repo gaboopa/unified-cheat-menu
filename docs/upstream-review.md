@@ -66,7 +66,6 @@ Severity: **Critical** changes the game for everyone or is broken in a way playe
 | `gui/interaction_menu_window.gui` | Height and fold quality-of-life code from another mod, plus an override of `flowcontainer_category_group` | Re-copy vanilla and keep only the `CanCustomizePortrait` line |
 | `zzzzzzzz_0toc_deb_int.txt` | 10 vanilla debug interactions as pre-1.18 copies (`is_landed`, no landless handling) | Delete those 10 blocks |
 | `99_ucm_interactions_modified.txt` | 47 vanilla debug interactions, 6 of them stale (artifact options, `rite`, `?=` lost) | Delete, or generate from vanilla each patch |
-| `music/main_themes/music.txt` | Replaces the vanilla file to add one track | Rename to `ucm_music.txt` |
 | `localization/simp_chinese/fully_consolidated_l_simp_chinese.yml:738–1302` | A full copy of vanilla `debug_l` (546 keys) | Delete that section; `replace/` already has the changed keys |
 
 ### Content shown to everyone

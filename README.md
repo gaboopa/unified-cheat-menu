@@ -64,8 +64,6 @@ The game-data generators take `--game-dir <CK3>/game` (or `CK3_GAME_DIR`); rerun
 - `gui/ucm_main_menu.gui`, `gui/scripted_widgets/ucm_scripted_widgets.txt`
 - `localization/*/ucm_l_*.yml` and `localization/replace/*`
 
-`music/skonegold.ogg` (the alternate main-menu theme) comes from Skonester Cheat Menu Gold with no recorded source or license; it is not covered by the CC BY 4.0 grant until that is known.
-
 ## Releasing
 
 `git archive --format=zip HEAD -o release.zip` gives a clean mod folder; `.gitattributes` marks docs, tools and repo files `export-ignore`.

@@ -377,7 +377,6 @@ lifestyle_martial_present_no_effect = {
 	remove_character_modifier = no_lifestyle_martial
 }
 
-
 lifestyle_diplomacy_present_no_effect = {
 	if = { limit = { has_perk = thoughtful_perk } remove_perk = thoughtful_perk }
 	if = { limit = { has_perk = ducal_conquest_perk } remove_perk = ducal_conquest_perk }
@@ -754,20 +753,3 @@ remove_education_traits_effect = {
 	if = { limit = { has_trait = education_martial_4 } remove_trait = education_martial_4 }
 	if = { limit = { has_trait = education_martial_5 } remove_trait = education_martial_5 }
 }
-
-innovation_tribal_regional_effect = {
-	innovation_tribal_effect = yes
-}
-
-innovation_early_medival_regional_effect = {
-	innovation_early_medival_effect = yes
-}
-
-innovation_high_medival_regional_effect = {
-	innovation_high_medival_effect = yes
-}
-
-innovation_late_medival_regional_effect = {
-	innovation_late_medival_effect = yes
-}
-

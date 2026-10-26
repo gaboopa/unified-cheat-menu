@@ -40,22 +40,11 @@
 
  # --- Modifikatoren ---
  toc_diplomaticrange_modifier:1 "Erweiterte diplomatische Reichweite"
- toc_diplomaticrange_modifier_desc:1 "Der Einfluss dieses Herrschers reicht weit über die Grenzen seines Reiches hinaus."
 
- toc_exoticcourtbonus:1 "Exotischer Hof"
- toc_exoticcourtbonus_desc:1 "Dieser Hof zieht Besucher aus fernen Ländern an und genießt dadurch besonderes Ansehen und eine geheimnisvolle Ausstrahlung."
 
- toc_fertile_modifier:1 "Gesegnete Fruchtbarkeit"
- toc_fertile_modifier_desc:1 "Diese Person ist außergewöhnlich fruchtbar und wird vermutlich viele Erben hervorbringen."
 
- toc_dreadful_modifier:1 "Furchterregender Ruf"
- toc_dreadful_modifier_desc:1 "Der Name dieses Herrschers erfüllt das gesamte Reich mit Angst."
 
- toc_notyranny_modifier:1 "Gerechte Herrschaft"
- toc_notyranny_modifier_desc:1 "Dieser Herrscher regiert, ohne zur Tyrannei zu greifen."
 
- toc_superknights_modifier:1 "Elite-Ritter"
- toc_superknights_modifier_desc:1 "Dieser Herrscher befehligt Ritter von außergewöhnlichem Können und großem Ruhm."
 
  toc_uncelibate_interaction:1 "Zölibat aufheben"
 

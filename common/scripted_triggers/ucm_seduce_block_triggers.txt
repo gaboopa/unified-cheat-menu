@@ -13,49 +13,6 @@ ucm_seduce_shield_active_for_target_trigger = {
   }
 }
 
-# 与上同义，便于在 fidelity 日更里与旧名并存
-ucm_is_seduce_protected_consort_of_human_player_trigger = {
-  ucm_seduce_shield_active_for_target_trigger = yes
-}
-
-# 家眷作为勾引目标、且出密谋者非其配偶/非其妾主：拦截（含所有 AI 与人类，除非家主/配偶本人对家眷）
-ucm_seduce_scheme_blocked_on_player_consort_trigger = {
-  AND = {
-    scope:target = {
-      ucm_seduce_shield_active_for_target_trigger = yes
-    }
-    scope:owner = {
-      NOR = {
-        is_spouse_of = scope:target
-        AND = {
-          scope:target = { is_concubine = yes }
-          this = scope:target.concubinist
-        }
-      }
-    }
-  }
-}
-
-# 家眷本人发动勾引：出向拦截（除对家主本人）
-# 出密谋者 = 家眷 且 家眷在护持覆盖下
-ucm_seduce_owner_under_spouse_shield_patron_trigger = {
-  scope:owner = { ucm_seduce_shield_active_for_target_trigger = yes }
-}
-
-ucm_seduce_scheme_blocked_outgoing_for_shielded_consort_trigger = {
-  AND = {
-    ucm_seduce_owner_under_spouse_shield_patron_trigger = yes
-    NOR = {
-      scope:owner = {
-        is_spouse_of = scope:target
-      }
-      scope:owner = {
-        is_concubine_of = scope:target
-      }
-    }
-  }
-}
-
 # 日度清理入向/出向密谋：以家眷为 root
 ucm_fidelity_ward_is_shielded_harem_of_patron_trigger = {
   ucm_seduce_shield_active_for_target_trigger = yes
@@ -66,13 +23,5 @@ ucm_seduce_shield_global_ai_rules_active_trigger = {
   any_player = {
     is_ai = no
     has_character_flag = ucm_seduce_shield_active
-  }
-}
-
-# 密谋 scope：AI 拥有者在全局规则下禁止发动勾引/求爱/私奔类密谋
-ucm_ai_romantic_scheme_forbidden_by_shield_rules_trigger = {
-  AND = {
-    ucm_seduce_shield_global_ai_rules_active_trigger = yes
-    scope:owner = { is_ai = yes }
   }
 }

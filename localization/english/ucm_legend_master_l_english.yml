@@ -97,7 +97,3 @@
  ucm_legend_master_spread_cheat_modifier_desc: "Greatly increases legend spread speed. Compatible with older game versions."
  legend_spread_debug_modifier: "Legend Spread · Debug"
  legend_spread_debug_modifier_desc: "Debug modifier: Extremely fast legend propagation."
- ucm_legend_spread_barony_modifier: "Legend Spread · Barony"
- ucm_legend_spread_barony_modifier_desc: "Grants bonuses to development growth, opinion and levy size within this barony."
- ucm_legend_spread_county_modifier: "Legend Spread · County"
- ucm_legend_spread_county_modifier_desc: "Grants bonuses to development growth, opinion and levy size within this county (Legacy Effect)."

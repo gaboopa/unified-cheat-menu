@@ -86,7 +86,3 @@
  ucm_legend_master_spread_cheat_modifier_desc: "名下传奇传播速度极大提升（旧版兼容）。"
  legend_spread_debug_modifier: "传奇传播·调试加速"
  legend_spread_debug_modifier_desc: "原版调试修正，传播速度大幅提升。"
- ucm_legend_spread_barony_modifier: "传奇传播·郡县增益"
- ucm_legend_spread_barony_modifier_desc: "传奇传播至该伯爵领：发展度增长、好感与征召规模提升。"
- ucm_legend_spread_county_modifier: "传奇传播·伯爵领增益"
- ucm_legend_spread_county_modifier_desc: "传奇传播至该伯爵领：发展度增长、好感与征召规模提升（旧版）。"

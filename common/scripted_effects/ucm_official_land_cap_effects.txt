@@ -710,35 +710,11 @@ ucm_enforce_official_land_cap_bounded_effect = {
   }
 }
 
-ucm_land_cap_send_start_toast_effect = {
-  send_interface_toast = {
-    type = event_toast_effect_neutral
-    title = ucm_land_cap_batch_start_toast_title
-    desc = ucm_land_cap_batch_start_toast_desc
-  }
-}
-
 ucm_land_cap_send_complete_toast_effect = {
   send_interface_toast = {
     type = event_toast_effect_good
     title = ucm_land_cap_batch_complete_toast_title
     desc = ucm_land_cap_batch_complete_toast_desc
-  }
-}
-
-ucm_land_cap_batch_build_official_queue_effect = {
-  clear_variable_list = ucm_land_cap_official_queue
-  every_vassal_or_below = {
-    limit = {
-      ucm_official_needs_land_cap_enforcement_trigger = yes
-    }
-    save_scope_as = ucm_land_cap_queue_official
-    root = {
-      add_to_variable_list = {
-        name = ucm_land_cap_official_queue
-        target = scope:ucm_land_cap_queue_official
-      }
-    }
   }
 }
 
@@ -796,21 +772,6 @@ ucm_land_cap_batch_step_effect = {
       }
     }
     clear_saved_scope = ucm_land_cap_queue_official
-  }
-}
-
-ucm_land_cap_batch_start_effect = {
-  root = {
-    if = {
-      limit = {
-        has_character_flag = ucm_land_cap_batch_active
-      }
-      ucm_land_cap_batch_finish_effect = yes
-    }
-    add_character_flag = ucm_land_cap_batch_active
-    ucm_land_cap_batch_build_official_queue_effect = yes
-    ucm_land_cap_send_start_toast_effect = yes
-    trigger_event = { id = ucm_officials.9140 days = 0 }
   }
 }
 

@@ -41,16 +41,3 @@ ucm_positions_mass_reshuffle_court_only_liege_effect = {
     ucm_positions_appoint_all_named_court_positions_strict_loose_spawn_effect = yes
   }
 }
-
-# 自动任免单次 tick（仅测试事件调用）
-ucm_auto_court_positions_15day_tick_effect = {
-  scope:ucm_pos_reshuffle_liege = {
-    ucm_positions_fill_all_named_court_vacancies_best_effect = yes
-    ucm_positions_upgrade_all_named_court_positions_if_better_effect = yes
-  }
-}
-
-ucm_cheat_menu_open_court_positions_menu_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  scope:actor = { trigger_event = ucm_court_positions.8001 }
-}

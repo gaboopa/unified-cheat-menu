@@ -14,16 +14,6 @@ ucm_positions_loose_court_appointment_candidate_for_reshuffle_trigger = {
   NOT = { this = scope:ucm_pos_reshuffle_liege }
 }
 
-# 一键任免：领主直属封臣，可作内阁或（宽松）宫廷职二选路径的封臣候选
-ucm_positions_council_reshuffle_vassal_candidate_trigger = {
-  is_adult = yes
-  is_imprisoned = no
-  NOT = { is_incapable = yes }
-  NOT = { this = scope:ucm_pos_reshuffle_liege }
-  NOT = { is_councillor_of = scope:ucm_pos_reshuffle_liege }
-  is_vassal_of = scope:ucm_pos_reshuffle_liege
-}
-
 # 宫廷职封臣候选：在 loose 廷臣规则上要求为领主直属封臣
 ucm_positions_court_reshuffle_vassal_loose_candidate_trigger = {
   ucm_positions_loose_court_appointment_candidate_for_reshuffle_trigger = yes

@@ -8,8 +8,6 @@ ucm_legend_spread_speed_fast_modifier = {
 
 }
 
-
-
 ucm_legend_spread_speed_very_fast_modifier = {
 
   icon = legend_positive
@@ -18,8 +16,6 @@ ucm_legend_spread_speed_very_fast_modifier = {
 
 }
 
-
-
 ucm_legend_spread_speed_instant_modifier = {
 
   icon = legend_positive
@@ -27,8 +23,6 @@ ucm_legend_spread_speed_instant_modifier = {
   owned_legend_spread_mult = 50
 
 }
-
-
 
 # 旧版兼容：清除传奇时一并移除
 
@@ -40,33 +34,4 @@ ucm_legend_master_spread_cheat_modifier = {
 
 }
 
-
-
-ucm_legend_spread_barony_modifier = {
-
-  icon = county_modifier_development_positive
-
-  development_growth = 0.5
-
-  county_opinion_add = 10
-
-  levy_size = 0.05
-
-}
-
-
-
 # 旧版伯爵领传播（清除传奇时一并移除）
-
-ucm_legend_spread_county_modifier = {
-
-  icon = county_modifier_development_positive
-
-  development_growth = 0.5
-
-  county_opinion_add = 10
-
-  levy_size = 0.05
-
-}
-

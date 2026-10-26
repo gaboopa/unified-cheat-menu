@@ -56,27 +56,3 @@ ucm_steal_after_pick_effect = {
     }
   }
 }
-
-# 从 scope:recipient 随机取一件宝物转给 scope:actor（历史为被盗）。须对方仍有宝物，否则勿调用。
-ucm_steal_transfer_one_random_to_actor_effect = {
-  scope:recipient = {
-    if = {
-      limit = {
-        has_any_artifact = yes
-      }
-      random_character_artifact = {
-        set_owner = scope:actor
-      }
-    }
-  }
-}
-
-# 将 scope:recipient 持有的全部宝物转给 scope:actor（同上）。
-ucm_steal_transfer_all_to_actor_effect = {
-  scope:recipient = {
-    every_character_artifact = {
-      set_owner = scope:actor
-    }
-  }
-}
-

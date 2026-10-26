@@ -130,36 +130,3 @@ ucm_seduce_shield_enforce_global_ai_fidelity_rules_effect = {
     }
   }
 }
-
-ucm_open_learn_official_secrets_interaction_effect = {
-  if = {
-    limit = {
-      any_vassal = {
-        this != root
-        top_liege = root
-        ucm_realm_landed_patronage_recipient_trigger = yes
-        any_secret = {
-          NOT = { is_known_by = root }
-        }
-      }
-    }
-    ordered_vassal = {
-      order_by = prestige
-      max = 1
-      limit = {
-        this != root
-        top_liege = root
-        ucm_realm_landed_patronage_recipient_trigger = yes
-        any_secret = {
-          NOT = { is_known_by = root }
-        }
-      }
-      save_scope_as = ucm_interaction_pick
-    }
-    open_interaction_window = {
-      interaction = ucm_learn_official_secrets_interaction
-      actor = root
-      recipient = scope:ucm_interaction_pick
-    }
-  }
-}

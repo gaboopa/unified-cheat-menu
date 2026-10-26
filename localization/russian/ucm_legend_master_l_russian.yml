@@ -86,7 +86,3 @@
  ucm_legend_master_spread_cheat_modifier_desc: "Значительное ускорение распространения легенд (совместимо со старыми версиями)."
  legend_spread_debug_modifier: "Отладка: распространение легенд"
  legend_spread_debug_modifier_desc: "Отладочный модификатор: сверхбыстрое распространение легенд."
- ucm_legend_spread_barony_modifier: "Легенда в баронстве"
- ucm_legend_spread_barony_modifier_desc: "Легенда распространилась по баронству: бонусы к развитию, отношениям и размеру сборов."
- ucm_legend_spread_county_modifier: "Легенда в графстве"
- ucm_legend_spread_county_modifier_desc: "Легенда распространилась по графству: бонусы к развитию, отношениям и размеру сборов (действует наследие)."

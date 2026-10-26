@@ -39,22 +39,11 @@
 
  # --- Modifiers ---
  toc_diplomaticrange_modifier:1 "Расширенная дипломатическая дистанция"
- toc_diplomaticrange_modifier_desc:1 "Влияние этого правителя простирается далеко за пределы его границ."
 
- toc_exoticcourtbonus:1 "Экзотический двор"
- toc_exoticcourtbonus_desc:1 "Этот двор привлекает гостей из далеких земель, придавая ему атмосферу престижа и интриг."
 
- toc_fertile_modifier:1 "Благословенная плодовитость"
- toc_fertile_modifier_desc:1 "Этот персонаж необычайно плодовит и, вероятно, произведет на свет множество наследников."
 
- toc_dreadful_modifier:1 "Ужасающая репутация"
- toc_dreadful_modifier_desc:1 "Имя этого правителя внушает страх всему государству."
 
- toc_notyranny_modifier:1 "Справедливое правление"
- toc_notyranny_modifier_desc:1 "Этот правитель правит, не прибегая к тирании."
 
- toc_superknights_modifier:1 "Элитные рыцари"
- toc_superknights_modifier_desc:1 "Под командованием этого правителя находятся рыцари исключительного мастерства и славы."
  
  toc_uncelibate_interaction:1 "Отказ от целибата"
 

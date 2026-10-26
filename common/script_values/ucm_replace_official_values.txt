@@ -41,12 +41,3 @@ ucm_replace_official_pick_sort_value = {
 }
 
 # 无地超高属性池：纯五维+勇武排序（取前 50 用）
-
-ucm_replace_official_landless_pick_sort_value = {
-  value = 0
-  add = diplomacy
-  add = stewardship
-  add = learning
-  add = martial
-  add = prowess
-}

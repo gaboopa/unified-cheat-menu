@@ -10,8 +10,6 @@
  ucm_gc_macro_asia: "Asia (India, Southeast Asia, East Asia, Tibetan Plateau)"
  ucm_gc_macro_other: "Other / Uncategorised Heritages"
  ucm_cheat_menu.1420.browse_all_flat: "Full Culture List (by ID). Each entry: Name — Modify → Open vanilla culture panel."
- ucm_cheat_menu.1900.t: "Culture Innovations (All Cultures)"
- ucm_cheat_menu.1900.desc: "Each entry: Name — Modify. Opens the vanilla culture interface; changes take effect immediately in-game."
  ucm_cheat_menu.1420.desc: "(Page 1) Full alphabetical heritage list. Select a heritage, then a culture, or return to region view."
  ucm_cheat_menu.1421.desc: "(Page 2) Full alphabetical heritage list. Select a heritage, then a culture, or return to region view."
  ucm_cheat_menu.1422.desc: "(Page 3) Full alphabetical heritage list. Select a heritage, then a culture, or return to region view."

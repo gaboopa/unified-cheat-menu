@@ -72,28 +72,6 @@ ucm_court_mgmt_prepare_dismiss_courtier_effect = {
   }
 }
 
-ucm_court_mgmt_purge_one_pass_effect = {
-  root = {
-    if = {
-      limit = {
-        any_courtier = {
-          ucm_court_mgmt_purge_candidate_trigger = yes
-        }
-      }
-      ordered_courtier = {
-        limit = {
-          ucm_court_mgmt_purge_candidate_trigger = yes
-        }
-        order_by = ucm_court_mgmt_purge_priority_value
-        max = 1
-        check_range_bounds = no
-        ucm_court_mgmt_prepare_dismiss_courtier_effect = yes
-      }
-    }
-  }
-  ucm_court_mgmt_recount_court_size_effect = yes
-}
-
 # 手動整頓用：單輪移出至多 500 名符合 purge_candidate 的廷臣（優先序同 purge_one_pass）；由 run_effect 外層 while 重複直至無人可遣。
 ucm_court_mgmt_purge_all_candidates_effect = {
   root = {
@@ -111,33 +89,6 @@ ucm_court_mgmt_purge_all_candidates_effect = {
         max = 500
         check_range_bounds = no
         ucm_court_mgmt_prepare_dismiss_courtier_effect = yes
-      }
-    }
-  }
-  ucm_court_mgmt_recount_court_size_effect = yes
-}
-
-# 自動遣散用：與 purge_one_pass 相同，但每成功遣散 1 人為 root 的 ucm_court_mgmt_auto_dismissed_today +1
-ucm_court_mgmt_purge_one_pass_and_tally_effect = {
-  root = {
-    if = {
-      limit = {
-        any_courtier = {
-          ucm_court_mgmt_purge_candidate_trigger = yes
-        }
-      }
-      ordered_courtier = {
-        limit = {
-          ucm_court_mgmt_purge_candidate_trigger = yes
-        }
-        order_by = ucm_court_mgmt_purge_priority_value
-        max = 1
-        check_range_bounds = no
-        ucm_court_mgmt_prepare_dismiss_courtier_effect = yes
-      }
-      change_variable = {
-        name = ucm_court_mgmt_auto_dismissed_today
-        add = 1
       }
     }
   }
@@ -321,57 +272,6 @@ ucm_court_mgmt_recruit_one_effect = {
   }
   root = {
     clear_variable_list = ucm_court_mgmt_recruit_pool
-  }
-}
-
-# 自動模式：每日執行；清退不合格廷臣（規則與手動整頓相同），不發介面消息；遣散幾人即按相同次數執行招募（與手動「廷臣整頓」同一套招募／生成邏輯）。
-ucm_court_mgmt_auto_daily_purge_effect = {
-  root = {
-    set_variable = {
-      name = ucm_court_mgmt_auto_dismissed_today
-      value = 0
-    }
-  }
-  ucm_court_mgmt_recount_court_size_effect = yes
-  while = {
-    count = 40
-    limit = {
-      root = {
-        any_courtier = {
-          ucm_court_mgmt_purge_candidate_trigger = yes
-        }
-      }
-    }
-    ucm_court_mgmt_purge_one_pass_and_tally_effect = yes
-  }
-  while = {
-    count = 40
-    limit = {
-      root = {
-        var:ucm_court_mgmt_auto_dismissed_today > 0
-      }
-    }
-    ucm_court_mgmt_recruit_one_effect = yes
-    root = {
-      change_variable = {
-        name = ucm_court_mgmt_auto_dismissed_today
-        add = -1
-      }
-    }
-  }
-  root = {
-    if = {
-      limit = {
-        has_variable = ucm_court_mgmt_auto_dismissed_today
-      }
-      remove_variable = ucm_court_mgmt_auto_dismissed_today
-    }
-    if = {
-      limit = {
-        has_variable = ucm_court_n
-      }
-      remove_variable = ucm_court_n
-    }
   }
 }
 

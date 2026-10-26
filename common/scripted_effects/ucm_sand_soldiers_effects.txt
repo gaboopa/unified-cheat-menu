@@ -226,7 +226,3 @@ ucm_sand_spawn_current_effect = {
     }
   }
 }
-
-ucm_sand_raise_levies_effect = {
-  ucm_cheat_menu_raise_all_levies_effect = yes
-}

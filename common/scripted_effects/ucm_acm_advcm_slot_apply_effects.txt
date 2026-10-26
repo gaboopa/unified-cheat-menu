@@ -105,27 +105,6 @@ ucm_acm_modifier_inject_m5 = {
   }
 }
 
-ucm_acm_modifier_inject_m6 = {
-  if = {
-    limit = {
-      scope:ucm_acm_craft_creator = { var:ucm_craft_m6_cnt < 0 }
-    }
-    while = {
-      count = {
-        value = scope:ucm_acm_craft_creator.var:ucm_craft_m6_cnt
-        multiply = -1
-      }
-      add_artifact_modifier = $MODIFIER$_neg_1
-    }
-  }
-  else = {
-    while = {
-      count = scope:ucm_acm_craft_creator.var:ucm_craft_m6_cnt
-      add_artifact_modifier = $MODIFIER$_1
-    }
-  }
-}
-
 # advcm #2752613114 — slot 1 type → ucm_acm_modifier_inject_m1
 ucm_acm_add_artifact_modifier_slot_1 = {
   if = {

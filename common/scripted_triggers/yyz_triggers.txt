@@ -13,16 +13,6 @@ is_eligible_to_pull = {
   }
 }
 
-is_male_or_unattached_female = {
-  OR = {                                                     # either male or not married/concubine
-    is_female = no                           
-    AND = {
-      is_married = no                                        # not married
-      is_concubine = no                                      # not consort
-    }
-  }
-}
-
 passes_sexFilter = {
   OR = {
     AND = { NOT = { root.var:yyz_filterSex = FILTER_SEX_MALE }    is_female = yes }  # females
@@ -396,4 +386,3 @@ passes_retinueRoleFilter = {
     OR = { root.var:yyz_modeRetinueRole_house_paragon = 0                              can_be_house_paragon = yes }
   }
 }
-

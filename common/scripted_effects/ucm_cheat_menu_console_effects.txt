@@ -5,9 +5,3 @@ ucm_cheat_menu_open_console_helper_effect = {
     add_character_flag = ucm_console_helper_open
   }
 }
-
-ucm_cheat_menu_close_console_helper_effect = {
-  scope:actor = {
-    remove_character_flag = ucm_console_helper_open
-  }
-}

@@ -1,29 +1,5 @@
 ﻿# 获得头衔：将 scope:ucm_title_xfer_title 从 scope:ucm_title_xfer_holder 转给 scope:ucm_title_xfer_actor（须先 save_scope）
 
-# 获得头衔：仅本功能临时拉高直辖上限（打开窗 + 确认 + 转移前各刷一次，超上限仍可夺取）
-ucm_get_title_apply_domain_cap_bypass_effect = {
-  add_character_modifier = {
-    modifier = ucm_edit_res_domain_unlimited
-    days = 1
-  }
-}
-
-# 获得头衔：interaction 确认窗内选中的 target_titles 列表
-ucm_cheat_menu_get_primary_title_from_target_titles_effect = {
-  scope:actor = {
-    save_scope_as = ucm_title_xfer_actor
-    ucm_get_title_apply_domain_cap_bypass_effect = yes
-  }
-  every_in_list = {
-    list = target_titles
-    save_scope_as = ucm_title_xfer_title
-    holder = {
-      save_scope_as = ucm_title_xfer_holder
-    }
-    ucm_cheat_menu_transfer_one_held_title_to_actor_effect = yes
-  }
-}
-
 ucm_cheat_menu_transfer_one_held_title_to_actor_effect = {
   scope:ucm_title_xfer_actor = {
     create_title_and_vassal_change = {

@@ -1,17 +1,4 @@
-﻿cheateb_keep_modifier = {
-	icon = health_positive
-	men_at_arms_cap = 0
-	men_at_arms_limit = 0
-	domain_limit = 0
-	monthly_county_control_growth_add = 10
-	monthly_tyranny = 0
-
-	
-
-	supply_capacity_add = 300
-	supply_duration = 1
-}
-
+﻿
 cheateb_stat7_modifier = {
 	icon = learning_positive
 	prowess = 15

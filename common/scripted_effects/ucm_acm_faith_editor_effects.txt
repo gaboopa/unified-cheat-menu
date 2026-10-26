@@ -19,41 +19,6 @@ ucm_acm_faith_clear_pick_category_flags_effect = {
   remove_character_flag = ucm_acm_faith_pick_cat_clergy
 }
 
-ucm_acm_faith_open_doctrine_picker_with_catalog_effect = {
-  ucm_acm_faith_populate_doctrine_catalog_effect = yes
-  add_character_flag = ucm_acm_faith_doctrine_picker_open
-}
-
-ucm_acm_faith_pick_open_core_tenets_effect = {
-  ucm_acm_faith_clear_pick_category_flags_effect = yes
-  add_character_flag = ucm_acm_faith_pick_cat_core_tenets
-  ucm_acm_faith_open_doctrine_picker_with_catalog_effect = yes
-}
-
-ucm_acm_faith_pick_open_main_group_effect = {
-  ucm_acm_faith_clear_pick_category_flags_effect = yes
-  add_character_flag = ucm_acm_faith_pick_cat_main_group
-  ucm_acm_faith_open_doctrine_picker_with_catalog_effect = yes
-}
-
-ucm_acm_faith_pick_open_marriage_effect = {
-  ucm_acm_faith_clear_pick_category_flags_effect = yes
-  add_character_flag = ucm_acm_faith_pick_cat_marriage
-  ucm_acm_faith_open_doctrine_picker_with_catalog_effect = yes
-}
-
-ucm_acm_faith_pick_open_crimes_effect = {
-  ucm_acm_faith_clear_pick_category_flags_effect = yes
-  add_character_flag = ucm_acm_faith_pick_cat_crimes
-  ucm_acm_faith_open_doctrine_picker_with_catalog_effect = yes
-}
-
-ucm_acm_faith_pick_open_clergy_effect = {
-  ucm_acm_faith_clear_pick_category_flags_effect = yes
-  add_character_flag = ucm_acm_faith_pick_cat_clergy
-  ucm_acm_faith_open_doctrine_picker_with_catalog_effect = yes
-}
-
 ucm_open_acm_faith_editor_effect = {
   remove_character_flag = ucm_acm_faith_gui_locked
   remove_character_flag = ucm_acm_faith_pick_sidebar_open
@@ -140,15 +105,6 @@ ucm_close_acm_faith_doctrine_picker_effect = {
   remove_character_flag = ucm_acm_faith_doctrine_picker_open
   ucm_acm_faith_clear_pick_category_flags_effect = yes
   remove_character_flag = ucm_acm_faith_pick_sidebar_open
-}
-
-# 新开局/读档：清宗教编辑与撒豆成兵挂起，避免 scripted_widget 误显
-# 左下角打开原版宗教详情前：确保未处于编辑模式（仅查看，不挂编辑 UI）
-ucm_acm_faith_view_only_safety_effect = {
-  remove_character_flag = ucm_acm_faith_editor_open
-  remove_character_flag = ucm_acm_faith_doctrine_picker_open
-  remove_character_flag = ucm_acm_faith_pick_sidebar_open
-  ucm_acm_faith_clear_pick_category_flags_effect = yes
 }
 
 ucm_acm_gui_startup_cleanup_effect = {

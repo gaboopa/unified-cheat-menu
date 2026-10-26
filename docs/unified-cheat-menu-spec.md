@@ -650,7 +650,7 @@ Provide:
 - Edit clergy doctrines.
 - Edit religious-head settings.
 - Select sins and virtues (the game keeps at most `MAX_VIRTUES_SINS = 7`, chosen from core and approved tenets).
-- Preserve Skonester's empty-tenet-slot fill and cleanup tools (`ucm_acm_faith_fill_empty_tenet_slots_effect`, `ucm_acm_faith_clear_empty_tenet_slots_effect`).
+- ~~Preserve Skonester's empty-tenet-slot fill and cleanup tools~~ Dropped in Phase 11: nothing in Skonester or this mod ever called them.
 
 **Unverified: extra core tenets.** There's no slot-adding effect or define, but `add_rite_tenet` documents no limit. Whether a rite can hold more core tenets than usual has to be tested in game. Treat it as experimental until then.
 

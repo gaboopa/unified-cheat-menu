@@ -72,42 +72,6 @@ ucm_replace_official_resolve_regrant_title_change_effect = {
   }
 }
 
-ucm_replace_official_begin_regrant_land_cap_change_effect = {
-  if = {
-    limit = { exists = scope:ucm_ro_regrant_authority }
-    scope:ucm_ro_regrant_authority = {
-      create_title_and_vassal_change = {
-        type = granted
-        save_scope_as = ucm_land_cap_change
-        add_claim_on_loss = no
-      }
-    }
-  }
-  else = {
-    scope:ucm_ro_granter = {
-      create_title_and_vassal_change = {
-        type = granted
-        save_scope_as = ucm_land_cap_change
-        add_claim_on_loss = no
-      }
-    }
-  }
-}
-
-ucm_replace_official_resolve_regrant_land_cap_change_effect = {
-  if = {
-    limit = { exists = scope:ucm_ro_regrant_authority }
-    scope:ucm_ro_regrant_authority = {
-      resolve_title_and_vassal_change = scope:ucm_land_cap_change
-    }
-  }
-  else = {
-    scope:ucm_ro_granter = {
-      resolve_title_and_vassal_change = scope:ucm_land_cap_change
-    }
-  }
-}
-
 ucm_replace_official_apply_one_title_grant_effect = {
   if = {
     limit = {
@@ -849,95 +813,6 @@ ucm_replace_official_clear_county_snapshot_effect = {
   }
 }
 
-# 引擎误挂到新官的旧官直辖郡（非指定交接郡）先还旧官，勿随机转封致销毁
-ucm_replace_official_restore_victim_personal_counties_on_replacement_effect = {
-  if = {
-    limit = {
-      exists = scope:ucm_ro_evt_victim
-      exists = scope:ucm_ro_replacement
-      exists = scope:ucm_ro_granter
-      scope:ucm_ro_granter = {
-        has_variable_list = ucm_ro_county_snapshot_list
-        variable_list_size = {
-          name = ucm_ro_county_snapshot_list
-          value > 0
-        }
-      }
-    }
-    scope:ucm_ro_granter = {
-      every_in_list = {
-        variable = ucm_ro_county_snapshot_list
-        limit = {
-          tier = tier_county
-          has_variable = ucm_ro_snap_holder
-          exists = var:ucm_ro_snap_holder
-          exists = holder
-          var:ucm_ro_snap_holder = scope:ucm_ro_evt_victim
-          holder = scope:ucm_ro_replacement
-          trigger_if = {
-            limit = { exists = scope:ucm_ro_handover_county }
-            NOT = { this = scope:ucm_ro_handover_county }
-          }
-        }
-        save_scope_as = ucm_ro_xfer_title
-        scope:ucm_ro_evt_victim = {
-          save_scope_as = ucm_ro_grant_target
-        }
-        ucm_replace_official_try_handover_grant_with_fallback_effect = yes
-        clear_saved_scope = ucm_ro_grant_target
-        clear_saved_scope = ucm_ro_xfer_title
-      }
-    }
-  }
-}
-
-# 每次 grant 后立刻剥掉新官多出来的伯爵领（含引擎 resolve 误从封臣收来的郡）
-ucm_replace_official_sanitize_replacement_extra_counties_effect = {
-  ucm_replace_official_restore_victim_personal_counties_on_replacement_effect = yes
-  ucm_replace_official_restore_stolen_counties_from_snapshot_effect = yes
-  if = {
-    limit = {
-      exists = scope:ucm_ro_replacement
-      exists = scope:ucm_ro_granter
-      exists = scope:ucm_ro_handover_county
-      scope:ucm_ro_replacement = {
-        is_landed = yes
-        any_held_title = {
-          tier = tier_county
-          ucm_replace_official_transferable_title_trigger = yes
-          NOT = { this = scope:ucm_ro_handover_county }
-        }
-      }
-    }
-    while = {
-      count = 8
-      limit = {
-        scope:ucm_ro_replacement = {
-          any_held_title = {
-            tier = tier_county
-            ucm_replace_official_transferable_title_trigger = yes
-            NOT = { this = scope:ucm_ro_handover_county }
-          }
-        }
-      }
-      scope:ucm_ro_replacement = {
-        random_held_title = {
-          limit = {
-            tier = tier_county
-            ucm_replace_official_transferable_title_trigger = yes
-            NOT = { this = scope:ucm_ro_handover_county }
-          }
-          save_scope_as = ucm_ro_xfer_title
-        }
-      }
-      scope:ucm_ro_replacement = {
-        save_scope_as = ucm_ro_strip_holder
-      }
-      ucm_replace_official_regrant_saved_title_effect = yes
-    }
-  }
-}
-
 # 剥余衔择优转封境内他人（须 regrant_authority/granter + strip_holder + xfer_title）
 ucm_replace_official_regrant_saved_title_effect = {
   if = {
@@ -1093,32 +968,6 @@ ucm_replace_official_redistribute_granter_stray_counties_effect = {
       }
       ucm_replace_official_regrant_saved_title_effect = yes
     }
-  }
-}
-
-# 模块3：交接前回收新官全部可剥夺头衔（含公/王/帝与直辖），转封他人而非收归 granter
-ucm_replace_official_strip_replacement_all_prior_titles_effect = {
-  while = {
-    count = 32
-    limit = {
-      scope:ucm_ro_replacement = {
-        any_held_title = {
-          ucm_replace_official_transferable_title_trigger = yes
-        }
-      }
-    }
-    scope:ucm_ro_replacement = {
-      random_held_title = {
-        limit = {
-          ucm_replace_official_transferable_title_trigger = yes
-        }
-        save_scope_as = ucm_ro_xfer_title
-      }
-    }
-    scope:ucm_ro_replacement = {
-      save_scope_as = ucm_ro_strip_holder
-    }
-    ucm_replace_official_regrant_saved_title_effect = yes
   }
 }
 
@@ -1504,35 +1353,6 @@ ucm_replace_official_transfer_handover_main_title_effect = {
   ucm_replace_official_retry_failed_handover_titles_effect = yes
 }
 
-# 旧版合一入口（保留兼容）
-ucm_replace_official_transfer_handover_titles_effect = {
-  ucm_replace_official_transfer_handover_county_effect = yes
-  ucm_replace_official_transfer_handover_main_title_effect = yes
-}
-
-# 主衔已交接后，若旧官仍持指定交接郡则补交（封建公级先交主衔时用）
-ucm_replace_official_transfer_handover_county_if_needed_effect = {
-  if = {
-    limit = {
-      exists = scope:ucm_ro_handover_county
-      scope:ucm_ro_handover_county = {
-        tier = tier_county
-        ucm_replace_official_transferable_title_trigger = yes
-        holder = scope:ucm_ro_evt_victim
-      }
-      OR = {
-        NOT = { exists = scope:ucm_ro_replacement }
-        NOT = {
-          scope:ucm_ro_handover_county = {
-            holder = scope:ucm_ro_replacement
-          }
-        }
-      }
-    }
-    ucm_replace_official_transfer_handover_county_effect = yes
-  }
-}
-
 # 阶段1：统一先郡后主衔（全政体同序）
 ucm_replace_official_execute_handover_sequence_effect = {
   ucm_replace_official_transfer_handover_county_effect = yes
@@ -1847,47 +1667,6 @@ ucm_replace_official_transfer_victim_vassals_to_replacement_effect = {
 
 # 收尾：把仍散落在外、本应随岗的旧直属封臣挂回新官
 
-ucm_replace_official_reattach_vassals_to_replacement_effect = {
-  if = {
-    limit = {
-      exists = scope:ucm_ro_replacement
-      exists = scope:ucm_ro_granter
-      scope:ucm_ro_replacement = {
-        is_landed = yes
-        exists = primary_title
-      }
-      scope:ucm_ro_granter = {
-        has_variable_list = ucm_ro_victim_vassal_queue
-        variable_list_size = {
-          name = ucm_ro_victim_vassal_queue
-          value > 0
-        }
-      }
-    }
-    scope:ucm_ro_granter = {
-      every_in_list = {
-        variable = ucm_ro_victim_vassal_queue
-        limit = {
-          is_alive = yes
-          NOT = { this = scope:ucm_ro_replacement }
-          NOT = { liege = scope:ucm_ro_replacement }
-          OR = {
-            ucm_replace_official_should_reattach_all_cached_vassals_trigger = yes
-            ucm_replace_official_vassal_de_jure_under_replacement_trigger = yes
-          }
-        }
-        save_scope_as = ucm_ro_vassal_xfer
-        ucm_replace_official_transfer_one_cached_vassal_to_replacement_effect = yes
-        clear_saved_scope = ucm_ro_vassal_xfer
-      }
-    }
-  }
-}
-
-ucm_replace_official_reattach_de_jure_vassals_to_replacement_effect = {
-  ucm_replace_official_reattach_vassals_to_replacement_effect = yes
-}
-
 # 交接开始前缓存旧官直属封臣，避免后续收地/法理转封冲掉名单
 ucm_replace_official_cache_victim_direct_vassals_effect = {
   scope:ucm_ro_granter = {
@@ -1919,28 +1698,6 @@ ucm_replace_official_clear_victim_vassal_queue_effect = {
   }
 }
 
-ucm_replace_official_organize_replacement_de_jure_effect = {
-  if = {
-    limit = {
-      exists = scope:ucm_ro_replacement
-      scope:ucm_ro_replacement = {
-        is_landed = yes
-        exists = primary_title
-      }
-    }
-    scope:ucm_ro_replacement = {
-      every_held_title = {
-        limit = {
-          is_noble_family_title = no
-          is_landless_type_title = no
-          NOT = { this = scope:ucm_ro_replacement.primary_title }
-        }
-        set_de_jure_liege_title = scope:ucm_ro_replacement.primary_title
-      }
-    }
-  }
-}
-
 ucm_replace_official_mark_office_holder_flags_effect = {
   scope:ucm_ro_evt_victim = {
     remove_character_flag = ucm_ro_office_holder
@@ -1963,91 +1720,6 @@ ucm_replace_official_lock_regrant_authority_to_replacement_effect = {
     scope:ucm_ro_replacement = {
       save_scope_as = ucm_ro_regrant_authority
     }
-  }
-}
-
-# 阶段5：仅在新官法理子树内做法理转封（change_liege），不扫全图
-ucm_replace_official_scoped_de_jure_transfer_effect = {
-  if = {
-    limit = {
-      exists = scope:ucm_ro_granter
-      exists = scope:ucm_ro_replacement
-      scope:ucm_ro_replacement = {
-        is_landed = yes
-        exists = primary_title
-      }
-    }
-    scope:ucm_ro_granter = {
-      create_title_and_vassal_change = {
-        type = granted
-        save_scope_as = ucm_ro_de_jure_change
-        add_claim_on_loss = no
-      }
-      every_vassal_or_below = {
-        limit = {
-          ucm_replace_official_scoped_de_jure_vassal_trigger = yes
-        }
-        if = {
-          limit = {
-            exists = primary_title.de_jure_liege
-            exists = primary_title.de_jure_liege.holder
-            primary_title.de_jure_liege.holder = {
-              NOT = { this = scope:ucm_ro_granter }
-              is_vassal_or_below_of = scope:ucm_ro_granter
-              NOT = { is_at_war_with = scope:ucm_ro_granter }
-            }
-          }
-          change_liege = {
-            liege = primary_title.de_jure_liege.holder
-            change = scope:ucm_ro_de_jure_change
-          }
-        }
-        else_if = {
-          limit = {
-            exists = primary_title.de_jure_liege.de_jure_liege
-            exists = primary_title.de_jure_liege.de_jure_liege.holder
-            OR = {
-              NOT = { exists = primary_title.de_jure_liege.holder }
-              primary_title.de_jure_liege.holder = scope:ucm_ro_granter
-            }
-            primary_title.de_jure_liege.de_jure_liege.holder = {
-              NOT = { this = scope:ucm_ro_granter }
-              is_vassal_or_below_of = scope:ucm_ro_granter
-              NOT = { is_at_war_with = scope:ucm_ro_granter }
-            }
-          }
-          change_liege = {
-            liege = primary_title.de_jure_liege.de_jure_liege.holder
-            change = scope:ucm_ro_de_jure_change
-          }
-        }
-        else_if = {
-          limit = {
-            exists = primary_title.de_jure_liege.de_jure_liege.de_jure_liege
-            exists = primary_title.de_jure_liege.de_jure_liege.de_jure_liege.holder
-            OR = {
-              NOT = { exists = primary_title.de_jure_liege.holder }
-              primary_title.de_jure_liege.holder = scope:ucm_ro_granter
-            }
-            OR = {
-              NOT = { exists = primary_title.de_jure_liege.de_jure_liege.holder }
-              primary_title.de_jure_liege.de_jure_liege.holder = scope:ucm_ro_granter
-            }
-            primary_title.de_jure_liege.de_jure_liege.de_jure_liege.holder = {
-              NOT = { this = scope:ucm_ro_granter }
-              is_vassal_or_below_of = scope:ucm_ro_granter
-              NOT = { is_at_war_with = scope:ucm_ro_granter }
-            }
-          }
-          change_liege = {
-            liege = primary_title.de_jure_liege.de_jure_liege.de_jure_liege.holder
-            change = scope:ucm_ro_de_jure_change
-          }
-        }
-      }
-      resolve_title_and_vassal_change = scope:ucm_ro_de_jure_change
-    }
-    clear_saved_scope = ucm_ro_de_jure_change
   }
 }
 
@@ -2291,128 +1963,7 @@ ucm_replace_official_revoke_victim_remaining_to_granter_effect = {
   }
 }
 
-ucm_replace_official_ui_add_character_effect = {
-  if = {
-    limit = {
-      ucm_replace_official_ui_candidate_trigger = yes
-      NOT = { is_in_list = characters }
-    }
-    add_to_list = characters
-  }
-}
-
-# populate 专用：仅预筛入列，can_be_granted 留给 can_be_picked（避免打开界面时全表扫描）
-ucm_replace_official_ui_add_prefiltered_character_effect = {
-  if = {
-    limit = {
-      NOT = { is_in_list = characters }
-    }
-    add_to_list = characters
-  }
-}
-
-ucm_replace_official_populate_ui_list_effect = {
-  scope:actor = {
-    every_courtier = {
-      limit = {
-        ucm_replace_official_ui_courtier_prefilter_trigger = yes
-      }
-      ucm_replace_official_ui_add_character_effect = yes
-    }
-    every_close_or_extended_family_member = {
-      limit = {
-        ucm_replace_official_ui_candidate_prefilter_base_trigger = yes
-        top_liege = scope:actor
-        NOT = { is_in_list = characters }
-      }
-      ucm_replace_official_ui_add_character_effect = yes
-    }
-    if = {
-      limit = { exists = dynasty }
-      dynasty = {
-        every_dynasty_member = {
-          limit = {
-            ucm_replace_official_ui_dynasty_kin_prefilter_trigger = yes
-            NOT = { is_in_list = characters }
-          }
-          ucm_replace_official_ui_add_character_effect = yes
-        }
-      }
-    }
-    ucm_replace_official_populate_top_landless_talents_effect = yes
-  }
-}
-
 # 境内封臣廷臣 + 首都池：超高属性无地 AI 按五维择优，最多 50 人（staging 仅轻量预筛，授衔校验留给 can_be_picked）
-
-ucm_replace_official_populate_top_landless_talents_effect = {
-  clear_variable_list = ucm_ro_landless_staging
-  every_vassal = {
-    limit = {
-      NOT = { this = scope:actor }
-    }
-    every_courtier = {
-      limit = {
-        ucm_replace_official_ui_landless_high_skill_prefilter_trigger = yes
-        NOT = { is_in_list = characters }
-      }
-      scope:actor = {
-        add_to_variable_list = {
-          name = ucm_ro_landless_staging
-          target = prev
-        }
-      }
-    }
-  }
-  every_pool_character = {
-    limit = {
-      location = capital_province
-      ucm_replace_official_ui_landless_high_skill_prefilter_trigger = yes
-      NOT = { is_in_list = characters }
-    }
-    scope:actor = {
-      add_to_variable_list = {
-        name = ucm_ro_landless_staging
-        target = prev
-      }
-    }
-  }
-  while = {
-    count = 50
-    limit = {
-      scope:actor = {
-        variable_list_size = {
-          name = ucm_ro_landless_staging
-          value > 0
-        }
-      }
-    }
-    scope:actor = {
-      ordered_in_list = {
-        variable = ucm_ro_landless_staging
-        order_by = ucm_replace_official_landless_pick_sort_value
-        position = 0
-        save_scope_as = ucm_ro_landless_pick
-      }
-    }
-    scope:ucm_ro_landless_pick = {
-      if = {
-        limit = {
-          ucm_replace_official_ui_candidate_trigger = yes
-        }
-        ucm_replace_official_ui_add_prefiltered_character_effect = yes
-      }
-    }
-    scope:actor = {
-      remove_list_variable = {
-        name = ucm_ro_landless_staging
-        target = scope:ucm_ro_landless_pick
-      }
-    }
-    clear_saved_scope = ucm_ro_landless_pick
-  }
-  clear_variable_list = ucm_ro_landless_staging
-}
 
 ucm_replace_official_resolve_granter_scope_effect = {
   if = {
@@ -2993,28 +2544,6 @@ ucm_replace_official_execute_core_effect = {
     clear_saved_scope = ucm_ro_kept_county
     clear_saved_scope = ucm_ro_xfer_title
   }
-}
-
-ucm_replace_official_interaction_cleanup_effect = {
-  scope:actor = {
-    if = {
-      limit = { has_variable = ucm_ro_victim }
-      remove_variable = ucm_ro_victim
-    }
-    if = {
-      limit = {
-        has_variable_list = ucm_ro_landless_staging
-      }
-      clear_variable_list = ucm_ro_landless_staging
-    }
-  }
-  clear_saved_scope = ucm_ro_evt_victim
-  clear_saved_scope = ucm_ro_replacement
-}
-
-ucm_replace_official_execute_interaction_effect = {
-  ucm_replace_official_execute_core_effect = yes
-  ucm_replace_official_interaction_cleanup_effect = yes
 }
 
 # --- 旧事件翻页列表（保留供参考，已不再调用）---

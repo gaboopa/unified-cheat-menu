@@ -46,21 +46,6 @@ ucm_cheat_menu_strong_deterrence_end_wars_vs_liege_effect = {
   }
 }
 
-ucm_cheat_menu_strong_deterrence_apply_blocks_effect = {
-  add_character_flag = {
-    flag = ucm_strong_deterrence_active
-    years = 5
-  }
-  add_character_flag = {
-    flag = joining_faction_block
-    years = 5
-  }
-  set_variable = {
-    name = ucm_strong_deterrence_liege
-    value = scope:ucm_deterrence_liege
-  }
-}
-
 ucm_cheat_menu_strong_deterrence_give_liege_hook_effect = {
   if = {
     limit = {
@@ -83,18 +68,6 @@ ucm_cheat_menu_strong_deterrence_remove_liege_hook_effect = {
       target = scope:ucm_deterrence_vassal
       type = strong_obligation_hook
     }
-  }
-}
-
-# 对 scope:ucm_deterrence_vassal 施加；scope:ucm_deterrence_liege 须已存在
-ucm_cheat_menu_apply_strong_deterrence_on_vassal_effect = {
-  scope:ucm_deterrence_vassal = {
-    ucm_cheat_menu_strong_deterrence_leave_factions_vs_liege_effect = yes
-    ucm_cheat_menu_strong_deterrence_end_wars_vs_liege_effect = yes
-    ucm_cheat_menu_strong_deterrence_apply_blocks_effect = yes
-  }
-  scope:ucm_deterrence_liege = {
-    ucm_cheat_menu_strong_deterrence_give_liege_hook_effect = yes
   }
 }
 

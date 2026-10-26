@@ -61,20 +61,6 @@ ucm_acm_sync_edit_text_from_artifact_effect = {
   }
 }
 
-ucm_acm_reset_modifier_slots_for_edit_effect = {
-  set_variable = { name = ucm_craft_m1 value = 0 }
-  set_variable = { name = ucm_craft_m2 value = 0 }
-  set_variable = { name = ucm_craft_m3 value = 0 }
-  set_variable = { name = ucm_craft_m4 value = 0 }
-  set_variable = { name = ucm_craft_m5 value = 0 }
-  set_variable = { name = ucm_craft_m1_cnt value = 0 }
-  set_variable = { name = ucm_craft_m2_cnt value = 0 }
-  set_variable = { name = ucm_craft_m3_cnt value = 0 }
-  set_variable = { name = ucm_craft_m4_cnt value = 0 }
-  set_variable = { name = ucm_craft_m5_cnt value = 0 }
-  ucm_acm_sync_craft_layer_quality_effect = yes
-}
-
 ucm_acm_reopen_repair_gui_effect = {
   add_character_flag = ucm_acm_repair_gui_open
 }

@@ -2730,7 +2730,3 @@ monthly_learning_lifestyle_xp_gain_mult_neg = {
 	monthly_learning_lifestyle_xp_gain_mult = -0.1
 	stacking = yes
 }
-plague_immunity_modifier = {
-    icon = "gfx/interface/modifier/zc_hqgm.dds" 
-    epidemic_resistance = 100  # 抗疫能力设置为100，完全免疫瘟疫
-}

@@ -16,12 +16,6 @@ ucm_grant_duchy_pick_value = {
   }
 }
 
-ucm_grant_civil_sum_value = {
-  add = diplomacy
-  add = stewardship
-  add = learning
-}
-
 ucm_grant_military_sum_value = {
   add = martial
   add = prowess

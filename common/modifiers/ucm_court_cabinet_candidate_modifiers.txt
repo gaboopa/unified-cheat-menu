@@ -1,8 +1,0 @@
-﻿# Internal marker modifiers used while selecting replacement cabinet members.
-# They intentionally provide no stat changes.
-
-ucm_court_cabinet_chancellor_candidate = { }
-ucm_court_cabinet_marshal_candidate = { }
-ucm_court_cabinet_steward_candidate = { }
-ucm_court_cabinet_spymaster_candidate = { }
-ucm_court_cabinet_chaplain_candidate = { }

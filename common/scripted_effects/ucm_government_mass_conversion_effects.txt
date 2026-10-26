@@ -166,66 +166,6 @@ ucm_convert_character_to_steppe_admin_government_effect = {
   }
 }
 
-ucm_mass_convert_vassals_to_celestial_effect = {
-  every_vassal_or_below = {
-    limit = {
-      has_tgp_dlc_trigger = yes
-      ucm_mass_gov_conversion_target_trigger = yes
-      NOT = { has_government = celestial_government }
-      NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
-    }
-    ucm_convert_character_to_celestial_government_effect = yes
-  }
-}
-
-ucm_mass_convert_vassals_to_meritocratic_effect = {
-  every_vassal_or_below = {
-    limit = {
-      has_tgp_dlc_trigger = yes
-      ucm_mass_gov_conversion_target_trigger = yes
-      NOT = { has_government = meritocratic_government }
-      NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
-    }
-    ucm_convert_character_to_meritocratic_government_effect = yes
-  }
-}
-
-ucm_mass_convert_vassals_to_administrative_effect = {
-  every_vassal_or_below = {
-    limit = {
-      ucm_mass_gov_conversion_target_trigger = yes
-      NOT = { has_government = administrative_government }
-      NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
-    }
-    ucm_convert_character_to_administrative_government_effect = yes
-  }
-}
-
-ucm_mass_convert_vassals_to_japan_administrative_effect = {
-  every_vassal_or_below = {
-    limit = {
-      has_tgp_dlc_trigger = yes
-      ucm_mass_gov_conversion_target_trigger = yes
-      NOT = { has_government = japan_administrative_government }
-      tgp_can_become_japan_administrative_trigger = yes
-      NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
-    }
-    ucm_convert_character_to_japan_administrative_government_effect = yes
-  }
-}
-
-ucm_mass_convert_vassals_to_steppe_admin_effect = {
-  every_vassal_or_below = {
-    limit = {
-      has_tgp_dlc_trigger = yes
-      ucm_mass_gov_conversion_target_trigger = yes
-      NOT = { has_government = steppe_admin_government }
-      NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
-    }
-    ucm_convert_character_to_steppe_admin_government_effect = yes
-  }
-}
-
 ucm_convert_character_to_feudal_government_effect = {
   if = {
     limit = {
@@ -466,70 +406,6 @@ ucm_convert_character_to_nomadic_government_effect = {
   }
 }
 
-ucm_mass_convert_vassals_to_feudal_effect = {
-  every_vassal_or_below = {
-    limit = {
-      ucm_mass_gov_conversion_target_trigger = yes
-      NOT = { has_government = feudal_government }
-      NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
-    }
-    ucm_convert_character_to_feudal_government_effect = yes
-  }
-}
-
-ucm_mass_convert_vassals_to_tribal_effect = {
-  every_vassal_or_below = {
-    limit = {
-      ucm_mass_gov_conversion_target_trigger = yes
-      NOT = { has_government = tribal_government }
-      NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
-    }
-    ucm_convert_character_to_tribal_government_effect = yes
-  }
-}
-
-ucm_mass_convert_vassals_to_clan_effect = {
-  every_vassal_or_below = {
-    limit = {
-      ucm_mass_gov_conversion_target_trigger = yes
-      NOT = { has_government = clan_government }
-      NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
-    }
-    ucm_convert_character_to_clan_government_effect = yes
-  }
-}
-
-ucm_mass_convert_vassals_to_republic_effect = {
-  every_vassal_or_below = {
-    limit = {
-      ucm_mass_gov_conversion_target_trigger = yes
-      NOT = { has_government = republic_government }
-      NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
-    }
-    ucm_convert_character_to_republic_government_effect = yes
-  }
-}
-
-ucm_mass_convert_vassals_to_mandala_effect = {
-  every_vassal_or_below = {
-    limit = {
-      ucm_mass_gov_conversion_target_trigger = yes
-      NOT = { has_government = mandala_government }
-    }
-    ucm_convert_character_to_mandala_government_effect = yes
-  }
-}
-
-ucm_mass_convert_vassals_to_nomadic_effect = {
-  every_vassal_or_below = {
-    limit = {
-      ucm_mass_gov_conversion_target_trigger = yes
-      NOT = { has_government = nomad_government }
-    }
-    ucm_convert_character_to_nomadic_government_effect = yes
-  }
-}
-
 # CK3 1.20: use the faith's own theocracy type (Christians get ecclesiastical_government with By God Alone),
 # the same way vanilla's pam_clergy_events do; plain theocracy_government is the fallback.
 ucm_convert_character_to_theocracy_government_effect = {
@@ -542,17 +418,6 @@ ucm_convert_character_to_theocracy_government_effect = {
     else = {
       change_government = theocracy_government
     }
-  }
-}
-
-ucm_mass_convert_vassals_to_theocracy_effect = {
-  every_vassal_or_below = {
-    limit = {
-      ucm_mass_gov_conversion_target_trigger = yes
-      NOT = { government_has_flag = government_is_theocracy }
-      NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
-    }
-    ucm_convert_character_to_theocracy_government_effect = yes
   }
 }
 
@@ -589,18 +454,6 @@ ucm_convert_character_to_japan_feudal_government_effect = {
   }
 }
 
-ucm_mass_convert_vassals_to_japan_feudal_effect = {
-  every_vassal_or_below = {
-    limit = {
-      has_tgp_dlc_trigger = yes
-      ucm_mass_gov_conversion_target_trigger = yes
-      NOT = { has_government = japan_feudal_government }
-      NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
-    }
-    ucm_convert_character_to_japan_feudal_government_effect = yes
-  }
-}
-
 ucm_convert_character_to_herder_government_effect = {
   if = {
     limit = {
@@ -630,16 +483,5 @@ ucm_convert_character_to_herder_government_effect = {
       }
     }
     change_government = herder_government
-  }
-}
-
-ucm_mass_convert_vassals_to_herder_effect = {
-  every_vassal_or_below = {
-    limit = {
-      ucm_mass_gov_conversion_target_trigger = yes
-      NOT = { has_government = herder_government }
-      NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
-    }
-    ucm_convert_character_to_herder_government_effect = yes
   }
 }

@@ -285,23 +285,6 @@ LIT_personality_trait_check_opposite = {
 	}
 }
 
-### Script to take an innovation key as an input and check if the characters culture has the innovation, add if it doesn't remove otherwise
-LIT_innovation_check = {
-	scope:char_editor.culture = {
-		if = {
-			limit = { 
-				NOT = {
-					has_innovation = $KEY$
-				}
-			 }
-			 add_innovation = $KEY$
-		}
-		else = {
-			remove_innovation = $KEY$
-		}
-	}
-}
-
 ### Check if a character has a given learned trait, if they do, add xp
 LIT_learned_trait_check_track = {
 	scope:char_editor = {

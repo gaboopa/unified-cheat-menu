@@ -10,32 +10,3 @@ ucm_acm_repair_next_page_min_total_value = {
   add = 1
   multiply = 5
 }
-
-ucm_acm_repair_slot0_list_index_value = {
-  value = var:ucm_acm_repair_page
-  multiply = 5
-}
-
-ucm_acm_repair_slot1_list_index_value = {
-  value = var:ucm_acm_repair_page
-  multiply = 5
-  add = 1
-}
-
-ucm_acm_repair_slot2_list_index_value = {
-  value = var:ucm_acm_repair_page
-  multiply = 5
-  add = 2
-}
-
-ucm_acm_repair_slot3_list_index_value = {
-  value = var:ucm_acm_repair_page
-  multiply = 5
-  add = 3
-}
-
-ucm_acm_repair_slot4_list_index_value = {
-  value = var:ucm_acm_repair_page
-  multiply = 5
-  add = 4
-}

@@ -107,79 +107,6 @@ ucm_cheat_menu_sync_switch_target_effect = {
   }
 }
 
-ucm_cheat_menu_sync_county_edit_target_effect = {
-  ucm_cheat_menu_sync_target_effect = yes
-  scope:ucm_cheat_menu_target = {
-    save_scope_as = ucm_cnt_edit_target
-  }
-}
-
-ucm_cheat_menu_open_kill_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  scope:actor = { trigger_event = ucm_cheat_menu.0002 }
-}
-
-ucm_cheat_menu_open_exterminate_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  scope:actor = { trigger_event = ucm_cheat_menu.0003 }
-}
-
-ucm_cheat_menu_open_age_edit_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  scope:actor = { trigger_event = ucm_cheat_menu.0075 }
-}
-
-ucm_cheat_menu_open_ability_edit_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  scope:actor = { trigger_event = ucm_cheat_menu.0080 }
-}
-
-ucm_cheat_menu_open_plant_secret_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  scope:actor = {
-    set_variable = { name = ucm_plant_secret_page value = 0 }
-    trigger_event = { id = ucm_cheat_menu.0097 days = 0 }
-  }
-}
-
-ucm_cheat_menu_open_ai_ai_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  scope:actor = { trigger_event = ucm_cheat_menu.0010 }
-}
-
-ucm_cheat_menu_open_pregnancy_manage_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  ucm_cheat_menu_sync_pregnancy_target_effect = yes
-  scope:actor = {
-    trigger_event = {
-      id = ucm_cheat_menu.0001
-      days = 0
-    }
-  }
-}
-
-ucm_cheat_menu_open_switch_player_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  ucm_cheat_menu_sync_switch_target_effect = yes
-  scope:actor = {
-    trigger_event = {
-      id = ucm_cheat_menu.0099
-      days = 0
-    }
-  }
-}
-
-ucm_cheat_menu_open_relation_confirm_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  ucm_cheat_menu_sync_relation_target_effect = yes
-  scope:actor = {
-    trigger_event = {
-      id = ucm_cheat_menu.0096
-      days = 0
-    }
-  }
-}
-
 ucm_cheat_menu_open_culture_edit_effect = {
   ucm_cheat_menu_lock_recipient_effect = yes
   scope:actor = {
@@ -192,20 +119,6 @@ ucm_cheat_menu_open_religion_edit_effect = {
   ucm_cheat_menu_lock_recipient_effect = yes
   scope:actor = {
     ucm_open_acm_religion_picker_effect = yes
-  }
-}
-
-ucm_cheat_menu_open_military_manage_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  scope:actor = {
-    if = {
-      limit = { exists = scope:recipient }
-      set_variable = {
-        name = ucm_military_menu_victim
-        value = scope:recipient
-      }
-    }
-    trigger_event = { id = ucm_cheat_menu.3080 days = 0 }
   }
 }
 
@@ -239,36 +152,12 @@ ucm_cheat_menu_open_base_game_traits_effect = {
   }
 }
 
-ucm_cheat_menu_open_trait_edit_menu_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  ucm_cheat_menu_sync_trait_edit_target_effect = yes
-  scope:actor = { trigger_event = ucm_cheat_menu.7200 }
-}
-
 ucm_cheat_menu_open_lifestyle_effect = {
   ucm_cheat_menu_lock_recipient_effect = yes
   ucm_cheat_menu_sync_lifestyle_target_effect = yes
   scope:actor = {
     ucm_open_lifestyle_gui_effect = yes
   }
-}
-
-ucm_cheat_menu_open_edit_resources_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  scope:actor = {
-    add_character_flag = ucm_edit_resources_active
-    trigger_event = ucm_cheat_menu.3050
-  }
-}
-
-ucm_cheat_menu_open_county_cheat_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  scope:actor = { trigger_event = ucm_cheat_menu.3070 }
-}
-
-ucm_cheat_menu_open_artifact_edit_menu_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  scope:actor = { trigger_event = ucm_cheat_menu.3093 }
 }
 
 ucm_cheat_menu_open_steal_artifact_effect = {
@@ -280,30 +169,6 @@ ucm_cheat_menu_open_steal_artifact_effect = {
     set_variable = { name = ucm_steal_page value = 0 }
     trigger_event = ucm_cheat_menu.3094
   }
-}
-
-ucm_cheat_menu_open_estate_edit_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  scope:actor = {
-    ucm_cheat_menu_sync_target_effect = yes
-    trigger_event = ucm_cheat_menu.3095
-  }
-}
-
-ucm_cheat_menu_open_get_primary_title_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  scope:actor = {
-    ucm_cheat_menu_sync_target_effect = yes
-    add_character_flag = ucm_title_pick_picker_active
-    set_variable = { name = ucm_title_victim value = scope:ucm_cheat_menu_target }
-    set_variable = { name = ucm_title_pick_page value = 0 }
-    trigger_event = ucm_cheat_menu.3096
-  }
-}
-
-ucm_cheat_menu_open_legend_master_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  scope:actor = { trigger_event = ucm_legend_master.0001 }
 }
 
 ucm_cheat_menu_open_artifact_craft_effect = {
@@ -346,40 +211,6 @@ ucm_cheat_menu_open_artifact_craft_effect = {
   }
 }
 
-# Skonester菜单 0030：打开 advcm 式宝物制作窗（与右键「宝物制作」共用变量/修饰列表）
-ucm_cheat_menu_open_artifact_craft_gui_effect = {
-  if = {
-    limit = {
-      exists = scope:actor
-      scope:actor = { ucm_player_may_use_artifact_craft_trigger = yes }
-    }
-  scope:actor = {
-    save_scope_as = ucm_acm_craft_creator
-    ucm_craft_init_modifier_slot_defaults_effect = yes
-    if = {
-      limit = { NOT = { has_variable = ucm_acm_artifact_type } }
-      ucm_acm_init_artifact_type_defaults_effect = yes
-    }
-    if = {
-      limit = { NOT = { has_character_flag = ucm_artifact_quality_set } }
-      ucm_acm_set_quality_common_effect = yes
-    }
-    if = {
-      limit = {
-        has_character_flag = ucm_craft_give_to_recipient
-        exists = scope:recipient
-        NOT = { has_global_variable = ucm_acm_recipient }
-      }
-      set_global_variable = {
-        name = ucm_acm_recipient
-        value = scope:recipient
-      }
-    }
-    add_character_flag = ucm_acm_gui_open
-  }
-  }
-}
-
 ucm_cheat_menu_sync_plant_scopes_effect = {
   ucm_cheat_menu_sync_target_effect = yes
   scope:ucm_cheat_menu_target = {
@@ -388,10 +219,4 @@ ucm_cheat_menu_sync_plant_scopes_effect = {
   scope:actor = {
     save_scope_as = ucm_plant_menu_actor
   }
-}
-
-ucm_cheat_menu_open_force_marriage_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  ucm_cheat_menu_sync_force_marriage_scopes_effect = yes
-  scope:actor = { trigger_event = ucm_cheat_menu.0190 }
 }

@@ -114,20 +114,6 @@ change_sort_key = {
   yyz_generate_list = yes  
 }
 
-toggle_variable_linked_pair = {
-  if = {
-    limit = { $PRIMARY$ = 1 }                            # toggle primary filter off
-    set_variable = { name = $PRIMARY$ value = 0 }
-    if = {                                                   # if secondary is off as well toggle it on as it makes
-      limit = { $SECONDARY$ = 0 }                        # no sense for both of them to be off
-      set_variable = { name = $SECONDARY$ value = 1 }
-    }
-  }
-  else = {                                                   # toggle primary filter on
-    set_variable = { name = $PRIMARY$ value = 1 }
-  }
-}
-
 #####################################################################################
 # FUNCTIONALITY EFFECTS
 #####################################################################################
@@ -489,7 +475,6 @@ generate_yyz_fertility_list = {
 
 # filters - rank landed/unlanded blackmailMoney linkedSecrets/soloSecrets secretSourceType
 
-
 #######################################
 # education list | mode = 14
 
@@ -514,4 +499,3 @@ generate_yyz_fertility_list = {
 
 #######################################
 # reminder mod
-

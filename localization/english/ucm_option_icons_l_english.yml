@@ -10,13 +10,9 @@
 
  ucm_art.3094.prev_page: "@skill_martial_icon! Previous Page"
 
- ucm_auto_appointment_test.1000.close: "@cross_icon! Close"
 
- ucm_auto_appointment_test.1100.back: "@skill_martial_icon! Back"
 
- ucm_auto_appointment_test.1200.back: "@skill_martial_icon! Back"
 
- ucm_auto_appointment_test.1300.back: "@skill_martial_icon! Back"
 
  ucm_child_gen.1000.close: "@cross_icon! Close"
 
@@ -162,7 +158,6 @@
 
  ucm_cheat_menu.0130.close: "@cross_icon! Close"
 
- ucm_cheat_menu.0140.close: "@cross_icon! Close"
 
  ucm_cheat_menu.0155.opt_gender_dyn: "@skill_learning_icon! [recipient.Custom('ucm_spawn_talent_hub_gender_btn')]"
 
@@ -418,7 +413,6 @@
 
  ucm_cheat_menu.page_prev: "@skill_martial_icon! Previous"
 
- ucm_treasure_maker.0001.close: "Close"
 
  ucm_treasure_maker.back_hub: "Back to Hub"
 

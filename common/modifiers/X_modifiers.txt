@@ -1,27 +1,4 @@
-﻿X_modifier = {
-	icon = stewardship_positive
-
-	enemy_hostile_scheme_success_chance_add = -999
-	enemy_personal_scheme_success_chance_add = -999
-
-	# Slows natural old-age death; visual age is handled by immortality/set_immortal_age.
-	life_expectancy = 1000
-	negate_health_penalty_add = 9
-	no_prowess_loss_from_age = yes
-
-	county_opinion_add = 200
-	monthly_county_control_growth_add = 100
-
-	different_culture_opinion = 200
-	same_culture_opinion = 200
-	different_faith_opinion = 200
-	same_faith_opinion = 200
-
-	build_speed = -100.0
-	holding_build_speed = -100.0
-	domicile_build_speed = -100.0
-}
-
+﻿
 X1_modifier = {
 
 	icon = stewardship_positive

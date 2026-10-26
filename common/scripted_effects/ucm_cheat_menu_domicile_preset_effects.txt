@@ -12,22 +12,6 @@ ucm_domicile_force_add_grain_field_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = grain_field_06 } } add_domicile_building = grain_field_06 }
 }
 
-ucm_domicile_force_add_grain_field_staged_effect = {
-  # domicile_farmland / grain_field — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = grain_field_01 } } add_domicile_building = grain_field_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = grain_field_02 } } add_domicile_building = grain_field_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = grain_field_03 } } add_domicile_building = grain_field_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = grain_field_04 } } add_domicile_building = grain_field_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = grain_field_05 } } add_domicile_building = grain_field_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = grain_field_06 } } add_domicile_building = grain_field_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-}
-
 ucm_domicile_force_add_workshop_carpenter_max_effect = {
   # domicile_workshop
   if = { limit = { NOT = { has_domicile_building_or_higher = workshop_01 } } add_domicile_building = workshop_01 }
@@ -36,22 +20,6 @@ ucm_domicile_force_add_workshop_carpenter_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = workshop_carpenter_04 } } add_domicile_building = workshop_carpenter_04 }
   if = { limit = { NOT = { has_domicile_building_or_higher = workshop_carpenter_05 } } add_domicile_building = workshop_carpenter_05 }
   if = { limit = { NOT = { has_domicile_building_or_higher = workshop_carpenter_06 } } add_domicile_building = workshop_carpenter_06 }
-}
-
-ucm_domicile_force_add_workshop_carpenter_staged_effect = {
-  # domicile_workshop — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = workshop_01 } } add_domicile_building = workshop_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = workshop_02 } } add_domicile_building = workshop_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = workshop_carpenter_03 } } add_domicile_building = workshop_carpenter_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = workshop_carpenter_04 } } add_domicile_building = workshop_carpenter_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = workshop_carpenter_05 } } add_domicile_building = workshop_carpenter_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = workshop_carpenter_06 } } add_domicile_building = workshop_carpenter_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
 }
 
 ucm_domicile_force_add_workshop_mason_max_effect = {
@@ -64,40 +32,12 @@ ucm_domicile_force_add_workshop_mason_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = workshop_mason_06 } } add_domicile_building = workshop_mason_06 }
 }
 
-ucm_domicile_force_add_workshop_mason_staged_effect = {
-  # domicile_armory (forge chain) — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = workshop_01 } } add_domicile_building = workshop_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = workshop_02 } } add_domicile_building = workshop_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = workshop_mason_03 } } add_domicile_building = workshop_mason_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = workshop_mason_04 } } add_domicile_building = workshop_mason_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = workshop_mason_05 } } add_domicile_building = workshop_mason_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = workshop_mason_06 } } add_domicile_building = workshop_mason_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-}
-
 ucm_domicile_force_add_storage_warehouse_max_effect = {
   # domicile_warehouse
   if = { limit = { NOT = { has_domicile_building_or_higher = storage_01 } } add_domicile_building = storage_01 }
   if = { limit = { NOT = { has_domicile_building_or_higher = storage_02 } } add_domicile_building = storage_02 }
   if = { limit = { NOT = { has_domicile_building_or_higher = storage_warehouse_03 } } add_domicile_building = storage_warehouse_03 }
   if = { limit = { NOT = { has_domicile_building_or_higher = storage_warehouse_04 } } add_domicile_building = storage_warehouse_04 }
-}
-
-ucm_domicile_force_add_storage_warehouse_staged_effect = {
-  # domicile_warehouse — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = storage_01 } } add_domicile_building = storage_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = storage_02 } } add_domicile_building = storage_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = storage_warehouse_03 } } add_domicile_building = storage_warehouse_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = storage_warehouse_04 } } add_domicile_building = storage_warehouse_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
 }
 
 ucm_domicile_force_add_market_max_effect = {
@@ -110,22 +50,6 @@ ucm_domicile_force_add_market_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = market_06 } } add_domicile_building = market_06 }
 }
 
-ucm_domicile_force_add_market_staged_effect = {
-  # domicile_market — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = market_01 } } add_domicile_building = market_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = market_02 } } add_domicile_building = market_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = market_03 } } add_domicile_building = market_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = market_04 } } add_domicile_building = market_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = market_05 } } add_domicile_building = market_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = market_06 } } add_domicile_building = market_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-}
-
 ucm_domicile_force_add_post_station_max_effect = {
   # domicile_post_station / tea
   if = { limit = { NOT = { has_domicile_building_or_higher = tea_01 } } add_domicile_building = tea_01 }
@@ -134,22 +58,6 @@ ucm_domicile_force_add_post_station_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = tea_04 } } add_domicile_building = tea_04 }
   if = { limit = { NOT = { has_domicile_building_or_higher = tea_05 } } add_domicile_building = tea_05 }
   if = { limit = { NOT = { has_domicile_building_or_higher = tea_06 } } add_domicile_building = tea_06 }
-}
-
-ucm_domicile_force_add_post_station_staged_effect = {
-  # domicile_post_station / tea — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = tea_01 } } add_domicile_building = tea_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = tea_02 } } add_domicile_building = tea_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = tea_03 } } add_domicile_building = tea_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = tea_04 } } add_domicile_building = tea_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = tea_05 } } add_domicile_building = tea_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = tea_06 } } add_domicile_building = tea_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
 }
 
 ucm_domicile_force_add_vineyard_max_effect = {
@@ -162,40 +70,12 @@ ucm_domicile_force_add_vineyard_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = vineyard_06 } } add_domicile_building = vineyard_06 }
 }
 
-ucm_domicile_force_add_vineyard_staged_effect = {
-  # domicile_vineyard — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = vineyard_01 } } add_domicile_building = vineyard_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = vineyard_02 } } add_domicile_building = vineyard_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = vineyard_03 } } add_domicile_building = vineyard_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = vineyard_04 } } add_domicile_building = vineyard_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = vineyard_05 } } add_domicile_building = vineyard_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = vineyard_06 } } add_domicile_building = vineyard_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-}
-
 ucm_domicile_force_add_guardhouse_max_effect = {
   # domicile_guard_room
   if = { limit = { NOT = { has_domicile_building_or_higher = guardhouse_01 } } add_domicile_building = guardhouse_01 }
   if = { limit = { NOT = { has_domicile_building_or_higher = guardhouse_02 } } add_domicile_building = guardhouse_02 }
   if = { limit = { NOT = { has_domicile_building_or_higher = guardhouse_03 } } add_domicile_building = guardhouse_03 }
   if = { limit = { NOT = { has_domicile_building_or_higher = guardhouse_04 } } add_domicile_building = guardhouse_04 }
-}
-
-ucm_domicile_force_add_guardhouse_staged_effect = {
-  # domicile_guard_room — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = guardhouse_01 } } add_domicile_building = guardhouse_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = guardhouse_02 } } add_domicile_building = guardhouse_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = guardhouse_03 } } add_domicile_building = guardhouse_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = guardhouse_04 } } add_domicile_building = guardhouse_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
 }
 
 ucm_domicile_force_add_stable_grand_max_effect = {
@@ -205,20 +85,6 @@ ucm_domicile_force_add_stable_grand_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = stable_03 } } add_domicile_building = stable_03 }
   if = { limit = { NOT = { has_domicile_building_or_higher = stable_grand_04 } } add_domicile_building = stable_grand_04 }
   if = { limit = { NOT = { has_domicile_building_or_higher = stable_grand_05 } } add_domicile_building = stable_grand_05 }
-}
-
-ucm_domicile_force_add_stable_grand_staged_effect = {
-  # domicile_stable — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = stable_01 } } add_domicile_building = stable_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = stable_02 } } add_domicile_building = stable_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = stable_03 } } add_domicile_building = stable_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = stable_grand_04 } } add_domicile_building = stable_grand_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = stable_grand_05 } } add_domicile_building = stable_grand_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
 }
 
 ucm_domicile_force_add_barracks_max_effect = {
@@ -231,22 +97,6 @@ ucm_domicile_force_add_barracks_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = barracks_06 } } add_domicile_building = barracks_06 }
 }
 
-ucm_domicile_force_add_barracks_staged_effect = {
-  # domicile_training_ground / barracks — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = barracks_01 } } add_domicile_building = barracks_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = barracks_02 } } add_domicile_building = barracks_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = barracks_03 } } add_domicile_building = barracks_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = barracks_04 } } add_domicile_building = barracks_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = barracks_05 } } add_domicile_building = barracks_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = barracks_06 } } add_domicile_building = barracks_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-}
-
 ucm_domicile_force_add_grazing_land_max_effect = {
   # domicile_war_field / grazing_land
   if = { limit = { NOT = { has_domicile_building_or_higher = grazing_land_01 } } add_domicile_building = grazing_land_01 }
@@ -255,22 +105,6 @@ ucm_domicile_force_add_grazing_land_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = grazing_land_04 } } add_domicile_building = grazing_land_04 }
   if = { limit = { NOT = { has_domicile_building_or_higher = grazing_land_05 } } add_domicile_building = grazing_land_05 }
   if = { limit = { NOT = { has_domicile_building_or_higher = grazing_land_06 } } add_domicile_building = grazing_land_06 }
-}
-
-ucm_domicile_force_add_grazing_land_staged_effect = {
-  # domicile_war_field / grazing_land — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = grazing_land_01 } } add_domicile_building = grazing_land_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = grazing_land_02 } } add_domicile_building = grazing_land_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = grazing_land_03 } } add_domicile_building = grazing_land_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = grazing_land_04 } } add_domicile_building = grazing_land_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = grazing_land_05 } } add_domicile_building = grazing_land_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = grazing_land_06 } } add_domicile_building = grazing_land_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
 }
 
 ucm_domicile_force_add_grazing_land_to_05_max_effect = {
@@ -282,20 +116,6 @@ ucm_domicile_force_add_grazing_land_to_05_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = grazing_land_05 } } add_domicile_building = grazing_land_05 }
 }
 
-ucm_domicile_force_add_grazing_land_to_05_staged_effect = {
-  # domicile_war_field cap 5 — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = grazing_land_01 } } add_domicile_building = grazing_land_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = grazing_land_02 } } add_domicile_building = grazing_land_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = grazing_land_03 } } add_domicile_building = grazing_land_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = grazing_land_04 } } add_domicile_building = grazing_land_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = grazing_land_05 } } add_domicile_building = grazing_land_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-}
-
 ucm_domicile_force_add_watchtower_max_effect = {
   # domicile_watchtower
   if = { limit = { NOT = { has_domicile_building_or_higher = watchtower_01 } } add_domicile_building = watchtower_01 }
@@ -303,20 +123,6 @@ ucm_domicile_force_add_watchtower_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = watchtower_03 } } add_domicile_building = watchtower_03 }
   if = { limit = { NOT = { has_domicile_building_or_higher = watchtower_04 } } add_domicile_building = watchtower_04 }
   if = { limit = { NOT = { has_domicile_building_or_higher = watchtower_05 } } add_domicile_building = watchtower_05 }
-}
-
-ucm_domicile_force_add_watchtower_staged_effect = {
-  # domicile_watchtower — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = watchtower_01 } } add_domicile_building = watchtower_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = watchtower_02 } } add_domicile_building = watchtower_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = watchtower_03 } } add_domicile_building = watchtower_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = watchtower_04 } } add_domicile_building = watchtower_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = watchtower_05 } } add_domicile_building = watchtower_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
 }
 
 ucm_domicile_force_add_garden_leisure_max_effect = {
@@ -329,22 +135,6 @@ ucm_domicile_force_add_garden_leisure_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = garden_leisure_06 } } add_domicile_building = garden_leisure_06 }
 }
 
-ucm_domicile_force_add_garden_leisure_staged_effect = {
-  # garden leisure (6th military slot) — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = garden_01 } } add_domicile_building = garden_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = garden_02 } } add_domicile_building = garden_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = garden_03 } } add_domicile_building = garden_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = garden_leisure_04 } } add_domicile_building = garden_leisure_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = garden_leisure_05 } } add_domicile_building = garden_leisure_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = garden_leisure_06 } } add_domicile_building = garden_leisure_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_estate_building = yes } }
-}
-
 ucm_domicile_force_add_east_asian_rice_field_max_effect = {
   # rice_field
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rice_field_01 } } add_domicile_building = east_asian_estate_rice_field_01 }
@@ -353,64 +143,6 @@ ucm_domicile_force_add_east_asian_rice_field_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rice_field_04 } } add_domicile_building = east_asian_estate_rice_field_04 }
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rice_field_05 } } add_domicile_building = east_asian_estate_rice_field_05 }
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rice_field_06 } } add_domicile_building = east_asian_estate_rice_field_06 }
-}
-
-ucm_domicile_force_add_east_asian_rice_field_staged_effect = {
-  # rice_field — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rice_field_01 } } add_domicile_building = east_asian_estate_rice_field_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_rice_field_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_wine_press_01 } } add_domicile_building = east_asian_estate_wine_press_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_wine_press_02 } } add_domicile_building = east_asian_estate_wine_press_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_wine_press_03 } } add_domicile_building = east_asian_estate_wine_press_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_wine_press_04 } } add_domicile_building = east_asian_estate_wine_press_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rice_field_02 } } add_domicile_building = east_asian_estate_rice_field_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_rice_field_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_wine_press_01 } } add_domicile_building = east_asian_estate_wine_press_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_wine_press_02 } } add_domicile_building = east_asian_estate_wine_press_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_wine_press_03 } } add_domicile_building = east_asian_estate_wine_press_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_wine_press_04 } } add_domicile_building = east_asian_estate_wine_press_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rice_field_03 } } add_domicile_building = east_asian_estate_rice_field_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_rice_field_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_wine_press_01 } } add_domicile_building = east_asian_estate_wine_press_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_wine_press_02 } } add_domicile_building = east_asian_estate_wine_press_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_wine_press_03 } } add_domicile_building = east_asian_estate_wine_press_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_wine_press_04 } } add_domicile_building = east_asian_estate_wine_press_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rice_field_04 } } add_domicile_building = east_asian_estate_rice_field_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_rice_field_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_wine_press_01 } } add_domicile_building = east_asian_estate_wine_press_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_wine_press_02 } } add_domicile_building = east_asian_estate_wine_press_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_wine_press_03 } } add_domicile_building = east_asian_estate_wine_press_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_wine_press_04 } } add_domicile_building = east_asian_estate_wine_press_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rice_field_05 } } add_domicile_building = east_asian_estate_rice_field_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_rice_field_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_wine_press_01 } } add_domicile_building = east_asian_estate_wine_press_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_wine_press_02 } } add_domicile_building = east_asian_estate_wine_press_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_wine_press_03 } } add_domicile_building = east_asian_estate_wine_press_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_wine_press_04 } } add_domicile_building = east_asian_estate_wine_press_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rice_field_06 } } add_domicile_building = east_asian_estate_rice_field_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_rice_field_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_wine_press_01 } } add_domicile_building = east_asian_estate_wine_press_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_wine_press_02 } } add_domicile_building = east_asian_estate_wine_press_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_wine_press_03 } } add_domicile_building = east_asian_estate_wine_press_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_wine_press_04 } } add_domicile_building = east_asian_estate_wine_press_04 }
-  }
 }
 
 ucm_domicile_force_add_east_asian_workshop_carpenter_max_effect = {
@@ -423,64 +155,6 @@ ucm_domicile_force_add_east_asian_workshop_carpenter_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_workshop_carpenter_06 } } add_domicile_building = east_asian_estate_workshop_carpenter_06 }
 }
 
-ucm_domicile_force_add_east_asian_workshop_carpenter_staged_effect = {
-  # workshop — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_workshop_01 } } add_domicile_building = east_asian_estate_workshop_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_workshop_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_01 } } add_domicile_building = east_asian_estate_leatherworks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_02 } } add_domicile_building = east_asian_estate_leatherworks_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_03 } } add_domicile_building = east_asian_estate_leatherworks_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_04 } } add_domicile_building = east_asian_estate_leatherworks_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_workshop_02 } } add_domicile_building = east_asian_estate_workshop_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_workshop_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_01 } } add_domicile_building = east_asian_estate_leatherworks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_02 } } add_domicile_building = east_asian_estate_leatherworks_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_03 } } add_domicile_building = east_asian_estate_leatherworks_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_04 } } add_domicile_building = east_asian_estate_leatherworks_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_workshop_carpenter_03 } } add_domicile_building = east_asian_estate_workshop_carpenter_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_workshop_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_01 } } add_domicile_building = east_asian_estate_leatherworks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_02 } } add_domicile_building = east_asian_estate_leatherworks_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_03 } } add_domicile_building = east_asian_estate_leatherworks_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_04 } } add_domicile_building = east_asian_estate_leatherworks_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_workshop_carpenter_04 } } add_domicile_building = east_asian_estate_workshop_carpenter_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_workshop_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_01 } } add_domicile_building = east_asian_estate_leatherworks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_02 } } add_domicile_building = east_asian_estate_leatherworks_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_03 } } add_domicile_building = east_asian_estate_leatherworks_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_04 } } add_domicile_building = east_asian_estate_leatherworks_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_workshop_carpenter_05 } } add_domicile_building = east_asian_estate_workshop_carpenter_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_workshop_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_01 } } add_domicile_building = east_asian_estate_leatherworks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_02 } } add_domicile_building = east_asian_estate_leatherworks_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_03 } } add_domicile_building = east_asian_estate_leatherworks_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_04 } } add_domicile_building = east_asian_estate_leatherworks_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_workshop_carpenter_06 } } add_domicile_building = east_asian_estate_workshop_carpenter_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_workshop_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_01 } } add_domicile_building = east_asian_estate_leatherworks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_02 } } add_domicile_building = east_asian_estate_leatherworks_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_03 } } add_domicile_building = east_asian_estate_leatherworks_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_04 } } add_domicile_building = east_asian_estate_leatherworks_04 }
-  }
-}
-
 ucm_domicile_force_add_east_asian_storage_warehouse_max_effect = {
   # warehouse
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_storage_01 } } add_domicile_building = east_asian_estate_storage_01 }
@@ -489,64 +163,6 @@ ucm_domicile_force_add_east_asian_storage_warehouse_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_storage_warehouse_04 } } add_domicile_building = east_asian_estate_storage_warehouse_04 }
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_storage_warehouse_05 } } add_domicile_building = east_asian_estate_storage_warehouse_05 }
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_storage_warehouse_06 } } add_domicile_building = east_asian_estate_storage_warehouse_06 }
-}
-
-ucm_domicile_force_add_east_asian_storage_warehouse_staged_effect = {
-  # warehouse — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_storage_01 } } add_domicile_building = east_asian_estate_storage_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_storage_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_weights_measures_bench_01 } } add_domicile_building = east_asian_estate_weights_measures_bench_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_weights_measures_bench_02 } } add_domicile_building = east_asian_estate_weights_measures_bench_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_weights_measures_bench_03 } } add_domicile_building = east_asian_estate_weights_measures_bench_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_weights_measures_bench_04 } } add_domicile_building = east_asian_estate_weights_measures_bench_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_storage_02 } } add_domicile_building = east_asian_estate_storage_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_storage_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_weights_measures_bench_01 } } add_domicile_building = east_asian_estate_weights_measures_bench_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_weights_measures_bench_02 } } add_domicile_building = east_asian_estate_weights_measures_bench_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_weights_measures_bench_03 } } add_domicile_building = east_asian_estate_weights_measures_bench_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_weights_measures_bench_04 } } add_domicile_building = east_asian_estate_weights_measures_bench_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_storage_warehouse_03 } } add_domicile_building = east_asian_estate_storage_warehouse_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_storage_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_weights_measures_bench_01 } } add_domicile_building = east_asian_estate_weights_measures_bench_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_weights_measures_bench_02 } } add_domicile_building = east_asian_estate_weights_measures_bench_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_weights_measures_bench_03 } } add_domicile_building = east_asian_estate_weights_measures_bench_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_weights_measures_bench_04 } } add_domicile_building = east_asian_estate_weights_measures_bench_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_storage_warehouse_04 } } add_domicile_building = east_asian_estate_storage_warehouse_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_storage_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_weights_measures_bench_01 } } add_domicile_building = east_asian_estate_weights_measures_bench_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_weights_measures_bench_02 } } add_domicile_building = east_asian_estate_weights_measures_bench_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_weights_measures_bench_03 } } add_domicile_building = east_asian_estate_weights_measures_bench_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_weights_measures_bench_04 } } add_domicile_building = east_asian_estate_weights_measures_bench_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_storage_warehouse_05 } } add_domicile_building = east_asian_estate_storage_warehouse_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_storage_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_weights_measures_bench_01 } } add_domicile_building = east_asian_estate_weights_measures_bench_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_weights_measures_bench_02 } } add_domicile_building = east_asian_estate_weights_measures_bench_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_weights_measures_bench_03 } } add_domicile_building = east_asian_estate_weights_measures_bench_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_weights_measures_bench_04 } } add_domicile_building = east_asian_estate_weights_measures_bench_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_storage_warehouse_06 } } add_domicile_building = east_asian_estate_storage_warehouse_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_storage_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_weights_measures_bench_01 } } add_domicile_building = east_asian_estate_weights_measures_bench_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_weights_measures_bench_02 } } add_domicile_building = east_asian_estate_weights_measures_bench_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_weights_measures_bench_03 } } add_domicile_building = east_asian_estate_weights_measures_bench_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_weights_measures_bench_04 } } add_domicile_building = east_asian_estate_weights_measures_bench_04 }
-  }
 }
 
 ucm_domicile_force_add_east_asian_market_max_effect = {
@@ -559,64 +175,6 @@ ucm_domicile_force_add_east_asian_market_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_market_06 } } add_domicile_building = east_asian_estate_market_06 }
 }
 
-ucm_domicile_force_add_east_asian_market_staged_effect = {
-  # market — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_market_01 } } add_domicile_building = east_asian_estate_market_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_market_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_courier_posthouse_01 } } add_domicile_building = east_asian_estate_courier_posthouse_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_courier_posthouse_02 } } add_domicile_building = east_asian_estate_courier_posthouse_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_courier_posthouse_03 } } add_domicile_building = east_asian_estate_courier_posthouse_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_courier_posthouse_04 } } add_domicile_building = east_asian_estate_courier_posthouse_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_market_02 } } add_domicile_building = east_asian_estate_market_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_market_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_courier_posthouse_01 } } add_domicile_building = east_asian_estate_courier_posthouse_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_courier_posthouse_02 } } add_domicile_building = east_asian_estate_courier_posthouse_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_courier_posthouse_03 } } add_domicile_building = east_asian_estate_courier_posthouse_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_courier_posthouse_04 } } add_domicile_building = east_asian_estate_courier_posthouse_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_market_03 } } add_domicile_building = east_asian_estate_market_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_market_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_courier_posthouse_01 } } add_domicile_building = east_asian_estate_courier_posthouse_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_courier_posthouse_02 } } add_domicile_building = east_asian_estate_courier_posthouse_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_courier_posthouse_03 } } add_domicile_building = east_asian_estate_courier_posthouse_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_courier_posthouse_04 } } add_domicile_building = east_asian_estate_courier_posthouse_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_market_04 } } add_domicile_building = east_asian_estate_market_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_market_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_courier_posthouse_01 } } add_domicile_building = east_asian_estate_courier_posthouse_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_courier_posthouse_02 } } add_domicile_building = east_asian_estate_courier_posthouse_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_courier_posthouse_03 } } add_domicile_building = east_asian_estate_courier_posthouse_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_courier_posthouse_04 } } add_domicile_building = east_asian_estate_courier_posthouse_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_market_05 } } add_domicile_building = east_asian_estate_market_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_market_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_courier_posthouse_01 } } add_domicile_building = east_asian_estate_courier_posthouse_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_courier_posthouse_02 } } add_domicile_building = east_asian_estate_courier_posthouse_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_courier_posthouse_03 } } add_domicile_building = east_asian_estate_courier_posthouse_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_courier_posthouse_04 } } add_domicile_building = east_asian_estate_courier_posthouse_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_market_06 } } add_domicile_building = east_asian_estate_market_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_market_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_courier_posthouse_01 } } add_domicile_building = east_asian_estate_courier_posthouse_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_courier_posthouse_02 } } add_domicile_building = east_asian_estate_courier_posthouse_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_courier_posthouse_03 } } add_domicile_building = east_asian_estate_courier_posthouse_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_courier_posthouse_04 } } add_domicile_building = east_asian_estate_courier_posthouse_04 }
-  }
-}
-
 ucm_domicile_force_add_east_asian_tea_max_effect = {
   # tea / post
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_tea_01 } } add_domicile_building = east_asian_estate_tea_01 }
@@ -627,82 +185,12 @@ ucm_domicile_force_add_east_asian_tea_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_tea_06 } } add_domicile_building = east_asian_estate_tea_06 }
 }
 
-ucm_domicile_force_add_east_asian_tea_staged_effect = {
-  # tea / post — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_tea_01 } } add_domicile_building = east_asian_estate_tea_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_tea_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_teahouse_01 } } add_domicile_building = east_asian_estate_teahouse_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_teahouse_02 } } add_domicile_building = east_asian_estate_teahouse_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_teahouse_03 } } add_domicile_building = east_asian_estate_teahouse_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_teahouse_04 } } add_domicile_building = east_asian_estate_teahouse_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_tea_02 } } add_domicile_building = east_asian_estate_tea_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_tea_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_teahouse_01 } } add_domicile_building = east_asian_estate_teahouse_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_teahouse_02 } } add_domicile_building = east_asian_estate_teahouse_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_teahouse_03 } } add_domicile_building = east_asian_estate_teahouse_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_teahouse_04 } } add_domicile_building = east_asian_estate_teahouse_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_tea_03 } } add_domicile_building = east_asian_estate_tea_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_tea_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_teahouse_01 } } add_domicile_building = east_asian_estate_teahouse_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_teahouse_02 } } add_domicile_building = east_asian_estate_teahouse_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_teahouse_03 } } add_domicile_building = east_asian_estate_teahouse_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_teahouse_04 } } add_domicile_building = east_asian_estate_teahouse_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_tea_04 } } add_domicile_building = east_asian_estate_tea_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_tea_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_teahouse_01 } } add_domicile_building = east_asian_estate_teahouse_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_teahouse_02 } } add_domicile_building = east_asian_estate_teahouse_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_teahouse_03 } } add_domicile_building = east_asian_estate_teahouse_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_teahouse_04 } } add_domicile_building = east_asian_estate_teahouse_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_tea_05 } } add_domicile_building = east_asian_estate_tea_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_tea_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_teahouse_01 } } add_domicile_building = east_asian_estate_teahouse_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_teahouse_02 } } add_domicile_building = east_asian_estate_teahouse_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_teahouse_03 } } add_domicile_building = east_asian_estate_teahouse_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_teahouse_04 } } add_domicile_building = east_asian_estate_teahouse_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_tea_06 } } add_domicile_building = east_asian_estate_tea_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_tea_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_teahouse_01 } } add_domicile_building = east_asian_estate_teahouse_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_teahouse_02 } } add_domicile_building = east_asian_estate_teahouse_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_teahouse_03 } } add_domicile_building = east_asian_estate_teahouse_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_teahouse_04 } } add_domicile_building = east_asian_estate_teahouse_04 }
-  }
-}
-
 ucm_domicile_force_add_east_asian_vintner_halls_max_effect = {
   # vineyard
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_vintner_halls_01 } } add_domicile_building = east_asian_estate_vintner_halls_01 }
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_vintner_halls_02 } } add_domicile_building = east_asian_estate_vintner_halls_02 }
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_vintner_halls_03 } } add_domicile_building = east_asian_estate_vintner_halls_03 }
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_vintner_halls_04 } } add_domicile_building = east_asian_estate_vintner_halls_04 }
-}
-
-ucm_domicile_force_add_east_asian_vintner_halls_staged_effect = {
-  # vineyard — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_vintner_halls_01 } } add_domicile_building = east_asian_estate_vintner_halls_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_vintner_halls_02 } } add_domicile_building = east_asian_estate_vintner_halls_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_vintner_halls_03 } } add_domicile_building = east_asian_estate_vintner_halls_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_vintner_halls_04 } } add_domicile_building = east_asian_estate_vintner_halls_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
 }
 
 ucm_domicile_force_add_east_asian_gate_max_effect = {
@@ -715,64 +203,6 @@ ucm_domicile_force_add_east_asian_gate_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_gate_06 } } add_domicile_building = east_asian_estate_gate_06 }
 }
 
-ucm_domicile_force_add_east_asian_gate_staged_effect = {
-  # guard — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_gate_01 } } add_domicile_building = east_asian_estate_gate_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_gate_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_performance_stage_01 } } add_domicile_building = east_asian_estate_performance_stage_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_performance_stage_02 } } add_domicile_building = east_asian_estate_performance_stage_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_performance_stage_03 } } add_domicile_building = east_asian_estate_performance_stage_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_performance_stage_04 } } add_domicile_building = east_asian_estate_performance_stage_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_gate_02 } } add_domicile_building = east_asian_estate_gate_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_gate_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_performance_stage_01 } } add_domicile_building = east_asian_estate_performance_stage_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_performance_stage_02 } } add_domicile_building = east_asian_estate_performance_stage_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_performance_stage_03 } } add_domicile_building = east_asian_estate_performance_stage_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_performance_stage_04 } } add_domicile_building = east_asian_estate_performance_stage_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_gate_03 } } add_domicile_building = east_asian_estate_gate_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_gate_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_performance_stage_01 } } add_domicile_building = east_asian_estate_performance_stage_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_performance_stage_02 } } add_domicile_building = east_asian_estate_performance_stage_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_performance_stage_03 } } add_domicile_building = east_asian_estate_performance_stage_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_performance_stage_04 } } add_domicile_building = east_asian_estate_performance_stage_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_gate_04 } } add_domicile_building = east_asian_estate_gate_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_gate_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_performance_stage_01 } } add_domicile_building = east_asian_estate_performance_stage_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_performance_stage_02 } } add_domicile_building = east_asian_estate_performance_stage_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_performance_stage_03 } } add_domicile_building = east_asian_estate_performance_stage_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_performance_stage_04 } } add_domicile_building = east_asian_estate_performance_stage_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_gate_05 } } add_domicile_building = east_asian_estate_gate_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_gate_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_performance_stage_01 } } add_domicile_building = east_asian_estate_performance_stage_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_performance_stage_02 } } add_domicile_building = east_asian_estate_performance_stage_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_performance_stage_03 } } add_domicile_building = east_asian_estate_performance_stage_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_performance_stage_04 } } add_domicile_building = east_asian_estate_performance_stage_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_gate_06 } } add_domicile_building = east_asian_estate_gate_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_gate_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_performance_stage_01 } } add_domicile_building = east_asian_estate_performance_stage_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_performance_stage_02 } } add_domicile_building = east_asian_estate_performance_stage_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_performance_stage_03 } } add_domicile_building = east_asian_estate_performance_stage_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_performance_stage_04 } } add_domicile_building = east_asian_estate_performance_stage_04 }
-  }
-}
-
 ucm_domicile_force_add_east_asian_stable_grand_max_effect = {
   # stable
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_stable_01 } } add_domicile_building = east_asian_estate_stable_01 }
@@ -781,64 +211,6 @@ ucm_domicile_force_add_east_asian_stable_grand_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_stable_grand_04 } } add_domicile_building = east_asian_estate_stable_grand_04 }
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_stable_grand_05 } } add_domicile_building = east_asian_estate_stable_grand_05 }
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_stable_grand_06 } } add_domicile_building = east_asian_estate_stable_grand_06 }
-}
-
-ucm_domicile_force_add_east_asian_stable_grand_staged_effect = {
-  # stable — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_stable_01 } } add_domicile_building = east_asian_estate_stable_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_stable_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fodder_reserves_01 } } add_domicile_building = east_asian_estate_fodder_reserves_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fodder_reserves_02 } } add_domicile_building = east_asian_estate_fodder_reserves_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fodder_reserves_03 } } add_domicile_building = east_asian_estate_fodder_reserves_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fodder_reserves_04 } } add_domicile_building = east_asian_estate_fodder_reserves_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_stable_02 } } add_domicile_building = east_asian_estate_stable_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_stable_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fodder_reserves_01 } } add_domicile_building = east_asian_estate_fodder_reserves_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fodder_reserves_02 } } add_domicile_building = east_asian_estate_fodder_reserves_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fodder_reserves_03 } } add_domicile_building = east_asian_estate_fodder_reserves_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fodder_reserves_04 } } add_domicile_building = east_asian_estate_fodder_reserves_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_stable_03 } } add_domicile_building = east_asian_estate_stable_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_stable_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fodder_reserves_01 } } add_domicile_building = east_asian_estate_fodder_reserves_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fodder_reserves_02 } } add_domicile_building = east_asian_estate_fodder_reserves_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fodder_reserves_03 } } add_domicile_building = east_asian_estate_fodder_reserves_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fodder_reserves_04 } } add_domicile_building = east_asian_estate_fodder_reserves_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_stable_grand_04 } } add_domicile_building = east_asian_estate_stable_grand_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_stable_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fodder_reserves_01 } } add_domicile_building = east_asian_estate_fodder_reserves_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fodder_reserves_02 } } add_domicile_building = east_asian_estate_fodder_reserves_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fodder_reserves_03 } } add_domicile_building = east_asian_estate_fodder_reserves_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fodder_reserves_04 } } add_domicile_building = east_asian_estate_fodder_reserves_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_stable_grand_05 } } add_domicile_building = east_asian_estate_stable_grand_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_stable_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fodder_reserves_01 } } add_domicile_building = east_asian_estate_fodder_reserves_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fodder_reserves_02 } } add_domicile_building = east_asian_estate_fodder_reserves_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fodder_reserves_03 } } add_domicile_building = east_asian_estate_fodder_reserves_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fodder_reserves_04 } } add_domicile_building = east_asian_estate_fodder_reserves_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_stable_grand_06 } } add_domicile_building = east_asian_estate_stable_grand_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_stable_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fodder_reserves_01 } } add_domicile_building = east_asian_estate_fodder_reserves_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fodder_reserves_02 } } add_domicile_building = east_asian_estate_fodder_reserves_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fodder_reserves_03 } } add_domicile_building = east_asian_estate_fodder_reserves_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fodder_reserves_04 } } add_domicile_building = east_asian_estate_fodder_reserves_04 }
-  }
 }
 
 ucm_domicile_force_add_east_asian_workshop_mason_max_effect = {
@@ -851,64 +223,6 @@ ucm_domicile_force_add_east_asian_workshop_mason_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_workshop_mason_06 } } add_domicile_building = east_asian_estate_workshop_mason_06 }
 }
 
-ucm_domicile_force_add_east_asian_workshop_mason_staged_effect = {
-  # armory / mason — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_workshop_01 } } add_domicile_building = east_asian_estate_workshop_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_workshop_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_01 } } add_domicile_building = east_asian_estate_leatherworks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_02 } } add_domicile_building = east_asian_estate_leatherworks_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_03 } } add_domicile_building = east_asian_estate_leatherworks_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_04 } } add_domicile_building = east_asian_estate_leatherworks_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_workshop_02 } } add_domicile_building = east_asian_estate_workshop_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_workshop_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_01 } } add_domicile_building = east_asian_estate_leatherworks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_02 } } add_domicile_building = east_asian_estate_leatherworks_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_03 } } add_domicile_building = east_asian_estate_leatherworks_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_04 } } add_domicile_building = east_asian_estate_leatherworks_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_workshop_mason_03 } } add_domicile_building = east_asian_estate_workshop_mason_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_workshop_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_01 } } add_domicile_building = east_asian_estate_leatherworks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_02 } } add_domicile_building = east_asian_estate_leatherworks_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_03 } } add_domicile_building = east_asian_estate_leatherworks_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_04 } } add_domicile_building = east_asian_estate_leatherworks_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_workshop_mason_04 } } add_domicile_building = east_asian_estate_workshop_mason_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_workshop_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_01 } } add_domicile_building = east_asian_estate_leatherworks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_02 } } add_domicile_building = east_asian_estate_leatherworks_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_03 } } add_domicile_building = east_asian_estate_leatherworks_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_04 } } add_domicile_building = east_asian_estate_leatherworks_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_workshop_mason_05 } } add_domicile_building = east_asian_estate_workshop_mason_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_workshop_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_01 } } add_domicile_building = east_asian_estate_leatherworks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_02 } } add_domicile_building = east_asian_estate_leatherworks_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_03 } } add_domicile_building = east_asian_estate_leatherworks_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_04 } } add_domicile_building = east_asian_estate_leatherworks_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_workshop_mason_06 } } add_domicile_building = east_asian_estate_workshop_mason_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_workshop_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_01 } } add_domicile_building = east_asian_estate_leatherworks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_02 } } add_domicile_building = east_asian_estate_leatherworks_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_03 } } add_domicile_building = east_asian_estate_leatherworks_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_leatherworks_04 } } add_domicile_building = east_asian_estate_leatherworks_04 }
-  }
-}
-
 ucm_domicile_force_add_east_asian_barracks_max_effect = {
   # barracks
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_barracks_01 } } add_domicile_building = east_asian_estate_barracks_01 }
@@ -917,64 +231,6 @@ ucm_domicile_force_add_east_asian_barracks_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_barracks_04 } } add_domicile_building = east_asian_estate_barracks_04 }
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_barracks_05 } } add_domicile_building = east_asian_estate_barracks_05 }
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_barracks_06 } } add_domicile_building = east_asian_estate_barracks_06 }
-}
-
-ucm_domicile_force_add_east_asian_barracks_staged_effect = {
-  # barracks — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_barracks_01 } } add_domicile_building = east_asian_estate_barracks_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_barracks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_drill_yard_01 } } add_domicile_building = east_asian_estate_drill_yard_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_drill_yard_02 } } add_domicile_building = east_asian_estate_drill_yard_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_drill_yard_03 } } add_domicile_building = east_asian_estate_drill_yard_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_drill_yard_04 } } add_domicile_building = east_asian_estate_drill_yard_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_barracks_02 } } add_domicile_building = east_asian_estate_barracks_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_barracks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_drill_yard_01 } } add_domicile_building = east_asian_estate_drill_yard_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_drill_yard_02 } } add_domicile_building = east_asian_estate_drill_yard_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_drill_yard_03 } } add_domicile_building = east_asian_estate_drill_yard_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_drill_yard_04 } } add_domicile_building = east_asian_estate_drill_yard_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_barracks_03 } } add_domicile_building = east_asian_estate_barracks_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_barracks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_drill_yard_01 } } add_domicile_building = east_asian_estate_drill_yard_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_drill_yard_02 } } add_domicile_building = east_asian_estate_drill_yard_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_drill_yard_03 } } add_domicile_building = east_asian_estate_drill_yard_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_drill_yard_04 } } add_domicile_building = east_asian_estate_drill_yard_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_barracks_04 } } add_domicile_building = east_asian_estate_barracks_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_barracks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_drill_yard_01 } } add_domicile_building = east_asian_estate_drill_yard_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_drill_yard_02 } } add_domicile_building = east_asian_estate_drill_yard_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_drill_yard_03 } } add_domicile_building = east_asian_estate_drill_yard_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_drill_yard_04 } } add_domicile_building = east_asian_estate_drill_yard_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_barracks_05 } } add_domicile_building = east_asian_estate_barracks_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_barracks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_drill_yard_01 } } add_domicile_building = east_asian_estate_drill_yard_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_drill_yard_02 } } add_domicile_building = east_asian_estate_drill_yard_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_drill_yard_03 } } add_domicile_building = east_asian_estate_drill_yard_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_drill_yard_04 } } add_domicile_building = east_asian_estate_drill_yard_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_barracks_06 } } add_domicile_building = east_asian_estate_barracks_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_barracks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_drill_yard_01 } } add_domicile_building = east_asian_estate_drill_yard_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_drill_yard_02 } } add_domicile_building = east_asian_estate_drill_yard_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_drill_yard_03 } } add_domicile_building = east_asian_estate_drill_yard_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_drill_yard_04 } } add_domicile_building = east_asian_estate_drill_yard_04 }
-  }
 }
 
 ucm_domicile_force_add_east_asian_grazing_land_max_effect = {
@@ -987,64 +243,6 @@ ucm_domicile_force_add_east_asian_grazing_land_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_grazing_land_06 } } add_domicile_building = east_asian_estate_grazing_land_06 }
 }
 
-ucm_domicile_force_add_east_asian_grazing_land_staged_effect = {
-  # war field — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_grazing_land_01 } } add_domicile_building = east_asian_estate_grazing_land_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_grazing_land_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rotation_paddocks_01 } } add_domicile_building = east_asian_estate_rotation_paddocks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rotation_paddocks_02 } } add_domicile_building = east_asian_estate_rotation_paddocks_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rotation_paddocks_03 } } add_domicile_building = east_asian_estate_rotation_paddocks_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rotation_paddocks_04 } } add_domicile_building = east_asian_estate_rotation_paddocks_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_grazing_land_02 } } add_domicile_building = east_asian_estate_grazing_land_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_grazing_land_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rotation_paddocks_01 } } add_domicile_building = east_asian_estate_rotation_paddocks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rotation_paddocks_02 } } add_domicile_building = east_asian_estate_rotation_paddocks_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rotation_paddocks_03 } } add_domicile_building = east_asian_estate_rotation_paddocks_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rotation_paddocks_04 } } add_domicile_building = east_asian_estate_rotation_paddocks_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_grazing_land_03 } } add_domicile_building = east_asian_estate_grazing_land_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_grazing_land_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rotation_paddocks_01 } } add_domicile_building = east_asian_estate_rotation_paddocks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rotation_paddocks_02 } } add_domicile_building = east_asian_estate_rotation_paddocks_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rotation_paddocks_03 } } add_domicile_building = east_asian_estate_rotation_paddocks_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rotation_paddocks_04 } } add_domicile_building = east_asian_estate_rotation_paddocks_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_grazing_land_04 } } add_domicile_building = east_asian_estate_grazing_land_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_grazing_land_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rotation_paddocks_01 } } add_domicile_building = east_asian_estate_rotation_paddocks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rotation_paddocks_02 } } add_domicile_building = east_asian_estate_rotation_paddocks_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rotation_paddocks_03 } } add_domicile_building = east_asian_estate_rotation_paddocks_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rotation_paddocks_04 } } add_domicile_building = east_asian_estate_rotation_paddocks_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_grazing_land_05 } } add_domicile_building = east_asian_estate_grazing_land_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_grazing_land_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rotation_paddocks_01 } } add_domicile_building = east_asian_estate_rotation_paddocks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rotation_paddocks_02 } } add_domicile_building = east_asian_estate_rotation_paddocks_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rotation_paddocks_03 } } add_domicile_building = east_asian_estate_rotation_paddocks_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rotation_paddocks_04 } } add_domicile_building = east_asian_estate_rotation_paddocks_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_grazing_land_06 } } add_domicile_building = east_asian_estate_grazing_land_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_grazing_land_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rotation_paddocks_01 } } add_domicile_building = east_asian_estate_rotation_paddocks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rotation_paddocks_02 } } add_domicile_building = east_asian_estate_rotation_paddocks_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rotation_paddocks_03 } } add_domicile_building = east_asian_estate_rotation_paddocks_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_rotation_paddocks_04 } } add_domicile_building = east_asian_estate_rotation_paddocks_04 }
-  }
-}
-
 ucm_domicile_force_add_east_asian_garden_leisure_max_effect = {
   # garden leisure
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_garden_01 } } add_domicile_building = east_asian_estate_garden_01 }
@@ -1053,64 +251,6 @@ ucm_domicile_force_add_east_asian_garden_leisure_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_garden_leisure_04 } } add_domicile_building = east_asian_estate_garden_leisure_04 }
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_garden_leisure_05 } } add_domicile_building = east_asian_estate_garden_leisure_05 }
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_garden_leisure_06 } } add_domicile_building = east_asian_estate_garden_leisure_06 }
-}
-
-ucm_domicile_force_add_east_asian_garden_leisure_staged_effect = {
-  # garden leisure — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_garden_01 } } add_domicile_building = east_asian_estate_garden_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_garden_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fruit_trees_01 } } add_domicile_building = east_asian_estate_fruit_trees_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fruit_trees_02 } } add_domicile_building = east_asian_estate_fruit_trees_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fruit_trees_03 } } add_domicile_building = east_asian_estate_fruit_trees_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fruit_trees_04 } } add_domicile_building = east_asian_estate_fruit_trees_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_garden_02 } } add_domicile_building = east_asian_estate_garden_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_garden_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fruit_trees_01 } } add_domicile_building = east_asian_estate_fruit_trees_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fruit_trees_02 } } add_domicile_building = east_asian_estate_fruit_trees_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fruit_trees_03 } } add_domicile_building = east_asian_estate_fruit_trees_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fruit_trees_04 } } add_domicile_building = east_asian_estate_fruit_trees_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_garden_03 } } add_domicile_building = east_asian_estate_garden_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_garden_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fruit_trees_01 } } add_domicile_building = east_asian_estate_fruit_trees_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fruit_trees_02 } } add_domicile_building = east_asian_estate_fruit_trees_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fruit_trees_03 } } add_domicile_building = east_asian_estate_fruit_trees_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fruit_trees_04 } } add_domicile_building = east_asian_estate_fruit_trees_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_garden_leisure_04 } } add_domicile_building = east_asian_estate_garden_leisure_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_garden_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fruit_trees_01 } } add_domicile_building = east_asian_estate_fruit_trees_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fruit_trees_02 } } add_domicile_building = east_asian_estate_fruit_trees_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fruit_trees_03 } } add_domicile_building = east_asian_estate_fruit_trees_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fruit_trees_04 } } add_domicile_building = east_asian_estate_fruit_trees_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_garden_leisure_05 } } add_domicile_building = east_asian_estate_garden_leisure_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_garden_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fruit_trees_01 } } add_domicile_building = east_asian_estate_fruit_trees_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fruit_trees_02 } } add_domicile_building = east_asian_estate_fruit_trees_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fruit_trees_03 } } add_domicile_building = east_asian_estate_fruit_trees_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fruit_trees_04 } } add_domicile_building = east_asian_estate_fruit_trees_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_garden_leisure_06 } } add_domicile_building = east_asian_estate_garden_leisure_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_garden_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fruit_trees_01 } } add_domicile_building = east_asian_estate_fruit_trees_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fruit_trees_02 } } add_domicile_building = east_asian_estate_fruit_trees_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fruit_trees_03 } } add_domicile_building = east_asian_estate_fruit_trees_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_fruit_trees_04 } } add_domicile_building = east_asian_estate_fruit_trees_04 }
-  }
 }
 
 ucm_domicile_force_add_east_asian_watchtower_max_effect = {
@@ -1123,64 +263,6 @@ ucm_domicile_force_add_east_asian_watchtower_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_watchtower_06 } } add_domicile_building = east_asian_estate_watchtower_06 }
 }
 
-ucm_domicile_force_add_east_asian_watchtower_staged_effect = {
-  # watchtower — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_watchtower_01 } } add_domicile_building = east_asian_estate_watchtower_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_watchtower_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_crossbow_storage_01 } } add_domicile_building = east_asian_estate_crossbow_storage_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_crossbow_storage_02 } } add_domicile_building = east_asian_estate_crossbow_storage_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_crossbow_storage_03 } } add_domicile_building = east_asian_estate_crossbow_storage_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_crossbow_storage_04 } } add_domicile_building = east_asian_estate_crossbow_storage_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_watchtower_02 } } add_domicile_building = east_asian_estate_watchtower_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_watchtower_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_crossbow_storage_01 } } add_domicile_building = east_asian_estate_crossbow_storage_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_crossbow_storage_02 } } add_domicile_building = east_asian_estate_crossbow_storage_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_crossbow_storage_03 } } add_domicile_building = east_asian_estate_crossbow_storage_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_crossbow_storage_04 } } add_domicile_building = east_asian_estate_crossbow_storage_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_watchtower_03 } } add_domicile_building = east_asian_estate_watchtower_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_watchtower_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_crossbow_storage_01 } } add_domicile_building = east_asian_estate_crossbow_storage_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_crossbow_storage_02 } } add_domicile_building = east_asian_estate_crossbow_storage_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_crossbow_storage_03 } } add_domicile_building = east_asian_estate_crossbow_storage_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_crossbow_storage_04 } } add_domicile_building = east_asian_estate_crossbow_storage_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_watchtower_04 } } add_domicile_building = east_asian_estate_watchtower_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_watchtower_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_crossbow_storage_01 } } add_domicile_building = east_asian_estate_crossbow_storage_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_crossbow_storage_02 } } add_domicile_building = east_asian_estate_crossbow_storage_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_crossbow_storage_03 } } add_domicile_building = east_asian_estate_crossbow_storage_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_crossbow_storage_04 } } add_domicile_building = east_asian_estate_crossbow_storage_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_watchtower_05 } } add_domicile_building = east_asian_estate_watchtower_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_watchtower_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_crossbow_storage_01 } } add_domicile_building = east_asian_estate_crossbow_storage_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_crossbow_storage_02 } } add_domicile_building = east_asian_estate_crossbow_storage_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_crossbow_storage_03 } } add_domicile_building = east_asian_estate_crossbow_storage_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_crossbow_storage_04 } } add_domicile_building = east_asian_estate_crossbow_storage_04 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_watchtower_06 } } add_domicile_building = east_asian_estate_watchtower_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_east_asian_estate_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = east_asian_estate_watchtower_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_crossbow_storage_01 } } add_domicile_building = east_asian_estate_crossbow_storage_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_crossbow_storage_02 } } add_domicile_building = east_asian_estate_crossbow_storage_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_crossbow_storage_03 } } add_domicile_building = east_asian_estate_crossbow_storage_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = east_asian_estate_crossbow_storage_04 } } add_domicile_building = east_asian_estate_crossbow_storage_04 }
-  }
-}
-
 ucm_domicile_force_add_japanese_fields_max_effect = {
   # fields
   if = { limit = { NOT = { has_domicile_building_or_higher = japanese_fields_01 } } add_domicile_building = japanese_fields_01 }
@@ -1189,76 +271,6 @@ ucm_domicile_force_add_japanese_fields_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = japanese_fields_04 } } add_domicile_building = japanese_fields_04 }
   if = { limit = { NOT = { has_domicile_building_or_higher = japanese_fields_05 } } add_domicile_building = japanese_fields_05 }
   if = { limit = { NOT = { has_domicile_building_or_higher = japanese_fields_06 } } add_domicile_building = japanese_fields_06 }
-}
-
-ucm_domicile_force_add_japanese_fields_staged_effect = {
-  # fields — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_fields_01 } } add_domicile_building = japanese_fields_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_fields_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_01 } } add_domicile_building = japanese_tenant_farmers_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_02 } } add_domicile_building = japanese_tenant_farmers_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_03 } } add_domicile_building = japanese_tenant_farmers_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_04 } } add_domicile_building = japanese_tenant_farmers_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_05 } } add_domicile_building = japanese_tenant_farmers_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_06 } } add_domicile_building = japanese_tenant_farmers_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_fields_02 } } add_domicile_building = japanese_fields_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_fields_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_01 } } add_domicile_building = japanese_tenant_farmers_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_02 } } add_domicile_building = japanese_tenant_farmers_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_03 } } add_domicile_building = japanese_tenant_farmers_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_04 } } add_domicile_building = japanese_tenant_farmers_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_05 } } add_domicile_building = japanese_tenant_farmers_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_06 } } add_domicile_building = japanese_tenant_farmers_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_fields_03 } } add_domicile_building = japanese_fields_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_fields_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_01 } } add_domicile_building = japanese_tenant_farmers_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_02 } } add_domicile_building = japanese_tenant_farmers_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_03 } } add_domicile_building = japanese_tenant_farmers_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_04 } } add_domicile_building = japanese_tenant_farmers_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_05 } } add_domicile_building = japanese_tenant_farmers_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_06 } } add_domicile_building = japanese_tenant_farmers_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_fields_04 } } add_domicile_building = japanese_fields_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_fields_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_01 } } add_domicile_building = japanese_tenant_farmers_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_02 } } add_domicile_building = japanese_tenant_farmers_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_03 } } add_domicile_building = japanese_tenant_farmers_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_04 } } add_domicile_building = japanese_tenant_farmers_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_05 } } add_domicile_building = japanese_tenant_farmers_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_06 } } add_domicile_building = japanese_tenant_farmers_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_fields_05 } } add_domicile_building = japanese_fields_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_fields_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_01 } } add_domicile_building = japanese_tenant_farmers_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_02 } } add_domicile_building = japanese_tenant_farmers_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_03 } } add_domicile_building = japanese_tenant_farmers_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_04 } } add_domicile_building = japanese_tenant_farmers_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_05 } } add_domicile_building = japanese_tenant_farmers_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_06 } } add_domicile_building = japanese_tenant_farmers_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_fields_06 } } add_domicile_building = japanese_fields_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_fields_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_01 } } add_domicile_building = japanese_tenant_farmers_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_02 } } add_domicile_building = japanese_tenant_farmers_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_03 } } add_domicile_building = japanese_tenant_farmers_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_04 } } add_domicile_building = japanese_tenant_farmers_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_05 } } add_domicile_building = japanese_tenant_farmers_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tenant_farmers_06 } } add_domicile_building = japanese_tenant_farmers_06 }
-  }
 }
 
 ucm_domicile_force_add_japanese_workshop_max_effect = {
@@ -1271,76 +283,6 @@ ucm_domicile_force_add_japanese_workshop_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = japanese_workshop_06 } } add_domicile_building = japanese_workshop_06 }
 }
 
-ucm_domicile_force_add_japanese_workshop_staged_effect = {
-  # workshop — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_workshop_01 } } add_domicile_building = japanese_workshop_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_workshop_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_01 } } add_domicile_building = japanese_carpenter_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_02 } } add_domicile_building = japanese_carpenter_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_03 } } add_domicile_building = japanese_carpenter_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_04 } } add_domicile_building = japanese_carpenter_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_05 } } add_domicile_building = japanese_carpenter_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_06 } } add_domicile_building = japanese_carpenter_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_workshop_02 } } add_domicile_building = japanese_workshop_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_workshop_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_01 } } add_domicile_building = japanese_carpenter_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_02 } } add_domicile_building = japanese_carpenter_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_03 } } add_domicile_building = japanese_carpenter_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_04 } } add_domicile_building = japanese_carpenter_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_05 } } add_domicile_building = japanese_carpenter_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_06 } } add_domicile_building = japanese_carpenter_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_workshop_03 } } add_domicile_building = japanese_workshop_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_workshop_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_01 } } add_domicile_building = japanese_carpenter_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_02 } } add_domicile_building = japanese_carpenter_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_03 } } add_domicile_building = japanese_carpenter_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_04 } } add_domicile_building = japanese_carpenter_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_05 } } add_domicile_building = japanese_carpenter_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_06 } } add_domicile_building = japanese_carpenter_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_workshop_04 } } add_domicile_building = japanese_workshop_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_workshop_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_01 } } add_domicile_building = japanese_carpenter_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_02 } } add_domicile_building = japanese_carpenter_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_03 } } add_domicile_building = japanese_carpenter_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_04 } } add_domicile_building = japanese_carpenter_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_05 } } add_domicile_building = japanese_carpenter_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_06 } } add_domicile_building = japanese_carpenter_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_workshop_05 } } add_domicile_building = japanese_workshop_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_workshop_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_01 } } add_domicile_building = japanese_carpenter_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_02 } } add_domicile_building = japanese_carpenter_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_03 } } add_domicile_building = japanese_carpenter_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_04 } } add_domicile_building = japanese_carpenter_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_05 } } add_domicile_building = japanese_carpenter_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_06 } } add_domicile_building = japanese_carpenter_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_workshop_06 } } add_domicile_building = japanese_workshop_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_workshop_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_01 } } add_domicile_building = japanese_carpenter_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_02 } } add_domicile_building = japanese_carpenter_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_03 } } add_domicile_building = japanese_carpenter_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_04 } } add_domicile_building = japanese_carpenter_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_05 } } add_domicile_building = japanese_carpenter_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_carpenter_06 } } add_domicile_building = japanese_carpenter_06 }
-  }
-}
-
 ucm_domicile_force_add_japanese_tea_plantation_max_effect = {
   # tea plantation
   if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tea_plantation_01 } } add_domicile_building = japanese_tea_plantation_01 }
@@ -1349,76 +291,6 @@ ucm_domicile_force_add_japanese_tea_plantation_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tea_plantation_04 } } add_domicile_building = japanese_tea_plantation_04 }
   if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tea_plantation_05 } } add_domicile_building = japanese_tea_plantation_05 }
   if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tea_plantation_06 } } add_domicile_building = japanese_tea_plantation_06 }
-}
-
-ucm_domicile_force_add_japanese_tea_plantation_staged_effect = {
-  # tea plantation — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tea_plantation_01 } } add_domicile_building = japanese_tea_plantation_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_tea_plantation_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_01 } } add_domicile_building = japanese_roastery_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_02 } } add_domicile_building = japanese_roastery_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_03 } } add_domicile_building = japanese_roastery_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_04 } } add_domicile_building = japanese_roastery_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_05 } } add_domicile_building = japanese_roastery_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_06 } } add_domicile_building = japanese_roastery_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tea_plantation_02 } } add_domicile_building = japanese_tea_plantation_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_tea_plantation_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_01 } } add_domicile_building = japanese_roastery_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_02 } } add_domicile_building = japanese_roastery_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_03 } } add_domicile_building = japanese_roastery_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_04 } } add_domicile_building = japanese_roastery_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_05 } } add_domicile_building = japanese_roastery_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_06 } } add_domicile_building = japanese_roastery_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tea_plantation_03 } } add_domicile_building = japanese_tea_plantation_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_tea_plantation_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_01 } } add_domicile_building = japanese_roastery_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_02 } } add_domicile_building = japanese_roastery_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_03 } } add_domicile_building = japanese_roastery_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_04 } } add_domicile_building = japanese_roastery_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_05 } } add_domicile_building = japanese_roastery_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_06 } } add_domicile_building = japanese_roastery_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tea_plantation_04 } } add_domicile_building = japanese_tea_plantation_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_tea_plantation_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_01 } } add_domicile_building = japanese_roastery_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_02 } } add_domicile_building = japanese_roastery_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_03 } } add_domicile_building = japanese_roastery_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_04 } } add_domicile_building = japanese_roastery_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_05 } } add_domicile_building = japanese_roastery_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_06 } } add_domicile_building = japanese_roastery_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tea_plantation_05 } } add_domicile_building = japanese_tea_plantation_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_tea_plantation_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_01 } } add_domicile_building = japanese_roastery_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_02 } } add_domicile_building = japanese_roastery_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_03 } } add_domicile_building = japanese_roastery_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_04 } } add_domicile_building = japanese_roastery_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_05 } } add_domicile_building = japanese_roastery_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_06 } } add_domicile_building = japanese_roastery_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tea_plantation_06 } } add_domicile_building = japanese_tea_plantation_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_tea_plantation_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_01 } } add_domicile_building = japanese_roastery_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_02 } } add_domicile_building = japanese_roastery_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_03 } } add_domicile_building = japanese_roastery_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_04 } } add_domicile_building = japanese_roastery_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_05 } } add_domicile_building = japanese_roastery_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_roastery_06 } } add_domicile_building = japanese_roastery_06 }
-  }
 }
 
 ucm_domicile_force_add_japanese_stables_max_effect = {
@@ -1431,76 +303,6 @@ ucm_domicile_force_add_japanese_stables_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = japanese_stables_06 } } add_domicile_building = japanese_stables_06 }
 }
 
-ucm_domicile_force_add_japanese_stables_staged_effect = {
-  # stables — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_stables_01 } } add_domicile_building = japanese_stables_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_stables_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_01 } } add_domicile_building = japanese_hunting_lodge_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_02 } } add_domicile_building = japanese_hunting_lodge_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_03 } } add_domicile_building = japanese_hunting_lodge_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_04 } } add_domicile_building = japanese_hunting_lodge_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_05 } } add_domicile_building = japanese_hunting_lodge_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_06 } } add_domicile_building = japanese_hunting_lodge_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_stables_02 } } add_domicile_building = japanese_stables_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_stables_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_01 } } add_domicile_building = japanese_hunting_lodge_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_02 } } add_domicile_building = japanese_hunting_lodge_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_03 } } add_domicile_building = japanese_hunting_lodge_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_04 } } add_domicile_building = japanese_hunting_lodge_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_05 } } add_domicile_building = japanese_hunting_lodge_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_06 } } add_domicile_building = japanese_hunting_lodge_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_stables_03 } } add_domicile_building = japanese_stables_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_stables_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_01 } } add_domicile_building = japanese_hunting_lodge_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_02 } } add_domicile_building = japanese_hunting_lodge_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_03 } } add_domicile_building = japanese_hunting_lodge_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_04 } } add_domicile_building = japanese_hunting_lodge_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_05 } } add_domicile_building = japanese_hunting_lodge_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_06 } } add_domicile_building = japanese_hunting_lodge_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_stables_04 } } add_domicile_building = japanese_stables_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_stables_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_01 } } add_domicile_building = japanese_hunting_lodge_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_02 } } add_domicile_building = japanese_hunting_lodge_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_03 } } add_domicile_building = japanese_hunting_lodge_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_04 } } add_domicile_building = japanese_hunting_lodge_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_05 } } add_domicile_building = japanese_hunting_lodge_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_06 } } add_domicile_building = japanese_hunting_lodge_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_stables_05 } } add_domicile_building = japanese_stables_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_stables_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_01 } } add_domicile_building = japanese_hunting_lodge_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_02 } } add_domicile_building = japanese_hunting_lodge_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_03 } } add_domicile_building = japanese_hunting_lodge_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_04 } } add_domicile_building = japanese_hunting_lodge_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_05 } } add_domicile_building = japanese_hunting_lodge_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_06 } } add_domicile_building = japanese_hunting_lodge_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_stables_06 } } add_domicile_building = japanese_stables_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_stables_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_01 } } add_domicile_building = japanese_hunting_lodge_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_02 } } add_domicile_building = japanese_hunting_lodge_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_03 } } add_domicile_building = japanese_hunting_lodge_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_04 } } add_domicile_building = japanese_hunting_lodge_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_05 } } add_domicile_building = japanese_hunting_lodge_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_hunting_lodge_06 } } add_domicile_building = japanese_hunting_lodge_06 }
-  }
-}
-
 ucm_domicile_force_add_japanese_tea_house_max_effect = {
   # tea house
   if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tea_house_01 } } add_domicile_building = japanese_tea_house_01 }
@@ -1509,76 +311,6 @@ ucm_domicile_force_add_japanese_tea_house_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tea_house_04 } } add_domicile_building = japanese_tea_house_04 }
   if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tea_house_05 } } add_domicile_building = japanese_tea_house_05 }
   if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tea_house_06 } } add_domicile_building = japanese_tea_house_06 }
-}
-
-ucm_domicile_force_add_japanese_tea_house_staged_effect = {
-  # tea house — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tea_house_01 } } add_domicile_building = japanese_tea_house_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_tea_house_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_01 } } add_domicile_building = japanese_asobi_colony_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_02 } } add_domicile_building = japanese_asobi_colony_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_03 } } add_domicile_building = japanese_asobi_colony_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_04 } } add_domicile_building = japanese_asobi_colony_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_05 } } add_domicile_building = japanese_asobi_colony_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_06 } } add_domicile_building = japanese_asobi_colony_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tea_house_02 } } add_domicile_building = japanese_tea_house_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_tea_house_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_01 } } add_domicile_building = japanese_asobi_colony_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_02 } } add_domicile_building = japanese_asobi_colony_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_03 } } add_domicile_building = japanese_asobi_colony_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_04 } } add_domicile_building = japanese_asobi_colony_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_05 } } add_domicile_building = japanese_asobi_colony_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_06 } } add_domicile_building = japanese_asobi_colony_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tea_house_03 } } add_domicile_building = japanese_tea_house_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_tea_house_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_01 } } add_domicile_building = japanese_asobi_colony_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_02 } } add_domicile_building = japanese_asobi_colony_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_03 } } add_domicile_building = japanese_asobi_colony_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_04 } } add_domicile_building = japanese_asobi_colony_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_05 } } add_domicile_building = japanese_asobi_colony_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_06 } } add_domicile_building = japanese_asobi_colony_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tea_house_04 } } add_domicile_building = japanese_tea_house_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_tea_house_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_01 } } add_domicile_building = japanese_asobi_colony_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_02 } } add_domicile_building = japanese_asobi_colony_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_03 } } add_domicile_building = japanese_asobi_colony_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_04 } } add_domicile_building = japanese_asobi_colony_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_05 } } add_domicile_building = japanese_asobi_colony_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_06 } } add_domicile_building = japanese_asobi_colony_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tea_house_05 } } add_domicile_building = japanese_tea_house_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_tea_house_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_01 } } add_domicile_building = japanese_asobi_colony_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_02 } } add_domicile_building = japanese_asobi_colony_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_03 } } add_domicile_building = japanese_asobi_colony_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_04 } } add_domicile_building = japanese_asobi_colony_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_05 } } add_domicile_building = japanese_asobi_colony_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_06 } } add_domicile_building = japanese_asobi_colony_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_tea_house_06 } } add_domicile_building = japanese_tea_house_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_tea_house_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_01 } } add_domicile_building = japanese_asobi_colony_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_02 } } add_domicile_building = japanese_asobi_colony_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_03 } } add_domicile_building = japanese_asobi_colony_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_04 } } add_domicile_building = japanese_asobi_colony_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_05 } } add_domicile_building = japanese_asobi_colony_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_asobi_colony_06 } } add_domicile_building = japanese_asobi_colony_06 }
-  }
 }
 
 ucm_domicile_force_add_japanese_garden_max_effect = {
@@ -1591,76 +323,6 @@ ucm_domicile_force_add_japanese_garden_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = japanese_garden_06 } } add_domicile_building = japanese_garden_06 }
 }
 
-ucm_domicile_force_add_japanese_garden_staged_effect = {
-  # garden — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_garden_01 } } add_domicile_building = japanese_garden_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_garden_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_01 } } add_domicile_building = japanese_orchard_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_02 } } add_domicile_building = japanese_orchard_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_03 } } add_domicile_building = japanese_orchard_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_04 } } add_domicile_building = japanese_orchard_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_05 } } add_domicile_building = japanese_orchard_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_06 } } add_domicile_building = japanese_orchard_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_garden_02 } } add_domicile_building = japanese_garden_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_garden_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_01 } } add_domicile_building = japanese_orchard_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_02 } } add_domicile_building = japanese_orchard_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_03 } } add_domicile_building = japanese_orchard_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_04 } } add_domicile_building = japanese_orchard_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_05 } } add_domicile_building = japanese_orchard_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_06 } } add_domicile_building = japanese_orchard_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_garden_03 } } add_domicile_building = japanese_garden_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_garden_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_01 } } add_domicile_building = japanese_orchard_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_02 } } add_domicile_building = japanese_orchard_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_03 } } add_domicile_building = japanese_orchard_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_04 } } add_domicile_building = japanese_orchard_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_05 } } add_domicile_building = japanese_orchard_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_06 } } add_domicile_building = japanese_orchard_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_garden_04 } } add_domicile_building = japanese_garden_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_garden_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_01 } } add_domicile_building = japanese_orchard_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_02 } } add_domicile_building = japanese_orchard_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_03 } } add_domicile_building = japanese_orchard_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_04 } } add_domicile_building = japanese_orchard_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_05 } } add_domicile_building = japanese_orchard_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_06 } } add_domicile_building = japanese_orchard_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_garden_05 } } add_domicile_building = japanese_garden_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_garden_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_01 } } add_domicile_building = japanese_orchard_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_02 } } add_domicile_building = japanese_orchard_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_03 } } add_domicile_building = japanese_orchard_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_04 } } add_domicile_building = japanese_orchard_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_05 } } add_domicile_building = japanese_orchard_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_06 } } add_domicile_building = japanese_orchard_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_garden_06 } } add_domicile_building = japanese_garden_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_garden_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_01 } } add_domicile_building = japanese_orchard_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_02 } } add_domicile_building = japanese_orchard_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_03 } } add_domicile_building = japanese_orchard_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_04 } } add_domicile_building = japanese_orchard_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_05 } } add_domicile_building = japanese_orchard_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_orchard_06 } } add_domicile_building = japanese_orchard_06 }
-  }
-}
-
 ucm_domicile_force_add_japanese_armory_max_effect = {
   # armory
   if = { limit = { NOT = { has_domicile_building_or_higher = japanese_armory_01 } } add_domicile_building = japanese_armory_01 }
@@ -1669,76 +331,6 @@ ucm_domicile_force_add_japanese_armory_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = japanese_armory_04 } } add_domicile_building = japanese_armory_04 }
   if = { limit = { NOT = { has_domicile_building_or_higher = japanese_armory_05 } } add_domicile_building = japanese_armory_05 }
   if = { limit = { NOT = { has_domicile_building_or_higher = japanese_armory_06 } } add_domicile_building = japanese_armory_06 }
-}
-
-ucm_domicile_force_add_japanese_armory_staged_effect = {
-  # armory — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_armory_01 } } add_domicile_building = japanese_armory_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_armory_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_01 } } add_domicile_building = japanese_barracks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_02 } } add_domicile_building = japanese_barracks_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_03 } } add_domicile_building = japanese_barracks_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_04 } } add_domicile_building = japanese_barracks_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_05 } } add_domicile_building = japanese_barracks_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_06 } } add_domicile_building = japanese_barracks_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_armory_02 } } add_domicile_building = japanese_armory_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_armory_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_01 } } add_domicile_building = japanese_barracks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_02 } } add_domicile_building = japanese_barracks_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_03 } } add_domicile_building = japanese_barracks_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_04 } } add_domicile_building = japanese_barracks_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_05 } } add_domicile_building = japanese_barracks_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_06 } } add_domicile_building = japanese_barracks_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_armory_03 } } add_domicile_building = japanese_armory_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_armory_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_01 } } add_domicile_building = japanese_barracks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_02 } } add_domicile_building = japanese_barracks_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_03 } } add_domicile_building = japanese_barracks_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_04 } } add_domicile_building = japanese_barracks_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_05 } } add_domicile_building = japanese_barracks_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_06 } } add_domicile_building = japanese_barracks_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_armory_04 } } add_domicile_building = japanese_armory_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_armory_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_01 } } add_domicile_building = japanese_barracks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_02 } } add_domicile_building = japanese_barracks_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_03 } } add_domicile_building = japanese_barracks_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_04 } } add_domicile_building = japanese_barracks_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_05 } } add_domicile_building = japanese_barracks_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_06 } } add_domicile_building = japanese_barracks_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_armory_05 } } add_domicile_building = japanese_armory_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_armory_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_01 } } add_domicile_building = japanese_barracks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_02 } } add_domicile_building = japanese_barracks_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_03 } } add_domicile_building = japanese_barracks_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_04 } } add_domicile_building = japanese_barracks_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_05 } } add_domicile_building = japanese_barracks_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_06 } } add_domicile_building = japanese_barracks_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_armory_06 } } add_domicile_building = japanese_armory_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_armory_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_01 } } add_domicile_building = japanese_barracks_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_02 } } add_domicile_building = japanese_barracks_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_03 } } add_domicile_building = japanese_barracks_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_04 } } add_domicile_building = japanese_barracks_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_05 } } add_domicile_building = japanese_barracks_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_barracks_06 } } add_domicile_building = japanese_barracks_06 }
-  }
 }
 
 ucm_domicile_force_add_japanese_horse_pastures_max_effect = {
@@ -1751,76 +343,6 @@ ucm_domicile_force_add_japanese_horse_pastures_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = japanese_horse_pastures_06 } } add_domicile_building = japanese_horse_pastures_06 }
 }
 
-ucm_domicile_force_add_japanese_horse_pastures_staged_effect = {
-  # horse pastures — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_horse_pastures_01 } } add_domicile_building = japanese_horse_pastures_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_horse_pastures_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_01 } } add_domicile_building = japanese_riding_school_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_02 } } add_domicile_building = japanese_riding_school_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_03 } } add_domicile_building = japanese_riding_school_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_04 } } add_domicile_building = japanese_riding_school_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_05 } } add_domicile_building = japanese_riding_school_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_06 } } add_domicile_building = japanese_riding_school_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_horse_pastures_02 } } add_domicile_building = japanese_horse_pastures_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_horse_pastures_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_01 } } add_domicile_building = japanese_riding_school_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_02 } } add_domicile_building = japanese_riding_school_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_03 } } add_domicile_building = japanese_riding_school_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_04 } } add_domicile_building = japanese_riding_school_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_05 } } add_domicile_building = japanese_riding_school_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_06 } } add_domicile_building = japanese_riding_school_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_horse_pastures_03 } } add_domicile_building = japanese_horse_pastures_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_horse_pastures_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_01 } } add_domicile_building = japanese_riding_school_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_02 } } add_domicile_building = japanese_riding_school_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_03 } } add_domicile_building = japanese_riding_school_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_04 } } add_domicile_building = japanese_riding_school_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_05 } } add_domicile_building = japanese_riding_school_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_06 } } add_domicile_building = japanese_riding_school_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_horse_pastures_04 } } add_domicile_building = japanese_horse_pastures_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_horse_pastures_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_01 } } add_domicile_building = japanese_riding_school_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_02 } } add_domicile_building = japanese_riding_school_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_03 } } add_domicile_building = japanese_riding_school_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_04 } } add_domicile_building = japanese_riding_school_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_05 } } add_domicile_building = japanese_riding_school_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_06 } } add_domicile_building = japanese_riding_school_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_horse_pastures_05 } } add_domicile_building = japanese_horse_pastures_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_horse_pastures_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_01 } } add_domicile_building = japanese_riding_school_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_02 } } add_domicile_building = japanese_riding_school_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_03 } } add_domicile_building = japanese_riding_school_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_04 } } add_domicile_building = japanese_riding_school_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_05 } } add_domicile_building = japanese_riding_school_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_06 } } add_domicile_building = japanese_riding_school_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_horse_pastures_06 } } add_domicile_building = japanese_horse_pastures_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_horse_pastures_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_01 } } add_domicile_building = japanese_riding_school_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_02 } } add_domicile_building = japanese_riding_school_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_03 } } add_domicile_building = japanese_riding_school_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_04 } } add_domicile_building = japanese_riding_school_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_05 } } add_domicile_building = japanese_riding_school_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_riding_school_06 } } add_domicile_building = japanese_riding_school_06 }
-  }
-}
-
 ucm_domicile_force_add_japanese_watch_house_max_effect = {
   # watch house
   if = { limit = { NOT = { has_domicile_building_or_higher = japanese_watch_house_01 } } add_domicile_building = japanese_watch_house_01 }
@@ -1829,76 +351,6 @@ ucm_domicile_force_add_japanese_watch_house_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = japanese_watch_house_04 } } add_domicile_building = japanese_watch_house_04 }
   if = { limit = { NOT = { has_domicile_building_or_higher = japanese_watch_house_05 } } add_domicile_building = japanese_watch_house_05 }
   if = { limit = { NOT = { has_domicile_building_or_higher = japanese_watch_house_06 } } add_domicile_building = japanese_watch_house_06 }
-}
-
-ucm_domicile_force_add_japanese_watch_house_staged_effect = {
-  # watch house — staged external + internals
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_watch_house_01 } } add_domicile_building = japanese_watch_house_01 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_watch_house_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_01 } } add_domicile_building = japanese_prison_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_02 } } add_domicile_building = japanese_prison_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_03 } } add_domicile_building = japanese_prison_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_04 } } add_domicile_building = japanese_prison_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_05 } } add_domicile_building = japanese_prison_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_06 } } add_domicile_building = japanese_prison_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_watch_house_02 } } add_domicile_building = japanese_watch_house_02 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_watch_house_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_01 } } add_domicile_building = japanese_prison_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_02 } } add_domicile_building = japanese_prison_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_03 } } add_domicile_building = japanese_prison_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_04 } } add_domicile_building = japanese_prison_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_05 } } add_domicile_building = japanese_prison_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_06 } } add_domicile_building = japanese_prison_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_watch_house_03 } } add_domicile_building = japanese_watch_house_03 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_watch_house_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_01 } } add_domicile_building = japanese_prison_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_02 } } add_domicile_building = japanese_prison_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_03 } } add_domicile_building = japanese_prison_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_04 } } add_domicile_building = japanese_prison_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_05 } } add_domicile_building = japanese_prison_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_06 } } add_domicile_building = japanese_prison_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_watch_house_04 } } add_domicile_building = japanese_watch_house_04 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_watch_house_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_01 } } add_domicile_building = japanese_prison_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_02 } } add_domicile_building = japanese_prison_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_03 } } add_domicile_building = japanese_prison_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_04 } } add_domicile_building = japanese_prison_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_05 } } add_domicile_building = japanese_prison_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_06 } } add_domicile_building = japanese_prison_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_watch_house_05 } } add_domicile_building = japanese_watch_house_05 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_watch_house_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_01 } } add_domicile_building = japanese_prison_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_02 } } add_domicile_building = japanese_prison_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_03 } } add_domicile_building = japanese_prison_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_04 } } add_domicile_building = japanese_prison_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_05 } } add_domicile_building = japanese_prison_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_06 } } add_domicile_building = japanese_prison_06 }
-  }
-  if = { limit = { NOT = { has_domicile_building_or_higher = japanese_watch_house_06 } } add_domicile_building = japanese_watch_house_06 }
-  hidden_effect = { while = { count = 12 add_random_internal_japanese_manor_building = yes } }
-  if = {
-    limit = { has_domicile_building_or_higher = japanese_watch_house_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_01 } } add_domicile_building = japanese_prison_01 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_02 } } add_domicile_building = japanese_prison_02 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_03 } } add_domicile_building = japanese_prison_03 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_04 } } add_domicile_building = japanese_prison_04 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_05 } } add_domicile_building = japanese_prison_05 }
-    if = { limit = { NOT = { has_domicile_building_or_higher = japanese_prison_06 } } add_domicile_building = japanese_prison_06 }
-  }
 }
 
 # --- 内建/内部升级槽拉满（由 tools/gen_domicile_estate_presets.py 生成）---
@@ -3241,7 +1693,6 @@ ucm_domicile_clear_external_japanese_manor_buildings_effect = {
 ucm_domicile_clear_external_japanese_manor_sweep_effect = {
 }
 
-
 ucm_domicile_main_max_effect = {
   switch = {
     trigger = is_domicile_type
@@ -3249,10 +1700,6 @@ ucm_domicile_main_max_effect = {
     east_asian_estate = { ucm_estate_edit_east_asian_estate_main_max_effect = yes }
     japanese_manor = { ucm_estate_edit_japanese_manor_main_max_effect = yes }
   }
-}
-
-ucm_domicile_unlock_all_slots_effect = {
-  ucm_domicile_main_max_effect = yes
 }
 
 ucm_domicile_clear_external_chain_fully_effect = {
@@ -3274,7 +1721,6 @@ ucm_domicile_clear_external_branch_chain_fully_effect = {
     destroy_or_downgrade_estate_building_$HELPER$_replacement_effect = { BUILDING = $CHAIN$ }
   }
 }
-
 
 # 预设固定 6 条外槽链后，用原版随机外建填满剩余空槽（主宅升级可能解锁额外槽位）
 ucm_domicile_fill_remaining_external_slots_effect = {
@@ -3380,66 +1826,12 @@ ucm_domicile_estate_preset_full_effect = {
   ucm_domicile_finalize_preset_external_slots_effect = yes
 }
 
-ucm_domicile_estate_preset_economy_build_effect = {
-  ucm_domicile_force_add_grain_field_staged_effect = yes
-  ucm_domicile_force_add_workshop_carpenter_staged_effect = yes
-  ucm_domicile_force_add_storage_warehouse_staged_effect = yes
-  ucm_domicile_force_add_market_staged_effect = yes
-  ucm_domicile_force_add_post_station_staged_effect = yes
-  ucm_domicile_force_add_vineyard_staged_effect = yes
-}
-
-ucm_domicile_estate_preset_military_build_effect = {
-  ucm_domicile_force_add_guardhouse_staged_effect = yes
-  ucm_domicile_force_add_stable_grand_staged_effect = yes
-  ucm_domicile_force_add_barracks_staged_effect = yes
-  ucm_domicile_force_add_grazing_land_to_05_staged_effect = yes
-  ucm_domicile_force_add_watchtower_staged_effect = yes
-  ucm_domicile_force_add_garden_leisure_staged_effect = yes
-}
-
-ucm_domicile_estate_preset_balanced_build_effect = {
-  ucm_domicile_force_add_grain_field_staged_effect = yes
-  ucm_domicile_force_add_workshop_carpenter_staged_effect = yes
-  ucm_domicile_force_add_storage_warehouse_staged_effect = yes
-  ucm_domicile_force_add_market_staged_effect = yes
-  ucm_domicile_force_add_stable_grand_staged_effect = yes
-  ucm_domicile_force_add_guardhouse_staged_effect = yes
-}
-
 ucm_domicile_east_asian_estate_preset_full_effect = {
   ucm_domicile_prepare_internals_before_preset_effect = yes
   ucm_domicile_clear_external_east_asian_estate_buildings_effect = yes
   ucm_domicile_east_asian_estate_preset_$PRESET$_build_effect = yes
   ucm_domicile_finish_internals_after_preset_effect = yes
   ucm_domicile_finalize_preset_external_slots_effect = yes
-}
-
-ucm_domicile_east_asian_estate_preset_economy_build_effect = {
-  ucm_domicile_force_add_east_asian_rice_field_staged_effect = yes
-  ucm_domicile_force_add_east_asian_workshop_carpenter_staged_effect = yes
-  ucm_domicile_force_add_east_asian_storage_warehouse_staged_effect = yes
-  ucm_domicile_force_add_east_asian_market_staged_effect = yes
-  ucm_domicile_force_add_east_asian_tea_staged_effect = yes
-  ucm_domicile_force_add_east_asian_vintner_halls_staged_effect = yes
-}
-
-ucm_domicile_east_asian_estate_preset_military_build_effect = {
-  ucm_domicile_force_add_east_asian_gate_staged_effect = yes
-  ucm_domicile_force_add_east_asian_stable_grand_staged_effect = yes
-  ucm_domicile_force_add_east_asian_barracks_staged_effect = yes
-  ucm_domicile_force_add_east_asian_grazing_land_staged_effect = yes
-  ucm_domicile_force_add_east_asian_watchtower_staged_effect = yes
-  ucm_domicile_force_add_east_asian_garden_leisure_staged_effect = yes
-}
-
-ucm_domicile_east_asian_estate_preset_balanced_build_effect = {
-  ucm_domicile_force_add_east_asian_rice_field_staged_effect = yes
-  ucm_domicile_force_add_east_asian_workshop_carpenter_staged_effect = yes
-  ucm_domicile_force_add_east_asian_storage_warehouse_staged_effect = yes
-  ucm_domicile_force_add_east_asian_market_staged_effect = yes
-  ucm_domicile_force_add_east_asian_stable_grand_staged_effect = yes
-  ucm_domicile_force_add_east_asian_gate_staged_effect = yes
 }
 
 ucm_domicile_japanese_manor_preset_full_effect = {
@@ -3449,34 +1841,6 @@ ucm_domicile_japanese_manor_preset_full_effect = {
   ucm_domicile_finish_internals_after_preset_effect = yes
   ucm_domicile_finalize_preset_external_slots_effect = yes
 }
-
-ucm_domicile_japanese_manor_preset_economy_build_effect = {
-  ucm_domicile_force_add_japanese_fields_staged_effect = yes
-  ucm_domicile_force_add_japanese_workshop_staged_effect = yes
-  ucm_domicile_force_add_japanese_tea_plantation_staged_effect = yes
-  ucm_domicile_force_add_japanese_stables_staged_effect = yes
-  ucm_domicile_force_add_japanese_tea_house_staged_effect = yes
-  ucm_domicile_force_add_japanese_garden_staged_effect = yes
-}
-
-ucm_domicile_japanese_manor_preset_military_build_effect = {
-  ucm_domicile_force_add_japanese_armory_staged_effect = yes
-  ucm_domicile_force_add_japanese_stables_staged_effect = yes
-  ucm_domicile_force_add_japanese_horse_pastures_staged_effect = yes
-  ucm_domicile_force_add_japanese_watch_house_staged_effect = yes
-  ucm_domicile_force_add_japanese_garden_staged_effect = yes
-  ucm_domicile_force_add_japanese_fields_staged_effect = yes
-}
-
-ucm_domicile_japanese_manor_preset_balanced_build_effect = {
-  ucm_domicile_force_add_japanese_fields_staged_effect = yes
-  ucm_domicile_force_add_japanese_workshop_staged_effect = yes
-  ucm_domicile_force_add_japanese_tea_plantation_staged_effect = yes
-  ucm_domicile_force_add_japanese_stables_staged_effect = yes
-  ucm_domicile_force_add_japanese_armory_staged_effect = yes
-  ucm_domicile_force_add_japanese_garden_staged_effect = yes
-}
-
 
 ucm_domicile_preset_apply_on_domicile_switch_effect = {
   switch = {
@@ -3643,17 +2007,4 @@ ucm_cheat_menu_domicile_clear_external_apply_effect = {
       ucm_cheat_menu_domicile_clear_external_on_character_effect = yes
     }
   }
-}
-
-ucm_cheat_menu_domicile_preset_economy_on_cheat_target_effect = {
-  ucm_cheat_menu_domicile_preset_economy_apply_effect = yes
-}
-ucm_cheat_menu_domicile_preset_military_on_cheat_target_effect = {
-  ucm_cheat_menu_domicile_preset_military_apply_effect = yes
-}
-ucm_cheat_menu_domicile_preset_balanced_on_cheat_target_effect = {
-  ucm_cheat_menu_domicile_preset_balanced_apply_effect = yes
-}
-ucm_cheat_menu_domicile_clear_external_on_cheat_target_effect = {
-  ucm_cheat_menu_domicile_clear_external_apply_effect = yes
 }

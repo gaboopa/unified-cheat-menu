@@ -114,8 +114,6 @@
  toc_finishcounciltask_interaction:0 "Мгновенно завершить задачу совета"
 
  # Modifiers
- toc_stabilizeland_modifier:0 "Стабилизированная провинция"
- toc_stabilizeland_modifier_desc:0 "Увеличивает контроль и стабильность в провинции."
  
  toc_cityland_modifier:0 "Малый город"
  toc_cityland_modifier_desc:0 "Увеличивает местные налоги и развитие."
@@ -132,8 +130,6 @@
  toc_grandwallland_modifier:0 "Максимальная оборона"
  toc_grandwallland_modifier_desc:0 "Огромный прирост уровня крепости и размера гарнизона."
  
- toc_allfiefs_modifier:0 "Безграничный домен и вассалы"
- toc_allfiefs_modifier_desc:0 "Снимает штрафы за превышение лимита домена и вассалов."
 
  # Add Children Menu
  tocmod.0002.t:0 "Добавить детей"
@@ -687,23 +683,3 @@
  tocmod.2090.desc:0 " "
  tocmod.2090.d:0 "Закрыть"
 
- toc_diplomacy_modifier:1 "Благословенная дипломатия"
- toc_diplomacy_modifier_desc:1 "Лучший совет в пределах досягаемости."
- toc_martial_modifier:1 "Благословенное военное дело"
- toc_martial_modifier_desc:1 "Лучший совет в пределах досягаемости."
- toc_stewardship_modifier:1 "Благословенное управление"
- toc_stewardship_modifier_desc:1 "Лучший совет в пределах досягаемости."
- toc_intrigue_modifier:1 "Благословенная интрига"
- toc_intrigue_modifier_desc:1 "Лучший совет в пределах досягаемости."
- toc_learning_modifier:1 "Благословенная ученость"
- toc_learning_modifier_desc:1 "Лучший совет в пределах досягаемости."
- toc_prowess_modifier:1 "Благословенная доблесть"
- toc_prowess_modifier_desc:1 "Лучший совет в пределах досягаемости."
- toc_luckinbattle_modifier:1 "Удача в бою!"
- toc_luckinbattle_modifier_desc:1 "Просто везет, я полагаю."
- toc_privatearmy_modifier:1 "Частная армия"
- toc_privatearmy_modifier_desc:1 "Впечатляюще, очень неплохо."
- toc_belovedgeneralopinion_modifier:1 "Всеобщий любимец"
- toc_belovedgeneralopinion_modifier_desc:1 "Они так многого не знают."
- toc_speedy_modifier:1 "Быстрый"
- toc_speedy_modifier_desc:1 "Вол вращает колесо, на котором его забьют, а Вавилон пирует."

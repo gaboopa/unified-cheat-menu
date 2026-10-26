@@ -40,22 +40,11 @@
 
  # --- Modifiers ---
  toc_diplomaticrange_modifier:1 "Extended Diplomatic Reach"
- toc_diplomaticrange_modifier_desc:1 "This ruler's influence extends far beyond their borders."
 
- toc_exoticcourtbonus:1 "Exotic Court"
- toc_exoticcourtbonus_desc:1 "This court draws visitors from distant lands, lending it an air of prestige and intrigue."
 
- toc_fertile_modifier:1 "Blessed Fertility"
- toc_fertile_modifier_desc:1 "This character is unusually fertile and likely to produce many heirs."
 
- toc_dreadful_modifier:1 "Dreadful Reputation"
- toc_dreadful_modifier_desc:1 "This ruler's name inspires fear across the realm."
 
- toc_notyranny_modifier:1 "Just Rule"
- toc_notyranny_modifier_desc:1 "This ruler governs without resorting to tyranny."
 
- toc_superknights_modifier:1 "Elite Knights"
- toc_superknights_modifier_desc:1 "This ruler commands knights of exceptional skill and renown."
  
  toc_uncelibate_interaction:1 "Uncelibate"
 

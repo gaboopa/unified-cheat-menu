@@ -99,7 +99,3 @@
  legend_spread_debug_modifier: "Legendenausbreitung · Debug"
  legend_spread_debug_modifier_desc: "Debug-Modifikator: Extrem schnelle Legendenausbreitung."
 
- ucm_legend_spread_barony_modifier: "Legendenausbreitung · Baronie"
- ucm_legend_spread_barony_modifier_desc: "Durch die Legende erhalten die Baronie Boni auf Entwicklungsfortschritt, Meinungen und Truppengröße."
- ucm_legend_spread_county_modifier: "Legendenausbreitung · Grafschaft"
- ucm_legend_spread_county_modifier_desc: "Durch die Legende erhalten die Grafschaft Boni auf Entwicklungsfortschritt, Meinungen und Truppengröße (rechtsgültig)."

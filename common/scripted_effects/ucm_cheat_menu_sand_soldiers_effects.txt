@@ -1,4 +1,0 @@
-﻿# Skonester「撒豆成兵」：逻辑见 ucm_sand_soldiers_effects.txt（工作台）
-ucm_cheat_menu_sand_soldiers_effect = {
-  ucm_open_sand_soldiers_effect = yes
-}

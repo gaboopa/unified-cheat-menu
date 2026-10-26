@@ -181,140 +181,6 @@ ucm_acm_clamp_craft_slot_layers_to_quality_effect = {
   }
 }
 
-# 单槽：保证层数 ≥ 1，且不低于当前品质最低层数（玩家手动调高时保留）
-ucm_acm_ensure_craft_slot_layers_1 = {
-  scope:ucm_acm_craft_creator = {
-    ucm_acm_sync_craft_layer_quality_effect = yes
-    if = {
-      limit = { NOT = { has_variable = ucm_craft_m1_cnt } }
-      set_variable = { name = ucm_craft_m1_cnt value = 1 }
-    }
-    if = {
-      limit = { var:ucm_craft_m1_cnt < 1 }
-      set_variable = { name = ucm_craft_m1_cnt value = 1 }
-    }
-    if = {
-      limit = {
-        var:ucm_craft_m1_cnt < var:ucm_craft_quality_min_layers
-      }
-      set_variable = {
-        name = ucm_craft_m1_cnt
-        value = var:ucm_craft_quality_min_layers
-      }
-    }
-  }
-}
-ucm_acm_ensure_craft_slot_layers_2 = {
-  scope:ucm_acm_craft_creator = {
-    ucm_acm_sync_craft_layer_quality_effect = yes
-    if = {
-      limit = { NOT = { has_variable = ucm_craft_m2_cnt } }
-      set_variable = { name = ucm_craft_m2_cnt value = 1 }
-    }
-    if = {
-      limit = { var:ucm_craft_m2_cnt < 1 }
-      set_variable = { name = ucm_craft_m2_cnt value = 1 }
-    }
-    if = {
-      limit = {
-        var:ucm_craft_m2_cnt < var:ucm_craft_quality_min_layers
-      }
-      set_variable = {
-        name = ucm_craft_m2_cnt
-        value = var:ucm_craft_quality_min_layers
-      }
-    }
-  }
-}
-ucm_acm_ensure_craft_slot_layers_3 = {
-  scope:ucm_acm_craft_creator = {
-    ucm_acm_sync_craft_layer_quality_effect = yes
-    if = {
-      limit = { NOT = { has_variable = ucm_craft_m3_cnt } }
-      set_variable = { name = ucm_craft_m3_cnt value = 1 }
-    }
-    if = {
-      limit = { var:ucm_craft_m3_cnt < 1 }
-      set_variable = { name = ucm_craft_m3_cnt value = 1 }
-    }
-    if = {
-      limit = {
-        var:ucm_craft_m3_cnt < var:ucm_craft_quality_min_layers
-      }
-      set_variable = {
-        name = ucm_craft_m3_cnt
-        value = var:ucm_craft_quality_min_layers
-      }
-    }
-  }
-}
-ucm_acm_ensure_craft_slot_layers_4 = {
-  scope:ucm_acm_craft_creator = {
-    ucm_acm_sync_craft_layer_quality_effect = yes
-    if = {
-      limit = { NOT = { has_variable = ucm_craft_m4_cnt } }
-      set_variable = { name = ucm_craft_m4_cnt value = 1 }
-    }
-    if = {
-      limit = { var:ucm_craft_m4_cnt < 1 }
-      set_variable = { name = ucm_craft_m4_cnt value = 1 }
-    }
-    if = {
-      limit = {
-        var:ucm_craft_m4_cnt < var:ucm_craft_quality_min_layers
-      }
-      set_variable = {
-        name = ucm_craft_m4_cnt
-        value = var:ucm_craft_quality_min_layers
-      }
-    }
-  }
-}
-ucm_acm_ensure_craft_slot_layers_5 = {
-  scope:ucm_acm_craft_creator = {
-    ucm_acm_sync_craft_layer_quality_effect = yes
-    if = {
-      limit = { NOT = { has_variable = ucm_craft_m5_cnt } }
-      set_variable = { name = ucm_craft_m5_cnt value = 1 }
-    }
-    if = {
-      limit = { var:ucm_craft_m5_cnt < 1 }
-      set_variable = { name = ucm_craft_m5_cnt value = 1 }
-    }
-    if = {
-      limit = {
-        var:ucm_craft_m5_cnt < var:ucm_craft_quality_min_layers
-      }
-      set_variable = {
-        name = ucm_craft_m5_cnt
-        value = var:ucm_craft_quality_min_layers
-      }
-    }
-  }
-}
-ucm_acm_ensure_craft_slot_layers_6 = {
-  scope:ucm_acm_craft_creator = {
-    ucm_acm_sync_craft_layer_quality_effect = yes
-    if = {
-      limit = { NOT = { has_variable = ucm_craft_m6_cnt } }
-      set_variable = { name = ucm_craft_m6_cnt value = 1 }
-    }
-    if = {
-      limit = { var:ucm_craft_m6_cnt < 1 }
-      set_variable = { name = ucm_craft_m6_cnt value = 1 }
-    }
-    if = {
-      limit = {
-        var:ucm_craft_m6_cnt < var:ucm_craft_quality_min_layers
-      }
-      set_variable = {
-        name = ucm_craft_m6_cnt
-        value = var:ucm_craft_quality_min_layers
-      }
-    }
-  }
-}
-
 # ucm_apply_crafted_artifact_modifiers_effect 见 ucm_acm_apply_craft_slots_effect.txt（五槽层数 + 兼容 m6）
 
 # 从品质旗标同步 wealth 变量（create_artifact 分支用，避免收宝人 scope 内 scope:actor 失效）
@@ -337,18 +203,6 @@ ucm_acm_sync_craft_quality_wealth_from_flags_body_effect = {
   }
   else = {
     set_variable = { name = ucm_acm_craft_quality_wealth value = 250 }
-  }
-}
-
-ucm_acm_sync_craft_quality_wealth_from_flags_effect = {
-  if = {
-    limit = { exists = scope:ucm_acm_craft_creator }
-    scope:ucm_acm_craft_creator = {
-      ucm_acm_sync_craft_quality_wealth_from_flags_body_effect = yes
-    }
-  }
-  else = {
-    ucm_acm_sync_craft_quality_wealth_from_flags_body_effect = yes
   }
 }
 
@@ -474,11 +328,6 @@ ucm_acm_finalize_crafted_artifact_effect = {
     add_character_flag = ucm_acm_artifact_created
     ucm_acm_cleanup_artifact_edit_buffer_effect = yes
   }
-}
-
-# 兼容旧调用名
-ucm_finish_crafted_artifact_owner_effect = {
-  ucm_acm_finalize_crafted_artifact_effect = yes
 }
 
 # 在右击目标（或 sync 出的 ucm_acm_artifact_owner）上执行制作体

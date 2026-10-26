@@ -11,10 +11,8 @@
 			has_trait = water_of_life
 		}
 		scope:recipient = {
-			NOT = {
-				is_adult = no
-				has_trait = water_of_life
-			}	
+			is_adult = yes
+			NOT = { has_trait = water_of_life }
 		}
 		scope:recipient = {
 			is_spouse_of = scope:actor

@@ -1715,6 +1715,7 @@ dp_debug_start_era_of_crusades_interaction = {
 			is_ai = no
 			has_character_flag = bone_cheat_interactions_flag
 		}
+		exists = faith:catholic # 总转换 mod（EK2）无此信仰：否则下方块被丢弃、按钮恒显示且无效
 		faith:catholic = {
 			NOT = {
 				religion = { exists = var:variable_ghw_unlocked }
@@ -1769,6 +1770,7 @@ dp_debug_start_era_of_jihads_interaction = {
 			is_ai = no
 			has_character_flag = bone_cheat_interactions_flag
 		}
+		exists = faith:sunni
 		faith:sunni = {
 			NOT = { religion = { exists = var:variable_ghw_unlocked } }
 		}

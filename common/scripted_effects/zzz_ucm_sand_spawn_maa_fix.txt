@@ -46,7 +46,7 @@ ucm_sand_try_add_one_maa_stack_effect = {
     }
     else_if = {
       limit = {
-        has_title = title:h_china
+        ucm_is_h_china_emperor_title_holder_trigger = yes
       }
       create_maa_regiment = {
         type = $TYPE$
@@ -66,6 +66,7 @@ ucm_sand_try_add_one_maa_stack_effect = {
     }
     else_if = {
       limit = {
+        exists = title:e_great_liao # 无此头衔的 mod（EK2 等）下 has_title 被丢弃，limit 变空即恒真
         has_title = title:e_great_liao
       }
       create_maa_regiment = {

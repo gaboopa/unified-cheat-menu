@@ -457,6 +457,7 @@ keeper_of_swans_aptitude = {
   if = {
     limit = { 
       scope:actor = {
+        exists = title:k_england # Total conversions (EK2) have no England; without this the has_title is dropped and the limit always passes
         has_title = title:k_england #This has only been a thing in England
         highest_held_title_tier >= tier_kingdom
       }
@@ -509,7 +510,7 @@ keeper_of_swans_aptitude = {
 
 chief_qadi_aptitude = {
   value = 1
-  if = { limit = { scope:actor = { has_religion = religion:islam_religion } }
+  if = { limit = { exists = religion:islam_religion scope:actor = { has_religion = religion:islam_religion } }
     add = {
       value = learning
       multiply = 2.5

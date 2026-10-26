@@ -15819,6 +15819,7 @@ ucm_acm_faith_refresh_display_lists_effect = {
     }
     if = {
       limit = {
+        NOT = { ucm_compat_ek2_loaded_trigger = yes } # EK2 has no temple_authority doctrines: the has_doctrine is dropped and every faith would list erudite
         var:ucm_selected_faith_var = { has_doctrine = temple_authority_toric_doctrine }
       }
       add_to_global_variable_list = {

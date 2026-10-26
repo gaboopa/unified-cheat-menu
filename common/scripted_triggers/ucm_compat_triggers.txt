@@ -1,4 +1,4 @@
-﻿# 兼容：原版 / 东方王朝 / AGOT
+﻿# 兼容：原版 / 东方王朝 / AGOT / EK2
 # 由 on_action 开局探测写入全局变量；各功能在引用对方 mod 专有 ID 前应检查对应 trigger。
 
 # 须 OE 本体在当次启动中已加载（orient_empires_loaded 由 OE on_game_start 写入）
@@ -9,6 +9,11 @@ ucm_compat_orient_loaded_trigger = {
 # A Game of Thrones（2962333032）；由 zzz_ucm_compat_probe 开局写入
 ucm_compat_agot_loaded_trigger = {
   has_global_variable = ucm_compat_agot_loaded
+}
+
+# Elder Kings 2（2887120253）；由 zzz_ucm_compat_probe 开局写入
+ucm_compat_ek2_loaded_trigger = {
+  has_global_variable = ucm_compat_ek2_loaded
 }
 
 # TGP 大臣：原版 tgp_is_any_minister 定义在 10_tgp_triggers.txt，AGOT 以同名文件覆盖且不含此 trigger。

@@ -34,6 +34,11 @@ ucm_legend_master.0001 = {
   }
   option = {
     name = ucm_legend_master.0001.cat_0070
+    # 预设传说绑定原版历史人物 / 头衔 / 文化；总转换 mod 下全部不存在
+    trigger = {
+      NOT = { ucm_compat_ek2_loaded_trigger = yes }
+      NOT = { ucm_compat_agot_loaded_trigger = yes }
+    }
     scope:actor = { trigger_event = ucm_legend_master.0070 }
   }
   option = {

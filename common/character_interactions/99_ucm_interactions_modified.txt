@@ -4214,7 +4214,7 @@ debug_change_dynastic_cycle = {
 		}
 		debug_only = no
 		scope:actor = {
-			has_title = title:h_china
+			ucm_is_h_china_emperor_title_holder_trigger = yes
 		}
 	}
 	send_option = {

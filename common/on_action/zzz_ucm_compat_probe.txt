@@ -43,5 +43,18 @@ ucm_compat_probe_after_lobby = {
     else = {
       remove_global_variable = ucm_compat_agot_loaded
     }
+    # Elder Kings 2（2887120253）：h_tamriel 仅存在于 EK2
+    if = {
+      limit = {
+        exists = title:h_tamriel
+      }
+      set_global_variable = {
+        name = ucm_compat_ek2_loaded
+        value = 1
+      }
+    }
+    else = {
+      remove_global_variable = ucm_compat_ek2_loaded
+    }
   }
 }

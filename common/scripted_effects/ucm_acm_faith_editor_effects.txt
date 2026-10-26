@@ -24,7 +24,6 @@ ucm_open_acm_faith_editor_effect = {
   remove_character_flag = ucm_acm_faith_pick_sidebar_open
   remove_character_flag = ucm_acm_faith_doctrine_picker_open
   ucm_acm_faith_clear_pick_category_flags_effect = yes
-  ucm_acm_faith_init_group_catalog_effect = yes
   ucm_acm_faith_populate_doctrine_catalog_effect = yes
   ucm_acm_faith_refresh_display_lists_effect = yes
   add_character_flag = ucm_acm_faith_editor_open
@@ -44,19 +43,16 @@ ucm_close_acm_faith_editor_effect = {
 }
 
 ucm_acm_faith_begin_pick_doctrine_effect = {
-  ucm_acm_faith_init_group_catalog_effect = yes
   remove_character_flag = ucm_acm_faith_doctrine_picker_open
   add_character_flag = ucm_acm_faith_pick_sidebar_open
   remove_variable = ucm_acm_pick_group_name
   ucm_acm_faith_capture_pick_doctrine_effect = yes
   ucm_acm_faith_resolve_pick_group_effect = yes
-  ucm_acm_faith_resolve_pick_group_from_key_fallback_effect = yes
   ucm_acm_faith_populate_pick_current_effect = yes
 }
 
 # 核心信条：记录被点击槽位，填充全部核心信条供替换
 ucm_acm_faith_begin_pick_core_tenets_effect = {
-  ucm_acm_faith_init_group_catalog_effect = yes
   remove_character_flag = ucm_acm_faith_doctrine_picker_open
   add_character_flag = ucm_acm_faith_pick_sidebar_open
   ucm_acm_faith_capture_pick_doctrine_effect = yes
@@ -82,17 +78,12 @@ ucm_acm_faith_apply_pick_doctrine_effect = {
   # 始终以「新选教义」解析组名，避免 begin_pick 时旧组名导致 remove 未命中
   remove_variable = ucm_acm_pick_group_name
   ucm_acm_faith_resolve_pick_group_effect = yes
-  ucm_acm_faith_resolve_pick_group_from_key_fallback_effect = yes
   if = {
     limit = {
       has_variable = ucm_acm_pick_group_name
       var:ucm_acm_pick_group_name = flag:doctrine_core_tenets
     }
     ucm_acm_faith_remove_pick_slot_doctrine_effect = yes
-  }
-  else_if = {
-    limit = { has_variable = ucm_acm_pick_group_name }
-    ucm_acm_faith_remove_pick_group_members_effect = yes
   }
   ucm_acm_faith_add_doctrine_to_selected_effect = yes
   remove_variable = ucm_acm_pick_slot

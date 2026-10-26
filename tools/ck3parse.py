@@ -53,6 +53,24 @@ def child_objects_text(body):
         pos = end + 1
 
 
+def entries(body):
+    """Depth-0 entry names in order: `brave = { weight = 30 }` and bare `brave` both give brave."""
+    out, depth, after_eq = [], 0, False
+    for tok in re.findall(r'[{}=]|"[^"]*"|[^\s{}=]+', body):
+        if tok in "{}":
+            depth += 1 if tok == "{" else -1
+            after_eq = False
+        elif depth:
+            continue
+        elif tok == "=":
+            after_eq = True
+        elif after_eq:
+            after_eq = False  # value of a depth-0 key = value
+        else:
+            out.append(tok)
+    return out
+
+
 def top_level_objects(path):
     with open(path, encoding="utf-8-sig", errors="replace") as fh:
         yield from top_level_objects_text(fh.read())
@@ -83,4 +101,5 @@ b = { c = { d = 2 } }
     assert list(top_level_objects_text("x = { unbalanced")) == [("x", " unbalanced")]
     kids = [k for k, _ in child_objects_text(" p = 1 q = { r = { s = 2 } } t = { } ")]
     assert kids == ["q", "t"], kids
+    assert entries(" brave = { weight = 30 } zealous = 1 deviant ") == ["brave", "zealous", "deviant"]
     print("ck3parse self-check OK")

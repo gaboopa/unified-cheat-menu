@@ -43,7 +43,8 @@ Works through the rest of [upstream-review.md](upstream-review.md) after [phase1
 - The cheats add characters to the list when they grant the trait or modifier (`ucm_holder_list_add_effect`).
 - After the work, stale entries (dead, or no longer holding it) are collected in a temporary list and removed, so nothing is removed while the list is being iterated.
 - Existing saves have holders but no list, so the first pulse does the old full scan once to build it (`ucm_<x>_list_built`).
-- Water of life still scans: the trait is granted from upstream gifts, decisions and events. The AI-boost spread loop was left as is, because a cap of 600 across tiers had no safe one-pass equivalent.
+- Water of life works the same way (`ucm_water_of_life_holders`). Its six grant sites register the holder: the four special gifts, `water_of_life_effect` (the decision) and the hooded old man that `water_of_life.1008` creates. This was the only one of these scans that ran for every player, since it had no feature gate.
+- The AI-boost spread loop is left as is. The boost is off by default in every save (`ucm_ai_write_defaults_once_effect`) and only runs if the player turns it on, and a cap of 600 across tiers had no safe one-pass equivalent.
 
 **Loops.** Two kinds of loop now make a single call:
 - `while count = 600 { add_dread = -1 }` (×3, which set dread to zero) is now `add_dread = -600`.
@@ -71,4 +72,5 @@ Both rely on dread being clamped to 0–100 (`MAX_DREAD = 100`). The loops that 
 - [ ] Imperial exam (Celestial): palace exam merit is skill-scaled; descriptions match the skill.
 - [ ] Special gift 2 is not offered to a spouse who already has water of life.
 - [ ] Old save with a stats-100 or levy-overflow character: after one month the cheat still applies; a new holder is picked up the month after it's granted.
+- [ ] Water of life: on an old save, a holder's illnesses are still cleared monthly; a character given the trait by a special gift or the decision is restored the following month.
 - [ ] Set dread to zero and lock at 100 from the menu.

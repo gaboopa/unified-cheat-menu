@@ -325,6 +325,7 @@ water_of_life.1008 = {
 				trait = water_of_life  # CK3 1.20: create_character takes `trait`, not `add_trait`
 				save_scope_as = hooded_old_man
 			}
+			scope:hooded_old_man = { ucm_holder_list_add_effect = { LIST = ucm_water_of_life_holders } }
 		}
 	}
 	option = {

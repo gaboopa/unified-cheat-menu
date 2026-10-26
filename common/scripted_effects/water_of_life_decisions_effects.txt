@@ -18,5 +18,6 @@ water_of_life_effect_merchant = {
 
 water_of_life_effect = {
 	add_trait = water_of_life
+	ucm_holder_list_add_effect = { LIST = ucm_water_of_life_holders }
 	ucm_water_of_life_restore_effect = yes
 }

@@ -36,6 +36,7 @@
 				scope:recipient = {
 					# CK3 1.20: removed a stray `target = scope:actor` (not an effect)
 					add_trait = water_of_life
+					ucm_holder_list_add_effect = { LIST = ucm_water_of_life_holders }
 				}
 				scope:recipient = {
 					add_opinion = {

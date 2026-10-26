@@ -3,11 +3,7 @@
 ucm_cheat_menu_lock_dread_at_100_effect = {
   if = {
     limit = { dread < 100 }
-    while = {
-      count = 150
-      limit = { dread < 100 }
-      add_dread = 1
-    }
+    add_dread = 100
   }
   if = {
     limit = { dread > 100 }
@@ -78,38 +74,6 @@ ucm_cheat_menu_apply_world_deterrence_on_vassal_effect = {
   }
   scope:ucm_deterrence_liege = {
     ucm_cheat_menu_strong_deterrence_give_liege_hook_effect = yes
-  }
-}
-
-ucm_cheat_menu_apply_world_deterrence_direct_vassals_effect = {
-  every_vassal = {
-    limit = { is_alive = yes }
-    save_scope_as = ucm_deterrence_vassal
-    ucm_cheat_menu_apply_world_deterrence_on_vassal_effect = yes
-  }
-}
-
-ucm_cheat_menu_apply_world_deterrence_effect = {
-  scope:actor = {
-    save_scope_as = ucm_deterrence_liege
-    if = {
-      limit = { NOT = { has_character_flag = ucm_world_deterrence_active } }
-      add_character_flag = ucm_world_deterrence_active
-    }
-    if = {
-      limit = { NOT = { has_character_modifier = ucm_world_deterrence_aura } }
-      add_character_modifier = {
-        modifier = ucm_world_deterrence_aura
-      }
-    }
-    ucm_cheat_menu_lock_dread_at_100_effect = yes
-    ucm_cheat_menu_apply_world_deterrence_direct_vassals_effect = yes
-    send_interface_toast = {
-      type = event_toast_effect_good
-      title = ucm_world_deterrence_toast_title
-      desc = ucm_world_deterrence_toast_desc
-      left_icon = scope:actor
-    }
   }
 }
 

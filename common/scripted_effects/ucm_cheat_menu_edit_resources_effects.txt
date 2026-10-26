@@ -417,31 +417,19 @@ ucm_cheat_menu_recipient_set_dread_zero_effect = {
   if = {
     limit = { exists = scope:ucm_cheat_menu_target }
     scope:ucm_cheat_menu_target = {
-      while = {
-        count = 600
-        limit = { dread > 0 }
-        add_dread = -1
-      }
+      add_dread = -600
     }
   }
   else_if = {
     limit = { has_global_variable = ucm_cheat_menu_recipient }
     global_var:ucm_cheat_menu_recipient = {
-      while = {
-        count = 600
-        limit = { dread > 0 }
-        add_dread = -1
-      }
+      add_dread = -600
     }
   }
   else_if = {
     limit = { exists = scope:recipient }
     scope:recipient = {
-      while = {
-        count = 600
-        limit = { dread > 0 }
-        add_dread = -1
-      }
+      add_dread = -600
     }
   }
 }

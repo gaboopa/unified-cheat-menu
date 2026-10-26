@@ -1,0 +1,10 @@
+﻿# Character scope. Records the character in a global holders list (once) so monthly pulses
+# only visit characters that actually have the cheat instead of scanning the whole world.
+ucm_holder_list_add_effect = {
+  if = {
+    limit = {
+      NOT = { is_target_in_global_variable_list = { name = $LIST$ target = this } }
+    }
+    add_to_global_variable_list = { name = $LIST$ target = this }
+  }
+}

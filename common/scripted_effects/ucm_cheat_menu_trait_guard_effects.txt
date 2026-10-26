@@ -13,6 +13,18 @@ ucm_cheat_menu_grant_cheat_trait_effect = {
     }
     add_trait = $TRAIT$
     if = {
+      limit = { trait:$TRAIT$ = trait:ucm_trait_baidubuqin }
+      ucm_holder_list_add_effect = { LIST = ucm_baidubuqin_holders }
+    }
+    if = {
+      limit = { trait:$TRAIT$ = trait:ucm_trait_xinwuguai }
+      ucm_holder_list_add_effect = { LIST = ucm_xinwuguai_holders }
+    }
+    if = {
+      limit = { trait:$TRAIT$ = trait:ucm_trait_stats_100_locked }
+      ucm_holder_list_add_effect = { LIST = ucm_stats100_holders }
+    }
+    if = {
       limit = {
         trait:$TRAIT$ = trait:ucm_trait_baidubuqin
       }

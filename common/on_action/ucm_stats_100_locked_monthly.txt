@@ -9,11 +9,37 @@ ucm_monthly_tick = {
 ucm_stats_100_locked_monthly_pulse = {
 	trigger = { ucm_single_player_trigger = yes }
   effect = {
-    every_living_character = {
+    # One-time migration for saves made before the holders list existed.
+    if = {
+      limit = { NOT = { has_global_variable = ucm_stats100_list_built } }
+      set_global_variable = { name = ucm_stats100_list_built value = 1 }
+      every_living_character = {
+        limit = { has_trait = ucm_trait_stats_100_locked }
+        ucm_holder_list_add_effect = { LIST = ucm_stats100_holders }
+      }
+    }
+    every_in_global_list = {
+      variable = ucm_stats100_holders
       limit = {
+        is_alive = yes
         has_trait = ucm_trait_stats_100_locked
       }
       ucm_stats_100_clamp_all_skills_effect = yes
+    }
+    # Collect stale entries first, remove after iterating (never edit a list while iterating it).
+    every_in_global_list = {
+      variable = ucm_stats100_holders
+      limit = {
+        OR = {
+          is_alive = no
+          NOT = { has_trait = ucm_trait_stats_100_locked }
+        }
+      }
+      add_to_temporary_list = ucm_stale_ucm_stats100_holders
+    }
+    every_in_list = {
+      list = ucm_stale_ucm_stats100_holders
+      remove_list_global_variable = { name = ucm_stats100_holders target = this }
     }
   }
 }

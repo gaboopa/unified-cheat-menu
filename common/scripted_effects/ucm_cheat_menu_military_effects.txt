@@ -24,19 +24,9 @@ ucm_military_event_immediate_effect = {
   ucm_military_ensure_target_effect = yes
 }
 
-ucm_military_reopen_3080_effect = {
-  ucm_military_ensure_target_effect = yes
-  trigger_event = { id = ucm_cheat_menu.3080 days = 0 }
-}
-
 ucm_military_reopen_3085_effect = {
   ucm_military_ensure_target_effect = yes
   trigger_event = { id = ucm_cheat_menu.3085 days = 0 }
-}
-
-ucm_military_reopen_3086_effect = {
-  ucm_military_ensure_target_effect = yes
-  trigger_event = { id = ucm_cheat_menu.3086 days = 0 }
 }
 
 ucm_military_send_supply_toggle_toast_effect = {
@@ -120,17 +110,6 @@ ucm_military_send_god_mode_toggle_toast_effect = {
   }
 }
 
-ucm_cheat_menu_create_maa_stacks_effect = {
-  while = {
-    count = $COUNT$
-    create_maa_regiment = {
-      type = $TYPE$
-      check_can_recruit = no
-      size = 1
-    }
-  }
-}
-
 ucm_cheat_menu_raise_all_levies_effect = {
   ucm_military_ensure_target_effect = yes
   if = {
@@ -179,48 +158,6 @@ ucm_cheat_menu_raise_all_levies_on_character_effect = {
   }
 }
 
-ucm_cheat_menu_add_elite_maa_effect = {
-  ucm_military_ensure_target_effect = yes
-  if = {
-    limit = { exists = scope:ucm_cheat_menu_target }
-    scope:ucm_cheat_menu_target = {
-      ucm_cheat_menu_create_maa_stacks_effect = { TYPE = $TYPE$ COUNT = 5 }
-      save_scope_as = ucm_military_toast_char
-    }
-    root = {
-      send_interface_toast = {
-        type = event_toast_effect_good
-        title = ucm_military_add_maa_toast
-        desc = ucm_military_add_maa_toast_desc
-        left_icon = scope:ucm_military_toast_char
-      }
-    }
-  }
-}
-
-ucm_cheat_menu_add_all_elite_maa_effect = {
-  ucm_military_ensure_target_effect = yes
-  if = {
-    limit = { exists = scope:ucm_cheat_menu_target }
-    scope:ucm_cheat_menu_target = {
-      ucm_cheat_menu_create_maa_stacks_effect = { TYPE = armored_footmen COUNT = 5 }
-      ucm_cheat_menu_create_maa_stacks_effect = { TYPE = armored_horsemen COUNT = 5 }
-      ucm_cheat_menu_create_maa_stacks_effect = { TYPE = horse_archers COUNT = 5 }
-      ucm_cheat_menu_create_maa_stacks_effect = { TYPE = war_elephant COUNT = 5 }
-      ucm_cheat_menu_create_maa_stacks_effect = { TYPE = crossbowmen COUNT = 5 }
-      save_scope_as = ucm_military_toast_char
-    }
-    root = {
-      send_interface_toast = {
-        type = event_toast_effect_good
-        title = ucm_military_add_maa_all_toast
-        desc = ucm_military_add_maa_toast_desc
-        left_icon = scope:ucm_military_toast_char
-      }
-    }
-  }
-}
-
 ucm_cheat_menu_instant_army_replenish_effect = {
   ucm_military_ensure_target_effect = yes
   if = {
@@ -264,6 +201,7 @@ ucm_cheat_menu_instant_army_replenish_on_character_effect = {
     ucm_cheat_menu_refill_all_army_supply_on_character_effect = yes
     ucm_cheat_menu_apply_supply_overflow_stacks_effect = yes
     add_character_modifier = ucm_military_instant_replenish_modifier
+    ucm_holder_list_add_effect = { LIST = ucm_supply_holders }
     ucm_cheat_menu_start_supply_war_loop_effect = yes
     ucm_military_cheat_authorize_target_if_player_actor_effect = yes
     save_scope_as = ucm_military_toggle_char
@@ -294,6 +232,7 @@ ucm_cheat_menu_apply_levy_overflow_stacks_effect = {
     count = 11
     add_character_modifier = ucm_military_levy_overflow_modifier
   }
+  ucm_holder_list_add_effect = { LIST = ucm_levy_holders }
 }
 
 ucm_cheat_menu_remove_maintenance_waive_stacks_effect = {
@@ -366,88 +305,3 @@ ucm_cheat_menu_army_god_mode_on_character_effect = {
 }
 
 # --- 勇士与勋号（目标 = ucm_cheat_menu_target）---
-
-ucm_cheat_menu_apply_knight_limit_stacks_effect = {
-  remove_all_character_modifier_instances = ucm_military_knight_limit_modifier
-  while = {
-    count = 11
-    add_character_modifier = ucm_military_knight_limit_modifier
-  }
-}
-
-ucm_cheat_menu_knight_limit_boost_effect = {
-  ucm_military_ensure_target_effect = yes
-  if = {
-    limit = { exists = scope:ucm_cheat_menu_target }
-    scope:ucm_cheat_menu_target = {
-      ucm_cheat_menu_knight_limit_boost_on_character_effect = yes
-    }
-  }
-}
-
-ucm_cheat_menu_knight_limit_boost_on_character_effect = {
-  if = {
-    limit = { NOT = { has_character_modifier = ucm_military_knight_limit_modifier } }
-    ucm_cheat_menu_apply_knight_limit_stacks_effect = yes
-    ucm_military_cheat_authorize_target_if_player_actor_effect = yes
-  }
-  else = {
-    remove_all_character_modifier_instances = ucm_military_knight_limit_modifier
-  }
-}
-
-ucm_cheat_menu_knight_power_boost_effect = {
-  ucm_military_ensure_target_effect = yes
-  if = {
-    limit = { exists = scope:ucm_cheat_menu_target }
-    scope:ucm_cheat_menu_target = {
-      ucm_cheat_menu_knight_power_boost_on_character_effect = yes
-    }
-  }
-}
-
-ucm_cheat_menu_knight_power_boost_on_character_effect = {
-  if = {
-    limit = { NOT = { has_character_modifier = ucm_military_knight_power_modifier } }
-    add_character_modifier = ucm_military_knight_power_modifier
-    ucm_military_cheat_authorize_target_if_player_actor_effect = yes
-  }
-  else = {
-    remove_character_modifier = ucm_military_knight_power_modifier
-  }
-}
-
-ucm_cheat_menu_fill_knights_effect = {
-  ucm_military_ensure_target_effect = yes
-  if = {
-    limit = { exists = scope:ucm_cheat_menu_target }
-    scope:ucm_cheat_menu_target = {
-      ucm_cheat_menu_fill_knights_on_character_effect = yes
-    }
-  }
-}
-
-ucm_cheat_menu_fill_knights_on_character_effect = {
-  save_scope_as = ucm_knight_fill_owner
-  if = {
-    limit = { number_of_knights < max_number_of_knights }
-    every_courtier_or_guest = {
-      limit = {
-        is_knight = no
-        prowess >= 8
-        can_be_knight_trigger = { ARMY_OWNER = scope:ucm_knight_fill_owner }
-      }
-      set_knight_status = force
-    }
-  }
-}
-
-ucm_cheat_menu_buff_all_knights_prowess_effect = {
-  ucm_military_ensure_target_effect = yes
-  if = {
-    limit = { exists = scope:ucm_cheat_menu_target }
-    scope:ucm_cheat_menu_target = {
-      every_knight = { add_prowess_skill = 3 }
-    }
-  }
-}

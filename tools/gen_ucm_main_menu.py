@@ -398,7 +398,7 @@ def item(it, ind):
                 f"{ind}    size = {{ 150 28 }}",
                 f'{ind}    text = "ucm_group_pick_{g}"',
                 f'{ind}    tooltip = "ucm_group_pick_{g}_tt"',
-                f"{ind}    down = \"[GetScriptedGui( 'ucm_group_picked_{g}' ).IsShown( {R} )]\"",
+                f"{ind}    down = \"[ObjectsEqual( GetPlayer.MakeScope.Var( 'ucm_group_pick' ).GetFlagName, '{g}' )]\"",
                 f"{ind}    onclick = \"[GetScriptedGui( 'ucm_group_pick_{g}' ).Execute( {R} )]\"",
                 f"{ind}  }}",
             ]

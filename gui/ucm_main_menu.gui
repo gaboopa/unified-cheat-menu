@@ -2057,28 +2057,28 @@ window = {
                 size = { 150 28 }
                 text = "ucm_group_pick_sub_realm_counties"
                 tooltip = "ucm_group_pick_sub_realm_counties_tt"
-                down = "[GetScriptedGui( 'ucm_group_picked_sub_realm_counties' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                down = "[ObjectsEqual( GetPlayer.MakeScope.Var( 'ucm_group_pick' ).GetFlagName, 'sub_realm_counties' )]"
                 onclick = "[GetScriptedGui( 'ucm_group_pick_sub_realm_counties' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
               button_standard = {
                 size = { 150 28 }
                 text = "ucm_group_pick_dejure_counties"
                 tooltip = "ucm_group_pick_dejure_counties_tt"
-                down = "[GetScriptedGui( 'ucm_group_picked_dejure_counties' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                down = "[ObjectsEqual( GetPlayer.MakeScope.Var( 'ucm_group_pick' ).GetFlagName, 'dejure_counties' )]"
                 onclick = "[GetScriptedGui( 'ucm_group_pick_dejure_counties' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
               button_standard = {
                 size = { 150 28 }
                 text = "ucm_group_pick_culture_counties"
                 tooltip = "ucm_group_pick_culture_counties_tt"
-                down = "[GetScriptedGui( 'ucm_group_picked_culture_counties' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                down = "[ObjectsEqual( GetPlayer.MakeScope.Var( 'ucm_group_pick' ).GetFlagName, 'culture_counties' )]"
                 onclick = "[GetScriptedGui( 'ucm_group_pick_culture_counties' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
               button_standard = {
                 size = { 150 28 }
                 text = "ucm_group_pick_faith_counties"
                 tooltip = "ucm_group_pick_faith_counties_tt"
-                down = "[GetScriptedGui( 'ucm_group_picked_faith_counties' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                down = "[ObjectsEqual( GetPlayer.MakeScope.Var( 'ucm_group_pick' ).GetFlagName, 'faith_counties' )]"
                 onclick = "[GetScriptedGui( 'ucm_group_pick_faith_counties' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
             }
@@ -2585,70 +2585,70 @@ window = {
                 size = { 150 28 }
                 text = "ucm_group_pick_courtiers"
                 tooltip = "ucm_group_pick_courtiers_tt"
-                down = "[GetScriptedGui( 'ucm_group_picked_courtiers' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                down = "[ObjectsEqual( GetPlayer.MakeScope.Var( 'ucm_group_pick' ).GetFlagName, 'courtiers' )]"
                 onclick = "[GetScriptedGui( 'ucm_group_pick_courtiers' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
               button_standard = {
                 size = { 150 28 }
                 text = "ucm_group_pick_vassals"
                 tooltip = "ucm_group_pick_vassals_tt"
-                down = "[GetScriptedGui( 'ucm_group_picked_vassals' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                down = "[ObjectsEqual( GetPlayer.MakeScope.Var( 'ucm_group_pick' ).GetFlagName, 'vassals' )]"
                 onclick = "[GetScriptedGui( 'ucm_group_pick_vassals' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
               button_standard = {
                 size = { 150 28 }
                 text = "ucm_group_pick_all_vassals"
                 tooltip = "ucm_group_pick_all_vassals_tt"
-                down = "[GetScriptedGui( 'ucm_group_picked_all_vassals' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                down = "[ObjectsEqual( GetPlayer.MakeScope.Var( 'ucm_group_pick' ).GetFlagName, 'all_vassals' )]"
                 onclick = "[GetScriptedGui( 'ucm_group_pick_all_vassals' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
               button_standard = {
                 size = { 150 28 }
                 text = "ucm_group_pick_councillors"
                 tooltip = "ucm_group_pick_councillors_tt"
-                down = "[GetScriptedGui( 'ucm_group_picked_councillors' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                down = "[ObjectsEqual( GetPlayer.MakeScope.Var( 'ucm_group_pick' ).GetFlagName, 'councillors' )]"
                 onclick = "[GetScriptedGui( 'ucm_group_pick_councillors' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
               button_standard = {
                 size = { 150 28 }
                 text = "ucm_group_pick_knights"
                 tooltip = "ucm_group_pick_knights_tt"
-                down = "[GetScriptedGui( 'ucm_group_picked_knights' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                down = "[ObjectsEqual( GetPlayer.MakeScope.Var( 'ucm_group_pick' ).GetFlagName, 'knights' )]"
                 onclick = "[GetScriptedGui( 'ucm_group_pick_knights' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
               button_standard = {
                 size = { 150 28 }
                 text = "ucm_group_pick_children"
                 tooltip = "ucm_group_pick_children_tt"
-                down = "[GetScriptedGui( 'ucm_group_picked_children' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                down = "[ObjectsEqual( GetPlayer.MakeScope.Var( 'ucm_group_pick' ).GetFlagName, 'children' )]"
                 onclick = "[GetScriptedGui( 'ucm_group_pick_children' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
               button_standard = {
                 size = { 150 28 }
                 text = "ucm_group_pick_close_family"
                 tooltip = "ucm_group_pick_close_family_tt"
-                down = "[GetScriptedGui( 'ucm_group_picked_close_family' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                down = "[ObjectsEqual( GetPlayer.MakeScope.Var( 'ucm_group_pick' ).GetFlagName, 'close_family' )]"
                 onclick = "[GetScriptedGui( 'ucm_group_pick_close_family' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
               button_standard = {
                 size = { 150 28 }
                 text = "ucm_group_pick_spouses"
                 tooltip = "ucm_group_pick_spouses_tt"
-                down = "[GetScriptedGui( 'ucm_group_picked_spouses' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                down = "[ObjectsEqual( GetPlayer.MakeScope.Var( 'ucm_group_pick' ).GetFlagName, 'spouses' )]"
                 onclick = "[GetScriptedGui( 'ucm_group_pick_spouses' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
               button_standard = {
                 size = { 150 28 }
                 text = "ucm_group_pick_house"
                 tooltip = "ucm_group_pick_house_tt"
-                down = "[GetScriptedGui( 'ucm_group_picked_house' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                down = "[ObjectsEqual( GetPlayer.MakeScope.Var( 'ucm_group_pick' ).GetFlagName, 'house' )]"
                 onclick = "[GetScriptedGui( 'ucm_group_pick_house' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
               button_standard = {
                 size = { 150 28 }
                 text = "ucm_group_pick_dynasty"
                 tooltip = "ucm_group_pick_dynasty_tt"
-                down = "[GetScriptedGui( 'ucm_group_picked_dynasty' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                down = "[ObjectsEqual( GetPlayer.MakeScope.Var( 'ucm_group_pick' ).GetFlagName, 'dynasty' )]"
                 onclick = "[GetScriptedGui( 'ucm_group_pick_dynasty' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
             }

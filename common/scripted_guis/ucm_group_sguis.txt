@@ -7,20 +7,10 @@ ucm_group_pick_courtiers = {
 	effect = { set_variable = { name = ucm_group_pick value = flag:courtiers } }
 }
 
-ucm_group_picked_courtiers = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes var:ucm_group_pick ?= flag:courtiers }
-}
-
 ucm_group_pick_vassals = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	effect = { set_variable = { name = ucm_group_pick value = flag:vassals } }
-}
-
-ucm_group_picked_vassals = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes var:ucm_group_pick ?= flag:vassals }
 }
 
 ucm_group_pick_all_vassals = {
@@ -29,20 +19,10 @@ ucm_group_pick_all_vassals = {
 	effect = { set_variable = { name = ucm_group_pick value = flag:all_vassals } }
 }
 
-ucm_group_picked_all_vassals = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes var:ucm_group_pick ?= flag:all_vassals }
-}
-
 ucm_group_pick_councillors = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	effect = { set_variable = { name = ucm_group_pick value = flag:councillors } }
-}
-
-ucm_group_picked_councillors = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes var:ucm_group_pick ?= flag:councillors }
 }
 
 ucm_group_pick_knights = {
@@ -51,20 +31,10 @@ ucm_group_pick_knights = {
 	effect = { set_variable = { name = ucm_group_pick value = flag:knights } }
 }
 
-ucm_group_picked_knights = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes var:ucm_group_pick ?= flag:knights }
-}
-
 ucm_group_pick_children = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	effect = { set_variable = { name = ucm_group_pick value = flag:children } }
-}
-
-ucm_group_picked_children = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes var:ucm_group_pick ?= flag:children }
 }
 
 ucm_group_pick_close_family = {
@@ -73,20 +43,10 @@ ucm_group_pick_close_family = {
 	effect = { set_variable = { name = ucm_group_pick value = flag:close_family } }
 }
 
-ucm_group_picked_close_family = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes var:ucm_group_pick ?= flag:close_family }
-}
-
 ucm_group_pick_spouses = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	effect = { set_variable = { name = ucm_group_pick value = flag:spouses } }
-}
-
-ucm_group_picked_spouses = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes var:ucm_group_pick ?= flag:spouses }
 }
 
 ucm_group_pick_house = {
@@ -95,20 +55,10 @@ ucm_group_pick_house = {
 	effect = { set_variable = { name = ucm_group_pick value = flag:house } }
 }
 
-ucm_group_picked_house = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes var:ucm_group_pick ?= flag:house }
-}
-
 ucm_group_pick_dynasty = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	effect = { set_variable = { name = ucm_group_pick value = flag:dynasty } }
-}
-
-ucm_group_picked_dynasty = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes var:ucm_group_pick ?= flag:dynasty }
 }
 
 ucm_group_pick_sub_realm_counties = {
@@ -117,20 +67,10 @@ ucm_group_pick_sub_realm_counties = {
 	effect = { set_variable = { name = ucm_group_pick value = flag:sub_realm_counties } }
 }
 
-ucm_group_picked_sub_realm_counties = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes var:ucm_group_pick ?= flag:sub_realm_counties }
-}
-
 ucm_group_pick_dejure_counties = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	effect = { set_variable = { name = ucm_group_pick value = flag:dejure_counties } }
-}
-
-ucm_group_picked_dejure_counties = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes var:ucm_group_pick ?= flag:dejure_counties }
 }
 
 ucm_group_pick_culture_counties = {
@@ -139,20 +79,10 @@ ucm_group_pick_culture_counties = {
 	effect = { set_variable = { name = ucm_group_pick value = flag:culture_counties } }
 }
 
-ucm_group_picked_culture_counties = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes var:ucm_group_pick ?= flag:culture_counties }
-}
-
 ucm_group_pick_faith_counties = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	effect = { set_variable = { name = ucm_group_pick value = flag:faith_counties } }
-}
-
-ucm_group_picked_faith_counties = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes var:ucm_group_pick ?= flag:faith_counties }
 }
 
 ucm_group_run_clear_stress = {

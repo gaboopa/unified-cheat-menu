@@ -1,0 +1,262 @@
+"""Regenerate the derived files of the Elder Kings 2 compatch (compat/ek2/) and the main-mod religion
+virtue/sin data the faith editor shows.
+
+Generated here (everything else under compat/ek2/ is hand-written: descriptor, event stubs, region triggers):
+- common/scripted_effects/ucm_acm_faith_religion_traits_data_effects.txt, from vanilla religions (main mod)
+  and from EK2 religions (compatch).
+- compat/ek2/gui/*.gui: 3-way merge (base vanilla) of every GUI file both UCM and EK2 override.
+- compat/ek2/<UCM file>: copies of UCM files whose top-level keys EK2 also defines with changes of its own,
+  with each such block 3-way merged (base vanilla), so EK2's edits survive UCM's override.
+- compat/ek2/common/scripted_effects/pcm_historical_relics_effects.txt: the main-mod relic list minus the
+  vanilla artifact effects EK2 removes.
+- compat/ek2/common/religion/religion_types/ucm_force_marry_religion.txt: EK2 family + hostility doctrine.
+
+A merge conflict stops the script; resolve it by hand (or adjust UCM) and rerun.
+Needs git on PATH (git merge-file).
+
+Run after a CK3, EK2 or UCM update:
+    python tools/gen_ek2_compatch.py --game-dir <CK3>/game --ek2-dir <workshop>/1158310/2887120253
+or set CK3_GAME_DIR and CK3_EK2_DIR instead of passing the flags.
+"""
+import argparse
+import os
+import re
+import subprocess
+import sys
+import tempfile
+
+from ck3parse import _match_brace, child_objects_text, effective_files, strip_comments, top_level_objects_text
+
+MOD_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+COMPAT = os.path.join(MOD_DIR, "compat", "ek2")
+RELIGIONS = os.path.join("common", "religion", "religion_types")
+TRAITS_REL = os.path.join("common", "scripted_effects", "ucm_acm_faith_religion_traits_data_effects.txt")
+RELICS_REL = os.path.join("common", "scripted_effects", "pcm_historical_relics_effects.txt")
+FORCE_MARRY_REL = os.path.join(RELIGIONS, "ucm_force_marry_religion.txt")
+# Folders whose entries merge instead of colliding, or that a step below already handles.
+NO_KEY_MERGE = {os.path.join("common", "on_action"), RELIGIONS}
+
+
+def read(path):
+    with open(path, "rb") as fh:
+        return fh.read().decode("utf-8-sig").replace("\r\n", "\n")
+
+
+def write(path, text):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "wb") as fh:
+        fh.write(b"\xef\xbb\xbf" + text.replace("\r\n", "\n").replace("\n", "\r\n").encode("utf-8"))
+    print("wrote", os.path.relpath(path, MOD_DIR))
+
+
+def merge3(ours, base, theirs, what):
+    """git merge-file on three texts; exits on conflict."""
+    with tempfile.TemporaryDirectory() as d:
+        paths = []
+        for name, text in (("ours", ours), ("base", base), ("theirs", theirs)):
+            p = os.path.join(d, name)
+            with open(p, "w", encoding="utf-8", newline="\n") as fh:
+                fh.write(text)
+            paths.append(p)
+        r = subprocess.run(["git", "merge-file", "-p", *paths], capture_output=True, encoding="utf-8")
+    if r.returncode:
+        sys.exit(f"merge conflict in {what}; resolve by hand:\n{r.stdout}")
+    return r.stdout
+
+
+def norm(body):
+    return " ".join(body.split())
+
+
+def defined_keys(sub, *dirs):
+    """key -> comment-stripped body for every top-level block, later dirs' same-name files winning."""
+    out = {}
+    for f in effective_files(sub, *dirs):
+        for k, b in top_level_objects_text(read(f)):
+            out[k] = b
+    return out
+
+
+def raw_block_span(text, key):
+    """(start, end) of the top-level `key = { ... }` in raw text (comments kept), or None."""
+    code = re.sub(r"#[^\n]*", lambda m: " " * len(m.group()), text)  # same offsets, comments blanked
+    m = re.search(r"(?m)^" + re.escape(key) + r"\s*=\s*\{", code)
+    if not m:
+        return None
+    return m.start(), _match_brace(code, m.end() - 1) + 1
+
+
+# --- religion virtues / sins shown by the faith editor ------------------------------------------------
+
+def entries(body):
+    """Depth-0 entry names in order: `brave = { weight = 30 }` and bare `brave` both give brave."""
+    out, depth, after_eq = [], 0, False
+    for tok in re.findall(r'[{}=]|"[^"]*"|[^\s{}=]+', body):
+        if tok in "{}":
+            depth += 1 if tok == "{" else -1
+            after_eq = False
+        elif depth:
+            continue
+        elif tok == "=":
+            after_eq = True
+        elif after_eq:
+            after_eq = False  # value of a depth-0 key = value
+        else:
+            out.append(tok)
+    return out
+
+
+def religion_traits(files):
+    """[(religion, [sins], [virtues])] sorted by religion key."""
+    out = []
+    for f in files:
+        for rel, body in top_level_objects_text(read(f)):
+            groups = {"sins": [], "virtues": []}
+            for k, b in child_objects_text(body):
+                if k == "traits":
+                    for g, gb in child_objects_text(b):
+                        if g in groups:
+                            groups[g] = entries(gb)
+            out.append((rel, groups["sins"], groups["virtues"]))
+    return sorted(out)
+
+
+def traits_effect(religions, header):
+    lines = header + ["ucm_acm_faith_add_religion_traits_effect = {"]
+    for rel, sins, virtues in religions:
+        for lst, traits in (("sin", sins), ("virtue", virtues)):
+            for t in traits:
+                lines += [
+                    "  if = {",
+                    "    limit = {",
+                    f"      var:ucm_selected_faith_var = {{ religion = religion:{rel} }}",
+                    "    }",
+                    "    add_to_global_variable_list = {",
+                    f"      name = ucm_acm_fe_display_{lst}_traits",
+                    f"      target = flag:{t}",
+                    "    }",
+                    "  }",
+                ]
+    return "\n".join(lines + ["}", ""])
+
+
+def gen_religion_traits(game, ek2):
+    van = religion_traits(effective_files(RELIGIONS, game, MOD_DIR))
+    write(os.path.join(MOD_DIR, TRAITS_REL), traits_effect(van, [
+        "# AUTO-GENERATED by tools/gen_ek2_compatch.py from CK3 religion definitions (traits = { sins virtues }).",
+        "# Called by ucm_acm_faith_refresh_display_lists_effect; compat/ek2/ ships the EK2 version of this file.",
+        "",
+    ]))
+    ek = religion_traits(effective_files(RELIGIONS, ek2, MOD_DIR))
+    write(os.path.join(COMPAT, TRAITS_REL), traits_effect(ek, [
+        "# AUTO-GENERATED by tools/gen_ek2_compatch.py from Elder Kings 2 religion definitions.",
+        "# EK2 COMPATCH: replaces the main-mod file of the same name.",
+        "",
+    ]))
+    print(f"religions: vanilla={len(van)} ek2={len(ek)}")
+
+
+# --- GUI files both mods override ---------------------------------------------------------------------
+
+def gen_gui(game, ek2):
+    for f in sorted(os.listdir(os.path.join(MOD_DIR, "gui"))):
+        theirs = os.path.join(ek2, "gui", f)
+        if f.endswith(".gui") and os.path.isfile(theirs):
+            base = os.path.join(game, "gui", f)
+            if not os.path.isfile(base):
+                sys.exit(f"gui/{f}: both mods ship it but vanilla has no base to merge against")
+            merged = merge3(read(os.path.join(MOD_DIR, "gui", f)), read(base), read(theirs), f"gui/{f}")
+            write(os.path.join(COMPAT, "gui", f), merged)
+
+
+# --- top-level keys both mods define --------------------------------------------------------------------
+
+def gen_key_merges(game, ek2):
+    common = os.path.join(MOD_DIR, "common")
+    for dirpath, _, files in os.walk(common):
+        sub = os.path.relpath(dirpath, MOD_DIR)
+        if sub in NO_KEY_MERGE or not any(f.endswith(".txt") for f in files):
+            continue
+        theirs_all = defined_keys(sub, ek2)
+        if not theirs_all:
+            continue
+        vanilla_all = defined_keys(sub, game)
+        for f in sorted(files):
+            if not f.endswith(".txt"):
+                continue
+            path = os.path.join(dirpath, f)
+            text = read(path)
+            changed = []
+            for k, _ in top_level_objects_text(text):
+                if k in theirs_all and norm(theirs_all[k]) != norm(vanilla_all.get(k, "")):
+                    changed.append(k)
+            for k in changed:
+                if k not in vanilla_all:
+                    sys.exit(f"{sub}/{f}: {k} is defined by UCM and EK2 but not vanilla; merge by hand")
+                ek2_text = next(read(p) for p in reversed(effective_files(sub, ek2)) if raw_block_span(read(p), k))
+                van_text = next(read(p) for p in reversed(effective_files(sub, game)) if raw_block_span(read(p), k))
+                blocks = []
+                for t in (text, van_text, ek2_text):
+                    s, e = raw_block_span(t, k)
+                    blocks.append(t[s:e].replace("    ", "\t") + "\n")
+                merged = merge3(*blocks, what=f"{sub}/{f}: {k}").rstrip("\n")
+                s, e = raw_block_span(text, k)
+                text = text[:s] + f"# EK2：此块已与 Elder Kings 2 的修改三方合并（tools/gen_ek2_compatch.py）\n" + merged + text[e:]
+            if changed:
+                write(os.path.join(COMPAT, sub, f), text)
+                print(f"  merged {', '.join(changed)}")
+
+
+# --- historical relics EK2 removed ---------------------------------------------------------------------
+
+def gen_relics(game, ek2):
+    sub = os.path.join("common", "scripted_effects")
+    vanilla, effects = defined_keys(sub, game), defined_keys(sub, game, ek2)
+    kept, dropped, out = 0, 0, []
+    for line in read(os.path.join(MOD_DIR, RELICS_REL)).split("\n"):
+        m = re.match(r"\s*(\w+)\s*=", line)
+        if m and m.group(1) in vanilla:  # a call to a vanilla scripted effect
+            if m.group(1) in effects:
+                kept += 1
+            else:
+                dropped += 1
+                continue
+        out.append(line)
+    out = [l for l in out if not l.startswith("#")]
+    write(os.path.join(COMPAT, RELICS_REL), "\n".join([
+        "# AUTO-GENERATED by tools/gen_ek2_compatch.py: the main-mod file of the same name minus the vanilla",
+        "# artifact effects Elder Kings 2 removes. EK2 COMPATCH: replaces the main-mod file.",
+    ] + out))
+    print(f"relics: kept={kept} dropped={dropped}")
+
+
+# --- force-marry helper religion --------------------------------------------------------------------------
+
+def gen_force_marry():
+    text = read(os.path.join(MOD_DIR, FORCE_MARRY_REL))
+    for old, new in (("    family = rf_pagan\n", "    family = rf_aurbis # EK2：无 rf_pagan\n"),
+                     ("  doctrine = pagan_hostility_doctrine\n",
+                      "  doctrine = aurbic_hostility_doctrine # EK2：敌对教义须与宗教家族配套\n")):
+        if text.count(old) != 1:
+            sys.exit(f"{FORCE_MARRY_REL}: expected one {old.strip()!r}; update gen_force_marry")
+        text = text.replace(old, new)
+    write(os.path.join(COMPAT, FORCE_MARRY_REL), text)
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--game-dir", default=os.environ.get("CK3_GAME_DIR"), help="CK3 game/ directory (or CK3_GAME_DIR)")
+    ap.add_argument("--ek2-dir", default=os.environ.get("CK3_EK2_DIR"), help="EK2 workshop directory (or CK3_EK2_DIR)")
+    args = ap.parse_args()
+    for flag, d in (("--game-dir", args.game_dir), ("--ek2-dir", args.ek2_dir)):
+        if not d or not os.path.isdir(os.path.join(d, RELIGIONS)):
+            sys.exit(f"{flag}: no {RELIGIONS} under {d!r}")
+    gen_religion_traits(args.game_dir, args.ek2_dir)
+    gen_gui(args.game_dir, args.ek2_dir)
+    gen_key_merges(args.game_dir, args.ek2_dir)
+    gen_relics(args.game_dir, args.ek2_dir)
+    gen_force_marry()
+
+
+if __name__ == "__main__":
+    main()

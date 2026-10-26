@@ -1,0 +1,14 @@
+﻿namespace = ucm_cheat_menu
+
+## EK2 stub: vanilla culture hub removed (no vanilla cultures). Only .3186 kept (referenced from .0021); opens the runtime picker.
+
+ucm_cheat_menu.3186 = {
+  type = character_event
+  title = ucm_cheat_menu.0185.culture_heritage_t
+  desc = ucm_ui_no_hover_tooltip
+  theme = default
+  right_portrait = scope:recipient
+
+  option = { name = ucm_cheat_menu.1420.browse_all_flat root = { ucm_open_acm_culture_picker_effect = yes } }
+  option = { name = ucm_cheat_menu.00x.close }
+}

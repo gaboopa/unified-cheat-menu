@@ -1,0 +1,7 @@
+﻿# EK2 has none of the vanilla cultures; EK2 cultures appear only in the "all" list.
+
+ucm_acm_culture_in_region_europe_trigger = { always = no }
+ucm_acm_culture_in_region_central_asia_trigger = { always = no }
+ucm_acm_culture_in_region_mena_trigger = { always = no }
+ucm_acm_culture_in_region_africa_trigger = { always = no }
+ucm_acm_culture_in_region_asia_trigger = { always = no }

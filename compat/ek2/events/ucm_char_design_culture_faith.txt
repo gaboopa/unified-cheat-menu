@@ -1,0 +1,64 @@
+﻿# Character design wizard: culture / faith data pages (split out so the EK2 compat patch can replace them) (EK2 stub: no vanilla culture/faith refs)
+
+namespace = sarc_char_design
+
+sarc_char_design.1051 = {
+	type = character_event
+	title = sarc_char_design.culture.group.event.t
+	desc = sarc_char_design.culture.group.event.d
+	theme = default
+	left_portrait = {
+		character = var:sarc_custom_char_var
+		animation = personality_bold
+	}
+	option = {
+		name = sarc_char_design.back.menu
+		trigger_event = sarc_char_design.9999
+	}
+}
+
+sarc_char_design.1052 = {
+	type = character_event
+	title = sarc_char_design.culture.itself.event.t
+	desc = sarc_char_design.culture.itself.event.d
+	theme = default
+	left_portrait = {
+		character = var:sarc_custom_char_var
+		animation = personality_bold
+	}
+	option = {
+		name = sarc_char_design.back.menu
+		trigger_event = sarc_char_design.9999
+	}
+}
+
+sarc_char_design.1053 = {
+	type = character_event
+	title = sarc_char_design.religion.group.event.t
+	desc = sarc_char_design.religion.group.event.d
+	theme = default
+	left_portrait = {
+		character = var:sarc_custom_char_var
+		animation = personality_bold
+	}
+	option = {
+		name = sarc_char_design.back.menu
+		trigger_event = sarc_char_design.9999
+	}
+}
+
+sarc_char_design.1054 = {
+	type = character_event
+	title = sarc_char_design.religion.faith.event.t
+	desc = sarc_char_design.religion.faith.event.d
+	theme = default
+	left_portrait = {
+		character = var:sarc_custom_char_var
+		animation = personality_bold
+	}
+	option = {
+		name = sarc_char_design.back.menu
+		trigger_event = sarc_char_design.9999
+	}
+}
+

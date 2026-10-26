@@ -1,0 +1,140 @@
+﻿# Artifact_1000（pcm_decisions.txt）调用：原版历史圣物，scope:owner 为接收者。
+# 总转换 mod 不含这些 effect（EK2 删除 119 个），compat/<mod>/ 下的同名文件只保留仍存在的条目。
+pcm_create_historical_relics_effect = {
+	# --- SECTION 1: THE RELICS OF THE DAWN ---
+	create_artifact_al_dawat_effect = { OWNER = scope:owner }
+	create_artifact_al_hafir_effect = { OWNER = scope:owner }
+	create_artifact_pedestal_al_jabal_effect = { OWNER = scope:owner }
+	create_artifact_al_sayf_al_khass_effect = { OWNER = scope:owner }
+	create_artifact_al_taj_crown_effect = { OWNER = scope:owner }
+	create_artifact_pedestal_al_yatima_effect = { OWNER = scope:owner }
+	create_artifact_abhidhamma_pitaka_effect = { OWNER = scope:owner }
+	create_artifact_afarganyu_effect = { OWNER = scope:owner }
+	create_artifact_arms_of_alexander_effect = { OWNER = scope:owner }
+	create_artifact_aruval_effect = { OWNER = scope:owner }
+	create_artifact_kantele_effect = { OWNER = scope:owner }
+	create_artifact_angelicas_ring_effect = { OWNER = scope:owner }
+	create_artifact_aram_effect = { OWNER = scope:owner }
+	create_artifact_sculpture_ark_of_covenant_effect = { OWNER = scope:owner }
+	create_artifact_ascalon_effect = { OWNER = scope:owner }
+	create_artifact_sculpture_babr_e_bayan_effect = { OWNER = scope:owner }
+	create_artifact_wall_banner_thankfulness_effect = { OWNER = scope:owner }
+	create_artifact_various_bells_santiago = { OWNER = scope:owner }
+	create_artifact_pedestal_branch_relic_boog_effect = { OWNER = scope:owner }
+	create_artifact_pedestal_branch_relic_hinduism_effect = { OWNER = scope:owner }
+	create_artifact_pedestal_branch_relic_slavic_effect = { OWNER = scope:owner }
+	create_artifact_bronze_head_effect = { OWNER = scope:owner }
+	create_artifact_khanda_effect = { OWNER = scope:owner }
+	create_artifact_goblet_chalice_of_dona_urraca = { OWNER = scope:owner }
+	create_artifact_chinese_caligraphy_effect = { OWNER = scope:owner }
+	create_colada_effect = { OWNER = scope:owner }
+	create_artifact_pedestal_justinian_effect = { OWNER = scope:owner }
+	create_artifact_nikephoros_crown_effect = { OWNER = scope:owner }
+	create_artifact_crystal_carving_effect = { OWNER = scope:owner }
+	create_artifact_pedestal_cup_jamshid_effect = { OWNER = scope:owner }
+	create_artifact_curtana_effect = { OWNER = scope:owner }
+	create_artifact_dagger_of_rostam_effect = { OWNER = scope:owner }
+	create_artifact_pedestal_david_harp_effect = { OWNER = scope:owner }
+	create_artifact_wall_banner_kaviani_effect = { OWNER = scope:owner }
+	create_artifact_dhammapada_effect = { OWNER = scope:owner }
+	create_artifact_dragvandil_effect = { OWNER = scope:owner }
+	create_artifact_durendal_effect = { OWNER = scope:owner }
+	create_artifact_excalibur_effect = { OWNER = scope:owner }
+	create_artifact_various_aquamanile_santiago = { OWNER = scope:owner }
+	create_artifact_pedestal_great_diamond_effect = { OWNER = scope:owner }
+	create_artifact_edmund_head_effect = { OWNER = scope:owner }
+	create_artifact_ibeji_effect = { OWNER = scope:owner }
+	create_artifact_pedestal_ikenga_effect = { OWNER = scope:owner }
+	create_artifact_wall_banner_edessa_effect = { OWNER = scope:owner }
+	create_artifact_pedestal_crown_iron_effect = { OWNER = scope:owner }
+	create_artifact_jewelled_danda_effect = { OWNER = scope:owner }
+	create_artifact_joyeuse_effect = { OWNER = scope:owner }
+	create_artifact_kaves_apron_effect = { OWNER = scope:owner }
+	create_artifact_essen_crown_effect = { OWNER = scope:owner }
+	create_artifact_kladenets_effect = { OWNER = scope:owner }
+	create_artifact_legbiter_effect = { OWNER = scope:owner }
+	create_artifact_makarakundala_effect = { OWNER = scope:owner }
+	create_artifact_mantle_of_the_prophet_effect = { OWNER = scope:owner }
+	create_artifact_sword_mmaagha_kamalu_effect = { OWNER = scope:owner }
+	create_artifact_monomachus_crown_effect = { OWNER = scope:owner }
+	create_artifact_pedestal_koh_i_noor_effect = { OWNER = scope:owner }
+	create_artifact_nagelring_effect = { OWNER = scope:owner }
+	create_artifact_navaratna_effect = { OWNER = scope:owner }
+	create_artifact_olifant_effect = { OWNER = scope:owner }
+	create_artifact_papal_tiara_effect = { OWNER = scope:owner }
+	create_artifact_peacock_throne_effect = { OWNER = scope:owner }
+	create_artifact_sculpture_cabinet_pentapyrgion_effect = { OWNER = scope:owner }
+	create_artifact_robe_kassapa_effect = { OWNER = scope:owner }
+	create_artifact_qadib_al_mulk_effect = { OWNER = scope:owner }
+	create_artifact_quernbiter_effect = { OWNER = scope:owner }
+	create_artifact_reichskrone_effect = { OWNER = scope:owner }
+	create_artifact_ruyi_effect = { OWNER = scope:owner }
+	create_artifact_zomorrodnegar_effect = { OWNER = scope:owner }
+	create_artifact_pedestal_shankha_conch_effect = { OWNER = scope:owner }
+	create_artifact_siddhachakra_effect = { OWNER = scope:owner }
+	create_artifact_skull_cap_charlemagne_effect = { OWNER = scope:owner }
+	create_artifact_sledovik_effect = { OWNER = scope:owner }
+	create_artifact_spear_of_the_prophet_effect = { OWNER = scope:owner }
+	create_artifact_staff_kakusandha_effect = { OWNER = scope:owner }
+	create_artifact_throne_scone_effect = { OWNER = scope:owner }
+	create_artifact_sutta_pitaka_effect = { OWNER = scope:owner }
+	create_artifact_wall_sword_attila_effect = { OWNER = scope:owner }
+	create_artifact_wall_muhammad_sword_effect = { OWNER = scope:owner }
+	create_artifact_szczerbiec_effect = { OWNER = scope:owner }
+	create_artifact_throne_charlemagne_effect = { OWNER = scope:owner }
+	create_artifact_throne_solomon_effect = { OWNER = scope:owner }
+	create_artifact_wall_cid_sword_effect = { OWNER = scope:owner }
+	create_artifact_turquoise_throne_effect = { OWNER = scope:owner }
+	create_artifact_vinaya_pitaka_effect = { OWNER = scope:owner }
+	create_artifact_fp2_votive_crowns_effect = { OWNER = scope:owner }
+	create_artifact_konagamana_effect = { OWNER = scope:owner }
+
+	# --- SECTION 1B: NEWER HISTORICAL RELICS ---
+	create_artifact_pedestal_branch_relic_zoroastr_effect = { OWNER = scope:owner }
+	create_artifact_pedestal_branch_relic_germanic_effect = { OWNER = scope:owner }
+	create_artifact_pedestal_branch_relic_general_effect = { OWNER = scope:owner }
+	create_artifact_byz_throne_effect = { OWNER = scope:owner }
+	create_artifact_muhammads_epistles_effect = { OWNER = scope:owner }
+	create_artifact_cintamani_hindu_effect = { OWNER = scope:owner }
+	create_artifact_cintamani_buddhist_effect = { OWNER = scope:owner }
+	create_artifact_sword_goujian_effect = { OWNER = scope:owner }
+	create_artifact_statue_constantine_effect = { OWNER = scope:owner }
+	create_artifact_tree_automa_effect = { OWNER = scope:owner }
+	create_artifact_statue_four_tetrarchs_effect = { OWNER = scope:owner }
+	create_artifact_statue_roman_woman_effect = { OWNER = scope:owner }
+	create_artifact_hydraulic_organ_effect = { OWNER = scope:owner }
+	create_artifact_heirloom_seal_effect = { OWNER = scope:owner }
+	create_artifact_military_classics_effect = { OWNER = scope:owner }
+	create_artifact_eight_fold_chest_effect = { OWNER = scope:owner }
+	create_artifact_chinese_armillary_sphere_effect = { OWNER = scope:owner }
+	create_artifact_pedestal_baekje_incense_burner_effect = { OWNER = scope:owner }
+	create_artifact_pedestal_sakanoue_sword_effect = { OWNER = scope:owner }
+	create_artifact_higekiri_sword_effect = { OWNER = scope:owner }
+	create_artifact_hizamaru_sword_effect = { OWNER = scope:owner }
+	create_artifact_dojigiri_sword_effect = { OWNER = scope:owner }
+	create_artifact_mikazuki_munechika_sword_effect = { OWNER = scope:owner }
+	create_artifact_odenta_sword_effect = { OWNER = scope:owner }
+	create_artifact_pedestal_hamayumi_bow_effect = { OWNER = scope:owner }
+	create_artifact_pedestal_seven_branched_sword_effect = { OWNER = scope:owner }
+	create_artifact_pedestal_gyerimro_dagger_effect = { OWNER = scope:owner }
+	create_artifact_karakawa_armor_effect = { OWNER = scope:owner }
+	create_artifact_nukemaru_sword_effect = { OWNER = scope:owner }
+	create_artifact_kogarasumaru_sword_effect = { OWNER = scope:owner }
+	create_artifact_zhanlu_sword_effect = { OWNER = scope:owner }
+	create_artifact_chunjun_sword_effect = { OWNER = scope:owner }
+	create_artifact_yuchang_sword_effect = { OWNER = scope:owner }
+	create_artifact_statue_viet_green_amitabha_buddha_effect = { OWNER = scope:owner }
+	create_artifact_fp2_armillary_sphere_effect = { OWNER = scope:owner MAKER = scope:owner }
+	create_artifact_fp2_2p_chess_board_effect = { OWNER = scope:owner }
+	create_artifact_fp2_4p_chess_board_effect = { OWNER = scope:owner }
+	create_artifact_fp2_andalusian_aquamanile_effect = { OWNER = scope:owner SMITH = scope:owner }
+	create_artifact_oxus_bracelet_effect = { OWNER = scope:owner }
+	create_artifact_persian_drinking_vessel_effect = { OWNER = scope:owner SMITH = scope:owner }
+	create_artifact_fp3_incense_burner_sculpture_effect = { OWNER = scope:owner SMITH = scope:owner }
+	create_artifact_illustrious_sassanian_sword_effect = { OWNER = scope:owner }
+	create_artifact_fp3_ancient_drinking_vessel_effect = { OWNER = scope:owner }
+	create_artifact_court_icon_large_effect = { OWNER = scope:owner PAINTER = scope:owner }
+	create_artifact_court_icon_small_effect = { OWNER = scope:owner PAINTER = scope:owner }
+	create_artifact_trinket_icon_effect = { OWNER = scope:owner PAINTER = scope:owner }
+	create_artifact_trinket_icon_ancient_effect = { OWNER = scope:owner }
+}

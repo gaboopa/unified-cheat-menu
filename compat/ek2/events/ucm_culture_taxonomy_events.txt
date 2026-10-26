@@ -1,0 +1,13 @@
+﻿namespace = ucm_cheat_menu
+
+## EK2 stub: vanilla culture taxonomy removed. Only .1360 kept (referenced from .0120/.0130); opens the runtime picker.
+
+ucm_cheat_menu.1360 = {
+  type = character_event
+  title = ucm_cheat_menu.1360.t
+  desc = ucm_cheat_menu.1360.desc
+  theme = default
+
+  option = { name = ucm_cheat_menu.1420.browse_all_flat root = { ucm_open_acm_culture_picker_effect = yes } }
+  option = { name = ucm_cheat_menu.00x.close }
+}

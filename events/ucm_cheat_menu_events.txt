@@ -635,6 +635,8 @@ ucm_cheat_menu.0180 = {
 
     name = ucm_cheat_menu.0180.opt_culture_dyn
 
+    trigger = { NOT = { ucm_compat_ek2_loaded_trigger = yes } }
+
     scope:ucm_char_gen_target = { add_character_flag = ucm_companion_picking_culture }
 
     scope:actor = { trigger_event = ucm_cheat_menu.3500 }
@@ -882,7 +884,19 @@ ucm_cheat_menu.0120 = {
 
     name = ucm_cheat_menu.0120.culture_innovation_browser
 
+    trigger = { NOT = { ucm_compat_ek2_loaded_trigger = yes } }
+
     scope:actor = { trigger_event = ucm_cheat_menu.1360 }
+
+  }
+
+  option = {
+
+    name = ucm_cheat_menu.0120.culture_innovation_browser
+
+    trigger = { ucm_compat_ek2_loaded_trigger = yes }
+
+    scope:actor = { ucm_open_acm_culture_picker_effect = yes }
 
   }
 
@@ -1076,11 +1090,29 @@ ucm_cheat_menu.0130 = {
 
     name = ucm_cheat_menu.0130.pick_culture_global
 
+    trigger = { NOT = { ucm_compat_ek2_loaded_trigger = yes } }
+
     scope:actor = {
 
       remove_character_flag = ucm_culture_innov_from_0120
 
       trigger_event = ucm_cheat_menu.1360
+
+    }
+
+  }
+
+  option = {
+
+    name = ucm_cheat_menu.0130.pick_culture_global
+
+    trigger = { ucm_compat_ek2_loaded_trigger = yes }
+
+    scope:actor = {
+
+      remove_character_flag = ucm_culture_innov_from_0120
+
+      ucm_open_acm_culture_picker_effect = yes
 
     }
 
@@ -6080,6 +6112,8 @@ ucm_cheat_menu.0021 = {
 
     name = ucm_cheat_menu.0021.browse_all_cultures
 
+    trigger = { NOT = { ucm_compat_ek2_loaded_trigger = yes } }
+
     scope:actor = {
 
       add_character_flag = ucm_culture_reform_pick
@@ -6087,6 +6121,16 @@ ucm_cheat_menu.0021 = {
       trigger_event = ucm_cheat_menu.3186
 
     }
+
+  }
+
+  option = {
+
+    name = ucm_cheat_menu.0021.browse_all_cultures
+
+    trigger = { ucm_compat_ek2_loaded_trigger = yes }
+
+    scope:actor = { ucm_open_acm_culture_picker_effect = yes }
 
   }
 

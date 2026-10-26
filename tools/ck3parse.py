@@ -39,6 +39,20 @@ def top_level_objects_text(text):
         pos = end + 1
 
 
+def child_objects_text(body):
+    """Yield (key, body) for each `key = { ... }` block directly inside an already-extracted body
+    (comments must already be stripped)."""
+    start = re.compile(r"([A-Za-z_]\w*)\s*=\s*\{")
+    pos = 0
+    while True:
+        m = start.search(body, pos)
+        if not m:
+            return
+        end = _match_brace(body, m.end() - 1)
+        yield m.group(1), body[m.end():end]
+        pos = end + 1
+
+
 def top_level_objects(path):
     with open(path, encoding="utf-8-sig", errors="replace") as fh:
         yield from top_level_objects_text(fh.read())
@@ -67,4 +81,6 @@ b = { c = { d = 2 } }
     assert 'name = "x } # not a comment {"' in got[0][1] and "inner = { y = 1 }" in got[0][1], got
     assert got[1][1] == "c = { d = 2 }", got
     assert list(top_level_objects_text("x = { unbalanced")) == [("x", " unbalanced")]
+    kids = [k for k, _ in child_objects_text(" p = 1 q = { r = { s = 2 } } t = { } ")]
+    assert kids == ["q", "t"], kids
     print("ck3parse self-check OK")

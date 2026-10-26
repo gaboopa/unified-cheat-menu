@@ -10,7 +10,7 @@ ucm_cheat_menu_menu_enabled_trigger = {
   }
 }
 
-# 宝物修改选择列表（不依赖Skonester主菜单旗标，避免翻页后选项全部消失）
+# 宝物修改选择列表（不依赖UCM主菜单旗标，避免翻页后选项全部消失）
 ucm_acm_repair_picker_enabled_trigger = {
   OR = {
     ucm_cheat_menu_menu_enabled_trigger = yes

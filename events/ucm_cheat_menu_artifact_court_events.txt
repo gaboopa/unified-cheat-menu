@@ -1,6 +1,6 @@
 ﻿namespace = ucm_cheat_menu
 
-# 获得头衔：右击目标 + 封臣树头衔，每页 8 条。tools/gen_title_pick_3096.py
+# 获得头衔：右击目标 + 封臣树头衔，每页 8 条。（最初由 tools/gen_title_pick_3096.py 生成，脚本已不在仓库中）
 
 ucm_cheat_menu.3096 = {
   type = character_event

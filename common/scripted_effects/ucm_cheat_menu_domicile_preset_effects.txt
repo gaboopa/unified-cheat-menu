@@ -1,4 +1,4 @@
-﻿# Skonester庄园预设：西式 estate / 东亚 east_asian_estate / 日式 japanese_manor。
+﻿# UCM庄园预设：西式 estate / 东亚 east_asian_estate / 日式 japanese_manor。
 # 作用域 = 目标角色的 domicile。
 # 流程：主宅满级 → 清空外槽 → 6 条外建 staged 满级 → 收尾（可解锁额外外槽）→ 填剩余槽 → 外建链扫满级 → 再收尾内建。
 
@@ -353,7 +353,7 @@ ucm_domicile_force_add_japanese_watch_house_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = japanese_watch_house_06 } } add_domicile_building = japanese_watch_house_06 }
 }
 
-# --- 内建/内部升级槽拉满（由 tools/gen_domicile_estate_presets.py 生成）---
+# --- 内建/内部升级槽拉满（原由 gen_domicile_estate_presets.py 生成，脚本不在本仓库）---
 ucm_domicile_force_main_villa_internal_tracks_max_effect = {
   if = { limit = { NOT = { has_domicile_building_or_higher = living_quarters_01 } } add_domicile_building = living_quarters_01 }
   if = { limit = { NOT = { has_domicile_building_or_higher = living_quarters_02 } } add_domicile_building = living_quarters_02 }

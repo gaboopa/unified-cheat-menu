@@ -1,4 +1,4 @@
-﻿# Skonester菜单 · 更换官员：右击封臣 → 家人 / 同族 / 廷臣 / 超高属性无地 AI（最多 50）
+﻿# UCM菜单 · 更换官员：右击封臣 → 家人 / 同族 / 廷臣 / 超高属性无地 AI（最多 50）
 
 ucm_replace_official_transferable_title_trigger = {
   is_noble_family_title = no
@@ -88,7 +88,7 @@ ucm_replace_official_ui_landless_high_skill_prefilter_trigger = {
   ucm_is_excellent_talent_for_grant_trigger = yes
 }
 
-# Skonester cheat：各政体 can_be_granted 门槛不一；玩家操作时放宽基础人格条件，执行阶段走 revoke→grant 兜底
+# UCM cheat：各政体 can_be_granted 门槛不一；玩家操作时放宽基础人格条件，执行阶段走 revoke→grant 兜底
 ucm_replace_official_cheat_grantee_base_trigger = {
   is_adult = yes
   is_imprisoned = no

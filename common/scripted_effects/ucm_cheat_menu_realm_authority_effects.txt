@@ -1,4 +1,4 @@
-﻿# Skonester：君权/行政 — 逐步写入累积法条、清冷却、固化防回弹
+﻿# UCM：君权/行政 — 逐步写入累积法条、清冷却、固化防回弹
 
 ucm_clear_realm_authority_cooldown_variables_effect = {
   if = {

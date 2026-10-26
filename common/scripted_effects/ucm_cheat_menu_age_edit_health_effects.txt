@@ -1,4 +1,4 @@
-﻿# Skonester年龄菜单：set_age 跳过年龄相关健康重算；用角色变量 ucm_age_menu_cheat_delta（Skonester加减岁累计，±60 封顶）驱动永久 health modifier。
+﻿# UCM年龄菜单：set_age 跳过年龄相关健康重算；用角色变量 ucm_age_menu_cheat_delta（UCM加减岁累计，±60 封顶）驱动永久 health modifier。
 
 ucm_cheat_menu_age_edit_health_sync_from_cheat_delta_effect = {
   scope:ucm_cheat_menu_target = {

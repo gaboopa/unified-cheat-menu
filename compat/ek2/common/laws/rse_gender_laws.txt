@@ -1,6 +1,6 @@
 ﻿# Realm Succession Events (RSE) gender law overrides.
 # CK3 1.20: laws are flat entries with law_group_type/index; the group lives in common/law_groups (vanilla, unchanged).
-# Rebuilt from vanilla 1.20 laws; the only Skonester change is the rse_flag_* bypass in can_keep.
+# Rebuilt from vanilla 1.20 laws; the only mod change is the rse_flag_* bypass in can_keep.
 
 # EK2：此块已与 Elder Kings 2 的修改三方合并（tools/gen_ek2_compatch.py）
 male_only_law = {
@@ -13,7 +13,7 @@ male_only_law = {
 		always = no
 	}
 	can_keep = {
-		# Skonester (RSE): characters flagged rse_flag_male_only keep this law regardless of faith/culture
+		# UCM (RSE): characters flagged rse_flag_male_only keep this law regardless of faith/culture
 		OR = {
 			has_character_flag = rse_flag_male_only
 			AND = {
@@ -122,7 +122,7 @@ male_preference_law = {
 		always = no
 	}
 	can_keep = {
-		# Skonester (RSE): characters flagged rse_flag_male_preference keep this law regardless of faith/culture
+		# UCM (RSE): characters flagged rse_flag_male_preference keep this law regardless of faith/culture
 		OR = {
 			has_character_flag = rse_flag_male_preference
 			AND = {
@@ -250,7 +250,7 @@ equal_law = {
 		always = no
 	}
 	can_keep = {
-		# Skonester (RSE): characters flagged rse_flag_equal keep this law regardless of faith/culture
+		# UCM (RSE): characters flagged rse_flag_equal keep this law regardless of faith/culture
 		OR = {
 			has_character_flag = rse_flag_equal
 			AND = {
@@ -363,7 +363,7 @@ female_preference_law = {
 		always = no
 	}
 	can_keep = {
-		# Skonester (RSE): characters flagged rse_flag_female_preference keep this law regardless of faith/culture
+		# UCM (RSE): characters flagged rse_flag_female_preference keep this law regardless of faith/culture
 		OR = {
 			has_character_flag = rse_flag_female_preference
 			AND = {
@@ -469,7 +469,7 @@ female_only_law = {
 		always = no
 	}
 	can_keep = {
-		# Skonester (RSE): characters flagged rse_flag_female_only keep this law regardless of faith/culture
+		# UCM (RSE): characters flagged rse_flag_female_only keep this law regardless of faith/culture
 		OR = {
 			has_character_flag = rse_flag_female_only
 			AND = {

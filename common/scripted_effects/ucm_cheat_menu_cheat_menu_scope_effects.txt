@@ -1,4 +1,4 @@
-﻿# Skonester右键作弊菜单：统一用 global_var 锁定右击对象（与 ucm_acm_recipient 同套路）。
+﻿# UCM右键作弊菜单：统一用 global_var 锁定右击对象（与 ucm_acm_recipient 同套路）。
 # interaction 的 save_scope_as 不会随 trigger_event 传入事件，导致「点了没反应」。
 
 ucm_cheat_menu_lock_recipient_effect = {

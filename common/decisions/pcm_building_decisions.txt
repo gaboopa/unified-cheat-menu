@@ -18,7 +18,7 @@ pcm_b_add_building_slot_7_sub_realm_decision = {
 		has_character_flag = pcm_b_show_decision_flag
 	}
 
-	# widget copied from create_holy_order_decision
+	# widget adapted from vanilla create_holy_order_decision
 	widget = {
 		controller = create_holy_order
 		title_valid = {

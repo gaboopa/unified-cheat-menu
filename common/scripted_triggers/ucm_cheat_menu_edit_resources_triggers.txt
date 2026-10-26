@@ -1,6 +1,6 @@
 ﻿# 官吏统辖「修改资源」：影响力 / 功绩 / 恐怖值等政体差异
 
-# 子菜单翻页后仍显示选项（勿仅依赖主Skonester菜单旗标）
+# 子菜单翻页后仍显示选项（勿仅依赖主UCM菜单旗标）
 ucm_edit_resources_menu_enabled_trigger = {
   OR = {
     ucm_cheat_menu_menu_enabled_trigger = yes

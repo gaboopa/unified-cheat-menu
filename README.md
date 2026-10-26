@@ -1,6 +1,6 @@
 # Unified Cheat Menu
 
-A single-player cheat menu for **Crusader Kings III 1.20 "Crozier"**. It's built on Skonester Cheat Menu Gold and organized into one tabbed window.
+A single-player cheat menu for **Crusader Kings III 1.20 "Crozier"**. Inspired by Skonester Cheat Menu Gold and Daddy Pika's Cheat Menu, it puts everything in one tabbed window.
 
 ## Install
 
@@ -36,15 +36,20 @@ English, German, Russian, Simplified Chinese and Turkish.
 | --- | --- |
 | `docs/unified-cheat-menu-spec.md` | Design spec (v1.3) and engine verification |
 | `docs/phase*.md` | What each development phase added, with in-game test checklists |
-| `docs/upstream/` | The original project's README and development notes |
+| `docs/upstream-review.md` | Review of the code the mod started from, and where each finding was fixed |
+| `docs/ek2-compatch-plan.md` | Elder Kings 2 compatibility survey and plan |
+| `docs/upstream/` | Skonester Cheat Menu Gold's README and development notes, kept for reference |
+| `compat/ek2/` | Elder Kings 2 compatch, a separate mod that loads after both (see its `descriptor.mod`) |
+| `tools/ck3parse.py` | Shared parsing helpers for the generators |
+| `tools/gen_ek2_compatch.py` | Regenerates the derived files in `compat/ek2/` and the faith editor's religion data |
 | `tools/gen_ucm_main_menu.py` | Generates `gui/ucm_main_menu.gui` from a list of tabs and buttons |
 | `tools/gen_ucm_translations.py` | Generates the German, Russian, Chinese and Turkish menu text from the English |
 | `tools/gen_cw_tradition_picker_lists.py` | Regenerates the tradition picker lists after a game update |
 | `tools/icon_pipeline/` | Trait icon regeneration scripts (V + ComfyUI), kept out of `gfx/`. See its README |
 
-Only the generators above are in the repo. The other big `*_generated.txt` files (faith editor, trait editor, culture/faith casting, crafting modifiers, lifestyle, court positions, treasure-maker stat tiers, beauty companion) came from upstream scripts that upstream never published, so edit those files by hand.
+Only the generators above are in the repo. The other big `*_generated.txt` files (faith editor, trait editor, culture/faith casting, crafting modifiers, lifestyle, court positions, treasure-maker stat tiers, beauty companion) came from Skonester Cheat Menu Gold's own generator scripts, which were never published, so edit those files by hand.
 
-`ucm_` is the mod's namespace; upstream files were renamed into it too, so not every `ucm_` file is new. The genuinely new menu files are:
+`ucm_` is the mod's namespace. Files carried over from Skonester Cheat Menu Gold were renamed into it too, so a `ucm_` prefix doesn't mean a file was written from scratch. The core menu files written for this mod are:
 - `common/scripted_guis/ucm_{sguis,character_sguis,court_sguis,group_sguis,military_sguis,realm_sguis}.txt`
 - `common/scripted_effects/ucm_effects.txt`, `common/scripted_triggers/ucm_triggers.txt`, `common/script_values/ucm_values.txt`
 - `common/on_action/ucm_on_actions.txt`, `common/character_interactions/ucm_interactions.txt`
@@ -52,7 +57,7 @@ Only the generators above are in the repo. The other big `*_generated.txt` files
 - `gui/ucm_main_menu.gui`, `gui/scripted_widgets/ucm_scripted_widgets.txt`
 - `localization/*/ucm_l_*.yml` and `localization/replace/*`
 
-`music/skonegold.ogg` (the alternate main-menu theme) comes from upstream with no recorded source or license; it is not covered by the CC BY 4.0 grant until that is known.
+`music/skonegold.ogg` (the alternate main-menu theme) comes from Skonester Cheat Menu Gold with no recorded source or license; it is not covered by the CC BY 4.0 grant until that is known.
 
 ## Releasing
 
@@ -60,13 +65,15 @@ Only the generators above are in the repo. The other big `*_generated.txt` files
 
 ## Credits and license
 
-Based on **Skonester Cheat Menu Gold** by skonester (<https://github.com/skonester/Skonester-Cheat-Menu>). That project in turn builds on **Daddy Pika's Cheat Menu** by DaddyPika, with contributions by **Zhuge**, Pavel, Bone, Leech, Sol, Xorxidox, Gravity, x4077, jestelf and other community contributors.
+Inspired by **Skonester Cheat Menu Gold** by skonester (<https://github.com/skonester/Skonester-Cheat-Menu>) and **Daddy Pika's Cheat Menu** by DaddyPika, with contributions by **Zhuge**, Pavel, Bone, Leech, Sol, Xorxidox, Gravity, x4077, jestelf and other community contributors. The mod started from Skonester Cheat Menu Gold's code and has since been largely rewritten; parts of the original cheats, traits, artifacts and decisions are still in it, adapted.
 
-Licensed under [Creative Commons Attribution 4.0 International](LICENSE). **This is a modified version.** Changes include:
+Licensed under [Creative Commons Attribution 4.0 International](LICENSE). **This is a modified version** of Skonester Cheat Menu Gold. Changes include:
 - the tabbed menu, targeting and group actions;
 - the single-player gate;
 - renaming all identifiers and visible branding;
 - new translations;
-- removed and rebased vanilla overrides.
+- bug fixes, dead-code removal and performance work (see `docs/upstream-review.md`);
+- removed and rebased vanilla overrides, with vanilla-only data split out so total conversions can patch it;
+- an Elder Kings 2 compatch.
 
 See `docs/` for details.

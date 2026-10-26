@@ -1,4 +1,4 @@
-﻿# Skonester特质：万古冥主（压力/恐怖/抗谋顶配）
+﻿# UCM特质：万古冥主（压力/恐怖/抗谋顶配）
 
 trait_eternal_nether_lord = {
 

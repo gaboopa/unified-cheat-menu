@@ -1,7 +1,7 @@
-﻿# 一键：解雇全部阁员；撤销 ucm_positions_all_named_court_slots_effects 所列全部宫廷职；再补标准五席 + 库里台四席及所列宫廷职；最后 start_default_task。
+﻿# 一键：解雇全部阁员；撤销 ucm_positions_revoke_all_named_court_positions_effect 所列全部宫廷职（见 ucm_positions_court_slots_generated.txt）；再补标准五席 + 库里台四席及所列宫廷职；最后 start_default_task。
 # 调用约定：必须在「领主本人」作用域下执行（this = 领主）；首行 save_scope_as = ucm_pos_reshuffle_liege 由本效果内部完成。
 # 政体决定内阁席位数与职位种类；不存在的席位 assign 会静默失败。宫廷位以 can_employ_court_position_type 为准（无 DLC/革新则跳过）。
-# TGP 天朝神州额外阁席（枢密 / 六部等）见 ucm_positions_tgp_celestial_extra_council_effects.txt；未单独列出之宫廷职可日后加入 ucm_positions_all_named_court_slots_effects。
+# TGP 天朝神州额外阁席（枢密 / 六部等）见 ucm_positions_tgp_celestial_extra_council_effects.txt；未单独列出之宫廷职可加入 ucm_positions_court_slots_generated.txt 的职位列表。
 #
 # 【对照原版（概念梳理，便于维护；以游戏内 council_positions / court_positions 为准）】
 # - 封建/氏族/部落等常见政府：御前会议通常含宰相、统帅、财政、间谍首脑、宫廷司祭五席；配偶席、特殊政府阁席由 valid_position 控制，本模组不自动填。
@@ -13,7 +13,6 @@
 # 宫廷职逐项：严格 can_be_employed_as + aptitude（先廷臣再封臣）→ 宽松 aptitude（先廷臣再封臣）→ 仍空则生成廷臣（见 ucm_positions_mass_reshuffle_fill_spawn_effects.txt）。
 #
 # 解雇：勿在 every_councillor 迭代内立刻 fire（集合变更会漏人）；先写入 variable_list 再 every_in_list 逐人解雇。
-# 任免前先调用 ucm_positions_snapshot_before_reshuffle_effect（见 ucm_positions_snapshot_effects.txt）。
 
 # 严格宫廷任命：候选须通过引擎 can_be_employed_as（与职位定义一致）。须在 scope:ucm_pos_reshuffle_liege 内由 ucm_positions_appoint_all_named_court_positions_strict_effect 调用。
 ucm_positions_try_appoint_court_slot_strict_effect = {

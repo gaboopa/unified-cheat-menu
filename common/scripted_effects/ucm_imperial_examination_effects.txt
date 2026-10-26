@@ -60,7 +60,7 @@ ucm_imperial_examination_promote_all_officials_effect = {
 }
 # Current CK3 keeps imperial_examination_fetch_examiner_effect as a file-local
 # inline effect. Mods cannot call it directly, so keep an equivalent namespaced
-# implementation here for Skonester's examination override.
+# implementation here for the cheat menu's examination override.
 ucm_imperial_examination_fetch_examiner_effect = {
   if = {
     limit = {

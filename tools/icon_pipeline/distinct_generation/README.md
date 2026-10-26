@@ -1,5 +1,7 @@
 > Installation complete: 42 transparent 100x100 DDS files are installed and the 11 shared references are updated. See `results/installation.json` for the backup location. The preparation audit below describes the original state.
 
+> Trait IDs here use the current `ucm_trait_*` names. `manifest.json` and `generation_overrides.json` still hold the older `skonester_trait_*` IDs from before the rename.
+
 # Traits needing distinct artwork
 
 42 per-trait inputs selected from 73 original PNGs.
@@ -27,11 +29,11 @@ No trait definitions have been changed during preparation.
 | immortality | Immortal | immortality.dds | no |
 | super_general | Warlord Anointed | super_general.dds | no |
 | savant_intrig | Savant (Intrigue) | savant_intrig.dds | no |
-| skonester_trait_immortal_ageless | Ageless Immortal | immortality.dds | yes |
-| skonester_trait_yannian_dan | Longevity Elixir | water_of_life.dds | yes |
-| skonester_trait_yannian_dan_mid | Refined Longevity Elixir | zg_buxiu.dds | yes |
-| skonester_trait_yannian_dan_best | Supreme Longevity Elixir | toc_immortal.dds | yes |
-| skonester_trait_marriage_ban | Marriage Restricted | water_of_life.dds | yes |
+| ucm_trait_immortal_ageless | Ageless Immortal | immortality.dds | yes |
+| ucm_trait_yannian_dan | Longevity Elixir | water_of_life.dds | yes |
+| ucm_trait_yannian_dan_mid | Refined Longevity Elixir | zg_buxiu.dds | yes |
+| ucm_trait_yannian_dan_best | Supreme Longevity Elixir | toc_immortal.dds | yes |
+| ucm_trait_marriage_ban | Marriage Restricted | water_of_life.dds | yes |
 | trait_eternal_nether_lord | Eternal Nether Lord | crazyminded_psycho.dds | yes |
 | trait_great_builder_god | Divine Builder | build_speed_cheat.dds | yes |
 | trait_ultimate_intrigue_master | Mystic Seer | savant_intrig.dds | yes |

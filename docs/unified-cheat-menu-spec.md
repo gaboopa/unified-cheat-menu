@@ -3,9 +3,11 @@
 **Proposed Functional and Interface Specification — Version 1.3**
 
 **Target:** Crusader Kings III 1.20.x "Crozier" (verified against 1.20.1.2 game files)\
-**Baseline:** Skonester Cheat Menu Gold, forked at upstream commit `bfcb175` (CC BY 4.0)\
-**Feature reference:** Divine Intervention Cheat Menu (behavior only; no code or assets)\
-**Status:** Implemented through Phase 7 (see the phase notes in docs/). Static checks and load tests pass; most features still need in-game testing.
+**Baseline:** started from Skonester Cheat Menu Gold at upstream commit `bfcb175` (CC BY 4.0), since heavily rewritten\
+**Feature reference:** Daddy Pika's Cheat Menu / Divine Intervention (behavior only; no code or assets)\
+**Status:** Phases 0–7 implemented, followed by review, upstream-cleanup and simplification passes (Phases 8–11) and an Elder Kings 2 compatch (`compat/ek2/`, [ek2-compatch-plan.md](ek2-compatch-plan.md)). See the phase notes in docs/. Most features still need in-game testing; Phases 9–11 and the compatch haven't been load-tested yet.
+
+This document is the original design. Where later phases changed or dropped something, the text says so; the phase notes record what was actually built.
 
 ### Changes from 1.2
 
@@ -36,7 +38,7 @@ Corrections from the game's own `script_docs` output (1.20.1.2), which replaces 
 
 ## Design direction
 
-Keep Skonester's character-interaction workflow, organized submenus, and convenient one-click cheats, and add Divine Intervention's more advanced editing capabilities.
+Take Skonester's character-interaction workflow, organized submenus, and convenient one-click cheats as the starting point, and add Divine Intervention's more advanced editing capabilities.
 
 Use a hybrid interface rather than merging both mods' menus wholesale. Most actions stay accessible by right-clicking a character, as in Skonester. More complicated operations, such as artifact construction and detailed diplomacy, open dedicated editors without requiring a separate permanent HUD.
 
@@ -1343,7 +1345,9 @@ Use CK3's existing modding mechanisms:
 
 **Generated catalogs.** There's no loop over building types, men-at-arms types, or artifact templates (`every_maa_regiment` and `every_artifact` cover existing regiments and artifacts, not the definitions). Pickers for those are **generated offline** from the game files by scripts in `tools/`, as the baseline already does:
 
-- `tools/gen_cw_tradition_picker_lists.py` produces `ucm_cw_tradition_picker_lists_generated.txt`.
+- `tools/gen_cw_tradition_picker_lists.py` produces `ucm_cw_tradition_picker_lists_generated.txt` (and, with `--agot-dir`, the AGOT variant in `tools/out/agot/`).
+- `tools/gen_ek2_compatch.py` produces the religion virtue/sin data and the merged/derived files under `compat/ek2/`.
+- `tools/gen_ucm_main_menu.py` produces `gui/ucm_main_menu.gui`; `tools/gen_ucm_translations.py` produces the German, Russian, Chinese and Turkish `ucm_l_*.yml`. `tools/ck3parse.py` is their shared parser.
 - ~~`tools/gen_ucm_cw_innovation_sguis.py`~~ removed in Phase 10: no GUI ever called the innovation scripted GUIs it generated.
 
 Generated files say "do not edit by hand" and are rebuilt whenever the target game version or a supported mod changes. Catalogs live in global variable lists.
@@ -1370,11 +1374,13 @@ Avoid:
 - Global defines changes that affect players who aren't using cheats.
 - Overwriting existing Skonester identifiers without a migration plan.
 
-Reuse working baseline components carefully, and use a new project-specific namespace for additions.
+Where baseline components are kept, reuse them carefully, and use a new project-specific namespace for additions.
 
 ### 7.4.1 Vanilla override inventory
 
-The baseline replaces these vanilla files outright. Any other mod that changes the same file conflicts, and the last one in load order wins.
+This is the Phase 0 inventory of the baseline. Since then: `gui/interaction_confirmation.gui` and the debug localization overrides were removed in Phase 7 (replaced by `localization/replace/`), `09_mpo_values.txt` in Phase 9; the two `.info` files are no longer in the repo. Still overridden: `gui/window_character.gui`, `gui/interaction_menu_window.gui`, `gui/frontend_ingame_menu.gui` and `tgp_china_minister_on_action.txt`.
+
+The baseline replaced these vanilla files outright. Any other mod that changes the same file conflicts, and the last one in load order wins.
 
 | File | Risk |
 | --- | --- |
@@ -1393,7 +1399,7 @@ Goal: replace the high-risk GUI overrides with additions such as scripted widget
 
 ### 7.4.2 Global defines
 
-The baseline's `common/defines` overrides include at least `NProvince.MAX_BUILDINGS = 1453`, `NModifier.STANDARD_MINIMUM_VALUE = 0.0`, and `NCharacterOpinion.MAX_DUCHIES_BEFORE_PENALTY = 4`. These change rules for the whole game. In Phase 0, keep each one only if a cheat actually needs it, and document it.
+The baseline's `common/defines` overrides include at least `NProvince.MAX_BUILDINGS = 1453`, `NModifier.STANDARD_MINIMUM_VALUE = 0.0`, and `NCharacterOpinion.MAX_DUCHIES_BEFORE_PENALTY = 4`. These change rules for the whole game. In Phase 0, keep each one only if a cheat actually needs it, and document it. (Outcome: `MAX_DUCHIES_BEFORE_PENALTY` was removed in Phase 7; the other two remain in `common/defines/`.)
 
 ---
 
@@ -1490,9 +1496,9 @@ Compatibility patches may also be needed for replaced vanilla screens or gamepla
 
 ## 9.4 Standalone behavior and licensing
 
-The finished menu must not depend on having either Skonester or Divine Intervention loaded.
+The finished menu must not depend on having either Skonester or Divine Intervention loaded. It started from Skonester's code but has been heavily rewritten, so it is better described as inspired by Skonester Cheat Menu Gold and Daddy Pika's Cheat Menu than as a patched copy.
 
-The baseline is licensed under **Creative Commons Attribution 4.0 International**. Forking and modifying it is permitted. Every release must credit Skonester, Daddy Pika (Daddy Pika's Cheat Menu), Zhuge, and the contributors named in the baseline README, link the license, and state that changes were made.
+The baseline is licensed under **Creative Commons Attribution 4.0 International**. Adapting and modifying it is permitted. Every release must credit Skonester, Daddy Pika (Daddy Pika's Cheat Menu), Zhuge, and the contributors named in the baseline README, link the license, and state that changes were made.
 
 Divine Intervention's publicly documented behavior can serve as a feature reference. Don't copy its code or assets without permission.
 
@@ -1512,6 +1518,8 @@ All ten feature categories are in the final scope, but development proceeds in c
 | 5 — Court & DLC      | Spawning, automated appointments, legends, activities, schemes, regencies, domiciles | DLC-dependent tests pass                      |
 | 6 — Group Actions    | Group versions of actions across supported modules, large-group handling             | Group correctness and performance tests pass  |
 | 7 — Hardening        | Localization, compatibility, accessibility, packaging, regressions, catalog regeneration | Release acceptance suite passes           |
+| 8–11 (added)         | Whole-repo review fixes; upstream-code fixes ([upstream-review.md](upstream-review.md)); dead-code removal; simplification | Done, not yet load-tested; see below |
+| EK2 compatch (added) | Detection, vanilla-data isolation, `compat/ek2/` mod | Done except the load test; see [ek2-compatch-plan.md](ek2-compatch-plan.md) |
 
 ### Phase 0 tasks
 
@@ -1519,10 +1527,10 @@ All ten feature categories are in the final scope, but development proceeds in c
 2. Run `script_docs` in the in-game console and keep the generated effect/trigger/data-type logs as the reference for verifying everything marked "verify" in this spec.
 3. Review each vanilla override in Section 7.4.1 and each define in Section 7.4.2, and decide whether to keep, minimize, or remove it.
 4. List every global variable that holds per-player state. (Done; migration no longer needed since v1.3 made the mod single-player only.)
-5. Recover or rewrite the missing `gen_ucm_cw_innovation_sguis.py` generator.
+5. Recover or rewrite the missing `gen_ucm_cw_innovation_sguis.py` generator. (Rewritten in Phase 0, then removed in Phase 10 as unused.)
 6. Click through each existing feature and record whether it works, using the "Verify" notes in `agent.md`.
 
-Phase 0 progress and findings are recorded in [phase0-baseline.md](phase0-baseline.md). Phase 1 is described in [phase1-foundation.md](phase1-foundation.md), Phase 2 in [phase2-characters.md](phase2-characters.md), Phase 3 in [phase3-realm.md](phase3-realm.md), Phase 4 in [phase4-military-artifacts.md](phase4-military-artifacts.md), Phase 5 in [phase5-court-dlc.md](phase5-court-dlc.md), Phase 6 in [phase6-group-actions.md](phase6-group-actions.md), Phase 7 in [phase7-hardening.md](phase7-hardening.md).
+Phase 0 progress and findings are recorded in [phase0-baseline.md](phase0-baseline.md). Phase 1 is described in [phase1-foundation.md](phase1-foundation.md), Phase 2 in [phase2-characters.md](phase2-characters.md), Phase 3 in [phase3-realm.md](phase3-realm.md), Phase 4 in [phase4-military-artifacts.md](phase4-military-artifacts.md), Phase 5 in [phase5-court-dlc.md](phase5-court-dlc.md), Phase 6 in [phase6-group-actions.md](phase6-group-actions.md), Phase 7 in [phase7-hardening.md](phase7-hardening.md), Phase 8 in [phase8-review-fixes.md](phase8-review-fixes.md), Phase 9 in [phase9-upstream-fixes.md](phase9-upstream-fixes.md), Phase 10 in [phase10-dead-code.md](phase10-dead-code.md), Phase 11 in [phase11-simplification.md](phase11-simplification.md).
 
 Keep a usable build at the end of every phase.
 
@@ -1643,16 +1651,18 @@ Checked against the game's own documentation (`script_docs` output: `logs/effect
 | Immortality | ⚠️ Partial | `set_immortal_age` only works if already immortal; `is_immortal` trigger exists. Granting immortality needs another effect (verify) |
 | Personal tenet slots | ✅ Verified | `personal_tenet_slot_add` is a modifier; `set_personal_tenet`, `force_set_personal_tenet` effects |
 | Extra core tenets | ⚠️ Unverified | `add_rite_tenet` exists with no documented limit; test in game |
-| Single scripted GUI for innovations | ⚠️ Likely | `add_innovation` accepts a `culture_innovation` target; GUI scope passing needs verifying |
+| Single scripted GUI for innovations | ⚠️ Likely (moot: the innovation scripted GUIs were removed in Phase 10) | `add_innovation` accepts a `culture_innovation` target; GUI scope passing needs verifying |
 | Virtue/sin cap | ✅ Verified | `MAX_VIRTUES_SINS = 7` in `00_defines.txt` |
 | Mod disables achievements | ❌ No | Vanilla `ACHIEVEMENTS_EXPLANATION` lists no mod or checksum condition; Divine Intervention (also changes `common/`) documents only debug mode as disabling them. Not yet confirmed in an Ironman game |
 
 # Appendix B — Baseline audit summary
 
-- **Source:** `https://github.com/skonester/Skonester-Cheat-Menu`, commit `bfcb175` ("Portrait GUI Cheats"), cloned with full history. Remote is named `upstream`.
+This records the original Skonester baseline at the start of the project, not the current repo.
+
+- **Source:** `https://github.com/skonester/Skonester-Cheat-Menu`, commit `bfcb175` ("Portrait GUI Cheats"), cloned with full history. The local clone's remote is named `upstream`.
 - **Version:** `descriptor.mod` version `10.22.26-BGA3`, `supported_version="1.20.*"`, tag "1.20 'Crozier'".
 - **License:** CC BY 4.0.
 - **Size:** about 159 scripted-effect files, 53 scripted-trigger files, 61 event files, 27 GUI files, 22 scripted-GUI files, 17 character-interaction files, and localization in five languages.
 - **Entry points:** right-click → "Open Skonester Character Tools"; Decisions → Realm & Government Tools → Open Sub Menu Editor.
 - **Known state:** ported to 1.20 and reaches the map with vanilla. Features still need clicking through (`agent.md`).
-- **Risks:** 10 vanilla file overrides (Section 7.4.1), global defines changes (Section 7.4.2), global-variable targeting that isn't multiplayer-safe (moot since v1.3: single-player only), large starting error count (Section 10), missing innovation generator script (Section 7.3).
+- **Risks:** 10 vanilla file overrides (Section 7.4.1), global defines changes (Section 7.4.2), global-variable targeting that isn't multiplayer-safe (moot since v1.3: single-player only), large starting error count (Section 10), missing innovation generator script (Section 7.3; later removed as unused).

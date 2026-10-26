@@ -1,4 +1,4 @@
-﻿# Skonester / 宗教编辑：宗教大类 → 教派选择 → 信仰详情
+﻿# UCM / 宗教编辑：宗教大类 → 教派选择 → 信仰详情
 
 ucm_restore_ucm_selected_faith_scope_effect = {
   if = {

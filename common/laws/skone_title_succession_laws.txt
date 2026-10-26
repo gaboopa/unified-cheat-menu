@@ -1,4 +1,4 @@
-﻿# Skonester title succession law overrides.
+﻿# UCM title succession law overrides.
 # CK3 1.20: flat law format (law_group_type + index). Group settings stay in vanilla common/law_groups.
 # Laws the mod did not change (princely_elective_succession_law, temporal_head_of_faith_succession_law, law_of_the_land_succession_law, confederation_elective_succession_law) are no longer overridden so the 1.20 vanilla versions apply.
 # The mod's theocratic elective is renamed skone_theocratic_elective_succession_law because 1.20 vanilla

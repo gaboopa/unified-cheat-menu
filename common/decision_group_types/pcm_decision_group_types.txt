@@ -7,7 +7,7 @@ pcm = {
 }
 
 ############################################
-# Skonester Cheat Menu — split out of the old monolithic "pcm" tab so the
+# Unified Cheat Menu — split out of the old monolithic "pcm" tab so the
 # decision list isn't one giant undifferentiated scroll. Talent Finder is
 # pinned last within this cluster (still above vanilla's Major/Decisions/
 # Courtier/Debug groups, not pushed below the whole game's decision list).

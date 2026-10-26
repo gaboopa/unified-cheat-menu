@@ -6,7 +6,7 @@ on_pregnancy_mother = {
 
 ucm_on_pregnancy_mother_clear_bgp = {
   effect = {
-    # 清理“Skonester胎儿性别”操作的挂起旗，避免跨胎残留
+    # 清理“UCM胎儿性别”操作的挂起旗，避免跨胎残留
     remove_character_flag = ucm_bgp_pending
   }
 }

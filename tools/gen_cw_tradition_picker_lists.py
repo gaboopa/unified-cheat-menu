@@ -3,7 +3,7 @@
 The tradition picker GUI shows global lists of culture traditions. CK3 has no way to
 iterate the tradition database from script, so the keys are written out here.
 
-The generated file lists vanilla (and Skonester) traditions only. It also defines
+The generated file lists vanilla and this mod's own traditions only. It also defines
 ucm_cw_build_tradition_picker_lists_agot_effect as a stub that falls back to the vanilla list,
 because plain CK3 loads every file in common/scripted_effects and AGOT-only keys
 (culture_tradition:tradition_agot_*) would log one "Failed to find" error each.

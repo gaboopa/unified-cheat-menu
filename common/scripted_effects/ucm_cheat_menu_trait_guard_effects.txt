@@ -1,7 +1,7 @@
-﻿# Skonester特质保险丝：birth/random=0；仅玩家通过Skonester菜单授予时打 ucm_traits_player_authorized。
+﻿# UCM特质保险丝：birth/random=0；仅玩家通过UCM菜单授予时打 ucm_traits_player_authorized。
 # AI 仅在被玩家授予且带授权标时可保留；脚本/随机/未授权一律脉冲剥除。
 
-# 授予Skonester作弊特质：仅人类玩家为 actor 时可赋予（目标可为 AI 或玩家本人）
+# 授予UCM作弊特质：仅人类玩家为 actor 时可赋予（目标可为 AI 或玩家本人）
 ucm_cheat_menu_grant_cheat_trait_effect = {
   if = {
     limit = {
@@ -36,12 +36,12 @@ ucm_cheat_menu_grant_cheat_trait_effect = {
       }
       ucm_trait_xinwuguai_apply_effect = yes
     }
-    # 仅自制Skonester特质授予时打授权标；原版/其它特质编辑不调用本 effect
+    # 仅自制UCM特质授予时打授权标；原版/其它特质编辑不调用本 effect
     ucm_traits_authorize_recipient_if_player_actor_effect = yes
   }
 }
 
-# 玩家通过Skonester菜单授予自制特质时给目标打标（人类或 AI 均可，防止脉冲误剥）
+# 玩家通过UCM菜单授予自制特质时给目标打标（人类或 AI 均可，防止脉冲误剥）
 ucm_traits_authorize_recipient_if_player_actor_effect = {
   ucm_cheat_menu_sync_trait_edit_target_effect = yes
   if = {
@@ -79,7 +79,7 @@ ucm_traits_authorize_recipient_if_player_actor_effect = {
   }
 }
 
-# 对 root = 当前角色：移除全部Skonester特质及延年丹相关状态（与 ucm_cheat_menu.0015.disable_all Skonester段对齐）。
+# 对 root = 当前角色：移除全部UCM特质及延年丹相关状态（与 ucm_cheat_menu.0015.disable_all UCM段对齐）。
 ucm_cheat_menu_strip_oob_ucm_traits_on_this_character_effect = {
   if = {
     limit = {

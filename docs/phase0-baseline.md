@@ -105,7 +105,7 @@ Finding for the spec: GUI can call `ExecuteConsoleCommand`. That's narrower than
 
 ## Innovation generator (task 5)
 
-The missing script couldn't be recovered: it's not in the git history. It's rewritten as `tools/gen_ucm_cw_innovation_sguis.py`, which reuses the parser from `gen_cw_tradition_picker_lists.py`.
+The missing script couldn't be recovered: it's not in the git history. It was rewritten as `tools/gen_ucm_cw_innovation_sguis.py` (removed again in Phase 10), which reuses the parser from `gen_cw_tradition_picker_lists.py`.
 
 Running it against 1.20.1.2 reproduces the shipped files byte-for-byte except for **two innovations the shipped files were missing**: `fp3_innovation_fritware` and `fp3_innovation_mural_sextant` (Legacy of Persia). Their culture-window unlock/remove buttons pointed at scripted GUIs that didn't exist. The regenerated files are included.
 

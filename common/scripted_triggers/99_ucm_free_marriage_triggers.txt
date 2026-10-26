@@ -1,5 +1,5 @@
 ﻿# 强制联姻 UI 会话期间（global_var:ucm_force_marriage_ui_active）放宽列表与配对校验
-# Else-branches are verbatim copies of vanilla 1.20.1.2 (00_marriage_triggers.txt); only the global_var escape is added.
+# Else-branches match vanilla 1.20.1.2 (00_marriage_triggers.txt); only the global_var escape is added.
 
 marriage_interaction_can_be_picked_trigger = {
 	trigger_if = {

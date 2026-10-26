@@ -1,6 +1,6 @@
-﻿# Skonester特质「保险丝」：检测持有 / 可否授予（与 trait 文件列表对齐）
+﻿# UCM特质「保险丝」：检测持有 / 可否授予（与 trait 文件列表对齐）
 
-# 当前角色（root）可否被Skonester菜单赋予自制特质：玩家本人，或 AI（须 scope:actor 为人类玩家）
+# 当前角色（root）可否被UCM菜单赋予自制特质：玩家本人，或 AI（须 scope:actor 为人类玩家）
 ucm_cheat_menu_may_receive_cheat_trait_trigger = {
   OR = {
     is_ai = no
@@ -13,13 +13,13 @@ ucm_cheat_menu_may_receive_cheat_trait_trigger = {
   }
 }
 
-# 须剥除自制特质：未获玩家Skonester菜单授权者（AI 仅玩家授予后可保留 authorized）
+# 须剥除自制特质：未获玩家UCM菜单授权者（AI 仅玩家授予后可保留 authorized）
 ucm_cheat_menu_must_strip_ucm_traits_trigger = {
   ucm_has_any_cheat_menu_trait_trigger = yes
   NOT = { has_character_flag = ucm_traits_player_authorized }
 }
 
-# 参数 $TRAIT$：是否为本模组Skonester作弊特质（须走 grant_cheat_trait 授权链）
+# 参数 $TRAIT$：是否为本模组UCM作弊特质（须走 grant_cheat_trait 授权链）
 ucm_cheat_menu_is_cheat_trait_trigger = {
   OR = {
     trait:$TRAIT$ = trait:ucm_trait_immortal_ageless

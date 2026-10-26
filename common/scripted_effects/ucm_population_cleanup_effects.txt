@@ -45,7 +45,7 @@ ucm_dynasty_cull_unlanded_weak_effect = {
 }
 
 # World cleanup: process one small batch, then continue through hidden event 9088.
-# This deliberately avoids the legacy quota x realms x world-character nested loop.
+# This deliberately avoids the old quota x realms x world-character nested loop.
 # Quota: root.var:ucm_world_purge_remaining (set to 1000/2000/3000 by event 9083).
 ucm_world_purge_landless_ai_effect = {
   root = {

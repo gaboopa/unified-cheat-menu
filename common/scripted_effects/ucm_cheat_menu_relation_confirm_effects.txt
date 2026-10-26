@@ -1,4 +1,4 @@
-﻿# Skonester「关系确认」：在 scope:actor（玩家）与 scope:ucm_relation_target（右键目标）之间强制设定关系；先清理互斥/名额占用。
+﻿# UCM「关系确认」：在 scope:actor（玩家）与 scope:ucm_relation_target（右键目标）之间强制设定关系；先清理互斥/名额占用。
 
 # 原版 can_set_relation_lover 要求双方成年且互有性向吸引；作弊菜单下若未满足则临时改为双性恋以便 set_relation_lover 生效。
 ucm_cheat_menu_relation_confirm_force_mutual_romance_if_needed_effect = {
@@ -294,7 +294,7 @@ ucm_cheat_menu_relation_confirm_nemesis_effect = {
   }
 }
 
-# Skonester「安插秘密」之通奸：用栽赃菜单保存的 menu_actor/menu_recipient，避免互动结束后 scope 丢失。
+# UCM「安插秘密」之通奸：用栽赃菜单保存的 menu_actor/menu_recipient，避免互动结束后 scope 丢失。
 ucm_cheat_menu_plant_adultery_secret_via_actor_effect = {
   ucm_plant_lover_effect_plant_menu_effect = yes
   scope:ucm_plant_menu_recipient = {

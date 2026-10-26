@@ -12727,4 +12727,4 @@ ucm_acm_faith_populate_doctrine_catalog_effect = {
   }
 }
 
-# add_doctrine lives in ucm_acm_faith_editor_data_effects.txt (gen_faith_editor_display.py)
+# add_doctrine lives in ucm_acm_faith_editor_data_effects.txt

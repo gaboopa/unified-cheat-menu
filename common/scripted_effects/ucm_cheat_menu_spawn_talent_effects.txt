@@ -1,4 +1,4 @@
-﻿# Skonester菜单：在「右键目标」recipient 的宫廷生成 18 岁 AI 廷臣（四星教育、忠臣；性格与路线特质固定，不再随机池抽）
+﻿# UCM菜单：在「右键目标」recipient 的宫廷生成 18 岁 AI 廷臣（四星教育、忠臣；性格与路线特质固定，不再随机池抽）
 # 调用前：scope:recipient = { save_scope_as = ucm_spawn_talent_employer }
 # 性别：雇主（recipient）变量 ucm_spawn_talent_female_chance，0=男、100=女；未设置时在本效果内默认 0
 

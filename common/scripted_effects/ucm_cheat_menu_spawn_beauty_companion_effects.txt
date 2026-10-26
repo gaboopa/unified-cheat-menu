@@ -1,5 +1,5 @@
 ﻿# 美女佳人：在「雇主」宫廷生成 18 岁女性，最高美貌 + 忠贞(chaste) + 随机三条正面性格 + 三条本领类生活方式特质
-# 依赖事件先 culture:<key> = { save_scope_as = ucm_beauty_spawn_culture }，且 scope:recipient = { save_scope_as = ucm_spawn_talent_employer }（Skonester右键目标）
+# 依赖事件先 culture:<key> = { save_scope_as = ucm_beauty_spawn_culture }，且 scope:recipient = { save_scope_as = ucm_spawn_talent_employer }（UCM右键目标）
 # 创建时即用所选文化（肖像/姓名与该文化池一致）；信仰取该文化任一郡县的 faith；若无郡县则退回雇主信仰；性取向固定为异性恋
 
 ucm_cheat_menu_spawn_beauty_companion_effect = {

@@ -1,4 +1,4 @@
-﻿# Skonester「庄园编辑」：须在 scope:recipient 或 scope:ucm_cheat_menu_target 上调用。
+﻿# UCM「庄园编辑」：须在 scope:recipient 或 scope:ucm_cheat_menu_target 上调用。
 # 外槽/内建沿用原版 fill_external_* 与 add_random_internal_*；主建筑逐级 add_domicile_building。
 
 # 行政/贤能等：庄园多在世族头衔或宗族族长名下；帝国/公国/伯爵持有者本人常无 domicile。

@@ -1,4 +1,4 @@
-﻿# Skonester「强制怀孕 / 亲密」：保证怀孕（先结束旧孕期再用 make_pregnant）；不检查生育力。
+﻿# UCM「强制怀孕 / 亲密」：保证怀孕（先结束旧孕期再用 make_pregnant）；不检查生育力。
 # 非配偶/情人/灵魂伴侣/己方妾：隐匿私生 + 假定父亲（配偶优先，其次侧室妾主 concubinist）。
 
 # 子女 scope：自 scope:ucm_trait_inherit_donor 复制可遗传先天特质（须先 save_scope_as）

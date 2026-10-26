@@ -1,4 +1,4 @@
-﻿# Skonester军事管理「增益加成」modifier 列表（不含 AI 强化、庄园预设等其它修正）
+﻿# UCM军事管理「增益加成」modifier 列表（不含 AI 强化、庄园预设等其它修正）
 
 ucm_has_any_military_cheat_modifier_trigger = {
   OR = {

@@ -1,4 +1,4 @@
-﻿# Skonester GUI launchers belong in the character interaction menu so the
+﻿# UCM GUI launchers belong in the character interaction menu so the
 # clicked character is available as scope:recipient. Ordinary decisions only
 # have the decision-taker as root and therefore cannot target the open character.
 

@@ -1,4 +1,4 @@
-﻿# Skonester特质：鬼斧神工（营造向顶配）
+﻿# UCM特质：鬼斧神工（营造向顶配）
 
 trait_great_builder_god = {
 

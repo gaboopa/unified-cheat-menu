@@ -1,4 +1,4 @@
-﻿# 从Skonester事件链点「返回」
+﻿# 从UCM事件链点「返回」
 ucm_cheat_menu_open_main_hub_window_effect = {
 }
 

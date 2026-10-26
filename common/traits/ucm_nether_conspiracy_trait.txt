@@ -1,4 +1,4 @@
-﻿# Skonester特质：幽冥诡主（阴谋进攻向顶配）
+﻿# UCM特质：幽冥诡主（阴谋进攻向顶配）
 # 数值对齐模组内 trait_ultimate_intrigue_master 一档
 
 trait_nether_conspiracy_lord = {

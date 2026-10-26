@@ -1,4 +1,4 @@
-﻿# 宫廷职位任免菜单（Skonester右键 / 官吏统辖决议）
+﻿# 宫廷职位任免菜单（UCM右键 / 官吏统辖决议）
 
 ucm_positions_sync_liege_from_cheat_menu_effect = {
   ucm_cheat_menu_sync_target_effect = yes

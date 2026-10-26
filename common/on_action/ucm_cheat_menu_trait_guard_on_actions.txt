@@ -1,5 +1,5 @@
-﻿# Skonester特质防护：出生 / 每年补扫 / 获封补刀 (zzz_ucm_trait_guard_pulses.txt)；开局全图清一次见 ucm_startup_sweep.txt
-# 仅玩家Skonester菜单授予（ucm_traits_player_authorized）可保留；AI 亦同
+﻿# UCM特质防护：出生 / 每年补扫 / 获封补刀 (zzz_ucm_trait_guard_pulses.txt)；开局全图清一次见 ucm_startup_sweep.txt
+# 仅玩家UCM菜单授予（ucm_traits_player_authorized）可保留；AI 亦同
 # (monthly_global_pulse / daily_global_pulse / ai_character_pulse are never fired by the engine; removed.)
 
 on_birth_child = {

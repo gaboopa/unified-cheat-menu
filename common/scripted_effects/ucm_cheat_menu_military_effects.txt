@@ -1,4 +1,4 @@
-﻿# Skonester · 军事管理（效果一律作用在右击目标 ucm_cheat_menu_target，含 AI/玩家/廷臣）
+﻿# UCM · 军事管理（效果一律作用在右击目标 ucm_cheat_menu_target，含 AI/玩家/廷臣）
 
 # 同步右击目标；优先 global_var，其次玩家身上的 ucm_military_menu_victim
 ucm_military_ensure_target_effect = {

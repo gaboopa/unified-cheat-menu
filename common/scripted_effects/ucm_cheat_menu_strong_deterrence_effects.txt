@@ -1,4 +1,4 @@
-﻿# Skonester菜单 · 强牵制：5 年内禁止入派系、禁止对宗主（玩家）宣战
+﻿# UCM菜单 · 强牵制：5 年内禁止入派系、禁止对宗主（玩家）宣战
 
 ucm_cheat_menu_strong_deterrence_leave_factions_vs_liege_effect = {
   if = {

@@ -1,4 +1,4 @@
-﻿# Skonester / 文化编辑：advcm 式动态文化选择窗
+﻿# UCM / 文化编辑：advcm 式动态文化选择窗
 
 ucm_restore_ucm_selected_culture_scope_effect = {
   if = {
@@ -20,8 +20,8 @@ ucm_save_ucm_selected_culture_effect = {
 }
 
 # GUI callbacks run on the player. Apply the selected culture to the character
-# whose interaction menu opened the picker, matching Daddy Pika's direct
-# set_culture behavior while retaining Skonester's persistent target lock.
+# whose interaction menu opened the picker (a direct set_culture call),
+# while keeping the persistent target lock.
 ucm_acm_apply_selected_culture_to_target_effect = {
   if = {
     limit = { NOT = { exists = scope:selected_culture } }

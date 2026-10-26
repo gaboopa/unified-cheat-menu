@@ -1,4 +1,4 @@
-﻿# Skonester「撒豆成兵」· 界面「规模」每级 = 100 名士兵；征召 size = (规模×100)÷兵种单队人数
+﻿# UCM「撒豆成兵」· 界面「规模」每级 = 100 名士兵；征召 size = (规模×100)÷兵种单队人数
 
 ucm_sand_soldiers_request_open_effect = {
   add_character_flag = ucm_sand_soldiers_pending_open

@@ -9,7 +9,7 @@ Implements spec v1.3 Phase 1: single-player gate, clicked-target and second-char
 - `is_shown` of all 204 interactions, all 92 decisions, and all 2,153 scripted GUIs (653 had no `is_shown` and got one).
 - `trigger` of 36 cheat pulse on_actions, such as `ucm_crozier_cheats_quarterly`, the authority/government locks, deterrence, water of life, supply and levy pulses, and the AI boost pulses. Startup, compatibility, trait-guard, and cleanup on_actions are left alone.
 - GUI elements Skonester injects into vanilla screens, which now also check `Not( GameHasMultiplePlayers )`: 115 Crozier cheat elements in `window_character.gui`, the menu-height controls in `interaction_menu_window.gui`, the pause-menu debug button, and the yyz shortcut buttons.
-- `tools/gen_ucm_cw_innovation_sguis.py`, which now emits the gate.
+- `tools/gen_ucm_cw_innovation_sguis.py` (since removed, Phase 10), which then emitted the gate.
 
 New interactions, decisions, scripted GUIs, and cheat pulses must include it too.
 

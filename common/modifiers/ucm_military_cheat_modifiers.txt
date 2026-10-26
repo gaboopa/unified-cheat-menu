@@ -1,4 +1,4 @@
-﻿# Skonester · 军事管理（持续型加成）
+﻿# UCM · 军事管理（持续型加成）
 # 仅人类玩家通过军事管理菜单开启时打 ucm_military_cheat_player_authorized；AI 强化/庄园预设等其它修正不在此列。
 # 注：CK3 修正键名为 supply_limit_mult / army_maintenance_mult（对应控制台 supply/army upkeep 倍率）
 

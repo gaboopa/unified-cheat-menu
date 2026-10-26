@@ -11,7 +11,7 @@
   physical = no
   shown_in_ruler_designer = no
 
-  # Skonester自制特质：用 fame，勿用 lifestyle（生活方式事件池）或 commander（将领栏/将领池）
+  # UCM自制特质：用 fame，勿用 lifestyle（生活方式事件池）或 commander（将领栏/将领池）
   category = fame
 
   # 自定义图标（模组内提供）

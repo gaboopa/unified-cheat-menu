@@ -1,4 +1,4 @@
-﻿# 军事管理增益：仅人类玩家通过Skonester军事菜单开启时打 ucm_military_cheat_player_authorized；其它来源一律脉冲剥除。
+﻿# 军事管理增益：仅人类玩家通过UCM军事菜单开启时打 ucm_military_cheat_player_authorized；其它来源一律脉冲剥除。
 
 ucm_military_cheat_authorize_target_if_player_actor_effect = {
   if = {

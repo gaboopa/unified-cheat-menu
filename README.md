@@ -52,7 +52,6 @@ English, German, Russian, Simplified Chinese and Turkish.
 | `tools/gen_ucm_main_menu.py` | Generates `gui/ucm_main_menu.gui` from a list of tabs and buttons |
 | `tools/gen_ucm_translations.py` | Generates the German, Russian, Chinese and Turkish menu text from the English |
 | `tools/gen_cw_tradition_picker_lists.py` | Regenerates the tradition picker lists after a game update |
-| `tools/icon_pipeline/` | Trait icon regeneration scripts (V + ComfyUI), kept out of `gfx/`. See its README |
 
 The game-data generators take `--game-dir <CK3>/game` (or `CK3_GAME_DIR`); rerun them after a game update instead of editing their output.
 

@@ -31,7 +31,7 @@ TREES = {"diplomacy": ["family", "majesty", "foreign_affairs"], "martial": ["aut
          "learning": ["medicine", "theology", "scholarship"]}
 OTHER_TREES = {"surveyor", "wayfarer", "voyager"}  # wanderer: labels only
 XP = [250, 1000, 3000]
-EXTRA_TRAIT = {"family_man_perk": "family_first"}  # toggled along with the perk (kept from Skonester's pages)
+EXTRA_TRAIT = {"family_man_perk": "family_first"}  # toggled along with the perk (the perk page has always toggled both)
 
 TARGET_ON = ["trigger = {", "  ucm_cheat_menu_menu_enabled_trigger = yes", "  exists = scope:ucm_lifestyle_target", "}"]
 

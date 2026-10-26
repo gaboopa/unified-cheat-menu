@@ -1,5 +1,4 @@
 ﻿l_russian:
-  #Skonester Edition 
   trait_immortality:0 "Бессмертный"
   trait_immortality_desc:0 "Этот персонаж вкусил Священный Дар Бессмертия. Его облик навеки останется юным, и он защищён от естественной смерти."
   trait_immortality_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] был благословлён Священным Даром Бессмертия. [ROOT.GetCharacter.GetSheHe|U] никогда не постареет старше двадцати пяти лет и не поддастся смерти естественным путём."

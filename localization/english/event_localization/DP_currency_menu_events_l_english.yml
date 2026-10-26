@@ -136,7 +136,6 @@
 # Menu Footer
  dp_char_interactions.end:0 "Close Menu"
 
-# Skonester
 dp_char_interactions.TREASURY.event.t:0 "Treasury Adjustment"
 dp_char_interactions.TREASURY.event.d:0 "You have the opportunity to adjust the treasury amount by adding or removing funds. Choose an option below:"
 

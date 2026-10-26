@@ -135,7 +135,6 @@
 
 # Menu Footer
 
-# Skonester
  dp_char_interactions.TREASURY.event.t:0 "Schatzkammer anpassen"
  dp_char_interactions.TREASURY.event.d:0 "Hier kannst du den Betrag der Schatzkammer erhöhen oder verringern. Wähle unten eine Option aus:"
 

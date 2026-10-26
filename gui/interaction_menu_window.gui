@@ -20,7 +20,7 @@ window = {
 	allow_outside = yes
 
 	# widget_anchor is set dynamically by code
-	# Skonester: custom show/hide states so the adjustable menu height (xa_height) is applied on open
+	# custom show/hide states so the adjustable menu height (xa_height) is applied on open
 	state = {
 		name = _show
 		using = Animation_FadeIn_Quick
@@ -367,7 +367,7 @@ types InteractionTypes
 
 					button_barbershop = {
 						name = "customize_portrait"
-						# Skonester: portrait customization always available
+						# portrait customization always available
 						# visible = "[Character.CanCustomizePortrait]"
 						onclick = "[Character.OnCustomizePortrait]"
 						onclick = "[CharacterInteractionMenuWindow.Close]"
@@ -397,7 +397,7 @@ types InteractionTypes
 						using = tooltip_ne
 					}
 
-					# Skonester: toggle the menu height controls
+					# toggle the menu height controls
 					button_icon = {
 						texture = "gfx/xa_height.png"
 						visible = "[Not( GameHasMultiplePlayers )]"
@@ -410,7 +410,7 @@ types InteractionTypes
 			}
 		}
 
-		# Skonester: adjustable menu height controls
+		# adjustable menu height controls
 		widget = {
 			size = { 317 30 }
 			visible = "[And( Not( GameHasMultiplePlayers ), GetVariableSystem.Exists('change_xa_height') )]"
@@ -540,7 +540,7 @@ types InteractionTypes
 				}
 			}
 
-			# Skonester: scrollable "more interactions" list using the adjustable height
+			# scrollable "more interactions" list using the adjustable height
 			scrollarea = {
 				autoresizescrollarea = yes
 				scrollbarpolicy_horizontal = always_off
@@ -561,7 +561,7 @@ types InteractionTypes
 	}
 }
 
-# Skonester: foldable interaction categories (right-click toggles fold for all)
+# foldable interaction categories (right-click toggles fold for all)
 types Scale {
 	type flowcontainer_category_group = flowcontainer {
 		visible = "[InteractionCategoryItem.IsVisible]"

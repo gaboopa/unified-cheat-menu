@@ -136,7 +136,6 @@
 
 # Закрытие меню
  
-# Skonester
 dp_char_interactions.TREASURY.event.t:0 "Регулировка Казны"
 dp_char_interactions.TREASURY.event.d:0 "У вас есть возможность изменить сумму казны, добавляя или убирая средства. Выберите вариант ниже:"
 

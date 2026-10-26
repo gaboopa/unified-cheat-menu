@@ -1,5 +1,4 @@
 ﻿l_english:
- #Skonester Edition 
  trait_immortality:0 "Immortal"
  trait_immortality_desc:0 "This character has partaken of the Sacred Gift of Immortality. Their visage shall remain ever youthful, and they are proof against the grasp of natural death."
  trait_immortality_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] has been blessed with the Sacred Gift of Immortality. [ROOT.GetCharacter.GetSheHe|U] shall never age beyond five-and-twenty years, nor yield to natural death itself."

@@ -1,6 +1,6 @@
 ﻿l_simp_chinese:
 ### ========================================
-### SKONESTER CHEAT MENU 整合本地化
+### UCM 整合本地化
 ### ========================================
 
  ### 来自：DB_buildings_l_english.yml
@@ -1972,13 +1972,13 @@ change_govt_celestial: "更改政体：天朝"
  peasant_elective_electors_tooltip:0 "要成为民粹选举制下的有效[elector|E]，封臣必须满足以下所有条件：\n$EFFECT_LIST_BULLET$是该头衔的直接封臣\n$EFFECT_LIST_BULLET$[rank|E]高于[baron|E]。"
  skone_theocratic_elective_succession_law:1 "神权选举制"
 
- ### 来自：skonester_collapse_xaction_l_english.yml
+ ### 来自：ucm_collapse_xaction_l_english.yml
   cxa_tip: "右键点击以[Select_CString(PdxGuiFoldOut.IsFolded, '折叠', '展开')]全部"
   xa_height: "最大高度："
   xa_change_height: "更改最大高度"
   xa_update: "重新打开菜单时将更新"
 
- ### 来自：skonester_create_titular_l_english.yml
+ ### 来自：ucm_create_titular_l_english.yml
 GET_TARGET_TITLE_NAME:0 "[target.GetBaseNameNoTierNoTooltip]"
 GET_TARGET_TITLE_ADJECTIVE:0 "[target.GetAdjectiveNoTooltip]" #未使用
 ucm_create_titular.back:0 "返回"
@@ -1994,7 +1994,7 @@ ucm_create_titular.1001.kingdom:0 "创建王国"
 ucm_create_titular.1001.empire:0 "创建帝国"
 ucm_create_titular.1001.hegemony:0 "创建霸权"
 
- ### 来自：skonester_holy_dynasty_l_english.yml
+ ### 来自：ucm_holy_dynasty_l_english.yml
  pope_select_flag_desc:0 "“你是新教皇！”"
  pope_select_interaction:0 "任命新教皇"
  pope_select_interaction_desc:0 "“教皇应该出自我的家族！”"
@@ -2015,7 +2015,7 @@ ucm_create_titular.1001.hegemony:0 "创建霸权"
  dynasty_pope_0_decision_tooltip:0 "选择"
  dynasty_grandmaster_0_decision_tooltip:0 "选择"
 
- ### 来自：skonester_merge_kingdoms_l_english.yml
+ ### 来自：ucm_merge_kingdoms_l_english.yml
 mt_merge_titles_interaction:0 "合并头衔"
 mt_clear_selection_interaction:0 "清除头衔选择"
 MERGE_KINGDOMS_MERGE_LOC:0 "合并/选择"
@@ -2030,7 +2030,7 @@ mt_req_already_dejure_liege:0 "此头衔已经是所选头衔的法理领主"
 mt_select_title:0 "[target.GetName] 将被选择进行合并"
 mt_clear_selection:0 "头衔选择将被清除"
 
- ### 来自：skonester_taurus_update_l_english.yml
+ ### 来自：ucm_taurus_update_l_english.yml
  japonic_group:0 "日本语族"
  ainuic_group:0 "阿伊努语族"
  korean_group:0 "朝鲜语族"
@@ -2051,7 +2051,7 @@ mt_clear_selection:0 "头衔选择将被清除"
  dp_char_editor.dragon_birth.t:0 "龙裔特质"
  dp_char_editor.dragon_birth.d:0 "为你的角色选择神话中的龙相关体格和出生特质。"
 
- ### 来自：skonester_yyz_l_english.yml
+ ### 来自：ucm_yyz_l_english.yml
   YYZ_SETTINGS_TT:0                                "各种模组选项的设置（进行中）"
   YYZ_CHARACTER_LIST_VIEW_GOLD:0                   "@gold_icon! [Character.GetGold|0]"
   YYZ_CHARACTER_LIST_VIEW_PRESTIGE:0               "@prestige_icon! [Character.GetPrestige|0]"
@@ -2461,17 +2461,17 @@ mt_clear_selection:0 "头衔选择将被清除"
   zhuge_huangzu:0 "皇室血统"
   zhuge_huangzu_desc:0 "此宗族被视为#Y 天选皇室#！，是上天之命的正当承载者。\n其血统号令天下，凌驾于东西方所有其他贵族血统之上。"
 
- ### 来自：zz_skonester_aquarius_update_l_english..yml
+ ### 来自：zz_ucm_aquarius_update_l_english..yml
   cheat_decition_artifact:0 "寻回恩赐"
   cheat_description_artifact:0 "我们所见的世界是一个盲目造物主投下的阴影。这些圣物是真光的碎片，从普雷罗玛（Pleroma）遣来，帮助圣灵之子们在归乡的旅途中前行。"
   cheat_decition_accept:0 "光明必认识其自身。"
   Artifact_1000_tooltip:0 "接收普雷罗玛的碎片。"
 
- ### 来自：zz_skonester_cultural_polygamy_l_english.yml
+ ### 来自：zz_ucm_cultural_polygamy_l_english.yml
  tradition_zz_cultural_polygamy_two_wives_name: "一夫多妻（2 妻）"
  tradition_zz_cultural_polygamy_two_wives_desc: "允许此文化的统治者最多娶两位妻子。"
 
- ### 来自：zz_skonester_pisces_update_l_english..yml
+ ### 来自：zz_ucm_pisces_update_l_english..yml
  cheat_decition_tradition:0 "确立文化霸权"
  cheat_description_tradition:0 "奉敕令，我们应采纳天下每个角落的智慧。从东方的稻田到西方的长弓手，我民将举世无双。"
  culture_cheat_tooltip:0 "将建立超过 100 项传统。"
@@ -3471,7 +3471,7 @@ dp_char_interactions.TREASURY.minus_1000:0 "减少 1,000 国库"
 dp_char_interactions.TREASURY.minus_10000:0 "减少 10,000 国库"
 dp_char_interactions.TREASURY.minus_100000:0 "减少 100,000 国库"
 
- ### 来自：event_localization\skonester_char_design_events_l_english.yml
+ ### 来自：event_localization\ucm_char_design_events_l_english.yml
  sarc_char_design.1002.choice.t:1 "宗族地位"
  sarc_char_design.1002.choice.desc:0 "选择你希望角色与你当前统治者的宗族有何种关系。选择当前统治者的子女需要你选择比当前统治者年轻的人。"
  sarc_char_design.age.random:0 "无关联的宗族成员"

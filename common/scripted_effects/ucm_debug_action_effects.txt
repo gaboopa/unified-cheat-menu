@@ -1,4 +1,4 @@
-﻿# Effects used by the cleaned Skonester Debug Actions event menus.
+﻿# Effects used by the Debug Actions event menus.
 
 ucm_debug_actions_heal_target_effect = {
 	ucm_cheat_menu_sync_target_effect = yes

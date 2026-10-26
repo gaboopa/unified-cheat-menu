@@ -1,5 +1,4 @@
 ﻿l_german:
- #Skonester Edition
  trait_immortality:0 "Unsterblich"
  trait_immortality_desc:0 "Dieser Charakter hat an der Heiligen Gabe der Unsterblichkeit teilgehabt. Sein Antlitz bleibt ewig jung, und der natürliche Tod vermag ihn nicht zu ereilen."
  trait_immortality_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] wurde mit der Heiligen Gabe der Unsterblichkeit gesegnet. [ROOT.GetCharacter.GetSheHe|U] wird niemals über das Alter von fünfundzwanzig Jahren hinaus altern und dem natürlichen Tod niemals erliegen."

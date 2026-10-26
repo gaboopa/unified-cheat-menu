@@ -1,6 +1,6 @@
 ﻿l_turkish:
 ### ========================================
-### SKONESTER CHEAT MENU CONSOLIDATED LOCALIZATION(Must be changed to l_english and put into localization/English to work in game)
+### UCM CONSOLIDATED LOCALIZATION(Must be changed to l_english and put into localization/English to work in game)
 
 ### ========================================
  ### From: DB_buildings_l_english.yml
@@ -1608,15 +1608,15 @@ Orta Çağ'da, birçok fuar geçici pazarlar olarak gelişti ve özellikle uzun 
  chuanguoyuxi_cn_description:0 "Forged by a woman by the shores of Galilee in ancient Judea;in remembrence of her own deliverance, this wondrous seal was wrought with skill beyond the ken of common men. It was borne across many lands until it came before the servants of Holy Church, who, discerning in it a relic of hidden providence, bestowed their solemn blessing upon it. Thereafter it was spoken of not as a mere token, but as a vessel of divine authority.\n\nChroniclers record that its surface is etched with mysterious characters whose meaning is lost to all save the wise, and that it gleamed with a subtle light as though Heaven itself breathed within it. Thus did the Seal become a sign that #Y Heaven’s Mandate#! might rest upon rulers chosen to guard both priest and king alike, binding East and West beneath the shadow of sacred right."
  zhuge_huangzu:0 "İmparatorluk Soyu"
  zhuge_huangzu_desc:0 "Bu hanedan, Göklerin Yetkisi'nin haklı taşıyıcısı olan #Y ilahi olarak seçilmiş bir imparatorluk hanedanı#! olarak kabul edilir.\nSoyu, hem Doğu'da hem de Batı'da diğer tüm soylu sülalelerin üzerinde durarak göklerin altındaki her şeye hükmeder."
- ### From: zz_skonester_aquarius_update_l_english..yml
+ ### From: zz_ucm_aquarius_update_l_english..yml
  cheat_decition_artifact:0 "Armağanları Geri Al"
  cheat_description_artifact:0 "The world we see is a shadow cast by a blind creator. These relics are fragments of the True Light, sent from the Pleroma to aid the children of the Spirit in their journey home."
  cheat_decition_accept:0 "Işık kendinden olanı tanıyacaktır."
  Artifact_1000_tooltip:0 "Pleroma'nın parçalarını al."
- ### From: zz_skonester_cultural_polygamy_l_english.yml
+ ### From: zz_ucm_cultural_polygamy_l_english.yml
  tradition_zz_cultural_polygamy_two_wives_name: "Çok Eşlilik (2 Eş)"
  tradition_zz_cultural_polygamy_two_wives_desc: "Bu kültürün hükümdarlarının iki eşe kadar almasına izin verir."
- ### From: zz_skonester_pisces_update_l_english..yml
+ ### From: zz_ucm_pisces_update_l_english..yml
  cheat_decition_tradition:0 "Kültürel Üstünlük Kur"
  cheat_description_tradition:0 "Fermanla, dünyanın her köşesinin bilgeliğini benimseyeceğiz. Doğu'nun Pirinç Tarlalarından Batı'nın Uzun Yaycılarına kadar, halkımız rakip tanımayacak."
  culture_cheat_tooltip:0 "100'den fazla gelenek kurulacak."
@@ -2610,7 +2610,7 @@ Orta Çağ'da, birçok fuar geçici pazarlar olarak gelişti ve özellikle uzun 
  dp_char_interactions.TREASURY.minus_1000:0 "Remove 1,000 Treasury"
  dp_char_interactions.TREASURY.minus_10000:0 "Remove 10,000 Treasury"
  dp_char_interactions.TREASURY.minus_100000:0 "Remove 100,000 Treasury"
- ### From: event_localization\skonester_char_design_events_l_english.yml
+ ### From: event_localization\ucm_char_design_events_l_english.yml
  sarc_char_design.1002.choice.t:1 "Hanedan Konumu"
  sarc_char_design.1002.choice.desc:0 "Karakterinizin mevcut hükümdarın hanedanıyla nasıl bir akrabalık bağı olmasını istediğinizi seçin. Mevcut hükümdarın çocuğu seçeneği, mevcut hükümdardan daha genç birini seçmenizi gerektirir."
  sarc_char_design.age.random:0 "Bağımsız hanedan üyesi"

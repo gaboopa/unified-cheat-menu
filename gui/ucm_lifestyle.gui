@@ -4099,7 +4099,7 @@ window = {
                   spacing = 8
                   text_single = {
                     layoutpolicy_horizontal = expanding
-                    text = "ucm_lsf.pk_scholar_perk"
+                    text = "ucm_lsf.pk_erudite_perk"
                     default_format = "#clickable"
                     autoresize = no
                   }

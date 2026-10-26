@@ -23,6 +23,5 @@
  ucm_cheat_menu_force_betrothal_toast_title:0 "Betrothal Created"
  ucm_land_cap_batch_start_toast_desc:0 "The land-cap batch process has started."
  ucm_land_cap_batch_start_toast_title:0 "Land-Cap Process Started"
- ucm_lsf.pk_family_man_perk:0 "Family Man"
  ucm_positions_snapshot_read_desc:0 "The saved court-position snapshot has been restored."
  ucm_positions_snapshot_read_t:0 "Court Positions Restored"

@@ -86,6 +86,21 @@ def effective_files(sub, *dirs):
     return [by_name[n] for n in sorted(by_name)]
 
 
+LOC_LINE = re.compile(r'(?m)^[ \t]*([\w.\-]+):\d*[ \t]*"(.*)"[ \t]*(?:#.*)?$')
+
+
+def load_loc(lang, *dirs):
+    """key -> text for localization/<lang>/**/*.yml across dirs; a later dir wins, and so do replace/ folders."""
+    out, late = {}, {}
+    for d in dirs:
+        for f in sorted(glob.glob(os.path.join(d, "localization", lang, "**", "*.yml"), recursive=True)):
+            with open(f, encoding="utf-8-sig", errors="replace") as fh:
+                pairs = dict(LOC_LINE.findall(fh.read()))
+            (late if os.sep + "replace" + os.sep in f else out).update(pairs)
+    out.update(late)
+    return out
+
+
 if __name__ == "__main__":
     sample = """# comment { not a block
 a = {
@@ -102,4 +117,5 @@ b = { c = { d = 2 } }
     kids = [k for k, _ in child_objects_text(" p = 1 q = { r = { s = 2 } } t = { } ")]
     assert kids == ["q", "t"], kids
     assert entries(" brave = { weight = 30 } zealous = 1 deviant ") == ["brave", "zealous", "deviant"]
+    assert LOC_LINE.findall(' a:0 "x "q" y" # c\n b: ""\n') == [("a", 'x "q" y'), ("b", "")]
     print("ck3parse self-check OK")

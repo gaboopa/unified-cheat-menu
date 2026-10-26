@@ -41,14 +41,20 @@ English, German, Russian, Simplified Chinese and Turkish.
 | `docs/upstream/` | Skonester Cheat Menu Gold's README and development notes, kept for reference |
 | `compat/ek2/` | Elder Kings 2 compatch, a separate mod that loads after both (see its `descriptor.mod`) |
 | `tools/ck3parse.py` | Shared parsing helpers for the generators |
-| `tools/gen_ek2_compatch.py` | Regenerates the derived files in `compat/ek2/`, including the EK2 faith editor data |
+| `tools/gen_ek2_compatch.py` | Regenerates the derived files in `compat/ek2/`, including the EK2 faith editor data and picker stubs |
 | `tools/gen_faith_editor.py` | Generates the faith editor's data effects from the 1.20 doctrine, tenet and religion databases |
+| `tools/gen_cast_culture_faith.py` | Generates the classic culture casting pages and their labels from the culture database |
+| `tools/gen_trait_editor.py` | Generates the classic base-game trait editor and its labels from the trait database |
+| `tools/gen_advcm_modifiers.py` | Generates the artifact crafting slot modifiers from the slot list and the game's modifier formats |
+| `tools/gen_lifestyle.py` | Generates the classic lifestyle pages and the perk labels from the perk database |
+| `tools/gen_court_positions.py` | Generates the one-click court reshuffle position lists from the court position types |
+| `tools/gen_beauty_companion.py` | Generates the beauty companion's classified culture picker and its labels |
 | `tools/gen_ucm_main_menu.py` | Generates `gui/ucm_main_menu.gui` from a list of tabs and buttons |
 | `tools/gen_ucm_translations.py` | Generates the German, Russian, Chinese and Turkish menu text from the English |
 | `tools/gen_cw_tradition_picker_lists.py` | Regenerates the tradition picker lists after a game update |
 | `tools/icon_pipeline/` | Trait icon regeneration scripts (V + ComfyUI), kept out of `gfx/`. See its README |
 
-Only the generators above are in the repo. The other big `*_generated.txt` files (trait editor, culture/faith casting, crafting modifiers, lifestyle, court positions, treasure-maker stat tiers, beauty companion) came from Skonester Cheat Menu Gold's own generator scripts, which were never published, so edit those files by hand.
+The game-data generators take `--game-dir <CK3>/game` (or `CK3_GAME_DIR`); rerun them after a game update instead of editing their output.
 
 `ucm_` is the mod's namespace. Files carried over from Skonester Cheat Menu Gold were renamed into it too, so a `ucm_` prefix doesn't mean a file was written from scratch. The core menu files written for this mod are:
 - `common/scripted_guis/ucm_{sguis,character_sguis,court_sguis,group_sguis,military_sguis,realm_sguis}.txt`

@@ -72,7 +72,7 @@ window = {
               size = { 0 38 }
               datacontext = "[GetTrait('ucm_trait_immortal_ageless')]"
               datacontext = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char]"
-              down = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_immortal_ageless')).End)]"
+              down = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('ucm_trait_immortal_ageless'))]"
               onclick = "[GetScriptedGui('ucm_cheat_trait_gui_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_immortal_ageless')).End)]"
               tooltipwidget = {
                 using = character_trait_tooltip
@@ -91,12 +91,12 @@ window = {
                   autoresize = no
                 }
                 text_single = {
-                  visible = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_immortal_ageless')).End)]"
+                  visible = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('ucm_trait_immortal_ageless'))]"
                   text = "ucm_cheat_menu_trait_minus"
                   default_format = "#N"
                 }
                 text_single = {
-                  visible = "[Not(GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_immortal_ageless')).End))]"
+                  visible = "[Not(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('ucm_trait_immortal_ageless')))]"
                   text = "ucm_cheat_menu_trait_plus"
                   default_format = "#P"
                 }
@@ -107,7 +107,7 @@ window = {
               size = { 0 38 }
               datacontext = "[GetTrait('trait_warlord_eternal')]"
               datacontext = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char]"
-              down = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_warlord_eternal')).End)]"
+              down = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('trait_warlord_eternal'))]"
               onclick = "[GetScriptedGui('ucm_cheat_trait_gui_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_warlord_eternal')).End)]"
               tooltipwidget = {
                 using = character_trait_tooltip
@@ -126,12 +126,12 @@ window = {
                   autoresize = no
                 }
                 text_single = {
-                  visible = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_warlord_eternal')).End)]"
+                  visible = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('trait_warlord_eternal'))]"
                   text = "ucm_cheat_menu_trait_minus"
                   default_format = "#N"
                 }
                 text_single = {
-                  visible = "[Not(GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_warlord_eternal')).End))]"
+                  visible = "[Not(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('trait_warlord_eternal')))]"
                   text = "ucm_cheat_menu_trait_plus"
                   default_format = "#P"
                 }
@@ -142,7 +142,7 @@ window = {
               size = { 0 38 }
               datacontext = "[GetTrait('trait_wealth_sovereign_max')]"
               datacontext = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char]"
-              down = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_wealth_sovereign_max')).End)]"
+              down = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('trait_wealth_sovereign_max'))]"
               onclick = "[GetScriptedGui('ucm_cheat_trait_gui_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_wealth_sovereign_max')).End)]"
               tooltipwidget = {
                 using = character_trait_tooltip
@@ -161,12 +161,12 @@ window = {
                   autoresize = no
                 }
                 text_single = {
-                  visible = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_wealth_sovereign_max')).End)]"
+                  visible = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('trait_wealth_sovereign_max'))]"
                   text = "ucm_cheat_menu_trait_minus"
                   default_format = "#N"
                 }
                 text_single = {
-                  visible = "[Not(GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_wealth_sovereign_max')).End))]"
+                  visible = "[Not(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('trait_wealth_sovereign_max')))]"
                   text = "ucm_cheat_menu_trait_plus"
                   default_format = "#P"
                 }
@@ -177,7 +177,7 @@ window = {
               size = { 0 38 }
               datacontext = "[GetTrait('trait_ultimate_intrigue_master')]"
               datacontext = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char]"
-              down = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_ultimate_intrigue_master')).End)]"
+              down = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('trait_ultimate_intrigue_master'))]"
               onclick = "[GetScriptedGui('ucm_cheat_trait_gui_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_ultimate_intrigue_master')).End)]"
               tooltipwidget = {
                 using = character_trait_tooltip
@@ -196,12 +196,12 @@ window = {
                   autoresize = no
                 }
                 text_single = {
-                  visible = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_ultimate_intrigue_master')).End)]"
+                  visible = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('trait_ultimate_intrigue_master'))]"
                   text = "ucm_cheat_menu_trait_minus"
                   default_format = "#N"
                 }
                 text_single = {
-                  visible = "[Not(GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_ultimate_intrigue_master')).End))]"
+                  visible = "[Not(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('trait_ultimate_intrigue_master')))]"
                   text = "ucm_cheat_menu_trait_plus"
                   default_format = "#P"
                 }
@@ -212,7 +212,7 @@ window = {
               size = { 0 38 }
               datacontext = "[GetTrait('trait_great_builder_god')]"
               datacontext = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char]"
-              down = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_great_builder_god')).End)]"
+              down = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('trait_great_builder_god'))]"
               onclick = "[GetScriptedGui('ucm_cheat_trait_gui_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_great_builder_god')).End)]"
               tooltipwidget = {
                 using = character_trait_tooltip
@@ -231,12 +231,12 @@ window = {
                   autoresize = no
                 }
                 text_single = {
-                  visible = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_great_builder_god')).End)]"
+                  visible = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('trait_great_builder_god'))]"
                   text = "ucm_cheat_menu_trait_minus"
                   default_format = "#N"
                 }
                 text_single = {
-                  visible = "[Not(GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_great_builder_god')).End))]"
+                  visible = "[Not(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('trait_great_builder_god')))]"
                   text = "ucm_cheat_menu_trait_plus"
                   default_format = "#P"
                 }
@@ -247,7 +247,7 @@ window = {
               size = { 0 38 }
               datacontext = "[GetTrait('trait_nether_conspiracy_lord')]"
               datacontext = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char]"
-              down = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_nether_conspiracy_lord')).End)]"
+              down = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('trait_nether_conspiracy_lord'))]"
               onclick = "[GetScriptedGui('ucm_cheat_trait_gui_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_nether_conspiracy_lord')).End)]"
               tooltipwidget = {
                 using = character_trait_tooltip
@@ -266,12 +266,12 @@ window = {
                   autoresize = no
                 }
                 text_single = {
-                  visible = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_nether_conspiracy_lord')).End)]"
+                  visible = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('trait_nether_conspiracy_lord'))]"
                   text = "ucm_cheat_menu_trait_minus"
                   default_format = "#N"
                 }
                 text_single = {
-                  visible = "[Not(GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_nether_conspiracy_lord')).End))]"
+                  visible = "[Not(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('trait_nether_conspiracy_lord')))]"
                   text = "ucm_cheat_menu_trait_plus"
                   default_format = "#P"
                 }
@@ -282,7 +282,7 @@ window = {
               size = { 0 38 }
               datacontext = "[GetTrait('trait_eternal_nether_lord')]"
               datacontext = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char]"
-              down = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_eternal_nether_lord')).End)]"
+              down = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('trait_eternal_nether_lord'))]"
               onclick = "[GetScriptedGui('ucm_cheat_trait_gui_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_eternal_nether_lord')).End)]"
               tooltipwidget = {
                 using = character_trait_tooltip
@@ -301,12 +301,12 @@ window = {
                   autoresize = no
                 }
                 text_single = {
-                  visible = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_eternal_nether_lord')).End)]"
+                  visible = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('trait_eternal_nether_lord'))]"
                   text = "ucm_cheat_menu_trait_minus"
                   default_format = "#N"
                 }
                 text_single = {
-                  visible = "[Not(GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_eternal_nether_lord')).End))]"
+                  visible = "[Not(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('trait_eternal_nether_lord')))]"
                   text = "ucm_cheat_menu_trait_plus"
                   default_format = "#P"
                 }
@@ -317,7 +317,7 @@ window = {
               size = { 0 38 }
               datacontext = "[GetTrait('ucm_trait_yannian_dan')]"
               datacontext = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char]"
-              down = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_yannian_dan')).End)]"
+              down = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('ucm_trait_yannian_dan'))]"
               onclick = "[GetScriptedGui('ucm_cheat_trait_gui_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_yannian_dan')).End)]"
               tooltipwidget = {
                 using = character_trait_tooltip
@@ -336,12 +336,12 @@ window = {
                   autoresize = no
                 }
                 text_single = {
-                  visible = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_yannian_dan')).End)]"
+                  visible = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('ucm_trait_yannian_dan'))]"
                   text = "ucm_cheat_menu_trait_minus"
                   default_format = "#N"
                 }
                 text_single = {
-                  visible = "[Not(GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_yannian_dan')).End))]"
+                  visible = "[Not(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('ucm_trait_yannian_dan')))]"
                   text = "ucm_cheat_menu_trait_plus"
                   default_format = "#P"
                 }
@@ -352,7 +352,7 @@ window = {
               size = { 0 38 }
               datacontext = "[GetTrait('ucm_trait_yannian_dan_mid')]"
               datacontext = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char]"
-              down = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_yannian_dan_mid')).End)]"
+              down = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('ucm_trait_yannian_dan_mid'))]"
               onclick = "[GetScriptedGui('ucm_cheat_trait_gui_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_yannian_dan_mid')).End)]"
               tooltipwidget = {
                 using = character_trait_tooltip
@@ -371,12 +371,12 @@ window = {
                   autoresize = no
                 }
                 text_single = {
-                  visible = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_yannian_dan_mid')).End)]"
+                  visible = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('ucm_trait_yannian_dan_mid'))]"
                   text = "ucm_cheat_menu_trait_minus"
                   default_format = "#N"
                 }
                 text_single = {
-                  visible = "[Not(GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_yannian_dan_mid')).End))]"
+                  visible = "[Not(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('ucm_trait_yannian_dan_mid')))]"
                   text = "ucm_cheat_menu_trait_plus"
                   default_format = "#P"
                 }
@@ -387,7 +387,7 @@ window = {
               size = { 0 38 }
               datacontext = "[GetTrait('ucm_trait_yannian_dan_best')]"
               datacontext = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char]"
-              down = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_yannian_dan_best')).End)]"
+              down = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('ucm_trait_yannian_dan_best'))]"
               onclick = "[GetScriptedGui('ucm_cheat_trait_gui_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_yannian_dan_best')).End)]"
               tooltipwidget = {
                 using = character_trait_tooltip
@@ -406,12 +406,12 @@ window = {
                   autoresize = no
                 }
                 text_single = {
-                  visible = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_yannian_dan_best')).End)]"
+                  visible = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('ucm_trait_yannian_dan_best'))]"
                   text = "ucm_cheat_menu_trait_minus"
                   default_format = "#N"
                 }
                 text_single = {
-                  visible = "[Not(GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_yannian_dan_best')).End))]"
+                  visible = "[Not(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('ucm_trait_yannian_dan_best')))]"
                   text = "ucm_cheat_menu_trait_plus"
                   default_format = "#P"
                 }
@@ -422,7 +422,7 @@ window = {
               size = { 0 38 }
               datacontext = "[GetTrait('ucm_trait_baidubuqin')]"
               datacontext = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char]"
-              down = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_baidubuqin')).End)]"
+              down = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('ucm_trait_baidubuqin'))]"
               onclick = "[GetScriptedGui('ucm_cheat_trait_gui_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_baidubuqin')).End)]"
               tooltipwidget = {
                 using = character_trait_tooltip
@@ -441,12 +441,12 @@ window = {
                   autoresize = no
                 }
                 text_single = {
-                  visible = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_baidubuqin')).End)]"
+                  visible = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('ucm_trait_baidubuqin'))]"
                   text = "ucm_cheat_menu_trait_minus"
                   default_format = "#N"
                 }
                 text_single = {
-                  visible = "[Not(GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_baidubuqin')).End))]"
+                  visible = "[Not(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('ucm_trait_baidubuqin')))]"
                   text = "ucm_cheat_menu_trait_plus"
                   default_format = "#P"
                 }
@@ -457,7 +457,7 @@ window = {
               size = { 0 38 }
               datacontext = "[GetTrait('ucm_trait_xinwuguai')]"
               datacontext = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char]"
-              down = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_xinwuguai')).End)]"
+              down = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('ucm_trait_xinwuguai'))]"
               onclick = "[GetScriptedGui('ucm_cheat_trait_gui_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_xinwuguai')).End)]"
               tooltipwidget = {
                 using = character_trait_tooltip
@@ -476,12 +476,12 @@ window = {
                   autoresize = no
                 }
                 text_single = {
-                  visible = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_xinwuguai')).End)]"
+                  visible = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('ucm_trait_xinwuguai'))]"
                   text = "ucm_cheat_menu_trait_minus"
                   default_format = "#N"
                 }
                 text_single = {
-                  visible = "[Not(GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_xinwuguai')).End))]"
+                  visible = "[Not(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('ucm_trait_xinwuguai')))]"
                   text = "ucm_cheat_menu_trait_plus"
                   default_format = "#P"
                 }
@@ -492,7 +492,7 @@ window = {
               size = { 0 38 }
               datacontext = "[GetTrait('ucm_trait_stats_100_locked')]"
               datacontext = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char]"
-              down = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_stats_100_locked')).End)]"
+              down = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('ucm_trait_stats_100_locked'))]"
               onclick = "[GetScriptedGui('ucm_cheat_trait_gui_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_stats_100_locked')).End)]"
               tooltipwidget = {
                 using = character_trait_tooltip
@@ -511,12 +511,12 @@ window = {
                   autoresize = no
                 }
                 text_single = {
-                  visible = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_stats_100_locked')).End)]"
+                  visible = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('ucm_trait_stats_100_locked'))]"
                   text = "ucm_cheat_menu_trait_minus"
                   default_format = "#N"
                 }
                 text_single = {
-                  visible = "[Not(GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_stats_100_locked')).End))]"
+                  visible = "[Not(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('ucm_trait_stats_100_locked')))]"
                   text = "ucm_cheat_menu_trait_plus"
                   default_format = "#P"
                 }
@@ -527,7 +527,7 @@ window = {
               size = { 0 38 }
               datacontext = "[GetTrait('ucm_trait_marriage_ban')]"
               datacontext = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char]"
-              down = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_marriage_ban')).End)]"
+              down = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('ucm_trait_marriage_ban'))]"
               onclick = "[GetScriptedGui('ucm_cheat_trait_gui_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_marriage_ban')).End)]"
               tooltipwidget = {
                 using = character_trait_tooltip
@@ -546,12 +546,12 @@ window = {
                   autoresize = no
                 }
                 text_single = {
-                  visible = "[GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_marriage_ban')).End)]"
+                  visible = "[GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('ucm_trait_marriage_ban'))]"
                   text = "ucm_cheat_menu_trait_minus"
                   default_format = "#N"
                 }
                 text_single = {
-                  visible = "[Not(GetScriptedGui('ucm_cheat_trait_gui_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_marriage_ban')).End))]"
+                  visible = "[Not(GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait(GetTrait('ucm_trait_marriage_ban')))]"
                   text = "ucm_cheat_menu_trait_plus"
                   default_format = "#P"
                 }

@@ -18,7 +18,6 @@
   YYZ_CAPTION_FERTILITY:0                          "Recruits - High Fertility"
   YYZ_CAPTION_KILL_TARGETS:0                       "Kill Targets"
                      
-  YYZ_BTN_VICEROYS_TT:0                            "Show characters that can be landed and will not ever have any heirs"
   YYZ_BTN_UNLANDED_DYNASTY_TT:0                    "Show Unlanded Dynasty Members"
   YYZ_BTN_SPECIAL_ORGANIZERS_TT:0                  "Show recruitable characters with special commander abilities"
   YYZ_BTN_CRIMINAL_GOLD_TT:0                       "Show recruitable characters that have over 40 gold"
@@ -28,10 +27,7 @@
   YYZ_BTN_FERTILITY_TT:0                           "Find unmarried characters with high fertility"
   YYZ_BTN_KILL_TARGETS_TT:0                        "Show characters marked for murder"
 
-  YYZ_SORT_BY_PROWESS:0                            "Sort by [prowess|E] Skill: [Select_CString( And( CharacterSelectionList.IsSortingBySkill( '(int32)5' ), Not( CharacterSelectionList.GetSortOrder ) ), 'Ascending', 'Descending' )|V]"
 
-  YYZ_FILTER_SEX_MALE:0                            "Male"
-  YYZ_FILTER_SEX_FEMALE:0                          "Female"
   YYZ_FILTER_MARITAL_MARRIED:0                     "Married"
   YYZ_FILTER_MARITAL_UNMARRIED:0                   "Unmarried"
   YYZ_FILTER_WHERE_NOT:0                           "!"
@@ -108,14 +104,6 @@
   YYZ_MODE_COURT_POSITION_CULTURAL_EMISSARY_TT:0   "Cultural Emissary"
   YYZ_MODE_COURT_POSITION_HIGH_ALMONER_TT:0        "High Almoner"
 
-  YYZ_FILTER_INSPIRATION_WEAPON:0                  "Weap"
-  YYZ_FILTER_INSPIRATION_ARMOR:0                   "Arm"
-  YYZ_FILTER_INSPIRATION_BOOK:0                    "Book"
-  YYZ_FILTER_INSPIRATION_WEAVER:0                  "Weav"
-  YYZ_FILTER_INSPIRATION_ARTISAN:0                 "Art"
-  YYZ_FILTER_INSPIRATION_SMITH:0                   "Smth"
-  YYZ_FILTER_INSPIRATION_ALCHEMY:0                 "Alch"
-  YYZ_FILTER_INSPIRATION_ADVENTURE:0               "Adv"
   YYZ_FILTER_INSPIRATION_QUALITY_LOCAL:0           "Local"
   YYZ_FILTER_INSPIRATION_QUALITY_LOW:0             "Low"
   YYZ_FILTER_INSPIRATION_QUALITY_MEDIUM:0          "Med"
@@ -139,7 +127,6 @@
   YYZ_FILTER_INSPIRATION_QUALITY_HIGH_TT:0         "Shows inspirations of high quality.  No local artisans"
 
   YYZ_FILTER_INSPIRATION_UNSPONSORED_TT:0          "Shows only inspirations that have not been sponsored by anyone yet."
-  YYZ_FILTER_INSPIRATION_PROGRESS_TT:0             "Shows only inspirations that have not been sponsored by anyone yet."
 
 #  YYZ_FILTER_ORG_SIEGE:0                          "Siege"
 #  YYZ_FILTER_ORG_LOGI:0                           "Logi"
@@ -165,121 +152,25 @@
   YYZ_FILTER_UNHEALTHY_TT:0                        "Character is low on health and is likely to die soon"
   YYZ_FILTER_CRIMINAL_TT:0                         "Character has committed crimes for which you can imprison them without tyranny"
 
-  YYZ_SORT_BY_PROWESS_ASC:0                        "Sort by [prowess|E] Skill: #V Ascending #!"
-  YYZ_SORT_BY_PROWESS_DESC:0                       "Sort by [prowess|E] Skill: #V Descending #!"
 
-  YYZ_SORT_BY_DIPLOMACY_ASC:0                      "Sort by [diplomacy|E] Skill: #V Ascending #!"
-  YYZ_SORT_BY_DIPLOMACY_DESC:0                     "Sort by [diplomacy|E] Skill: #V Descending #!"
 
-  YYZ_SORT_BY_MARTIAL_ASC:0                        "Sort by [martial|E] Skill: #V Ascending #!"
-  YYZ_SORT_BY_MARTIAL_DESC:0                       "Sort by [martial|E] Skill: #V Descending #!"
 
-  YYZ_SORT_BY_STEWARDSHIP_ASC:0                    "Sort by [stewardship|E] Skill: #V Ascending #!"
-  YYZ_SORT_BY_STEWARDSHIP_DESC:0                   "Sort by [stewardship|E] Skill: #V Descending #!"
 
-  YYZ_SORT_BY_INTRIGUE_ASC:0                       "Sort by [intrigue|E] Skill: #V Ascending #!"
-  YYZ_SORT_BY_INTRIGUE_DESC:0                      "Sort by [intrigue|E] Skill: #V Descending #!"
 
-  YYZ_SORT_BY_LEARNING_ASC:0                       "Sort by [learning|E] Skill: #V Ascending #!"
-  YYZ_SORT_BY_LEARNING_DESC:0                      "Sort by [learning|E] Skill: #V Descending #!"
 
-  YYZ_SORT_BY_REAL_AGE_ASC:0                       "Sort by real_age: #V Ascending #!"
-  YYZ_SORT_BY_REAL_AGE_DESC:0                      "Sort by real_age: #V Descending #!"
 
-  YYZ_SORT_BY_AGE_ASC:0                            "Sort by age: #V Ascending #!"
-  YYZ_SORT_BY_AGE_DESC:0                           "Sort by age: #V Descending #!"
 
-  YYZ_SORT_BY_HEALTH_ASC:0                         "Sort by [health|E]: #V Ascending #!"
-  YYZ_SORT_BY_HEALTH_DESC:0                        "Sort by [health|E]: #V Descending #!"
 
-  YYZ_SORT_BY_GOLD_ASC:0                           "Sort by [gold|E] amount: #V Ascending #!"
-  YYZ_SORT_BY_GOLD_DESC:0                          "Sort by [gold|E] amount: #V Descending #!"
 
-  YYZ_SORT_BY_PRESTIGE_ASC:0                       "Sort by [prestige|E] amount: #V Ascending #!"
-  YYZ_SORT_BY_PRESTIGE_DESC:0                      "Sort by [prestige|E] amount: #V Descending #!"
 
-  YYZ_SORT_BY_PIETY_ASC:0                          "Sort by [piety|E] amount: #V Ascending #!"
-  YYZ_SORT_BY_PIETY_DESC:0                         "Sort by [piety|E] amount: #V Descending #!"
 
-  YYZ_SORT_BY_ARMY_SPEED_ASC:0                     "Sort by [army|E] movement speed bonus: #V Ascending #!"
-  YYZ_SORT_BY_ARMY_SPEED_DESC:0                    "Sort by [army|E] movement speed bonus: #V Descending #!"
 
-  YYZ_SORT_BY_TRAVEL_SPEED_ASC:0                   "Sort by [travel_speed|E] bonus: #V Ascending #!"
-  YYZ_SORT_BY_TRAVEL_SPEED_DESC:0                  "Sort by [travel_speed|E] bonus: #V Descending #!"
 
-  YYZ_SORT_BY_TRAVEL_SAFETY_ASC:0                  "Sort by [travel_safety|E] bonus: #V Ascending #!"
-  YYZ_SORT_BY_TRAVEL_SAFETY_DESC:0                 "Sort by [travel_safety|E] bonus: #V Descending #!"
 
-  YYZ_SORT_BY_RANK_ASC:0                           "Sort by [rank|E]: #V Ascending #!"
-  YYZ_SORT_BY_RANK_DESC:0                          "Sort by [rank|E]: #V Descending #!"
 
-  YYZ_SORT_BY_ALL_STATS_ASC:0                      "Sort by the sum of all skills: #V Ascending #!"
-  YYZ_SORT_BY_ALL_STATS_DESC:0                     "Sort by the sum of all skills: #V Descending #!"
 
 #  YYZ_SORT_BY_Q_ASC:0                             "Sort by [q|E] Skill: #V Ascending #!"
 #  YYZ_SORT_BY_Q_DESC:0                            "Sort by [q|E] Skill: #V Descending #!"
 
-  YYZ_MODE_ACCOLADE_RETINUE:0                      "Retinue"
-  YYZ_MODE_ACCOLADE_ARCHER:0                       "Arc"
-  YYZ_MODE_ACCOLADE_OUTRIDER:0                     "Out"
-  YYZ_MODE_ACCOLADE_PIKE_CAPTAIN:0                 "Pik"
-  YYZ_MODE_ACCOLADE_SKIRMISHER:0                   "Ski"
-  YYZ_MODE_ACCOLADE_VANGUARD:0                     "Van"
-  YYZ_MODE_ACCOLADE_LANCER:0                       "Lan"
-  YYZ_MODE_ACCOLADE_CAMELIER:0                     "Cam"
-  YYZ_MODE_ACCOLADE_CROSSBOW_CAPTAIN:0             "Cro"
-  YYZ_MODE_ACCOLADE_ELEPHANT_RIDER:0               "Ele"
-  YYZ_MODE_ACCOLADE_HORSE_ARCHER:0                 "Hor"
-  YYZ_MODE_ACCOLADE_BESIEGER:0                     "Bes"
-  YYZ_MODE_ACCOLADE_CONTENDER:0                    "Con"
-  YYZ_MODE_ACCOLADE_MANIPULATOR:0                  "Man"
-  YYZ_MODE_ACCOLADE_MENTOR:0                       "Men"
-  YYZ_MODE_ACCOLADE_POLITICKER:0                   "Pol"
-  YYZ_MODE_ACCOLADE_REEVE:0                        "Ree"
-  YYZ_MODE_ACCOLADE_TACTICIAN:0                    "Tac"
-  YYZ_MODE_ACCOLADE_CHARMER:0                      "Cha"
-  YYZ_MODE_ACCOLADE_DISCIPLINARIAN:0               "Dis"
-  YYZ_MODE_ACCOLADE_IDEALIST:0                     "Ide"
-  YYZ_MODE_ACCOLADE_MARAUDER:0                     "Mar"
-  YYZ_MODE_ACCOLADE_SCOUNDREL:0                    "Sco"
-  YYZ_MODE_ACCOLADE_STALWART:0                     "Sta"
-  YYZ_MODE_ACCOLADE_THUG:0                         "Thu"
-  YYZ_MODE_ACCOLADE_VALIANT:0                      "Val"
-  YYZ_MODE_ACCOLADE_FANATIC:0                      "Fan"
-  YYZ_MODE_ACCOLADE_BLADEMASTER:0                  "Bla"
-  YYZ_MODE_ACCOLADE_HUNTMASTER:0                   "Hun"
-  YYZ_MODE_ACCOLADE_MASTER_OF_REVELS:0             "Mas"
-  YYZ_MODE_ACCOLADE_HOUSE_PARAGON:0                "Hou"
 
-  YYZ_MODE_ACCOLADE_RETINUE_TT:0                   "Click here to display the retinue accolades to choose from.\n\nSince retinue accolades are exclusive, selecting one of them will deselect all others."
-  YYZ_MODE_ACCOLADE_ARCHER_TT:0                    "[GetAccoladeType('archer_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_OUTRIDER_TT:0                  "[GetAccoladeType('outrider_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_PIKE_CAPTAIN_TT:0              "[GetAccoladeType('pike_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_SKIRMISHER_TT:0                "[GetAccoladeType('skirmisher_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_VANGUARD_TT:0                  "[GetAccoladeType('vanguard_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_LANCER_TT:0                    "[GetAccoladeType('lancer_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_CAMELIER_TT:0                  "[GetAccoladeType('camelry_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_CROSSBOW_CAPTAIN_TT:0          "[GetAccoladeType('crossbowmen_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_ELEPHANT_RIDER_TT:0            "[GetAccoladeType('elephantry_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_HORSE_ARCHER_TT:0              "[GetAccoladeType('horse_archer_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_BESIEGER_TT:0                  "[GetAccoladeType('besieger_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_CONTENDER_TT:0                 "[GetAccoladeType('contender_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_MANIPULATOR_TT:0               "[GetAccoladeType('manipulator_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_MENTOR_TT:0                    "[GetAccoladeType('mentor_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_POLITICKER_TT:0                "[GetAccoladeType('politicker_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_REEVE_TT:0                     "[GetAccoladeType('reeve_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_TACTICIAN_TT:0                 "[GetAccoladeType('tactician_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_CHARMER_TT:0                   "[GetAccoladeType('charmer_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_DISCIPLINARIAN_TT:0            "[GetAccoladeType('disciplinarian_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_IDEALIST_TT:0                  "[GetAccoladeType('idealist_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_MARAUDER_TT:0                  "[GetAccoladeType('marauder_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_SCOUNDREL_TT:0                 "[GetAccoladeType('scoundrel_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_STALWART_TT:0                  "[GetAccoladeType('stalwart_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_THUG_TT:0                      "[GetAccoladeType('thug_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_VALIANT_TT:0                   "[GetAccoladeType('valiant_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_FANATIC_TT:0                   "[GetAccoladeType('fanatic_attribute').GetName]\n\nNote: This filter does not check for same faith, and assumes that you will demand conversion if necessary."
-  YYZ_MODE_ACCOLADE_BLADEMASTER_TT:0               "[GetAccoladeType('blademaster_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_HUNTMASTER_TT:0                "[GetAccoladeType('huntsmaster_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_MASTER_OF_REVELS_TT:0          "[GetAccoladeType('master_of_revels_attribute').GetName]"
-  YYZ_MODE_ACCOLADE_HOUSE_PARAGON_TT:0             "[GetAccoladeType('house_knight_attribute').GetName]"
    

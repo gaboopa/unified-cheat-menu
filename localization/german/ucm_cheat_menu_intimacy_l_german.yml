@@ -1,6 +1,4 @@
 ﻿l_german:
- ucm_cheat_menu_ai_ai_interaction: "Intimität"
- ucm_cheat_menu_ai_ai_interaction_desc: "Eine private Nacht mit [recipient.GetShortUIName] – Kerzen tief heruntergebrannt, Vorhänge zugezogen. Gib dich ganz hin, oder halte inne, kurz vor dem Punkt, von dem es kein Zurück mehr gibt."
  ucm_cheat_menu.0010.t: "Intimität – Die Nacht erwartet dich"
  ucm_cheat_menu.0010.desc: "Die Dienerschaft ist entlassen, du und [ucm_cheat_menu_target.GetShortUIName] seid allein. Seidene Vorhänge schließen die Welt aus; [ucm_cheat_menu_target.GetHerHis] Atem streift deine Haut, Kerzenlicht flackert in [ucm_cheat_menu_target.GetHerHis] Augen. Krieg und Rat können warten."
  ucm_cheat_menu.0010.desc_lover: "Bei deinem Liebhaber / deiner Liebhaberin [ucm_cheat_menu_target.GetShortUIName] fällt jede Fassade. Jede Berührung trägt noch die Hitze eures letzten Stelldicheins; Weihrauch und Haut verschmelzen, als ob die Nacht selbst euch zusammenhielte."

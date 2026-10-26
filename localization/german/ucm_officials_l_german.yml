@@ -476,7 +476,6 @@
  trait_trait_eternal_nether_lord: "$trait_eternal_nether_lord$"
  trait_trait_eternal_nether_lord_desc: "$trait_eternal_nether_lord_desc$"
  ucm_cheat_menu_sterilized_modifier: "Sterilität"
- ucm_cheat_menu_sterilized_modifier_desc: "Sie sind unfruchtbar. Dieser Effekt stapelt sich mit der Eigenschaft „Unfruchtbar“."
  ucm_cheat_menu.0001.t: "Schwangerschaft verwalten"
  ucm_cheat_menu.0001.female: "Mädchen"
  ucm_cheat_menu.0001.male: "Junge"

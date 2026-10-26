@@ -27,4 +27,3 @@
  ucm_acm_type_chest: "Chest"
  ucm_acm_type_divan: "Divan"
  ucm_acm_type_table: "Table"
- ucm_acm_gui_subtitle: "Choose artifact category, subtype, quality, and modifiers; then Create artifact—it belongs to the right-clicked character."

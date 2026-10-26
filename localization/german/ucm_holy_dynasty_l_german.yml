@@ -19,7 +19,6 @@
 
  dynasty_pope_modifier:0 "Papstdynastie"
  dynasty_grandmaster_modifier:0 "Heilige Ritterdynastie"
- decision_group_type_holy_dynasty_decision_group:0 "Entscheidungen der Heiligen Dynastie"
 
  dynasty_pope_0_decision_tooltip:0 "Auswählen"
  dynasty_grandmaster_0_decision_tooltip:0 "Auswählen"

@@ -1,37 +1,13 @@
 ﻿l_russian:
  # --- Interactions ---
- toc__interaction:1 "Быстрое действие"
 
  # --- Decisions ---
- toc_deceitful_progress_hostile_schemes_decision:0 "Продвижение враждебных происков"
- toc_deceitful_progress_hostile_schemes_decision_confirm:0 "Привести происки в действие."
- toc_deceitful_progress_hostile_schemes_decision_tooltip:0 "Продвинуть все активные враждебные происки."
 
- toc_diligent_development_focus_decision:0 "Сосредоточиться на развитии"
- toc_diligent_development_focus_decision_confirm:0 "Начать работу."
 
- toc_impatient_rushing_all_schemes_decision:0 "Ускорить все происки"
- toc_impatient_rushing_all_schemes_decision_confirm:0 "Продвинуть их прямо сейчас."
 
- tocwinwars_decision:0 "Завершить все войны"
- tocwinwars_decision_desc:0 "Ваши войны длятся слишком долго. Отдайте приказ об их завершении."
- tocwinwars_decision_tooltip:0 "Все текущие войны будут немедленно завершены."
- tocwinwars_decision_confirm:0 "Покончить с этим."
 
- toc_armyslaughter_decision:0 "Разорить провинцию"
- toc_armyslaughter_decision_desc:0 "Эта провинция доставила достаточно проблем. Вы сделаете из нее пример и подавите любое сопротивление ее жителей."
- toc_armyslaughter_decision_tooltip:0 "Ваша армия под вашим командованием должна находиться в целевой провинции."
- toc_armyslaughter_decision_confirm:0 "Отдать приказ."
 
- toc_armybuilders_decision:0 "Расширить владение"
- toc_armybuilders_decision_desc:0 "У этого владения есть нераскрытый потенциал. Заставьте свои войска работать и создайте здесь что-то стоящее."
- toc_armybuilders_decision_tooltip:0 "Ваша армия под вашим командованием должна находиться в целевом владении."
- toc_armybuilders_decision_confirm:0 "Отдать приказ."
 
- toc_build_decision:0 "Развить провинцию"
- toc_build_decision_desc:0 "Этой провинции есть куда расти. При правильных вложениях она может стать процветающим центром вашего государства."
- toc_build_decision_tooltip:0 "Ваша армия под вашим командованием должна находиться в целевом владении."
- toc_build_decision_confirm:0 "Начать строительство."
 
  # --- Messages ---
  msg_armyslaughter_decision:0 "Провинция была разорена."

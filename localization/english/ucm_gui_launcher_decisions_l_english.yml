@@ -19,6 +19,4 @@
  ucm_open_artifact_repair_decision_desc: "Choose and repair an artifact belonging to the selected character."
  ucm_open_console_helper_decision: "Open Console Helper"
  ucm_open_console_helper_decision_desc: "Open the cheat menu's console and debug-mode helper. This utility acts on the player, not the selected character."
- ucm_gui_launcher_decision_tooltip: "Open this  GUI window."
- ucm_gui_launcher_decision_confirm: "Open Window"
  ucm_selected_culture_var: "Select this Culture"

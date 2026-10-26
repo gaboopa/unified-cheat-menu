@@ -9,7 +9,6 @@
  CH_SELECT_HOLDING_TITLE:1 "Besitz auswählen"
  CH_SELECT_HOLDING_NO_TITLES:0 "Keine verfügbaren Besitztümer"
  CH_SELECT_HOLDING_TOOLTIP:0 "#T [Select_CString( DecisionViewWidgetSelectBarony.HasValidTitles, '$CH_SELECT_HOLDING_TITLE$', '$CH_SELECT_HOLDING_NO_TITLES$' )] #!"
- CH_SELECT_HOLDING_CONFIRM:0 "Auswählen"
 
  ch_convert_holding_to_castle_decision:0 "Besitz in Burg umwandeln"
  ch_convert_holding_to_castle_decision_tooltip:0 "Der bestehende Besitz wird durch einen [castle|E] ersetzt."
@@ -51,7 +50,6 @@
 
 ### ZU TEMPELBURG UMWANDELN
  ch_convert_holding_to_temple_citadel_decision:0 "Besitz in Tempelburg umwandeln"
- ch_convert_holding_to_temple_citadel_tooltip:0 "Der bestehende Besitz wird durch eine befestigte [temple|E]-Anlage ersetzt."
  ch_convert_holding_to_temple_citadel_title:0 "Besitz in Tempelburg umwandeln"
  ch_convert_holding_to_temple_citadel_tt:0 "Wandelt den Hauptbesitz einer Baronie um."
  ch_convert_holding_to_temple_citadel_desc:0 "#F Ein großes geistliches Vorhaben ist erforderlich, um den Glauben in dieser Region zu festigen. Dieses Land soll dem Göttlichen geweiht werden – als heiliger und uneinnehmbarer Ort.#!"

@@ -19,7 +19,6 @@
 
  dynasty_pope_modifier:0 "Papal Dynasty"
  dynasty_grandmaster_modifier:0 "Holy Knightly Dynasty"
- decision_group_type_holy_dynasty_decision_group:0 "Sacred Dynasty Decisions"
 
  dynasty_pope_0_decision_tooltip:0 "Select"
  dynasty_grandmaster_0_decision_tooltip:0 "Select"

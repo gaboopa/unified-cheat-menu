@@ -36,8 +36,6 @@
   char_spawner.heir_age_18:0 "Возраст наследника: 18"
   char_spawner.m_vassal:0 "Мужчина-вассал"
   char_spawner.f_vassal:0 "Женщина-вассал"
-  char_spawner.m_dyn_vassal:0 "Мужчина-вассал (родственник по крови)"
-  char_spawner.f_dyn_vassal:0 "Женщина-вассал (родственница по крови)"
   char_spawner.courtiers.m_courtier:0 "Обычный придворный (мужчина)"
   char_spawner.courtiers.f_courtier:0 "Обычная придворная (женщина)"
   char_spawner.courtiers.m_courtier_good:0 "Идеальный придворный (мужчина)"

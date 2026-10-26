@@ -1,6 +1,4 @@
 ﻿l_russian:
- ucm_cheat_menu_ai_ai_interaction: "Близость"
- ucm_cheat_menu_ai_ai_interaction_desc: "Уединённая ночь с [recipient.GetShortUIName]. Тусклые свечи, плотно задёрнутые занавески — предайтесь чувствам полностью или остановитесь, пока не стало слишком поздно."
  ucm_cheat_menu.0010.t: "~ Близость ~ Весенняя ночь"
  ucm_cheat_menu.0010.desc: "Слуги разошлись. Вы и [ucm_cheat_menu_target.GetShortUIName] скрыты от мира за шелковыми занавесками. Дыхание [ucm_cheat_menu_target.GetHerHis] наполняет воздух, а свечи мягко мерцают. Войны и государственные дела могут подождать."
  ucm_cheat_menu.0010.desc_lover: "Рядом с возлюбленным [ucm_cheat_menu_target.GetShortUIName]. Каждое прикосновение хранит тепло прошлых встреч. Аромат благовоний смешивается с запахом кожи, словно сама ночь соединяет вас воедино."

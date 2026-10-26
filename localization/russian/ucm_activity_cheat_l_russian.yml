@@ -1,6 +1,4 @@
 ﻿l_russian:
- ucm_cheat_menu_activity_cheat_menu_interaction: "Деятельность / Образ жизни"
- ucm_cheat_menu_activity_cheat_menu_interaction_desc: "Принудительные праздники, охоты, турниры; пропуск расходов на пир; пропуск или мгновенное завершение этапов деятельности."
  ucm_cheat_menu.3091.t: "Читы для деятельности"
  ucm_cheat_menu.3091.desc: "Контроль деятельности и образа жизни [ucm_cheat_menu_target.GetShortUIName]. При размещении сначала добавляются золото и престиж; стандартные требования (ранг, культура, DLC) всё ещё могут блокировать некоторые типы."
  ucm_cheat_menu.3092.t: "Развлекательная деятельность"
@@ -14,4 +12,3 @@
  ucm_activity_cheat_toast_skip_phase_title: "Фаза деятельности пропущена"
  ucm_activity_cheat_toast_complete_title: "Деятельность завершена"
  ucm_activity_cheat_toast_cancel_title: "Деятельность аннулирована"
- ucm_activity_cheat_toast_Fast_phase_title: ""

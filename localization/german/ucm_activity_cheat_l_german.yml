@@ -1,6 +1,4 @@
 ﻿l_german:
- ucm_cheat_menu_activity_cheat_menu_interaction: "Aktivitäten / Lebensstil"
- ucm_cheat_menu_activity_cheat_menu_interaction_desc: "Feste, Jagden und Turniere ausrichten erzwingen; Kosten für Feste überspringen; Aktivitätsphasen überspringen oder sofort abschließen."
  ucm_cheat_menu.3091.t: "Aktivitäten-Cheats"
  ucm_cheat_menu.3091.desc: "Steuere Lebensstilaktivitäten für [ucm_cheat_menu_target.GetShortUIName] (Feste, Jagden, Turniere etc.). Beim Ausrichten werden zunächst Gold und Prestige hinzugefügt; ursprüngliche Spielvoraussetzungen (Rang, Kultur, DLC) können einige Typen dennoch blockieren."
  ucm_cheat_menu.3092.t: "Unterhaltungsveranstaltungen ausrichten"
@@ -14,4 +12,3 @@
  ucm_activity_cheat_toast_skip_phase_title: "Aktuelle Aktivitätsphase übersprungen"
  ucm_activity_cheat_toast_complete_title: "Aktivität abgeschlossen"
  ucm_activity_cheat_toast_cancel_title: "Aktivität für ungültig erklärt"
- ucm_activity_cheat_toast_Fast_phase_title: ""

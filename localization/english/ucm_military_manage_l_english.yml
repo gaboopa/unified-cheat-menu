@@ -1,12 +1,7 @@
 ﻿l_english:
- ucm_cheat_menu_military_manage_menu_interaction: "Military Management"
- ucm_cheat_menu_military_manage_menu_interaction_desc: "Manage levies, elite Men-at-Arms, expand regiments, reinforce troops, unlimited levies and army god mode"
  ucm_military_raise_levies_army_name: "Cheat Levy Host"
  ucm_military_raise_levies_toast: "Levies Raised"
  ucm_military_raise_levies_toast_desc: "[ucm_military_toast_char.GetShortUIName] has raised levies at maximum military strength."
- ucm_military_add_maa_toast: "Men-at-Arms Added"
- ucm_military_add_maa_toast_desc: "New Men-at-Arms regiments have been added for [ucm_military_toast_char.GetShortUIName]."
- ucm_military_add_maa_all_toast: "All Elite Men-at-Arms Added"
  ucm_military_supply_on_toast: "Infinite Supplies Enabled"
  ucm_military_supply_on_toast_desc: "[ucm_military_toggle_char.GetShortUIName]: endless supplies, near-zero upkeep and attrition."
  ucm_military_supply_off_toast: "Infinite Supplies Disabled"
@@ -17,8 +12,6 @@
  ucm_military_god_on_toast_desc: "[ucm_military_toggle_char.GetShortUIName]: near-zero casualties, maximum march speed."
  ucm_military_god_off_toast: "Army God Mode Disabled"
 
- ucm_military_expand_maa_toast: "Men-at-Arms Expanded"
- ucm_military_expand_maa_toast_desc: "Every regiment belonging to [ucm_military_expand_toast_char.GetShortUIName] has gained +5 stacks and been fully reinforced."
  ucm_military_instant_replenish_modifier: "Endless Supplies (War supplies never deplete, near-zero upkeep)"
  ucm_military_supply_overflow_modifier: "Surplus Supplies"
  ucm_military_levy_overflow_modifier: "Unlimited Levies"
@@ -46,12 +39,6 @@
 
  ucm_military_knight_limit_modifier: "Knight Capacity"
  ucm_military_knight_power_modifier: "Knight Combat Power"
- ucm_military_accolade_glory_modifier: "Increased Accolade Glory"
 
- ucm_cheat_menu.3190.opt_custom_accolade: "@accolade_icon! Custom Accolades"
- ucm_cheat_menu.3190.opt_custom_accolade_tt: "Use the creation tool, manage existing accolades or create virtual accolades (no DLC required)."
  ucm_cheat_menu.3190.t: "Custom Accolades"
  ucm_cheat_menu.3190.desc: "Configure accolades for [ucm_cheat_menu_target.GetShortUIName]."
- ucm_cheat_menu.3190.opt_wizard: "Creation Tool"
- ucm_cheat_menu.3190.opt_manage: "Manage Existing"
- ucm_cheat_menu.3190.opt_virtual: "Virtual Accolade"

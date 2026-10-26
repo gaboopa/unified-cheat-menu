@@ -9,7 +9,6 @@
  CH_SELECT_HOLDING_TITLE:1 "Select Holding"
  CH_SELECT_HOLDING_NO_TITLES:0 "No available Holdings"
  CH_SELECT_HOLDING_TOOLTIP:0 "#T [Select_CString( DecisionViewWidgetSelectBarony.HasValidTitles, '$CH_SELECT_HOLDING_TITLE|q$', '$CH_SELECT_HOLDING_NO_TITLES|q$' )] #!"
- CH_SELECT_HOLDING_CONFIRM:0 "Select"
 
  ch_convert_holding_to_castle_decision:0 "Convert Holding to Castle"
  ch_convert_holding_to_castle_decision_tooltip:0 "The existing holding(s) will be replaced with a [castle|E] holding"
@@ -55,7 +54,6 @@
 
 ### CONVERT TO TEMPLE CITADEL
  ch_convert_holding_to_temple_citadel_decision:0 "Convert Holding to Temple Citadel"
- ch_convert_holding_to_temple_citadel_tooltip:0 "The existing holding(s) will be replaced with a [temple|E] citadel holding"
  ch_convert_holding_to_temple_citadel_title:0 "Convert Holding to Temple Citadel"
  ch_convert_holding_to_temple_citadel_tt:0 "Convert a barony's primary holding." 
  ch_convert_holding_to_temple_citadel_desc:0 "#F A great spiritual undertaking is required to solidify the faith in this region. We must dedicate this land to the divine, building a place that is both sacred and impenetrable.#!"

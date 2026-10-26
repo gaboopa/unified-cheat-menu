@@ -1,9 +1,0 @@
-﻿l_german:
- ucm_treasure_maker.tier_off: "Aus"
- ucm_treasure_maker.tier_1: "Artikel 1"
- ucm_treasure_maker.tier_2: "Artikel 2"
- ucm_treasure_maker.tier_3: "Tier 3 (max."
- ucm_treasure_maker_workshop: "Tresor-Workshop"
- ucm_treasure_maker_workshop_desc: "Öffnen Sie die Schatzwerkstatt: 25 stat tiers, optionale überbetriebene Modifizierungspakete, Form und Qualität, dann ein Artefakt (Royal Court Artifacts)."
- ucm_tm_artifact_name: "Geschmiedetes Wunder"
- ucm_tm_artifact_desc: "Geschmiedet in der Schatzwerkstatt – die mündliche Macht geschoben an die Grenze."

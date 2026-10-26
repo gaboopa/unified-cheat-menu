@@ -49,8 +49,6 @@
   char_spawner.m_vassal:0 "Männlicher Vasall"
   char_spawner.f_vassal:0 "Weiblicher Vasall"
 
-  char_spawner.m_dyn_vassal:0 "Männlicher Vasall (Blutsverwandt)"
-  char_spawner.f_dyn_vassal:0 "Weiblicher Vasall (Blutsverwandt)"
 
   char_spawner.courtiers.m_courtier:0 "Gewöhnlicher männlicher Höfling"
   char_spawner.courtiers.f_courtier:0 "Gewöhnliche weibliche Höflingin"

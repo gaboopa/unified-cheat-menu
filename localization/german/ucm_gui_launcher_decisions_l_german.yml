@@ -19,6 +19,4 @@
  ucm_open_artifact_repair_decision_desc: "Wählt und repariert ein Artefakt des ausgewählten Charakters."
  ucm_open_console_helper_decision: "Konsolenhilfe öffnen"
  ucm_open_console_helper_decision_desc: "Öffnet s Konsolen- und Debugmodus-Hilfe. Dieses Werkzeug betrifft den Spieler, nicht den ausgewählten Charakter."
- ucm_gui_launcher_decision_tooltip: "Dieses Fenster öffnen."
- ucm_gui_launcher_decision_confirm: "Fenster öffnen"
  ucm_selected_culture_var: "Diese Kultur auswählen"

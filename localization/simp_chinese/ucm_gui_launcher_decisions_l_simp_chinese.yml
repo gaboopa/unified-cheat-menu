@@ -19,6 +19,4 @@
  ucm_open_artifact_repair_decision_desc: "选择并修复属于所选角色的宝物。"
  ucm_open_console_helper_decision: "打开控制台助手"
  ucm_open_console_helper_decision_desc: "打开控制台与调试模式助手。此工具作用于玩家，而非所选角色。"
- ucm_gui_launcher_decision_tooltip: "打开此窗口。"
- ucm_gui_launcher_decision_confirm: "打开窗口"
  ucm_selected_culture_var: "选择此文化"

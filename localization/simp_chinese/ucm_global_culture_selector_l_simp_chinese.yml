@@ -2,7 +2,6 @@
  ucm_cheat_menu.1360.t: "选择文化（按区域 → 传承 → 具体文化）"
  ucm_cheat_menu.1360.desc: "先选地理/文明大区，再选传承（heritage），最后选具体文化。也可直接进入全部传承的字母表或平铺全部文化。"
  ucm_gc_back_to_regions: "返回区域分类"
- ucm_gc_macro_browse_all_heritage: "全部传承（字母序，不按区域）"
  ucm_gc_macro_europe: "一、欧洲文化（西欧 / 中欧 / 南欧 / 东欧 / 北欧）"
  ucm_gc_macro_central_asia: "二、中亚 / 突厥 / 蒙古 / 草原"
  ucm_gc_macro_mena: "三、中东 / 北非"

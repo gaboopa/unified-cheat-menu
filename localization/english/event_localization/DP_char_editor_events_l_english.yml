@@ -17,8 +17,6 @@
 
  dp_char_editor_menu.traits.t:1 "Edit Traits"
  dp_char_editor_menu.traits.d:0 "Select the trait category you want to add. If the character already has this trait, clicking again will remove it"
- dp_char_editor.traits.presents.t:1 "Add Trait"
- dp_char_editor.traits.presents.d:0 "These are gifts for the character"
  dp_char_editor.traits.special.t:1 "Special Traits"
  dp_char_editor.traits.special.d:0 "Select the special trait you want to add. If the character already has this trait, clicking again will remove it"
  dp_char_editor.education.t:1 "Education Traits"
@@ -36,7 +34,6 @@
  dp_char_editor.traits.intellect.t:1 "Intellect Traits"
  dp_char_editor.traits.intellect.d:0 "Select the intellect trait you want to add. If the character already has this trait, clicking again will remove it"
  dp_char_editor.traits.physique.t:1 "Physical Traits"
- dp_char_editor.traits.physique.d:0 "Select the physical trait you want to add. If the character already has this trait, clicking again will remove it"
  dp_char_editor.traits.physical.good.t:1 "Positive Physical Traits"
  dp_char_editor.traits.physical.good.d:0 "Select the positive physical trait you want to add. If the character already has this trait, clicking again will remove it"
  dp_char_editor.traits.physical.bad.t:1 "Negative Physical Traits"
@@ -74,8 +71,6 @@
  dp_char_editor.wanderer.t:1 "Edit [legend_i][wanderer_lifestyle|E]"
  dp_char_editor.skills.d:0 "Edit the character's skill points"
 
- dp_char_editor.yes:0 "Yes"
- dp_char_editor.no:0 "No"
 
  dp_char_editor.skill.add10:0 "Add Points: #P 10#!"
  dp_char_editor.skill.add5:0 "Add Points: #P 5#!"
@@ -84,10 +79,6 @@
  dp_char_editor.skill.minus5:0 "Subtract Points: #N -5#!"
  dp_char_editor.skill.minus10:0 "Subtract Points: #N -10#!"
 
- dp_char_editor.traits.education:0 "Education Traits"
- dp_char_editor.traits.personality:0 "Personality Traits"
- dp_char_editor.traits.stress:0 "Select Stress Trait"
- dp_char_editor.traits.physical:0 "Innate Traits"
  dp_char_editor.traits.education.intrigue:0 "[intrigue_i] $intrigue_modifier$"
  dp_char_editor.traits.education.martial:0 "[martial_i] $martial_modifier$"
  dp_char_editor.traits.education.diplomacy:0 "[diplomacy_i] $diplomacy_modifier$"
@@ -128,9 +119,6 @@
  dp_char_editor.presents.ghostly:0 "Albinism + spindle build (to terrify others)"
  dp_char_editor.presents.innovation.t:0 "Cultural Innovations"
  dp_char_editor.presents.innovation.d:0 "Add all cultural innovations for a specific era."
- dp_char_editor_presents_innovation_regional.t:0 "Regional Innovations"
- dp_char_editor.presents.innovation_regional.d:0 "One-click addition of innovations for a specific era, divided into regional and crown innovations."
- dp_char_editor_presents_innovation_regional_TT:0 "Displays a menu where you can select an era to add all cultural and regional innovations."
  tribal_innovation_decision:0 "Cultural Innovation: Tribal Era"
  early_medival_innovation_decision:0 "Cultural Innovation: Early Medieval"
  high_medival_innovation_decision:0 "Cultural Innovation: High Medieval"

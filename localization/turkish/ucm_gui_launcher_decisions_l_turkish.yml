@@ -19,8 +19,6 @@
  ucm_open_artifact_repair_decision_desc: "Seçili karaktere ait bir eseri seç ve onar."
  ucm_open_console_helper_decision: "Konsol Yardımcısını Aç"
  ucm_open_console_helper_decision_desc: "konsol ve hata ayıklama yardımcısını aç. Bu araç seçili karakteri değil oyuncuyu etkiler."
- ucm_gui_launcher_decision_tooltip: "Bu penceresini aç."
- ucm_gui_launcher_decision_confirm: "Pencereyi Aç"
  ucm_selected_culture_var: "Bu Kültürü Seç"
  ucm_acm_culture_picker_title: "Kültür Kataloğu"
  ucm_acm_culture_picker_subtitle: "Tüm kültürleri mirasa göre inceleyin. Listeleri genişletmek için oklara tıklayın."

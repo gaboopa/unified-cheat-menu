@@ -2,7 +2,6 @@
  ucm_cheat_menu.1360.t: "Choose Culture (Region → Heritage → Culture)"
  ucm_cheat_menu.1360.desc: "Select a region, then a heritage group, then a culture. You may also view the full alphabetical heritage list or complete culture index."
  ucm_gc_back_to_regions: "Back to Regions"
- ucm_gc_macro_browse_all_heritage: "All Heritages (A–Z, Non-Regional)"
  ucm_gc_macro_europe: "Europe & Mediterranean"
  ucm_gc_macro_central_asia: "Central Asia / Turkic / Mongolic / Steppe Peoples"
  ucm_gc_macro_mena: "Middle East & North Africa"

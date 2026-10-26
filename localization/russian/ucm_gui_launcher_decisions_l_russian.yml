@@ -19,6 +19,4 @@
  ucm_open_artifact_repair_decision_desc: "Выбрать и отремонтировать артефакт выбранного персонажа."
  ucm_open_console_helper_decision: "Открыть помощник консоли"
  ucm_open_console_helper_decision_desc: "Открыть помощник консоли и режима отладки. Этот инструмент действует на игрока, а не на выбранного персонажа."
- ucm_gui_launcher_decision_tooltip: "Открыть это окно."
- ucm_gui_launcher_decision_confirm: "Открыть окно"
  ucm_selected_culture_var: "Выбрать эту культуру"

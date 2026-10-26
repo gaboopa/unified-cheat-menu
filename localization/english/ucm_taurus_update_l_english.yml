@@ -16,6 +16,3 @@
  vlach_group:0 "Vlach"
  syriac_group:0 "Syriac"
  # Dragon Birth
- dp_char_editor.dragon_birth:0 "Dragon Birth/AGOT"
- dp_char_editor.dragon_birth.t:0 "Dragon Birth Traits"
- dp_char_editor.dragon_birth.d:0 "Select mythical dragon-related physique and birth traits for your character."

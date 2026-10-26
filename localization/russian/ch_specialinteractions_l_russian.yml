@@ -9,7 +9,6 @@
  CH_SELECT_HOLDING_TITLE:1 "Выбор владения"
  CH_SELECT_HOLDING_NO_TITLES:0 "Нет доступных владений"
  CH_SELECT_HOLDING_TOOLTIP:0 "#T [Select_CString( DecisionViewWidgetSelectBarony.HasValidTitles, '$CH_SELECT_HOLDING_TITLE$', '$CH_SELECT_HOLDING_NO_TITLES$' )] #!"
- CH_SELECT_HOLDING_CONFIRM:0 "Выбрать"
 
  ch_convert_holding_to_castle_decision:0 "Преобразовать владение в замок"
  ch_convert_holding_to_castle_decision_tooltip:0 "Существующее владение(я) будет заменено на владение типа [замок|E]"
@@ -55,7 +54,6 @@
 
 ### CONVERT TO TEMPLE CITADEL
  ch_convert_holding_to_temple_citadel_decision:0 "Преобразовать владение в Храмовую цитадель"
- ch_convert_holding_to_temple_citadel_tooltip:0 "Существующее владение(я) будет заменено на [temple|E] цитадель"
  ch_convert_holding_to_temple_citadel_title:0 "Преобразовать владение в Храмовую цитадель"
  ch_convert_holding_to_temple_citadel_tt:0 "Преобразовать основное владение баронства."
  ch_convert_holding_to_temple_citadel_desc:0 "#F Требуется великое духовное начинание, чтобы укрепить веру в этом регионе. Мы должны посвятить эту землю божественному, построив место, которое будет одновременно священным и неприступным.#!"

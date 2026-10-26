@@ -17,8 +17,6 @@
 
  dp_char_editor_menu.traits.t:1 "Eigenschaften bearbeiten"
  dp_char_editor_menu.traits.d:0 "Wähle die Kategorie der Eigenschaft aus, die du hinzufügen möchtest. Besitzt der Charakter diese Eigenschaft bereits, wird sie durch erneutes Anklicken entfernt."
- dp_char_editor.traits.presents.t:1 "Eigenschaft hinzufügen"
- dp_char_editor.traits.presents.d:0 "Diese Eigenschaften dienen als besondere Geschenke für den Charakter."
  dp_char_editor.traits.special.t:1 "Besondere Eigenschaften"
  dp_char_editor.traits.special.d:0 "Wähle eine besondere Eigenschaft aus. Besitzt der Charakter sie bereits, wird sie durch erneutes Anklicken entfernt."
  dp_char_editor.education.t:1 "Bildungseigenschaften"
@@ -36,7 +34,6 @@
  dp_char_editor.traits.intellect.t:1 "Intelligenzeigenschaften"
  dp_char_editor.traits.intellect.d:0 "Wähle eine Intelligenzeigenschaft aus. Besitzt der Charakter sie bereits, wird sie durch erneutes Anklicken entfernt."
  dp_char_editor.traits.physique.t:1 "Körperliche Eigenschaften"
- dp_char_editor.traits.physique.d:0 "Wähle eine körperliche Eigenschaft aus. Besitzt der Charakter sie bereits, wird sie durch erneutes Anklicken entfernt."
  dp_char_editor.traits.physical.good.t:1 "Positive körperliche Eigenschaften"
  dp_char_editor.traits.physical.good.d:0 "Wähle eine positive körperliche Eigenschaft aus. Besitzt der Charakter sie bereits, wird sie durch erneutes Anklicken entfernt."
  dp_char_editor.traits.physical.bad.t:1 "Negative körperliche Eigenschaften"
@@ -74,8 +71,6 @@
  dp_char_editor.wanderer.t:1 "[legend_i][wanderer_lifestyle|E] bearbeiten"
  dp_char_editor.skills.d:0 "Die Fertigkeitspunkte des Charakters bearbeiten."
 
- dp_char_editor.yes:0 "Ja"
- dp_char_editor.no:0 "Nein"
 
  dp_char_editor.skill.add10:0 "Punkte hinzufügen: #P 10#!"
  dp_char_editor.skill.add5:0 "Punkte hinzufügen: #P 5#!"
@@ -84,10 +79,6 @@
  dp_char_editor.skill.minus5:0 "Punkte entfernen: #N -5#!"
  dp_char_editor.skill.minus10:0 "Punkte entfernen: #N -10#!"
 
- dp_char_editor.traits.education:0 "Bildungseigenschaften"
- dp_char_editor.traits.personality:0 "Persönlichkeitseigenschaften"
- dp_char_editor.traits.stress:0 "Stress-Eigenschaft auswählen"
- dp_char_editor.traits.physical:0 "Angeborene Eigenschaften"
  dp_char_editor.traits.education.intrigue:0 "[intrigue_i] $intrigue_modifier$"
  dp_char_editor.traits.education.martial:0 "[martial_i] $martial_modifier$"
  dp_char_editor.traits.education.diplomacy:0 "[diplomacy_i] $diplomacy_modifier$"
@@ -128,9 +119,6 @@
  dp_char_editor.presents.ghostly:0 "Albinismus + hagerer Körperbau (um andere zu erschrecken)"
  dp_char_editor.presents.innovation.t:0 "Kulturinnovationen"
  dp_char_editor.presents.innovation.d:0 "Fügt alle Kulturinnovationen einer bestimmten Epoche hinzu."
- dp_char_editor_presents_innovation_regional.t:0 "Regionale Innovationen"
- dp_char_editor.presents.innovation_regional.d:0 "Fügt mit einem Klick alle Kultur- und Regionalinnovationen einer bestimmten Epoche hinzu."
- dp_char_editor_presents_innovation_regional_TT:0 "Öffnet ein Menü, in dem du eine Epoche auswählen kannst, um alle Kultur- und Regionalinnovationen hinzuzufügen."
 
  tribal_innovation_decision:0 "Kulturinnovation: Stammeszeit"
  early_medival_innovation_decision:0 "Kulturinnovation: Frühes Mittelalter"

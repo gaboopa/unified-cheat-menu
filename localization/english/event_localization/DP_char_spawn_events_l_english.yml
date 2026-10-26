@@ -36,8 +36,6 @@
   char_spawner.heir_age_18:0 "Heir Age: 18"
   char_spawner.m_vassal:0 "Male Vassal"
   char_spawner.f_vassal:0 "Female Vassal"
-  char_spawner.m_dyn_vassal:0 "Male Vassal (Blood Relative)"
-  char_spawner.f_dyn_vassal:0 "Female Vassal (Blood Relative)"
   char_spawner.courtiers.m_courtier:0 "Regular Male Courtier"
   char_spawner.courtiers.f_courtier:0 "Regular Female Courtier"
   char_spawner.courtiers.m_courtier_good:0 "Perfect Male Courtier"

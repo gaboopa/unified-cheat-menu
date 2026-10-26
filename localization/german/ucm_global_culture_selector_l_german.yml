@@ -2,7 +2,6 @@
  ucm_cheat_menu.1360.t: "Kultur auswählen (Region → Kulturerbe → Kultur)"
  ucm_cheat_menu.1360.desc: "Wähle zunächst eine Großregion, dann ein Kulturerbe und abschließend eine Kultur. Du kannst zudem die alphabetische Gesamtliste aller Kulturerben oder die vollständige Kulturübersicht öffnen."
  ucm_gc_back_to_regions: "Zurück zu den Regionen"
- ucm_gc_macro_browse_all_heritage: "Alle Kulturerben (A–Z, ohne Regionenaufteilung)"
  ucm_gc_macro_europe: "Europa und Mittelmeerraum"
  ucm_gc_macro_central_asia: "Zentralasien / Turkvölker / Mongolen / Steppenvölker"
  ucm_gc_macro_mena: "Naher Osten und Nordafrika"

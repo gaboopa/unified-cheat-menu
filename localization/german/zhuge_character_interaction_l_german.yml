@@ -78,13 +78,6 @@
 
  zhuge_set_authority_inter:0 "Autoritätsstufe festlegen"
  zhuge_set_authority_inter_desc:0 "Bestimme die Macht der Krone – von kaum wahrnehmbar bis hin zum unumstößlichen Willen des Herrschers."
- zhuge_set_authority_title:0 "Autoritätsstufe festlegen"
- zhuge_set_authority_desc:0 "Wähle die gewünschte Autoritätsstufe:"
- zhuge_set_authority_0:0 "Autonome Vasallen"
- zhuge_set_authority_1:0 "Begrenzte Autorität"
- zhuge_set_authority_2:0 "Hohe Autorität"
- zhuge_set_authority_3:0 "Absolute Autorität"
- zhuge_set_authority_cancel:0 "Abbrechen"
 
  zhuge_set_artifact_interaction:0 "Glänzendes Artefakt beschwören"
  zhuge_set_artifact_interaction_desc:0 "Siehe da! Ein Relikt erscheint. Hinterfrage dein Glück besser nicht."
@@ -97,10 +90,7 @@
 
  zhuge_jiequ_artifact_player:0 "Schöner Schatz. Den nehme ich."
 
- zhuge_liuguan_interaction:0 "Befrieden und eingliedern"
- zhuge_liuguan_interaction_desc:0 "„Du bist ein treuer Untertan“, verkündet die Krone. Nun werde Teil meines Reiches."
 
- zhuge_select_succeed:0 "Das Geschlecht des Kindes ist durch Schicksal und Erlass besiegelt!"
 
  zhuge_great_steppe:0 " #bold Steppensaison ändern#!"
  zhuge_great_steppe_desc:0 "Bestimme die Jahreszeit der Steppe – Schnee, Frühling oder Sommer."

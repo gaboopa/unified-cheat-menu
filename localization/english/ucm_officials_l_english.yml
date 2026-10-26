@@ -562,7 +562,6 @@
  trait_trait_eternal_nether_lord_desc: "$trait_eternal_nether_lord_desc$"
 
  ucm_cheat_menu_sterilized_modifier: "Sterilized"
- ucm_cheat_menu_sterilized_modifier_desc: "Fertility is fully suppressed. Stacks with the Infertile trait."
 
  ucm_cheat_menu.0001.t: "Pregnancy Controls"
  ucm_cheat_menu.0001.female: "Girl"

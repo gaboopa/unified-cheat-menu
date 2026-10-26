@@ -78,13 +78,6 @@
  
  zhuge_set_authority_inter:0 "Set Authority Level"
  zhuge_set_authority_inter_desc:0 "Fix the crown’s might in iron measure, be it weak as whispers or high as heaven’s decree."
- zhuge_set_authority_title:0 "Set Authority Level"
- zhuge_set_authority_desc:0 "Choose the desired authority level:"
- zhuge_set_authority_0:0 "Autonomous Vassals"
- zhuge_set_authority_1:0 "Limited Authority"
- zhuge_set_authority_2:0 "High Authority"
- zhuge_set_authority_3:0 "Absolute Authority"
- zhuge_set_authority_cancel:0 "Cancel"
  
  zhuge_set_artifact_interaction:0 "Summon a Shiny Thing"
  zhuge_set_artifact_interaction_desc:0 "Lo and behold! A relic appears,dare not question fortune."
@@ -97,10 +90,7 @@
  
  zhuge_jiequ_artifact_player:0 "Nice Treasure. I’ll Take It."
  
- zhuge_liuguan_interaction:0 "Pacify and Integrate"
- zhuge_liuguan_interaction_desc:0 "‘Thou art a good subject,’ proclaims the crown. Now go be swallowed whole by my realm."
  
- zhuge_select_succeed:0 "The child’s gender is sealed by fate and decree!"
  
  zhuge_great_steppe:0 "Change #bold Steppe Season#!"
  zhuge_great_steppe_desc:0 "Command the seasons across the steppe—snow, spring, or summer."

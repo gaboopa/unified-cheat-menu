@@ -1,38 +1,14 @@
 ﻿l_german:
 
  # --- Interaktionen ---
- toc__interaction:1 "Schnellaktion"
 
  # --- Entscheidungen ---
- toc_deceitful_progress_hostile_schemes_decision:0 "Feindselige Pläne vorantreiben"
- toc_deceitful_progress_hostile_schemes_decision_confirm:0 "Setzt die Pläne in Gang."
- toc_deceitful_progress_hostile_schemes_decision_tooltip:0 "Lässt alle aktiven feindseligen Pläne voranschreiten."
 
- toc_diligent_development_focus_decision:0 "Entwicklung fördern"
- toc_diligent_development_focus_decision_confirm:0 "Die Arbeiten beginnen."
 
- toc_impatient_rushing_all_schemes_decision:0 "Alle Pläne beschleunigen"
- toc_impatient_rushing_all_schemes_decision_confirm:0 "Treibt sie unverzüglich voran."
 
- tocwinwars_decision:0 "Alle Kriege beenden"
- tocwinwars_decision_desc:0 "Diese Kriege haben lange genug gedauert. Es ist Zeit, ihrem Ende zu befehlen."
- tocwinwars_decision_tooltip:0 "Alle laufenden Kriege werden sofort beendet."
- tocwinwars_decision_confirm:0 "Beendet sie."
 
- toc_armyslaughter_decision:0 "Provinz verwüsten"
- toc_armyslaughter_decision_desc:0 "Diese Provinz hat genug Schwierigkeiten bereitet. Sie soll als abschreckendes Beispiel dienen und jeder Widerstand gebrochen werden."
- toc_armyslaughter_decision_tooltip:0 "Eure befehligte Armee muss sich in der Zielprovinz befinden."
- toc_armyslaughter_decision_confirm:0 "Gebt den Befehl."
 
- toc_armybuilders_decision:0 "Besitzung ausbauen"
- toc_armybuilders_decision_desc:0 "Diese Besitzung birgt großes Potenzial. Setzt Eure Truppen ein, um sie auszubauen."
- toc_armybuilders_decision_tooltip:0 "Eure befehligte Armee muss sich in der Zielbesitzung befinden."
- toc_armybuilders_decision_confirm:0 "Gebt den Befehl."
 
- toc_build_decision:0 "Provinz entwickeln"
- toc_build_decision_desc:0 "Diese Provinz besitzt reichlich Entwicklungspotenzial. Mit den richtigen Investitionen kann sie zu einem blühenden Zentrum Eures Reiches werden."
- toc_build_decision_tooltip:0 "Eure befehligte Armee muss sich in der Zielbesitzung befinden."
- toc_build_decision_confirm:0 "Mit dem Bau beginnen."
 
  # --- Meldungen ---
  msg_armyslaughter_decision:0 "Die Provinz wurde verwüstet."

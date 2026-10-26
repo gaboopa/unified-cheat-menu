@@ -25,9 +25,7 @@
 
  ucm_court_positions.8001.opt_mass_target_tt: "@skill_learning_icon! Perform the same action on the selected ruler's court."
 
- ucm_court_positions.8001.opt_revoke_all: "@skill_learning_icon! Dismiss All Court Holders"
 
- ucm_court_positions.8001.opt_revoke_all_tt: "@skill_learning_icon! Remove all holders from every court office within [ucm_pos_reshuffle_liege.GetShortUINamePossessive] court with no reappointments. Council seats are preserved, and multi-slot offices will be fully cleared."
 
 
 
@@ -143,9 +141,7 @@
 
  ucm_cheat_menu.0101.close: "@cross_icon! Close"
 
- ucm_cheat_menu.0102.back_to_categories: "@skill_learning_icon! Back to Categories"
 
- ucm_cheat_menu.0102.back_to_search: "@skill_learning_icon! Back to Keywords"
 
  ucm_cheat_menu.0110.page_next: "@skill_learning_icon! Next Page"
 
@@ -180,7 +176,6 @@
 
  ucm_cheat_menu.0288.back_main: "@skill_martial_icon! Back to Main Categories"
 
- ucm_cheat_menu.1420.back_groups: "@skill_learning_icon! Back to Heritage List"
 
  ucm_cheat_menu.2900.back_select: "@skill_learning_icon! Re-select Culture"
 
@@ -188,13 +183,9 @@
 
  ucm_cheat_menu.3080.close: "@cross_icon! Close Menu"
 
- ucm_cheat_menu.3080.opt_elite_maa: "@soldier_icon! Add Elite Men-at-Arms"
 
- ucm_cheat_menu.3080.opt_elite_maa_tt: "@soldier_icon! Add top-tier Men-at-Arms: Heavy Infantry, Heavy Cavalry, Horse Archers, War Elephants and Crossbowmen."
 
- ucm_cheat_menu.3080.opt_expand_maa: "@soldier_icon! @army_quality_icon_4! Expand Armies"
 
- ucm_cheat_menu.3080.opt_expand_maa_tt: "@soldier_icon! All existing Men-at-Arms regiments of [ucm_cheat_menu_target.GetShortUIName] gain +5 units and are fully replenished. Reusable."
 
  ucm_cheat_menu.3080.opt_god_mode: "@advantage_icon! Army God Mode"
 
@@ -204,9 +195,7 @@
 
  ucm_cheat_menu.3080.opt_instant_replenish_tt: "@supply_icon! Does not alter troop numbers. Massive supply capacity with minimal depletion. While at war, all armies are fully replenished every 7 days and each month. Near-zero upkeep and attrition. Click again to disable."
 
- ucm_cheat_menu.3080.opt_knights_accolades: "@soldier_icon! Knights & Accolades"
 
- ucm_cheat_menu.3080.opt_knights_accolades_tt: "@soldier_icon! Manage knights and accolades for [ucm_cheat_menu_target.GetShortUIName]. Includes vanilla Accolade creation interface."
 
  ucm_cheat_menu.3080.opt_levy_multiplier: "@gold_icon! Unlimited Levies & Free Maintenance"
 
@@ -228,79 +217,42 @@
 
  ucm_cheat_menu.3080.opt_submenu_levies_maa_tt: "@skill_learning_icon! Raise all levies, add elite units and expand existing regiments."
 
- ucm_cheat_menu.3081.back_elite: "@skill_martial_icon! Back to Elite Units"
 
- ucm_cheat_menu.3081.opt_all: "@command_modifier_icon! @army_quality_icon_5! Add All Five Types"
 
- ucm_cheat_menu.3081.opt_all_tt: "@command_modifier_icon! Spawn all five elite Men-at-Arms at once."
 
- ucm_cheat_menu.3081.opt_crossbowmen: "@heavy_infantry_icon! Crossbowmen"
 
- ucm_cheat_menu.3081.opt_crossbowmen_tt: "@heavy_infantry_icon! Add Crossbowmen units."
 
- ucm_cheat_menu.3081.opt_heavy_cavalry: "@heavy_infantry_icon! Heavy Cavalry"
 
- ucm_cheat_menu.3081.opt_heavy_cavalry_tt: "@heavy_infantry_icon! Add armored mounted troops."
 
- ucm_cheat_menu.3081.opt_heavy_infantry: "@heavy_infantry_icon! Heavy Infantry"
 
- ucm_cheat_menu.3081.opt_heavy_infantry_tt: "@heavy_infantry_icon! Add armored foot soldiers."
 
- ucm_cheat_menu.3081.opt_horse_archers: "@heavy_infantry_icon! Horse Archers"
 
- ucm_cheat_menu.3081.opt_horse_archers_tt: "@heavy_infantry_icon! Add mounted archers."
 
- ucm_cheat_menu.3081.opt_more_maa: "@skill_learning_icon! More Unit Types…"
 
- ucm_cheat_menu.3081.opt_more_maa_tt: "@skill_learning_icon! Spawn War Elephants, Crossbowmen or all elite units in one click."
 
- ucm_cheat_menu.3081.opt_war_elephants: "@heavy_infantry_icon! War Elephants"
 
- ucm_cheat_menu.3081.opt_war_elephants_tt: "@heavy_infantry_icon! Add War Elephant units."
 
- ucm_cheat_menu.3083.back_hub: "@skill_martial_icon! Back to Knights & Accolades"
 
- ucm_cheat_menu.3083.opt_create_accolade: "@knight_icon! Create Accolade"
 
- ucm_cheat_menu.3083.opt_create_accolade_tt: "@knight_icon! Open the vanilla Accolade creation window for [ucm_cheat_menu_target.GetShortUIName]. Select a slot, knight and type. Requires Tours & Tournaments DLC."
 
- ucm_cheat_menu.3083.opt_fill_knights: "@soldier_icon! Fill Knight Roster"
 
- ucm_cheat_menu.3083.opt_fill_knights_tt: "@soldier_icon! Grant knight status to eligible courtiers and guests with at least 8 Prowess until the roster is full."
 
- ucm_cheat_menu.3083.opt_glory_boost: "@knight_icon! Glory Gain Boost (Toggle)"
 
- ucm_cheat_menu.3083.opt_glory_boost_tt: "@knight_icon! Accelerate glory gain and attribute progression for accolades. Click again to disable."
 
- ucm_cheat_menu.3083.opt_knight_limit: "@soldier_icon! +10 Knight Capacity (Toggle)"
 
- ucm_cheat_menu.3083.opt_knight_limit_tt: "@soldier_icon! Stackable increase to maximum knight limit. Click again to disable."
 
- ucm_cheat_menu.3083.opt_knight_power: "@soldier_icon! Knight Combat Boost (Toggle)"
 
- ucm_cheat_menu.3083.opt_knight_power_tt: "@soldier_icon! Improve combat effectiveness of all knights. Click again to disable."
 
- ucm_cheat_menu.3083.opt_knight_prowess: "@soldier_icon! All Knights +3 Prowess"
 
- ucm_cheat_menu.3083.opt_knight_prowess_tt: "@soldier_icon! Grant +3 Prowess to every active knight."
 
- ucm_cheat_menu.3083.opt_max_glory: "@knight_icon! Max Out All Accolade Glory"
 
- ucm_cheat_menu.3083.opt_max_glory_tt: "@knight_icon! Fully fill the glory meter for all accolades. Can be used repeatedly."
 
- ucm_cheat_menu.3083.opt_submenu_accolades: "@skill_learning_icon! Accolades"
 
- ucm_cheat_menu.3083.opt_submenu_accolades_tt: "@skill_learning_icon! Create accolades, raise glory and unlock knight innovations."
 
- ucm_cheat_menu.3083.opt_submenu_knights: "@skill_learning_icon! Knight Roster"
 
- ucm_cheat_menu.3083.opt_submenu_knights_tt: "@skill_learning_icon! Fill roster, expand limit and boost knight combat stats."
 
- ucm_cheat_menu.3083.opt_unlock_innovation: "@piety_icon! Unlock Knighthood Innovation"
 
- ucm_cheat_menu.3083.opt_unlock_innovation_tt: "@piety_icon! Unlock the Knighthood innovation for the target culture to gain an extra accolade slot, if missing."
 
- ucm_cheat_menu.3085.back_levies: "@skill_martial_icon! Back to Levies & Men-at-Arms"
 
  ucm_cheat_menu.3088.opt_beauty: "@dynasty_icon! Beauties & Handsome Characters"
 
@@ -404,14 +356,11 @@
 
  ucm_cheat_menu.3097.opt_witch_ritual: "@skill_learning_icon! Witch Ritual"
 
- ucm_cheat_menu.craft_mod_next_page: "@skill_learning_icon! Next Page"
 
- ucm_cheat_menu.craft_mod_prev_page: "@skill_martial_icon! Previous Page"
 
  ucm_cheat_menu.page_next: "@skill_learning_icon! Next"
 
  ucm_cheat_menu.page_prev: "@skill_martial_icon! Previous"
 
 
- ucm_treasure_maker.back_hub: "Back to Hub"
 

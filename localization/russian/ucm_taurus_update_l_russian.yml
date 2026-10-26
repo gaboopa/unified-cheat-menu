@@ -17,6 +17,3 @@
  vlach_group:0 "Влахская"
  syriac_group:0 "Сирийская"
  # Драконье рождение
- dp_char_editor.dragon_birth:0 "Драконье рождение"
- dp_char_editor.dragon_birth.t:0 "Черты драконьего рождения"
- dp_char_editor.dragon_birth.d:0 "Выберите мифические черты телосложения и рождения, связанные с драконами, для вашего персонажа."

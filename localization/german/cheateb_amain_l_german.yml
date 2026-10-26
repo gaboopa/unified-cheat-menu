@@ -1,7 +1,6 @@
 ﻿l_german:
 # \character_interaction_categories
  cheateb_interaction_menu:0 "Hauptmenü"
- cheateb_interaction_menu_relation:0 "Beziehungsoptionen"
 
 # \character_interactions
 ## 0
@@ -19,9 +18,6 @@
  cheateb_changename_interaction:0 "@skill_diplomacy_icon! #P Charaktername ändern#!"
  cheateb_dressed_interaction:0 "Kleidung umschalten"
  cheateb_claim_interaction:0 "@pressed_claim! #P Anspruch gewähren#!"
- cheateb_take_alltitle_interaction:0 "@prestige_icon! #N Alle Titel übernehmen#!"
- cheateb_take_title_interaction:0 "@prestige_icon! #N Titel übernehmen#!"
- cheateb_take_title_stand_interaction:0 "@prestige_icon! #N Titel übernehmen#! (Standort des Ziels)"
  cheateb_religion_interaction:0 "@piety_icon! #P Religion ändern#!"
  cheateb_culture_interaction:0 "@skill_learning_icon! #P Kultur ändern#!"
  cheateb_kill_interaction:0 "@scheme_icon! #N Charakter töten#!"
@@ -37,14 +33,9 @@
  cheateb_befriend_interaction:0 "@alliance_icon! #P Anfreunden#!"
 
 # \regiment_types (Militär)
- privateguard:0 "Persönliche Leibgarde"
- privateguard_flavor:0 "Brauchen wir mit solchen Leibwächtern überhaupt noch andere Truppen?"
 
  innovation_privateguard:0 "Innovation: Leibgarde"
 
- cheateb_legacy_track_name:0 "EB-Vermächtnis"
- cheateb_legacy_track_desc:0 "EasyBuff-Vermächtnis"
- cheateb_legacy_1_name:0 "Zugang zur Leibgarde"
 
 # \modifiers (Charakter-/Grafschaftsmodifikatoren)
 
@@ -58,7 +49,6 @@
  cheateb_defence_modifier:0 "Uneinnehmbare Verteidigung"
 
 # \religion (Effekte Heiliger Stätten)
- holy_site_ganzhou_effect_name:0 "Bonus auf Kriegsführungsausbildung"
  holy_site_ganzhou_name:0 "Ganzhou"
 
  HEALTH_POINTS_HINT:0 "\nGesundheit: [CHARACTER.GetHealth|1V]\nFruchtbarkeit: [CHARACTER.GetFertility|%0V]\nStress: [CHARACTER.GetStress|0V]"

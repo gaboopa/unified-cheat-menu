@@ -79,13 +79,6 @@ zhuge_remove_truce_effect:0 "Твоё [truce|E] окончено — вот и �
 
 zhuge_set_authority_inter:0 "Установить уровень авторитета"
 zhuge_set_authority_inter_desc:0 "Закрепи мощь короны железной мерой — будь то слабой, как шёпот, или высокой, как небесный указ."
-zhuge_set_authority_title:0 "Установить уровень авторитета"
-zhuge_set_authority_desc:0 "Выберите желаемый уровень авторитета:"
-zhuge_set_authority_0:0 "Автономные вассалы"
-zhuge_set_authority_1:0 "Ограниченный авторитет"
-zhuge_set_authority_2:0 "Высокий авторитет"
-zhuge_set_authority_3:0 "Абсолютный авторитет"
-zhuge_set_authority_cancel:0 "Отмена"
 
 zhuge_set_artifact_interaction:0 "Призвать блестяшку"
 zhuge_set_artifact_interaction_desc:0 "И вот он — артефакт, будто Один обронил его, шатаясь из медового зала. Не смей сомневаться в удаче."
@@ -98,10 +91,7 @@ zhuge_huoqu_artifact_interaction_desc:0 "Это сокровище слишко�
 
 zhuge_jiequ_artifact_player:0 "Прекрасная вещица. Заберу себе."
 
-zhuge_liuguan_interaction:0 "Усмирить и интегрировать"
-zhuge_liuguan_interaction_desc:0 "«Ты — верный подданный», гласит корона. А теперь — будь поглощён моим царством."
 
-zhuge_select_succeed:0 "Пол ребёнка предначертан судьбой и указом!"
 
 zhuge_great_steppe:0 "Изменить #bold сезон степи#!"
 zhuge_great_steppe_desc:0 "Повелеть сменой времён года в степи — снег, весна или лето — хоть такая возня нередко вызывает у Одина чих."

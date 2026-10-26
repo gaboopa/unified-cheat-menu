@@ -1,7 +1,6 @@
 ﻿l_russian:
 # \character_interaction_categories
  cheateb_interaction_menu:0 "Главное меню"
- cheateb_interaction_menu_relation:0 ": Опции отношений"
 
 # \character_interactions
 ## 0
@@ -19,9 +18,6 @@
  cheateb_changename_interaction:0 "@skill_diplomacy_icon! #P Изменить#! Имя Персонажа"
  cheateb_dressed_interaction:0 "Сменить Одежду"
  cheateb_claim_interaction:0 "@pressed_claim! #P Заявить#! Права на Титул"
- cheateb_take_alltitle_interaction:0 "@prestige_icon! #N Захватить#! Все Титулы"
- cheateb_take_title_interaction:0 "@prestige_icon! #N Захватить#! Титул"
- cheateb_take_title_stand_interaction:0 "@prestige_icon! #N Захватить#! Титул (Местоположение Цели)"
  cheateb_religion_interaction:0 "@piety_icon! #P Сменить#! Религию"
  cheateb_culture_interaction:0 "@skill_learning_icon! #P Сменить#! Культуру"
  cheateb_kill_interaction:0 "@scheme_icon! #N Убить#! Персонажа"
@@ -37,14 +33,9 @@
  cheateb_befriend_interaction:0 "@alliance_icon! #P Подружиться#!"
 
 # \regiment_types (Military)
- privateguard:0 "Личные Телохранители"
- privateguard_flavor:0 "Нужны ли нам другие войска с такими телохранителями?"
 
  innovation_privateguard:0 "Инновация: Телохранители"
 
- cheateb_legacy_track_name:0 "Наследие EB"
- cheateb_legacy_track_desc:0 "Наследие EasyBuff"
- cheateb_legacy_1_name:0 "Доступ к Телохранителям"
 
 # \modifiers (Character/County Effects)
 
@@ -58,7 +49,6 @@
  cheateb_defence_modifier:0 "Непробиваемая Защита"
 
 # \religion (Holy Site Effects)
- holy_site_ganzhou_effect_name:0 "Бонус Военной Подготовки"
  holy_site_ganzhou_name:0 "Ганьчжоу"
 
  HEALTH_POINTS_HINT:0 "\nЗдоровье: [CHARACTER.GetHealth|1V]\nФертильность: [CHARACTER.GetFertility|%0V]\nСтресс: [CHARACTER.GetStress|0V]"

@@ -11,5 +11,3 @@
   dp_information.locations.d:0 "Если что-то сломалось, запишите, что вы нажали, что произошло и чего вы ожидали, и сохраните нужные строки из Documents/Paradox Interactive/Crusader Kings III/logs/error.log."
   
   use_new_system:0 "Новая система"
-  use_new_system_desc:0 "Старая система была заменена на новую. Хотите попробовать её?"
-  use_new_system_tooltip:0 "Нажатие на это вызовет событие."

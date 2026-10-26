@@ -1,9 +1,0 @@
-﻿l_simp_chinese:
- ucm_treasure_maker.tier_off: "关闭加成"
- ucm_treasure_maker.tier_1: "一档"
- ucm_treasure_maker.tier_2: "二档"
- ucm_treasure_maker.tier_3: "三档（最高）"
- ucm_treasure_maker_workshop: "宝物工坊"
- ucm_treasure_maker_workshop_desc: "打开宝物工坊：25 项预置档位属性、逆天 modifier 包、外形与品质，一键生成宝物（需御驾亲征/朝廷 DLC 宝物机制）。"
- ucm_tm_artifact_name: "造化奇珍"
- ucm_tm_artifact_desc: "由宝物工坊锻铸，凝聚凡俗与逆天之力。"

@@ -11,5 +11,3 @@
   dp_information.locations.d:0 "When something breaks, note what you clicked, what happened and what you expected, and keep the relevant lines from Documents/Paradox Interactive/Crusader Kings III/logs/error.log."
   
   use_new_system:0 "New System"
-  use_new_system_desc:0 "The old system has been replaced by the new one. Would you like to try it?"
-  use_new_system_tooltip:0 "Clicking this will trigger an event."

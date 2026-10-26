@@ -1,8 +1,6 @@
 ﻿l_english:
 
- ucm_cheat_menu_activity_cheat_menu_interaction: "Activities / Lifestyle"
 
- ucm_cheat_menu_activity_cheat_menu_interaction_desc: "Force host feasts, hunts, tournaments; skip feast costs; skip or instantly finish activity phases."
 
  ucm_cheat_menu.3091.t: "Activity Cheats"
 
@@ -69,5 +67,4 @@
 
  ucm_activity_cheat_toast_cancel_title: "Activity invalidated"
 
- ucm_activity_cheat_toast_Fast_phase_title: ""
 

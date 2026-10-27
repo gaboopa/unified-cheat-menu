@@ -1,33 +1,4 @@
-﻿ucm_companion_hub_culture_btn = {
-
-  type = character
-
-  text = {
-
-    trigger = {
-
-      has_variable = ucm_companion_stored_culture
-
-    }
-
-    localization_key = ucm_cheat_menu.0180.culture_btn_fmt
-
-  }
-
-  text = {
-
-    trigger = {
-
-      NOT = { has_variable = ucm_companion_stored_culture }
-
-    }
-
-    localization_key = ucm_cheat_menu.0180.culture_btn_placeholder
-
-  }
-
-}
-
+﻿
 # 生成帅哥美女首项：未选变量时显示「选择文化」；有变量时显示「选择文化（当前文化名）」
 ucm_companion_hub_culture_option_line = {
 

@@ -4,7 +4,7 @@
 window = {
   name = "ucm_main_menu_window"
   parentanchor = center
-  size = { 780 680 }
+  size = { 1060 680 }
   layer = top
   movable = yes
   alwaystransparent = no
@@ -121,7 +121,7 @@ window = {
 
       # Category contents
       scrollbox = {
-        size = { 500 540 }
+        size = { 760 540 }
         visible = "[Or( GetVariableSystem.HasValue( 'ucm_tab', 'quick' ), Not( GetVariableSystem.Exists( 'ucm_tab' ) ) )]"
         blockoverride "scrollbox_content" {
           vbox = {
@@ -131,7 +131,7 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_quick_gold"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_quick_gold" using = Font_Size_Small }
               tooltip = "ucm_quick_gold_tt"
               enabled = "[GetScriptedGui( 'ucm_quick_gold' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_quick_gold' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -139,7 +139,7 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_quick_prestige"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_quick_prestige" using = Font_Size_Small }
               tooltip = "ucm_quick_prestige_tt"
               enabled = "[GetScriptedGui( 'ucm_quick_prestige' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_quick_prestige' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -147,7 +147,7 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_quick_piety"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_quick_piety" using = Font_Size_Small }
               tooltip = "ucm_quick_piety_tt"
               enabled = "[GetScriptedGui( 'ucm_quick_piety' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_quick_piety' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -155,13 +155,13 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_clear_stress"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_clear_stress" using = Font_Size_Small }
               tooltip = "ucm_clear_stress_tt"
               enabled = "[GetScriptedGui( 'ucm_clear_stress' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_clear_stress' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
             }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_ALWAYS_ON" using = Font_Size_Medium default_format = "#high" }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_ALWAYS_ON_NOTE" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_ALWAYS_ON_NOTE" default_format = "#low" }
             hbox = {
               spacing = 2
               text_single = { text = "UCM_CROZIER_CHEATS_POW_LABEL" using = Font_Size_Small }
@@ -260,7 +260,7 @@ window = {
         }
       }
       scrollbox = {
-        size = { 500 540 }
+        size = { 760 540 }
         visible = "[GetVariableSystem.HasValue( 'ucm_tab', 'character' )]"
         blockoverride "scrollbox_content" {
           vbox = {
@@ -271,7 +271,7 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_open_trait_editor"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_open_trait_editor" using = Font_Size_Small }
               tooltip = "ucm_open_trait_editor_tt"
               enabled = "[GetScriptedGui( 'ucm_open_trait_editor' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_open_trait_editor' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -279,7 +279,7 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_open_cheat_trait_editor"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_open_cheat_trait_editor" using = Font_Size_Small }
               tooltip = "ucm_open_cheat_trait_editor_tt"
               enabled = "[GetScriptedGui( 'ucm_open_cheat_trait_editor' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_open_cheat_trait_editor' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -287,7 +287,7 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_open_lifestyle_editor"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_open_lifestyle_editor" using = Font_Size_Small }
               tooltip = "ucm_open_lifestyle_editor_tt"
               enabled = "[GetScriptedGui( 'ucm_open_lifestyle_editor' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_open_lifestyle_editor' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -317,7 +317,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_sexuality_heterosexual"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_sexuality_heterosexual" using = Font_Size_Small }
                 tooltip = "ucm_sexuality_heterosexual_tt"
                 enabled = "[GetScriptedGui( 'ucm_sexuality_heterosexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_sexuality_heterosexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -325,7 +325,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_sexuality_homosexual"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_sexuality_homosexual" using = Font_Size_Small }
                 tooltip = "ucm_sexuality_homosexual_tt"
                 enabled = "[GetScriptedGui( 'ucm_sexuality_homosexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_sexuality_homosexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -333,7 +333,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_sexuality_bisexual"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_sexuality_bisexual" using = Font_Size_Small }
                 tooltip = "ucm_sexuality_bisexual_tt"
                 enabled = "[GetScriptedGui( 'ucm_sexuality_bisexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_sexuality_bisexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -341,7 +341,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_sexuality_asexual"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_sexuality_asexual" using = Font_Size_Small }
                 tooltip = "ucm_sexuality_asexual_tt"
                 enabled = "[GetScriptedGui( 'ucm_sexuality_asexual' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_sexuality_asexual' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -372,35 +372,35 @@ window = {
               text_single = { text = "UCM_STEP_LABEL" }
               button_standard = {
                 size = { 56 30 }
-                text = "ucm_step_1"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_step_1" using = Font_Size_Small }
                 tooltip = "ucm_step_1_tt"
                 enabled = "[GetScriptedGui( 'ucm_step_1' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_step_1' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
               button_standard = {
                 size = { 56 30 }
-                text = "ucm_step_5"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_step_5" using = Font_Size_Small }
                 tooltip = "ucm_step_5_tt"
                 enabled = "[GetScriptedGui( 'ucm_step_5' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_step_5' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
               button_standard = {
                 size = { 56 30 }
-                text = "ucm_step_10"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_step_10" using = Font_Size_Small }
                 tooltip = "ucm_step_10_tt"
                 enabled = "[GetScriptedGui( 'ucm_step_10' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_step_10' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
               button_standard = {
                 size = { 56 30 }
-                text = "ucm_step_25"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_step_25" using = Font_Size_Small }
                 tooltip = "ucm_step_25_tt"
                 enabled = "[GetScriptedGui( 'ucm_step_25' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_step_25' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
               button_standard = {
                 size = { 56 30 }
-                text = "ucm_step_100"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_step_100" using = Font_Size_Small }
                 tooltip = "ucm_step_100_tt"
                 enabled = "[GetScriptedGui( 'ucm_step_100' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_step_100' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -414,14 +414,14 @@ window = {
               text_single = { size = { 50 30 } raw_text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetSkill( 'diplomacy' )]" default_format = "#high" }
               button_standard = {
                 size = { 56 30 }
-                text = "ucm_skill_diplomacy_down"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_skill_diplomacy_down" using = Font_Size_Small }
                 tooltip = "ucm_skill_diplomacy_down_tt"
                 enabled = "[GetScriptedGui( 'ucm_skill_diplomacy_down' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_skill_diplomacy_down' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
               button_standard = {
                 size = { 56 30 }
-                text = "ucm_skill_diplomacy_up"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_skill_diplomacy_up" using = Font_Size_Small }
                 tooltip = "ucm_skill_diplomacy_up_tt"
                 enabled = "[GetScriptedGui( 'ucm_skill_diplomacy_up' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_skill_diplomacy_up' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -435,14 +435,14 @@ window = {
               text_single = { size = { 50 30 } raw_text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetSkill( 'martial' )]" default_format = "#high" }
               button_standard = {
                 size = { 56 30 }
-                text = "ucm_skill_martial_down"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_skill_martial_down" using = Font_Size_Small }
                 tooltip = "ucm_skill_martial_down_tt"
                 enabled = "[GetScriptedGui( 'ucm_skill_martial_down' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_skill_martial_down' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
               button_standard = {
                 size = { 56 30 }
-                text = "ucm_skill_martial_up"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_skill_martial_up" using = Font_Size_Small }
                 tooltip = "ucm_skill_martial_up_tt"
                 enabled = "[GetScriptedGui( 'ucm_skill_martial_up' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_skill_martial_up' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -456,14 +456,14 @@ window = {
               text_single = { size = { 50 30 } raw_text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetSkill( 'stewardship' )]" default_format = "#high" }
               button_standard = {
                 size = { 56 30 }
-                text = "ucm_skill_stewardship_down"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_skill_stewardship_down" using = Font_Size_Small }
                 tooltip = "ucm_skill_stewardship_down_tt"
                 enabled = "[GetScriptedGui( 'ucm_skill_stewardship_down' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_skill_stewardship_down' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
               button_standard = {
                 size = { 56 30 }
-                text = "ucm_skill_stewardship_up"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_skill_stewardship_up" using = Font_Size_Small }
                 tooltip = "ucm_skill_stewardship_up_tt"
                 enabled = "[GetScriptedGui( 'ucm_skill_stewardship_up' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_skill_stewardship_up' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -477,14 +477,14 @@ window = {
               text_single = { size = { 50 30 } raw_text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetSkill( 'intrigue' )]" default_format = "#high" }
               button_standard = {
                 size = { 56 30 }
-                text = "ucm_skill_intrigue_down"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_skill_intrigue_down" using = Font_Size_Small }
                 tooltip = "ucm_skill_intrigue_down_tt"
                 enabled = "[GetScriptedGui( 'ucm_skill_intrigue_down' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_skill_intrigue_down' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
               button_standard = {
                 size = { 56 30 }
-                text = "ucm_skill_intrigue_up"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_skill_intrigue_up" using = Font_Size_Small }
                 tooltip = "ucm_skill_intrigue_up_tt"
                 enabled = "[GetScriptedGui( 'ucm_skill_intrigue_up' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_skill_intrigue_up' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -498,14 +498,14 @@ window = {
               text_single = { size = { 50 30 } raw_text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetSkill( 'learning' )]" default_format = "#high" }
               button_standard = {
                 size = { 56 30 }
-                text = "ucm_skill_learning_down"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_skill_learning_down" using = Font_Size_Small }
                 tooltip = "ucm_skill_learning_down_tt"
                 enabled = "[GetScriptedGui( 'ucm_skill_learning_down' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_skill_learning_down' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
               button_standard = {
                 size = { 56 30 }
-                text = "ucm_skill_learning_up"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_skill_learning_up" using = Font_Size_Small }
                 tooltip = "ucm_skill_learning_up_tt"
                 enabled = "[GetScriptedGui( 'ucm_skill_learning_up' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_skill_learning_up' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -519,14 +519,14 @@ window = {
               text_single = { size = { 50 30 } raw_text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetSkill( 'prowess' )]" default_format = "#high" }
               button_standard = {
                 size = { 56 30 }
-                text = "ucm_skill_prowess_down"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_skill_prowess_down" using = Font_Size_Small }
                 tooltip = "ucm_skill_prowess_down_tt"
                 enabled = "[GetScriptedGui( 'ucm_skill_prowess_down' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_skill_prowess_down' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
               button_standard = {
                 size = { 56 30 }
-                text = "ucm_skill_prowess_up"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_skill_prowess_up" using = Font_Size_Small }
                 tooltip = "ucm_skill_prowess_up_tt"
                 enabled = "[GetScriptedGui( 'ucm_skill_prowess_up' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_skill_prowess_up' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -539,7 +539,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_skill_all_down"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_skill_all_down" using = Font_Size_Small }
                 tooltip = "ucm_skill_all_down_tt"
                 enabled = "[GetScriptedGui( 'ucm_skill_all_down' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_skill_all_down' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -547,7 +547,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_skill_all_up"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_skill_all_up" using = Font_Size_Small }
                 tooltip = "ucm_skill_all_up_tt"
                 enabled = "[GetScriptedGui( 'ucm_skill_all_up' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_skill_all_up' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -559,7 +559,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_weight_down"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_weight_down" using = Font_Size_Small }
                 tooltip = "ucm_weight_down_tt"
                 enabled = "[GetScriptedGui( 'ucm_weight_down' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_weight_down' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -567,7 +567,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_weight_up"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_weight_up" using = Font_Size_Small }
                 tooltip = "ucm_weight_up_tt"
                 enabled = "[GetScriptedGui( 'ucm_weight_up' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_weight_up' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -623,7 +623,7 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_clear_stress"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_clear_stress" using = Font_Size_Small }
               tooltip = "ucm_clear_stress_tt"
               enabled = "[GetScriptedGui( 'ucm_clear_stress' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_clear_stress' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -770,7 +770,7 @@ window = {
         }
       }
       scrollbox = {
-        size = { 500 540 }
+        size = { 760 540 }
         visible = "[GetVariableSystem.HasValue( 'ucm_tab', 'relationships' )]"
         blockoverride "scrollbox_content" {
           vbox = {
@@ -781,7 +781,7 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_second_set_target"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_second_set_target" using = Font_Size_Small }
               tooltip = "ucm_second_set_target_tt"
               enabled = "[GetScriptedGui( 'ucm_second_set_target' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_second_set_target' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -789,12 +789,12 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_second_clear"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_second_clear" using = Font_Size_Small }
               tooltip = "ucm_second_clear_tt"
               enabled = "[GetScriptedGui( 'ucm_second_clear' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_second_clear' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
             }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_SECOND_NOTE" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_SECOND_NOTE" default_format = "#low" }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_RELATIONS" using = Font_Size_Medium default_format = "#high" }
             hbox = {
               layoutpolicy_horizontal = expanding
@@ -802,7 +802,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_relation_friend"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_relation_friend" using = Font_Size_Small }
                 tooltip = "ucm_relation_friend_tt"
                 enabled = "[GetScriptedGui( 'ucm_relation_friend' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_relation_friend' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -810,7 +810,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_relation_best_friend"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_relation_best_friend" using = Font_Size_Small }
                 tooltip = "ucm_relation_best_friend_tt"
                 enabled = "[GetScriptedGui( 'ucm_relation_best_friend' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_relation_best_friend' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -818,7 +818,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_relation_rival"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_relation_rival" using = Font_Size_Small }
                 tooltip = "ucm_relation_rival_tt"
                 enabled = "[GetScriptedGui( 'ucm_relation_rival' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_relation_rival' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -830,7 +830,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_relation_nemesis"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_relation_nemesis" using = Font_Size_Small }
                 tooltip = "ucm_relation_nemesis_tt"
                 enabled = "[GetScriptedGui( 'ucm_relation_nemesis' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_relation_nemesis' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -838,7 +838,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_relation_lover"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_relation_lover" using = Font_Size_Small }
                 tooltip = "ucm_relation_lover_tt"
                 enabled = "[GetScriptedGui( 'ucm_relation_lover' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_relation_lover' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -846,7 +846,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_relation_soulmate"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_relation_soulmate" using = Font_Size_Small }
                 tooltip = "ucm_relation_soulmate_tt"
                 enabled = "[GetScriptedGui( 'ucm_relation_soulmate' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_relation_soulmate' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -855,7 +855,7 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_relation_clear"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_relation_clear" using = Font_Size_Small }
               tooltip = "ucm_relation_clear_tt"
               enabled = "[GetScriptedGui( 'ucm_relation_clear' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_relation_clear' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -876,7 +876,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_marry_second"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_marry_second" using = Font_Size_Small }
                 tooltip = "ucm_marry_second_tt"
                 enabled = "[GetScriptedGui( 'ucm_marry_second' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_marry_second' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -884,7 +884,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_marry_second_matrilineal"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_marry_second_matrilineal" using = Font_Size_Small }
                 tooltip = "ucm_marry_second_matrilineal_tt"
                 enabled = "[GetScriptedGui( 'ucm_marry_second_matrilineal' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_marry_second_matrilineal' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -896,7 +896,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_betroth_second"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_betroth_second" using = Font_Size_Small }
                 tooltip = "ucm_betroth_second_tt"
                 enabled = "[GetScriptedGui( 'ucm_betroth_second' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_betroth_second' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -904,7 +904,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_betroth_second_matrilineal"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_betroth_second_matrilineal" using = Font_Size_Small }
                 tooltip = "ucm_betroth_second_matrilineal_tt"
                 enabled = "[GetScriptedGui( 'ucm_betroth_second_matrilineal' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_betroth_second_matrilineal' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -916,7 +916,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_break_betrothal_second"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_break_betrothal_second" using = Font_Size_Small }
                 tooltip = "ucm_break_betrothal_second_tt"
                 enabled = "[GetScriptedGui( 'ucm_break_betrothal_second' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_break_betrothal_second' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -924,7 +924,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_divorce_second"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_divorce_second" using = Font_Size_Small }
                 tooltip = "ucm_divorce_second_tt"
                 enabled = "[GetScriptedGui( 'ucm_divorce_second' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_divorce_second' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -964,7 +964,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_second_as_father"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_second_as_father" using = Font_Size_Small }
                 tooltip = "ucm_second_as_father_tt"
                 enabled = "[GetScriptedGui( 'ucm_second_as_father' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_second_as_father' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -972,7 +972,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_second_as_real_father"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_second_as_real_father" using = Font_Size_Small }
                 tooltip = "ucm_second_as_real_father_tt"
                 enabled = "[GetScriptedGui( 'ucm_second_as_real_father' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_second_as_real_father' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -980,7 +980,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_second_as_mother"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_second_as_mother" using = Font_Size_Small }
                 tooltip = "ucm_second_as_mother_tt"
                 enabled = "[GetScriptedGui( 'ucm_second_as_mother' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_second_as_mother' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -989,7 +989,7 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_join_second_house"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_join_second_house" using = Font_Size_Small }
               tooltip = "ucm_join_second_house_tt"
               enabled = "[GetScriptedGui( 'ucm_join_second_house' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_join_second_house' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1064,7 +1064,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_pregnant_by_second_1"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_pregnant_by_second_1" using = Font_Size_Small }
                 tooltip = "ucm_pregnant_by_second_1_tt"
                 enabled = "[GetScriptedGui( 'ucm_pregnant_by_second_1' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_pregnant_by_second_1' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1072,7 +1072,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_pregnant_by_second_2"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_pregnant_by_second_2" using = Font_Size_Small }
                 tooltip = "ucm_pregnant_by_second_2_tt"
                 enabled = "[GetScriptedGui( 'ucm_pregnant_by_second_2' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_pregnant_by_second_2' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1080,7 +1080,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_pregnant_by_second_3"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_pregnant_by_second_3" using = Font_Size_Small }
                 tooltip = "ucm_pregnant_by_second_3_tt"
                 enabled = "[GetScriptedGui( 'ucm_pregnant_by_second_3' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_pregnant_by_second_3' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1089,7 +1089,7 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_end_pregnancy"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_end_pregnancy" using = Font_Size_Small }
               tooltip = "ucm_end_pregnancy_tt"
               enabled = "[GetScriptedGui( 'ucm_end_pregnancy' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_end_pregnancy' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1110,7 +1110,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_second_hook_on_target"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_second_hook_on_target" using = Font_Size_Small }
                 tooltip = "ucm_second_hook_on_target_tt"
                 enabled = "[GetScriptedGui( 'ucm_second_hook_on_target' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_second_hook_on_target' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1118,7 +1118,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_target_hook_on_second"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_target_hook_on_second" using = Font_Size_Small }
                 tooltip = "ucm_target_hook_on_second_tt"
                 enabled = "[GetScriptedGui( 'ucm_target_hook_on_second' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_target_hook_on_second' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1139,7 +1139,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_learn_target_secrets"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_learn_target_secrets" using = Font_Size_Small }
                 tooltip = "ucm_learn_target_secrets_tt"
                 enabled = "[GetScriptedGui( 'ucm_learn_target_secrets' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_learn_target_secrets' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1147,7 +1147,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_expose_target_secrets"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_expose_target_secrets" using = Font_Size_Small }
                 tooltip = "ucm_expose_target_secrets_tt"
                 enabled = "[GetScriptedGui( 'ucm_expose_target_secrets' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_expose_target_secrets' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1157,7 +1157,7 @@ window = {
         }
       }
       scrollbox = {
-        size = { 500 540 }
+        size = { 760 540 }
         visible = "[GetVariableSystem.HasValue( 'ucm_tab', 'titles' )]"
         blockoverride "scrollbox_content" {
           vbox = {
@@ -1168,7 +1168,7 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_target_claims_second_title"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_target_claims_second_title" using = Font_Size_Small }
               tooltip = "ucm_target_claims_second_title_tt"
               enabled = "[GetScriptedGui( 'ucm_target_claims_second_title' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_target_claims_second_title' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1343,7 +1343,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_target_independent"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_target_independent" using = Font_Size_Small }
                 tooltip = "ucm_target_independent_tt"
                 enabled = "[GetScriptedGui( 'ucm_target_independent' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_target_independent' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1351,7 +1351,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_target_vassal_of_second"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_target_vassal_of_second" using = Font_Size_Small }
                 tooltip = "ucm_target_vassal_of_second_tt"
                 enabled = "[GetScriptedGui( 'ucm_target_vassal_of_second' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_target_vassal_of_second' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1445,7 +1445,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_gov_feudal"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_gov_feudal" using = Font_Size_Small }
                 tooltip = "ucm_gov_feudal_tt"
                 enabled = "[GetScriptedGui( 'ucm_gov_feudal' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_gov_feudal' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1453,7 +1453,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_gov_clan"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_gov_clan" using = Font_Size_Small }
                 tooltip = "ucm_gov_clan_tt"
                 enabled = "[GetScriptedGui( 'ucm_gov_clan' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_gov_clan' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1461,7 +1461,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_gov_tribal"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_gov_tribal" using = Font_Size_Small }
                 tooltip = "ucm_gov_tribal_tt"
                 enabled = "[GetScriptedGui( 'ucm_gov_tribal' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_gov_tribal' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1473,7 +1473,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_gov_administrative"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_gov_administrative" using = Font_Size_Small }
                 tooltip = "ucm_gov_administrative_tt"
                 enabled = "[GetScriptedGui( 'ucm_gov_administrative' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_gov_administrative' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1481,7 +1481,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_gov_republic"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_gov_republic" using = Font_Size_Small }
                 tooltip = "ucm_gov_republic_tt"
                 enabled = "[GetScriptedGui( 'ucm_gov_republic' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_gov_republic' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1489,7 +1489,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_gov_theocracy"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_gov_theocracy" using = Font_Size_Small }
                 tooltip = "ucm_gov_theocracy_tt"
                 enabled = "[GetScriptedGui( 'ucm_gov_theocracy' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_gov_theocracy' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1501,7 +1501,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_gov_nomadic"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_gov_nomadic" using = Font_Size_Small }
                 tooltip = "ucm_gov_nomadic_tt"
                 enabled = "[GetScriptedGui( 'ucm_gov_nomadic' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_gov_nomadic' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1509,7 +1509,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_gov_herder"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_gov_herder" using = Font_Size_Small }
                 tooltip = "ucm_gov_herder_tt"
                 enabled = "[GetScriptedGui( 'ucm_gov_herder' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_gov_herder' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1517,7 +1517,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_gov_celestial"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_gov_celestial" using = Font_Size_Small }
                 tooltip = "ucm_gov_celestial_tt"
                 enabled = "[GetScriptedGui( 'ucm_gov_celestial' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_gov_celestial' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1529,7 +1529,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_gov_meritocratic"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_gov_meritocratic" using = Font_Size_Small }
                 tooltip = "ucm_gov_meritocratic_tt"
                 enabled = "[GetScriptedGui( 'ucm_gov_meritocratic' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_gov_meritocratic' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1537,7 +1537,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_gov_mandala"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_gov_mandala" using = Font_Size_Small }
                 tooltip = "ucm_gov_mandala_tt"
                 enabled = "[GetScriptedGui( 'ucm_gov_mandala' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_gov_mandala' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1545,7 +1545,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_gov_steppe_admin"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_gov_steppe_admin" using = Font_Size_Small }
                 tooltip = "ucm_gov_steppe_admin_tt"
                 enabled = "[GetScriptedGui( 'ucm_gov_steppe_admin' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_gov_steppe_admin' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1557,7 +1557,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_gov_japan_feudal"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_gov_japan_feudal" using = Font_Size_Small }
                 tooltip = "ucm_gov_japan_feudal_tt"
                 enabled = "[GetScriptedGui( 'ucm_gov_japan_feudal' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_gov_japan_feudal' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1565,7 +1565,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_gov_japan_administrative"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_gov_japan_administrative" using = Font_Size_Small }
                 tooltip = "ucm_gov_japan_administrative_tt"
                 enabled = "[GetScriptedGui( 'ucm_gov_japan_administrative' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_gov_japan_administrative' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1581,7 +1581,7 @@ window = {
               onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'zhuge_set_authority_inter' )]"
             }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_YOUR_SUCCESSION" using = Font_Size_Medium default_format = "#high" }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_DECISIONS_NOTE" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_DECISIONS_NOTE" default_format = "#low" }
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
@@ -1634,7 +1634,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_ally_second"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_ally_second" using = Font_Size_Small }
                 tooltip = "ucm_ally_second_tt"
                 enabled = "[GetScriptedGui( 'ucm_ally_second' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_ally_second' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1642,7 +1642,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_break_alliance_second"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_break_alliance_second" using = Font_Size_Small }
                 tooltip = "ucm_break_alliance_second_tt"
                 enabled = "[GetScriptedGui( 'ucm_break_alliance_second' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_break_alliance_second' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1650,7 +1650,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_truce_second"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_truce_second" using = Font_Size_Small }
                 tooltip = "ucm_truce_second_tt"
                 enabled = "[GetScriptedGui( 'ucm_truce_second' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_truce_second' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1687,7 +1687,7 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_end_wars_white_peace"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_end_wars_white_peace" using = Font_Size_Small }
               tooltip = "ucm_end_wars_white_peace_tt"
               enabled = "[GetScriptedGui( 'ucm_end_wars_white_peace' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_end_wars_white_peace' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1805,7 +1805,7 @@ window = {
         }
       }
       scrollbox = {
-        size = { 500 540 }
+        size = { 760 540 }
         visible = "[GetVariableSystem.HasValue( 'ucm_tab', 'faith_culture' )]"
         blockoverride "scrollbox_content" {
           vbox = {
@@ -1816,7 +1816,7 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_open_culture_picker"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_open_culture_picker" using = Font_Size_Small }
               tooltip = "ucm_open_culture_picker_tt"
               enabled = "[GetScriptedGui( 'ucm_open_culture_picker' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_open_culture_picker' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1824,7 +1824,7 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_open_religion_picker"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_open_religion_picker" using = Font_Size_Small }
               tooltip = "ucm_open_religion_picker_tt"
               enabled = "[GetScriptedGui( 'ucm_open_religion_picker' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_open_religion_picker' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1832,7 +1832,7 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_open_tradition_picker"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_open_tradition_picker" using = Font_Size_Small }
               tooltip = "ucm_open_tradition_picker_tt"
               enabled = "[GetScriptedGui( 'ucm_open_tradition_picker' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_open_tradition_picker' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1841,7 +1841,7 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_adopt_second_faith"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_adopt_second_faith" using = Font_Size_Small }
               tooltip = "ucm_adopt_second_faith_tt"
               enabled = "[GetScriptedGui( 'ucm_adopt_second_faith' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_adopt_second_faith' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1931,7 +1931,7 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_adopt_second_culture"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_adopt_second_culture" using = Font_Size_Small }
               tooltip = "ucm_adopt_second_culture_tt"
               enabled = "[GetScriptedGui( 'ucm_adopt_second_culture' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_adopt_second_culture' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1939,7 +1939,7 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_culture_all_innovations"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_culture_all_innovations" using = Font_Size_Small }
               tooltip = "ucm_culture_all_innovations_tt"
               enabled = "[GetScriptedGui( 'ucm_culture_all_innovations' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_culture_all_innovations' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -1981,7 +1981,7 @@ window = {
               onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'zhuge_buff_04' )]"
             }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_REALM_CONVERSION" using = Font_Size_Medium default_format = "#high" }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_DECISIONS_NOTE" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_DECISIONS_NOTE" default_format = "#low" }
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
@@ -2040,7 +2040,7 @@ window = {
         }
       }
       scrollbox = {
-        size = { 500 540 }
+        size = { 760 540 }
         visible = "[GetVariableSystem.HasValue( 'ucm_tab', 'realm' )]"
         blockoverride "scrollbox_content" {
           vbox = {
@@ -2048,8 +2048,8 @@ window = {
             spacing = 4
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_TAB_REALM" using = Font_Size_Big default_format = "#high" }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_GROUP_PICKER" using = Font_Size_Medium default_format = "#high" }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_GROUP_PICKER_NOTE" default_format = "#low" }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_GROUP_COUNTIES" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_GROUP_PICKER_NOTE" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_GROUP_COUNTIES" default_format = "#low" }
             flowcontainer = {
               layoutpolicy_horizontal = expanding
               spacing = 4
@@ -2082,14 +2082,14 @@ window = {
                 onclick = "[GetScriptedGui( 'ucm_group_pick_faith_counties' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
             }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_GROUP_COUNTY_ACTIONS" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_GROUP_COUNTY_ACTIONS" default_format = "#low" }
             hbox = {
               layoutpolicy_horizontal = expanding
               spacing = 4
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_group_run_max_development"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_group_run_max_development" using = Font_Size_Small }
                 tooltip = "ucm_group_run_max_development_tt"
                 enabled = "[GetScriptedGui( 'ucm_group_run_max_development' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_group_run_max_development' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -2097,7 +2097,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_group_run_max_control"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_group_run_max_control" using = Font_Size_Small }
                 tooltip = "ucm_group_run_max_control_tt"
                 enabled = "[GetScriptedGui( 'ucm_group_run_max_control' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_group_run_max_control' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -2109,7 +2109,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_group_run_county_faith"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_group_run_county_faith" using = Font_Size_Small }
                 tooltip = "ucm_group_run_county_faith_tt"
                 enabled = "[GetScriptedGui( 'ucm_group_run_county_faith' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_group_run_county_faith' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -2117,7 +2117,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_group_run_county_culture"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_group_run_county_culture" using = Font_Size_Small }
                 tooltip = "ucm_group_run_county_culture_tt"
                 enabled = "[GetScriptedGui( 'ucm_group_run_county_culture' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_group_run_county_culture' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -2142,7 +2142,7 @@ window = {
               tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'debug_change_every_county' )]"
               onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'debug_change_every_county' )]"
             }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_DECISIONS_NOTE" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_DECISIONS_NOTE" default_format = "#low" }
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
@@ -2358,7 +2358,7 @@ window = {
         }
       }
       scrollbox = {
-        size = { 500 540 }
+        size = { 760 540 }
         visible = "[GetVariableSystem.HasValue( 'ucm_tab', 'military' )]"
         blockoverride "scrollbox_content" {
           vbox = {
@@ -2369,7 +2369,7 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_open_army_spawner"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_open_army_spawner" using = Font_Size_Small }
               tooltip = "ucm_open_army_spawner_tt"
               enabled = "[GetScriptedGui( 'ucm_open_army_spawner' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_open_army_spawner' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -2443,7 +2443,7 @@ window = {
         }
       }
       scrollbox = {
-        size = { 500 540 }
+        size = { 760 540 }
         visible = "[GetVariableSystem.HasValue( 'ucm_tab', 'artifacts' )]"
         blockoverride "scrollbox_content" {
           vbox = {
@@ -2454,7 +2454,7 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_open_artifact_crafter"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_open_artifact_crafter" using = Font_Size_Small }
               tooltip = "ucm_open_artifact_crafter_tt"
               enabled = "[GetScriptedGui( 'ucm_open_artifact_crafter' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_open_artifact_crafter' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -2462,7 +2462,7 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_open_artifact_repair"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_open_artifact_repair" using = Font_Size_Small }
               tooltip = "ucm_open_artifact_repair_tt"
               enabled = "[GetScriptedGui( 'ucm_open_artifact_repair' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_open_artifact_repair' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -2474,7 +2474,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_artifacts_repair_all"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_artifacts_repair_all" using = Font_Size_Small }
                 tooltip = "ucm_artifacts_repair_all_tt"
                 enabled = "[GetScriptedGui( 'ucm_artifacts_repair_all' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_artifacts_repair_all' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -2482,7 +2482,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_artifacts_all_illustrious"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_artifacts_all_illustrious" using = Font_Size_Small }
                 tooltip = "ucm_artifacts_all_illustrious_tt"
                 enabled = "[GetScriptedGui( 'ucm_artifacts_all_illustrious' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_artifacts_all_illustrious' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -2568,7 +2568,7 @@ window = {
         }
       }
       scrollbox = {
-        size = { 500 540 }
+        size = { 760 540 }
         visible = "[GetVariableSystem.HasValue( 'ucm_tab', 'court' )]"
         blockoverride "scrollbox_content" {
           vbox = {
@@ -2576,8 +2576,8 @@ window = {
             spacing = 4
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_TAB_COURT" using = Font_Size_Big default_format = "#high" }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_GROUP_PICKER" using = Font_Size_Medium default_format = "#high" }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_GROUP_PICKER_NOTE" default_format = "#low" }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_GROUP_CHARACTERS" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_GROUP_PICKER_NOTE" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_GROUP_CHARACTERS" default_format = "#low" }
             flowcontainer = {
               layoutpolicy_horizontal = expanding
               spacing = 4
@@ -2652,14 +2652,14 @@ window = {
                 onclick = "[GetScriptedGui( 'ucm_group_pick_dynasty' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
             }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_GROUP_CHAR_ACTIONS" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_GROUP_CHAR_ACTIONS" default_format = "#low" }
             hbox = {
               layoutpolicy_horizontal = expanding
               spacing = 4
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_group_run_clear_stress"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_group_run_clear_stress" using = Font_Size_Small }
                 tooltip = "ucm_group_run_clear_stress_tt"
                 enabled = "[GetScriptedGui( 'ucm_group_run_clear_stress' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_group_run_clear_stress' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -2667,7 +2667,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_group_run_skills_up"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_group_run_skills_up" using = Font_Size_Small }
                 tooltip = "ucm_group_run_skills_up_tt"
                 enabled = "[GetScriptedGui( 'ucm_group_run_skills_up' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_group_run_skills_up' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -2675,7 +2675,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_group_run_gold"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_group_run_gold" using = Font_Size_Small }
                 tooltip = "ucm_group_run_gold_tt"
                 enabled = "[GetScriptedGui( 'ucm_group_run_gold' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_group_run_gold' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -2687,7 +2687,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_group_run_convert_faith"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_group_run_convert_faith" using = Font_Size_Small }
                 tooltip = "ucm_group_run_convert_faith_tt"
                 enabled = "[GetScriptedGui( 'ucm_group_run_convert_faith' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_group_run_convert_faith' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -2695,7 +2695,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_group_run_convert_culture"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_group_run_convert_culture" using = Font_Size_Small }
                 tooltip = "ucm_group_run_convert_culture_tt"
                 enabled = "[GetScriptedGui( 'ucm_group_run_convert_culture' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_group_run_convert_culture' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -2703,7 +2703,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_group_run_max_opinion"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_group_run_max_opinion" using = Font_Size_Small }
                 tooltip = "ucm_group_run_max_opinion_tt"
                 enabled = "[GetScriptedGui( 'ucm_group_run_max_opinion' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_group_run_max_opinion' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -2835,7 +2835,7 @@ window = {
               onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'toc_finishcounciltask_interaction' )]"
             }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_COURT_TOOLS" using = Font_Size_Medium default_format = "#high" }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_DECISIONS_NOTE" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_DECISIONS_NOTE" default_format = "#low" }
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
@@ -2922,7 +2922,7 @@ window = {
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } enabled = "[GetScriptedGui( 'ucm_crozier_cheats_sg_t_t_hostage_free' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'ucm_crozier_cheats_char', GetPlayer.MakeScope.Var( 'ucm_target' ).Char.MakeScope ).End )]" tooltip = "UCM_CROZIER_CHEATS_B_t_hostage_free_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_t_t_hostage_free' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'ucm_crozier_cheats_char', GetPlayer.MakeScope.Var( 'ucm_target' ).Char.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_t_hostage_free" max_width = 460 fontsize_min = 9 using = Font_Size_Small } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } tooltip = "UCM_CROZIER_CHEATS_B_t_family_hostages_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_t_t_family_hostages' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'ucm_crozier_cheats_char', GetPlayer.MakeScope.Var( 'ucm_target' ).Char.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_t_family_hostages" max_width = 460 fontsize_min = 9 using = Font_Size_Small } }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_DANGER" using = Font_Size_Medium default_format = "#high" }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_DANGER_NOTE" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_DANGER_NOTE" default_format = "#low" }
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
@@ -2966,7 +2966,7 @@ window = {
         }
       }
       scrollbox = {
-        size = { 500 540 }
+        size = { 760 540 }
         visible = "[GetVariableSystem.HasValue( 'ucm_tab', 'dlc' )]"
         blockoverride "scrollbox_content" {
           vbox = {
@@ -2980,7 +2980,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_diarchy_start_regency"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_diarchy_start_regency" using = Font_Size_Small }
                 tooltip = "ucm_diarchy_start_regency_tt"
                 enabled = "[GetScriptedGui( 'ucm_diarchy_start_regency' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_diarchy_start_regency' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -2988,7 +2988,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_diarchy_start_co_monarchy"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_diarchy_start_co_monarchy" using = Font_Size_Small }
                 tooltip = "ucm_diarchy_start_co_monarchy_tt"
                 enabled = "[GetScriptedGui( 'ucm_diarchy_start_co_monarchy' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_diarchy_start_co_monarchy' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -2996,7 +2996,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_diarchy_start_vizierate"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_diarchy_start_vizierate" using = Font_Size_Small }
                 tooltip = "ucm_diarchy_start_vizierate_tt"
                 enabled = "[GetScriptedGui( 'ucm_diarchy_start_vizierate' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_diarchy_start_vizierate' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -3005,7 +3005,7 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_diarchy_second_as_diarch"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_diarchy_second_as_diarch" using = Font_Size_Small }
               tooltip = "ucm_diarchy_second_as_diarch_tt"
               enabled = "[GetScriptedGui( 'ucm_diarchy_second_as_diarch' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_diarchy_second_as_diarch' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -3016,35 +3016,35 @@ window = {
               text_single = { text = "UCM_STEP_LABEL" }
               button_standard = {
                 size = { 56 30 }
-                text = "ucm_step_1"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_step_1" using = Font_Size_Small }
                 tooltip = "ucm_step_1_tt"
                 enabled = "[GetScriptedGui( 'ucm_step_1' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_step_1' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
               button_standard = {
                 size = { 56 30 }
-                text = "ucm_step_5"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_step_5" using = Font_Size_Small }
                 tooltip = "ucm_step_5_tt"
                 enabled = "[GetScriptedGui( 'ucm_step_5' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_step_5' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
               button_standard = {
                 size = { 56 30 }
-                text = "ucm_step_10"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_step_10" using = Font_Size_Small }
                 tooltip = "ucm_step_10_tt"
                 enabled = "[GetScriptedGui( 'ucm_step_10' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_step_10' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
               button_standard = {
                 size = { 56 30 }
-                text = "ucm_step_25"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_step_25" using = Font_Size_Small }
                 tooltip = "ucm_step_25_tt"
                 enabled = "[GetScriptedGui( 'ucm_step_25' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_step_25' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
               button_standard = {
                 size = { 56 30 }
-                text = "ucm_step_100"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_step_100" using = Font_Size_Small }
                 tooltip = "ucm_step_100_tt"
                 enabled = "[GetScriptedGui( 'ucm_step_100' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_step_100' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -3057,7 +3057,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_diarchy_swing_down"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_diarchy_swing_down" using = Font_Size_Small }
                 tooltip = "ucm_diarchy_swing_down_tt"
                 enabled = "[GetScriptedGui( 'ucm_diarchy_swing_down' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_diarchy_swing_down' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -3065,7 +3065,7 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text = "ucm_diarchy_swing_up"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_diarchy_swing_up" using = Font_Size_Small }
                 tooltip = "ucm_diarchy_swing_up_tt"
                 enabled = "[GetScriptedGui( 'ucm_diarchy_swing_up' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_diarchy_swing_up' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -3074,7 +3074,7 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_diarchy_end"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_diarchy_end" using = Font_Size_Small }
               tooltip = "ucm_diarchy_end_tt"
               enabled = "[GetScriptedGui( 'ucm_diarchy_end' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_diarchy_end' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -3333,30 +3333,11 @@ window = {
               tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'zhuge_ymbuff_02' )]"
               onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'zhuge_ymbuff_02' )]"
             }
-            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_EVENTS" using = Font_Size_Medium default_format = "#high" }
-            button_standard = {
-              layoutpolicy_horizontal = expanding
-              size = { 0 30 }
-              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_main_debug_interaction' )]"
-              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'toc_main_debug_interaction' )]"
-              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'toc_main_debug_interaction' )]"
-              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'toc_main_debug_interaction' )]"
-              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'toc_main_debug_interaction' )]"
-            }
-            button_standard = {
-              layoutpolicy_horizontal = expanding
-              size = { 0 30 }
-              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'test_effect_localization_interaction' )]"
-              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'test_effect_localization_interaction' )]"
-              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'test_effect_localization_interaction' )]"
-              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'test_effect_localization_interaction' )]"
-              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'test_effect_localization_interaction' )]"
-            }
           }
         }
       }
       scrollbox = {
-        size = { 500 540 }
+        size = { 760 540 }
         visible = "[GetVariableSystem.HasValue( 'ucm_tab', 'settings' )]"
         blockoverride "scrollbox_content" {
           vbox = {
@@ -3367,7 +3348,7 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_second_clear"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_second_clear" using = Font_Size_Small }
               tooltip = "ucm_second_clear_tt"
               enabled = "[GetScriptedGui( 'ucm_second_clear' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_second_clear' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
@@ -3375,13 +3356,13 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_menu_reset"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_menu_reset" using = Font_Size_Small }
               tooltip = "ucm_menu_reset_tt"
               enabled = "[GetScriptedGui( 'ucm_menu_reset' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_menu_reset' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
             }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_CLASSIC" using = Font_Size_Medium default_format = "#high" }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_CLASSIC_NOTE" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_CLASSIC_NOTE" default_format = "#low" }
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
@@ -3413,10 +3394,19 @@ window = {
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
-              text = "ucm_open_console_helper"
+              text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_open_console_helper" using = Font_Size_Small }
               tooltip = "ucm_open_console_helper_tt"
               enabled = "[GetScriptedGui( 'ucm_open_console_helper' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_open_console_helper' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_main_debug_interaction' )]"
+              enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'toc_main_debug_interaction' )]"
+              text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'toc_main_debug_interaction' )]"
+              tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'toc_main_debug_interaction' )]"
+              onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'toc_main_debug_interaction' )]"
             }
           }
         }

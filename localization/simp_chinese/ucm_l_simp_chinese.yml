@@ -273,7 +273,6 @@
  UCM_SEC_ADVENTURERS: "居所、冒险者与旅行"
  UCM_SEC_EPIDEMICS: "疫病"
  UCM_SEC_SITUATIONS: "纷争、周期与地区系统"
- UCM_SEC_EVENTS: "事件与调试"
  UCM_SEC_MENU: "本菜单"
  UCM_SEC_CLASSIC: "经典菜单"
  UCM_CLASSIC_NOTE: "原作弊菜单中基于事件的主菜单和决议子菜单。它们提供的所有功能仍可在那里使用。"

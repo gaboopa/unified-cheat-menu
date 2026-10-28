@@ -315,8 +315,6 @@ TABS = [
         ("h", "UCM_SEC_SITUATIONS"),
         ("ia", "debug_change_dynastic_cycle"), ("ia", "debug_change_silk_road_cycle"), ("ia", "debug_set_mandala_aspect"),
         ("ia", "debug_change_the_great_steppe"), ("ia", "zhuge_great_steppe"), ("ia", "zhuge_ymbuff_02"),
-        ("h", "UCM_SEC_EVENTS"),
-        ("ia", "toc_main_debug_interaction"), ("ia", "test_effect_localization_interaction"),
     ]),
     ("settings", [
         ("h", "UCM_SEC_MENU"),
@@ -325,7 +323,7 @@ TABS = [
         ("t", "UCM_CLASSIC_NOTE"),
         ("ia", "cheateb_editmenu_interaction"), ("dec", "open_daddypika_menu"), ("dec", "daddy_pika_information"),
         ("h", "UCM_SEC_DEBUG"),
-        ("sg", "ucm_open_console_helper"),
+        ("sg", "ucm_open_console_helper"), ("ia", "toc_main_debug_interaction"),
     ]),
 ]
 
@@ -341,7 +339,7 @@ def sgui_button(name, ind, width="0", expand=True):
         f"{ind}button_standard = {{",
         *([f"{ind}  layoutpolicy_horizontal = expanding"] if expand else []),
         f"{ind}  size = {{ {width} 30 }}",
-        f'{ind}  text = "{name}"',
+        f'{ind}  text_single = {{ parentanchor = vcenter|left position = {{ 10 0 }} text = "{name}" using = Font_Size_Small }}',
         f'{ind}  tooltip = "{name}_tt"',
         f"{ind}  enabled = \"[GetScriptedGui( '{name}' ).IsValid( {R} )]\"",
         f"{ind}  onclick = \"[GetScriptedGui( '{name}' ).Execute( {R} )]\"",
@@ -414,7 +412,7 @@ def item(it, ind):
     if kind == "h":
         return [f'{ind}text_single = {{ layoutpolicy_horizontal = expanding text = "{it[1]}" using = Font_Size_Medium default_format = "#high" }}']
     if kind == "t":
-        return [f'{ind}text_multi = {{ layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "{it[1]}" default_format = "#low" }}']
+        return [f'{ind}text_multi = {{ layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "{it[1]}" default_format = "#low" }}']
     if kind == "sg":
         return sgui_button(it[1], ind)
     if kind == "row":
@@ -477,7 +475,7 @@ def main():
         "window = {",
         '  name = "ucm_main_menu_window"',
         "  parentanchor = center",
-        "  size = { 780 680 }",
+        "  size = { 1060 680 }",
         "  layer = top",
         "  movable = yes",
         "  alwaystransparent = no",
@@ -537,7 +535,7 @@ def main():
     for t, items in TABS:
         o += [
             "      scrollbox = {",
-            "        size = { 500 540 }",
+            "        size = { 760 540 }",
             f'        visible = "{tab_shown(t)}"',
             '        blockoverride "scrollbox_content" {',
             "          vbox = {",

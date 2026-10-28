@@ -38,7 +38,7 @@ TABS = [
         ("t", "UCM_ALWAYS_ON_NOTE"),
         ("czrow", ["pow_1", "pow_2", "pow_3", "pow_4", "pow_5", "pow_6", "pow_7"], "UCM_CROZIER_CHEATS_POW_LABEL"),
         ("czrow", ["tier_1", "tier_2", "tier_3"], "UCM_CROZIER_CHEATS_TIER_LABEL"),
-        ("czrow", ["do_freq_week", "do_freq_month", "do_freq_quarter"]),
+        ("cz", "do_freq_week"), ("cz", "do_freq_month"), ("cz", "do_freq_quarter"),
         ("czrow", ["pon_char_self", "poff_char_self"]),
         ("cz", "tog_income"),
         ("cz", "tog_monthly_gold"),
@@ -412,7 +412,7 @@ def item(it, ind):
     if kind == "h":
         return [f'{ind}text_single = {{ layoutpolicy_horizontal = expanding text = "{it[1]}" using = Font_Size_Medium default_format = "#high" }}']
     if kind == "t":
-        return [f'{ind}text_multi = {{ layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "{it[1]}" default_format = "#low" }}']
+        return [f'{ind}text_multi = {{ layoutpolicy_horizontal = expanding autoresize = yes max_width = 560 text = "{it[1]}" default_format = "#low" }}']
     if kind == "sg":
         return sgui_button(it[1], ind)
     if kind == "row":
@@ -475,7 +475,7 @@ def main():
         "window = {",
         '  name = "ucm_main_menu_window"',
         "  parentanchor = center",
-        "  size = { 1060 680 }",
+        "  size = { 880 680 }",
         "  layer = top",
         "  movable = yes",
         "  alwaystransparent = no",
@@ -535,7 +535,7 @@ def main():
     for t, items in TABS:
         o += [
             "      scrollbox = {",
-            "        size = { 760 540 }",
+            "        size = { 600 540 }",
             f'        visible = "{tab_shown(t)}"',
             '        blockoverride "scrollbox_content" {',
             "          vbox = {",

@@ -4,7 +4,7 @@
 window = {
   name = "ucm_main_menu_window"
   parentanchor = center
-  size = { 1060 680 }
+  size = { 880 680 }
   layer = top
   movable = yes
   alwaystransparent = no
@@ -121,7 +121,7 @@ window = {
 
       # Category contents
       scrollbox = {
-        size = { 760 540 }
+        size = { 600 540 }
         visible = "[Or( GetVariableSystem.HasValue( 'ucm_tab', 'quick' ), Not( GetVariableSystem.Exists( 'ucm_tab' ) ) )]"
         blockoverride "scrollbox_content" {
           vbox = {
@@ -161,7 +161,7 @@ window = {
               onclick = "[GetScriptedGui( 'ucm_clear_stress' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
             }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_ALWAYS_ON" using = Font_Size_Medium default_format = "#high" }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_ALWAYS_ON_NOTE" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 560 text = "UCM_ALWAYS_ON_NOTE" default_format = "#low" }
             hbox = {
               spacing = 2
               text_single = { text = "UCM_CROZIER_CHEATS_POW_LABEL" using = Font_Size_Small }
@@ -182,13 +182,9 @@ window = {
               button_standard = { size = { 78 26 } down = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tier_3' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" tooltip = "UCM_CROZIER_CHEATS_TIER_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tier_3' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_TIER_3" max_width = 62 fontsize_min = 9 using = Font_Size_Small } }
               expand = {}
             }
-            hbox = {
-              spacing = 2
-              button_standard = { size = { 446 26 } tooltip = "UCM_CROZIER_CHEATS_B_freq_week_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_do_freq_week' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_freq_week" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
-              button_standard = { size = { 446 26 } tooltip = "UCM_CROZIER_CHEATS_B_freq_month_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_do_freq_month' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_freq_month" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
-              button_standard = { size = { 446 26 } tooltip = "UCM_CROZIER_CHEATS_B_freq_quarter_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_do_freq_quarter' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_freq_quarter" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
-              expand = {}
-            }
+            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } tooltip = "UCM_CROZIER_CHEATS_B_freq_week_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_do_freq_week' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_freq_week" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
+            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } tooltip = "UCM_CROZIER_CHEATS_B_freq_month_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_do_freq_month' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_freq_month" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
+            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } tooltip = "UCM_CROZIER_CHEATS_B_freq_quarter_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_do_freq_quarter' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_freq_quarter" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
             hbox = {
               spacing = 2
               button_standard = { size = { 200 26 } tooltip = "UCM_CROZIER_CHEATS_PANEL_ALLON_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_pon_char_self' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_PANEL_ALLON" max_width = 184 fontsize_min = 9 using = Font_Size_Small } }
@@ -260,7 +256,7 @@ window = {
         }
       }
       scrollbox = {
-        size = { 760 540 }
+        size = { 600 540 }
         visible = "[GetVariableSystem.HasValue( 'ucm_tab', 'character' )]"
         blockoverride "scrollbox_content" {
           vbox = {
@@ -770,7 +766,7 @@ window = {
         }
       }
       scrollbox = {
-        size = { 760 540 }
+        size = { 600 540 }
         visible = "[GetVariableSystem.HasValue( 'ucm_tab', 'relationships' )]"
         blockoverride "scrollbox_content" {
           vbox = {
@@ -794,7 +790,7 @@ window = {
               enabled = "[GetScriptedGui( 'ucm_second_clear' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               onclick = "[GetScriptedGui( 'ucm_second_clear' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
             }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_SECOND_NOTE" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 560 text = "UCM_SECOND_NOTE" default_format = "#low" }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_RELATIONS" using = Font_Size_Medium default_format = "#high" }
             hbox = {
               layoutpolicy_horizontal = expanding
@@ -1157,7 +1153,7 @@ window = {
         }
       }
       scrollbox = {
-        size = { 760 540 }
+        size = { 600 540 }
         visible = "[GetVariableSystem.HasValue( 'ucm_tab', 'titles' )]"
         blockoverride "scrollbox_content" {
           vbox = {
@@ -1581,7 +1577,7 @@ window = {
               onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'zhuge_set_authority_inter' )]"
             }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_YOUR_SUCCESSION" using = Font_Size_Medium default_format = "#high" }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_DECISIONS_NOTE" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 560 text = "UCM_DECISIONS_NOTE" default_format = "#low" }
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
@@ -1805,7 +1801,7 @@ window = {
         }
       }
       scrollbox = {
-        size = { 760 540 }
+        size = { 600 540 }
         visible = "[GetVariableSystem.HasValue( 'ucm_tab', 'faith_culture' )]"
         blockoverride "scrollbox_content" {
           vbox = {
@@ -1981,7 +1977,7 @@ window = {
               onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'zhuge_buff_04' )]"
             }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_REALM_CONVERSION" using = Font_Size_Medium default_format = "#high" }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_DECISIONS_NOTE" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 560 text = "UCM_DECISIONS_NOTE" default_format = "#low" }
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
@@ -2040,7 +2036,7 @@ window = {
         }
       }
       scrollbox = {
-        size = { 760 540 }
+        size = { 600 540 }
         visible = "[GetVariableSystem.HasValue( 'ucm_tab', 'realm' )]"
         blockoverride "scrollbox_content" {
           vbox = {
@@ -2048,8 +2044,8 @@ window = {
             spacing = 4
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_TAB_REALM" using = Font_Size_Big default_format = "#high" }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_GROUP_PICKER" using = Font_Size_Medium default_format = "#high" }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_GROUP_PICKER_NOTE" default_format = "#low" }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_GROUP_COUNTIES" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 560 text = "UCM_GROUP_PICKER_NOTE" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 560 text = "UCM_GROUP_COUNTIES" default_format = "#low" }
             flowcontainer = {
               layoutpolicy_horizontal = expanding
               spacing = 4
@@ -2082,7 +2078,7 @@ window = {
                 onclick = "[GetScriptedGui( 'ucm_group_pick_faith_counties' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
             }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_GROUP_COUNTY_ACTIONS" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 560 text = "UCM_GROUP_COUNTY_ACTIONS" default_format = "#low" }
             hbox = {
               layoutpolicy_horizontal = expanding
               spacing = 4
@@ -2142,7 +2138,7 @@ window = {
               tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'debug_change_every_county' )]"
               onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'debug_change_every_county' )]"
             }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_DECISIONS_NOTE" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 560 text = "UCM_DECISIONS_NOTE" default_format = "#low" }
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
@@ -2358,7 +2354,7 @@ window = {
         }
       }
       scrollbox = {
-        size = { 760 540 }
+        size = { 600 540 }
         visible = "[GetVariableSystem.HasValue( 'ucm_tab', 'military' )]"
         blockoverride "scrollbox_content" {
           vbox = {
@@ -2443,7 +2439,7 @@ window = {
         }
       }
       scrollbox = {
-        size = { 760 540 }
+        size = { 600 540 }
         visible = "[GetVariableSystem.HasValue( 'ucm_tab', 'artifacts' )]"
         blockoverride "scrollbox_content" {
           vbox = {
@@ -2568,7 +2564,7 @@ window = {
         }
       }
       scrollbox = {
-        size = { 760 540 }
+        size = { 600 540 }
         visible = "[GetVariableSystem.HasValue( 'ucm_tab', 'court' )]"
         blockoverride "scrollbox_content" {
           vbox = {
@@ -2576,8 +2572,8 @@ window = {
             spacing = 4
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_TAB_COURT" using = Font_Size_Big default_format = "#high" }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_GROUP_PICKER" using = Font_Size_Medium default_format = "#high" }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_GROUP_PICKER_NOTE" default_format = "#low" }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_GROUP_CHARACTERS" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 560 text = "UCM_GROUP_PICKER_NOTE" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 560 text = "UCM_GROUP_CHARACTERS" default_format = "#low" }
             flowcontainer = {
               layoutpolicy_horizontal = expanding
               spacing = 4
@@ -2652,7 +2648,7 @@ window = {
                 onclick = "[GetScriptedGui( 'ucm_group_pick_dynasty' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
             }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_GROUP_CHAR_ACTIONS" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 560 text = "UCM_GROUP_CHAR_ACTIONS" default_format = "#low" }
             hbox = {
               layoutpolicy_horizontal = expanding
               spacing = 4
@@ -2835,7 +2831,7 @@ window = {
               onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'toc_finishcounciltask_interaction' )]"
             }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_COURT_TOOLS" using = Font_Size_Medium default_format = "#high" }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_DECISIONS_NOTE" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 560 text = "UCM_DECISIONS_NOTE" default_format = "#low" }
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
@@ -2922,7 +2918,7 @@ window = {
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } enabled = "[GetScriptedGui( 'ucm_crozier_cheats_sg_t_t_hostage_free' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'ucm_crozier_cheats_char', GetPlayer.MakeScope.Var( 'ucm_target' ).Char.MakeScope ).End )]" tooltip = "UCM_CROZIER_CHEATS_B_t_hostage_free_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_t_t_hostage_free' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'ucm_crozier_cheats_char', GetPlayer.MakeScope.Var( 'ucm_target' ).Char.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_t_hostage_free" max_width = 460 fontsize_min = 9 using = Font_Size_Small } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } tooltip = "UCM_CROZIER_CHEATS_B_t_family_hostages_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_t_t_family_hostages' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'ucm_crozier_cheats_char', GetPlayer.MakeScope.Var( 'ucm_target' ).Char.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_t_family_hostages" max_width = 460 fontsize_min = 9 using = Font_Size_Small } }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_DANGER" using = Font_Size_Medium default_format = "#high" }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_DANGER_NOTE" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 560 text = "UCM_DANGER_NOTE" default_format = "#low" }
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
@@ -2966,7 +2962,7 @@ window = {
         }
       }
       scrollbox = {
-        size = { 760 540 }
+        size = { 600 540 }
         visible = "[GetVariableSystem.HasValue( 'ucm_tab', 'dlc' )]"
         blockoverride "scrollbox_content" {
           vbox = {
@@ -3337,7 +3333,7 @@ window = {
         }
       }
       scrollbox = {
-        size = { 760 540 }
+        size = { 600 540 }
         visible = "[GetVariableSystem.HasValue( 'ucm_tab', 'settings' )]"
         blockoverride "scrollbox_content" {
           vbox = {
@@ -3362,7 +3358,7 @@ window = {
               onclick = "[GetScriptedGui( 'ucm_menu_reset' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
             }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_CLASSIC" using = Font_Size_Medium default_format = "#high" }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 720 text = "UCM_CLASSIC_NOTE" default_format = "#low" }
+            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 560 text = "UCM_CLASSIC_NOTE" default_format = "#low" }
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }

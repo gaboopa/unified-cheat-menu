@@ -389,18 +389,23 @@ def item(it, ind):
     if it[0] == "cz":
         return crozier_buttons(it[1], ind)
     if it[0] == "picks":
-        lines = [f"{ind}flowcontainer = {{", f"{ind}  layoutpolicy_horizontal = expanding", f"{ind}  spacing = 4"]
-        for g in it[1]:
-            lines += [
-                f"{ind}  button_standard = {{",
-                f"{ind}    size = {{ 150 28 }}",
-                f'{ind}    text = "ucm_group_pick_{g}"',
-                f'{ind}    tooltip = "ucm_group_pick_{g}_tt"',
-                f"{ind}    down = \"[ObjectsEqual( GetPlayer.MakeScope.Var( 'ucm_group_pick' ).GetFlagName, '{g}' )]\"",
-                f"{ind}    onclick = \"[GetScriptedGui( 'ucm_group_pick_{g}' ).Execute( {R} )]\"",
-                f"{ind}  }}",
-            ]
-        return lines + [f"{ind}}}"]
+        # Rows of 3: a flowcontainer doesn't wrap, and one long row widens the whole pane past the window.
+        lines = []
+        for i in range(0, len(it[1]), 3):
+            lines += [f"{ind}hbox = {{", f"{ind}  layoutpolicy_horizontal = expanding", f"{ind}  spacing = 4"]
+            for g in it[1][i:i + 3]:
+                lines += [
+                    f"{ind}  button_standard = {{",
+                    f"{ind}    layoutpolicy_horizontal = expanding",
+                    f"{ind}    size = {{ 0 28 }}",
+                    f'{ind}    text = "ucm_group_pick_{g}"',
+                    f'{ind}    tooltip = "ucm_group_pick_{g}_tt"',
+                    f"{ind}    down = \"[ObjectsEqual( GetPlayer.MakeScope.Var( 'ucm_group_pick' ).GetFlagName, '{g}' )]\"",
+                    f"{ind}    onclick = \"[GetScriptedGui( 'ucm_group_pick_{g}' ).Execute( {R} )]\"",
+                    f"{ind}  }}",
+                ]
+            lines.append(f"{ind}}}")
+        return lines
     if it[0] == "czrow":
         lines = [f"{ind}hbox = {{", f"{ind}  spacing = 2"]
         if len(it) > 2:
@@ -439,7 +444,7 @@ def item(it, ind):
             f"{ind}  layoutpolicy_horizontal = expanding",
             f"{ind}  size = {{ 0 30 }}",
             f"{ind}  datacontext = \"[GetDecisionWithKey( '{it[1]}' )]\"",
-            f'{ind}  visible = "[Decision.IsShownForPlayer]"',
+            f"{ind}  visible = \"[GetDecisionWithKey( '{it[1]}' ).IsShownForPlayer]\"",  # spelled out: grid() lifts it onto the row, outside this datacontext
             f'{ind}  text = "[Decision.GetTitleForPlayer]"',
             f'{ind}  tooltip = "[Decision.GetShortDescForPlayer]"',
             f"{ind}  onclick = \"[OpenGameViewData( 'decision_detail', Decision.Self )]\"",
@@ -465,6 +470,64 @@ def item(it, ind):
             f"{ind}}}",
         ]
     raise ValueError(it)
+
+
+GRID_KINDS = ("sg", "ia", "dec")
+
+
+def _split_visible(lines):
+    """Pull a button's `visible = "[...]"` line out; returns (lines without it, condition or None)."""
+    for l in lines:
+        if l.strip().startswith("visible = "):
+            return [x for x in lines if x is not l], l.strip()[len('visible = "['):-len(']"')]
+    return lines, None
+
+
+def grid(run, ind):
+    """Lay a run of plain buttons out two per row. Rows are fixed pairs (flowcontainer doesn't
+    wrap). An hbox holding a hidden button lays out wrong in game (its partner collapses), so the
+    visibility moves onto the rows: each pair becomes up to three rows (both / left only / right
+    only), and every row holds only buttons that are showing."""
+    lines = []
+
+    def row(cond, buttons):
+        out = [f"{ind}hbox = {{", f"{ind}  layoutpolicy_horizontal = expanding", f"{ind}  spacing = 4"]
+        if cond:
+            out.append(f'{ind}  visible = "[{cond}]"')
+        for b in buttons:
+            out += b
+        return out + [f"{ind}}}"]
+
+    for i in range(0, len(run), 2):
+        pair = [_split_visible(item(it, ind + "  ")) for it in run[i:i + 2]]
+        if len(pair) == 1:
+            lines += row(pair[0][1], [pair[0][0]])
+            continue
+        (a, va), (b, vb) = pair
+        if va is None and vb is None:
+            lines += row(None, [a, b])
+            continue
+        both = " ".join(filter(None, [va, vb]))
+        lines += row(f"And( {va}, {vb} )" if va and vb else both, [a, b])
+        if va:  # right only
+            lines += row(f"And( Not( {va} ), {vb} )" if vb else f"Not( {va} )", [b])
+        if vb:  # left only
+            lines += row(f"And( {va}, Not( {vb} ) )" if va else f"Not( {vb} )", [a])
+    return lines
+
+
+def section(items, ind):
+    out, run = [], []
+    for it in items + [None]:
+        if it is not None and it[0] in GRID_KINDS:
+            run.append(it)
+            continue
+        if run:
+            out += grid(run, ind)
+            run = []
+        if it is not None:
+            out += item(it, ind)
+    return out
 
 
 def main():
@@ -543,8 +606,7 @@ def main():
             "            spacing = 4",
             f'            text_single = {{ layoutpolicy_horizontal = expanding text = "UCM_TAB_{t.upper()}" using = Font_Size_Big default_format = "#high" }}',
         ]
-        for it in items:
-            o += item(it, "            ")
+        o += section(items, "            ")
         o += ["          }", "        }", "      }"]
     o += ["    }", "  }", "}"]
     with open(OUT, "wb") as fh:

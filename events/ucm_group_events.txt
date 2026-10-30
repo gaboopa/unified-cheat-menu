@@ -7,6 +7,8 @@ ucm_group.1 = {
 	desc = {
 		first_valid = {
 			triggered_desc = { trigger = { var:ucm_group_action = flag:clear_stress } desc = ucm_group.1.action.clear_stress }
+			triggered_desc = { trigger = { var:ucm_group_action = flag:prestige } desc = ucm_group.1.action.prestige }
+			triggered_desc = { trigger = { var:ucm_group_action = flag:piety } desc = ucm_group.1.action.piety }
 			triggered_desc = { trigger = { var:ucm_group_action = flag:skills_up } desc = ucm_group.1.action.skills_up }
 			triggered_desc = { trigger = { var:ucm_group_action = flag:gold } desc = ucm_group.1.action.gold }
 			triggered_desc = { trigger = { var:ucm_group_action = flag:convert_faith } desc = ucm_group.1.action.convert_faith }
@@ -19,6 +21,13 @@ ucm_group.1 = {
 		}
 		first_valid = {
 			triggered_desc = { trigger = { var:ucm_group = flag:courtiers } desc = ucm_group.1.group.courtiers }
+			triggered_desc = { trigger = { var:ucm_group = flag:lovers } desc = ucm_group.1.group.lovers }
+			triggered_desc = { trigger = { var:ucm_group = flag:friends } desc = ucm_group.1.group.friends }
+			triggered_desc = { trigger = { var:ucm_group = flag:rivals } desc = ucm_group.1.group.rivals }
+			triggered_desc = { trigger = { var:ucm_group = flag:extended_family } desc = ucm_group.1.group.extended_family }
+			triggered_desc = { trigger = { var:ucm_group = flag:house_bloc } desc = ucm_group.1.group.house_bloc }
+			triggered_desc = { trigger = { var:ucm_group = flag:faith_members } desc = ucm_group.1.group.faith_members }
+			triggered_desc = { trigger = { var:ucm_group = flag:culture_members } desc = ucm_group.1.group.culture_members }
 			triggered_desc = { trigger = { var:ucm_group = flag:vassals } desc = ucm_group.1.group.vassals }
 			triggered_desc = { trigger = { var:ucm_group = flag:all_vassals } desc = ucm_group.1.group.all_vassals }
 			triggered_desc = { trigger = { var:ucm_group = flag:councillors } desc = ucm_group.1.group.councillors }

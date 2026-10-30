@@ -366,3 +366,45 @@ ucm_expose_target_secrets = {
 	is_valid = { ucm_menu_target_valid_trigger = yes }
 	effect = { var:ucm_target = { every_secret = { expose_secret = root } } }
 }
+
+ucm_renown_up = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { exists = dynasty } }
+	effect = { var:ucm_target = { dynasty ?= { add_dynasty_prestige = ucm_step_value } } }
+}
+
+ucm_renown_down = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { exists = dynasty } }
+	effect = { var:ucm_target = { dynasty ?= { add_dynasty_prestige = ucm_step_negative_value } } }
+}
+
+ucm_renown_1000_up = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { exists = dynasty } }
+	effect = { var:ucm_target = { dynasty ?= { add_dynasty_prestige = 1000 } } }
+}
+
+ucm_renown_1000_down = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { exists = dynasty } }
+	effect = { var:ucm_target = { dynasty ?= { add_dynasty_prestige = -1000 } } }
+}
+
+ucm_renown_level_up = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { exists = dynasty } }
+	effect = { var:ucm_target = { dynasty ?= { add_dynasty_prestige_level = 1 } } }
+}
+
+ucm_renown_level_down = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { exists = dynasty } }
+	effect = { var:ucm_target = { dynasty ?= { add_dynasty_prestige_level = -1 } } }
+}

@@ -428,7 +428,7 @@ Provide:
 - Enable/disable fertility.
 - Remove pregnancy-related modifiers.
 
-**Out of scope: choosing the baby's sex.** Neither vanilla nor Skonester has a parameter for it.
+**Baby's sex:** set on an existing pregnancy with `set_pregnancy_gender` (engine docs; earlier versions of this spec wrongly said it couldn't be done).
 
 Enable pregnancy options only when they apply, and distinguish guaranteed actions from outcomes the game engine decides.
 
@@ -1530,7 +1530,7 @@ All ten feature categories are in the final scope, but development proceeds in c
 5. Recover or rewrite the missing `gen_ucm_cw_innovation_sguis.py` generator. (Rewritten in Phase 0, then removed in Phase 10 as unused.)
 6. Click through each existing feature and record whether it works, using the "Verify" notes in `agent.md`.
 
-Phase 0 progress and findings are recorded in [phase0-baseline.md](phase0-baseline.md). Phase 1 is described in [phase1-foundation.md](phase1-foundation.md), Phase 2 in [phase2-characters.md](phase2-characters.md), Phase 3 in [phase3-realm.md](phase3-realm.md), Phase 4 in [phase4-military-artifacts.md](phase4-military-artifacts.md), Phase 5 in [phase5-court-dlc.md](phase5-court-dlc.md), Phase 6 in [phase6-group-actions.md](phase6-group-actions.md), Phase 7 in [phase7-hardening.md](phase7-hardening.md), Phase 8 in [phase8-review-fixes.md](phase8-review-fixes.md), Phase 9 in [phase9-upstream-fixes.md](phase9-upstream-fixes.md), Phase 10 in [phase10-dead-code.md](phase10-dead-code.md), Phase 11 in [phase11-simplification.md](phase11-simplification.md).
+Phase 0 progress and findings are recorded in [phase0-baseline.md](phase0-baseline.md). Phase 1 is described in [phase1-foundation.md](phase1-foundation.md), Phase 2 in [phase2-characters.md](phase2-characters.md), Phase 3 in [phase3-realm.md](phase3-realm.md), Phase 4 in [phase4-military-artifacts.md](phase4-military-artifacts.md), Phase 5 in [phase5-court-dlc.md](phase5-court-dlc.md), Phase 6 in [phase6-group-actions.md](phase6-group-actions.md), Phase 7 in [phase7-hardening.md](phase7-hardening.md), Phase 8 in [phase8-review-fixes.md](phase8-review-fixes.md), Phase 9 in [phase9-upstream-fixes.md](phase9-upstream-fixes.md), Phase 10 in [phase10-dead-code.md](phase10-dead-code.md), Phase 11 in [phase11-simplification.md](phase11-simplification.md), Phase 12 (features recreated from the Skonester and Divine Intervention gap review) in [phase12-gap-features.md](phase12-gap-features.md).
 
 Keep a usable build at the end of every phase.
 
@@ -1645,7 +1645,7 @@ Checked against the game's own documentation (`script_docs` output: `logs/effect
 | Typed text can rename characters | ❌ Failed in game | `change_first_name = <dynamic_description>` exists, but in Phase 2 testing it rejected typed text ("Name is too long", then "Couldn't find new first name"). Dropped at the user's request |
 | Typed text can be read as a number | ❌ No | The text controller stores a string shown through localization |
 | Pregnancy with chosen father and number of children | ✅ Verified | `make_pregnant` / `make_pregnant_no_checks`: `father`, `number_of_children`, `known_bastard` |
-| Choosing the baby's sex | ❌ No | Not among the documented `make_pregnant` parameters |
+| Choosing the baby's sex | ✅ Verified | `set_pregnancy_gender = female/male/random` in `effects.log`. Not a `make_pregnant` parameter |
 | Biological father | ✅ Verified | `set_real_father`, `set_father`, `set_mother` |
 | Sexuality, weight | ✅ Verified | `set_sexuality`, `change_current_weight` |
 | Immortality | ⚠️ Partial | `set_immortal_age` only works if already immortal; `is_immortal` trigger exists. Granting immortality needs another effect (verify) |

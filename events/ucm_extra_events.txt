@@ -1,0 +1,39 @@
+namespace = ucm_extra
+
+# Confirmations for irreversible menu actions (tools/gen_ucm_extra.py). Root = player.
+ucm_extra.1 = {
+	type = character_event
+	title = ucm_extra.1.t
+	desc = ucm_extra.1.desc
+	theme = stewardship
+	left_portrait = { character = var:ucm_target }
+	trigger = { ucm_single_player_trigger = yes }
+
+	option = {
+		name = ucm_extra.a
+		trigger = { ucm_menu_target_valid_trigger = yes exists = var:ucm_target.capital_county }
+		var:ucm_target.capital_county = {
+			every_direct_de_jure_vassal_title = {
+				limit = { tier = tier_barony title_province = { has_holding = yes NOT = { this = root.var:ucm_target.capital_province } } }
+				title_province = { remove_holding = yes }
+			}
+		}
+	}
+	option = { name = ucm_extra.b }
+}
+
+ucm_extra.2 = {
+	type = character_event
+	title = ucm_extra.2.t
+	desc = ucm_extra.2.desc
+	theme = stewardship
+	left_portrait = { character = var:ucm_target }
+	trigger = { ucm_single_player_trigger = yes }
+
+	option = {
+		name = ucm_extra.a
+		trigger = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_landed = yes } }
+		var:ucm_target = { destroy_title = primary_title }
+	}
+	option = { name = ucm_extra.b }
+}

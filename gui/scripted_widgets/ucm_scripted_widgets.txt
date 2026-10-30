@@ -11,4 +11,6 @@ gui/ucm_sand_soldiers.gui = ucm_sand_soldiers_window
 gui/ucm_trait_editor.gui = ucm_trait_editor_window
 gui/ucm_cheat_trait_editor.gui = ucm_cheat_trait_editor_window
 gui/ucm_lifestyle.gui = ucm_lifestyle_gui_window
+gui/ucm_modifier_editor.gui = ucm_modifier_editor_window
+gui/ucm_tenet_picker.gui = ucm_tenet_picker_window
 gui/ucm_main_menu.gui = ucm_main_menu_window

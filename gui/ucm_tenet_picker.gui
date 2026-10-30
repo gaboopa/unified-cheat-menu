@@ -1,0 +1,56 @@
+﻿window = {
+  name = "ucm_tenet_picker_window"
+  parentanchor = right|vcenter
+  size = { 500 720 }
+  layer = top
+  movable = yes
+  alwaystransparent = no
+  filter_mouse = all
+  visible = "[And( GetVariableSystem.Exists( 'ucm_tenet_picker' ), GetScriptedGui( 'ucm_menu_visible' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]"
+  widget = {
+    size = { 100% 100% }
+    background = { using = Background_Area_Dark alpha = 1.0 }
+  }
+  vbox = {
+    using = Window_Margins
+    layoutpolicy_horizontal = expanding
+    layoutpolicy_vertical = expanding
+    spacing = 6
+    header_pattern = {
+      layoutpolicy_horizontal = expanding
+      blockoverride "header_text" { text = "UCM_TENET_PICKER" }
+      blockoverride "button_close" { onclick = "[GetVariableSystem.Toggle( 'ucm_tenet_picker' )]" }
+    }
+    text_single = { layoutpolicy_horizontal = expanding text = "UCM_MENU_TARGET" }
+    text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_TENET_NOTE" default_format = "#low" }
+    scrollbox = {
+      layoutpolicy_horizontal = expanding
+      layoutpolicy_vertical = expanding
+      blockoverride "scrollbox_content" {
+        dynamicgridbox = {
+          datamodel = "[GetGlobalList('ucm_acm_doctrine_list_core_tenets')]"
+          flipdirection = yes
+          item = {
+            widget = {
+              size = { 460 44 }
+              datacontext = "[GetTenetType( Scope.GetFlagName )]"
+              datacontext = "[GetPlayer.MakeScope.Var('ucm_target').Char.GetFaith]"
+              datacontext = "[Faith.GetMainRite]"
+              button_standard_hover = {
+                size = { 460 42 }
+                tooltip = "FAITH_WINDOW_TENET_TOOLTIP"
+                onclick = "[GetScriptedGui('ucm_toggle_personal_tenet').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('pick_tenet', MakeScopeFlag(Scope.GetFlagName)).End)]"
+                hbox = {
+                  margin = { 8 0 }
+                  spacing = 8
+                  icon = { size = { 34 34 } texture = "[TenetType.GetIcon( Faith.Self )]" }
+                  text_single = { layoutpolicy_horizontal = expanding text = "[TenetType.GetNameNoTooltip( Rite.Self )]" default_format = "#clickable" autoresize = no }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

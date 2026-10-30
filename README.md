@@ -50,6 +50,7 @@ English, German, Russian, Simplified Chinese and Turkish.
 | `tools/gen_court_positions.py` | Generates the one-click court reshuffle position lists from the court position types |
 | `tools/gen_beauty_companion.py` | Generates the beauty companion's classified culture picker and its labels |
 | `tools/gen_ucm_main_menu.py` | Generates `gui/ucm_main_menu.gui` from a list of tabs and buttons |
+| `tools/gen_ucm_extra.py` | Generates the Phase 12 actions merged into the main menu, the modifier editor and the tenet picker (run before `gen_ucm_main_menu.py`); other-language text comes from `tools/ucm_extra_translations.json` |
 | `tools/gen_ucm_translations.py` | Generates the German, Russian, Chinese and Turkish menu text from the English |
 | `tools/gen_cw_tradition_picker_lists.py` | Regenerates the tradition picker lists after a game update |
 

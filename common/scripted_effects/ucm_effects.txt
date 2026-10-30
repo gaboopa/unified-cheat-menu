@@ -150,6 +150,34 @@ ucm_group_for_each_effect = {
 		var:ucm_target = { dynasty ?= { every_dynasty_member = { $DO$ = yes } } }
 	}
 	else_if = {
+		limit = { var:ucm_group = flag:lovers }
+		var:ucm_target = { every_relation = { type = lover $DO$ = yes } }
+	}
+	else_if = {
+		limit = { var:ucm_group = flag:friends }
+		var:ucm_target = { every_relation = { type = friend $DO$ = yes } }
+	}
+	else_if = {
+		limit = { var:ucm_group = flag:rivals }
+		var:ucm_target = { every_relation = { type = rival $DO$ = yes } }
+	}
+	else_if = {
+		limit = { var:ucm_group = flag:extended_family }
+		var:ucm_target = { every_extended_family_member = { $DO$ = yes } }
+	}
+	else_if = {
+		limit = { var:ucm_group = flag:house_bloc }
+		var:ucm_target = { house ?= { confederation ?= { every_confederation_member = { $DO$ = yes } } } }
+	}
+	else_if = {
+		limit = { var:ucm_group = flag:faith_members }
+		var:ucm_target = { faith ?= { every_faith_character = { $DO$ = yes } } }
+	}
+	else_if = {
+		limit = { var:ucm_group = flag:culture_members }
+		every_living_character = { limit = { culture = root.var:ucm_target.culture } $DO$ = yes }
+	}
+	else_if = {
 		limit = { var:ucm_group = flag:sub_realm_counties }
 		var:ucm_target = { every_sub_realm_county = { $DO$ = yes } }
 	}
@@ -226,6 +254,14 @@ ucm_group_apply_member_effect = {
 		else_if = {
 			limit = { root.var:ucm_group_action = flag:gold }
 			add_gold = 1000
+		}
+		else_if = {
+			limit = { root.var:ucm_group_action = flag:prestige }
+			add_prestige = 1000
+		}
+		else_if = {
+			limit = { root.var:ucm_group_action = flag:piety }
+			add_piety = 1000
 		}
 		else_if = {
 			limit = { root.var:ucm_group_action = flag:convert_faith }

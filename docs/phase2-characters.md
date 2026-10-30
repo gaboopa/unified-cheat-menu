@@ -38,7 +38,7 @@ These need a second character unless noted.
 ## Left out
 
 - **Debug-only Skonester interactions** (weight, quick pregnancy, learn/expose secrets, add hook, force divorce, uncelibate, restore inheritance) only appear in CK3 debug mode, which the spec says ordinary use must not need. The new native buttons cover most of what they did.
-- **Baby's sex:** the engine doesn't support it (Appendix A).
+- **Baby's sex:** wrongly recorded as unsupported at the time; `set_pregnancy_gender` exists. Added in `tools/gen_ucm_extra.py`.
 - **Rename character:** removed after testing. Typed text fed to `change_first_name` failed twice: first "Name is too long" even for one letter (probably the 40-character `RENAME_MAX_LENGTH` check on the raw loc text), then "Couldn't find new first name" (the text is parsed with the target as `ROOT`). A third attempt reading through `GetPlayer` also didn't rename. Not needed, so dropped.
 - **Parent-loop check** only looks five generations back (`any_ancestor`).
 - **Fertility, perks, lifestyle trees, modifiers, presets beyond Skonester's:** not in this pass.

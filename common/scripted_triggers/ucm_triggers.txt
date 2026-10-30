@@ -51,6 +51,8 @@ ucm_group_member_eligible_trigger = {
 				root.var:ucm_group_action = flag:skills_up
 				root.var:ucm_group_action = flag:gold
 				root.var:ucm_group_action = flag:max_opinion
+				root.var:ucm_group_action = flag:prestige
+				root.var:ucm_group_action = flag:piety
 			}
 		}
 		is_alive = yes

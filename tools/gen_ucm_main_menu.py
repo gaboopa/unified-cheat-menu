@@ -17,6 +17,9 @@ Each tab is a list of items:
                           when that group is picked
     ("steps",)            step-size selector (ucm_step_*)
     ("skill", name)       skill row: value, minus and plus (ucm_skill_<name>_down/_up)
+    ("value", label_key, binding, sgui)  the same for any GUI data binding (<sgui>_down/_up)
+    ("vs", var, loc_key)  button toggling a side window shown while GUI variable `var` exists
+    ("togglerow", [(sgui, flag), ...])  scripted GUI buttons, shown pressed while the player has `flag`
 
 Run after editing TABS:
     python tools/gen_ucm_main_menu.py
@@ -24,12 +27,27 @@ Run after editing TABS:
 import os
 import re
 
+import gen_ucm_extra
+
 re_size = re.compile(r"size = \{ \d+ \d+ \}")
 
 MOD_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(MOD_DIR, "gui", "ucm_main_menu.gui")
 R = "GuiScope.SetRoot( GetPlayer.MakeScope ).End"
 C = "GetPlayer.MakeScope.Var( 'ucm_target' ).Char"
+
+EK2_LIFESTYLES = {"magic": "Magic", "dark_arts": "Dark Arts"}
+EK2_TREES = ["conjuration", "destruction", "alteration", "illusion", "restoration", "necromancy"]
+EK2_PERK_RANKS = ["novice", "apprentice", "minor_rituals", "journeyman", "medium_rituals", "expert", "major_rituals", "master"]
+
+
+def ek2_tree_items(trees):
+    out = []
+    for t in trees:
+        out += [("h", f"UCM_SEC_EK2_TREE_{t.upper()}"), ("sg", f"ucm_ek2_perks_{t}")]
+        out += [("sg", f"ucm_ek2_perk_{t}_{r}_perk") for r in EK2_PERK_RANKS]
+    return out
+
 
 TABS = [
     ("quick", [
@@ -86,6 +104,9 @@ TABS = [
         ("skill", "intrigue"), ("skill", "learning"), ("skill", "prowess"),
         ("row", ["ucm_skill_all_down", "ucm_skill_all_up"]),
         ("row", ["ucm_weight_down", "ucm_weight_up"]),
+        ("value", "UCM_RENOWN", f"{C}.GetDynasty.GetPrestige|0", "ucm_renown"),
+        ("row", ["ucm_renown_1000_down", "ucm_renown_1000_up"]),
+        ("row", ["ucm_renown_level_down", "ucm_renown_level_up"]),
         ("ia", "daddy_pika_boost_stats"),
         ("h", "UCM_SEC_TRAITS"),
         ("ia", "zhuge_yixue_02"), ("ia", "zhueg_yixue_03"), ("ia", "zhuge_yixue_04"), ("ia", "zhuge_yixue_06"),
@@ -253,10 +274,11 @@ TABS = [
         ("h", "UCM_SEC_GROUP_PICKER"),
         ("t", "UCM_GROUP_PICKER_NOTE"),
         ("t", "UCM_GROUP_CHARACTERS"),
-        ("picks", ["courtiers", "vassals", "all_vassals", "councillors", "knights", "children", "close_family", "spouses", "house", "dynasty"]),
+        ("picks", ["courtiers", "vassals", "all_vassals", "councillors", "knights", "children", "close_family", "extended_family", "spouses", "lovers", "friends", "rivals", "house", "dynasty", "house_bloc", "faith_members", "culture_members"]),
         ("t", "UCM_GROUP_CHAR_ACTIONS"),
         ("row", ["ucm_group_run_clear_stress", "ucm_group_run_skills_up", "ucm_group_run_gold"]),
         ("row", ["ucm_group_run_convert_faith", "ucm_group_run_convert_culture", "ucm_group_run_max_opinion"]),
+        ("row", ["ucm_group_run_prestige", "ucm_group_run_piety"]),
         ("h", "UCM_SEC_GENERATION"),
         ("ia", "daddy_pika_character_spawner"), ("ia", "toc_spawn_character_interaction"), ("ia", "toc_addcharacter_interaction"),
         ("ia", "toc_addcourtier_interaction"), ("ia", "toc_addwombmancourtier_interaction"), ("ia", "spawn_courtier_interaction"),
@@ -325,7 +347,26 @@ TABS = [
         ("h", "UCM_SEC_DEBUG"),
         ("sg", "ucm_open_console_helper"), ("ia", "toc_main_debug_interaction"),
     ]),
+    # Effects live in compat/ek2; the main mod ships is_shown = no stubs, so the tab only appears with EK2.
+    ("ek2", [
+        ("h", "UCM_SEC_EK2_ARCANA"),
+        ("sg", "ucm_ek2_max_arcana"), ("sg", "ucm_ek2_refill_magicka"),
+        ("steps",),
+        ("value", "UCM_SKILL_ARCANA", f"{C}.MakeScope.ScriptValue( 'ucm_ek2_arcana_value' )|0", "ucm_ek2_arcana"),
+        ("value", "UCM_SKILL_MAGICKA", f"{C}.MakeScope.ScriptValue( 'ucm_ek2_magicka_value' )|0", "ucm_ek2_magicka"),
+        ("h", "UCM_SEC_EK2_LIFESTYLE"),
+        *[("sg", f"ucm_ek2_{ls}_{k}") for ls in EK2_LIFESTYLES for k in ("point", "xp")],
+        ("h", "UCM_SEC_EK2_SCHOOLS"),
+        *ek2_tree_items(EK2_TREES[:5]),
+        ("h", "UCM_SEC_EK2_DARK"),
+        *ek2_tree_items(EK2_TREES[5:]),
+    ]),
 ]
+_extra = gen_ucm_extra.build(gen_ucm_extra.game_dir([]))
+for _tab, _items in TABS:
+    _items.extend(_extra.get(_tab, []))
+# Tabs shown only while this scripted GUI's is_shown holds.
+TAB_GATES = {"ek2": "ucm_ek2_tab"}
 
 
 def tab_shown(t):
@@ -386,6 +427,16 @@ def crozier_buttons(name, ind, keep_size=False):
 
 
 def item(it, ind):
+    if it[0] == "vs":
+        return [f"{ind}button_standard = {{", f"{ind}  layoutpolicy_horizontal = expanding", f"{ind}  size = {{ 0 30 }}", f'{ind}  text = "{it[2]}"',
+                f"{ind}  down = \"[GetVariableSystem.Exists( '{it[1]}' )]\"", f"{ind}  onclick = \"[GetVariableSystem.Toggle( '{it[1]}' )]\"", f"{ind}}}"]
+    if it[0] == "togglerow":
+        lines = [f"{ind}hbox = {{", f"{ind}  layoutpolicy_horizontal = expanding", f"{ind}  spacing = 4"]
+        for name, flag in it[1]:
+            b = sgui_button(name, ind + "  ")
+            b.insert(1, f"{ind}    down = \"[GetPlayer.MakeScope.HasFlag('{flag}')]\"")
+            lines += b
+        return lines + [f"{ind}}}"]
     if it[0] == "cz":
         return crozier_buttons(it[1], ind)
     if it[0] == "picks":
@@ -456,6 +507,19 @@ def item(it, ind):
         for n in (1, 5, 10, 25, 100):
             lines += sgui_button(f"ucm_step_{n}", ind + "  ", "56", expand=False)
         return lines + [f"{ind}  expand = {{}}", f"{ind}}}"]
+    if kind == "value":
+        _, label, value, sg = it
+        return [
+            f"{ind}hbox = {{",
+            f"{ind}  layoutpolicy_horizontal = expanding",
+            f"{ind}  spacing = 4",
+            f'{ind}  text_single = {{ size = {{ 140 30 }} text = "{label}" }}',
+            f"{ind}  text_single = {{ size = {{ 50 30 }} raw_text = \"[{value}]\" default_format = \"#high\" }}",
+            *sgui_button(f"{sg}_down", ind + "  ", "56", expand=False),
+            *sgui_button(f"{sg}_up", ind + "  ", "56", expand=False),
+            f"{ind}  expand = {{}}",
+            f"{ind}}}",
+        ]
     if kind == "skill":
         s = it[1]
         return [
@@ -590,6 +654,7 @@ def main():
             "        button_standard = {",
             "          size = { 220 34 }",
             f'          text = "UCM_TAB_{t.upper()}"',
+            *([f"          visible = \"[GetScriptedGui( '{TAB_GATES[t]}' ).IsShown( {R} )]\""] if t in TAB_GATES else []),
             f'          down = "{tab_shown(t)}"',
             f"          onclick = \"[GetVariableSystem.Set( 'ucm_tab', '{t}' )]\"",
             "        }",
@@ -599,7 +664,8 @@ def main():
         o += [
             "      scrollbox = {",
             "        size = { 600 540 }",
-            f'        visible = "{tab_shown(t)}"',
+            f'        visible = "{tab_shown(t)}"' if t not in TAB_GATES else
+            f"        visible = \"[And( {tab_shown(t)[1:-1]}, GetScriptedGui( '{TAB_GATES[t]}' ).IsShown( {R} ) )]\"",
             '        blockoverride "scrollbox_content" {',
             "          vbox = {",
             "            layoutpolicy_horizontal = expanding",

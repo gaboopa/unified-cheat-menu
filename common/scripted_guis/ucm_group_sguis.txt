@@ -61,6 +61,48 @@ ucm_group_pick_dynasty = {
 	effect = { set_variable = { name = ucm_group_pick value = flag:dynasty } }
 }
 
+ucm_group_pick_lovers = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	effect = { set_variable = { name = ucm_group_pick value = flag:lovers } }
+}
+
+ucm_group_pick_friends = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	effect = { set_variable = { name = ucm_group_pick value = flag:friends } }
+}
+
+ucm_group_pick_rivals = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	effect = { set_variable = { name = ucm_group_pick value = flag:rivals } }
+}
+
+ucm_group_pick_extended_family = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	effect = { set_variable = { name = ucm_group_pick value = flag:extended_family } }
+}
+
+ucm_group_pick_house_bloc = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	effect = { set_variable = { name = ucm_group_pick value = flag:house_bloc } }
+}
+
+ucm_group_pick_faith_members = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	effect = { set_variable = { name = ucm_group_pick value = flag:faith_members } }
+}
+
+ucm_group_pick_culture_members = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	effect = { set_variable = { name = ucm_group_pick value = flag:culture_members } }
+}
+
 ucm_group_pick_sub_realm_counties = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
@@ -104,6 +146,20 @@ ucm_group_run_gold = {
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes exists = var:ucm_group_pick ucm_group_pick_is_county_trigger = no }
 	effect = { ucm_group_start_picked_effect = { ACTION = gold } }
+}
+
+ucm_group_run_prestige = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes exists = var:ucm_group_pick ucm_group_pick_is_county_trigger = no }
+	effect = { ucm_group_start_picked_effect = { ACTION = prestige } }
+}
+
+ucm_group_run_piety = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes exists = var:ucm_group_pick ucm_group_pick_is_county_trigger = no }
+	effect = { ucm_group_start_picked_effect = { ACTION = piety } }
 }
 
 ucm_group_run_convert_faith = {

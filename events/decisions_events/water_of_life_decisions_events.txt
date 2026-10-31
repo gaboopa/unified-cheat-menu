@@ -1,4 +1,4 @@
-﻿namespace = water_of_life
+namespace = water_of_life
 
 # ~ Decipher ~
 water_of_life.1001 = {
@@ -353,7 +353,7 @@ water_of_life.1009 = {
 	title = water_of_life.1009.t
 	desc = water_of_life.1009.desc
 	theme = friend_relation
-	override_background = { reference = ucm_clavius_homecoming }
+	override_background = { reference = courtyard }
 	left_portrait = {
 		character = ROOT
 		animation = personality_bold

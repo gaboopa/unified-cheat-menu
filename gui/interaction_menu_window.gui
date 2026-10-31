@@ -399,7 +399,7 @@ types InteractionTypes
 
 					# toggle the menu height controls
 					button_icon = {
-						texture = "gfx/xa_height.png"
+						texture = "gfx/interface/icons/flat_icons/arrow_vertical.dds"
 						visible = "[Not( GameHasMultiplePlayers )]"
 						alpha = 0.8
 						size = { 25 25 }

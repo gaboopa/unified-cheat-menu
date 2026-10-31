@@ -1,6 +1,6 @@
 ucm_one_click_purge_bad_governors_decision = {
   picture = {
-    reference = "gfx/interface/illustrations/decisions/8.dds"
+    reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
   }
   decision_group_type = ucm_officials
   sort_order = 30

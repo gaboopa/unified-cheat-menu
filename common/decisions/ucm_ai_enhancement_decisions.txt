@@ -1,6 +1,6 @@
 ucm_ai_yearly_pulse_toggle_decision = {
   picture = {
-    reference = "gfx/interface/illustrations/decisions/8.dds"
+    reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
   }
   decision_group_type = ucm_ai_automation
   sort_order = 81
@@ -91,7 +91,7 @@ ucm_ai_yearly_pulse_toggle_decision = {
 
 ucm_ai_yearly_de_jure_transfer_toggle_decision = {
   picture = {
-    reference = "gfx/interface/illustrations/decisions/8.dds"
+    reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
   }
   decision_group_type = ucm_ai_automation
   sort_order = 80
@@ -173,7 +173,7 @@ ucm_ai_yearly_de_jure_transfer_toggle_decision = {
 
 ucm_ai_yearly_admin_conversion_toggle_decision = {
   picture = {
-    reference = "gfx/interface/illustrations/decisions/8.dds"
+    reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
   }
   decision_group_type = ucm_ai_automation
   sort_order = 79
@@ -265,7 +265,7 @@ ucm_ai_yearly_admin_conversion_toggle_decision = {
 
 ucm_ai_boost_toggle_decision = {
   picture = {
-    reference = "gfx/interface/illustrations/decisions/8.dds"
+    reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
   }
   decision_group_type = ucm_ai_automation
   sort_order = 78

@@ -138,8 +138,6 @@ Orta Çağ'da, birçok fuar geçici pazarlar olarak gelişti ve özellikle uzun 
  ### From: debug_start_era_of_crusades_interaction_interactions_l_english.yml
  ### From: eka_impregnate_l_english.yml
  ### From: fake_dlc_l_english.yml
- MODDED_DLC_BUTTON_TOOLTIP:0 "#T [Dlc.GetName]#!\n[Dlc.GetDesc]\n\n#low [SelectLocalization( Not(DlcIconDisabled), 'DLC_ENABLED', 'DLC_NOT_ENABLED' )]#![AddTextIf(Not(IsFakeDlc), '\n#I Mağazaya erişmek için tıklayın#!')]"
- MODDED_DLC_ENABLED_DISABLED_SHORT:0 "[SelectLocalization( Not(DlcIconDisabled), 'DLC_ENABLED_SHORT', 'DLC_DISABLED_SHORT')]"
  ### From: house_guard_l_english.yml
  house_cavalry_type:0 "Seçkin Hane Süvarisi"
  house_cavalry_type_flavor:0 "Bu seçkin alay belirli bir Hanedanın hizmetindedir. Bu savaşçılar, seyahat ederken Hanedan üyelerini korumak için en sadık ve yetenekli süvariler arasından özenle seçilmiştir."
@@ -254,10 +252,6 @@ $EFFECT_LIST_BULLET$Unvana göre[claimant|E]olun, Teokrasiyi veya Cumhuriyeti mi
 $EFFECT_LIST_BULLET$Geçerli bir Popüler olun[elector|E]Unvana göre"
 $EFFECT_LIST_BULLET$Unvanın doğrudan vasalı olmak
 $EFFECT_LIST_BULLET$[baron|E][rank|E]değerinin üzerinde olmak."
-  cxa_tip: "[Select_CString(PdxGuiFoldOut.IsFolded, 'collapse', 'expand')] tümüne sağ tıklayın"
-  xa_height: "Maksimum yükseklik:"
-  xa_change_height: "Maksimum yüksekliği değiştir"
-  xa_update: "Menü yeniden açıldığında güncellenecektir"
 GET_TARGET_TITLE_NAME:0 "[target.GetBaseNameNoTierNoTooltip]"
 GET_TARGET_TITLE_ADJECTIVE:0 "[target.GetAdjectiveNoTooltip]"
 ucm_create_titular.back:0 "Geri gitmek"

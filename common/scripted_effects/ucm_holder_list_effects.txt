@@ -17,10 +17,10 @@ ucm_holder_upkeep_effect = {
       limit = { is_alive = yes has_trait = $TRAIT$ }
       $UPKEEP$ = yes
     }
-    else = { add_to_temporary_list = ucm_stale_holders }
+    else = { add_to_temporary_list = ucm_stale_$LIST$ }
   }
   every_in_list = {
-    list = ucm_stale_holders
+    list = ucm_stale_$LIST$
     remove_list_global_variable = { name = $LIST$ target = this }
   }
 }

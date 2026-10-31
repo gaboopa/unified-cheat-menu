@@ -5664,7 +5664,7 @@ window = {
             hbox = {
               layoutpolicy_horizontal = expanding
               spacing = 4
-              visible = "[And( GetDecisionWithKey( 'ucm_court_management_decision' ).IsShownForPlayer, GetDecisionWithKey( 'yyz_open_menu_decision' ).IsShownForPlayer )]"
+              visible = "[And( GetDecisionWithKey( 'ucm_court_management_decision' ).IsShownForPlayer, GetDecisionWithKey( 'ucm_bulk_guardian_run_decision' ).IsShownForPlayer )]"
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
@@ -5673,49 +5673,36 @@ window = {
                 tooltip = "[Decision.GetShortDescForPlayer]"
                 onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
               }
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                datacontext = "[GetDecisionWithKey( 'yyz_open_menu_decision' )]"
-                text = "[Decision.GetTitleForPlayer]"
-                tooltip = "[Decision.GetShortDescForPlayer]"
-                onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
-              }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              visible = "[And( Not( GetDecisionWithKey( 'ucm_court_management_decision' ).IsShownForPlayer ), GetDecisionWithKey( 'yyz_open_menu_decision' ).IsShownForPlayer )]"
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                datacontext = "[GetDecisionWithKey( 'yyz_open_menu_decision' )]"
-                text = "[Decision.GetTitleForPlayer]"
-                tooltip = "[Decision.GetShortDescForPlayer]"
-                onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
-              }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              visible = "[And( GetDecisionWithKey( 'ucm_court_management_decision' ).IsShownForPlayer, Not( GetDecisionWithKey( 'yyz_open_menu_decision' ).IsShownForPlayer ) )]"
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                datacontext = "[GetDecisionWithKey( 'ucm_court_management_decision' )]"
-                text = "[Decision.GetTitleForPlayer]"
-                tooltip = "[Decision.GetShortDescForPlayer]"
-                onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
-              }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              visible = "[GetDecisionWithKey( 'ucm_bulk_guardian_run_decision' ).IsShownForPlayer]"
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
                 datacontext = "[GetDecisionWithKey( 'ucm_bulk_guardian_run_decision' )]"
+                text = "[Decision.GetTitleForPlayer]"
+                tooltip = "[Decision.GetShortDescForPlayer]"
+                onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+              }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              visible = "[And( Not( GetDecisionWithKey( 'ucm_court_management_decision' ).IsShownForPlayer ), GetDecisionWithKey( 'ucm_bulk_guardian_run_decision' ).IsShownForPlayer )]"
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                datacontext = "[GetDecisionWithKey( 'ucm_bulk_guardian_run_decision' )]"
+                text = "[Decision.GetTitleForPlayer]"
+                tooltip = "[Decision.GetShortDescForPlayer]"
+                onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
+              }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              visible = "[And( GetDecisionWithKey( 'ucm_court_management_decision' ).IsShownForPlayer, Not( GetDecisionWithKey( 'ucm_bulk_guardian_run_decision' ).IsShownForPlayer ) )]"
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                datacontext = "[GetDecisionWithKey( 'ucm_court_management_decision' )]"
                 text = "[Decision.GetTitleForPlayer]"
                 tooltip = "[Decision.GetShortDescForPlayer]"
                 onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"

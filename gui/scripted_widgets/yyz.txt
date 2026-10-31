@@ -1,3 +1,0 @@
-﻿
-gui/yyz_gui.gui = yyz_character_list_window
-

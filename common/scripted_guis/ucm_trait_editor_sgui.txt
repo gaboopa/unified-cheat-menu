@@ -1,23 +1,20 @@
-﻿# AUTO-GENERATED — tools/gen_trait_editor_gui.py
-# 本体特质窗口 scripted_gui
+﻿# Trait editor window (gui/ucm_trait_editor.gui). Root = player.
 
-ucm_trait_gui_visible = {
+ucm_trait_editor_visible = {
   scope = character
-  is_shown = { ucm_single_player_trigger = yes  has_character_flag = ucm_trait_gui_open }
-  is_valid = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes has_character_flag = ucm_trait_editor_open }
 }
 
-ucm_trait_gui_close = {
-	is_shown = { ucm_single_player_trigger = yes }
+ucm_trait_editor_close = {
   scope = character
-  is_valid = { always = yes }
+  is_shown = { ucm_single_player_trigger = yes }
   effect = { ucm_close_trait_editor_gui_effect = yes }
 }
 
-ucm_trait_gui_toggle = {
-	is_shown = { ucm_single_player_trigger = yes }
+ucm_trait_editor_toggle = {
   scope = character
   saved_scopes = { trait_flag }
-  is_valid = { always = yes }
-  effect = { ucm_trait_gui_toggle_from_flag_effect = yes }
+  is_shown = { ucm_single_player_trigger = yes }
+  is_valid = { has_variable = ucm_trait_editor_target }
+  effect = { ucm_trait_editor_dispatch_effect = yes }
 }

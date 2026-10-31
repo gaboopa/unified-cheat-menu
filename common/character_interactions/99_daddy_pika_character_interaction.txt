@@ -1,35 +1,4 @@
-﻿#角色生成器
-daddy_pika_character_spawner = {
-	category = interaction_category_uncategorized
-	desc = daddy_pika_character_spawner_desc
-	common_interaction = yes
-	icon = legend
-	interface_priority = 10999
-	
-	auto_accept = yes
-	use_diplomatic_range = no
-	ignores_pending_interaction_block = yes
-	
-	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
-		scope:actor = {
-			is_ai = no
-			has_character_flag = bone_cheat_interactions_flag
-		}
-	}
-	
-	on_send = {
-		scope:recipient = {
-			save_scope_as = char_spawner_scope
-		}
-		scope:actor = {
-			add_character_flag = char_numb_1
-			trigger_event = char_spawner.1
-		}
-	}
-}
-
-daddy_pika_change_character = {
+﻿daddy_pika_change_character = {
 	category = interaction_category_uncategorized
 	interface_priority = 10988
 	desc = daddy_pika_change_character_desc

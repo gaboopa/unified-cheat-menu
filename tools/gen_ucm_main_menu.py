@@ -92,7 +92,7 @@ TABS = [
     ]),
     ("character", [
         ("h", "UCM_SEC_EDITORS"),
-        ("sg", "ucm_open_trait_editor"), ("sg", "ucm_open_cheat_trait_editor"), ("sg", "ucm_open_lifestyle_editor"),
+        ("sg", "ucm_open_trait_editor"), ("sg", "ucm_open_lifestyle_editor"),
         ("h", "UCM_SEC_IDENTITY"),
         ("ia", "ucm_change_age_interaction"),
         ("row", ["ucm_sexuality_heterosexual", "ucm_sexuality_homosexual", "ucm_sexuality_bisexual", "ucm_sexuality_asexual"]),
@@ -277,7 +277,7 @@ TABS = [
         ("row", ["ucm_group_run_convert_faith", "ucm_group_run_convert_culture", "ucm_group_run_max_opinion"]),
         ("row", ["ucm_group_run_prestige", "ucm_group_run_piety"]),
         ("h", "UCM_SEC_GENERATION"),
-        ("ia", "daddy_pika_character_spawner"), ("ia", "toc_spawn_character_interaction"), ("ia", "toc_addcharacter_interaction"),
+        ("ia", "toc_spawn_character_interaction"), ("ia", "toc_addcharacter_interaction"),
         ("ia", "toc_addcourtier_interaction"), ("ia", "toc_addwombmancourtier_interaction"), ("ia", "spawn_courtier_interaction"),
         ("cz", "t_t_child_now"), ("cz", "t_t_child_me"),
         ("h", "UCM_SEC_COURT"),

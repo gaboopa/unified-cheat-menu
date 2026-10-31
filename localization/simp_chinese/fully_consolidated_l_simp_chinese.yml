@@ -963,8 +963,6 @@ change_govt_celestial: "更改政体：天朝"
  flag_pregnancy_girl: "怀了女儿"
 
  ### 来自：fake_dlc_l_english.yml
-  MODDED_DLC_BUTTON_TOOLTIP: "#T [Dlc.GetName]#!\n[Dlc.GetDesc]\n\n#low [SelectLocalization( Not(DlcIconDisabled), 'DLC_ENABLED', 'DLC_NOT_ENABLED') ]#![AddTextIf(Not(IsFakeDlc), '\n#I 点击访问商店#!')]"
-  MODDED_DLC_ENABLED_DISABLED_SHORT: "[SelectLocalization( Not(DlcIconDisabled), 'DLC_ENABLED_SHORT', 'DLC_DISABLED_SHORT')]"
 
  ### 来自：house_guard_l_english.yml
  house_cavalry_type:0 "精英家族骑兵"
@@ -1367,10 +1365,6 @@ change_govt_celestial: "更改政体：天朝"
  skone_theocratic_elective_succession_law:1 "神权选举制"
 
  ### 来自：ucm_collapse_xaction_l_english.yml
-  cxa_tip: "右键点击以[Select_CString(PdxGuiFoldOut.IsFolded, '折叠', '展开')]全部"
-  xa_height: "最大高度："
-  xa_change_height: "更改最大高度"
-  xa_update: "重新打开菜单时将更新"
 
  ### 来自：ucm_create_titular_l_english.yml
 GET_TARGET_TITLE_NAME:0 "[target.GetBaseNameNoTierNoTooltip]"

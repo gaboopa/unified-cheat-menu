@@ -1709,8 +1709,6 @@ mt_clear_selection:0 "头衔选择将被清除"
   Artifact_1000_tooltip:0 "接收普雷罗玛的碎片。"
 
  ### 来自：zz_ucm_cultural_polygamy_l_english.yml
- tradition_zz_cultural_polygamy_two_wives_name: "一夫多妻（2 妻）"
- tradition_zz_cultural_polygamy_two_wives_desc: "允许此文化的统治者最多娶两位妻子。"
 
  ### 来自：zz_ucm_pisces_update_l_english..yml
  cheat_decition_tradition:0 "确立文化霸权"
@@ -1721,8 +1719,6 @@ mt_clear_selection:0 "头衔选择将被清除"
  yyz_open_menu_decision_desc:0 "我们当前的计划需要专业知识。通过正式化我们的人才搜寻，我们可以确保我们的宫廷仍然是精英的目的地，为我们提供成功所需的技能。"
  yyz_open_menu_decision_confirm:0 "打开菜单"
  yyz_open_menu_decision_tooltip:0 "初始化列表。"
- tradition_zz_cultural_polygamy_three_wives_name: "文化一夫多妻"
- tradition_zz_cultural_polygamy_three_wives_desc: "在这种文化中，最高等级的统治者 tradition 维持多个配偶和侍妾的家庭，以确保庞大而稳定的血统。"
  ucm_change_age_interaction:0 "更改角色年龄"
     flag_age_6:0 "6 岁"
     flag_age_16:0 "16 岁"

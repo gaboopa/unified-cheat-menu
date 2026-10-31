@@ -1121,8 +1121,6 @@ Orta Çağ'da, birçok fuar geçici pazarlar olarak gelişti ve özellikle uzun 
  cheat_decition_accept:0 "Işık kendinden olanı tanıyacaktır."
  Artifact_1000_tooltip:0 "Pleroma'nın parçalarını al."
  ### From: zz_ucm_cultural_polygamy_l_english.yml
- tradition_zz_cultural_polygamy_two_wives_name: "Çok Eşlilik (2 Eş)"
- tradition_zz_cultural_polygamy_two_wives_desc: "Bu kültürün hükümdarlarının iki eşe kadar almasına izin verir."
  ### From: zz_ucm_pisces_update_l_english..yml
  cheat_decition_tradition:0 "Kültürel Üstünlük Kur"
  cheat_description_tradition:0 "Fermanla, dünyanın her köşesinin bilgeliğini benimseyeceğiz. Doğu'nun Pirinç Tarlalarından Batı'nın Uzun Yaycılarına kadar, halkımız rakip tanımayacak."
@@ -1132,8 +1130,6 @@ Orta Çağ'da, birçok fuar geçici pazarlar olarak gelişti ve özellikle uzun 
  yyz_open_menu_decision_desc:0 "Our current plans require specialized expertise. By formalizing our search for talent, we can ensure that our court remains a destination for the elite, providing us with the skills necessary for success."
  yyz_open_menu_decision_confirm:0 "Menüyü Aç"
  yyz_open_menu_decision_tooltip:0 "Listeyi başlat."
- tradition_zz_cultural_polygamy_three_wives_name:0 "Kültürel Çok Eşlilik"
- tradition_zz_cultural_polygamy_three_wives_desc:0 "In this culture, it is tradition for the highest-ranking rulers to maintain a household of multiple spouses and concubines to ensure a vast and stable lineage."
  ucm_change_age_interaction:0 "Karakter Yaşını Değiştir"
  flag_age_6:0 "6 yaşında"
  flag_age_16:0 "16 yaşında"

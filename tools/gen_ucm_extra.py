@@ -497,7 +497,7 @@ def spawn_picker_sguis():
         SGUIS.append(f"ucm_spawn_pick_{kind} = {{\n\tscope = character\n\tsaved_scopes = {{ selected_{kind} }}\n\tis_shown = {{ ucm_single_player_trigger = yes }}\n"
                      f"\tis_valid = {{ exists = scope:selected_{kind} }}\n\teffect = {{ set_variable = {{ name = ucm_spawn_{kind} value = scope:selected_{kind} }} }}\n}}\n")
     SGUIS.append("ucm_spawn_lists_load = {\n\tscope = character\n\tis_shown = { ucm_single_player_trigger = yes }\n\tis_valid = { always = yes }\n"
-                 "\teffect = { ucm_acm_culture_picker_refresh_all_region_lists_effect = yes ucm_acm_religion_picker_refresh_all_lists_effect = yes }\n}\n")
+                 "\teffect = { ucm_picker_fill_heritages_effect = yes ucm_picker_fill_religions_effect = yes }\n}\n")
 
 
 def sg_pair(key, name, value, step, lo, hi):
@@ -574,18 +574,62 @@ def modifier_editor(logs):
 R = "GuiScope.SetRoot( GetPlayer.MakeScope ).End"
 
 
-def window(name, anchor, var, title, note, body):
-    close = f"GetVariableSystem.Toggle( '{var}' )"
+def window(name, anchor, var, title, note, body, sgui=None, size=(500, 720), extra=""):
+    """The shared picker window. Opened by a VariableSystem toggle (var), or with sgui=key by a character flag:
+    <key>_visible and <key>_close scripted GUIs, and no menu-target line since events open those too."""
+    close = f"GetScriptedGui( '{sgui}_close' ).Execute( {R} )" if sgui else f"GetVariableSystem.Toggle( '{var}' )"
+    shown = f"GetScriptedGui( '{sgui}_visible' ).IsShown( {R} )" if sgui else f"And( GetVariableSystem.Exists( '{var}' ), GetScriptedGui( 'ucm_menu_visible' ).IsShown( {R} ) )"
     return "\n".join([
-        "window = {", f'  name = "{name}"', f"  parentanchor = {anchor}", "  size = { 500 720 }", "  layer = top", "  movable = yes", "  alwaystransparent = no", "  filter_mouse = all",
-        f"  visible = \"[And( GetVariableSystem.Exists( '{var}' ), GetScriptedGui( 'ucm_menu_visible' ).IsShown( {R} ) )]\"",
+        "window = {", f'  name = "{name}"', f"  parentanchor = {anchor}", f"  size = {{ {size[0]} {size[1]} }}", "  layer = top", "  movable = yes", "  alwaystransparent = no", "  filter_mouse = all",
+        f'  visible = "[{shown}]"', *([extra] if extra else []),
         "  widget = {", "    size = { 100% 100% }", "    background = { using = Background_Area_Dark alpha = 1.0 }", "  }",
         "  vbox = {", "    using = Window_Margins", "    layoutpolicy_horizontal = expanding", "    layoutpolicy_vertical = expanding", "    spacing = 6",
         "    header_pattern = {", "      layoutpolicy_horizontal = expanding", f'      blockoverride "header_text" {{ text = "{title}" }}',
         f'      blockoverride "button_close" {{ onclick = "[{close}]" }}', "    }",
-        '    text_single = { layoutpolicy_horizontal = expanding text = "UCM_MENU_TARGET" }',
-        f'    text_multi = {{ layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "{note}" default_format = "#low" }}',
+        *([] if sgui else ['    text_single = { layoutpolicy_horizontal = expanding text = "UCM_MENU_TARGET" }']),
+        f'    text_multi = {{ layoutpolicy_horizontal = expanding autoresize = yes max_width = {size[0] - 40} text = "{note}" default_format = "#low" }}',
         body, "  }", "}", ""])
+
+
+def group_list(datamodel, group_ctx, group, children, item, onclick, extra=""):
+    """Scrollbox of expandable groups from a global list: heritage -> culture, religion -> faith. extra goes inside each item."""
+    expanded = f"ConcatIfNeitherEmpty({group}.GetNameNoTooltip,'children_visible')"
+    return f"""    scrollbox = {{
+      layoutpolicy_horizontal = expanding
+      layoutpolicy_vertical = expanding
+      blockoverride "scrollbox_content" {{
+        vbox = {{
+          layoutpolicy_horizontal = expanding
+          datamodel = "[GetGlobalList('{datamodel}')]"
+          item = {{
+            vbox = {{
+              layoutpolicy_horizontal = expanding
+              datacontext = "[{group_ctx}]"
+              button_standard_hover = {{
+                layoutpolicy_horizontal = expanding
+                size = {{ 0 30 }}
+                onclick = "[GetVariableSystem.Toggle({expanded})]"
+                text_single = {{ parentanchor = vcenter|left position = {{ 8 0 }} text = "[{group}.GetNameNoTooltip]" default_format = "#high" }}
+              }}
+              vbox = {{
+                layoutpolicy_horizontal = expanding
+                margin_left = 12
+                datamodel = "[{group}.{children}]"
+                visible = "[GetVariableSystem.Exists({expanded})]"
+                item = {{
+                  button_standard_hover = {{
+                    layoutpolicy_horizontal = expanding
+                    size = {{ 0 28 }}
+                    onclick = "[{onclick}]"
+                    text_single = {{ parentanchor = vcenter|left position = {{ 8 0 }} text = "[{item}.GetNameNoTooltip]" default_format = "#clickable" }}{extra}
+                  }}
+                }}
+              }}
+            }}
+          }}
+        }}
+      }}
+    }}"""
 
 
 def modifier_gui(cat):
@@ -652,7 +696,6 @@ def spawn_picker_gui():
     def section(kind, cap, label, datamodel, group_ctx, group, children, item):
         var = f"GetPlayer.MakeScope.Var('ucm_spawn_{kind}')"
         clear = f"GetScriptedGui('ucm_spawn_{kind}_clear')"
-        expanded = f"ConcatIfNeitherEmpty({group}.GetNameNoTooltip,'children_visible')"
         load = f"""      state = {{ name = _show on_start = "[GetScriptedGui('ucm_spawn_lists_load').Execute({R})]" }}\n""" if kind == "culture" else ""
         return f"""    hbox = {{
       layoutpolicy_horizontal = expanding
@@ -662,44 +705,9 @@ def spawn_picker_gui():
       text_single = {{ layoutpolicy_horizontal = expanding visible = "[Not({var}.IsSet)]" text = "UCM_SPAWN_TARGETS" }}
       button_standard = {{ size = {{ 130 28 }} tooltip = "ucm_spawn_{kind}_clear_tt" enabled = "[{clear}.IsValid({R})]" onclick = "[{clear}.Execute({R})]" text_single = {{ parentanchor = center text = "ucm_spawn_{kind}_clear" }} }}
     }}
-    scrollbox = {{
-      layoutpolicy_horizontal = expanding
-      layoutpolicy_vertical = expanding
-      blockoverride "scrollbox_content" {{
-        vbox = {{
-          layoutpolicy_horizontal = expanding
-          datamodel = "[GetGlobalList('{datamodel}')]"
-          item = {{
-            vbox = {{
-              layoutpolicy_horizontal = expanding
-              datacontext = "[{group_ctx}]"
-              button_standard_hover = {{
-                layoutpolicy_horizontal = expanding
-                size = {{ 0 30 }}
-                onclick = "[GetVariableSystem.Toggle({expanded})]"
-                text_single = {{ parentanchor = vcenter|left position = {{ 8 0 }} text = "[{group}.GetNameNoTooltip]" default_format = "#high" }}
-              }}
-              vbox = {{
-                layoutpolicy_horizontal = expanding
-                margin_left = 12
-                datamodel = "[{group}.{children}]"
-                visible = "[GetVariableSystem.Exists({expanded})]"
-                item = {{
-                  button_standard_hover = {{
-                    layoutpolicy_horizontal = expanding
-                    size = {{ 0 28 }}
-                    onclick = "[GetScriptedGui('ucm_spawn_pick_{kind}').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('selected_{kind}', {item}.MakeScope).End)]"
-                    text_single = {{ parentanchor = vcenter|left position = {{ 8 0 }} text = "[{item}.GetNameNoTooltip]" default_format = "#clickable" }}
-                  }}
-                }}
-              }}
-            }}
-          }}
-        }}
-      }}
-    }}"""
-    body = (section("culture", "Culture", "UCM_SPAWN_CULTURE_LABEL", "ucm_acm_heritage_list_all", "Scope.Culture.GetHeritage", "CulturePillar", "GetCulturesWithPillar", "Culture") + "\n"
-            + section("faith", "Faith", "UCM_SPAWN_FAITH_LABEL", "ucm_acm_religion_list_all", "Scope.Religion", "Religion", "GetFaiths", "Faith"))
+""" + group_list(datamodel, group_ctx, group, children, item, f"GetScriptedGui('ucm_spawn_pick_{kind}').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('selected_{kind}', {item}.MakeScope).End)")
+    body = (section("culture", "Culture", "UCM_SPAWN_CULTURE_LABEL", "ucm_picker_heritages", "Scope.Culture.GetHeritage", "CulturePillar", "GetCulturesWithPillar", "Culture") + "\n"
+            + section("faith", "Faith", "UCM_SPAWN_FAITH_LABEL", "ucm_picker_religions", "Scope.Religion", "Religion", "GetFaiths", "Faith"))
     return window("ucm_spawn_picker_window", "right|vcenter", "ucm_spawn_picker", "UCM_SPAWN_PICKER", "UCM_SPAWN_PICKER_NOTE", body)
 
 

@@ -1,0 +1,138 @@
+# Culture, religion, tradition and faith pickers (gui/ucm_picker_*.gui, tools/gen_pickers.py). Root = player.
+# global_var:ucm_cheat_menu_recipient is the locked character; without one, the player is the target.
+
+# One culture per heritage; the GUI lists each heritage's cultures itself.
+ucm_picker_fill_heritages_effect = {
+  clear_global_variable_list = ucm_picker_heritages
+  every_culture_global = {
+    limit = {
+      NOT = {
+        any_in_global_list = {
+          variable = ucm_picker_heritages
+          has_same_culture_heritage = prev
+        }
+      }
+    }
+    add_to_global_variable_list = { name = ucm_picker_heritages target = this }
+  }
+}
+
+ucm_picker_fill_religions_effect = {
+  clear_global_variable_list = ucm_picker_religions
+  every_religion_global = {
+    add_to_global_variable_list = { name = ucm_picker_religions target = this }
+  }
+}
+
+# SET = set_culture or set_character_faith, PICK = the saved scope holding the choice.
+ucm_picker_apply_effect = {
+  if = {
+    limit = { exists = global_var:ucm_cheat_menu_recipient }
+    global_var:ucm_cheat_menu_recipient = { $SET$ = scope:$PICK$ }
+    send_interface_toast = { type = event_toast_effect_good title = UCM_PICKER_APPLIED left_icon = root right_icon = global_var:ucm_cheat_menu_recipient }
+  }
+  else = {
+    $SET$ = scope:$PICK$
+    send_interface_toast = { type = event_toast_effect_good title = UCM_PICKER_APPLIED left_icon = root right_icon = root }
+  }
+}
+
+# --- Culture ------------------------------------------------------------------------------------------
+
+ucm_open_acm_culture_picker_effect = {
+  ucm_picker_fill_heritages_effect = yes
+  add_character_flag = ucm_acm_culture_picker_open
+}
+
+ucm_picker_pick_culture_effect = {
+  ucm_picker_apply_effect = { SET = set_culture PICK = selected_culture }
+}
+
+# --- Faith --------------------------------------------------------------------------------------------
+
+ucm_save_ucm_selected_faith_effect = {
+  set_variable = { name = ucm_selected_faith_var value = scope:selected_faith }
+}
+
+ucm_open_acm_religion_picker_effect = {
+  ucm_picker_fill_religions_effect = yes
+  add_character_flag = ucm_acm_religion_picker_open
+}
+
+ucm_picker_pick_faith_effect = {
+  ucm_save_ucm_selected_faith_effect = yes
+  ucm_picker_faith_clear_pick_effect = yes
+  ucm_acm_faith_refresh_display_lists_effect = yes
+  ucm_picker_apply_effect = { SET = set_character_faith PICK = selected_faith }
+}
+
+ucm_picker_faith_open_effect = {
+  ucm_picker_faith_clear_pick_effect = yes
+  ucm_acm_faith_refresh_display_lists_effect = yes
+  add_character_flag = ucm_acm_faith_editor_open
+}
+
+ucm_picker_faith_clear_pick_effect = {
+  clear_global_variable_list = ucm_acm_fe_pick_current
+  remove_variable = ucm_acm_pick_slot
+}
+
+# Fills the choices with the clicked doctrine's group.
+ucm_picker_faith_begin_doctrine_effect = {
+  remove_variable = ucm_acm_pick_slot
+  ucm_acm_faith_fill_choices_effect = yes
+}
+
+# Remembers the clicked tenet, which the choice replaces.
+ucm_picker_faith_begin_tenet_effect = {
+  set_variable = { name = ucm_acm_pick_slot value = scope:pick_doctrine }
+  ucm_acm_faith_fill_choices_effect = yes
+}
+
+ucm_picker_faith_apply_effect = {
+  ucm_acm_faith_apply_choice_effect = yes
+  ucm_picker_faith_clear_pick_effect = yes
+  ucm_acm_faith_refresh_display_lists_effect = yes
+}
+
+# --- Traditions ---------------------------------------------------------------------------------------
+
+ucm_cw_clear_tradition_picker_lists_effect = {
+  clear_global_variable_list = ucm_cw_realm_tradition_list
+  clear_global_variable_list = ucm_cw_combat_tradition_list
+  clear_global_variable_list = ucm_cw_societal_tradition_list
+  clear_global_variable_list = ucm_cw_ritual_tradition_list
+  clear_global_variable_list = ucm_cw_regional_tradition_list
+}
+
+# scope:culture = the culture to edit.
+ucm_cw_open_tradition_picker_effect = {
+  if = {
+    limit = { exists = scope:culture }
+    set_variable = { name = ucm_selected_culture_var value = scope:culture }
+  }
+  ucm_cw_build_tradition_picker_lists_effect = yes
+}
+
+ucm_picker_tradition_toggle_effect = {
+  var:ucm_selected_culture_var = {
+    if = {
+      limit = { has_cultural_tradition = scope:tradition }
+      remove_culture_tradition = scope:tradition
+    }
+    else = {
+      add_culture_tradition = scope:tradition
+    }
+  }
+}
+
+# --- Startup: saved flags must not reopen a window --------------------------------------------------------
+
+ucm_acm_gui_startup_cleanup_effect = {
+  remove_character_flag = ucm_acm_culture_picker_open
+  remove_character_flag = ucm_acm_religion_picker_open
+  remove_character_flag = ucm_cw_tradition_picker_open
+  remove_character_flag = ucm_acm_faith_editor_open
+  remove_variable = ucm_selected_culture_var
+  ucm_picker_faith_clear_pick_effect = yes
+}

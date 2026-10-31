@@ -1,0 +1,219 @@
+﻿window = {
+  name = "ucm_picker_faith_window"
+  parentanchor = center
+  size = { 1000 860 }
+  layer = top
+  movable = yes
+  alwaystransparent = no
+  filter_mouse = all
+  visible = "[GetScriptedGui( 'ucm_picker_faith_visible' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+  datacontext = "[GetPlayer.MakeScope.Var('ucm_selected_faith_var').Faith]"
+  widget = {
+    size = { 100% 100% }
+    background = { using = Background_Area_Dark alpha = 1.0 }
+  }
+  vbox = {
+    using = Window_Margins
+    layoutpolicy_horizontal = expanding
+    layoutpolicy_vertical = expanding
+    spacing = 6
+    header_pattern = {
+      layoutpolicy_horizontal = expanding
+      blockoverride "header_text" { text = "UCM_PICKER_FAITH" }
+      blockoverride "button_close" { onclick = "[GetScriptedGui( 'ucm_picker_faith_close' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" }
+    }
+    text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 960 text = "UCM_PICKER_FAITH_NOTE" default_format = "#low" }
+    text_single = { raw_text = "[Faith.GetNameNoTooltip]" default_format = "#high" }
+    hbox = {
+      layoutpolicy_horizontal = expanding
+      layoutpolicy_vertical = expanding
+      spacing = 12
+      vbox = {
+        layoutpolicy_horizontal = expanding
+        layoutpolicy_vertical = expanding
+    scrollbox = {
+      layoutpolicy_horizontal = expanding
+      layoutpolicy_vertical = expanding
+      blockoverride "scrollbox_content" {
+        text_label_center = { layoutpolicy_horizontal = expanding text = "FAITH_CORE_TENETS_HEADING" }
+        vbox = {
+          layoutpolicy_horizontal = expanding
+          datamodel = "[GetGlobalList('ucm_acm_fe_display_core_tenets')]"
+          item = {
+              button_standard_hover = {
+                datacontext = "[GetTenetType( Scope.GetFlagName )]"
+                datacontext = "[GetPlayer.MakeScope.Var('ucm_selected_faith_var').Faith]"
+                datacontext = "[Faith.GetMainRite]"
+                layoutpolicy_horizontal = expanding
+                size = { 0 52 }
+                onclick = "[GetScriptedGui('ucm_picker_faith_begin_tenet').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('pick_doctrine', MakeScopeFlag(Scope.GetFlagName)).End)]"
+                tooltip = "FAITH_WINDOW_TENET_TOOLTIP"
+                hbox = {
+                  layoutpolicy_horizontal = expanding
+                  margin = { 8 0 }
+                  spacing = 8
+                  icon = { size = { 40 40 } texture = "[TenetType.GetIcon( Faith.Self )]" }
+                  text_single = { layoutpolicy_horizontal = expanding raw_text = "[TenetType.GetNameNoTooltip( Rite.Self )]" default_format = "#clickable" autoresize = no }
+                }
+              }
+          }
+        }
+        text_label_center = { layoutpolicy_horizontal = expanding text = "FAITH_DOCTRINES_IMPORTANT" }
+        vbox = {
+          layoutpolicy_horizontal = expanding
+          datamodel = "[GetGlobalList('ucm_acm_fe_display_main_group')]"
+          item = {
+              button_standard_hover = {
+                datacontext = "[GetDoctrineType( Scope.GetFlagName )]"
+                datacontext = "[GetPlayer.MakeScope.Var('ucm_selected_faith_var').Faith]"
+                datacontext = "[Faith.GetMainRite]"
+                layoutpolicy_horizontal = expanding
+                size = { 0 52 }
+                onclick = "[GetScriptedGui('ucm_picker_faith_begin_doctrine').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('pick_doctrine', MakeScopeFlag(Scope.GetFlagName)).End)]"
+                tooltip = "FAITH_WINDOW_DOCTRINE_TOOLTIP_WITH_FAITH"
+                hbox = {
+                  layoutpolicy_horizontal = expanding
+                  margin = { 8 0 }
+                  spacing = 8
+                  icon_doctrine = { visible = "[DoctrineType.GetGroup.GetCategory.HasTag( 'main' )]" size = { 40 40 } texture = "[DoctrineType.GetIcon]" }
+                  icon_doctrine = { visible = "[Not( DoctrineType.GetGroup.GetCategory.HasTag( 'main' ) )]" size = { 40 40 } texture = "[DoctrineType.GetGroup.GetIcon]" }
+                  text_single = { layoutpolicy_horizontal = expanding raw_text = "[DoctrineType.GetGroup.GetName( Faith.Self )]: [DoctrineType.GetNameNoTooltip( Faith.Self )]" default_format = "#clickable" autoresize = no }
+                }
+              }
+          }
+        }
+        text_label_center = { layoutpolicy_horizontal = expanding text = "FAITH_DOCTRINES_MARRIAGE" }
+        vbox = {
+          layoutpolicy_horizontal = expanding
+          datamodel = "[GetGlobalList('ucm_acm_fe_display_marriage')]"
+          item = {
+              button_standard_hover = {
+                datacontext = "[GetDoctrineType( Scope.GetFlagName )]"
+                datacontext = "[GetPlayer.MakeScope.Var('ucm_selected_faith_var').Faith]"
+                datacontext = "[Faith.GetMainRite]"
+                layoutpolicy_horizontal = expanding
+                size = { 0 52 }
+                onclick = "[GetScriptedGui('ucm_picker_faith_begin_doctrine').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('pick_doctrine', MakeScopeFlag(Scope.GetFlagName)).End)]"
+                tooltip = "FAITH_WINDOW_DOCTRINE_TOOLTIP_WITH_FAITH"
+                hbox = {
+                  layoutpolicy_horizontal = expanding
+                  margin = { 8 0 }
+                  spacing = 8
+                  icon_doctrine = { visible = "[DoctrineType.GetGroup.GetCategory.HasTag( 'main' )]" size = { 40 40 } texture = "[DoctrineType.GetIcon]" }
+                  icon_doctrine = { visible = "[Not( DoctrineType.GetGroup.GetCategory.HasTag( 'main' ) )]" size = { 40 40 } texture = "[DoctrineType.GetGroup.GetIcon]" }
+                  text_single = { layoutpolicy_horizontal = expanding raw_text = "[DoctrineType.GetGroup.GetName( Faith.Self )]: [DoctrineType.GetNameNoTooltip( Faith.Self )]" default_format = "#clickable" autoresize = no }
+                }
+              }
+          }
+        }
+        text_label_center = { layoutpolicy_horizontal = expanding text = "FAITH_DOCTRINES_CRIMES" }
+        vbox = {
+          layoutpolicy_horizontal = expanding
+          datamodel = "[GetGlobalList('ucm_acm_fe_display_crimes')]"
+          item = {
+              button_standard_hover = {
+                datacontext = "[GetDoctrineType( Scope.GetFlagName )]"
+                datacontext = "[GetPlayer.MakeScope.Var('ucm_selected_faith_var').Faith]"
+                datacontext = "[Faith.GetMainRite]"
+                layoutpolicy_horizontal = expanding
+                size = { 0 52 }
+                onclick = "[GetScriptedGui('ucm_picker_faith_begin_doctrine').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('pick_doctrine', MakeScopeFlag(Scope.GetFlagName)).End)]"
+                tooltip = "FAITH_WINDOW_DOCTRINE_TOOLTIP_WITH_FAITH"
+                hbox = {
+                  layoutpolicy_horizontal = expanding
+                  margin = { 8 0 }
+                  spacing = 8
+                  icon_doctrine = { visible = "[DoctrineType.GetGroup.GetCategory.HasTag( 'main' )]" size = { 40 40 } texture = "[DoctrineType.GetIcon]" }
+                  icon_doctrine = { visible = "[Not( DoctrineType.GetGroup.GetCategory.HasTag( 'main' ) )]" size = { 40 40 } texture = "[DoctrineType.GetGroup.GetIcon]" }
+                  text_single = { layoutpolicy_horizontal = expanding raw_text = "[DoctrineType.GetGroup.GetName( Faith.Self )]: [DoctrineType.GetNameNoTooltip( Faith.Self )]" default_format = "#clickable" autoresize = no }
+                }
+              }
+          }
+        }
+        text_label_center = { layoutpolicy_horizontal = expanding text = "FAITH_DOCTRINES_CLERGY" }
+        vbox = {
+          layoutpolicy_horizontal = expanding
+          datamodel = "[GetGlobalList('ucm_acm_fe_display_clergy')]"
+          item = {
+              button_standard_hover = {
+                datacontext = "[GetDoctrineType( Scope.GetFlagName )]"
+                datacontext = "[GetPlayer.MakeScope.Var('ucm_selected_faith_var').Faith]"
+                datacontext = "[Faith.GetMainRite]"
+                layoutpolicy_horizontal = expanding
+                size = { 0 52 }
+                onclick = "[GetScriptedGui('ucm_picker_faith_begin_doctrine').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('pick_doctrine', MakeScopeFlag(Scope.GetFlagName)).End)]"
+                tooltip = "FAITH_WINDOW_DOCTRINE_TOOLTIP_WITH_FAITH"
+                hbox = {
+                  layoutpolicy_horizontal = expanding
+                  margin = { 8 0 }
+                  spacing = 8
+                  icon_doctrine = { visible = "[DoctrineType.GetGroup.GetCategory.HasTag( 'main' )]" size = { 40 40 } texture = "[DoctrineType.GetIcon]" }
+                  icon_doctrine = { visible = "[Not( DoctrineType.GetGroup.GetCategory.HasTag( 'main' ) )]" size = { 40 40 } texture = "[DoctrineType.GetGroup.GetIcon]" }
+                  text_single = { layoutpolicy_horizontal = expanding raw_text = "[DoctrineType.GetGroup.GetName( Faith.Self )]: [DoctrineType.GetNameNoTooltip( Faith.Self )]" default_format = "#clickable" autoresize = no }
+                }
+              }
+          }
+        }
+      }
+    }
+      }
+      vbox = {
+        layoutpolicy_horizontal = expanding
+        layoutpolicy_vertical = expanding
+    scrollbox = {
+      layoutpolicy_horizontal = expanding
+      layoutpolicy_vertical = expanding
+      blockoverride "scrollbox_content" {
+        vbox = {
+          layoutpolicy_horizontal = expanding
+          visible = "[Not( GetScriptedGui('ucm_picker_faith_picking_tenet').IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End) )]"
+          datamodel = "[GetGlobalList('ucm_acm_fe_pick_current')]"
+          item = {
+              button_standard_hover = {
+                datacontext = "[GetDoctrineType( Scope.GetFlagName )]"
+                datacontext = "[GetPlayer.MakeScope.Var('ucm_selected_faith_var').Faith]"
+                datacontext = "[Faith.GetMainRite]"
+                layoutpolicy_horizontal = expanding
+                size = { 0 52 }
+                onclick = "[GetScriptedGui('ucm_picker_faith_apply').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('pick_doctrine', MakeScopeFlag(Scope.GetFlagName)).End)]"
+                tooltip = "FAITH_WINDOW_DOCTRINE_TOOLTIP_WITH_FAITH"
+                hbox = {
+                  layoutpolicy_horizontal = expanding
+                  margin = { 8 0 }
+                  spacing = 8
+                  icon_doctrine = { visible = "[DoctrineType.GetGroup.GetCategory.HasTag( 'main' )]" size = { 40 40 } texture = "[DoctrineType.GetIcon]" }
+                  icon_doctrine = { visible = "[Not( DoctrineType.GetGroup.GetCategory.HasTag( 'main' ) )]" size = { 40 40 } texture = "[DoctrineType.GetGroup.GetIcon]" }
+                  text_single = { layoutpolicy_horizontal = expanding raw_text = "[DoctrineType.GetNameNoTooltip( Faith.Self )]" default_format = "#clickable" autoresize = no }
+                }
+              }
+          }
+        }
+        vbox = {
+          layoutpolicy_horizontal = expanding
+          visible = "[GetScriptedGui('ucm_picker_faith_picking_tenet').IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+          datamodel = "[GetGlobalList('ucm_acm_fe_pick_current')]"
+          item = {
+              button_standard_hover = {
+                datacontext = "[GetTenetType( Scope.GetFlagName )]"
+                datacontext = "[GetPlayer.MakeScope.Var('ucm_selected_faith_var').Faith]"
+                datacontext = "[Faith.GetMainRite]"
+                layoutpolicy_horizontal = expanding
+                size = { 0 52 }
+                onclick = "[GetScriptedGui('ucm_picker_faith_apply').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('pick_doctrine', MakeScopeFlag(Scope.GetFlagName)).End)]"
+                tooltip = "FAITH_WINDOW_TENET_TOOLTIP"
+                hbox = {
+                  layoutpolicy_horizontal = expanding
+                  margin = { 8 0 }
+                  spacing = 8
+                  icon = { size = { 40 40 } texture = "[TenetType.GetIcon( Faith.Self )]" }
+                  text_single = { layoutpolicy_horizontal = expanding raw_text = "[TenetType.GetNameNoTooltip( Rite.Self )]" default_format = "#clickable" autoresize = no }
+                }
+              }
+          }
+        }
+      }
+    }
+      }
+    }
+  }
+}

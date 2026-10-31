@@ -92,7 +92,7 @@ TABS = [
     ]),
     ("character", [
         ("h", "UCM_SEC_EDITORS"),
-        ("sg", "ucm_open_trait_editor"), ("sg", "ucm_open_cheat_trait_editor"), ("sg", "ucm_open_lifestyle_editor"),
+        ("sg", "ucm_open_trait_editor"), ("sg", "ucm_open_lifestyle_editor"),
         ("h", "UCM_SEC_IDENTITY"),
         ("row", ["ucm_sexuality_heterosexual", "ucm_sexuality_homosexual", "ucm_sexuality_bisexual", "ucm_sexuality_asexual"]),
         ("h", "UCM_SEC_ATTRIBUTES"),
@@ -269,9 +269,6 @@ TABS = [
     ("settings", [
         ("h", "UCM_SEC_MENU"),
         ("sg", "ucm_second_clear"), ("sg", "ucm_menu_reset"),
-        ("h", "UCM_SEC_CLASSIC"),
-        ("t", "UCM_CLASSIC_NOTE"),
-        ("dec", "open_daddypika_menu"), ("dec", "daddy_pika_information"),
         ("h", "UCM_SEC_DEBUG"),
         ("sg", "ucm_open_console_helper"), 
     ]),

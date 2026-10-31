@@ -1,0 +1,176 @@
+﻿window = {
+  name = "ucm_picker_tradition_window"
+  parentanchor = right|vcenter
+  size = { 560 720 }
+  layer = top
+  movable = yes
+  alwaystransparent = no
+  filter_mouse = all
+  visible = "[GetScriptedGui( 'ucm_picker_tradition_visible' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+  datacontext = "[GetPlayer.MakeScope.Var('ucm_selected_culture_var').Culture]"
+  state = { name = _show on_start = "[GetVariableSystem.Set( 'ucm_picker_tradition_cat', 'realm' )]" }
+  widget = {
+    size = { 100% 100% }
+    background = { using = Background_Area_Dark alpha = 1.0 }
+  }
+  vbox = {
+    using = Window_Margins
+    layoutpolicy_horizontal = expanding
+    layoutpolicy_vertical = expanding
+    spacing = 6
+    header_pattern = {
+      layoutpolicy_horizontal = expanding
+      blockoverride "header_text" { text = "UCM_PICKER_TRADITION" }
+      blockoverride "button_close" { onclick = "[GetScriptedGui( 'ucm_picker_tradition_close' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" }
+    }
+    text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 520 text = "UCM_PICKER_TRADITION_NOTE" default_format = "#low" }
+    hbox = {
+      layoutpolicy_horizontal = expanding
+      button_tab = { layoutpolicy_horizontal = expanding down = "[GetVariableSystem.HasValue( 'ucm_picker_tradition_cat', 'realm' )]" onclick = "[GetVariableSystem.Set( 'ucm_picker_tradition_cat', 'realm' )]" text_single = { parentanchor = center text = "tradition_group_realm" } }
+      button_tab = { layoutpolicy_horizontal = expanding down = "[GetVariableSystem.HasValue( 'ucm_picker_tradition_cat', 'combat' )]" onclick = "[GetVariableSystem.Set( 'ucm_picker_tradition_cat', 'combat' )]" text_single = { parentanchor = center text = "tradition_group_combat" } }
+      button_tab = { layoutpolicy_horizontal = expanding down = "[GetVariableSystem.HasValue( 'ucm_picker_tradition_cat', 'societal' )]" onclick = "[GetVariableSystem.Set( 'ucm_picker_tradition_cat', 'societal' )]" text_single = { parentanchor = center text = "tradition_group_societal" } }
+      button_tab = { layoutpolicy_horizontal = expanding down = "[GetVariableSystem.HasValue( 'ucm_picker_tradition_cat', 'ritual' )]" onclick = "[GetVariableSystem.Set( 'ucm_picker_tradition_cat', 'ritual' )]" text_single = { parentanchor = center text = "tradition_group_ritual" } }
+      button_tab = { layoutpolicy_horizontal = expanding down = "[GetVariableSystem.HasValue( 'ucm_picker_tradition_cat', 'regional' )]" onclick = "[GetVariableSystem.Set( 'ucm_picker_tradition_cat', 'regional' )]" text_single = { parentanchor = center text = "tradition_group_regional" } }
+    }
+    scrollbox = {
+      visible = "[GetVariableSystem.HasValue( 'ucm_picker_tradition_cat', 'realm' )]"
+      layoutpolicy_horizontal = expanding
+      layoutpolicy_vertical = expanding
+      blockoverride "scrollbox_content" {
+        vbox = {
+          layoutpolicy_horizontal = expanding
+          datamodel = "[GetGlobalList('ucm_cw_realm_tradition_list')]"
+          item = {
+              button_standard_hover = {
+                datacontext = "[Scope.CultureTradition]"
+                layoutpolicy_horizontal = expanding
+                size = { 0 52 }
+                down = "[GetScriptedGui('ucm_picker_tradition_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tradition', CultureTradition.MakeScope).End)]"
+                onclick = "[GetScriptedGui('ucm_picker_tradition_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tradition', CultureTradition.MakeScope).End)]"
+                tooltipwidget = { using = culture_tradition_tooltip_clickable }
+                hbox = {
+                  layoutpolicy_horizontal = expanding
+                  margin = { 8 0 }
+                  spacing = 8
+                  widget_tradition_icon = { size = { 74 40 } }
+                  text_single = { layoutpolicy_horizontal = expanding raw_text = "[CultureTradition.GetNameNoTooltip]" default_format = "#clickable" autoresize = no }
+                }
+              }
+          }
+        }
+      }
+    }
+    scrollbox = {
+      visible = "[GetVariableSystem.HasValue( 'ucm_picker_tradition_cat', 'combat' )]"
+      layoutpolicy_horizontal = expanding
+      layoutpolicy_vertical = expanding
+      blockoverride "scrollbox_content" {
+        vbox = {
+          layoutpolicy_horizontal = expanding
+          datamodel = "[GetGlobalList('ucm_cw_combat_tradition_list')]"
+          item = {
+              button_standard_hover = {
+                datacontext = "[Scope.CultureTradition]"
+                layoutpolicy_horizontal = expanding
+                size = { 0 52 }
+                down = "[GetScriptedGui('ucm_picker_tradition_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tradition', CultureTradition.MakeScope).End)]"
+                onclick = "[GetScriptedGui('ucm_picker_tradition_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tradition', CultureTradition.MakeScope).End)]"
+                tooltipwidget = { using = culture_tradition_tooltip_clickable }
+                hbox = {
+                  layoutpolicy_horizontal = expanding
+                  margin = { 8 0 }
+                  spacing = 8
+                  widget_tradition_icon = { size = { 74 40 } }
+                  text_single = { layoutpolicy_horizontal = expanding raw_text = "[CultureTradition.GetNameNoTooltip]" default_format = "#clickable" autoresize = no }
+                }
+              }
+          }
+        }
+      }
+    }
+    scrollbox = {
+      visible = "[GetVariableSystem.HasValue( 'ucm_picker_tradition_cat', 'societal' )]"
+      layoutpolicy_horizontal = expanding
+      layoutpolicy_vertical = expanding
+      blockoverride "scrollbox_content" {
+        vbox = {
+          layoutpolicy_horizontal = expanding
+          datamodel = "[GetGlobalList('ucm_cw_societal_tradition_list')]"
+          item = {
+              button_standard_hover = {
+                datacontext = "[Scope.CultureTradition]"
+                layoutpolicy_horizontal = expanding
+                size = { 0 52 }
+                down = "[GetScriptedGui('ucm_picker_tradition_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tradition', CultureTradition.MakeScope).End)]"
+                onclick = "[GetScriptedGui('ucm_picker_tradition_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tradition', CultureTradition.MakeScope).End)]"
+                tooltipwidget = { using = culture_tradition_tooltip_clickable }
+                hbox = {
+                  layoutpolicy_horizontal = expanding
+                  margin = { 8 0 }
+                  spacing = 8
+                  widget_tradition_icon = { size = { 74 40 } }
+                  text_single = { layoutpolicy_horizontal = expanding raw_text = "[CultureTradition.GetNameNoTooltip]" default_format = "#clickable" autoresize = no }
+                }
+              }
+          }
+        }
+      }
+    }
+    scrollbox = {
+      visible = "[GetVariableSystem.HasValue( 'ucm_picker_tradition_cat', 'ritual' )]"
+      layoutpolicy_horizontal = expanding
+      layoutpolicy_vertical = expanding
+      blockoverride "scrollbox_content" {
+        vbox = {
+          layoutpolicy_horizontal = expanding
+          datamodel = "[GetGlobalList('ucm_cw_ritual_tradition_list')]"
+          item = {
+              button_standard_hover = {
+                datacontext = "[Scope.CultureTradition]"
+                layoutpolicy_horizontal = expanding
+                size = { 0 52 }
+                down = "[GetScriptedGui('ucm_picker_tradition_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tradition', CultureTradition.MakeScope).End)]"
+                onclick = "[GetScriptedGui('ucm_picker_tradition_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tradition', CultureTradition.MakeScope).End)]"
+                tooltipwidget = { using = culture_tradition_tooltip_clickable }
+                hbox = {
+                  layoutpolicy_horizontal = expanding
+                  margin = { 8 0 }
+                  spacing = 8
+                  widget_tradition_icon = { size = { 74 40 } }
+                  text_single = { layoutpolicy_horizontal = expanding raw_text = "[CultureTradition.GetNameNoTooltip]" default_format = "#clickable" autoresize = no }
+                }
+              }
+          }
+        }
+      }
+    }
+    scrollbox = {
+      visible = "[GetVariableSystem.HasValue( 'ucm_picker_tradition_cat', 'regional' )]"
+      layoutpolicy_horizontal = expanding
+      layoutpolicy_vertical = expanding
+      blockoverride "scrollbox_content" {
+        vbox = {
+          layoutpolicy_horizontal = expanding
+          datamodel = "[GetGlobalList('ucm_cw_regional_tradition_list')]"
+          item = {
+              button_standard_hover = {
+                datacontext = "[Scope.CultureTradition]"
+                layoutpolicy_horizontal = expanding
+                size = { 0 52 }
+                down = "[GetScriptedGui('ucm_picker_tradition_has').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tradition', CultureTradition.MakeScope).End)]"
+                onclick = "[GetScriptedGui('ucm_picker_tradition_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tradition', CultureTradition.MakeScope).End)]"
+                tooltipwidget = { using = culture_tradition_tooltip_clickable }
+                hbox = {
+                  layoutpolicy_horizontal = expanding
+                  margin = { 8 0 }
+                  spacing = 8
+                  widget_tradition_icon = { size = { 74 40 } }
+                  text_single = { layoutpolicy_horizontal = expanding raw_text = "[CultureTradition.GetNameNoTooltip]" default_format = "#clickable" autoresize = no }
+                }
+              }
+          }
+        }
+      }
+    }
+  }
+}

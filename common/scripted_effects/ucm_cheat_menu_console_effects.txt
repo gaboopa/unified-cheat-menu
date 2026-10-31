@@ -1,7 +1,4 @@
-﻿# 控制台助手：弹出可点击「切换调试模式」的小窗（GUI 内 ExecuteConsoleCommand）
-
+﻿# Show the small window whose button toggles debug mode.
 ucm_cheat_menu_open_console_helper_effect = {
-  scope:actor = {
-    add_character_flag = ucm_console_helper_open
-  }
+	scope:actor = { add_character_flag = ucm_console_helper_open }
 }

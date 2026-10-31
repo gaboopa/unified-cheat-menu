@@ -123,7 +123,7 @@ The only overlap is the illness purge (Baidubuqin / water of life). It also cure
 same way EK2's own cure does.
 
 If the trait list is ever regenerated to include EK2 traits, route those three groups through EK2's effects in
-`ucm_cheat_menu_toggle_trait_on_character_effect`.
+`ucm_trait_editor_toggle_effect`.
 
 Known leftovers (load-log lines only, behaviour already guarded):
 - `ucm_legend_master_effects.txt`: seed legends; their menu page is hidden under EK2.

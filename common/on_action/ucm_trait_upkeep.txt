@@ -1,0 +1,13 @@
+﻿# Monthly upkeep for the trait editor's upkeep traits. Holders are listed when granted, so this never scans the world.
+ucm_monthly_tick = {
+	on_actions = { ucm_trait_upkeep }
+}
+
+ucm_trait_upkeep = {
+	trigger = { ucm_single_player_trigger = yes }
+	effect = {
+		ucm_holder_upkeep_effect = { LIST = ucm_baidubuqin_holders TRAIT = ucm_trait_baidubuqin UPKEEP = ucm_trait_baidubuqin_upkeep_effect }
+		ucm_holder_upkeep_effect = { LIST = ucm_xinwuguai_holders TRAIT = ucm_trait_xinwuguai UPKEEP = ucm_trait_xinwuguai_upkeep_effect }
+		ucm_holder_upkeep_effect = { LIST = ucm_stats100_holders TRAIT = ucm_trait_stats_100_locked UPKEEP = ucm_stats_100_clamp_all_skills_effect }
+	}
+}

@@ -1,0 +1,341 @@
+﻿l_simp_chinese:
+### ========================================
+### UCM 整合本地化
+### ========================================
+
+ ### 来自：DB_buildings_l_english.yml
+
+ ### 来自：DP_information_l_english.yml
+
+ ### 来自：DP_interactions_l_english.yml
+ CONFIRM_OKAY:0 "好的"
+
+ ### 来自：DP_traits_l_english.yml
+  trait_immortal:0 "不朽"
+  immortal:0 "不朽"
+  trait_immortal_desc:0 "受膏者芭芭拉将此角色提升至死亡循环之上。"
+  trait_immortal_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] 永世长存，封印于受膏者芭芭拉的永恒眷顾中。"
+
+ ### 来自：auto_marriage_l_english.yml
+
+ ### 来自：bone_interactions_l_english.yml
+ beauty_interaction:0 "英俊/美丽"
+ beauty_interaction_desc:0 "呵呵"
+
+ ### 来自：ch_specialinteractions_l_english.yml
+ CH_SELECT_HOLDING_TITLE:1 "选择领地"
+ CH_SELECT_HOLDING_NO_TITLES:0 "没有可用的领地"
+
+ ### 来自：cheateb_amain_l_english.yml
+ HEALTH_POINTS_HINT:0 "\n健康：[CHARACTER.GetHealth|1V]\n生育力：[CHARACTER.GetFertility|%0V]\n压力：[CHARACTER.GetStress|0V]"
+
+ ### 来自：cheateb_event_l_english.yml
+
+ ### 来自：debug_l_english.yml
+ debug_generic_option:0 "#D 这是一个调试选项#!"
+ debug_generic_option_can_disable_text:0 "#D ，如果禁用调试，它会改变#!"
+ debug_generic_option_shortened_trigger:0 "#D 因为启用了调试，这个触发器被缩短了#!"
+ add_to_court_interaction:1 "添加到[actor.Custom('GetCourt')|U]"
+ change_tournament_score:0 "改变锦标赛得分"
+ add_hook_interaction:0 "添加牵制"
+ create_betrothal_interaction:0 "创建订婚"
+ break_betrothal_interaction:0 "解除订婚"
+ debug_imprison_simple_interaction:1 "快速监禁"
+ debug_change_opinion_interaction:0 "改变好感"
+ make_lover_interaction:0 "使其成为#p情人#!"
+ make_soulmate_interaction:0 "使其成为#p灵魂伴侣#!"
+ make_rival_interaction:0 "使其成为#p仇敌#!"
+ make_nemesis_interaction:0 "使其成为#p死敌#!"
+ make_friend_interaction:0 "使其成为#p朋友#!"
+ learn_secrets_interaction:0 "学习秘密"
+ make_dynasty_house_head_interaction: "使成为家族族长"
+ take_title_interaction:0 "夺取头衔"
+ take_domain_interaction:0 "夺取领地"
+ take_realm_interaction:1 "夺取王国"
+ transfer_title_army_maa_interaction: "转移头衔常备军"
+ invest_appointment_interaction: "增加任命得分"
+ destroy_noble_family_interaction: "摧毁贵族家族"
+ make_noble_family_interaction: "使廷臣成为贵族家族"
+ get_claim_interaction:0 "获得宣称"
+ claim_all_interaction: "宣称所有头衔"
+ take_vassal_interaction: "使其成为封臣"
+ make_independent_interaction: "使其独立"
+ debug_alliance_interaction: "结成盟友"
+ add_pressed_claim_interaction:0 "强宣称"
+ start_pregnancy_interaction:0 "开始怀孕"
+ change_character_weight_interaction:0 "改变角色体重"
+ grant_title_to_new_random_character_interaction:0 "将头衔授予新的随机角色"
+ remove_rival_interaction:0 "移除仇敌"
+ get_claim_on_all_creatable_interaction:0 "获得所有可创建头衔的宣称"
+ test_dynasty_prestige_interaction:0 "测试宗族威望"
+ debug_change_council_task_interaction:0 "改变内阁任务"
+ debug_trigger_localization_testing_interaction:0 "触发本地化测试"
+ debug_start_era_of_great_holy_wars_interaction:0 "#M 大圣战#!#!"
+ slay_character_interaction:1 "#difficulty_hard 击杀#! 角色!"
+ start_bout_interaction:1 "开始决斗/棋盘游戏"
+ give_criminal_trait_interaction:0 "使其成为顽固的#difficulty_hard罪犯#!"
+ debug_sex_interaction:0 "#italic 与角色共寝#!"
+ debug_change_every_county:0 "在每个伯爵领采取行动"
+ debug_change_every_county.b: "将民粹好感设置为："
+ test_effect_localization_interaction:0 "测试互动效果本地化"
+ change_cultural_acceptance_debug_interaction:0 "改变文化接受度"
+ learn_language_debug_interaction:0 "即时学习其语言"
+ debug:0 "#D 调试#!"
+ set_relation_interaction:0 "#mixed_value #BER 设置关系#!#!"
+ set_relation_debug:0 "$set_relation_interaction$"
+ do_a_crime_embezzle_interaction:0 "犯罪：挪用公款"
+ add_artifact_interaction: "赐予宝物"
+ add_artifact_claim_interaction: "宣称宝物"
+ take_artifact_interaction: "夺取宝物"
+ inspire_interaction:0 "激发灵感"
+ set_relationship_debug_friend_add:0 "成为朋友"
+ set_relationship_debug_best_friend_add:0 "成为挚友"
+ set_relationship_debug_lover_add:0 "成为情人"
+ set_relationship_debug_soulmate_add:0 "成为灵魂伴侣"
+ set_relationship_debug_childhood_victim_add:0 "成为受害者"
+ set_relationship_debug_childhood_bully_add:0 "成为霸凌者"
+ set_relationship_debug_rival_add:0 "成为仇敌"
+ set_relationship_debug_nemesis_add:0 "成为死敌"
+ EVENT_DEBUG_TOOLTIP:0 "#P 点击在关联编辑器中打开事件脚本#!\n#weak（请记住，你可以更改默认编辑器！）#!"
+ generate_artifact_with_history_interaction:0 "生成有历史的宝物"
+ add_glory_interaction:0 "增加荣誉"
+ debug_progress_all_active_schemes_interaction: "完成进行中的计谋"
+ change_hunt_success_chance:0 "改变狩猎成功率"
+ ERROR_FLAG_INDEX:0 "-"
+ BETA_BUILD: "开发版本。请勿分享"
+ BETA_PROMPT_TITLE: "欢迎来到 CK3 测试版！"
+ BETA_PROMPT_MESSAGE: "这是即将推出的 CK3 内容的测试版本。请勿公开分享此版本的任何信息。此版本处理极少量的个人数据，以追踪潜在的泄露。"
+ debug_destroy_artifact_interaction: "摧毁/损坏宝物"
+ end_diarchy_interaction: "结束共治"
+ debug_travel_to_ruler_interaction: "前往统治者处"
+ designate_diarch_interaction: "指定共治者"
+ debug_give_animal_interaction: "开始宠物故事"
+ debug_add_truce_interaction: "添加停战协议"
+ TRUCE_DEBUG: "#D 调试停战协议#!"
+ spawn_epidemic_interaction: "#BOLD #N 生成流行病#!#!"
+ spawn_legend_interaction: "获取传奇种子"
+ debug_buff_schemes: "强化你的计谋"
+ debug_buff_schemes_give_agent_success_chance_max: "提高成功几率上限的特工"
+ debug_clear_agents_from_schemes: "清除计谋的特工槽位"
+ debug_make_laamp: "制造 Laamp"
+ debug_make_laamp_desc: "兄弟，我渴望那被禁止的 läamp"
+ debug_move_domicile_interaction: "移动居所"
+ create_task_contract_interaction: "从角色创建任务合同"
+ debug_populate_contracts: "在位置填充合同"
+ debug_add_to_contact_list_interaction: "添加到赞助人"
+ give_infinite_schemes_of_type_interaction: "启用无限计谋"
+ antagonise_court: "激怒宫廷"
+ start_diarchy_interaction: "开始 #BOLD #M 共治#!#!"
+ take_hostage_interaction: "扣押人质"
+ spawn_courtier_interaction: "生成[recipient.Custom('GetCourtier')|U]"
+ debug_secrets_interaction: "#bold #color_porple 传播/揭露秘密#!#!"
+ destroy_title_interaction: "销毁头衔"
+ DEBUG_TOOLTIP_WAR_PLAN_DATA: "#D 战争计划数据：#!"
+ DEBUG_TOOLTIP_WAR_PLAN_ASSIGNED_STRENGTH: "#D     指派兵力：$NUM$#!"
+ DEBUG_TOOLTIP_WAR_PLAN_ALLIED_STRENGTH: "#D     盟友兵力：$NUM$#!"
+ DEBUG_TOOLTIP_WAR_PLAN_ENEMY_STRENGTH: "#D     敌军兵力：$NUM$#!"
+ DEBUG_TOOLTIP_WAR_PLAN_ASSIGNED_POWER: "#D     指派战力：$NUM$#!"
+ DEBUG_TOOLTIP_WAR_PLAN_ALLIED_POWER: "#D     盟友战力：$NUM$#!"
+ DEBUG_TOOLTIP_WAR_PLAN_ENEMY_POWER: "#D     敌军战力：$NUM$#!"
+ DEBUG_TOOLTIP_WAR_PLAN_IMPORTANCE: "#D     战争重要性：$NUM$#!"
+ DEBUG_TOOLTIP_WAR_PLAN_EMERGENCY: "#D     战争紧急分数：$NUM$#!"
+ DEBUG_TOOLTIP_WAR_COORDINATOR_WAR_DATA: "#D 战争协调者数据#!"
+ DEBUG_TOOLTIP_WAR_COORDINATOR_WAR_STANCE: "#D     战争姿态：$STANCE$#!"
+ DEBUG_TOOLTIP_WAR_COORDINATOR_WAR_ASSIGNED_STRENGTH: "#D     实际指派兵力：$NUM$#!"
+ DEBUG_TOOLTIP_WAR_COORDINATOR_WAR_ASSIGNED_POWER: "#D     实际指派战力：$NUM$#!"
+ DEBUG_TOOLTIP_WAR_COORDINATOR_SCORE_BREAKDOWN: "战争协调者得分明细"
+ DEBUG_TOOLTIP_WAR_COORDINATOR_UNDESIRED_PROVINCE: "不想要的省份"
+ DEBUG_TOOLTIP_WAR_COORDINATOR_SUPPORT_PLAYER_ONE_STEP: "支持玩家一步"
+ DEBUG_TOOLTIP_WAR_COORDINATOR_SUPPORT_PLAYER_TWO_STEPS: "支持玩家两步"
+ DEBUG_TOOLTIP_WAR_COORDINATOR_SUPPORT_PLAYER_THREE_STEPS: "支持玩家三步"
+ DEBUG_TOOLTIP_WAR_COORDINATOR_IS_SIEGING: "正在围攻"
+ DEBUG_TOOLTIP_WAR_COORDINATOR_WOULD_LIFT_SIEGE: "会解除围攻"
+ DEBUG_TOOLTIP_WAR_COORDINATOR_WOULD_START_COMBAT: "会开始战斗"
+ DEBUG_TOOLTIP_WAR_COORDINATOR_WOULD_START_SIEGE: "会开始围攻"
+ DEBUG_TOOLTIP_WAR_COORDINATOR_TARGET_CLOSE_TO_WAR_GOAL: "接近战争目标"
+ DEBUG_TOOLTIP_WAR_COORDINATOR_ADJACENCY_SCORE: "相邻分数"
+ debug_change_the_great_steppe: "改变#bold 草原季节#!"
+ change_coronation_law:0 "改变加冕法"
+ debug_change_dynastic_cycle: "改变王朝周期阶段"
+ debug_spawn_natural_disaster: "生成自然灾害"
+ CONFEDERATION_HOUSE_NAME: "[bloc_creator.GetBaseNameNoTooltip] 集团"
+ debug_set_mandala_aspect: "设置 #BOLD #M 曼荼罗面向#! #!"
+ debug_set_mandala_aspect_desc: "设置[recipient.GetShortUINamePossessive][house|E]的[mandala_aspect|E]"
+ debug_change_bloc_cohesion: "$adjust_confederation_cohesion_decision$"
+
+ ### 来自：debug_start_era_of_crusades_interaction_interactions_l_english.yml
+
+ ### 来自：eka_impregnate_l_english.yml
+
+ ### 来自：fake_dlc_l_english.yml
+  MODDED_DLC_BUTTON_TOOLTIP: "#T [Dlc.GetName]#!\n[Dlc.GetDesc]\n\n#low [SelectLocalization( Not(DlcIconDisabled), 'DLC_ENABLED', 'DLC_NOT_ENABLED') ]#![AddTextIf(Not(IsFakeDlc), '\n#I 点击访问商店#!')]"
+  MODDED_DLC_ENABLED_DISABLED_SHORT: "[SelectLocalization( Not(DlcIconDisabled), 'DLC_ENABLED_SHORT', 'DLC_DISABLED_SHORT')]"
+
+ ### 来自：house_guard_l_english.yml
+ house_cavalry_type:0 "精英家族骑兵"
+ house_cavalry_type_flavor:0 "这支精英兵团为特定宗族服务。这些战士是从最忠诚、最有技能的骑兵中精心挑选出来的，在旅行时保护宗族成员。"
+ house_guard_type:0 "精英家族卫士"
+ house_guard_type_flavor:0 "这支精英兵团为特定宗族服务。这些战士是从最忠诚、最有技能的步兵中精心挑选出来的，在家时保护宗族成员。"
+
+ ### 来自：jkm_send_courtier_abroad_l_english.yml
+
+ ### 来自：knightBlood_l_english.yml
+
+ ### 来自：leech_mc_events_l_english.yml
+
+ ### 来自：leech_mc_l_english.yml
+
+ ### 来自：missing_localization_l_english.yml
+
+ ### 来自：my_mod_l_english.yml
+
+ ### 来自：new_tocmod_l_english.yml
+
+ ### 来自：optroop_interaction_l_english.yml
+ open_optroop_menu:0 "打开家族卫士菜单"
+ open_optroop_menu_desc:0 "[recipient.GetShortUINameNoTooltip|U] 将获得家族卫士选项"
+
+ ### 来自：pcm_b_decisions_l_english.yml
+
+ ### 来自：pcm_decision_group_types_l_english.yml
+
+ ### 来自：pcm_decisions_l_english.yml
+
+ ### 来自：pcm_main_l_english.yml
+
+ ### 来自：pcm_traits_l_english.yml
+
+ ### 来自：savant_l_english.yml
+
+ ### 来自：skone_succession_laws_l_english.yml
+
+ ### 来自：ucm_collapse_xaction_l_english.yml
+  cxa_tip: "右键点击以[Select_CString(PdxGuiFoldOut.IsFolded, '折叠', '展开')]全部"
+  xa_height: "最大高度："
+  xa_change_height: "更改最大高度"
+  xa_update: "重新打开菜单时将更新"
+
+ ### 来自：ucm_create_titular_l_english.yml
+GET_TARGET_TITLE_NAME:0 "[target.GetBaseNameNoTierNoTooltip]"
+GET_TARGET_TITLE_ADJECTIVE:0 "[target.GetAdjectiveNoTooltip]" #未使用
+ucm_create_titular.back:0 "返回"
+ucm_create_titular:0 "创建名义头衔"
+ucm_create_titular.1000.t:0 "选择所有者"
+ucm_create_titular.1000.desc:0 "#S 谁应该获得头衔？ #!"
+ucm_create_titular.1000.me:0 "我自己夺取！"
+ucm_create_titular.1000.recipient:0 "授予 [recipient.GetNameNoTooltip]"
+ucm_create_titular.1001.desc:0 "#S 选择头衔的期望等级 #!"
+ucm_create_titular.1001.t:0 "头衔等级"
+ucm_create_titular.1001.duchy:0 "创建公国 #!"
+ucm_create_titular.1001.kingdom:0 "创建王国"
+ucm_create_titular.1001.empire:0 "创建帝国"
+ucm_create_titular.1001.hegemony:0 "创建霸权"
+
+ ### 来自：ucm_holy_dynasty_l_english.yml
+ dynasty_pope_modifier:0 "教皇宗族"
+ dynasty_grandmaster_modifier:0 "神圣骑士宗族"
+
+ ### 来自：ucm_merge_kingdoms_l_english.yml
+MERGE_KINGDOMS_MERGE_LOC:0 "合并/选择"
+MERGE_KINGDOMS_BACK_LOC:0 "清除选择"
+
+ ### 来自：ucm_taurus_update_l_english.yml
+
+
+ ### 来自：special_gift_l_english.yml
+
+ ### 来自：water_of_life_decisions_l_english.yml
+
+ ### 来自：zhueg_traits_l_english.yml
+
+ ### 来自：zhuge_character_interaction_l_english.yml
+ ZHUGE_TRUCE:0 "#Y 诸葛的面子停战协议#!"
+
+ ### 来自：zhuge_chuantong_l_english.yml
+  zhuge_chuantong_name:0 "无限传统"
+  zhuge_chuantong_desc:1 "消耗国运以增加传统数量上限。\n添加此传统后，你必须手动保存并重新加载存档才能生效。"
+
+ ### 来自：zhuge_deathreasons_l_english.yml
+
+ ### 来自：zhuge_qita_decisions_l_english.yml
+
+ ### 来自：zz_ucm_aquarius_update_l_english..yml
+
+ ### 来自：zz_ucm_cultural_polygamy_l_english.yml
+
+ ### 来自：zz_ucm_pisces_update_l_english..yml
+ culture_acceptance_gain_mult:0 "文化开放性"
+ siege_weapon_max_size_mult:0 "最大攻城武器规模"
+
+ ### 来自：zz_sol_unrestricted_warfare_l_english.yml
+sol_expansion_war_interaction:0 "无界战争"
+sol_expansion_war_interaction_desc:0 "向[recipient.GetShortUINameNoTooltip]宣告公开[war|E]，不受[casus_belli|E]或宣称的束缚。"
+sol_expanded_warfare_fighting_troops:0 "[sol_expanded_warfare_fighting_troops|E]"
+sol_expansion:0 "[sol_expansion|E]"
+sol_expansion_flavor:0 "[sol_expansion|E] 战争是为那些希望自己的旗帜远扬的人准备的。追随古老征服者的脚步。"
+sol_expansion_desc:0 "[sol_expansion|E] 战争是为那些寻求过去领主（亚历山大、阿提拉和铁木真）的铁铸之位的人准备的。"
+sol_expansion_war:0 "[sol_expansion_war|E]"
+sol_expansion_war_desc:1 "[sol_expansion_war|E] 是一场为那些不理会任何界限、只寻求新领地的人准备的战争。$sol_expansion_warring$ 摒弃[claim|E]和[casus_belli|E]，只知道征服。"
+sol_expansion_wars:0 "[sol_expansion_wars|E]"
+sol_expansion_wars_desc:1 "[sol_expansion_wars|E] 是在没有[claim|E]或[casus_belli|E]的情况下发动的，只有剑的权利。"
+sol_expansion_warring:0 "[sol_expansion_warring|E]"
+sol_expansion_warring_desc:1 "[sol_expansion_warring|E] 是为战争而战争——没有法律，没有宣称，只有强权至上。"
+sol_expansion_war_unrestricted: "[sol_expansion|E] – 无限战争"
+sol_expansion_war_unrestricted_desc: "最残酷的[sol_expansion|E]战争形式；没有限制，只有剑。"
+SOL_EXPANSION_UNRESTRICTED_CB_NAME:0 "$sol_expansion_war_unrestricted$"
+SOL_EXPANSION_UNRESTRICTED_WAR_NAME:1 "[TITLE.GetBaseName] 土地上的[sol_expansion|E]战争"
+SOL_EXPANSION_UNRESTRICTED_WAR_NAME_BASE:0 "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
+sol_expansion_war_county: "[sol_expansion|E] – 伯爵领进军"
+sol_expansion_war_county_desc: "进军占领一个伯爵领。"
+SOL_EXPANSION_COUNTY_CB_NAME:0 "$sol_expansion_war_county$"
+SOL_EXPANSION_COUNTY_WAR_NAME:1 "[TITLE.GetBaseName] 土地上的[sol_expansion|E]战争"
+SOL_EXPANSION_COUNTY_WAR_NAME_BASE:0 "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
+sol_expansion_war_duchy: "[sol_expansion|E] – 公国进军"
+sol_expansion_war_duchy_desc: "为整个公国发动战争，让 lesser 领主颤抖。"
+SOL_EXPANSION_DUCHY_CB_NAME:0 "$sol_expansion_war_duchy$"
+SOL_EXPANSION_DUCHY_WAR_NAME:1 "[TITLE.GetBaseName] 土地上的[sol_expansion|E]战争"
+SOL_EXPANSION_DUCHY_WAR_NAME_BASE:0 "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
+sol_expansion_war_kingdom: "[sol_expansion|E] – 王国进军"
+sol_expansion_war_kingdom_desc: "为加冕统治一地所有 lesser 领主的王座而战。"
+SOL_EXPANSION_KINGDOM_CB_NAME:0 "$sol_expansion_war_kingdom$"
+SOL_EXPANSION_KINGDOM_WAR_NAME:1 "[TITLE.GetBaseName] 土地上的[sol_expansion|E]战争"
+SOL_EXPANSION_KINGDOM_WAR_NAME_BASE:0 "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
+sol_expansion_war_empire: "[sol_expansion|E] – 帝国进军"
+sol_expansion_war_empire_desc: "为所有战争中最强大的战争：征服帝国而拿起剑。"
+SOL_EXPANSION_EMPIRE_CB_NAME:0 "$sol_expansion_war_empire$"
+SOL_EXPANSION_EMPIRE_WAR_NAME:1 "[TITLE.GetBaseName] 土地上的[sol_expansion|E]战争"
+SOL_EXPANSION_EMPIRE_WAR_NAME_BASE:0 "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
+
+ ### 来自：dlc_zhuge\dlc_zhuge_l_english.yml
+
+ ### 来自：event_localization\DP_char_editor_events_l_english.yml
+ education_republican_knowledge_4:1 "共和继承人"
+ modifier_mult_tag:0 "#weak（乘数）#!"
+ modifier_baron_tag:0 "#weak（包括男爵领）#!"
+ modifier_ex_heir_tag:0 "#weak（排除继承人）#!"
+ tolerance_advantage_mod:0 "$MOD_FAITH_HOSTILITY_ADVANTAGE_MOD$"
+ no_prowess_loss_from_age:0 "$MOD_NO_PROWESS_LOSS_FROM_AGE$"
+ no_water_crossing_penalty:0 "$MOD_NO_WATER_CROSSING_PENALTY$"
+
+
+ ### 来自：event_localization\DP_currency_menu_events_l_english.yml
+
+
+ ### 来自：event_localization\water_of_life_events_l_english.yml
+ water_of_life_header:0 "百夫长日记："
+ water_of_life_header_1:0 "追猎："
+ water_of_life_header_2:0 "荒野："
+ water_of_life_header_3:0 "耐力试炼："
+ water_of_life_header_4:0 "狩猎："
+ water_of_life_header_5:0 "村庄："
+ water_of_life_header_6:0 "接近："
+ water_of_life_header_8:0 "护民官："
+ water_of_life_header_9:0 "回归："
+
+ ### 来自：event_localization\zhuge_curry_menu_events_l_english.yml
+
+ ### 来自：gui\pcm_characterinteractionwindow_l_english.yml
+
+ ### 来自：modifiers_localization\zhuge_health_modifiers_l_english.yml
+
+##### For Taurus/skone_theocratic_elective_succession_law:1 "神权选举制"

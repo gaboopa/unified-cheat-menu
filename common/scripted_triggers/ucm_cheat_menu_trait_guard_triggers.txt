@@ -14,26 +14,3 @@ ucm_cheat_menu_may_receive_cheat_trait_trigger = {
 }
 
 # 须剥除自制特质：未获玩家UCM菜单授权者（AI 仅玩家授予后可保留 authorized）
-ucm_cheat_menu_must_strip_ucm_traits_trigger = {
-  ucm_has_any_cheat_menu_trait_trigger = yes
-  NOT = { has_character_flag = ucm_traits_player_authorized }
-}
-
-ucm_has_any_cheat_menu_trait_trigger = {
-  OR = {
-    has_trait = ucm_trait_immortal_ageless
-    has_trait = ucm_trait_yannian_dan
-    has_trait = ucm_trait_yannian_dan_mid
-    has_trait = ucm_trait_yannian_dan_best
-    has_trait = ucm_trait_baidubuqin
-    has_trait = ucm_trait_xinwuguai
-    has_trait = ucm_trait_marriage_ban
-    has_trait = ucm_trait_stats_100_locked
-    has_trait = trait_warlord_eternal
-    has_trait = trait_wealth_sovereign_max
-    has_trait = trait_ultimate_intrigue_master
-    has_trait = trait_great_builder_god
-    has_trait = trait_nether_conspiracy_lord
-    has_trait = trait_eternal_nether_lord
-  }
-}

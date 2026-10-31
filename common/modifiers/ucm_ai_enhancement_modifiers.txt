@@ -122,18 +122,3 @@ ucm_ai_war_planner_defensive = {
   holding_build_speed = -0.15
 }
 
-# 玩家领国内：AI 封臣反对压力（更爱结党/搞破坏/趁乱夺权）
-ucm_ai_anti_player_vassal_pressure = {
-  icon = stewardship_positive
-  intrigue = 3
-  diplomacy = 1
-  ai_vengefulness = 22
-  ai_boldness = 16
-  ai_rationality = 12
-  ai_sociability = 18
-  ai_war_chance = 0.12
-  ai_honor = -12
-  ai_compassion = -12
-  diplomatic_range_mult = 0.10
-}
-

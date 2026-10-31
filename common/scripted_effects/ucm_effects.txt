@@ -38,7 +38,6 @@ ucm_menu_sub_flags_effect = {
 	$DO$ = { FLAG = toc_showspecsflag }
 	$DO$ = { FLAG = toc_showtextrasflag }
 	$DO$ = { FLAG = open_optroop_menu }
-	$DO$ = { FLAG = sol_war_without_bounds_open }
 }
 
 ucm_menu_open_effect = {

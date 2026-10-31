@@ -3,24 +3,18 @@
  CH_SELECT_HOLDING_TITLE:1 "Выбор владения"
  CH_SELECT_HOLDING_NO_TITLES:0 "Нет доступных владений"
 
- ch_convert_holding_to_castle_decision:0 "Преобразовать владение в замок"
 
- ch_convert_holding_to_city_decision:0 "Преобразовать владение в город"
 
- ch_convert_holding_to_temple_decision:0 "Преобразовать владение в храм"
 
 ### CONVERT TO NOMAD
- ch_convert_holding_to_nomad_decision:0 "Преобразовать владение в Кочевой лагерь"
 
 ---
 
 ### CONVERT TO TRIBAL
- ch_convert_holding_to_tribal_decision:0 "Преобразовать владение в Племенное поселение"
 
 ---
 
 ### CONVERT TO TEMPLE CITADEL
- ch_convert_holding_to_temple_citadel_decision:0 "Преобразовать владение в Храмовую цитадель"
 
  ### --- X Decisions ---
 

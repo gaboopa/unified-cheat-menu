@@ -59,7 +59,7 @@ yearly_global_pulse = {
 }
 
 # on_game_start_after_lobby only fires for new games. On a loaded save the player's quarterly pulse
-# starts the tick and writes the AI-feature defaults.
+# starts the tick.
 quarterly_playable_pulse = {
 	on_actions = { ucm_player_quarterly_bootstrap }
 }
@@ -69,6 +69,5 @@ ucm_player_quarterly_bootstrap = {
 		is_ai = no
 		ucm_single_player_trigger = yes
 	}
-	effect = { ucm_ai_write_defaults_once_effect = yes }
 	on_actions = { ucm_monthly_tick_start }
 }

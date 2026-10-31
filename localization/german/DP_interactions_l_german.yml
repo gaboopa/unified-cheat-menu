@@ -1,97 +1,5 @@
 ﻿l_german:
 
- daddy_pika_cheat_menu_desc:0 "Ein geheimes Kompendium verbotener Mächte."
-
-
-
-
- daddy_pika_murder:0 "Ermorden"
- daddy_pika_murder_desc:0 "Beende das Leben dieses Charakters mit kaltem Blut."
-
-
-
-
-
- daddy_pika_extermination_process:0 "Dynastie auslöschen"
- daddy_pika_extermination_process_desc:0 "Lösche eine gesamte Blutlinie von der Welt – niemand soll überleben."
-
-
-
-
- daddy_pika_imprison:0 "Einkerkern"
- daddy_pika_imprison_desc:0 "Wirf diese Seele in Ketten."
-
- daddy_pika_commit_suicide:0 "Selbstmord begehen"
- daddy_pika_commit_suicide_desc:0 "Dieser Charakter entscheidet sich für den Tod statt für das Leben."
-
- daddy_pika_excommunicate:0 "Exkommunizieren"
- daddy_pika_excommunicate_desc:0 "Verstoße diese Seele aus der heiligen Kirche."
-
- daddy_pika_remove_excommunication:0 "Exkommunikation aufheben"
- daddy_pika_remove_excommunication_desc:0 "Nimm diese Person wieder in die Gemeinschaft der Kirche auf."
-
- daddy_pika_change_religion:0 "Religion ändern"
- daddy_pika_change_religion_desc:0 "Führe diese Seele zu einem neuen Glauben."
-
- daddy_pika_change_culture:0 "Kultur ändern"
- daddy_pika_change_culture_desc:0 "Lass diese Person ihre alten Bräuche hinter sich und eine neue Kultur annehmen."
-
- daddy_pika_change_dynasty:0 "In Eure Dynastie aufnehmen"
- daddy_pika_change_dynasty_desc:0 "Nimm diese Seele in Eure edle Blutlinie auf."
-
- daddy_pika_change_character:0 "Charakter wechseln"
- daddy_pika_change_character_desc:0 "Verlasse Euren bisherigen Weg und übernehmt das Schicksal eines anderen.\n\n$ACHIEVEMENTS_WILL_BE_DISABLED_SWITCH_CHARACTER$"
-
- daddy_pika_boost_stats:0 "Super-Verstärkung"
- daddy_pika_boost_stats_desc:0 "Segne diesen Charakter mit außergewöhnlichen Fähigkeiten."
-
-
- daddy_pika_add_to_court:0 "Dem Hof beitreten"
- daddy_pika_add_to_court_desc:0 "Rufe diese Person an Euren Hof."
-
-
-
- daddy_pika_designate_heir:0 "Erben bestimmen"
- daddy_pika_designate_heir_desc:0 "Erkläre diese Seele zum rechtmäßigen Erben Eures Vermächtnisses."
-
- daddy_pika_adopt_f:0 "Adoptieren"
- daddy_pika_adopt_m:0 "Adoptieren"
-
- daddy_pika_disown:0 "Verstoßen"
- daddy_pika_disown_desc:0 "Verstoße diese Seele und entreiße ihr Familie und Namen."
-
- daddy_pika_concubine_cheat:0 "Konkubine hinzufügen"
- daddy_pika_concubine_cheat_desc:0 "Nimm diese Seele als Konkubine in Euren Haushalt auf."
-
- divorce_character_cheat:0 "Scheidung"
- divorce_character_cheat_desc:0 "Löse den Bund der Ehe auf."
-
- daddy_pika_claim_title:0 "Anspruch auf Titel erheben"
- daddy_pika_claim_title_desc:0 "Erhebe Anspruch auf den rechtmäßigen Titel dieser Person."
-
- daddy_pika_usurpy_surp:0 "Titel an sich reißen"
- daddy_pika_usurpy_surp_desc:0 "Nimm diesen Titel mit Gewalt an Dich."
-
-
- daddy_pika_char_modify_vassal_contract_inter:0 "Vertrag ändern"
- daddy_pika_char_modify_vassal_contract_inter_desc:0 "Schreibe die Vasallenpflichten nach Eurem Willen neu."
-
- daddy_pika_vassal_mod_vassal_contract_inter:0 "Vertrag ändern"
- daddy_pika_vassal_mod_vassal_contract_inter_desc:0 "Ändere die Bindungen zwischen Lehnsherr und Vasall nach Belieben."
-
- daddy_pika_revoke_title:0 "Titel entziehen"
- daddy_pika_revoke_title_desc:0 "Nimm dieser Seele Titel und Ehre."
-
- daddy_pika_offer_vassal_inter:0 "Vasallenschaft erzwingen"
- daddy_pika_offer_vassal_inter_desc:0 "Unterwerfe diese Seele Eurer Herrschaft."
-
-
- daddy_pika_arrange_marriage_inter:0 "Verlobung erzwingen"
- daddy_pika_arrange_marriage_inter_desc:0 "Erzwinge ein Eheversprechen zwischen diesen beiden Seelen."
-
-
-
- open_daddypika_menu:0 "*Untermenü-Editor öffnen*"
 
 
 
@@ -99,7 +7,48 @@
 
 
 
- generic_proceed:0 "Seid Ihr sicher, dass Ihr fortfahren möchtet?"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -111,7 +60,6 @@
 
 
  #Gender
- gender_Succession_events_mod_decision:0 "Geschlechter-Erbfolge ändern"
 
 
 
@@ -119,7 +67,6 @@
 
 
 # Reich
-change_Realm_succession_law_mod_decision:0 "Reichserbfolge ändern"
 
 
 
@@ -129,7 +76,6 @@ change_Realm_succession_law_mod_decision:0 "Reichserbfolge ändern"
 
 
 
-change_govt_meritocratic_desc:0 "Ändert Euer Haupterreich sofort zur meritokratischen Regierungsform. Diese wird von besonderen Kandidaten und leistungsorientierten Reichen genutzt."
 
 
 

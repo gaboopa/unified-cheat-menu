@@ -35,7 +35,7 @@ ucm_spawn_create_effect = {
 		}
 		if = {
 			limit = { root = { has_character_flag = ucm_spawn_immortal } }
-			add_trait = zg_buxiu
+			add_trait = ucm_trait_undying
 			set_immortal_age = 25
 		}
 		force_character_skill_recalculation = yes

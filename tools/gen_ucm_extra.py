@@ -4,7 +4,7 @@
     common/modifiers/ucm_extra_modifiers.txt
     common/scripted_effects/ucm_extra_effects.txt, common/script_values/ucm_extra_values.txt  spawner
     common/modifiers/ucm_modifier_editor_modifiers.txt, common/scripted_guis/ucm_modifier_editor_sguis.txt
-    gui/ucm_modifier_editor.gui, gui/ucm_tenet_picker.gui
+    gui/ucm_modifier_editor.gui, gui/ucm_tenet_picker.gui, gui/ucm_spawn_picker.gui
     compat/ek2/common/scripted_guis/ucm_extra_vanilla_sguis.txt  EK2 version (vanilla-key actions greyed out)
     localization/<lang>/ucm_extra_l_<lang>.yml  (other languages from tools/ucm_extra_translations.json)
 build() returns the items merged into the tabs by gen_ucm_main_menu.py. Run this, then that:
@@ -332,13 +332,30 @@ def activities_legends():
 SKILL_ROLES = (("commander", "Commander", "martial"), ("knight", "Knight", "prowess"))
 COUNCIL = (("chancellor", "Chancellor", "diplomacy"), ("marshal", "Marshal", "martial"), ("steward", "Steward", "stewardship"),
            ("spymaster", "Spymaster", "intrigue"), ("court_chaplain", "Chaplain", "learning"))
+SKILLS = ("diplomacy", "martial", "stewardship", "intrigue", "learning", "prowess")
+# A skill value of 0 leaves the rolled skill alone; anything else sets it exactly.
+SET_SKILLS = "\n".join(f"\t\tif = {{ limit = {{ root = {{ ucm_spawn_{k}_value > 0 }} }} add_{k}_skill = {{ value = root.var:ucm_spawn_{k} subtract = {k} }} }}" for k in SKILLS)
 SPAWN_EFFECTS = """ucm_spawn_create_effect = {
 	if = {
-		limit = { has_character_flag = ucm_spawn_no_traits }
-		create_character = { age = ucm_spawn_age_value gender_female_chance = ucm_spawn_female_chance_value random_traits = no culture = root.var:ucm_target.culture faith = root.var:ucm_target.faith dynasty = $DYNASTY$ employer = root.var:ucm_target save_temporary_scope_as = ucm_new }
+		limit = { exists = root.var:ucm_spawn_culture }
+		root.var:ucm_spawn_culture = { save_temporary_scope_as = ucm_spawn_culture }
 	}
 	else = {
-		create_character = { age = ucm_spawn_age_value gender_female_chance = ucm_spawn_female_chance_value culture = root.var:ucm_target.culture faith = root.var:ucm_target.faith dynasty = $DYNASTY$ employer = root.var:ucm_target save_temporary_scope_as = ucm_new }
+		root.var:ucm_target.culture = { save_temporary_scope_as = ucm_spawn_culture }
+	}
+	if = {
+		limit = { exists = root.var:ucm_spawn_faith }
+		root.var:ucm_spawn_faith = { save_temporary_scope_as = ucm_spawn_faith }
+	}
+	else = {
+		root.var:ucm_target.faith = { save_temporary_scope_as = ucm_spawn_faith }
+	}
+	if = {
+		limit = { has_character_flag = ucm_spawn_no_traits }
+		create_character = { age = ucm_spawn_age_value gender_female_chance = ucm_spawn_female_chance_value random_traits = no culture = scope:ucm_spawn_culture faith = scope:ucm_spawn_faith dynasty = $DYNASTY$ employer = root.var:ucm_target save_temporary_scope_as = ucm_new }
+	}
+	else = {
+		create_character = { age = ucm_spawn_age_value gender_female_chance = ucm_spawn_female_chance_value culture = scope:ucm_spawn_culture faith = scope:ucm_spawn_faith dynasty = $DYNASTY$ employer = root.var:ucm_target save_temporary_scope_as = ucm_new }
 	}
 	scope:ucm_new = {
 		if = {
@@ -355,6 +372,9 @@ SPAWN_EFFECTS = """ucm_spawn_create_effect = {
 			add_trait = zg_buxiu
 			set_immortal_age = 25
 		}
+		force_character_skill_recalculation = yes
+""" + SET_SKILLS + """
+		force_character_skill_recalculation = yes
 	}
 }
 """
@@ -372,7 +392,12 @@ ucm_spawn_female_chance_value = {
 	value = 0
 	if = { limit = { has_character_flag = ucm_spawn_female } value = 100 }
 }
-"""
+""" + "".join(f"""
+ucm_spawn_{k}_value = {{
+\tvalue = 0
+\tif = {{ limit = {{ has_variable = ucm_spawn_{k} }} value = var:ucm_spawn_{k} }}
+}}
+""" for k in SKILLS)
 
 
 def spawner(game):
@@ -387,7 +412,11 @@ def spawner(game):
                       ("immortal", "Immortal", "New characters are immortal.")):
         opts.append((sg(f"ucm_spawn_opt_{k}", n, tip, "always = yes",
                         f"if = {{ limit = {{ has_character_flag = ucm_spawn_{k} }} remove_character_flag = ucm_spawn_{k} }} else = {{ add_character_flag = ucm_spawn_{k} }}"), f"ucm_spawn_{k}"))
-    items += [("togglerow", opts[:3]), ("togglerow", opts[3:])]
+    items += [("togglerow", opts[:3]), ("togglerow", opts[3:]), ("vs", "ucm_spawn_picker", "ucm_open_spawn_picker"), h("UCM_SPAWN_SKILL_NOTE", "Skills (0 keeps the rolled skill)")]
+    for k in SKILLS:
+        LOC[f"UCM_SPAWN_{k.upper()}"] = k.capitalize()
+        items.append(("value", f"UCM_SPAWN_{k.upper()}", me % f"ucm_spawn_{k}_value", sg_pair(f"ucm_spawn_{k}", k, f"ucm_spawn_{k}_value", "ucm_step_value", 0, 100)))
+    spawn_picker_sguis()
     many = lambda dyn, after: f"while = {{ count = ucm_spawn_count_value ucm_spawn_create_effect = {{ DYNASTY = {dyn} }} {after} }}"
     items.append(h("UCM_SEC_SPAWN_FAMILY", "New Family Members"))
     younger = f"{T} ucm_spawn_age_value < {TG}.age"
@@ -434,6 +463,18 @@ def spawner(game):
     if row:
         items.append(("row", row))
     return items
+
+
+def spawn_picker_sguis():
+    LOC.update(ucm_open_spawn_picker="Culture & Faith of New Characters", UCM_SPAWN_PICKER="Culture & Faith", UCM_SPAWN_TARGETS="Target's",
+               UCM_SPAWN_PICKER_NOTE="Click a culture or faith to give it to every character you spawn from now on. Until you pick one, they use the target's.",
+               UCM_SPAWN_CULTURE_LABEL="Culture:", UCM_SPAWN_FAITH_LABEL="Faith:")
+    for kind, name in (("culture", "culture"), ("faith", "faith")):
+        sg(f"ucm_spawn_{kind}_clear", "Use Target's", f"New characters use the target's {name} again.", f"has_variable = ucm_spawn_{kind}", f"remove_variable = ucm_spawn_{kind}")
+        SGUIS.append(f"ucm_spawn_pick_{kind} = {{\n\tscope = character\n\tsaved_scopes = {{ selected_{kind} }}\n\tis_shown = {{ ucm_single_player_trigger = yes }}\n"
+                     f"\tis_valid = {{ exists = scope:selected_{kind} }}\n\teffect = {{ set_variable = {{ name = ucm_spawn_{kind} value = scope:selected_{kind} }} }}\n}}\n")
+    SGUIS.append("ucm_spawn_lists_load = {\n\tscope = character\n\tis_shown = { ucm_single_player_trigger = yes }\n\tis_valid = { always = yes }\n"
+                 "\teffect = { ucm_acm_culture_picker_refresh_all_region_lists_effect = yes ucm_acm_religion_picker_refresh_all_lists_effect = yes }\n}\n")
 
 
 def sg_pair(key, name, value, step, lo, hi):
@@ -584,6 +625,61 @@ def tenet_gui():
     return window("ucm_tenet_picker_window", "right|vcenter", "ucm_tenet_picker", "UCM_TENET_PICKER", "UCM_TENET_NOTE", body)
 
 
+def spawn_picker_gui():
+    def section(kind, cap, label, datamodel, group_ctx, group, children, item):
+        var = f"GetPlayer.MakeScope.Var('ucm_spawn_{kind}')"
+        clear = f"GetScriptedGui('ucm_spawn_{kind}_clear')"
+        expanded = f"ConcatIfNeitherEmpty({group}.GetNameNoTooltip,'children_visible')"
+        load = f"""      state = {{ name = _show on_start = "[GetScriptedGui('ucm_spawn_lists_load').Execute({R})]" }}\n""" if kind == "culture" else ""
+        return f"""    hbox = {{
+      layoutpolicy_horizontal = expanding
+      spacing = 6
+{load}      text_single = {{ text = "{label}" default_format = "#high" }}
+      text_single = {{ layoutpolicy_horizontal = expanding visible = "[{var}.IsSet]" raw_text = "[{var}.{cap}.GetNameNoTooltip]" }}
+      text_single = {{ layoutpolicy_horizontal = expanding visible = "[Not({var}.IsSet)]" text = "UCM_SPAWN_TARGETS" }}
+      button_standard = {{ size = {{ 130 28 }} tooltip = "ucm_spawn_{kind}_clear_tt" enabled = "[{clear}.IsValid({R})]" onclick = "[{clear}.Execute({R})]" text_single = {{ parentanchor = center text = "ucm_spawn_{kind}_clear" }} }}
+    }}
+    scrollbox = {{
+      layoutpolicy_horizontal = expanding
+      layoutpolicy_vertical = expanding
+      blockoverride "scrollbox_content" {{
+        vbox = {{
+          layoutpolicy_horizontal = expanding
+          datamodel = "[GetGlobalList('{datamodel}')]"
+          item = {{
+            vbox = {{
+              layoutpolicy_horizontal = expanding
+              datacontext = "[{group_ctx}]"
+              button_standard_hover = {{
+                layoutpolicy_horizontal = expanding
+                size = {{ 0 30 }}
+                onclick = "[GetVariableSystem.Toggle({expanded})]"
+                text_single = {{ parentanchor = vcenter|left position = {{ 8 0 }} text = "[{group}.GetNameNoTooltip]" default_format = "#high" }}
+              }}
+              vbox = {{
+                layoutpolicy_horizontal = expanding
+                margin_left = 12
+                datamodel = "[{group}.{children}]"
+                visible = "[GetVariableSystem.Exists({expanded})]"
+                item = {{
+                  button_standard_hover = {{
+                    layoutpolicy_horizontal = expanding
+                    size = {{ 0 28 }}
+                    onclick = "[GetScriptedGui('ucm_spawn_pick_{kind}').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('selected_{kind}', {item}.MakeScope).End)]"
+                    text_single = {{ parentanchor = vcenter|left position = {{ 8 0 }} text = "[{item}.GetNameNoTooltip]" default_format = "#clickable" }}
+                  }}
+                }}
+              }}
+            }}
+          }}
+        }}
+      }}
+    }}"""
+    body = (section("culture", "Culture", "UCM_SPAWN_CULTURE_LABEL", "ucm_acm_heritage_list_all", "Scope.Culture.GetHeritage", "CulturePillar", "GetCulturesWithPillar", "Culture") + "\n"
+            + section("faith", "Faith", "UCM_SPAWN_FAITH_LABEL", "ucm_acm_religion_list_all", "Scope.Religion", "Religion", "GetFaiths", "Faith"))
+    return window("ucm_spawn_picker_window", "right|vcenter", "ucm_spawn_picker", "UCM_SPAWN_PICKER", "UCM_SPAWN_PICKER_NOTE", body)
+
+
 def tenet_sgui(data_path):
     with open(data_path, encoding="utf-8-sig") as fh:
         text = fh.read()
@@ -636,6 +732,7 @@ def main():
     write("common/modifiers/ucm_modifier_editor_modifiers.txt", head + "\n".join(mod_defs))
     write("gui/ucm_modifier_editor.gui", modifier_gui(cat))
     write("gui/ucm_tenet_picker.gui", tenet_gui())
+    write("gui/ucm_spawn_picker.gui", spawn_picker_gui())
     write("common/scripted_effects/ucm_extra_effects.txt", head + SPAWN_EFFECTS)
     write("common/script_values/ucm_extra_values.txt", head + SPAWN_VALUES)
     mods = "".join(f"ucm_extra_county_{k} = {{\n\ticon = county_modifier_development_positive\n\t{body}\n}}\n\n" for k, _, body in MODS)

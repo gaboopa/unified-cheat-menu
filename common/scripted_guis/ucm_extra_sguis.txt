@@ -848,6 +848,127 @@ ucm_spawn_opt_immortal = {
 	effect = { if = { limit = { has_character_flag = ucm_spawn_immortal } remove_character_flag = ucm_spawn_immortal } else = { add_character_flag = ucm_spawn_immortal } }
 }
 
+ucm_spawn_diplomacy_up = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_spawn_diplomacy_value < 100 }
+	effect = { set_variable = { name = ucm_spawn_diplomacy value = { value = ucm_spawn_diplomacy_value add = ucm_step_value max = 100 } } }
+}
+
+ucm_spawn_diplomacy_down = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_spawn_diplomacy_value > 0 }
+	effect = { set_variable = { name = ucm_spawn_diplomacy value = { value = ucm_spawn_diplomacy_value subtract = ucm_step_value min = 0 } } }
+}
+
+ucm_spawn_martial_up = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_spawn_martial_value < 100 }
+	effect = { set_variable = { name = ucm_spawn_martial value = { value = ucm_spawn_martial_value add = ucm_step_value max = 100 } } }
+}
+
+ucm_spawn_martial_down = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_spawn_martial_value > 0 }
+	effect = { set_variable = { name = ucm_spawn_martial value = { value = ucm_spawn_martial_value subtract = ucm_step_value min = 0 } } }
+}
+
+ucm_spawn_stewardship_up = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_spawn_stewardship_value < 100 }
+	effect = { set_variable = { name = ucm_spawn_stewardship value = { value = ucm_spawn_stewardship_value add = ucm_step_value max = 100 } } }
+}
+
+ucm_spawn_stewardship_down = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_spawn_stewardship_value > 0 }
+	effect = { set_variable = { name = ucm_spawn_stewardship value = { value = ucm_spawn_stewardship_value subtract = ucm_step_value min = 0 } } }
+}
+
+ucm_spawn_intrigue_up = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_spawn_intrigue_value < 100 }
+	effect = { set_variable = { name = ucm_spawn_intrigue value = { value = ucm_spawn_intrigue_value add = ucm_step_value max = 100 } } }
+}
+
+ucm_spawn_intrigue_down = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_spawn_intrigue_value > 0 }
+	effect = { set_variable = { name = ucm_spawn_intrigue value = { value = ucm_spawn_intrigue_value subtract = ucm_step_value min = 0 } } }
+}
+
+ucm_spawn_learning_up = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_spawn_learning_value < 100 }
+	effect = { set_variable = { name = ucm_spawn_learning value = { value = ucm_spawn_learning_value add = ucm_step_value max = 100 } } }
+}
+
+ucm_spawn_learning_down = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_spawn_learning_value > 0 }
+	effect = { set_variable = { name = ucm_spawn_learning value = { value = ucm_spawn_learning_value subtract = ucm_step_value min = 0 } } }
+}
+
+ucm_spawn_prowess_up = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_spawn_prowess_value < 100 }
+	effect = { set_variable = { name = ucm_spawn_prowess value = { value = ucm_spawn_prowess_value add = ucm_step_value max = 100 } } }
+}
+
+ucm_spawn_prowess_down = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_spawn_prowess_value > 0 }
+	effect = { set_variable = { name = ucm_spawn_prowess value = { value = ucm_spawn_prowess_value subtract = ucm_step_value min = 0 } } }
+}
+
+ucm_spawn_culture_clear = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { has_variable = ucm_spawn_culture }
+	effect = { remove_variable = ucm_spawn_culture }
+}
+
+ucm_spawn_pick_culture = {
+	scope = character
+	saved_scopes = { selected_culture }
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { exists = scope:selected_culture }
+	effect = { set_variable = { name = ucm_spawn_culture value = scope:selected_culture } }
+}
+
+ucm_spawn_faith_clear = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { has_variable = ucm_spawn_faith }
+	effect = { remove_variable = ucm_spawn_faith }
+}
+
+ucm_spawn_pick_faith = {
+	scope = character
+	saved_scopes = { selected_faith }
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { exists = scope:selected_faith }
+	effect = { set_variable = { name = ucm_spawn_faith value = scope:selected_faith } }
+}
+
+ucm_spawn_lists_load = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { always = yes }
+	effect = { ucm_acm_culture_picker_refresh_all_region_lists_effect = yes ucm_acm_religion_picker_refresh_all_lists_effect = yes }
+}
+
 ucm_spawn_child = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }

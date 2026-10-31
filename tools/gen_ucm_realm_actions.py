@@ -62,7 +62,6 @@ ucm_law_player_only_trigger = {
 }
 """
 
-ELECTORS = "{holder}"
 SCORE = "".join(f"\t\t{m}_modifier = yes\n" for m in (
     "elector_self_voting_pattern_feudal_elective", "holder_voting_pattern_feudal_elective",
     "elector_voting_pattern_circumstances_feudal_elective", "elector_voting_pattern_prestige_piety_feudal_elective",
@@ -374,15 +373,23 @@ ucm_theocratic_elective_inheritance = {
 
 
 def building_chains(game):
-    chains = []
+    """(level, next level) pairs, top of each chain first, so a level just added isn't upgraded again in the same pass."""
+    nexts = {}
     for stem in BUILDING_FILES:
-        objs = {k: re.search(r"next_building\s*=\s*(\w+)", b) for k, b in ck3parse.top_level_objects(os.path.join(game, "common", "buildings", stem + ".txt"))}
-        chains += [(k, m.group(1)) for k, m in objs.items() if m]
-    return sorted(set(chains))
+        for k, b in ck3parse.top_level_objects(os.path.join(game, "common", "buildings", stem + ".txt")):
+            m = re.search(r"next_building\s*=\s*(\w+)", b)
+            if m:
+                nexts[k] = m.group(1)
+    pairs = []
+    for root in sorted(set(nexts) - set(nexts.values())):
+        chain = [root]
+        while chain[-1] in nexts:
+            chain.append(nexts[chain[-1]])
+        pairs += reversed(list(zip(chain, chain[1:])))
+    return pairs
 
 
 def building_effects(game):
-    # Vanilla provinces hold one level of a chain, so each province building matches at most one line per pass.
     pairs = "".join(f"\tif = {{ limit = {{ has_building = {a} }} add_building = {b} }}\n" for a, b in building_chains(game))
     return HEAD + f"# Run on a province: raise each building one level.\nucm_province_upgrade_buildings_effect = {{\n{pairs}}}\n"
 

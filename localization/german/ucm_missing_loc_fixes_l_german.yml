@@ -1,16 +1,5 @@
 ﻿l_german:
  # CK3 1.20 cleanup: keys the script referenced but no loc file defined, plus raw-text strings turned into keys
- ucm_cheat_menu.3091.opt_activity_controls:0 "@skill_learning_icon! Aktuelle Aktivität verwalten"
- ucm_cheat_menu.3091.opt_activity_controls_tt:0 "Die Aktivität des Ziels überspringen, beschleunigen, abschließen oder abbrechen."
- ucm_cheat_menu.3091.opt_finish_activity:0 "@skull_icon! Aktuelle Aktivität beenden"
- ucm_cheat_menu.3091.opt_finish_activity_tt:0 "Die Aktivität des Ziels abschließen oder abbrechen."
- ucm_cheat_menu.3092.opt_more_entertainment:0 "@prestige_icon! Weitere Unterhaltungsaktivitäten"
- ucm_cheat_menu.3092.opt_more_entertainment_tt:0 "Die nächste Seite der Unterhaltungsaktivitäten anzeigen."
- ucm_cheat_menu.3092.back_page1:0 "Zurück zu Seite 1"
- ucm_cheat_menu.3097.opt_more_other:0 "@prestige_icon! Weitere Aktivitäten"
- ucm_cheat_menu.3097.opt_more_other_tt:0 "Die nächste Seite der sonstigen Aktivitäten anzeigen."
- ucm_cheat_menu.3097.back_page1:0 "Zurück zu Seite 1"
- ucm_activity_cheat_toast_fast_phase_title:0 "Aktivität um einen Tag vorgerückt"
  LIT_learned_trait_check_max_TT:0 "Diese Eigenschaftsstufe ist bereits auf dem Maximum."
  LIT_learned_trait_check_missing_TT:0 "Der Charakter hat diese Eigenschaft nicht, daher wurde keine Erfahrung hinzugefügt."
  dp_char_editor.traits.lifestyle_TT:0 "Lebensstil-Eigenschaften durchsuchen."

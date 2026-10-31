@@ -51,15 +51,3 @@ ucm_acm_culture_pick_vanilla = {
   }
 }
 
-ucm_acm_culture_picker_continue_edit = {
-	is_shown = { ucm_single_player_trigger = yes }
-  scope = character
-  is_valid = {
-    has_variable = ucm_selected_culture_var
-  }
-  effect = {
-    ucm_restore_ucm_selected_culture_scope_effect = yes
-    ucm_close_acm_culture_picker_effect = yes
-    trigger_event = ucm_cheat_menu.2900
-  }
-}

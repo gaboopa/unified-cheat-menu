@@ -1,8 +1,0 @@
-﻿# 右键「UCM」菜单：通用工具类 modifier
-
-ucm_world_deterrence_aura = {
-  icon = dread_positive
-  dread_baseline_add = 100
-  dread_decay_mult = -1
-  dread_gain_mult = 0
-}

@@ -79,17 +79,13 @@
  toc_celibate_interaction:0 "Zölibat-Eigenschaft hinzufügen"
  toc_givearmyhorde_interaction:0 "Hordenarmee erschaffen"
  toc_religionconvert_interaction:0 "Religion konvertieren"
- mega_preg_toc:0 "Schwangerschaft auslösen"
  toc_setheira_interaction:0 "Als Haupterben festlegen"
  toc_deposed_interaction:0 "Charakter zurücktreten lassen oder absetzen"
  toc_deposed_interaction_desc:0 "Entfernt diesen Charakter aus seinem Landamt. Verwaltungsgouverneure ziehen sich auf ihr Familienanwesen zurück; andere Herrscher verwenden CK3s landlosen Fortsetzungsablauf."
- ucm_deposed_to_estate_tt:0 "[recipient.GetShortUIName|U] tritt von allen Landämtern zurück und führt [recipient.GetHerHis] Verwaltungsanwesen weiter."
- ucm_depose_requires_landless_play_tt:0 "Roads to Power ist erforderlich, um einen Spielercharakter abzusetzen, ohne das Spiel zu beenden"
  toc_yapaconvert_interaction:0 "Zur Häresie bekehren"
  toc_addwombmancourtier_interaction:0 "Hofdame erschaffen"
  toc_addcourtier_interaction:0 "Hofmann erschaffen"
  toc_addcharacter_interaction:0 "Charakter-Menü öffnen"
- toc_forcedivorce_interaction:0 "Scheidung erzwingen"
  toc_finishcounciltask_interaction:0 "Ratsaufgabe sofort abschließen"
 
  # Modifikatoren
@@ -257,8 +253,6 @@
  toc_spawn_character_interaction:0 ": Charakter erschaffen"
  toc_spawn_character_interaction_desc:0 "Erstellt einen neuen benutzerdefinierten Charakter am Hof dieses Charakters."
 
- toc_torture_and_perks_interaction:0 ": Vorteile und Bestrafung"
- toc_torture_and_perks_interaction_desc:0 "Verwaltet Vorteile, Hofbeschränkungen, Bündnisse und Bestrafungen für den ausgewählten Charakter."
 
  toc_county_modifier_interaction:0 "Hauptstadt-Grafschaft anpassen"
  toc_county_modifier_interaction_desc:0 "Fügt der Hauptstadt-Grafschaft des ausgewählten Charakters besondere Modifikatoren hinzu oder entfernt sie."

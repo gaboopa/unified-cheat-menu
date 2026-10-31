@@ -468,21 +468,9 @@
 
 
  ucm_world_ai_boost_pause_decision: "Pause Global AI Realm Bonuses"
- ucm_world_ai_boost_pause_decision_desc: ""
- ucm_world_ai_boost_pause_decision_tooltip: "Appears while bonus system is active; replaced with Resume option after deactivation."
- ucm_world_ai_boost_pause_decision_confirm: "Deactivate AI Bonuses"
- ucm_world_ai_boost_pause_effect_tt: "Global suspension active. AI bonus menu stays hidden until manually resumed."
  ucm_world_ai_boost_resume_decision: "Resume Global AI Realm Bonuses"
- ucm_world_ai_boost_resume_decision_desc: ""
- ucm_world_ai_boost_resume_decision_tooltip: "Only visible when all AI bonuses are suspended."
- ucm_world_ai_boost_resume_decision_confirm: "Re-enable AI Bonuses"
- ucm_world_ai_boost_resume_effect_tt: "Suspension lifted; global AI reinforcement functions available again."
 
  ucm_boost_world_ai_rulers_decision: "Empower All Independent AI Realms"
- ucm_boost_world_ai_rulers_decision_desc: "Bestow full military, economic and diplomatic buffs to all landed AI lords to fuel expansion and warfare. If the player becomes overwhelmingly dominant, AI nations are far more prone to form coalitions against your hegemony for balanced gameplay."
- ucm_boost_world_ai_rulers_decision_tooltip: "Global bonus not suspended. #bold No prestige cost required.#!"
- ucm_boost_world_ai_rulers_decision_confirm: "Activate Full AI Reinforcement"
- ucm_boost_world_ai_rulers_effect_tt: "All #bold landed AI rulers#! receive the Governance Support modifier lasting #bold 15#! years, gaining annual construction and men-at-arms perks throughout the duration."
 
  ucm_ai_yearly_admin_conversion_toggle_title_on: "#bold 【ON】#! Annual Trigger: Automatic AI Administrative Government Reform"
  ucm_ai_yearly_admin_conversion_toggle_title_off: "#bold 【OFF】#! Annual Trigger: Automatic AI Administrative Government Reform"
@@ -555,27 +543,10 @@
 
 
  ucm_positions_mass_reshuffle_decision: "Court Positions"
- ucm_positions_mass_reshuffle_decision_tooltip: "Dismiss and reassign all court offices based on competence. Does not affect core council positions."
- ucm_positions_mass_reshuffle_decision_confirm: "Execute"
- ucm_positions_mass_reshuffle_decision_desc: "Dismiss and reassign all court offices based on competence. Does not affect core council positions."
 
 
 
 
 
 
- ucm_cw_tradition_menu_title: "Tradition Selection"
- ucm_cw_tradition_warning: "Requires DLC"
- ucm_acm_religion_picker_title: "Faith Catalog"
- ucm_acm_religion_picker_subtitle: "Browse all faiths by religion (49 groups, 155 faiths). Click arrows to expand lists."
- ucm_acm_religion_picker_hint: "① Click a faith name to apply it to the selected character; ② » to open its faith editor."
- ucm_acm_religion_picker_list_caption: "Religion Groups (Click to Expand Faiths)"
- ucm_acm_religion_picker_open_editor_tt: "Open faith details and edit doctrines"
- ucm_acm_religion_picker_footer_edit: "Open Selected Faith Details"
- ucm_acm_religion_picker_footer_edit_tt: "Launch the editor for your selected faith"
- ucm_acm_culture_picker_title: "Culture Catalog"
- ucm_acm_culture_picker_subtitle: "Browse all cultures by heritage. Click arrows to expand lists."
- ucm_acm_culture_picker_hint: "① Click a culture name to apply it to the selected character; ② » opens that culture's vanilla panel; ③ the footer opens the Cheat editor."
- ucm_acm_culture_picker_list_caption: "Heritage Groups (Click to Expand)"
- ucm_acm_culture_picker_open_vanilla_tt: "Select and open vanilla culture sidebar"
  ucm_imprison_all_realm_vassals_decision_tooltip: ""

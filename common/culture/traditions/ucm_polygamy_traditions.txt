@@ -1,0 +1,34 @@
+# Extra-wives traditions, listed in the tradition picker. Never picked by the AI.
+tradition_ucm_two_wives = {
+	category = ritual
+	layers = {
+		0 = diplo
+		1 = mena
+		4 = greeting.dds
+	}
+	parameters = {
+		number_of_consorts_empire = 2
+		number_of_consorts_hegemony = 2
+		number_of_spouses = 2
+		romance_scheme_bonus_vs_spouse = yes
+	}
+	cost = { prestige = 1000 }
+	ai_will_do = { value = -1 }
+}
+
+tradition_ucm_three_wives = {
+	category = ritual
+	layers = {
+		0 = diplo
+		1 = mena
+		4 = greeting.dds
+	}
+	parameters = {
+		number_of_consorts_empire = 3
+		number_of_consorts_hegemony = 3
+		number_of_spouses = 3
+		romance_scheme_bonus_vs_spouse = yes
+	}
+	cost = { prestige = 1000 }
+	ai_will_do = { value = -1 }
+}

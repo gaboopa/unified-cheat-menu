@@ -1,4 +1,4 @@
-"""Generate the native menu actions added after the Skonester / Divine Intervention gap review:
+"""Generate the native menu actions:
     common/scripted_guis/ucm_extra_sguis.txt          actions on the target and second character
     common/scripted_guis/ucm_extra_vanilla_sguis.txt  buildings, innovation eras, legends (vanilla keys)
     common/modifiers/ucm_extra_modifiers.txt
@@ -72,6 +72,11 @@ def humanize(key):
     return re.sub(r"_+", " ", key).strip().capitalize()
 
 
+HEAL_TRAITS = ("bubonic_plague", "smallpox", "typhus", "cancer", "consumption", "gout_ridden", "sickly", "ill", "pneumonic", "great_pox", "early_great_pox",
+               "lovers_pox", "leper", "wounded_1", "wounded_2", "wounded_3", "maimed", "one_legged", "disfigured", "infirm", "incapable", "blind", "inbred")
+AUTHORITY = (("crown_authority", 0, 3), ("tribal_authority", 0, 3), ("nomadic_authority", 1, 5), ("imperial_bureaucracy", 0, 3), ("celestial_bureaucracy", 0, 3))
+
+
 # --- Character: stats, locks, resources -----------------------------------------------------------
 # The trait editor lists only the game's traits, so these get their own toggles.
 MOD_TRAITS = ["100_stat_man", "nnn_challenger", "build_speed_cheat", "stress_gain_remove", "tyranny_gain_remove",
@@ -122,6 +127,14 @@ def character():
     xp = "".join(f"if = {{ limit = {{ has_trait = {t} }} {add_xp(t, tracks)} }} " for t, tracks in LEARNED_TRACKS.items())
     items.append(sg_item("ucm_max_learned_trait_xp", "Max Learned Trait XP",
                          "Fill the experience of the target's pilgrim, lifestyle, traveler, tournament and criminal traits.", T, f"{TG} = {{ {xp}}}"))
+    items.append(h("UCM_SEC_TARGET_TOOLS", "Target Tools"))
+    items.append(steps("ucm_age", "Age", T, f"{TG} = {{ change_age = {{v}} }}"))
+    items.append(sg_item("ucm_play_as_target", "Play as Target", "Closes this menu and switches you to the target.", f"{T} NOT = {{ {TG} = root }}",
+                         f"ucm_menu_close_effect = yes set_player_character = {TG}"))
+    items.append(sg_item("ucm_heal_target", "Heal", "Remove diseases, wounds and maimings from the target.", T,
+                         f"{TG} = {{ " + " ".join(f"remove_trait = {x}" for x in HEAL_TRAITS) + " }"))
+    items.append(("row", [sg("ucm_make_immortal", "Make Immortal", "The target stops aging and can't die of old age.", T, f"{TG} = {{ add_trait = zg_buxiu set_immortal_age = 25 }}"),
+                          sg("ucm_make_mortal", "Make Mortal", "Remove the target's immortality.", f"{T} {TG} = {{ has_trait = zg_buxiu }}", f"{TG} = {{ remove_trait = zg_buxiu }}")]))
     return items
 
 
@@ -147,6 +160,13 @@ def relationships():
                                  f"{TG} = {{ add_secret = {{ type = secret_{k} }} }}") for k, n in secrets[i:i + 3]]))
     items.append(("row", [sg(f"ucm_plant_{k}", f"{n} (Second)", f"Give the target a {n.lower()} secret involving the second character.", P,
                              f"{TG} = {{ add_secret = {{ type = secret_{k} target = {SEC} }} }}") for k, n in paired]))
+    items.append(h("UCM_SEC_SECOND_TIES", "Ties to Second"))
+    items.append(("row", [sg("ucm_concubine_of_second", "Concubine of Second", "Make the target a concubine of the second character.", f"{P} {TG} = {{ is_concubine = no }}", f"{SEC} = {{ make_concubine = root.{TG} }}"),
+                          sg("ucm_heir_of_second", "Heir of Second", "Make the target the second character's designated heir.", P, f"{SEC} = {{ set_designated_heir = root.{TG} }}")]))
+    items.append(("row", [sg("ucm_court_of_second", "Court of Second", "Move the target to the second character's court.", P, f"{SEC} = {{ add_courtier = root.{TG} }}"),
+                          sg("ucm_make_lowborn", "Make Lowborn", "Remove the target's house.", T, f"{TG} = {{ set_to_lowborn = yes }}")]))
+    items.append(("row", [sg("ucm_imprison_by_second", "Second Imprisons", "The second character imprisons the target.", P, f"{SEC} = {{ imprison = {{ target = root.{TG} type = dungeon }} }}"),
+                          sg("ucm_release_target", "Release", "Release the target from prison.", f"{T} {TG} = {{ is_imprisoned = yes }}", f"{TG} = {{ release_from_prison = yes }}")]))
     return items
 
 
@@ -160,7 +180,27 @@ def titles():
         return (f"{TG} = {{ every_claim = {{ {limit} add_to_temporary_list = ucm_claims }} "
                 f"every_in_list = {{ list = ucm_claims save_temporary_scope_as = ucm_claim root.{TG} = {{ remove_claim = scope:ucm_claim }} }} }}")
     primary = f"{T} {TG} = {{ is_landed = yes }}"
-    items = [h("UCM_SEC_CLAIM_REMOVE", "Remove Claims"), ("row", [
+    other = f"{primary} NOT = {{ {TG} = root }}"
+    change = "create_title_and_vassal_change = {{ type = conquest save_scope_as = change }} {} resolve_title_and_vassal_change = scope:change"
+    grab = "change_title_holder_include_vassals = { holder = root change = scope:change }"
+    items = [h("UCM_SEC_TAKEOVER", "Take Titles (for you)"),
+             ("ia", "ucm_take_title"), ("ia", "ucm_claim_title"),
+             ("row", [sg("ucm_take_domain", "Take Domain", "You take every title the target holds, with their vassals.", other, change.format(f"{TG} = {{ every_held_title = {{ {grab} }} }}")),
+                      sg("ucm_take_realm", "Take Realm", "You take every county-or-higher title in the target's realm, with their vassals.", other,
+                         change.format(f"{TG} = {{ every_sub_realm_title = {{ limit = {{ tier > tier_barony }} {grab} }} }}")),
+                      sg("ucm_claim_creatable", "Claim Creatable", "You get a pressed claim on every title you could create.", "always = yes",
+                         "every_alert_creatable_title = { root = { add_pressed_claim = prev } }")]),
+             ("ia", "ucm_modify_vassal_contract"),
+             h("UCM_SEC_MERGE", "Merge Titles"), ("ia", "ucm_merge_title"),
+             sg_item("ucm_merge_title_clear", "Forget Marked Title", "Clear the title marked for merging.", "has_variable = ucm_merge_title", "remove_variable = ucm_merge_title"),
+             sg_item("ucm_organize_dejure", "Organize De Jure", "Make every lower-tier title held by the target and their direct vassals de jure under the target's primary title.", primary,
+                     f"{TG} = {{ every_held_title = {{ limit = {{ tier > tier_barony this.tier < root.{TG}.primary_title.tier }} set_de_jure_liege_title = root.{TG}.primary_title }} "
+                     f"every_vassal = {{ every_held_title = {{ limit = {{ tier > tier_barony this.tier < root.{TG}.primary_title.tier }} set_de_jure_liege_title = root.{TG}.primary_title }} }} }}"),
+             sg_item("ucm_sort_vassals_dejure", "Sort My Vassals De Jure", "Put each of your vassals under the nearest de jure liege in your realm. No titles change hands.",
+                     "ucm_has_de_jure_transferable_direct_vassals_trigger = yes", "ucm_one_click_transfer_direct_vassals_to_de_jure_liege_effect = yes"),
+             sg_item("ucm_max_authority", "Max Realm Authority", "Raise the target's crown authority or equivalent law to the top level.", f"{T} {TG} = {{ is_independent_ruler = yes }}",
+                     f"{TG} = {{ " + " ".join(f"if = {{ limit = {{ OR = {{ " + " ".join(f"has_realm_law = {law}_{i}" for i in range(low, top)) + f" }} }} add_realm_law = {law}_{top} }}" for law, low, top in AUTHORITY) + " }"),
+             h("UCM_SEC_CLAIM_REMOVE", "Remove Claims"), ("row", [
         sg("ucm_remove_all_claims", "All Claims", "Remove every explicit claim the target has. Inherited claims from living relatives stay.", T, list_claims("")),
         sg("ucm_remove_claims_on_second", "Claims on Second", "Remove the target's explicit claims on the second character's titles.", P,
            list_claims(f"limit = {{ holder ?= {SEC} }}"))])]
@@ -198,6 +238,8 @@ def titles():
                           sg("ucm_wars_lose_second", "Lose vs Second", "Lose the target's wars that involve the second character.", f"{atwar} {P}", wars(versus, False)),
                           sg("ucm_wars_peace_second", "White Peace vs Second", "White peace in the target's wars that involve the second character.", f"{atwar} {P}",
                              f"{TG} = {{ every_character_war = {{ limit = {{ {versus} }} end_war = white_peace }} }}")]))
+    items.append(sg_item("ucm_holy_war_second", "Great Holy War on Second", "The target's faith calls a great holy war against the second character.", f"{P} {SEC} = {{ is_landed = yes }}",
+                         f"{TG}.faith = {{ start_great_holy_war = {{ target_character = {SEC} target_title = {SEC}.primary_title delay = 110 }} }}"))
     declare = f"{P} {TG} = {{ is_ruler = yes }} {SEC} = {{ is_landed = yes }}"
     items.append(("row", [sg(f"ucm_declare_{t}", f"Declare: {n}", f"The target declares a {n.lower()} war on the second character.", declare,
                              f"{TG} = {{ start_war = {{ cb = sol_expansion_war{'' if t == 'kingdom' else '_' + t} target = {SEC} }} }}")
@@ -224,17 +266,27 @@ def faith_culture():
              h("UCM_SEC_CULTURE_TOOLS", "Culture Tools"),
              sg_item("ucm_create_divergent_culture", "Create Divergent Culture", "The target founds a divergent culture keeping the current pillars and traditions. Use the culture editors to change it.",
                      f"{T} exists = {TG}.culture", f"{TG} = {{ create_divergent_culture = yes }}"),
+             sg_item("ucm_learn_second_language", "Learn Second's Language", "The target learns the language of the second character's culture.", P, f"{TG} = {{ learn_language_of_culture = {SEC}.culture }}"),
              steps("ucm_acceptance_second", "Cultural Acceptance with Second", f"{P} NOT = {{ {TG}.culture = {SEC}.culture }}",
                    f"{TG}.culture = {{ change_cultural_acceptance = {{ target = {SEC}.culture value = {{v}} desc = ucm_acceptance_reason }} }}"),
              sg_item("ucm_culture_remove_all_innovations", "Remove All Innovations", "Remove every innovation from the target's culture. This changes the whole culture.", f"{T} exists = {TG}.culture",
                      f"{TG}.culture = {{ save_temporary_scope_as = ucm_culture every_culture_innovation = {{ limit = {{ scope:ucm_culture = {{ has_innovation = prev }} }} scope:ucm_culture = {{ remove_innovation = prev }} }} }}")]
     LOC["ucm_acceptance_reason"] = "Cheat menu"
+    LOC.update(ucm_take_title="Take Title", ucm_take_title_desc="Pick one of this character's titles to take.", ucm_take_title_with_vassals="Include its vassals",
+               ucm_claim_title="Claim Title", ucm_claim_title_desc="Pick one of this character's titles to get a pressed claim on.",
+               ucm_merge_title="Merge Title", ucm_merge_title_desc="Pick a title to mark it, then pick the title to merge it into: the same tier, or one tier higher.",
+               ucm_merge_title_invalid_pair="The marked title can only merge into a different title of the same tier (duchy or higher), or into the tier directly above, and not its current de jure liege.",
+               ucm_modify_vassal_contract="Modify Contract", ucm_modify_vassal_contract_desc="Change this vassal's contract at no cost.")
     return items
 
 
 # --- Realm: county, holdings ------------------------------------------------------------------------
 MODS = [("opinion", "Popular Opinion +100", "county_opinion_add = 100"), ("taxes", "Taxes +50%", "tax_mult = 0.5"), ("levies", "Levies +50%", "levy_size = 0.5"),
         ("supply", "Supply Limit +100%", "supply_limit_mult = 1"), ("plague", "Plague Resistance +100", "epidemic_resistance = 100")]
+
+
+def knights():
+    return [h("UCM_SEC_GLORY", "Glory"), steps("ucm_glory", "Glory", f"{T} {TG} = {{ is_acclaimed = yes }}", f"{TG} = {{ accolade = {{ add_glory = {{v}} }} }}")]
 
 
 def realm():
@@ -497,7 +549,7 @@ def spawn_picker_sguis():
         SGUIS.append(f"ucm_spawn_pick_{kind} = {{\n\tscope = character\n\tsaved_scopes = {{ selected_{kind} }}\n\tis_shown = {{ ucm_single_player_trigger = yes }}\n"
                      f"\tis_valid = {{ exists = scope:selected_{kind} }}\n\teffect = {{ set_variable = {{ name = ucm_spawn_{kind} value = scope:selected_{kind} }} }}\n}}\n")
     SGUIS.append("ucm_spawn_lists_load = {\n\tscope = character\n\tis_shown = { ucm_single_player_trigger = yes }\n\tis_valid = { always = yes }\n"
-                 "\teffect = { ucm_acm_culture_picker_refresh_all_region_lists_effect = yes ucm_acm_religion_picker_refresh_all_lists_effect = yes }\n}\n")
+                 "\teffect = { ucm_picker_fill_heritages_effect = yes ucm_picker_fill_religions_effect = yes }\n}\n")
 
 
 def sg_pair(key, name, value, step, lo, hi):
@@ -574,18 +626,62 @@ def modifier_editor(logs):
 R = "GuiScope.SetRoot( GetPlayer.MakeScope ).End"
 
 
-def window(name, anchor, var, title, note, body):
-    close = f"GetVariableSystem.Toggle( '{var}' )"
+def window(name, anchor, var, title, note, body, sgui=None, size=(500, 720), extra=""):
+    """The shared picker window. Opened by a VariableSystem toggle (var), or with sgui=key by a character flag:
+    <key>_visible and <key>_close scripted GUIs, and no menu-target line since events open those too."""
+    close = f"GetScriptedGui( '{sgui}_close' ).Execute( {R} )" if sgui else f"GetVariableSystem.Toggle( '{var}' )"
+    shown = f"GetScriptedGui( '{sgui}_visible' ).IsShown( {R} )" if sgui else f"And( GetVariableSystem.Exists( '{var}' ), GetScriptedGui( 'ucm_menu_visible' ).IsShown( {R} ) )"
     return "\n".join([
-        "window = {", f'  name = "{name}"', f"  parentanchor = {anchor}", "  size = { 500 720 }", "  layer = top", "  movable = yes", "  alwaystransparent = no", "  filter_mouse = all",
-        f"  visible = \"[And( GetVariableSystem.Exists( '{var}' ), GetScriptedGui( 'ucm_menu_visible' ).IsShown( {R} ) )]\"",
+        "window = {", f'  name = "{name}"', f"  parentanchor = {anchor}", f"  size = {{ {size[0]} {size[1]} }}", "  layer = top", "  movable = yes", "  alwaystransparent = no", "  filter_mouse = all",
+        f'  visible = "[{shown}]"', *([extra] if extra else []),
         "  widget = {", "    size = { 100% 100% }", "    background = { using = Background_Area_Dark alpha = 1.0 }", "  }",
         "  vbox = {", "    using = Window_Margins", "    layoutpolicy_horizontal = expanding", "    layoutpolicy_vertical = expanding", "    spacing = 6",
         "    header_pattern = {", "      layoutpolicy_horizontal = expanding", f'      blockoverride "header_text" {{ text = "{title}" }}',
         f'      blockoverride "button_close" {{ onclick = "[{close}]" }}', "    }",
-        '    text_single = { layoutpolicy_horizontal = expanding text = "UCM_MENU_TARGET" }',
-        f'    text_multi = {{ layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "{note}" default_format = "#low" }}',
+        *([] if sgui else ['    text_single = { layoutpolicy_horizontal = expanding text = "UCM_MENU_TARGET" }']),
+        f'    text_multi = {{ layoutpolicy_horizontal = expanding autoresize = yes max_width = {size[0] - 40} text = "{note}" default_format = "#low" }}',
         body, "  }", "}", ""])
+
+
+def group_list(datamodel, group_ctx, group, children, item, onclick, extra=""):
+    """Scrollbox of expandable groups from a global list: heritage -> culture, religion -> faith. extra goes inside each item."""
+    expanded = f"ConcatIfNeitherEmpty({group}.GetNameNoTooltip,'children_visible')"
+    return f"""    scrollbox = {{
+      layoutpolicy_horizontal = expanding
+      layoutpolicy_vertical = expanding
+      blockoverride "scrollbox_content" {{
+        vbox = {{
+          layoutpolicy_horizontal = expanding
+          datamodel = "[GetGlobalList('{datamodel}')]"
+          item = {{
+            vbox = {{
+              layoutpolicy_horizontal = expanding
+              datacontext = "[{group_ctx}]"
+              button_standard_hover = {{
+                layoutpolicy_horizontal = expanding
+                size = {{ 0 30 }}
+                onclick = "[GetVariableSystem.Toggle({expanded})]"
+                text_single = {{ parentanchor = vcenter|left position = {{ 8 0 }} text = "[{group}.GetNameNoTooltip]" default_format = "#high" }}
+              }}
+              vbox = {{
+                layoutpolicy_horizontal = expanding
+                margin_left = 12
+                datamodel = "[{group}.{children}]"
+                visible = "[GetVariableSystem.Exists({expanded})]"
+                item = {{
+                  button_standard_hover = {{
+                    layoutpolicy_horizontal = expanding
+                    size = {{ 0 28 }}
+                    onclick = "[{onclick}]"
+                    text_single = {{ parentanchor = vcenter|left position = {{ 8 0 }} text = "[{item}.GetNameNoTooltip]" default_format = "#clickable" }}{extra}
+                  }}
+                }}
+              }}
+            }}
+          }}
+        }}
+      }}
+    }}"""
 
 
 def modifier_gui(cat):
@@ -652,7 +748,6 @@ def spawn_picker_gui():
     def section(kind, cap, label, datamodel, group_ctx, group, children, item):
         var = f"GetPlayer.MakeScope.Var('ucm_spawn_{kind}')"
         clear = f"GetScriptedGui('ucm_spawn_{kind}_clear')"
-        expanded = f"ConcatIfNeitherEmpty({group}.GetNameNoTooltip,'children_visible')"
         load = f"""      state = {{ name = _show on_start = "[GetScriptedGui('ucm_spawn_lists_load').Execute({R})]" }}\n""" if kind == "culture" else ""
         return f"""    hbox = {{
       layoutpolicy_horizontal = expanding
@@ -662,44 +757,9 @@ def spawn_picker_gui():
       text_single = {{ layoutpolicy_horizontal = expanding visible = "[Not({var}.IsSet)]" text = "UCM_SPAWN_TARGETS" }}
       button_standard = {{ size = {{ 130 28 }} tooltip = "ucm_spawn_{kind}_clear_tt" enabled = "[{clear}.IsValid({R})]" onclick = "[{clear}.Execute({R})]" text_single = {{ parentanchor = center text = "ucm_spawn_{kind}_clear" }} }}
     }}
-    scrollbox = {{
-      layoutpolicy_horizontal = expanding
-      layoutpolicy_vertical = expanding
-      blockoverride "scrollbox_content" {{
-        vbox = {{
-          layoutpolicy_horizontal = expanding
-          datamodel = "[GetGlobalList('{datamodel}')]"
-          item = {{
-            vbox = {{
-              layoutpolicy_horizontal = expanding
-              datacontext = "[{group_ctx}]"
-              button_standard_hover = {{
-                layoutpolicy_horizontal = expanding
-                size = {{ 0 30 }}
-                onclick = "[GetVariableSystem.Toggle({expanded})]"
-                text_single = {{ parentanchor = vcenter|left position = {{ 8 0 }} text = "[{group}.GetNameNoTooltip]" default_format = "#high" }}
-              }}
-              vbox = {{
-                layoutpolicy_horizontal = expanding
-                margin_left = 12
-                datamodel = "[{group}.{children}]"
-                visible = "[GetVariableSystem.Exists({expanded})]"
-                item = {{
-                  button_standard_hover = {{
-                    layoutpolicy_horizontal = expanding
-                    size = {{ 0 28 }}
-                    onclick = "[GetScriptedGui('ucm_spawn_pick_{kind}').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('selected_{kind}', {item}.MakeScope).End)]"
-                    text_single = {{ parentanchor = vcenter|left position = {{ 8 0 }} text = "[{item}.GetNameNoTooltip]" default_format = "#clickable" }}
-                  }}
-                }}
-              }}
-            }}
-          }}
-        }}
-      }}
-    }}"""
-    body = (section("culture", "Culture", "UCM_SPAWN_CULTURE_LABEL", "ucm_acm_heritage_list_all", "Scope.Culture.GetHeritage", "CulturePillar", "GetCulturesWithPillar", "Culture") + "\n"
-            + section("faith", "Faith", "UCM_SPAWN_FAITH_LABEL", "ucm_acm_religion_list_all", "Scope.Religion", "Religion", "GetFaiths", "Faith"))
+""" + group_list(datamodel, group_ctx, group, children, item, f"GetScriptedGui('ucm_spawn_pick_{kind}').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('selected_{kind}', {item}.MakeScope).End)")
+    body = (section("culture", "Culture", "UCM_SPAWN_CULTURE_LABEL", "ucm_picker_heritages", "Scope.Culture.GetHeritage", "CulturePillar", "GetCulturesWithPillar", "Culture") + "\n"
+            + section("faith", "Faith", "UCM_SPAWN_FAITH_LABEL", "ucm_picker_religions", "Scope.Religion", "Religion", "GetFaiths", "Faith"))
     return window("ucm_spawn_picker_window", "right|vcenter", "ucm_spawn_picker", "UCM_SPAWN_PICKER", "UCM_SPAWN_PICKER_NOTE", body)
 
 
@@ -763,7 +823,7 @@ def build(game):
     faith.insert(2, ("vs", "ucm_pillar_picker", "ucm_open_pillar_picker"))
     pillar_sguis(pillars_by_type(game))
     return {"character": [("vs", "ucm_modifier_editor", "ucm_open_modifier_editor")] + character(), "relationships": relationships(), "titles": titles(),
-            "faith_culture": faith + innovation_eras(game), "realm": realm() + buildings(game), "dlc": activities_legends(), "court": spawner(game)}
+            "faith_culture": faith + innovation_eras(game), "realm": realm() + buildings(game), "dlc": activities_legends(), "court": spawner(game), "military": knights()}
 
 
 def game_dir(argv=None):

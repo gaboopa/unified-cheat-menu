@@ -31,9 +31,8 @@ AGOT_REL = os.path.join("tools", "out", "agot", "common", "scripted_effects", "u
 
 CATEGORIES = ["realm", "combat", "societal", "ritual", "regional"]
 # Hidden traditions (is_shown = { always = no }) are listed on purpose: this is a cheat menu.
-# Never listed: the mod's own player-only tradition, the decision-only oath tradition that the
-# original list never had, and AGOT's debug tradition.
-EXCLUDE = {"zhuge_chuantong", "oath_mend_the_fracture_tradition", "tradition_agot_debug"}
+# Never listed: the decision-only oath tradition and the debug traditions.
+EXCLUDE = {"oath_mend_the_fracture_tradition", "tradition_debug", "tradition_agot_debug"}
 
 
 def direct_child(body, key):
@@ -64,7 +63,8 @@ def traditions(files):
             found[key] = body
     out = {}
     for key, body in found.items():
-        if key in EXCLUDE:
+        # A tradition that raises the tradition cap has no use here: the picker ignores the cap.
+        if key in EXCLUDE or "culture_tradition_max_add" in body:
             continue
         cat = direct_child(body, "category")
         if cat in CATEGORIES:

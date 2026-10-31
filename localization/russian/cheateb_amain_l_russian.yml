@@ -10,7 +10,6 @@
 
 # \regiment_types (Military)
 
- innovation_privateguard:0 "Инновация: Телохранители"
 
 
 # \modifiers (Character/County Effects)
@@ -25,6 +24,4 @@
  cheateb_defence_modifier:0 "Непробиваемая Защита"
 
 # \religion (Holy Site Effects)
- holy_site_ganzhou_name:0 "Ганьчжоу"
 
- HEALTH_POINTS_HINT:0 "\nЗдоровье: [CHARACTER.GetHealth|1V]\nФертильность: [CHARACTER.GetFertility|%0V]\nСтресс: [CHARACTER.GetStress|0V]"

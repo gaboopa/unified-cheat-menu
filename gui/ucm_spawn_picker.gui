@@ -38,7 +38,7 @@
       blockoverride "scrollbox_content" {
         vbox = {
           layoutpolicy_horizontal = expanding
-          datamodel = "[GetGlobalList('ucm_acm_heritage_list_all')]"
+          datamodel = "[GetGlobalList('ucm_picker_heritages')]"
           item = {
             vbox = {
               layoutpolicy_horizontal = expanding
@@ -82,7 +82,7 @@
       blockoverride "scrollbox_content" {
         vbox = {
           layoutpolicy_horizontal = expanding
-          datamodel = "[GetGlobalList('ucm_acm_religion_list_all')]"
+          datamodel = "[GetGlobalList('ucm_picker_religions')]"
           item = {
             vbox = {
               layoutpolicy_horizontal = expanding

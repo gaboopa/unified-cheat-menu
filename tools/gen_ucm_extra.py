@@ -245,6 +245,26 @@ def titles():
     return items
 
 
+# --- Your realm and court (always act on you, not the target) -----------------------------------------
+def realm_titles():
+    can_grant = "is_landed = yes ucm_has_spare_title_trigger = yes"
+    return [h("UCM_SEC_REALM_TITLES", "Your Realm's Titles"),
+            ("row", [sg("ucm_grant_titles", "Grant Spare Titles", "Give your spare titles to the best candidates of your realm. You keep your primary title and capital county.", can_grant, "ucm_one_click_grant_realm_titles_effect = yes"),
+                     sg("ucm_grant_titles_dynasty", "Grant to Dynasty", "Give your spare titles to the best candidates of your dynasty. You keep your primary title and capital county.", f"{can_grant} exists = dynasty", "ucm_dynasty_one_click_grant_realm_titles_effect = yes")]),
+            ("row", [sg("ucm_land_cap", "Cap Vassal Land", "Every vassal keeps only their primary title and capital county. You take the rest.", "is_landed = yes", "ucm_official_land_cap_full_effect = yes"),
+                     sg("ucm_strip_realm_titles", "Reclaim All Titles", "Take every county and higher title in your realm from your vassals, except from anyone at war with you.", "is_landed = yes", "ucm_strip_realm_titles_effect = yes")])]
+
+
+def realm_court():
+    return [h("UCM_SEC_YOUR_COURT", "Your Court"),
+            ("row", [sg("ucm_tidy_court", "Tidy Court", "Send away your guests and every unemployed courtier with poor skills. Your family, hostages and wards stay.", "is_ruler = yes", "ucm_tidy_court_effect = yes"),
+                     sg("ucm_assign_guardians", "Assign Guardians", "Give every child at your court without a guardian the most learned free courtier.", "is_ruler = yes", "ucm_assign_guardians_effect = yes")])]
+
+
+def seize_gold():
+    return [sg_item("ucm_seize_vassal_gold", "Seize Half of Vassals' Gold", "Every vassal in your realm pays you half of their gold.", "any_vassal_or_below = { gold > 0 }", "ucm_seize_vassal_gold_effect = yes")]
+
+
 # --- Faith and culture ----------------------------------------------------------------------------
 def faith_culture():
     tenets = "any_personal_tenet = { always = yes }"
@@ -821,8 +841,8 @@ def build(game):
     faith.insert(1, ("vs", "ucm_tenet_picker", "ucm_open_tenet_picker"))
     faith.insert(2, ("vs", "ucm_pillar_picker", "ucm_open_pillar_picker"))
     pillar_sguis(pillars_by_type(game))
-    return {"character": [("vs", "ucm_modifier_editor", "ucm_open_modifier_editor")] + character(), "relationships": relationships(), "titles": titles(),
-            "faith_culture": faith + innovation_eras(game), "realm": realm() + buildings(game), "dlc": activities_legends(), "court": spawner(game), "military": knights()}
+    return {"character": [("vs", "ucm_modifier_editor", "ucm_open_modifier_editor")] + character(), "relationships": relationships(), "titles": titles() + realm_titles(),
+            "faith_culture": faith + innovation_eras(game), "realm": realm() + seize_gold() + buildings(game), "dlc": activities_legends(), "court": realm_court() + spawner(game), "military": knights()}
 
 
 def game_dir(argv=None):

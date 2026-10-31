@@ -1,0 +1,162 @@
+# Actions on the player's realm and court. Root = the player.
+
+# --- Hand out spare titles to the best candidates ---
+ucm_grant_tier_effect = {
+	every_living_character = {
+		limit = { top_liege = root $RECIPIENT$ = yes }
+		add_to_temporary_list = ucm_grant_pool_$TIER$
+	}
+	every_held_title = {
+		limit = { tier = $TIER$ ucm_grant_spare_title_trigger = yes }
+		save_scope_as = ucm_grant_title
+		ordered_in_list = {
+			list = ucm_grant_pool_$TIER$
+			limit = { ucm_grant_fits_title_trigger = yes }
+			order_by = sum_of_all_skills_value
+			save_scope_as = ucm_grant_pick
+			remove_from_list = ucm_grant_pool_$TIER$
+		}
+		if = {
+			limit = { exists = scope:ucm_grant_pick }
+			root = {
+				create_title_and_vassal_change = { type = granted save_scope_as = ucm_grant_change add_claim_on_loss = no }
+				scope:ucm_grant_title = { change_title_holder = { holder = scope:ucm_grant_pick change = scope:ucm_grant_change } }
+				if = {
+					limit = { scope:ucm_grant_pick = { NOR = { is_vassal_of = root is_courtier_of = root } } }
+					scope:ucm_grant_pick = { change_liege = { liege = root change = scope:ucm_grant_change } }
+				}
+				resolve_title_and_vassal_change = scope:ucm_grant_change
+			}
+			clear_saved_scope = ucm_grant_pick
+		}
+	}
+}
+
+# High tiers go to whoever already rules one tier below; the rest to the landless.
+ucm_one_click_grant_realm_titles_effect = {
+	root = {
+		ucm_grant_tier_effect = { TIER = tier_duchy RECIPIENT = ucm_grant_count_trigger }
+		ucm_grant_tier_effect = { TIER = tier_kingdom RECIPIENT = ucm_grant_duke_trigger }
+		ucm_grant_tier_effect = { TIER = tier_empire RECIPIENT = ucm_grant_king_trigger }
+		ucm_grant_tier_effect = { TIER = tier_county RECIPIENT = ucm_grant_landless_trigger }
+		ucm_grant_tier_effect = { TIER = tier_barony RECIPIENT = ucm_grant_landless_trigger }
+	}
+}
+
+# --- Reclaim titles from vassals ---
+ucm_reclaim_titles_effect = {
+	create_title_and_vassal_change = { type = revoked save_scope_as = ucm_reclaim_change add_claim_on_loss = no }
+	every_sub_realm_title = {
+		limit = { $TITLES$ = yes }
+		change_title_holder = { holder = root change = scope:ucm_reclaim_change }
+	}
+	resolve_title_and_vassal_change = scope:ucm_reclaim_change
+}
+
+# Vassals keep their primary title and capital county; the player takes the rest.
+ucm_official_land_cap_full_effect = {
+	root = { ucm_reclaim_titles_effect = { TITLES = ucm_land_cap_excess_title_trigger } }
+}
+
+ucm_strip_realm_titles_effect = {
+	root = { ucm_reclaim_titles_effect = { TITLES = ucm_reclaimable_title_trigger } }
+}
+
+# --- Court ---
+ucm_tidy_court_effect = {
+	every_courtier = {
+		limit = { ucm_court_dismissable_trigger = yes }
+		save_scope_as = ucm_dismissed
+		root = { remove_courtier_or_guest = { character = scope:ucm_dismissed } }
+	}
+	every_pool_guest = {
+		limit = { NOT = { ucm_court_kept_trigger = yes } }
+		save_scope_as = ucm_dismissed
+		root = { remove_courtier_or_guest = { character = scope:ucm_dismissed } }
+	}
+	every_foreign_court_guest = {
+		limit = { NOT = { ucm_court_kept_trigger = yes } }
+		save_scope_as = ucm_dismissed
+		root = { remove_courtier_or_guest = { character = scope:ucm_dismissed } }
+	}
+}
+
+# Wards without a guardian get the most learned courtier who has no ward yet.
+ucm_assign_guardians_effect = {
+	every_courtier = {
+		limit = { ucm_needs_guardian_trigger = yes }
+		add_to_temporary_list = ucm_wards
+	}
+	every_child = {
+		limit = { ucm_needs_guardian_trigger = yes top_liege = root.top_liege NOT = { is_in_list = ucm_wards } }
+		add_to_temporary_list = ucm_wards
+	}
+	every_in_list = {
+		list = ucm_wards
+		save_scope_as = ucm_ward
+		root = {
+			ordered_courtier = {
+				limit = { ucm_free_guardian_trigger = yes }
+				order_by = learning
+				save_scope_as = ucm_guardian
+			}
+		}
+		if = {
+			limit = { exists = scope:ucm_guardian }
+			set_relation_guardian = { target = scope:ucm_guardian }
+			clear_saved_scope = ucm_guardian
+		}
+	}
+}
+
+ucm_seize_vassal_gold_effect = {
+	every_vassal_or_below = {
+		limit = { gold > 0 }
+		pay_short_term_gold = { target = root gold = { value = gold multiply = 0.5 } }
+	}
+}
+
+# --- Population tools (ucm_officials.9080) ---
+ucm_world_purge_start_effect = {
+	add_character_flag = ucm_world_purge_active
+	set_variable = { name = ucm_world_purge_remaining value = $CAP$ }
+	ucm_world_purge_landless_ai_effect = yes
+}
+
+ucm_world_purge_cancel_effect = {
+	remove_character_flag = ucm_world_purge_active
+	remove_variable = ucm_world_purge_remaining
+}
+
+# Up to 1000 random AI characters of your realm die of disease; your family and spouses are safe.
+ucm_realm_reap_effect = {
+	every_living_character = {
+		limit = {
+			is_ai = yes
+			top_liege = root.top_liege
+			NOR = { is_close_or_extended_family_of = root is_spouse_of = root }
+		}
+		add_to_temporary_list = ucm_reap_pool
+	}
+	while = {
+		count = 1000
+		limit = { any_in_list = { list = ucm_reap_pool count >= 1 } }
+		random_in_list = {
+			list = ucm_reap_pool
+			remove_from_list = ucm_reap_pool
+			random_list = {
+				25 = { death = { death_reason = death_great_pox } }
+				25 = { death = { death_reason = death_typhus } }
+				25 = { death = { death_reason = death_smallpox } }
+				25 = { death = { death_reason = death_measles } }
+			}
+		}
+	}
+}
+
+# Runs one governor purge at a tier: 0 = every tier, 1 to 4 = county to empire.
+ucm_purge_at_tier_effect = {
+	set_variable = { name = ucm_purge_tier value = $TIER$ }
+	ucm_purge_mediocre_governors_at_selected_tier_effect = yes
+	remove_variable = ucm_purge_tier
+}

@@ -771,6 +771,34 @@ ucm_declare_empire = {
 	effect = { var:ucm_target = { start_war = { cb = ucm_war_empire target = global_var:ucm_crozier_cheats_other } } }
 }
 
+ucm_grant_titles = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { is_landed = yes ucm_has_spare_title_trigger = yes }
+	effect = { ucm_one_click_grant_realm_titles_effect = yes }
+}
+
+ucm_grant_titles_dynasty = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { is_landed = yes ucm_has_spare_title_trigger = yes exists = dynasty }
+	effect = { ucm_dynasty_one_click_grant_realm_titles_effect = yes }
+}
+
+ucm_land_cap = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { is_landed = yes }
+	effect = { ucm_official_land_cap_full_effect = yes }
+}
+
+ucm_strip_realm_titles = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { is_landed = yes }
+	effect = { ucm_strip_realm_titles_effect = yes }
+}
+
 ucm_county_control_down = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
@@ -953,6 +981,13 @@ ucm_ai_build = {
 	effect = { var:ucm_target.capital_province = { generate_building = yes } }
 }
 
+ucm_seize_vassal_gold = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { any_vassal_or_below = { gold > 0 } }
+	effect = { ucm_seize_vassal_gold_effect = yes }
+}
+
 ucm_activity_skip = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
@@ -1000,6 +1035,20 @@ ucm_legend_clear = {
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes }
 	effect = { set_global_variable = { name = ucm_cheat_menu_recipient value = var:ucm_target } save_scope_as = actor ucm_legend_master_clear_owned_legends_effect = yes }
+}
+
+ucm_tidy_court = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { is_ruler = yes }
+	effect = { ucm_tidy_court_effect = yes }
+}
+
+ucm_assign_guardians = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { is_ruler = yes }
+	effect = { ucm_assign_guardians_effect = yes }
 }
 
 ucm_spawn_age_up = {

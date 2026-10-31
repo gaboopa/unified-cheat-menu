@@ -820,21 +820,9 @@
 
 
  ucm_world_ai_boost_pause_decision: "Pause Global AI Realm Bonuses"
- ucm_world_ai_boost_pause_decision_desc: ""
- ucm_world_ai_boost_pause_decision_tooltip: "Appears while bonus system is active; replaced with Resume option after deactivation."
- ucm_world_ai_boost_pause_decision_confirm: "Deactivate AI Bonuses"
- ucm_world_ai_boost_pause_effect_tt: "Global suspension active. AI bonus menu stays hidden until manually resumed."
  ucm_world_ai_boost_resume_decision: "Resume Global AI Realm Bonuses"
- ucm_world_ai_boost_resume_decision_desc: ""
- ucm_world_ai_boost_resume_decision_tooltip: "Only visible when all AI bonuses are suspended."
- ucm_world_ai_boost_resume_decision_confirm: "Re-enable AI Bonuses"
- ucm_world_ai_boost_resume_effect_tt: "Suspension lifted; global AI reinforcement functions available again."
 
  ucm_boost_world_ai_rulers_decision: "Empower All Independent AI Realms"
- ucm_boost_world_ai_rulers_decision_desc: "Bestow full military, economic and diplomatic buffs to all landed AI lords to fuel expansion and warfare. If the player becomes overwhelmingly dominant, AI nations are far more prone to form coalitions against your hegemony for balanced gameplay."
- ucm_boost_world_ai_rulers_decision_tooltip: "Global bonus not suspended. #bold No prestige cost required.#!"
- ucm_boost_world_ai_rulers_decision_confirm: "Activate Full AI Reinforcement"
- ucm_boost_world_ai_rulers_effect_tt: "All #bold landed AI rulers#! receive the Governance Support modifier lasting #bold 15#! years, gaining annual construction and men-at-arms perks throughout the duration."
 
  ucm_ai_yearly_admin_conversion_toggle_title_on: "#bold 【ON】#! Annual Trigger: Automatic AI Administrative Government Reform"
  ucm_ai_yearly_admin_conversion_toggle_title_off: "#bold 【OFF】#! Annual Trigger: Automatic AI Administrative Government Reform"
@@ -932,9 +920,6 @@
 
 
  ucm_positions_mass_reshuffle_decision: "Court Positions"
- ucm_positions_mass_reshuffle_decision_tooltip: "Dismiss and reassign all court offices based on competence. Does not affect core council positions."
- ucm_positions_mass_reshuffle_decision_confirm: "Execute"
- ucm_positions_mass_reshuffle_decision_desc: "Dismiss and reassign all court offices based on competence. Does not affect core council positions."
 
 
 

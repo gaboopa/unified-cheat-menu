@@ -1,0 +1,15 @@
+# Cheat decisions sit above the base game's groups (Paradox reserves sort orders up to 300 for theirs).
+ucm_officials = {
+	sort_order = 301
+	gui_tags = { big_button }
+}
+
+ucm_ai_automation = {
+	sort_order = 295
+	gui_tags = { big_button }
+}
+
+ucm_talent_finder = {
+	sort_order = 284
+	gui_tags = { big_button }
+}

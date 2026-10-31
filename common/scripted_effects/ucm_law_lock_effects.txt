@@ -62,7 +62,15 @@ ucm_law_pick_effect = {
 	}
 }
 
+# The one way a lock ends. Root = player, this = target; follows the same vassal toggle as a pick.
 ucm_law_lock_clear_effect = {
 	remove_variable = ucm_law_lock_realm
 	remove_variable = ucm_law_lock_gender
+	if = {
+		limit = { root = { has_character_flag = ucm_law_include_vassals } }
+		every_vassal_or_below = {
+			remove_variable = ucm_law_lock_realm
+			remove_variable = ucm_law_lock_gender
+		}
+	}
 }

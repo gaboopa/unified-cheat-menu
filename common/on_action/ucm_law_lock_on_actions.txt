@@ -14,6 +14,7 @@ ucm_law_lock_pulse = {
 	effect = { ucm_law_lock_enforce_effect = yes }
 }
 
+# The heir may not be a ruler yet, so enforcement decides later whether the lock applies. An heir's own lock stays.
 on_death = {
 	on_actions = { ucm_law_lock_pass_to_heir }
 }
@@ -25,11 +26,11 @@ ucm_law_lock_pass_to_heir = {
 	}
 	effect = {
 		if = {
-			limit = { exists = var:ucm_law_lock_realm primary_heir = { ucm_law_lock_can_realm_trigger = yes } }
+			limit = { exists = var:ucm_law_lock_realm primary_heir = { NOT = { exists = var:ucm_law_lock_realm } } }
 			primary_heir = { set_variable = { name = ucm_law_lock_realm value = root.var:ucm_law_lock_realm } }
 		}
 		if = {
-			limit = { exists = var:ucm_law_lock_gender primary_heir = { ucm_law_lock_can_gender_trigger = yes } }
+			limit = { exists = var:ucm_law_lock_gender primary_heir = { NOT = { exists = var:ucm_law_lock_gender } } }
 			primary_heir = { set_variable = { name = ucm_law_lock_gender value = root.var:ucm_law_lock_gender } }
 		}
 	}

@@ -152,11 +152,11 @@ TEXT = {
                                "Изменить тип владения в столичной баронии цели.",
                                "更改目标首都男爵领的领地类型。",
                                "Hedefin başkent baronluğunun mülk türünü değiştir."),
-    "ucm_holding_realm_tt": ("Change the holding type of every barony in the target's realm.",
-                             "Die Besitzart jeder Baronie im Reich des Ziels ändern.",
-                             "Изменить тип владения во всех барониях державы цели.",
-                             "更改目标国度内所有男爵领的领地类型。",
-                             "Hedefin diyarındaki tüm baronlukların mülk türünü değiştir."),
+    "ucm_holding_realm_tt": ("Change the holding type of the target's own baronies and those of baron vassals.",
+                             "Die Besitzart der eigenen Baronien des Ziels und jener seiner Baron-Vasallen ändern.",
+                             "Изменить тип владения в собственных барониях цели и у её вассалов-баронов.",
+                             "更改目标自有男爵领及其男爵封臣领地的类型。",
+                             "Hedefin kendi baronluklarının ve baron vasallarının mülk türünü değiştir."),
     "ucm_holding_realm_label": ("Realm: $WHAT$", "Reich: $WHAT$", "Держава: $WHAT$", "国度：$WHAT$", "Diyar: $WHAT$"),
     "ucm_realm_max_buildings": ("Upgrade Realm Buildings", "Reichsgebäude ausbauen", "Улучшить здания державы", "升级国度建筑", "Diyar Binalarını Yükselt"),
     "ucm_realm_max_buildings_tt": ("Raise every building in the target's realm by one level. Click again for the next level.",
@@ -217,10 +217,12 @@ TEXT = {
     "ucm_vote_devotion": ("Devotion: $VALUE|=+0$", "Frömmigkeit: $VALUE|=+0$", "Благочестие: $VALUE|=+0$", "虔诚：$VALUE|=+0$", "Dindarlık: $VALUE|=+0$"),
     "ucm_vote_virtues": ("Virtues and sins: $VALUE|=+0$", "Tugenden und Sünden: $VALUE|=+0$", "Добродетели и грехи: $VALUE|=+0$", "美德与罪恶：$VALUE|=+0$", "Erdemler ve günahlar: $VALUE|=+0$"),
 }
-# Election candidate/elector panels: the base game's feudal elective wording is close enough.
+# Election candidate/elector panels: a plain label, with the law's own description as the tooltip.
 for e in ELECTIONS:
-    for part in ("candidates", "candidates_tooltip", "electors", "electors_tooltip"):
-        TEXT[f"ucm_{e}_elective_{part}"] = (f"$feudal_elective_{part}$",) * 5
+    TEXT[f"ucm_{e}_elective_candidates"] = ("Candidates", "Kandidaten", "Кандидаты", "候选人", "Adaylar")
+    TEXT[f"ucm_{e}_elective_electors"] = ("Electors", "Wähler", "Выборщики", "选举人", "Seçmenler")
+    for part in ("candidates_tooltip", "electors_tooltip"):
+        TEXT[f"ucm_{e}_elective_{part}"] = (f"$ucm_{e}_elective_succession_law_effects$",) * 5
 
 
 def read(path):
@@ -310,9 +312,17 @@ ucm_law_pick_effect = {{
 	}}
 }}
 
+# The one way a lock ends. Root = player, this = target; follows the same vassal toggle as a pick.
 ucm_law_lock_clear_effect = {{
 	remove_variable = ucm_law_lock_realm
 	remove_variable = ucm_law_lock_gender
+	if = {{
+		limit = {{ root = {{ has_character_flag = ucm_law_include_vassals }} }}
+		every_vassal_or_below = {{
+			remove_variable = ucm_law_lock_realm
+			remove_variable = ucm_law_lock_gender
+		}}
+	}}
 }}
 """
 
@@ -332,6 +342,7 @@ ucm_law_lock_pulse = {
 	effect = { ucm_law_lock_enforce_effect = yes }
 }
 
+# The heir may not be a ruler yet, so enforcement decides later whether the lock applies. An heir's own lock stays.
 on_death = {
 	on_actions = { ucm_law_lock_pass_to_heir }
 }
@@ -343,11 +354,11 @@ ucm_law_lock_pass_to_heir = {
 	}
 	effect = {
 		if = {
-			limit = { exists = var:ucm_law_lock_realm primary_heir = { ucm_law_lock_can_realm_trigger = yes } }
+			limit = { exists = var:ucm_law_lock_realm primary_heir = { NOT = { exists = var:ucm_law_lock_realm } } }
 			primary_heir = { set_variable = { name = ucm_law_lock_realm value = root.var:ucm_law_lock_realm } }
 		}
 		if = {
-			limit = { exists = var:ucm_law_lock_gender primary_heir = { ucm_law_lock_can_gender_trigger = yes } }
+			limit = { exists = var:ucm_law_lock_gender primary_heir = { NOT = { exists = var:ucm_law_lock_gender } } }
 			primary_heir = { set_variable = { name = ucm_law_lock_gender value = root.var:ucm_law_lock_gender } }
 		}
 	}
@@ -414,16 +425,16 @@ def sguis():
            "if = { limit = { has_character_flag = ucm_law_include_vassals } remove_character_flag = ucm_law_include_vassals } else = { add_character_flag = ucm_law_include_vassals }")]
     for group, laws in (("realm", [r[0] for r in REALM_LAWS]), ("gender", GENDER_LAWS)):
         for law in laws:
-            out.append(sg(f"ucm_law_{law}", f"{T} {TG} = {{ ucm_law_lock_can_{group}_trigger = yes }}",
+            out.append(sg(f"ucm_law_{law}", f"{T} OR = {{ has_character_flag = ucm_law_include_vassals {TG} = {{ ucm_law_lock_can_{group}_trigger = yes }} }}",
                           f"{TG} = {{ ucm_law_pick_effect = {{ GROUP = {group} LAW = {law} }} }}"))
-    out.append(sg("ucm_law_unlock", f"{T} {TG} = {{ OR = {{ exists = var:ucm_law_lock_realm exists = var:ucm_law_lock_gender }} }}",
+    out.append(sg("ucm_law_unlock", T,
                   f"{TG} = {{ ucm_law_lock_clear_effect = yes }}"))
     for h in HOLDINGS:
         out.append(sg(f"ucm_holding_capital_{h}", f"{T} exists = {TG}.capital_province {TG}.capital_province = {{ has_ongoing_construction = no NOT = {{ has_holding_type = {h} }} }}",
                       f"{TG}.capital_province = {{ set_holding_type = {h} }}"))
     for h in REALM_HOLDINGS:
         out.append(sg(f"ucm_holding_realm_{h}", f"{T} {TG} = {{ is_landed = yes }}",
-                      f"{TG} = {{ every_sub_realm_barony = {{ title_province = {{ if = {{ limit = {{ has_ongoing_construction = no NOT = {{ has_holding_type = {h} }} }} set_holding_type = {h} }} }} }} }}"))
+                      f"{TG} = {{ every_sub_realm_barony = {{ limit = {{ OR = {{ holder = root.var:ucm_target holder.primary_title.tier = tier_barony }} }} title_province = {{ if = {{ limit = {{ has_ongoing_construction = no NOT = {{ has_holding_type = {h} }} }} set_holding_type = {h} }} }} }} }}"))
     every_province = "every_sub_realm_county = { every_county_province = { limit = { has_holding = yes } %s } }"
     out.append(sg("ucm_realm_max_buildings", f"{T} {TG} = {{ is_landed = yes }}", f"{TG} = {{ {every_province % 'ucm_province_upgrade_buildings_effect = yes'} }}"))
     slot = "if = { limit = { NOT = { has_province_modifier = ucm_extra_building_slot } } add_province_modifier = ucm_extra_building_slot }"

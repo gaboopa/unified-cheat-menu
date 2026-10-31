@@ -206,55 +206,55 @@ window = {
               button_standard = { size = { 200 26 } tooltip = "UCM_CROZIER_CHEATS_PANEL_ALLOFF_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_poff_char_self' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_PANEL_ALLOFF" max_width = 184 fontsize_min = 9 using = Font_Size_Small } }
               expand = {}
             }
-            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_income' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_income_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_income' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_income_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "UCM_CROZIER_CHEATS_FX_income" using = Font_Size_Small default_format = "#high" } }
+            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_income' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_income_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_income' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_income_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "×[GetGlobalVariable( 'ucm_crozier_cheats_fx_income' ).GetValue|0]" using = Font_Size_Small default_format = "#high" } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_income' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_income_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_income' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_income_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
-            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_monthly_gold' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_monthly_gold_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_monthly_gold' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_monthly_gold_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "UCM_CROZIER_CHEATS_FX_monthly_gold" using = Font_Size_Small default_format = "#high" } }
+            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_monthly_gold' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_monthly_gold_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_monthly_gold' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_monthly_gold_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "×[GetGlobalVariable( 'ucm_crozier_cheats_fx_monthly_gold' ).GetValue|0]" using = Font_Size_Small default_format = "#high" } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_monthly_gold' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_monthly_gold_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_monthly_gold' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_monthly_gold_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
-            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_domain' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_domain_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_domain' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_domain_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "UCM_CROZIER_CHEATS_FX_domain" using = Font_Size_Small default_format = "#high" } }
+            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_domain' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_domain_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_domain' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_domain_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "×[GetGlobalVariable( 'ucm_crozier_cheats_fx_domain' ).GetValue|0]" using = Font_Size_Small default_format = "#high" } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_domain' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_domain_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_domain' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_domain_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
-            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_vassals' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_vassals_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_vassals' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_vassals_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "UCM_CROZIER_CHEATS_FX_vassals" using = Font_Size_Small default_format = "#high" } }
+            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_vassals' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_vassals_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_vassals' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_vassals_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "×[GetGlobalVariable( 'ucm_crozier_cheats_fx_vassals' ).GetValue|0]" using = Font_Size_Small default_format = "#high" } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_vassals' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_vassals_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_vassals' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_vassals_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
-            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_prestige' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_prestige_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_prestige' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_prestige_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "UCM_CROZIER_CHEATS_FX_prestige" using = Font_Size_Small default_format = "#high" } }
+            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_prestige' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_prestige_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_prestige' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_prestige_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "×[GetGlobalVariable( 'ucm_crozier_cheats_fx_prestige' ).GetValue|0]" using = Font_Size_Small default_format = "#high" } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_prestige' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_prestige_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_prestige' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_prestige_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
-            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_prestige_mult' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_prestige_mult_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_prestige_mult' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_prestige_mult_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "UCM_CROZIER_CHEATS_FX_prestige_mult" using = Font_Size_Small default_format = "#high" } }
+            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_prestige_mult' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_prestige_mult_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_prestige_mult' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_prestige_mult_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "×[GetGlobalVariable( 'ucm_crozier_cheats_fx_prestige_mult' ).GetValue|0]" using = Font_Size_Small default_format = "#high" } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_prestige_mult' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_prestige_mult_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_prestige_mult' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_prestige_mult_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
-            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_piety' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_piety_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_piety' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_piety_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "UCM_CROZIER_CHEATS_FX_piety" using = Font_Size_Small default_format = "#high" } }
+            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_piety' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_piety_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_piety' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_piety_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "×[GetGlobalVariable( 'ucm_crozier_cheats_fx_piety' ).GetValue|0]" using = Font_Size_Small default_format = "#high" } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_piety' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_piety_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_piety' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_piety_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
-            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_renown' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_renown_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_renown' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_renown_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "UCM_CROZIER_CHEATS_FX_renown" using = Font_Size_Small default_format = "#high" } }
+            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_renown' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_renown_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_renown' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_renown_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "×[GetGlobalVariable( 'ucm_crozier_cheats_fx_renown' ).GetValue|0]" using = Font_Size_Small default_format = "#high" } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_renown' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_renown_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_renown' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_renown_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
-            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_renown_mult' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_renown_mult_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_renown_mult' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_renown_mult_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "UCM_CROZIER_CHEATS_FX_renown_mult" using = Font_Size_Small default_format = "#high" } }
+            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_renown_mult' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_renown_mult_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_renown_mult' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_renown_mult_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "×[GetGlobalVariable( 'ucm_crozier_cheats_fx_renown_mult' ).GetValue|0]" using = Font_Size_Small default_format = "#high" } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_renown_mult' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_renown_mult_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_renown_mult' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_renown_mult_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
-            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_influence' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_influence_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_influence' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_influence_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "UCM_CROZIER_CHEATS_FX_influence" using = Font_Size_Small default_format = "#high" } }
+            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_influence' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_influence_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_influence' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_influence_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "×[GetGlobalVariable( 'ucm_crozier_cheats_fx_influence' ).GetValue|0]" using = Font_Size_Small default_format = "#high" } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_influence' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_influence_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_influence' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_influence_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
-            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_merit_gain' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_merit_gain_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_merit_gain' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_merit_gain_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "UCM_CROZIER_CHEATS_FX_merit_gain" using = Font_Size_Small default_format = "#high" } }
+            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_merit_gain' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_merit_gain_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_merit_gain' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_merit_gain_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "×[GetGlobalVariable( 'ucm_crozier_cheats_fx_merit_gain' ).GetValue|0]" using = Font_Size_Small default_format = "#high" } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_merit_gain' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_merit_gain_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_merit_gain' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_merit_gain_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
-            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_legit_gain' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_legit_gain_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_legit_gain' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_legit_gain_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "UCM_CROZIER_CHEATS_FX_legit_gain" using = Font_Size_Small default_format = "#high" } }
+            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_legit_gain' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_legit_gain_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_legit_gain' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_legit_gain_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "×[GetGlobalVariable( 'ucm_crozier_cheats_fx_legit_gain' ).GetValue|0]" using = Font_Size_Small default_format = "#high" } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_legit_gain' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_legit_gain_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_legit_gain' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_legit_gain_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
-            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_health' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_health_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_health' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_health_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "UCM_CROZIER_CHEATS_FX_health" using = Font_Size_Small default_format = "#high" } }
+            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_health' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_health_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_health' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_health_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "×[GetGlobalVariable( 'ucm_crozier_cheats_fx_health' ).GetValue|0]" using = Font_Size_Small default_format = "#high" } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_health' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_health_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_health' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_health_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_stress' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_stress_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_stress' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_stress_ON" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_stress' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_stress_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_stress' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_stress_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
-            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_life' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_life_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_life' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_life_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "UCM_CROZIER_CHEATS_FX_life" using = Font_Size_Small default_format = "#high" } }
+            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_life' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_life_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_life' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_life_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "×[GetGlobalVariable( 'ucm_crozier_cheats_fx_life' ).GetValue|0]" using = Font_Size_Small default_format = "#high" } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_life' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_life_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_life' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_life_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_immortal_player' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_immortal_player_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_immortal_player' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_immortal_player_ON" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_immortal_player' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_immortal_player_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_immortal_player' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_immortal_player_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_disease_player' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_disease_player_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_disease_player' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_disease_player_ON" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_disease_player' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_disease_player_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_disease_player' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_disease_player_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
-            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_long_reign' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_long_reign_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_long_reign' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_long_reign_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "UCM_CROZIER_CHEATS_FX_long_reign" using = Font_Size_Small default_format = "#high" } }
+            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_long_reign' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_long_reign_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_long_reign' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_long_reign_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "×[GetGlobalVariable( 'ucm_crozier_cheats_fx_long_reign' ).GetValue|0]" using = Font_Size_Small default_format = "#high" } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_long_reign' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_long_reign_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_long_reign' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_long_reign_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
-            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_skills' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_skills_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_skills' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_skills_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "UCM_CROZIER_CHEATS_FX_skills" using = Font_Size_Small default_format = "#high" } }
+            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_skills' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_skills_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_skills' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_skills_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "×[GetGlobalVariable( 'ucm_crozier_cheats_fx_skills' ).GetValue|0]" using = Font_Size_Small default_format = "#high" } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_skills' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_skills_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_skills' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_skills_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
-            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_skills_mult' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_skills_mult_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_skills_mult' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_skills_mult_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "UCM_CROZIER_CHEATS_FX_skills_mult" using = Font_Size_Small default_format = "#high" } }
+            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_skills_mult' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_skills_mult_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_skills_mult' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_skills_mult_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "×[GetGlobalVariable( 'ucm_crozier_cheats_fx_skills_mult' ).GetValue|0]" using = Font_Size_Small default_format = "#high" } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_skills_mult' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_skills_mult_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_skills_mult' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_skills_mult_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
-            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_lifestyle_xp' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_lifestyle_xp_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_lifestyle_xp' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_lifestyle_xp_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "UCM_CROZIER_CHEATS_FX_lifestyle_xp" using = Font_Size_Small default_format = "#high" } }
+            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_lifestyle_xp' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_lifestyle_xp_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_lifestyle_xp' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_lifestyle_xp_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "×[GetGlobalVariable( 'ucm_crozier_cheats_fx_lifestyle_xp' ).GetValue|0]" using = Font_Size_Small default_format = "#high" } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_lifestyle_xp' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_lifestyle_xp_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_lifestyle_xp' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_lifestyle_xp_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
-            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_innovation' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_innovation_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_innovation' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_innovation_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "UCM_CROZIER_CHEATS_FX_innovation" using = Font_Size_Small default_format = "#high" } }
+            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_innovation' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_innovation_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_innovation' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_innovation_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "×[GetGlobalVariable( 'ucm_crozier_cheats_fx_innovation' ).GetValue|0]" using = Font_Size_Small default_format = "#high" } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_innovation' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_innovation_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_innovation' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_innovation_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
-            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_slots' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_slots_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_slots' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_slots_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "UCM_CROZIER_CHEATS_FX_slots" using = Font_Size_Small default_format = "#high" } }
+            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_slots' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_slots_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_slots' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_slots_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "×[GetGlobalVariable( 'ucm_crozier_cheats_fx_slots' ).GetValue|0]" using = Font_Size_Small default_format = "#high" } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_slots' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_slots_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_slots' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_slots_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
-            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_travel_safe' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_travel_safe_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_travel_safe' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_travel_safe_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "UCM_CROZIER_CHEATS_FX_travel_safe" using = Font_Size_Small default_format = "#high" } }
+            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_travel_safe' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_travel_safe_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_travel_safe' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_travel_safe_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "×[GetGlobalVariable( 'ucm_crozier_cheats_fx_travel_safe' ).GetValue|0]" using = Font_Size_Small default_format = "#high" } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_travel_safe' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_travel_safe_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_travel_safe' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_travel_safe_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
-            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_legend_spread' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_legend_spread_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_legend_spread' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_legend_spread_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "UCM_CROZIER_CHEATS_FX_legend_spread" using = Font_Size_Small default_format = "#high" } }
+            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_legend_spread' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_legend_spread_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_legend_spread' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_legend_spread_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "×[GetGlobalVariable( 'ucm_crozier_cheats_fx_legend_spread' ).GetValue|0]" using = Font_Size_Small default_format = "#high" } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_legend_spread' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_legend_spread_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_legend_spread' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_legend_spread_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_auto_gold_floor' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_auto_gold_floor_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_auto_gold_floor' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_auto_gold_floor_ON" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_auto_gold_floor' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_auto_gold_floor_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_auto_gold_floor' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_auto_gold_floor_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
@@ -4987,7 +4987,7 @@ window = {
               }
             }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } tooltip = "UCM_CROZIER_CHEATS_B_combo_army_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_do_combo_army' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_combo_army" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
-            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_levy' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_levy_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_levy' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_levy_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "UCM_CROZIER_CHEATS_FX_levy" using = Font_Size_Small default_format = "#high" } }
+            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_levy' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_levy_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_levy' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_levy_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "×[GetGlobalVariable( 'ucm_crozier_cheats_fx_levy' ).GetValue|0]" using = Font_Size_Small default_format = "#high" } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_levy' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_levy_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_levy' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_levy_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } enabled = "[GetScriptedGui( 'ucm_crozier_cheats_sg_t_t_armies_to' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'ucm_crozier_cheats_char', GetPlayer.MakeScope.Var( 'ucm_target' ).Char.MakeScope ).End )]" tooltip = "UCM_CROZIER_CHEATS_B_t_armies_to_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_t_t_armies_to' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'ucm_crozier_cheats_char', GetPlayer.MakeScope.Var( 'ucm_target' ).Char.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_t_armies_to" max_width = 460 fontsize_min = 9 using = Font_Size_Small } }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_ENEMY_ARMIES" using = Font_Size_Medium default_format = "#high" }
@@ -6693,7 +6693,7 @@ window = {
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } enabled = "[GetScriptedGui( 'ucm_crozier_cheats_sg_t_t_schemes_end' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'ucm_crozier_cheats_char', GetPlayer.MakeScope.Var( 'ucm_target' ).Char.MakeScope ).End )]" tooltip = "UCM_CROZIER_CHEATS_B_t_schemes_end_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_t_t_schemes_end' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'ucm_crozier_cheats_char', GetPlayer.MakeScope.Var( 'ucm_target' ).Char.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_t_schemes_end" max_width = 460 fontsize_min = 9 using = Font_Size_Small } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } enabled = "[GetScriptedGui( 'ucm_crozier_cheats_sg_t_t_schemes_expose' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'ucm_crozier_cheats_char', GetPlayer.MakeScope.Var( 'ucm_target' ).Char.MakeScope ).End )]" tooltip = "UCM_CROZIER_CHEATS_B_t_schemes_expose_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_t_t_schemes_expose' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'ucm_crozier_cheats_char', GetPlayer.MakeScope.Var( 'ucm_target' ).Char.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_t_schemes_expose" max_width = 460 fontsize_min = 9 using = Font_Size_Small } }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_LEGENDS" using = Font_Size_Medium default_format = "#high" }
-            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_legend_spread' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_legend_spread_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_legend_spread' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_legend_spread_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "UCM_CROZIER_CHEATS_FX_legend_spread" using = Font_Size_Small default_format = "#high" } }
+            button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), GetScriptedGui( 'ucm_crozier_cheats_sg_st_legend_spread' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]" down = yes tooltip = "UCM_CROZIER_CHEATS_B_legend_spread_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_legend_spread' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_legend_spread_ON" max_width = 376 fontsize_min = 9 using = Font_Size_Small } text_single = { parentanchor = vcenter|right position = { -10 0 } text = "×[GetGlobalVariable( 'ucm_crozier_cheats_fx_legend_spread' ).GetValue|0]" using = Font_Size_Small default_format = "#high" } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } visible = "[And( Not( GameHasMultiplePlayers ), Not( GetScriptedGui( 'ucm_crozier_cheats_sg_st_legend_spread' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) ) )]" tooltip = "UCM_CROZIER_CHEATS_B_legend_spread_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_tog_legend_spread' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_legend_spread_OFF" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_ADVENTURERS" using = Font_Size_Medium default_format = "#high" }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } tooltip = "UCM_CROZIER_CHEATS_B_travel_arrive_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_do_travel_arrive' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_travel_arrive" max_width = 430 fontsize_min = 9 using = Font_Size_Small } }
@@ -6791,23 +6791,15 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_legend_black_heart" using = Font_Size_Small }
-                tooltip = "ucm_legend_black_heart_tt"
-                enabled = "[GetScriptedGui( 'ucm_legend_black_heart' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-                onclick = "[GetScriptedGui( 'ucm_legend_black_heart' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-              }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
                 text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_legend_builder" using = Font_Size_Small }
                 tooltip = "ucm_legend_builder_tt"
                 enabled = "[GetScriptedGui( 'ucm_legend_builder' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_legend_builder' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
@@ -6816,10 +6808,6 @@ window = {
                 enabled = "[GetScriptedGui( 'ucm_legend_conqueror' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_legend_conqueror' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
@@ -6828,6 +6816,10 @@ window = {
                 enabled = "[GetScriptedGui( 'ucm_legend_court_intriguer' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_legend_court_intriguer' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
@@ -6836,10 +6828,6 @@ window = {
                 enabled = "[GetScriptedGui( 'ucm_legend_divine_blood' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_legend_divine_blood' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
@@ -6848,6 +6836,10 @@ window = {
                 enabled = "[GetScriptedGui( 'ucm_legend_dragon_blood' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_legend_dragon_blood' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
@@ -6856,10 +6848,6 @@ window = {
                 enabled = "[GetScriptedGui( 'ucm_legend_dragon_slayer' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_legend_dragon_slayer' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
@@ -6867,14 +6855,6 @@ window = {
                 tooltip = "ucm_legend_enchanter_tt"
                 enabled = "[GetScriptedGui( 'ucm_legend_enchanter' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_legend_enchanter' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-              }
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_legend_eternal_watcher" using = Font_Size_Small }
-                tooltip = "ucm_legend_eternal_watcher_tt"
-                enabled = "[GetScriptedGui( 'ucm_legend_eternal_watcher' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-                onclick = "[GetScriptedGui( 'ucm_legend_eternal_watcher' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
             }
             hbox = {
@@ -6911,43 +6891,15 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_legend_golden_voice" using = Font_Size_Small }
-                tooltip = "ucm_legend_golden_voice_tt"
-                enabled = "[GetScriptedGui( 'ucm_legend_golden_voice' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-                onclick = "[GetScriptedGui( 'ucm_legend_golden_voice' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-              }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_legend_healer" using = Font_Size_Small }
-                tooltip = "ucm_legend_healer_tt"
-                enabled = "[GetScriptedGui( 'ucm_legend_healer' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-                onclick = "[GetScriptedGui( 'ucm_legend_healer' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-              }
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_legend_holy_hermit" using = Font_Size_Small }
-                tooltip = "ucm_legend_holy_hermit_tt"
-                enabled = "[GetScriptedGui( 'ucm_legend_holy_hermit' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-                onclick = "[GetScriptedGui( 'ucm_legend_holy_hermit' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-              }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
                 text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_legend_just_ruler" using = Font_Size_Small }
                 tooltip = "ucm_legend_just_ruler_tt"
                 enabled = "[GetScriptedGui( 'ucm_legend_just_ruler' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_legend_just_ruler' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
@@ -6956,10 +6908,6 @@ window = {
                 enabled = "[GetScriptedGui( 'ucm_legend_knight_hero' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_legend_knight_hero' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
@@ -6968,14 +6916,6 @@ window = {
                 enabled = "[GetScriptedGui( 'ucm_legend_master_crafter' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_legend_master_crafter' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_legend_miracle_worker" using = Font_Size_Small }
-                tooltip = "ucm_legend_miracle_worker_tt"
-                enabled = "[GetScriptedGui( 'ucm_legend_miracle_worker' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-                onclick = "[GetScriptedGui( 'ucm_legend_miracle_worker' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-              }
             }
             hbox = {
               layoutpolicy_horizontal = expanding
@@ -6983,10 +6923,10 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_legend_motion_divine" using = Font_Size_Small }
-                tooltip = "ucm_legend_motion_divine_tt"
-                enabled = "[GetScriptedGui( 'ucm_legend_motion_divine' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-                onclick = "[GetScriptedGui( 'ucm_legend_motion_divine' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_legend_miracle_worker" using = Font_Size_Small }
+                tooltip = "ucm_legend_miracle_worker_tt"
+                enabled = "[GetScriptedGui( 'ucm_legend_miracle_worker' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_legend_miracle_worker' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
               button_standard = {
                 layoutpolicy_horizontal = expanding
@@ -7063,23 +7003,11 @@ window = {
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
-                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_legend_seed_chinese_emperor" using = Font_Size_Small }
-                tooltip = "ucm_legend_seed_chinese_emperor_tt"
-                enabled = "[GetScriptedGui( 'ucm_legend_seed_chinese_emperor' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-                onclick = "[GetScriptedGui( 'ucm_legend_seed_chinese_emperor' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-              }
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
                 text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_legend_seed_egyptian_god" using = Font_Size_Small }
                 tooltip = "ucm_legend_seed_egyptian_god_tt"
                 enabled = "[GetScriptedGui( 'ucm_legend_seed_egyptian_god' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_legend_seed_egyptian_god' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
@@ -7088,6 +7016,10 @@ window = {
                 enabled = "[GetScriptedGui( 'ucm_legend_seed_gothic_kings' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_legend_seed_gothic_kings' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
@@ -7096,10 +7028,6 @@ window = {
                 enabled = "[GetScriptedGui( 'ucm_legend_seed_indian_hero' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_legend_seed_indian_hero' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
@@ -7108,6 +7036,10 @@ window = {
                 enabled = "[GetScriptedGui( 'ucm_legend_seed_lodbrok_sons' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_legend_seed_lodbrok_sons' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
@@ -7116,10 +7048,6 @@ window = {
                 enabled = "[GetScriptedGui( 'ucm_legend_seed_mongol_conqueror' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_legend_seed_mongol_conqueror' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
@@ -7128,6 +7056,10 @@ window = {
                 enabled = "[GetScriptedGui( 'ucm_legend_seed_red_hand_ulster' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_legend_seed_red_hand_ulster' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
@@ -7136,10 +7068,6 @@ window = {
                 enabled = "[GetScriptedGui( 'ucm_legend_seed_roman_legacy' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_legend_seed_roman_legacy' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
@@ -7148,6 +7076,10 @@ window = {
                 enabled = "[GetScriptedGui( 'ucm_legend_seed_yngling_dynasty' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_legend_seed_yngling_dynasty' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
@@ -7156,10 +7088,6 @@ window = {
                 enabled = "[GetScriptedGui( 'ucm_legend_tactician' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_legend_tactician' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
@@ -7167,14 +7095,6 @@ window = {
                 tooltip = "ucm_legend_tyrant_tt"
                 enabled = "[GetScriptedGui( 'ucm_legend_tyrant' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_legend_tyrant' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-              }
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_legend_undead_blood" using = Font_Size_Small }
-                tooltip = "ucm_legend_undead_blood_tt"
-                enabled = "[GetScriptedGui( 'ucm_legend_undead_blood' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-                onclick = "[GetScriptedGui( 'ucm_legend_undead_blood' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
             }
             hbox = {

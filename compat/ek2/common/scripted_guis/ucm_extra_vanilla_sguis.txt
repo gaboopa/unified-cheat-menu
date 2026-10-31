@@ -330,7 +330,6 @@ ucm_bld_temple_citadel_01_up = { scope = character is_shown = { always = no } is
 ucm_bld_vihara_halls_01_down = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
 ucm_bld_vihara_halls_01_up = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
 ucm_legend_beauty = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
-ucm_legend_black_heart = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
 ucm_legend_builder = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
 ucm_legend_conqueror = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
 ucm_legend_court_intriguer = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
@@ -338,18 +337,13 @@ ucm_legend_divine_blood = { scope = character is_shown = { always = no } is_vali
 ucm_legend_dragon_blood = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
 ucm_legend_dragon_slayer = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
 ucm_legend_enchanter = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
-ucm_legend_eternal_watcher = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
 ucm_legend_fate_weaver = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
 ucm_legend_giant_blood = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
 ucm_legend_giant_slayer = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
-ucm_legend_golden_voice = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
-ucm_legend_healer = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
-ucm_legend_holy_hermit = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
 ucm_legend_just_ruler = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
 ucm_legend_knight_hero = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
 ucm_legend_master_crafter = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
 ucm_legend_miracle_worker = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
-ucm_legend_motion_divine = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
 ucm_legend_pilgrim = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
 ucm_legend_saint_blood = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
 ucm_legend_saintly_life = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
@@ -357,7 +351,6 @@ ucm_legend_savior = { scope = character is_shown = { always = no } is_valid = { 
 ucm_legend_seed_african_hero = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
 ucm_legend_seed_arthurian_legacy = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
 ucm_legend_seed_carolingian_legacy = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
-ucm_legend_seed_chinese_emperor = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
 ucm_legend_seed_egyptian_god = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
 ucm_legend_seed_gothic_kings = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
 ucm_legend_seed_indian_hero = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
@@ -368,7 +361,6 @@ ucm_legend_seed_roman_legacy = { scope = character is_shown = { always = no } is
 ucm_legend_seed_yngling_dynasty = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
 ucm_legend_tactician = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
 ucm_legend_tyrant = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
-ucm_legend_undead_blood = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
 ucm_legend_undead_hunter = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
 ucm_legend_viking = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }
 ucm_legend_wanderer = { scope = character is_shown = { always = no } is_valid = { always = no } effect = { } }

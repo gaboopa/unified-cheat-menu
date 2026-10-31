@@ -92,7 +92,7 @@ TABS = [
     ]),
     ("character", [
         ("h", "UCM_SEC_EDITORS"),
-        ("sg", "ucm_open_trait_editor"), ("sg", "ucm_open_cheat_trait_editor"), ("sg", "ucm_open_lifestyle_editor"),
+        ("sg", "ucm_open_trait_editor"), ("sg", "ucm_open_lifestyle_editor"),
         ("ia", "daddy_pika_edit_character"),
         ("h", "UCM_SEC_IDENTITY"),
         ("ia", "ucm_change_age_interaction"),

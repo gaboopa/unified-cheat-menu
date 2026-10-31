@@ -44,7 +44,7 @@ English, German, Russian, Simplified Chinese and Turkish.
 | `tools/gen_ek2_compatch.py` | Regenerates the derived files in `compat/ek2/`, including the EK2 faith editor data and picker stubs |
 | `tools/gen_faith_editor.py` | Generates the faith editor's data effects from the 1.20 doctrine, tenet and religion databases |
 | `tools/gen_cast_culture_faith.py` | Generates the classic culture casting pages and their labels from the culture database |
-| `tools/gen_trait_editor.py` | Generates the classic base-game trait editor and its labels from the trait database |
+| `tools/gen_trait_editor.py` | Generates the trait editor window, its click dispatcher and its labels from the trait database |
 | `tools/gen_advcm_modifiers.py` | Generates the artifact crafting slot modifiers from the slot list and the game's modifier formats |
 | `tools/gen_lifestyle.py` | Generates the lifestyle editor from the perk database |
 | `tools/gen_court_positions.py` | Generates the one-click court reshuffle position lists from the court position types |

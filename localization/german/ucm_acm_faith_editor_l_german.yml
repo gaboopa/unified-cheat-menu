@@ -24,8 +24,5 @@
  ucm_acm_faith_editor_mts_fill: "20 leere Plätze füllen"
  ucm_acm_faith_editor_mts_clear: "Leere Plätze leeren"
  ucm_acm_faith_editor_mts_empty: "Leerer Platz"
- ucm_acm_faith_editor_ce_heading: "Sünden & Tugenden (unbegrenzte Ethik)"
- ucm_acm_faith_editor_ce_sins: "Merkmalsünden"
- ucm_acm_faith_editor_ce_virtues: "Merkmalstugenden"
  ucm_acm_faith_doctrine_select_tt: "#T [DoctrineType.GetNameNoTooltip( Faith.Self )]#!\n[DoctrineType.GetEffectsDescription( Faith.GetMainRite )]\n\n[DoctrineType.GetDescription( Faith.Self )|F]\n\n#I Click to select this doctrine#!"
  ucm_acm_faith_doctrine_picker_tt: "#T [DoctrineType.GetNameNoTooltip( Faith.Self )]#!\n[DoctrineType.GetEffectsDescription( Faith.GetMainRite )]\n\n[DoctrineType.GetDescription( Faith.Self )|F]\n\n#I Click to add to the current faith#!"

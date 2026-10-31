@@ -132,9 +132,7 @@ ucm_cheat_menu_open_sand_soldiers_effect = {
         value = scope:recipient
       }
     }
-    ucm_military_ensure_target_effect = yes
-    ucm_sand_soldiers_request_open_effect = yes
-    trigger_event = { id = ucm_cheat_menu.3082 days = 0 }
+    ucm_army_spawner_open_effect = yes
   }
 }
 

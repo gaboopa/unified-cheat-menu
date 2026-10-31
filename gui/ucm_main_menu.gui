@@ -7584,15 +7584,7 @@ window = {
             hbox = {
               layoutpolicy_horizontal = expanding
               spacing = 4
-              visible = "[And( GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'daddy_pika_character_spawner' ), GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_spawn_character_interaction' ) )]"
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'daddy_pika_character_spawner' )]"
-                text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'daddy_pika_character_spawner' )]"
-                tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'daddy_pika_character_spawner' )]"
-                onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'daddy_pika_character_spawner' )]"
-              }
+              visible = "[And( GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_spawn_character_interaction' ), GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_addcharacter_interaction' ) )]"
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
@@ -7601,71 +7593,6 @@ window = {
                 tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'toc_spawn_character_interaction' )]"
                 onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'toc_spawn_character_interaction' )]"
               }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              visible = "[And( Not( GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'daddy_pika_character_spawner' ) ), GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_spawn_character_interaction' ) )]"
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'toc_spawn_character_interaction' )]"
-                text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'toc_spawn_character_interaction' )]"
-                tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'toc_spawn_character_interaction' )]"
-                onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'toc_spawn_character_interaction' )]"
-              }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              visible = "[And( GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'daddy_pika_character_spawner' ), Not( GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_spawn_character_interaction' ) ) )]"
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'daddy_pika_character_spawner' )]"
-                text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'daddy_pika_character_spawner' )]"
-                tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'daddy_pika_character_spawner' )]"
-                onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'daddy_pika_character_spawner' )]"
-              }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              visible = "[And( GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_addcharacter_interaction' ), GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_addcourtier_interaction' ) )]"
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'toc_addcharacter_interaction' )]"
-                text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'toc_addcharacter_interaction' )]"
-                tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'toc_addcharacter_interaction' )]"
-                onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'toc_addcharacter_interaction' )]"
-              }
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'toc_addcourtier_interaction' )]"
-                text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'toc_addcourtier_interaction' )]"
-                tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'toc_addcourtier_interaction' )]"
-                onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'toc_addcourtier_interaction' )]"
-              }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              visible = "[And( Not( GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_addcharacter_interaction' ) ), GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_addcourtier_interaction' ) )]"
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'toc_addcourtier_interaction' )]"
-                text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'toc_addcourtier_interaction' )]"
-                tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'toc_addcourtier_interaction' )]"
-                onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'toc_addcourtier_interaction' )]"
-              }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              visible = "[And( GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_addcharacter_interaction' ), Not( GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_addcourtier_interaction' ) ) )]"
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
@@ -7678,7 +7605,41 @@ window = {
             hbox = {
               layoutpolicy_horizontal = expanding
               spacing = 4
-              visible = "[And( GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_addwombmancourtier_interaction' ), GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'spawn_courtier_interaction' ) )]"
+              visible = "[And( Not( GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_spawn_character_interaction' ) ), GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_addcharacter_interaction' ) )]"
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'toc_addcharacter_interaction' )]"
+                text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'toc_addcharacter_interaction' )]"
+                tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'toc_addcharacter_interaction' )]"
+                onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'toc_addcharacter_interaction' )]"
+              }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              visible = "[And( GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_spawn_character_interaction' ), Not( GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_addcharacter_interaction' ) ) )]"
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'toc_spawn_character_interaction' )]"
+                text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'toc_spawn_character_interaction' )]"
+                tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'toc_spawn_character_interaction' )]"
+                onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'toc_spawn_character_interaction' )]"
+              }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              visible = "[And( GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_addcourtier_interaction' ), GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_addwombmancourtier_interaction' ) )]"
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'toc_addcourtier_interaction' )]"
+                text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'toc_addcourtier_interaction' )]"
+                tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'toc_addcourtier_interaction' )]"
+                onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'toc_addcourtier_interaction' )]"
+              }
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
@@ -7687,32 +7648,11 @@ window = {
                 tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'toc_addwombmancourtier_interaction' )]"
                 onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'toc_addwombmancourtier_interaction' )]"
               }
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'spawn_courtier_interaction' )]"
-                text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'spawn_courtier_interaction' )]"
-                tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'spawn_courtier_interaction' )]"
-                onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'spawn_courtier_interaction' )]"
-              }
             }
             hbox = {
               layoutpolicy_horizontal = expanding
               spacing = 4
-              visible = "[And( Not( GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_addwombmancourtier_interaction' ) ), GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'spawn_courtier_interaction' ) )]"
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'spawn_courtier_interaction' )]"
-                text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'spawn_courtier_interaction' )]"
-                tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'spawn_courtier_interaction' )]"
-                onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'spawn_courtier_interaction' )]"
-              }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              visible = "[And( GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_addwombmancourtier_interaction' ), Not( GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'spawn_courtier_interaction' ) ) )]"
+              visible = "[And( Not( GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_addcourtier_interaction' ) ), GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_addwombmancourtier_interaction' ) )]"
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
@@ -7720,6 +7660,32 @@ window = {
                 text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'toc_addwombmancourtier_interaction' )]"
                 tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'toc_addwombmancourtier_interaction' )]"
                 onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'toc_addwombmancourtier_interaction' )]"
+              }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              visible = "[And( GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_addcourtier_interaction' ), Not( GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'toc_addwombmancourtier_interaction' ) ) )]"
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'toc_addcourtier_interaction' )]"
+                text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'toc_addcourtier_interaction' )]"
+                tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'toc_addcourtier_interaction' )]"
+                onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'toc_addcourtier_interaction' )]"
+              }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'spawn_courtier_interaction' )]"
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'spawn_courtier_interaction' )]"
+                text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'spawn_courtier_interaction' )]"
+                tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'spawn_courtier_interaction' )]"
+                onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'spawn_courtier_interaction' )]"
               }
             }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } enabled = "[GetScriptedGui( 'ucm_crozier_cheats_sg_t_t_child_now' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'ucm_crozier_cheats_char', GetPlayer.MakeScope.Var( 'ucm_target' ).Char.MakeScope ).End )]" tooltip = "UCM_CROZIER_CHEATS_B_t_child_now_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_t_t_child_now' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'ucm_crozier_cheats_char', GetPlayer.MakeScope.Var( 'ucm_target' ).Char.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_t_child_now" max_width = 460 fontsize_min = 9 using = Font_Size_Small } }
@@ -8238,6 +8204,140 @@ window = {
                 enabled = "[GetScriptedGui( 'ucm_spawn_opt_immortal' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_spawn_opt_immortal' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
+            }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              text = "ucm_open_spawn_picker"
+              down = "[GetVariableSystem.Exists( 'ucm_spawn_picker' )]"
+              onclick = "[GetVariableSystem.Toggle( 'ucm_spawn_picker' )]"
+            }
+            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SPAWN_SKILL_NOTE" using = Font_Size_Medium default_format = "#high" }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              text_single = { size = { 140 30 } text = "UCM_SPAWN_DIPLOMACY" }
+              text_single = { size = { 50 30 } raw_text = "[GetPlayer.MakeScope.ScriptValue( 'ucm_spawn_diplomacy_value' )|0]" default_format = "#high" }
+              button_standard = {
+                size = { 56 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_spawn_diplomacy_down" using = Font_Size_Small }
+                tooltip = "ucm_spawn_diplomacy_down_tt"
+                enabled = "[GetScriptedGui( 'ucm_spawn_diplomacy_down' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_spawn_diplomacy_down' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                size = { 56 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_spawn_diplomacy_up" using = Font_Size_Small }
+                tooltip = "ucm_spawn_diplomacy_up_tt"
+                enabled = "[GetScriptedGui( 'ucm_spawn_diplomacy_up' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_spawn_diplomacy_up' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              expand = {}
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              text_single = { size = { 140 30 } text = "UCM_SPAWN_MARTIAL" }
+              text_single = { size = { 50 30 } raw_text = "[GetPlayer.MakeScope.ScriptValue( 'ucm_spawn_martial_value' )|0]" default_format = "#high" }
+              button_standard = {
+                size = { 56 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_spawn_martial_down" using = Font_Size_Small }
+                tooltip = "ucm_spawn_martial_down_tt"
+                enabled = "[GetScriptedGui( 'ucm_spawn_martial_down' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_spawn_martial_down' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                size = { 56 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_spawn_martial_up" using = Font_Size_Small }
+                tooltip = "ucm_spawn_martial_up_tt"
+                enabled = "[GetScriptedGui( 'ucm_spawn_martial_up' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_spawn_martial_up' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              expand = {}
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              text_single = { size = { 140 30 } text = "UCM_SPAWN_STEWARDSHIP" }
+              text_single = { size = { 50 30 } raw_text = "[GetPlayer.MakeScope.ScriptValue( 'ucm_spawn_stewardship_value' )|0]" default_format = "#high" }
+              button_standard = {
+                size = { 56 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_spawn_stewardship_down" using = Font_Size_Small }
+                tooltip = "ucm_spawn_stewardship_down_tt"
+                enabled = "[GetScriptedGui( 'ucm_spawn_stewardship_down' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_spawn_stewardship_down' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                size = { 56 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_spawn_stewardship_up" using = Font_Size_Small }
+                tooltip = "ucm_spawn_stewardship_up_tt"
+                enabled = "[GetScriptedGui( 'ucm_spawn_stewardship_up' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_spawn_stewardship_up' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              expand = {}
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              text_single = { size = { 140 30 } text = "UCM_SPAWN_INTRIGUE" }
+              text_single = { size = { 50 30 } raw_text = "[GetPlayer.MakeScope.ScriptValue( 'ucm_spawn_intrigue_value' )|0]" default_format = "#high" }
+              button_standard = {
+                size = { 56 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_spawn_intrigue_down" using = Font_Size_Small }
+                tooltip = "ucm_spawn_intrigue_down_tt"
+                enabled = "[GetScriptedGui( 'ucm_spawn_intrigue_down' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_spawn_intrigue_down' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                size = { 56 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_spawn_intrigue_up" using = Font_Size_Small }
+                tooltip = "ucm_spawn_intrigue_up_tt"
+                enabled = "[GetScriptedGui( 'ucm_spawn_intrigue_up' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_spawn_intrigue_up' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              expand = {}
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              text_single = { size = { 140 30 } text = "UCM_SPAWN_LEARNING" }
+              text_single = { size = { 50 30 } raw_text = "[GetPlayer.MakeScope.ScriptValue( 'ucm_spawn_learning_value' )|0]" default_format = "#high" }
+              button_standard = {
+                size = { 56 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_spawn_learning_down" using = Font_Size_Small }
+                tooltip = "ucm_spawn_learning_down_tt"
+                enabled = "[GetScriptedGui( 'ucm_spawn_learning_down' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_spawn_learning_down' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                size = { 56 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_spawn_learning_up" using = Font_Size_Small }
+                tooltip = "ucm_spawn_learning_up_tt"
+                enabled = "[GetScriptedGui( 'ucm_spawn_learning_up' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_spawn_learning_up' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              expand = {}
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              text_single = { size = { 140 30 } text = "UCM_SPAWN_PROWESS" }
+              text_single = { size = { 50 30 } raw_text = "[GetPlayer.MakeScope.ScriptValue( 'ucm_spawn_prowess_value' )|0]" default_format = "#high" }
+              button_standard = {
+                size = { 56 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_spawn_prowess_down" using = Font_Size_Small }
+                tooltip = "ucm_spawn_prowess_down_tt"
+                enabled = "[GetScriptedGui( 'ucm_spawn_prowess_down' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_spawn_prowess_down' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                size = { 56 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_spawn_prowess_up" using = Font_Size_Small }
+                tooltip = "ucm_spawn_prowess_up_tt"
+                enabled = "[GetScriptedGui( 'ucm_spawn_prowess_up' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_spawn_prowess_up' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              expand = {}
             }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_SPAWN_FAMILY" using = Font_Size_Medium default_format = "#high" }
             hbox = {

@@ -46,7 +46,7 @@ English, German, Russian, Simplified Chinese and Turkish.
 | `tools/gen_cast_culture_faith.py` | Generates the classic culture casting pages and their labels from the culture database |
 | `tools/gen_trait_editor.py` | Generates the trait editor window, its click dispatcher and its labels from the trait database |
 | `tools/gen_advcm_modifiers.py` | Generates the artifact crafting slot modifiers from the slot list and the game's modifier formats |
-| `tools/gen_lifestyle.py` | Generates the classic lifestyle pages and the perk labels from the perk database |
+| `tools/gen_lifestyle.py` | Generates the lifestyle editor from the perk database |
 | `tools/gen_court_positions.py` | Generates the one-click court reshuffle position lists from the court position types |
 | `tools/gen_beauty_companion.py` | Generates the beauty companion's classified culture picker and its labels |
 | `tools/gen_ucm_main_menu.py` | Generates `gui/ucm_main_menu.gui` from a list of tabs and buttons |

@@ -1,8 +1,4 @@
 ﻿l_german:
- cheat_decition_tradition:0 "Kulturelle Vorherrschaft errichten"
- cheat_description_tradition:0 "Durch unseren Erlass werden wir uns die Weisheit aller Enden der Welt zu eigen machen. Von den Reisfeldern des Ostens bis zu den Langbogenschützen des Westens – unserem Volk wird niemand ebenbürtig sein."
- cheat_decition_accept:0 "Unsere Kultur ist nun unvergänglich."
- culture_cheat_tooltip:0 "Über 100 Traditionen werden eingeführt."
 
  # Modifikatoren
 
@@ -15,10 +11,7 @@
  ucm_change_age_interaction:0 "Alter des Charakters ändern"
 
 
- change_govt_steppe_admin:0 "Meritokratischer Khagan werden"
  change_govt_steppe_admin_desc:0 "Lege die alten Traditionen ab und übernimm die meritokratischen Bräuche der Steppe. Herrsche durch Verdienste und Reichtum statt durch Geburt und Aufgebote."
  change_govt_steppe_admin_tt:0 "Verwandle dein Reich in ein meritokratisches Khanat."
 
- change_govt_japan_administrative_government:0 "Das Ritsuryō-System einführen"
- change_govt_japan_administrative_government_desc:0 "Ordne dein Reich nach dem Ritsuryō-Verwaltungssystem neu und regiere durch Adelsfamilien sowie Provinzbeamte."
 

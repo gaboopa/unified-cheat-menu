@@ -309,20 +309,8 @@
  ucm_officials.9071.t: "设置该品级额度"
  ucm_officials.9071.desc: ""
  ucm_world_ai_boost_pause_decision: "强有地AI强化：暂停"
- ucm_world_ai_boost_pause_decision_desc: ""
- ucm_world_ai_boost_pause_decision_tooltip: "尚未暂停时可点；暂停后该项消失，改为显示「恢复」。"
- ucm_world_ai_boost_pause_decision_confirm: "暂停强有地AI强化"
- ucm_world_ai_boost_pause_effect_tt: "全局暂停：本会话不再列出「强有地AI强化」（直至你执行恢复决议）。"
  ucm_world_ai_boost_resume_decision: "强有地AI强化：恢复"
- ucm_world_ai_boost_resume_decision_desc: ""
- ucm_world_ai_boost_resume_decision_tooltip: "仅在已暂停时出现。"
- ucm_world_ai_boost_resume_decision_confirm: "恢复强有地AI强化"
- ucm_world_ai_boost_resume_effect_tt: "已取消暂停，可再次使用「强有地AI强化」决议。"
  ucm_boost_world_ai_rulers_decision: "全域有地AI强化"
- ucm_boost_world_ai_rulers_decision_desc: "强化所有拥有领地的AI领主，提升其内政、军事与经济能力，增强扩张及好战倾向。若玩家势力过于庞大，全体AI还会获得针对玩家的制衡倾向，提升游戏挑战性。"
- ucm_boost_world_ai_rulers_decision_tooltip: "功能未暂停。#bold 无威望消耗#!。"
- ucm_boost_world_ai_rulers_decision_confirm: "执行全域有地AI强化"
- ucm_boost_world_ai_rulers_effect_tt: "所有#bold 拥有领地的AI#!获得「吏治民力支援」角色修正，持续15年。此后每年都会刷新效果：常备军扩张增益、作战强化、封臣义务提升，满足条件时还会启用EP3行政体制相关效果。"
 
  ucm_ai_yearly_admin_conversion_toggle_title_on: "#bold 【已开启】#! 年脉冲：AI自动改行政制"
  ucm_ai_yearly_admin_conversion_toggle_title_off: "#bold 【已关闭】#! 年脉冲：AI自动改行政制"
@@ -394,9 +382,6 @@
  # 职位描述
  # 手动点击任命本地化
  ucm_positions_mass_reshuffle_decision: "任免宫廷职位"
- ucm_positions_mass_reshuffle_decision_tooltip: "一键撤销并重新任命你宫廷内的全部宫廷职位（按称职度；不触动御前会议内阁）。"
- ucm_positions_mass_reshuffle_decision_confirm: "执行"
- ucm_positions_mass_reshuffle_decision_desc: "一键撤销并重新任命你宫廷内的全部宫廷职位（按称职度；不触动御前会议内阁）。"
  # 手动任命候选人标记
  # 手动任命宫廷职位候选人标记
  # 简化生成子女功能本地化

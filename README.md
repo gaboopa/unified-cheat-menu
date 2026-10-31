@@ -46,6 +46,7 @@ English, German, Russian, Simplified Chinese and Turkish.
 | `tools/gen_artifact_crafter.py` | Generates the artifact crafter and editor: stack modifiers, effects, scripted GUIs, labels and windows |
 | `tools/gen_lifestyle.py` | Generates the lifestyle editor from the perk database |
 | `tools/gen_court_positions.py` | Generates the one-click court reshuffle position lists from the court position types |
+| `tools/gen_ucm_realm_actions.py` | Generates the locked succession laws, elective laws and realm-wide actions (holdings, buildings, cures) from the vanilla law, trigger and building data |
 | `tools/gen_ucm_main_menu.py` | Generates `gui/ucm_main_menu.gui` from a list of tabs and buttons |
 | `tools/gen_ucm_extra.py` | Generates the Phase 12 actions merged into the main menu, the modifier editor and the tenet picker (run before `gen_ucm_main_menu.py`); other-language text comes from `tools/ucm_extra_translations.json` |
 | `tools/gen_ucm_translations.py` | Generates the German, Russian, Chinese and Turkish menu text from the English |

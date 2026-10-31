@@ -73,6 +73,16 @@ def humanize(key):
 
 
 # --- Character: stats, locks, resources -----------------------------------------------------------
+# The trait editor lists only the game's traits, so these get their own toggles.
+MOD_TRAITS = ["100_stat_man", "nnn_challenger", "build_speed_cheat", "stress_gain_remove", "tyranny_gain_remove",
+              "gigasuperseed", "borntorule_seed", "sneed_seed", "blood_art_1",
+              *(f"blood_knight_{n}" for n in (1, 2, 3, 4)), *(f"blood_ancester_{n}" for n in (1, 2, 4, 5, 6, 7, 8, 9, 10, 11))]
+LEARNED_TRACKS = {"pilgrim": [], "lifestyle_mystic": [], "lifestyle_blademaster": [], "lifestyle_reveler": [], "lifestyle_physician": [],
+                  "lifestyle_hunter": ["hunter", "falconer"], "lifestyle_traveler": ["travel", "danger"],
+                  "tourney_participant": ["foot", "bow", "horse", "wit"],
+                  "gallowsbait": ["bandit", "trickster", "thief", "poacher", "marauder"]}
+
+
 def character():
     items = [h("UCM_SEC_STATS", "Stats")]
     items += [steps("ucm_stat_stress", "Stress", T, f"{TG} = {{ add_stress = {{v}} }}"),
@@ -98,7 +108,20 @@ def character():
               steps("ucm_res_piety", "Piety", T, f"{TG} = {{ add_piety = {{v}} }}"),
               steps("ucm_res_influence", "Influence", T, f"{TG} = {{ change_influence = {{v}} }}"),
               steps("ucm_res_merit", "Merit", T, f"{TG} = {{ change_merit = {{v}} }}"),
-              steps("ucm_res_barter", "Barter Goods", T, f"{TG} = {{ add_barter_goods = {{v}} }}")]
+              steps("ucm_res_barter", "Barter Goods", T, f"{TG} = {{ add_barter_goods = {{v}} }}"),
+              steps("ucm_res_herd", "Herd", f"{T} exists = {TG}.domicile {TG} = {{ government_has_flag = government_has_herd }}", f"{TG}.domicile = {{ change_herd = {{v}} }}")]
+    items.append(h("UCM_SEC_IDENTITY_EXTRA", "Name"))
+    items.append(sg_item("ucm_rename_target", "Rename…", "Choose a new first name for the target.", T, "trigger_event = ucm_extra.3"))
+    items.append(h("UCM_SEC_MOD_TRAITS", "Traits From This Mod"))
+    for i in range(0, len(MOD_TRAITS), 3):
+        items.append(("row", [sg(f"ucm_mod_trait_{t}", f"$trait_{t}$", "Add this trait to the target, or remove it if they have it.", T,
+                                 f"{TG} = {{ if = {{ limit = {{ has_trait = {t} }} remove_trait = {t} }} else = {{ add_trait = {t} }} }}")
+                              for t in MOD_TRAITS[i:i + 3]]))
+    def add_xp(t, tracks):
+        return " ".join(f"add_trait_xp = {{ trait = {t} {f'track = {k} ' if k else ''}value = 100 }}" for k in tracks or [None])
+    xp = "".join(f"if = {{ limit = {{ has_trait = {t} }} {add_xp(t, tracks)} }} " for t, tracks in LEARNED_TRACKS.items())
+    items.append(sg_item("ucm_max_learned_trait_xp", "Max Learned Trait XP",
+                         "Fill the experience of the target's pilgrim, lifestyle, traveler, tournament and criminal traits.", T, f"{TG} = {{ {xp}}}"))
     return items
 
 
@@ -648,6 +671,7 @@ def main():
     LOC.update(ucm_extra_building_slot="Extra Building Slot", ucm_extra_lock_legitimacy="Legitimacy Locked", ucm_extra_divine_grace="Fulfillment Protected")
     LOC.update({"ucm_extra.1.t": "Remove Holdings", "ucm_extra.1.desc": "Every holding in the target's capital county, except the county capital, will be removed. Restoring a save is the only way back.",
                 "ucm_extra.2.t": "Destroy Title", "ucm_extra.2.desc": "The target's primary title will be destroyed. Restoring a save is the only way back.",
+                "ucm_extra.3.t": "Rename", "ucm_extra.3.desc": "Type the target's new first name.", "ucm_extra.close": "Done",
                 "ucm_extra.a": "Do it", "ucm_extra.b": "Cancel"})
     write("localization/english/ucm_extra_l_english.yml", "l_english:\n" + "".join(f' {k}: "{v}"\n' for k, v in LOC.items()))
     tr_path = os.path.join(MOD, "tools", "ucm_extra_translations.json")

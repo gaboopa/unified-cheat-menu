@@ -3,7 +3,6 @@
  daddy_pika_cheat_menu_desc:0 "Ein geheimes Kompendium verbotener Mächte."
 
  dp_sex_interaction.t:0 "Gemeinsam schlafen"
- dp_sex_interaction:0 "Gemeinsam schlafen"
 
  daddy_pika_edit_character:0 "Charakter bearbeiten"
  daddy_pika_edit_character_desc:0 "Forme diese Seele, als wäre es Gottes eigener Wille."
@@ -14,28 +13,15 @@
  daddy_pika_murder:0 "Ermorden"
  daddy_pika_murder_desc:0 "Beende das Leben dieses Charakters mit kaltem Blut."
 
- suiji_murder_character_interaction:0 "Zufälliger Mord"
- suiji_murder_character_interaction_desc:0 "Überlasse dem Schicksal die Wahl des Mörders."
 
- null_murder_character_interaction:0 "Natürlicher Tod"
- null_murder_character_interaction_desc:0 "Die Seele scheidet friedlich dahin, als wäre es Gottes Wille."
 
- actor_murder_character_interaction:0 "Persönlich töten"
- actor_murder_character_interaction_desc:0 "Nimm die Tat selbst in die Hand und beende ihr Leben."
 
- zhuge_kill_01_character_interaction:0 "Tod gewähren"
- zhuge_kill_01_character_interaction_desc:0 "Erlöse diese Seele von ihrer sterblichen Hülle."
 
  daddy_pika_extermination_process:0 "Dynastie auslöschen"
  daddy_pika_extermination_process_desc:0 "Lösche eine gesamte Blutlinie von der Welt – niemand soll überleben."
 
- daddy_pika_designate_survivors:0 "Als Überlebenden markieren"
- daddy_pika_designate_survivors_desc:0 "Verschone diese Seele vor der Säuberung."
 
- daddy_pika_murder_off_dynasty:0 "Vollständige Auslöschung"
- daddy_pika_murder_off_dynasty_desc:0 "Sorge dafür, dass diese Blutlinie bis auf das letzte Mitglied ausgelöscht wird."
 
- daddy_pika_marry:0 "Ehe erzwingen"
 
  daddy_pika_imprison:0 "Einkerkern"
  daddy_pika_imprison_desc:0 "Wirf diese Seele in Ketten."
@@ -68,16 +54,11 @@
  daddy_pika_add_to_court:0 "Dem Hof beitreten"
  daddy_pika_add_to_court_desc:0 "Rufe diese Person an Euren Hof."
 
- daddy_pika_designate_survivors_remove:0 "Überlebendenstatus entfernen"
- daddy_pika_designate_survivors_remove_desc:0 "Entziehe dieser Seele Eure Gnade."
 
- daddy_pika_impregnate_cheat:0 "Schwängern"
- daddy_pika_impregnate_cheat_desc:0 "Lasst neues Leben nach Eurem Willen entstehen."
 
  daddy_pika_designate_heir:0 "Erben bestimmen"
  daddy_pika_designate_heir_desc:0 "Erkläre diese Seele zum rechtmäßigen Erben Eures Vermächtnisses."
 
- daddy_pika_adopt:0 "Diese Person adoptieren"
  daddy_pika_adopt_f:0 "Adoptieren"
  daddy_pika_adopt_m:0 "Adoptieren"
 
@@ -96,7 +77,6 @@
  daddy_pika_usurpy_surp:0 "Titel an sich reißen"
  daddy_pika_usurpy_surp_desc:0 "Nimm diesen Titel mit Gewalt an Dich."
 
- zhuge_rongyu_title_interaction:0 "Ehrentitel verleihen/Titellos"
 
  daddy_pika_char_modify_vassal_contract_inter:0 "Vertrag ändern"
  daddy_pika_char_modify_vassal_contract_inter_desc:0 "Schreibe die Vasallenpflichten nach Eurem Willen neu."
@@ -109,16 +89,12 @@
 
  daddy_pika_offer_vassal_inter:0 "Vasallenschaft erzwingen"
  daddy_pika_offer_vassal_inter_desc:0 "Unterwerfe diese Seele Eurer Herrschaft."
- daddy_pika_offer_vassal_failed_toast_title:0 "Vasallenschaft verweigert"
- daddy_pika_offer_vassal_failed_toast_desc:0 "Das Spiel selbst lässt diesen Charakter nicht Euer Vasall werden. Söldnerkompanien, Ritterorden und landlose Abenteurer können unabhängig von Cheats von der Engine geschützt sein."
 
 
  daddy_pika_arrange_marriage_inter:0 "Verlobung erzwingen"
  daddy_pika_arrange_marriage_inter_desc:0 "Erzwinge ein Eheversprechen zwischen diesen beiden Seelen."
 
- actor_secondary_daddy_pika_arrange_marriage_inter:0 "Ehepartner"
 
- daddy_pika_confirm:0 "Bestätigen"
 
  open_daddypika_menu:0 "*Untermenü-Editor öffnen*"
  close_daddypika_menu:0 "*Untermenü-Editor schließen*"
@@ -160,10 +136,6 @@
  zhuge_juese_menu:0 "-Charaktermenü-"
 
 
- manage_titles:0 "Titel verwalten"
- manage_titles_desc:0 "Verwaltet und verteilt Adelstitel."
- manage_titles_interaction:0 "Titel verwalten"
- manage_titles_interaction_desc:0 "Bestimmt nach Eurem Willen über die Vergabe von Titeln."
 
 
  Only_Me_gse_mod:0 "Nur für mich ändern"
@@ -209,7 +181,6 @@ change_Realm_succession_law_mod.1009.desc:0 "Auswählen"
 
 multiple_heirs_rse_mod:0 "Mehrere Erben"
 single_Heir_rse_mod:0 "Einzelerbe"
-Elective_rse_mod:0 "Wahlmonarchie"
 Confederate_Partition_rse_mod:0 "Konföderierte Teilung"
 Partition_rse_mod:0 "Teilung"
 High_Partition_rse_mod:0 "Hohe Teilung"

@@ -15,6 +15,5 @@
  LIT_learned_trait_check_missing_TT:0 "The character does not have this trait, so no experience was added."
  dp_char_editor.traits.lifestyle_TT:0 "Browse lifestyle traits."
  dead_group:0 "Extinct Cultures"
- merge_titles.1.desc:0 ""
  special_gift_interaction_message_title:0 "Gift of Immortality"
  ucm_acm_religion_picker_expand_tt:0 "Click to show or hide this religion's faiths."

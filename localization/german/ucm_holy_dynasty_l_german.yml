@@ -1,9 +1,7 @@
 ﻿l_german:
- pope_select_flag_desc:0 "„Ihr seid der neue Papst!“"
  pope_select_interaction:0 "Neuen Papst ernennen"
  pope_select_interaction_desc:0 "„Der Papst soll aus meinem Haus stammen!“"
 
- grandmaster_select_flag_desc:0 "„Ihr seid der neue Großmeister!“"
  grandmaster_select_interaction:0 "Neuen Großmeister ernennen"
  grandmaster_select_interaction_desc:0 "„Der Großmeister soll aus meinem Haus stammen!“"
 

@@ -457,28 +457,6 @@ pcm_cure_inbred_decision = {
 	ai_check_interval = 0
 }
 
-yyz_open_menu_decision = {
-    decision_group_type = ucm_talent_finder
-    picture = { reference = "gfx/interface/illustrations/decisions/menu.dds" }
-    
-    is_shown = { ucm_single_player_trigger = yes  
-        always = yes 
-    }
-    
-    is_valid = { 
-        always = yes 
-    }
-    
-    effect = {
-        set_global_variable = { name = yyz_list_mode value = MAIN_DYNASTY }
-        reset_filters = yes
-        set_global_variable = { name = yyz_sort_key value = SORT_KEY_AGE }
-        set_global_variable = { name = yyz_sort_desc value = 1 }
-        
-        yyz_generate_list = yes  
-    }
-}
-
 Artifact_1000 = {
 	decision_group_type = ucm_economy_artifacts
 	picture = { reference = "gfx/interface/illustrations/decisions/7.dds" }

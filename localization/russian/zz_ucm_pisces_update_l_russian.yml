@@ -8,10 +8,6 @@
  culture_acceptance_gain_mult:0 "Культурная открытость"
  
  # Decision Menu
- yyz_open_menu_decision:0 "Меню поиска талантов"
- yyz_open_menu_decision_desc:0 "Наши текущие планы требуют особого мастерства. Формализовав поиск талантов, мы превратим наш двор в пристанище для элиты, обеспечив себя навыками, необходимыми для успеха."
- yyz_open_menu_decision_confirm:0 "Открыть меню"
- yyz_open_menu_decision_tooltip:0 "Инициализировать список."
  
  # Traditions
  tradition_zz_cultural_polygamy_three_wives_name:0 "Культурное многоженство"

@@ -8,10 +8,6 @@
  culture_acceptance_gain_mult:0 "Kulturelle Offenheit"
 
  # Entscheidungsmenü
- yyz_open_menu_decision:0 "Menü: Talentsuche"
- yyz_open_menu_decision_desc:0 "Unsere Vorhaben erfordern außergewöhnliche Fachkenntnisse. Indem wir gezielt nach Talenten suchen, stellen wir sicher, dass unser Hof ein Anziehungspunkt für die Besten bleibt und uns stets die nötigen Fähigkeiten zur Verfügung stehen."
- yyz_open_menu_decision_confirm:0 "Menü öffnen"
- yyz_open_menu_decision_tooltip:0 "Liste initialisieren."
 
  # Traditionen
  tradition_zz_cultural_polygamy_three_wives_name:0 "Kulturelle Polygamie"

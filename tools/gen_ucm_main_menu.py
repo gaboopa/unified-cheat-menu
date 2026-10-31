@@ -292,7 +292,7 @@ TABS = [
         ("h", "UCM_SEC_COURT_TOOLS"),
         ("t", "UCM_DECISIONS_NOTE"),
         ("dec", "ucm_court_management_decision"), ("dec", "ucm_positions_mass_reshuffle_decision"),
-        ("dec", "yyz_open_menu_decision"), ("dec", "ucm_bulk_guardian_run_decision"),
+        ("dec", "ucm_bulk_guardian_run_decision"),
         ("dec", "pcm_cure_all_decision"), ("dec", "pcm_cure_pox_decision"), ("dec", "pcm_cure_inbred_decision"),
         ("h", "UCM_SEC_PRISON"),
         ("ia", "daddy_pika_imprison"), ("ia", "debug_imprison_simple_interaction"),

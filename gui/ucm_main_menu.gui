@@ -4213,6 +4213,13 @@ window = {
               down = "[GetVariableSystem.Exists( 'ucm_tenet_picker' )]"
               onclick = "[GetVariableSystem.Toggle( 'ucm_tenet_picker' )]"
             }
+            button_standard = {
+              layoutpolicy_horizontal = expanding
+              size = { 0 30 }
+              text = "ucm_open_pillar_picker"
+              down = "[GetVariableSystem.Exists( 'ucm_pillar_picker' )]"
+              onclick = "[GetVariableSystem.Toggle( 'ucm_pillar_picker' )]"
+            }
             hbox = {
               layoutpolicy_horizontal = expanding
               spacing = 4
@@ -10546,68 +10553,6 @@ window = {
                 tooltip = "ucm_menu_reset_tt"
                 enabled = "[GetScriptedGui( 'ucm_menu_reset' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_menu_reset' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-              }
-            }
-            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_CLASSIC" using = Font_Size_Medium default_format = "#high" }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 560 text = "UCM_CLASSIC_NOTE" default_format = "#low" }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              visible = "[And( GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'cheateb_editmenu_interaction' ), GetDecisionWithKey( 'open_daddypika_menu' ).IsShownForPlayer )]"
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'cheateb_editmenu_interaction' )]"
-                text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'cheateb_editmenu_interaction' )]"
-                tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'cheateb_editmenu_interaction' )]"
-                onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'cheateb_editmenu_interaction' )]"
-              }
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                datacontext = "[GetDecisionWithKey( 'open_daddypika_menu' )]"
-                text = "[Decision.GetTitleForPlayer]"
-                tooltip = "[Decision.GetShortDescForPlayer]"
-                onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
-              }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              visible = "[And( Not( GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'cheateb_editmenu_interaction' ) ), GetDecisionWithKey( 'open_daddypika_menu' ).IsShownForPlayer )]"
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                datacontext = "[GetDecisionWithKey( 'open_daddypika_menu' )]"
-                text = "[Decision.GetTitleForPlayer]"
-                tooltip = "[Decision.GetShortDescForPlayer]"
-                onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
-              }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              visible = "[And( GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'cheateb_editmenu_interaction' ), Not( GetDecisionWithKey( 'open_daddypika_menu' ).IsShownForPlayer ) )]"
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'cheateb_editmenu_interaction' )]"
-                text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'cheateb_editmenu_interaction' )]"
-                tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'cheateb_editmenu_interaction' )]"
-                onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'cheateb_editmenu_interaction' )]"
-              }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              visible = "[GetDecisionWithKey( 'daddy_pika_information' ).IsShownForPlayer]"
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                datacontext = "[GetDecisionWithKey( 'daddy_pika_information' )]"
-                text = "[Decision.GetTitleForPlayer]"
-                tooltip = "[Decision.GetShortDescForPlayer]"
-                onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
               }
             }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_DEBUG" using = Font_Size_Medium default_format = "#high" }

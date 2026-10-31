@@ -272,8 +272,6 @@
  UCM_SEC_EPIDEMICS: "疫病"
  UCM_SEC_SITUATIONS: "纷争、周期与地区系统"
  UCM_SEC_MENU: "本菜单"
- UCM_SEC_CLASSIC: "经典菜单"
- UCM_CLASSIC_NOTE: "原作弊菜单中基于事件的主菜单和决议子菜单。它们提供的所有功能仍可在那里使用。"
  UCM_SEC_DEBUG: "调试模式"
  ucm_diarchy_start_regency: "开始摄政"
  ucm_diarchy_start_regency_tt: "为目标开始摄政。摄政者由游戏选择，可用下一个按钮替换。"

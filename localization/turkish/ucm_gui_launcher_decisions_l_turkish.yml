@@ -29,8 +29,4 @@
  ucm_acm_culture_picker_nav_wizard_tt: "Adım adım göz at: Bölge → Miras → Kültür"
  ucm_acm_culture_picker_list_caption: "Miras Grupları (Genişletmek İçin Tıklayın)"
  ucm_acm_culture_picker_heritage_prefix: "Miras"
- ucm_acm_culture_picker_footer_hint: "Kültürü seçili karaktere uygulamak için tıklayın veya kültürün kendisini düzenlemeye devam edin."
- ucm_acm_culture_picker_footer_edit: "Seçili Kültürü Düzenlemeye Devam Et"
- ucm_acm_culture_picker_footer_edit_tt: "Seçiminiz için kültür düzenleyicisini aç"
- ucm_acm_culture_picker_footer_close: "Kataloğu Kapat"
  ucm_acm_culture_picker_open_vanilla_tt: "Seç ve standart kültür kenar çubuğunu aç"

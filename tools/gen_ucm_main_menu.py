@@ -338,9 +338,6 @@ TABS = [
     ("settings", [
         ("h", "UCM_SEC_MENU"),
         ("sg", "ucm_second_clear"), ("sg", "ucm_menu_reset"),
-        ("h", "UCM_SEC_CLASSIC"),
-        ("t", "UCM_CLASSIC_NOTE"),
-        ("ia", "cheateb_editmenu_interaction"), ("dec", "open_daddypika_menu"), ("dec", "daddy_pika_information"),
         ("h", "UCM_SEC_DEBUG"),
         ("sg", "ucm_open_console_helper"), ("ia", "toc_main_debug_interaction"),
     ]),

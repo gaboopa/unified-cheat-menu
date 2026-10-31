@@ -4,7 +4,7 @@
     common/modifiers/ucm_extra_modifiers.txt
     common/scripted_effects/ucm_extra_effects.txt, common/script_values/ucm_extra_values.txt  spawner
     common/modifiers/ucm_modifier_editor_modifiers.txt, common/scripted_guis/ucm_modifier_editor_sguis.txt
-    gui/ucm_modifier_editor.gui, gui/ucm_tenet_picker.gui, gui/ucm_spawn_picker.gui
+    gui/ucm_modifier_editor.gui, gui/ucm_tenet_picker.gui, gui/ucm_pillar_picker.gui, gui/ucm_spawn_picker.gui
     compat/ek2/common/scripted_guis/ucm_extra_vanilla_sguis.txt  EK2 version (vanilla-key actions greyed out)
     localization/<lang>/ucm_extra_l_<lang>.yml  (other languages from tools/ucm_extra_translations.json)
 build() returns the items merged into the tabs by gen_ucm_main_menu.py. Run this, then that:
@@ -716,6 +716,43 @@ def tenet_sgui(data_path):
             f"\tis_valid = {{ {T} {TG} = {{ is_playable_character = yes }} }}\n\teffect = {{ {TG} = {{ {ladder} }} }}\n}}\n")
 
 
+PILLAR_TYPES = ("ethos", "heritage", "language", "martial_custom")
+
+
+def pillars_by_type(game):
+    out = {t: [] for t in PILLAR_TYPES}
+    for f in ck3parse.effective_files(os.path.join("common", "culture", "pillars"), game):
+        for k, b in ck3parse.top_level_objects(f):
+            m = re.search(r"\btype\s*=\s*(\w+)", b)
+            if m and m.group(1) in out:
+                out[m.group(1)].append(k)
+    return out
+
+
+def pillar_gui(pillars):
+    o = ["    scrollbox = {", "      layoutpolicy_horizontal = expanding", "      layoutpolicy_vertical = expanding", '      blockoverride "scrollbox_content" {',
+         "        vbox = {", "          layoutpolicy_horizontal = expanding", "          spacing = 2"]
+    for t, keys in pillars.items():
+        o.append(f'          text_single = {{ layoutpolicy_horizontal = expanding text = "UCM_PILLAR_{t.upper()}" default_format = "#high" }}')
+        for k in sorted(keys):
+            sg_ref = f"GetScriptedGui( 'ucm_pillar_{k}' )"
+            o.append(f'          button_standard = {{ layoutpolicy_horizontal = expanding size = {{ 0 26 }} visible = "[{sg_ref}.IsShown( {R} )]" enabled = "[{sg_ref}.IsValid( {R} )]" onclick = "[{sg_ref}.Execute( {R} )]" '
+                     f'text_single = {{ parentanchor = center text = "{k}_name" using = Font_Size_Small }} }}')
+    o += ["        }", "      }", "    }"]
+    return window("ucm_pillar_picker_window", "right|vcenter", "ucm_pillar_picker", "UCM_PILLAR_PICKER", "UCM_PILLAR_NOTE", "\n".join(o))
+
+
+def pillar_sguis(pillars):
+    """One scripted GUI per pillar; vanilla keys, so EK2 stubs them with the other vanilla actions."""
+    for keys in pillars.values():
+        for k in sorted(keys):
+            VANILLA_SGUIS.append(f"ucm_pillar_{k} = {{\n\tscope = character\n\tis_shown = {{ ucm_single_player_trigger = yes }}\n"
+                                 f"\tis_valid = {{ {T} exists = {TG}.culture {TG}.culture = {{ NOT = {{ has_cultural_pillar = {k} }} }} }}\n"
+                                 f"\teffect = {{ {TG}.culture = {{ set_culture_pillar = {k} }} }}\n}}\n")
+    LOC.update(UCM_PILLAR_PICKER="Culture Pillars", UCM_PILLAR_NOTE="Click a pillar to set it on the target's culture. This changes the culture for everyone in it.",
+               ucm_open_pillar_picker="Culture Pillars", UCM_PILLAR_ETHOS="Ethos", UCM_PILLAR_HERITAGE="Heritage", UCM_PILLAR_LANGUAGE="Language", UCM_PILLAR_MARTIAL_CUSTOM="Martial Custom")
+
+
 def build(game):
     """Fill SGUIS, VANILLA_SGUIS and LOC; return {tab: items}."""
     SGUIS.clear(), VANILLA_SGUIS.clear(), LOC.clear()
@@ -723,6 +760,8 @@ def build(game):
     group_loc()
     faith = faith_culture()
     faith.insert(1, ("vs", "ucm_tenet_picker", "ucm_open_tenet_picker"))
+    faith.insert(2, ("vs", "ucm_pillar_picker", "ucm_open_pillar_picker"))
+    pillar_sguis(pillars_by_type(game))
     return {"character": [("vs", "ucm_modifier_editor", "ucm_open_modifier_editor")] + character(), "relationships": relationships(), "titles": titles(),
             "faith_culture": faith + innovation_eras(game), "realm": realm() + buildings(game), "dlc": activities_legends(), "court": spawner(game)}
 
@@ -755,6 +794,7 @@ def main():
     write("common/modifiers/ucm_modifier_editor_modifiers.txt", head + "\n".join(mod_defs))
     write("gui/ucm_modifier_editor.gui", modifier_gui(cat))
     write("gui/ucm_tenet_picker.gui", tenet_gui())
+    write("gui/ucm_pillar_picker.gui", pillar_gui(pillars_by_type(game)))
     write("gui/ucm_spawn_picker.gui", spawn_picker_gui())
     write("common/scripted_effects/ucm_extra_effects.txt", head + SPAWN_EFFECTS)
     write("common/script_values/ucm_extra_values.txt", head + SPAWN_VALUES)

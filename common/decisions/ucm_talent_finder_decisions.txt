@@ -1,0 +1,14 @@
+yyz_open_menu_decision = {
+	decision_group_type = ucm_talent_finder
+	picture = { reference = "gfx/interface/illustrations/decisions/menu.dds" }
+	is_shown = { ucm_single_player_trigger = yes is_ai = no }
+	effect = {
+		set_global_variable = { name = yyz_list_mode value = MAIN_DYNASTY }
+		reset_filters = yes
+		set_global_variable = { name = yyz_sort_key value = SORT_KEY_AGE }
+		set_global_variable = { name = yyz_sort_desc value = 1 }
+		yyz_generate_list = yes
+	}
+	ai_check_interval = 0
+	ai_will_do = { base = 0 }
+}

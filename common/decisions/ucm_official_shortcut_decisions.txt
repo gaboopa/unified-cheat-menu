@@ -1,6 +1,6 @@
 ucm_learn_all_realm_officials_secrets_decision = {
   picture = {
-    reference = "gfx/interface/illustrations/decisions/8.dds"
+    reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
   }
   decision_group_type = ucm_officials
   sort_order = 70
@@ -43,7 +43,7 @@ ucm_learn_all_realm_officials_secrets_decision = {
 
 ucm_seduce_shield_for_consorts_decision = {
   picture = {
-    reference = "gfx/interface/illustrations/decisions/8.dds"
+    reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
   }
   decision_group_type = ucm_officials
   sort_order = 72

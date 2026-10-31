@@ -132,7 +132,7 @@ def character():
     items.append(sg_item("ucm_heal_target", "Heal", "Remove diseases, wounds and maimings from the target.", T,
                          f"{TG} = {{ " + " ".join(f"remove_trait = {x}" for x in HEAL_TRAITS) + " }"))
     items.append(("row", [sg("ucm_make_immortal", "Make Immortal", "The target stops aging and can't die of old age.", T, f"{TG} = {{ add_trait = ucm_trait_undying set_immortal_age = 25 }}"),
-                          sg("ucm_make_mortal", "Make Mortal", "Remove the target's immortality.", f"{T} {TG} = {{ has_trait = zg_buxiu }}", f"{TG} = {{ remove_trait = zg_buxiu }}")]))
+                          sg("ucm_make_mortal", "Make Mortal", "Remove the target's immortality.", f"{T} {TG} = {{ has_trait = ucm_trait_undying }}", f"{TG} = {{ remove_trait = ucm_trait_undying }}")]))
     return items
 
 

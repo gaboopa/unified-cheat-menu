@@ -1,69 +1,15 @@
 ﻿l_english:
- daddy_pika_cheat_menu_desc:0 "A secret compendium of forbidden powers."
- daddy_pika_murder:0 "Murder"
- daddy_pika_murder_desc:0 "Strike down this character in cold blood."
- daddy_pika_extermination_process:0 "Annihilate Dynasty"
- daddy_pika_extermination_process_desc:0 "Extinguish an entire bloodline from the earth—none shall remain."
- daddy_pika_imprison:0 "Imprison"
- daddy_pika_imprison_desc:0 "Cast this soul into chains of captivity."
- daddy_pika_commit_suicide:0 "Take One’s Own Life"
- daddy_pika_commit_suicide_desc:0 "The character chooses death over life’s burdens."
- daddy_pika_excommunicate:0 "Excommunicate"
- daddy_pika_excommunicate_desc:0 "Mark this soul as an outcast from the holy church."
- daddy_pika_remove_excommunication:0 "Remove Excommunication"
- daddy_pika_remove_excommunication_desc:0 "Restore this person to the grace of the church."
- daddy_pika_change_religion:0 "Change Religion"
- daddy_pika_change_religion_desc:0 "Bend this spirit to a new faith."
- daddy_pika_change_culture:0 "Change Culture"
- daddy_pika_change_culture_desc:0 "Sever ties with old ways, and embrace another people’s custom."
- daddy_pika_change_dynasty:0 "Join Your Dynasty"
- daddy_pika_change_dynasty_desc:0 "Adopt this soul into your noble bloodline."
- daddy_pika_change_character:0 "Switch Character"
- daddy_pika_change_character_desc:0 "Forsake your path and walk in another’s stead.\n\n$ACHIEVEMENTS_WILL_BE_DISABLED_SWITCH_CHARACTER$"
- daddy_pika_boost_stats:0 "Super Boost"
- daddy_pika_boost_stats_desc:0 "Bless this character with extraordinary prowess and ability."
- daddy_pika_add_to_court:0 "Join Court"
- daddy_pika_add_to_court_desc:0 "Summon this person into the halls of your court."
- daddy_pika_designate_heir:0 "Designate Heir"
- daddy_pika_designate_heir_desc:0 "Proclaim this soul as the rightful inheritor of your legacy."
- daddy_pika_adopt_f:0 "Adopt"
- daddy_pika_adopt_m:0 "Adopt"
- daddy_pika_disown:0 "Disown"
- daddy_pika_disown_desc:0 "Cast out this soul, stripping them of family and name."
- daddy_pika_concubine_cheat:0 "Add Concubine"
- daddy_pika_concubine_cheat_desc:0 "Take this soul into your household as concubine."
- divorce_character_cheat:0 "Divorce"
- divorce_character_cheat_desc:0 "Dissolve the bonds of matrimony."
- daddy_pika_claim_title:0 "Claim Their Title"
- daddy_pika_claim_title_desc:0 "Lay claim to this soul’s rightful lordship."
- daddy_pika_usurpy_surp:0 "Usurp Title"
- daddy_pika_usurpy_surp_desc:0 "Tear away their title and seat it upon your brow."
- daddy_pika_char_modify_vassal_contract_inter:0 "Modify Contract"
- daddy_pika_char_modify_vassal_contract_inter_desc:0 "Rewrite oaths of fealty as you see fit."
- daddy_pika_vassal_mod_vassal_contract_inter:0 "Modify Contract"
- daddy_pika_vassal_mod_vassal_contract_inter_desc:0 "Alter the bonds of lord and vassal with no consequence."
- daddy_pika_revoke_title:0 "Revoke Title"
- daddy_pika_revoke_title_desc:0 "Strip this soul of their title and honor."
- daddy_pika_offer_vassal_inter:0 "Force Vassal"
- daddy_pika_offer_vassal_inter_desc:0 "Bend this soul to your rule as a vassal."
- daddy_pika_arrange_marriage_inter:0 "Force Betrothal"
- daddy_pika_arrange_marriage_inter_desc:0 "Compel a promise of wedlock upon these two souls."
- open_daddypika_menu:0 "*Open Sub Menu Editor*"
- generic_proceed:0 "Are you sure you wish to proceed?"
  CONFIRM_OKAY:0 "Okay"
 
  
 
 #Gender
-gender_Succession_events_mod_decision:0 "Change the Gender Succession"
 
 # Realem
-change_Realm_succession_law_mod_decision:0 "Change the Realm Succession"
 
   
 
  
- change_govt_meritocratic_desc: "Instantly change your primary realm to the Meritocratic Government type. Used by specialized candidates and merit-based realms."
  
  
 

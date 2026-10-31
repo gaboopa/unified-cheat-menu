@@ -32,6 +32,3 @@
  ucm_war: "County March"
  ucm_war_no_change: "Nothing changes hands."
  ucm_war_invalidated: "The war no longer has a target."
- trait_water_of_life:0 "Sentinel of the Word"
- trait_water_of_life_desc:0 "Having drunk from the cup guarded by Clavius Aquila, this character bears the duty of the Eternal Sentinel. Time cannot wither their body or dim their mind. Centuries of service promise wisdom, strength, and an unshakable spirit.\n\n#P Restoration:#! Existing age-related ailments, incapability, wounds, and illnesses are cleansed when the blessing is received, on game load, and during monthly upkeep."
- trait_water_of_life_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] has taken up Clavius Aquila's watch as the Sentinel of the Word. An ageless body, a tireless mind, and enduring faith sustain the keeper of the Grail.\n\n#P Restoration:#! Age-related ailments, incapability, wounds, and illnesses are cleansed on game load and during monthly upkeep."

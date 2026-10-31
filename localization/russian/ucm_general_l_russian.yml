@@ -1,0 +1,138 @@
+﻿l_russian:
+ # Base Traits
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ # Cosmetic / Custom Bloodlines
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ # Special Traits
+ 
+ 
+ 
+
+ # Interactions
+ toc_disinherit_interaction:0 "Лишить наследства"
+ toc_celibate_interaction:0 "Добавить свойство: Целибат"
+ toc_givearmyhorde_interaction:0 "Призвать армию орды"
+ toc_religionconvert_interaction:0 "Обратить в религию наготы"
+ toc_setheira_interaction:0 "Назначить основным наследником"
+ toc_deposed_interaction:0 "Отправить в отставку или свергнуть"
+ toc_yapaconvert_interaction:0 "Обратить в ересь"
+ toc_addwombmancourtier_interaction:0 "Призвать придворную-женщину"
+ toc_addcourtier_interaction:0 "Призвать придворного-мужчину"
+ toc_addcharacter_interaction:0 "Меню создания персонажа"
+ toc_finishcounciltask_interaction:0 "Мгновенно завершить задачу совета"
+
+ # Modifiers
+ 
+ 
+ 
+ 
+ 
+ 
+
+ # Add Children Menu
+
+ # Spawn Character Menus
+
+
+
+
+
+
+ # Female Spawn Options
+
+
+
+
+
+ # Main Debug & Utilities Menus
+
+ # Advanced Utilities 1
+
+ # Advanced Utilities 2
+
+ # Add Modifiers Menu 1
+
+ # Add Modifiers Menu 2
+
+ # Edit Traits Main Menu
+
+ # Bloodline Traits Menu
+
+ # Congenital Traits Menu
+
+ # Rare & Lifestyle Traits Menu
+
+ # Commander Traits Menu
+
+ # Childhood Traits Menu
+
+ # Personality Traits Menu 1
+
+ # Personality Traits Menu 2
+
+ # Personality Traits Menu 3
+
+ # Personality Traits Menu 4
+
+ # Age & Appearance Tools
+
+ # Utility Actions
+
+ # Punishment Menu
+
+ # Repeat Punishment Actions
+
+ # Punishment Outcome Text
+
+ # Fatal Methods Menu
+
+ # Real Father Check Tooltip
+ # TOOLTIP_FRAMEWORK_REAL_FATHER:0 "\nИстинный отец: [CHARACTER.GetRealFather.GetUIName|0V]" - [TARGET_CHARACTER.GetMother.GetUIName]"
+
+ # Main Utilities Menu Page 2 (Fallback)
+
+ # Province Modifiers Menu
+
+ # War CBs
+
+ toc_main_debug_interaction:0 "Открыть меню отладочных событий"
+ 
+ toc_pregnancy_interaction:0 ": Вызвать беременность"
+ 
+ toc_spawn_character_interaction:0 ": Создать персонажа"
+ 
+ 
+ toc_county_modifier_interaction:0 "Изменить столичное графство"
+ 
+
+ 
+ # tocmod.2040 overflow
+
+ # tocmod.2036 (2033 overflow)
+
+ # tocmod.2051 (2050 overflow)
+
+ # tocmod.2072 (2070 overflow)
+
+ # tocmod.2084 (2080 overflow)
+
+ # tocmod.2090 (2088 overflow)
+

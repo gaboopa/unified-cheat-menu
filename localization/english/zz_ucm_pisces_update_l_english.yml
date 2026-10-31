@@ -7,9 +7,6 @@
  
  # Decision Menu
  yyz_open_menu_decision:0 "Talent Finder Menu"
- yyz_open_menu_decision_desc:0 "Our current plans require specialized expertise. By formalizing our search for talent, we can ensure that our court remains a destination for the elite, providing us with the skills necessary for success."
- yyz_open_menu_decision_confirm:0 "Open Menu"
- yyz_open_menu_decision_tooltip:0 "Initialize the list."
  
  # Traditions
  
@@ -17,7 +14,6 @@
  
  ucm_change_age_interaction:0 "Change Character Age"
   
- siege_weapon_max_size_mult:0 "Max Siege Weapon Size"
   
  
 

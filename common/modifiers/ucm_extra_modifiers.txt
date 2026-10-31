@@ -37,6 +37,25 @@ ucm_extra_lock_legitimacy = {
 	legitimacy_loss_mult = -1
 }
 
+ucm_extra_lock_stress = {
+	icon = social_positive
+	stress_gain_mult = -10
+	stress_loss_mult = -10
+}
+
+ucm_extra_lock_tyranny = {
+	icon = social_positive
+	tyranny_gain_mult = -10
+	tyranny_loss_mult = -10
+}
+
+ucm_extra_lock_dread = {
+	icon = social_positive
+	dread_decay_mult = -10
+	dread_gain_mult = -10
+	dread_loss_mult = -10
+}
+
 ucm_extra_divine_grace = {
 	icon = social_positive
 	character_spiritual_fulfillment_loss_mult = -1

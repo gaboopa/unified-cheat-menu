@@ -8,16 +8,12 @@
 
  # Entscheidungsmenü
  yyz_open_menu_decision:0 "Menü: Talentsuche"
- yyz_open_menu_decision_desc:0 "Unsere Vorhaben erfordern außergewöhnliche Fachkenntnisse. Indem wir gezielt nach Talenten suchen, stellen wir sicher, dass unser Hof ein Anziehungspunkt für die Besten bleibt und uns stets die nötigen Fähigkeiten zur Verfügung stehen."
- yyz_open_menu_decision_confirm:0 "Menü öffnen"
- yyz_open_menu_decision_tooltip:0 "Liste initialisieren."
 
  # Traditionen
 
 
  ucm_change_age_interaction:0 "Alter des Charakters ändern"
 
- siege_weapon_max_size_mult:0 "Maximale Belagerungswaffengröße"
 
  change_govt_steppe_admin:0 "Meritokratischer Khagan werden"
  change_govt_steppe_admin_desc:0 "Lege die alten Traditionen ab und übernimm die meritokratischen Bräuche der Steppe. Herrsche durch Verdienste und Reichtum statt durch Geburt und Aufgebote."

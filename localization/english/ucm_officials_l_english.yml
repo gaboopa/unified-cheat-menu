@@ -82,44 +82,13 @@
  ucm_art.3094.steal_2_tt: "#T [ucm_steal_slot2.GetNameNoTooltip]#!\n[ucm_steal_slot2.GetDescription|F]"
  ucm_art.3094.steal_all: "Steal All Artifacts"
 
- ucm_cnt_popular_surge: "Popular Surge"
 
 
 
 
- ucm_edit_res_domain_p10: "Domain Limit +10"
- ucm_edit_res_domain_p10_desc: "Resource Editor: Increase domain limit."
- ucm_edit_res_domain_p20: "Domain Limit +20"
- ucm_edit_res_domain_p20_desc: "Resource Editor: Increase domain limit."
- ucm_edit_res_domain_p40: "Domain Limit +40"
- ucm_edit_res_domain_p40_desc: "Resource Editor: Increase domain limit."
- ucm_edit_res_domain_p100: "Domain Limit +100"
- ucm_edit_res_domain_p100_desc: "Raise the maximum number of held territories."
- ucm_edit_res_domain_unlimited: "Unlimited Domain Limit"
- ucm_edit_res_domain_unlimited_desc: "Set domain cap to 999. Click repeatedly to refresh."
- ucm_edit_res_domain_m10: "Domain Limit -10"
- ucm_edit_res_domain_m10_desc: "Resource Editor: Decrease domain limit."
- ucm_edit_res_domain_m20: "Domain Limit -20"
- ucm_edit_res_domain_m20_desc: "Resource Editor: Decrease domain limit."
- ucm_edit_res_domain_m40: "Domain Limit -40"
- ucm_edit_res_domain_m40_desc: "Resource Editor: Decrease domain limit."
 
 
 
- ucm_age_menu_hp_n60: "Age Adjustment: Health Sync (Rejuvenated, Strong)"
- ucm_age_menu_hp_n50: "Age Adjustment: Health Sync (Rejuvenated)"
- ucm_age_menu_hp_n40: "Age Adjustment: Health Sync (Rejuvenated)"
- ucm_age_menu_hp_n30: "Age Adjustment: Health Sync (Rejuvenated)"
- ucm_age_menu_hp_n20: "Age Adjustment: Health Sync (Rejuvenated)"
- ucm_age_menu_hp_n10: "Age Adjustment: Health Sync (Rejuvenated)"
- ucm_age_menu_hp_p10: "Age Adjustment: Health Sync (Aged)"
- ucm_age_menu_hp_p20: "Age Adjustment: Health Sync (Aged)"
- ucm_age_menu_hp_p30: "Age Adjustment: Health Sync (Aged)"
- ucm_age_menu_hp_p40: "Age Adjustment: Health Sync (Aged)"
- ucm_age_menu_hp_p50: "Age Adjustment: Health Sync (Aged)"
- ucm_age_menu_hp_p60: "Age Adjustment: Health Sync (Advanced Age, Strong)"
- ucm_age_menu_hp_elder45: "Age Adjustment: Midlife Strain (45+, Increased Age)"
- ucm_age_menu_hp_elder60: "Age Adjustment: Elderly Strain (60+, Increased Age)"
 
 
 

@@ -1,0 +1,7 @@
+﻿NModifier = {
+	STANDARD_MINIMUM_VALUE = 0.0
+}
+
+NProvince = {
+	MAX_BUILDINGS = 1453
+}

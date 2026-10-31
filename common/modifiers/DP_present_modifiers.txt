@@ -28,21 +28,3 @@ no_lifestyle_wanderer = {
 	monthly_wanderer_lifestyle_xp_gain_mult = -10
 }
 
-no_stress_change = {
-	icon = social_positive
-	stress_gain_mult = -10
-	stress_loss_mult = -10
-}
-
-no_tyranny_change = {
-	icon = social_positive
-	tyranny_gain_mult = -10
-	tyranny_loss_mult = -10
-}
-
-no_dread_change = {
-	icon = social_positive
-	dread_decay_mult = -10
-	dread_gain_mult = -10
-	dread_loss_mult = -10
-}

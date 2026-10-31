@@ -1,27 +1,12 @@
 ﻿l_german:
-  trait_boost_stats:0 "Alle Werte steigern"
-  trait_boost_stats_desc:0 "Erhöht alle Attribute um 50."
-  trait_boost_stats_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] ist eine legendäre Gestalt, die mit außergewöhnlichen Fähigkeiten gesegnet wurde."
 
   trait_boost_hufu:0 "Kaiserlicher Autoritätsschub"
   trait_boost_hufu_desc:0 "Um den Preis des eigenen Lebens wird die Kraft von Himmel und Erde genutzt, um die Entscheidungen des Kaisers weiser zu machen und so Ordnung, Stabilität und Wohlstand im Reich zu sichern."
   trait_boost_hufu_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] ist ein großer Kaiser, der sich zum Wohl und Gedeihen seines Reiches selbst aufgeopfert hat."
 
-  trait_boost_dudu1:0 "Militärbefehlshaber"
-  trait_boost_dudu1_desc:0 "General der Fünf Heere – verantwortlich für die militärischen Angelegenheiten an den Grenzen oder in den Provinzen."
-  trait_boost_dudu1_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] ist der oberste Militärbefehlshaber des Herrschers und ein unerschütterlicher Unterstützer des Hauses."
 
-  trait_boost_xueshi1:0 "Ehrengelehrter"
-  trait_boost_xueshi1_desc:0 "Ein Gelehrter der Hanlin-Akademie und Berater des Königs."
-  trait_boost_xueshi1_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] zählt zu den angesehensten Gelehrten und vertrauten Beratern des Königs."
 
-  trait_plague_immunity:0 "Immun gegen Seuchen"
-  trait_plague_immunity_desc:0 "Durch Barbaras Segen wird dieser Charakter niemals an der Pest erkranken."
-  trait_plague_immunity_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] ist gegen die Pest immun."
 
-  trait_zg_buxiu:0 "Unsterblich"
-  trait_zg_buxiu_desc:0 "Dieser Charakter ist unsterblich."
-  trait_zg_buxiu_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] ist unsterblich."
 
   trait_bloodline_god_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] entstammt Barbaras göttlicher Blutlinie."
 
@@ -41,6 +26,3 @@
   trait_zhuge_kill_02_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] wurde vom Auserwählten des Schicksals hingerichtet.\nWenn ein König stirbt, vergeht das Reich; treue Minister fallen auf seinen Befehl."
   trait_zhuge_kill_02_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] wurde vom Auserwählten des Schicksals hingerichtet."
 
-  trait_zhuge_ymbuff_01:0 "Nomadisches Himmelsmandat"
-  trait_zhuge_ymbuff_01_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] ist der vom Himmel bestimmte Anführer des Volkes."
-  trait_zhuge_ymbuff_01_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] ist der vom Himmel bestimmte Anführer des Volkes."

@@ -8,3 +8,19 @@ ucm_holder_list_add_effect = {
     add_to_global_variable_list = { name = $LIST$ target = this }
   }
 }
+
+# Run $UPKEEP$ on the list's living holders of $TRAIT$; collect and then remove the others.
+ucm_holder_upkeep_effect = {
+  every_in_global_list = {
+    variable = $LIST$
+    if = {
+      limit = { is_alive = yes has_trait = $TRAIT$ }
+      $UPKEEP$ = yes
+    }
+    else = { add_to_temporary_list = ucm_stale_holders }
+  }
+  every_in_list = {
+    list = ucm_stale_holders
+    remove_list_global_variable = { name = $LIST$ target = this }
+  }
+}

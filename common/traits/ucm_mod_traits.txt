@@ -1,0 +1,68 @@
+﻿# Traits the menu hands out. Never random, never at birth, never inherited.
+
+ucm_trait_omnipotent = {
+	inherit_chance = 0
+	birth = 0
+	random_creation = 0
+	genetic = no
+	icon = 100_stat_man.dds
+	diplomacy = 100
+	martial = 100
+	stewardship = 100
+	intrigue = 100
+	learning = 100
+	prowess = 100
+}
+
+ucm_trait_challenger = {
+	inherit_chance = 0
+	birth = 0
+	random_creation = 0
+	genetic = no
+	icon = nnn_challenger.dds
+	fertility = 10
+	health = 15
+	monthly_lifestyle_xp_gain_mult = 0.5
+}
+
+ucm_trait_instant_build = {
+	inherit_chance = 0
+	birth = 0
+	random_creation = 0
+	genetic = no
+	icon = build_speed_cheat.dds
+	build_speed = -100
+}
+
+ucm_trait_no_stress = {
+	inherit_chance = 0
+	birth = 0
+	random_creation = 0
+	genetic = no
+	icon = stress_gain_remove.dds
+	stress_gain_mult = -1
+}
+
+ucm_trait_no_tyranny = {
+	inherit_chance = 0
+	birth = 0
+	random_creation = 0
+	genetic = no
+	icon = tyranny_gain_remove.dds
+	tyranny_gain_mult = -1
+}
+
+ucm_trait_undying = {
+	inherit_chance = 0
+	birth = 0
+	random_creation = 0
+	genetic = no
+	icon = zg_buxiu.dds
+	immortal = yes
+	flag = is_immortal
+	flag = immortal_visuals
+	flag = immortal_fertility
+	flag = immortal_incapability
+	no_prowess_loss_from_age = yes
+}
+

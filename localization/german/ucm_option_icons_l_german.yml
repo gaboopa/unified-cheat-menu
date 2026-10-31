@@ -1,6 +1,4 @@
 ﻿l_german:
- ucm_acm_repair.8001.next_page: "@skill_learning_icon! Nächste Seite"
- ucm_acm_repair.8001.prev_page: "@skill_martial_icon! Vorherige Seite"
  ucm_art.3094.next_page: "@skill_learning_icon! Nächste Seite (Weitere Artefakte)"
  ucm_art.3094.prev_page: "@skill_martial_icon! Vorherige Seite"
  ucm_court_positions.8001.opt_mass_player: "@skill_learning_icon! Ämter neu zuweisen (Deine Hofhaltung)"
@@ -28,11 +26,5 @@
  ucm_officials.9084.back: "Zurück zur Bevölkerungsverwaltung"
  ucm_officials.9085.back: "Zurück zur Bevölkerungsverwaltung"
  ucm_cheat_menu.00x.close: "@cross_icon! Schließen"
- ucm_cheat_menu.3093.opt_craft: "@artifact_icon! Artefakt herstellen"
- ucm_cheat_menu.3093.opt_durability: "@artifact_icon! Maximale Haltbarkeit"
- ucm_cheat_menu.3093.opt_durability_tt: "@artifact_icon! Stellt die volle Haltbarkeit aller Artefakte im Inventar und auf der Hofausstellung wieder her. Qualität und Effekte bleiben erhalten."
- ucm_cheat_menu.3093.opt_modify: "@skill_learning_icon! Artefakt bearbeiten"
- ucm_cheat_menu.3093.opt_modify_tt: "@skill_learning_icon! Wähle ein Artefakt aus dem Inventar oder der Hofausstellung aus, um Namen, Beschreibung, Qualität und Modifikatoren zu bearbeiten."
- ucm_cheat_menu.3093.opt_steal: "@scheme_icon! Artefakt stehlen"
  ucm_cheat_menu.page_next: "@skill_learning_icon! Nächste Seite"
  ucm_cheat_menu.page_prev: "@skill_martial_icon! Vorherige Seite"

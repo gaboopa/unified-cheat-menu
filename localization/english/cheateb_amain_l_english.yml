@@ -10,7 +10,6 @@
 
 # \regiment_types (Military)
 
- innovation_privateguard:0 "Bodyguard Innovation"
 
 
 # \modifiers (Character/County Effects)
@@ -25,6 +24,4 @@
  cheateb_defence_modifier:0 "Impenetrable Defenses"
 
 # \religion (Holy Site Effects)
- holy_site_ganzhou_name:0 "Ganzhou"
 
- HEALTH_POINTS_HINT:0 "\nHealth: [CHARACTER.GetHealth|1V]\nFertility: [CHARACTER.GetFertility|%0V]\nStress: [CHARACTER.GetStress|0V]"

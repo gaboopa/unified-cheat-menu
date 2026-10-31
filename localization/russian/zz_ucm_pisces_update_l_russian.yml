@@ -1,22 +1,14 @@
 ﻿l_russian:
  
  # Modifiers
- culture_acceptance_gain_mult:0 "Культурная открытость"
  
  # Decision Menu
  yyz_open_menu_decision:0 "Меню поиска талантов"
  
  # Traditions
- tradition_zz_cultural_polygamy_three_wives_name:0 "Культурное многоженство"
- tradition_zz_cultural_polygamy_three_wives_desc:0 "В этой культуре правители высших рангов по традиции содержат дом с несколькими супругами и наложницами, чтобы обеспечить многочисленность и стабильность своей династии."
  
  
  ucm_change_age_interaction:0 "Изменить возраст персонажа"
-    flag_age_6:0 "6 лет"
-    flag_age_16:0 "16 лет"
-    flag_age_25:0 "25 лет"
-    flag_age_42:0 "42 года"
-    flag_age_64:0 "64 года"
     
  siege_weapon_max_size_mult:0 "Макс. размер осадного оружия"
  
@@ -24,5 +16,3 @@
  change_govt_steppe_admin_tt:0 "Превратить своё владение в Меритократический Каганат."
 
  
- game_concept_wanderer:0 "Странник"
- game_concept_wanderer_desc:0 "Персонаж, живущий без титула, свободно скитающийся по миру."

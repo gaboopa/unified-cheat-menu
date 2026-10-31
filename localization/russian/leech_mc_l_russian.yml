@@ -1,9 +1,0 @@
-﻿l_russian:
- leech_mind_control_interaction:0 "Передача ДНК : Начать взаимодействие"
- leech_mind_control_interaction_desc:0 "Подготовить сцену для [recipient.GetShortUIName]"
- recipient_secondary_leech_mind_control_interaction:0 ""
- leech_mc_end_control_interaction:0 "Завершить взаимодействие с персонажем"
- leech_mc_end_control_interaction_desc:0 "Прекратить взаимодействие с [recipient.GetShortUIName]"
- leech_mc_simple_action_interaction:0 "Установить сцену: перенос лица NPC"
- leech_mc_simple_action_interaction_desc:0 "Контролировать разум [recipient.GetShortUINamePossessiveNoTooltip], чтобы провести простые действия над [secondary_recipient.GetShortUIName]"
- recipient_secondary_leech_mc_simple_action_interaction:0 "Цель"

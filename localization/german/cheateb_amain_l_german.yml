@@ -10,7 +10,6 @@
 
 # \regiment_types (Militär)
 
- innovation_privateguard:0 "Innovation: Leibgarde"
 
 
 # \modifiers (Charakter-/Grafschaftsmodifikatoren)
@@ -25,6 +24,4 @@
  cheateb_defence_modifier:0 "Uneinnehmbare Verteidigung"
 
 # \religion (Effekte Heiliger Stätten)
- holy_site_ganzhou_name:0 "Ganzhou"
 
- HEALTH_POINTS_HINT:0 "\nGesundheit: [CHARACTER.GetHealth|1V]\nFruchtbarkeit: [CHARACTER.GetFertility|%0V]\nStress: [CHARACTER.GetStress|0V]"

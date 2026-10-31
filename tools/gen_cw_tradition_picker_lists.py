@@ -1,4 +1,4 @@
-"""Regenerate common/scripted_effects/ucm_cw_tradition_picker_lists_generated.txt.
+﻿"""Regenerate common/scripted_effects/ucm_cw_tradition_picker_lists_generated.txt.
 
 The tradition picker GUI shows global lists of culture traditions. CK3 has no way to
 iterate the tradition database from script, so the keys are written out here.
@@ -11,7 +11,7 @@ because plain CK3 loads every file in common/scripted_effects and AGOT-only keys
 With --agot-dir, the A Game of Thrones list is written as a separate compatch,
 <out>/tools/out/agot/common/scripted_effects/ucm_cw_tradition_picker_lists_agot_compatch.txt.
 Drop it into an AGOT compat build of the mod, loaded after the main file, so that it replaces the
-stub; ucm_compat_agot_loaded_trigger then selects it at runtime.
+stub.
 
 Run after a CK3 or AGOT update:
     python tools/gen_cw_tradition_picker_lists.py --game-dir <CK3>/game [--agot-dir <workshop>/2962333032] [--out DIR]
@@ -78,7 +78,7 @@ def emit_effect(name, trads):
         keys = sorted(k for k, c in trads.items() if c == cat)
         lines.append(f"  # {cat} ({len(keys)})")
         for k in keys:
-            lines.append(f"  add_to_global_variable_list = {{ name = ucm_cw_{cat}_tradition_list target = culture_tradition:{k} }}")
+            lines.append(f"  ucm_cw_list_tradition = {{ CATEGORY = {cat} KEY = {k} }}")
         lines.append("")
     lines.append("}")
     return lines
@@ -108,21 +108,12 @@ def main():
         "# A Game of Thrones traditions are not listed here (their keys would log errors without AGOT); an AGOT",
         "# compat build replaces ucm_cw_build_tradition_picker_lists_agot_effect with the generated compatch.",
         "",
-        "ucm_cw_build_tradition_picker_lists_effect = {",
-        "  ucm_cw_clear_tradition_picker_lists_effect = yes",
-        "  if = {",
-        "    limit = { ucm_compat_agot_loaded_trigger = yes }",
-        "    ucm_cw_build_tradition_picker_lists_agot_effect = yes",
-        "  }",
-        "  else = {",
-        "    ucm_cw_build_tradition_picker_lists_vanilla_effect = yes",
-        "  }",
-        "}",
+        "ucm_cw_list_tradition = { add_to_global_variable_list = { name = ucm_cw_$CATEGORY$_tradition_list target = culture_tradition:$KEY$ } }",
+        "",
+        "ucm_cw_build_tradition_picker_lists_effect = { ucm_cw_clear_tradition_picker_lists_effect = yes ucm_cw_build_tradition_picker_lists_agot_effect = yes }",
         "",
         "# Stub: the AGOT compatch redefines this with the AGOT tradition list.",
-        "ucm_cw_build_tradition_picker_lists_agot_effect = {",
-        "  ucm_cw_build_tradition_picker_lists_vanilla_effect = yes",
-        "}",
+        "ucm_cw_build_tradition_picker_lists_agot_effect = { ucm_cw_build_tradition_picker_lists_vanilla_effect = yes }",
         "",
     ]
     out += emit_effect("ucm_cw_build_tradition_picker_lists_vanilla_effect", vanilla)

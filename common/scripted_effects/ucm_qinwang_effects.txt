@@ -115,16 +115,8 @@ ucm_seduce_shield_enforce_global_ai_fidelity_rules_effect = {
         limit = { is_married = yes }
         every_relation = {
           type = lover
-          limit = {
-            NOR = {
-              scope:ucm_global_fid_ai = { is_spouse_of = this }
-              scope:ucm_global_fid_ai = { is_concubine_of = this }
-              this = { is_concubine_of = scope:ucm_global_fid_ai }
-            }
-          }
-          scope:ucm_global_fid_ai = {
-            remove_relation_lover = this
-          }
+          limit = { NOT = { is_consort_of = scope:ucm_global_fid_ai } }
+          scope:ucm_global_fid_ai = { remove_relation_lover = this }
         }
       }
     }

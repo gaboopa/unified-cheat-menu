@@ -387,7 +387,7 @@ def activities_legends():
     items.append(("row", [sg(f"ucm_estate_{p}", n, f"Apply the {n.lower()} estate preset to the target's domicile.", estate,
                              f"{TG} = {{ ucm_domicile_preset_{p}_effect = yes }}") for p, n in (("economy", "Economic"), ("military", "Military"), ("balanced", "Balanced"))]))
     items.append(h("UCM_SEC_LEGEND_MAKER", "Create a Legend for the Target"))
-    items.append(sg_item("ucm_legend_clear", "Clear Target's Legends", "Remove the legends the target owns.", T, f"{setup} ucm_legend_master_clear_owned_legends_effect = yes"))
+    items.append(sg_item("ucm_legend_clear", "Clear Target's Legends", "Stop the target promoting a legend. CK3 has no way to delete one.", T, f"{setup} ucm_legend_master_clear_owned_legends_effect = yes"))
     with open(os.path.join(MOD, "common", "scripted_effects", "ucm_legend_master_effects.txt"), encoding="utf-8-sig") as fh:
         keys = sorted(set(re.findall(r"(?m)^ucm_legend_master_add_(\w+)_effect\s*=", fh.read())))
     row = []

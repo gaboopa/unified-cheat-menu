@@ -1,4 +1,4 @@
-"""Generate the faith editor's data effects from the CK3 1.20 religion databases.
+﻿"""Generate the faith editor's data effects from the CK3 1.20 religion databases.
 
 Writes common/scripted_effects/ucm_acm_faith_editor_data_effects.txt (vanilla + this mod). gen_ek2_compatch.py
 calls build() for the Elder Kings 2 version in compat/ek2/.
@@ -71,7 +71,7 @@ def build(dirs, header):
 
     # What the selected faith's main rite has now.
     L += ["ucm_acm_faith_refresh_display_lists_effect = {", "  if = {", "    limit = { has_variable = ucm_selected_faith_var }"]
-    L += [f"    clear_global_variable_list = ucm_acm_fe_display_{n}" for n in ["core_tenets"] + CATEGORIES]
+    L.append("    " + " ".join(f"clear_global_variable_list = ucm_acm_fe_display_{n}" for n in ["core_tenets"] + CATEGORIES))
     L.append("    var:ucm_selected_faith_var = { main_rite = { save_scope_as = ucm_fe_rite } }")
     for t in tenets:
         L += ["    if = {", f"      limit = {{ scope:ucm_fe_rite = {{ rite_has_tenet = {t} }} }}"]
@@ -93,9 +93,7 @@ def build(dirs, header):
     picks = [tenets] + [ds for c in CATEGORIES for _, ds in shown[c]]
     L += ["ucm_acm_faith_fill_choices_effect = {", "  clear_global_variable_list = ucm_acm_fe_pick_current"]
     for i, ds in enumerate(picks):
-        L += [f"  {'if' if i == 0 else 'else_if'} = {{", "    limit = {", "      OR = {"]
-        L += [f"        {KEY} = flag:{d}" for d in ds]
-        L += ["      }", "    }"]
+        L += [f"  {'if' if i == 0 else 'else_if'} = {{", "    limit = { OR = { " + " ".join(f"{KEY} = flag:{d}" for d in ds) + " } }"]
         for d in ds:
             add(L, "    ", "ucm_acm_fe_pick_current", d)
         L.append("  }")

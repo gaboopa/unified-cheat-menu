@@ -90,7 +90,6 @@ ucm_trait_editor_toggle_age_pill_effect = {
     }
     ucm_trait_editor_make_young_effect = yes
     add_trait = $TRAIT$
-    ucm_traits_authorize_recipient_if_player_actor_effect = yes
   }
 }
 

@@ -1,13 +1,3 @@
-﻿# 窃宝列表翻页：当前页起始下标 = 页号 × 3（与 ucm_cheat_menu.3094 每页选项数一致）
-
-ucm_steal_page_offset_value = {
-  value = var:ucm_steal_page
-  multiply = 3
-}
-
-ucm_steal_next_page_min_total_value = {
-  value = var:ucm_steal_page
-  add = 1
-  multiply = 3
-}
-
+﻿# The steal picker shows 3 artifacts per page (ucm_cheat_menu.3094).
+ucm_steal_page_offset_value = { value = var:ucm_steal_page multiply = 3 }
+ucm_steal_next_page_min_total_value = { value = ucm_steal_page_offset_value add = 3 }

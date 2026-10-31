@@ -11,12 +11,7 @@ ucm_positions_spawn_one_generic_courtier_for_pos_reshuffle_effect = {
       age = 28
       random_traits = no
       dynasty = none
-      diplomacy = { min_template_average_skill max_template_high_skill }
-      martial = { min_template_average_skill max_template_high_skill }
-      stewardship = { min_template_average_skill max_template_high_skill }
-      intrigue = { min_template_average_skill max_template_high_skill }
-      learning = { min_template_average_skill max_template_high_skill }
-      prowess = { min_template_average_skill max_template_high_skill }
+      diplomacy = { min_template_average_skill max_template_high_skill } martial = { min_template_average_skill max_template_high_skill } stewardship = { min_template_average_skill max_template_high_skill } intrigue = { min_template_average_skill max_template_high_skill } learning = { min_template_average_skill max_template_high_skill } prowess = { min_template_average_skill max_template_high_skill }
       save_scope_as = ucm_pos_spawned
     }
   }

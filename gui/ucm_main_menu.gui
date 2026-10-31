@@ -299,19 +299,6 @@ window = {
                 onclick = "[GetScriptedGui( 'ucm_open_lifestyle_editor' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
             }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'daddy_pika_edit_character' )]"
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'daddy_pika_edit_character' )]"
-                text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'daddy_pika_edit_character' )]"
-                tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'daddy_pika_edit_character' )]"
-                onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'daddy_pika_edit_character' )]"
-              }
-            }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_IDENTITY" using = Font_Size_Medium default_format = "#high" }
             hbox = {
               layoutpolicy_horizontal = expanding
@@ -1118,20 +1105,6 @@ window = {
                 onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'set_all_in_one_interaction' )]"
               }
             }
-            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_RESOURCES" using = Font_Size_Medium default_format = "#high" }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              visible = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionShown( 'daddy_pika_character_currency_menu' )]"
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                enabled = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.IsPlayerInteractionValid( 'daddy_pika_character_currency_menu' )]"
-                text = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionName( 'daddy_pika_character_currency_menu' )]"
-                tooltip = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.GetPlayerInteractionTooltip( 'daddy_pika_character_currency_menu' )]"
-                onclick = "[GetPlayer.MakeScope.Var( 'ucm_target' ).Char.OpenPlayerInteraction( 'daddy_pika_character_currency_menu' )]"
-              }
-            }
             button_standard = {
               layoutpolicy_horizontal = expanding
               size = { 0 30 }
@@ -1515,6 +1488,268 @@ window = {
                 tooltip = "ucm_res_barter_up_tt"
                 enabled = "[GetScriptedGui( 'ucm_res_barter_up' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_res_barter_up' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_res_herd_down" using = Font_Size_Small }
+                tooltip = "ucm_res_herd_down_tt"
+                enabled = "[GetScriptedGui( 'ucm_res_herd_down' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_res_herd_down' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_res_herd_up" using = Font_Size_Small }
+                tooltip = "ucm_res_herd_up_tt"
+                enabled = "[GetScriptedGui( 'ucm_res_herd_up' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_res_herd_up' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+            }
+            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_IDENTITY_EXTRA" using = Font_Size_Medium default_format = "#high" }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_rename_target" using = Font_Size_Small }
+                tooltip = "ucm_rename_target_tt"
+                enabled = "[GetScriptedGui( 'ucm_rename_target' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_rename_target' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+            }
+            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_MOD_TRAITS" using = Font_Size_Medium default_format = "#high" }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_mod_trait_100_stat_man" using = Font_Size_Small }
+                tooltip = "ucm_mod_trait_100_stat_man_tt"
+                enabled = "[GetScriptedGui( 'ucm_mod_trait_100_stat_man' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_mod_trait_100_stat_man' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_mod_trait_nnn_challenger" using = Font_Size_Small }
+                tooltip = "ucm_mod_trait_nnn_challenger_tt"
+                enabled = "[GetScriptedGui( 'ucm_mod_trait_nnn_challenger' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_mod_trait_nnn_challenger' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_mod_trait_build_speed_cheat" using = Font_Size_Small }
+                tooltip = "ucm_mod_trait_build_speed_cheat_tt"
+                enabled = "[GetScriptedGui( 'ucm_mod_trait_build_speed_cheat' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_mod_trait_build_speed_cheat' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_mod_trait_stress_gain_remove" using = Font_Size_Small }
+                tooltip = "ucm_mod_trait_stress_gain_remove_tt"
+                enabled = "[GetScriptedGui( 'ucm_mod_trait_stress_gain_remove' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_mod_trait_stress_gain_remove' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_mod_trait_tyranny_gain_remove" using = Font_Size_Small }
+                tooltip = "ucm_mod_trait_tyranny_gain_remove_tt"
+                enabled = "[GetScriptedGui( 'ucm_mod_trait_tyranny_gain_remove' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_mod_trait_tyranny_gain_remove' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_mod_trait_gigasuperseed" using = Font_Size_Small }
+                tooltip = "ucm_mod_trait_gigasuperseed_tt"
+                enabled = "[GetScriptedGui( 'ucm_mod_trait_gigasuperseed' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_mod_trait_gigasuperseed' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_mod_trait_borntorule_seed" using = Font_Size_Small }
+                tooltip = "ucm_mod_trait_borntorule_seed_tt"
+                enabled = "[GetScriptedGui( 'ucm_mod_trait_borntorule_seed' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_mod_trait_borntorule_seed' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_mod_trait_sneed_seed" using = Font_Size_Small }
+                tooltip = "ucm_mod_trait_sneed_seed_tt"
+                enabled = "[GetScriptedGui( 'ucm_mod_trait_sneed_seed' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_mod_trait_sneed_seed' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_mod_trait_blood_art_1" using = Font_Size_Small }
+                tooltip = "ucm_mod_trait_blood_art_1_tt"
+                enabled = "[GetScriptedGui( 'ucm_mod_trait_blood_art_1' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_mod_trait_blood_art_1' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_mod_trait_blood_knight_1" using = Font_Size_Small }
+                tooltip = "ucm_mod_trait_blood_knight_1_tt"
+                enabled = "[GetScriptedGui( 'ucm_mod_trait_blood_knight_1' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_mod_trait_blood_knight_1' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_mod_trait_blood_knight_2" using = Font_Size_Small }
+                tooltip = "ucm_mod_trait_blood_knight_2_tt"
+                enabled = "[GetScriptedGui( 'ucm_mod_trait_blood_knight_2' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_mod_trait_blood_knight_2' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_mod_trait_blood_knight_3" using = Font_Size_Small }
+                tooltip = "ucm_mod_trait_blood_knight_3_tt"
+                enabled = "[GetScriptedGui( 'ucm_mod_trait_blood_knight_3' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_mod_trait_blood_knight_3' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_mod_trait_blood_knight_4" using = Font_Size_Small }
+                tooltip = "ucm_mod_trait_blood_knight_4_tt"
+                enabled = "[GetScriptedGui( 'ucm_mod_trait_blood_knight_4' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_mod_trait_blood_knight_4' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_mod_trait_blood_ancester_1" using = Font_Size_Small }
+                tooltip = "ucm_mod_trait_blood_ancester_1_tt"
+                enabled = "[GetScriptedGui( 'ucm_mod_trait_blood_ancester_1' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_mod_trait_blood_ancester_1' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_mod_trait_blood_ancester_2" using = Font_Size_Small }
+                tooltip = "ucm_mod_trait_blood_ancester_2_tt"
+                enabled = "[GetScriptedGui( 'ucm_mod_trait_blood_ancester_2' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_mod_trait_blood_ancester_2' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_mod_trait_blood_ancester_4" using = Font_Size_Small }
+                tooltip = "ucm_mod_trait_blood_ancester_4_tt"
+                enabled = "[GetScriptedGui( 'ucm_mod_trait_blood_ancester_4' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_mod_trait_blood_ancester_4' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_mod_trait_blood_ancester_5" using = Font_Size_Small }
+                tooltip = "ucm_mod_trait_blood_ancester_5_tt"
+                enabled = "[GetScriptedGui( 'ucm_mod_trait_blood_ancester_5' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_mod_trait_blood_ancester_5' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_mod_trait_blood_ancester_6" using = Font_Size_Small }
+                tooltip = "ucm_mod_trait_blood_ancester_6_tt"
+                enabled = "[GetScriptedGui( 'ucm_mod_trait_blood_ancester_6' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_mod_trait_blood_ancester_6' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_mod_trait_blood_ancester_7" using = Font_Size_Small }
+                tooltip = "ucm_mod_trait_blood_ancester_7_tt"
+                enabled = "[GetScriptedGui( 'ucm_mod_trait_blood_ancester_7' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_mod_trait_blood_ancester_7' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_mod_trait_blood_ancester_8" using = Font_Size_Small }
+                tooltip = "ucm_mod_trait_blood_ancester_8_tt"
+                enabled = "[GetScriptedGui( 'ucm_mod_trait_blood_ancester_8' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_mod_trait_blood_ancester_8' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_mod_trait_blood_ancester_9" using = Font_Size_Small }
+                tooltip = "ucm_mod_trait_blood_ancester_9_tt"
+                enabled = "[GetScriptedGui( 'ucm_mod_trait_blood_ancester_9' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_mod_trait_blood_ancester_9' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_mod_trait_blood_ancester_10" using = Font_Size_Small }
+                tooltip = "ucm_mod_trait_blood_ancester_10_tt"
+                enabled = "[GetScriptedGui( 'ucm_mod_trait_blood_ancester_10' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_mod_trait_blood_ancester_10' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_mod_trait_blood_ancester_11" using = Font_Size_Small }
+                tooltip = "ucm_mod_trait_blood_ancester_11_tt"
+                enabled = "[GetScriptedGui( 'ucm_mod_trait_blood_ancester_11' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_mod_trait_blood_ancester_11' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_max_learned_trait_xp" using = Font_Size_Small }
+                tooltip = "ucm_max_learned_trait_xp_tt"
+                enabled = "[GetScriptedGui( 'ucm_max_learned_trait_xp' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_max_learned_trait_xp' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
             }
           }

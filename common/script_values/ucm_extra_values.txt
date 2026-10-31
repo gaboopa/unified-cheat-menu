@@ -15,3 +15,33 @@ ucm_spawn_female_chance_value = {
 	value = 0
 	if = { limit = { has_character_flag = ucm_spawn_female } value = 100 }
 }
+
+ucm_spawn_diplomacy_value = {
+	value = 0
+	if = { limit = { has_variable = ucm_spawn_diplomacy } value = var:ucm_spawn_diplomacy }
+}
+
+ucm_spawn_martial_value = {
+	value = 0
+	if = { limit = { has_variable = ucm_spawn_martial } value = var:ucm_spawn_martial }
+}
+
+ucm_spawn_stewardship_value = {
+	value = 0
+	if = { limit = { has_variable = ucm_spawn_stewardship } value = var:ucm_spawn_stewardship }
+}
+
+ucm_spawn_intrigue_value = {
+	value = 0
+	if = { limit = { has_variable = ucm_spawn_intrigue } value = var:ucm_spawn_intrigue }
+}
+
+ucm_spawn_learning_value = {
+	value = 0
+	if = { limit = { has_variable = ucm_spawn_learning } value = var:ucm_spawn_learning }
+}
+
+ucm_spawn_prowess_value = {
+	value = 0
+	if = { limit = { has_variable = ucm_spawn_prowess } value = var:ucm_spawn_prowess }
+}

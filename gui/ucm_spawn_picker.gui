@@ -1,0 +1,116 @@
+﻿window = {
+  name = "ucm_spawn_picker_window"
+  parentanchor = right|vcenter
+  size = { 500 720 }
+  layer = top
+  movable = yes
+  alwaystransparent = no
+  filter_mouse = all
+  visible = "[And( GetVariableSystem.Exists( 'ucm_spawn_picker' ), GetScriptedGui( 'ucm_menu_visible' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End ) )]"
+  widget = {
+    size = { 100% 100% }
+    background = { using = Background_Area_Dark alpha = 1.0 }
+  }
+  vbox = {
+    using = Window_Margins
+    layoutpolicy_horizontal = expanding
+    layoutpolicy_vertical = expanding
+    spacing = 6
+    header_pattern = {
+      layoutpolicy_horizontal = expanding
+      blockoverride "header_text" { text = "UCM_SPAWN_PICKER" }
+      blockoverride "button_close" { onclick = "[GetVariableSystem.Toggle( 'ucm_spawn_picker' )]" }
+    }
+    text_single = { layoutpolicy_horizontal = expanding text = "UCM_MENU_TARGET" }
+    text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_SPAWN_PICKER_NOTE" default_format = "#low" }
+    hbox = {
+      layoutpolicy_horizontal = expanding
+      spacing = 6
+      state = { name = _show on_start = "[GetScriptedGui('ucm_spawn_lists_load').Execute(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]" }
+      text_single = { text = "UCM_SPAWN_CULTURE_LABEL" default_format = "#high" }
+      text_single = { layoutpolicy_horizontal = expanding visible = "[GetPlayer.MakeScope.Var('ucm_spawn_culture').IsSet]" raw_text = "[GetPlayer.MakeScope.Var('ucm_spawn_culture').Culture.GetNameNoTooltip]" }
+      text_single = { layoutpolicy_horizontal = expanding visible = "[Not(GetPlayer.MakeScope.Var('ucm_spawn_culture').IsSet)]" text = "UCM_SPAWN_TARGETS" }
+      button_standard = { size = { 130 28 } tooltip = "ucm_spawn_culture_clear_tt" enabled = "[GetScriptedGui('ucm_spawn_culture_clear').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]" onclick = "[GetScriptedGui('ucm_spawn_culture_clear').Execute(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]" text_single = { parentanchor = center text = "ucm_spawn_culture_clear" } }
+    }
+    scrollbox = {
+      layoutpolicy_horizontal = expanding
+      layoutpolicy_vertical = expanding
+      blockoverride "scrollbox_content" {
+        vbox = {
+          layoutpolicy_horizontal = expanding
+          datamodel = "[GetGlobalList('ucm_acm_heritage_list_all')]"
+          item = {
+            vbox = {
+              layoutpolicy_horizontal = expanding
+              datacontext = "[Scope.Culture.GetHeritage]"
+              button_standard_hover = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                onclick = "[GetVariableSystem.Toggle(ConcatIfNeitherEmpty(CulturePillar.GetNameNoTooltip,'children_visible'))]"
+                text_single = { parentanchor = vcenter|left position = { 8 0 } text = "[CulturePillar.GetNameNoTooltip]" default_format = "#high" }
+              }
+              vbox = {
+                layoutpolicy_horizontal = expanding
+                margin_left = 12
+                datamodel = "[CulturePillar.GetCulturesWithPillar]"
+                visible = "[GetVariableSystem.Exists(ConcatIfNeitherEmpty(CulturePillar.GetNameNoTooltip,'children_visible'))]"
+                item = {
+                  button_standard_hover = {
+                    layoutpolicy_horizontal = expanding
+                    size = { 0 28 }
+                    onclick = "[GetScriptedGui('ucm_spawn_pick_culture').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('selected_culture', Culture.MakeScope).End)]"
+                    text_single = { parentanchor = vcenter|left position = { 8 0 } text = "[Culture.GetNameNoTooltip]" default_format = "#clickable" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    hbox = {
+      layoutpolicy_horizontal = expanding
+      spacing = 6
+      text_single = { text = "UCM_SPAWN_FAITH_LABEL" default_format = "#high" }
+      text_single = { layoutpolicy_horizontal = expanding visible = "[GetPlayer.MakeScope.Var('ucm_spawn_faith').IsSet]" raw_text = "[GetPlayer.MakeScope.Var('ucm_spawn_faith').Faith.GetNameNoTooltip]" }
+      text_single = { layoutpolicy_horizontal = expanding visible = "[Not(GetPlayer.MakeScope.Var('ucm_spawn_faith').IsSet)]" text = "UCM_SPAWN_TARGETS" }
+      button_standard = { size = { 130 28 } tooltip = "ucm_spawn_faith_clear_tt" enabled = "[GetScriptedGui('ucm_spawn_faith_clear').IsValid(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]" onclick = "[GetScriptedGui('ucm_spawn_faith_clear').Execute(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]" text_single = { parentanchor = center text = "ucm_spawn_faith_clear" } }
+    }
+    scrollbox = {
+      layoutpolicy_horizontal = expanding
+      layoutpolicy_vertical = expanding
+      blockoverride "scrollbox_content" {
+        vbox = {
+          layoutpolicy_horizontal = expanding
+          datamodel = "[GetGlobalList('ucm_acm_religion_list_all')]"
+          item = {
+            vbox = {
+              layoutpolicy_horizontal = expanding
+              datacontext = "[Scope.Religion]"
+              button_standard_hover = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                onclick = "[GetVariableSystem.Toggle(ConcatIfNeitherEmpty(Religion.GetNameNoTooltip,'children_visible'))]"
+                text_single = { parentanchor = vcenter|left position = { 8 0 } text = "[Religion.GetNameNoTooltip]" default_format = "#high" }
+              }
+              vbox = {
+                layoutpolicy_horizontal = expanding
+                margin_left = 12
+                datamodel = "[Religion.GetFaiths]"
+                visible = "[GetVariableSystem.Exists(ConcatIfNeitherEmpty(Religion.GetNameNoTooltip,'children_visible'))]"
+                item = {
+                  button_standard_hover = {
+                    layoutpolicy_horizontal = expanding
+                    size = { 0 28 }
+                    onclick = "[GetScriptedGui('ucm_spawn_pick_faith').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('selected_faith', Faith.MakeScope).End)]"
+                    text_single = { parentanchor = vcenter|left position = { 8 0 } text = "[Faith.GetNameNoTooltip]" default_format = "#clickable" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

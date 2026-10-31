@@ -21,25 +21,6 @@ ucm_open_trait_editor_decision = {
 	ai_will_do = 0
 }
 
-ucm_open_cheat_trait_editor_decision = {
-	category = interaction_category_uncategorized
-	interface_priority = 11890
-	common_interaction = yes
-	auto_accept = yes
-	use_diplomatic_range = no
-	ignores_pending_interaction_block = yes
-	icon = debug_chars
-	desc = ucm_open_cheat_trait_editor_decision_desc
-	is_shown = { ucm_single_player_trigger = yes 
-		scope:actor = { is_ai = no has_character_flag = ucm_character_interaction_menu_open }
-		scope:recipient = { is_alive = yes }
-	}
-	is_valid = { always = yes }
-	can_send = { always = yes }
-	on_accept = { ucm_cheat_menu_open_new_traits_effect = yes }
-	ai_will_do = 0
-}
-
 ucm_open_lifestyle_editor_decision = {
 	category = interaction_category_uncategorized
 	interface_priority = 11880

@@ -11,36 +11,6 @@ ucm_on_pregnancy_mother_clear_bgp = {
   }
 }
 
-on_birth_child = {
-  on_actions = {
-    ucm_stealth_fp_birth_genes_pulse
-  }
-}
-
-ucm_stealth_fp_birth_genes_pulse = {
-  trigger = { ucm_single_player_trigger = yes 
-    scope:mother = {
-      has_variable = ucm_stealth_fp_bio_dad
-    }
-    scope:child = {
-      is_alive = yes
-    }
-  }
-  effect = {
-    scope:child = {
-      ucm_stealth_fp_birth_ensure_player_genes_effect = yes
-    }
-    scope:mother = {
-      if = {
-        limit = {
-          is_pregnant = no
-        }
-        remove_variable = ucm_stealth_fp_bio_dad
-      }
-    }
-  }
-}
-
 # 只挂接 on_actions 列表（可叠加），不直接写 effect，避免覆盖原版/AGOT 的开局 effect
 on_game_start = {
   on_actions = { ucm_cheat_menu_game_start }
@@ -63,8 +33,7 @@ ucm_cheat_menu_game_start = {
       remove_character_flag = toc_showtextrasflag
       remove_character_flag = ucm_acm_gui_open
       remove_character_flag = ucm_acm_repair_gui_open
-      remove_character_flag = ucm_trait_gui_open
-      remove_character_flag = ucm_cheat_trait_gui_open
+      remove_character_flag = ucm_trait_editor_open
       remove_character_flag = ucm_lifestyle_open
     }
     if = {
@@ -94,8 +63,7 @@ ucm_cheat_menu_after_lobby = {
       remove_character_flag = toc_showtextrasflag
       remove_character_flag = ucm_acm_gui_open
       remove_character_flag = ucm_acm_repair_gui_open
-      remove_character_flag = ucm_trait_gui_open
-      remove_character_flag = ucm_cheat_trait_gui_open
+      remove_character_flag = ucm_trait_editor_open
       remove_character_flag = ucm_lifestyle_open
     }
     if = {

@@ -280,7 +280,7 @@ def build_effects(by):
     return f"""{HEADER}
 
 ucm_army_spawner_open_effect = {{
-  ucm_military_ensure_target_effect = yes
+  ucm_cheat_menu_sync_target_effect = yes
   add_character_flag = ucm_army_spawner_open
   if = {{
     limit = {{ NOT = {{ has_variable = ucm_army_size }} }}
@@ -291,15 +291,11 @@ ucm_army_spawner_open_effect = {{
 ucm_army_spawner_close_effect = {{
   remove_character_flag = ucm_army_spawner_open
   remove_variable = ucm_army_pick
-  if = {{
-    limit = {{ has_global_variable = ucm_cheat_menu_recipient }}
-    ucm_military_reopen_3085_effect = yes
-  }}
 }}
 
 # Scope = player, the pick and the size live on the player.
 ucm_army_spawner_spawn_effect = {{
-  ucm_military_ensure_target_effect = yes
+  ucm_cheat_menu_sync_target_effect = yes
   if = {{
     limit = {{ exists = scope:ucm_cheat_menu_target }}
     ucm_army_spawner_dispatch_effect = yes

@@ -18,7 +18,7 @@ MIN_LINE = 13
 MOD_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEXT = (".txt", ".gui", ".yml")
 EXEMPT = {"LICENSE", "README.md", "tools/audit_baseline.py"}
-IDENT = re.compile(r"skonester|\bskone_|\bDP_|\bdp_|daddy_?pika|\byyz_|\bpcm_|\bzhuge_|\bzhueg_|\w*_0?toc\w*|\btoc_|tocmod", re.I)
+IDENT = re.compile(r"skonester|\bskone_|\bDP_|\bdp_|daddy_?pika|\byyz_|\bpcm_|\bzhuge_|\bzhueg_|\w*_0?toc(?![a-z])\w*|\btoc_|tocmod", re.I)
 
 
 def git(*args):
@@ -92,18 +92,20 @@ def main():
     prefixes = tuple(p.replace("\\", "/").rstrip("/") for p in args.paths or [])
     fails = []
     # Working-tree contents, so a worker can audit before committing.
-    for path in git("ls-files", "-z").decode("utf8").split("\0"):
-        if not path or (prefixes and not path.startswith(prefixes)):
+    for path in git("ls-files", "-z", "--cached", "--others", "--exclude-standard").decode("utf8").split("\0"):
+        if not path or (prefixes and not any(path == p or path.startswith(p + "/") for p in prefixes)):
             continue
         full = os.path.join(MOD_DIR, path)
-        if not os.path.exists(full):
+        if path.startswith(".claude/") or not os.path.isfile(full):
             continue
         reasons, exempt = [], path in EXEMPT
         with open(full, "rb") as fh:
             raw = fh.read()
-        blob = subprocess.run(["git", "-C", MOD_DIR, "hash-object", "--no-filters", "--stdin"], input=raw,
-                              capture_output=True, check=True).stdout.decode().strip()
-        if blob in old_blobs and not exempt:
+        # Baseline blobs are LF or CRLF depending on the file, so try both.
+        blobs = {subprocess.run(["git", "-C", MOD_DIR, "hash-object", "--no-filters", "--stdin"], input=form,
+                                capture_output=True, check=True).stdout.decode().strip()
+                 for form in (raw, raw.replace(b"\r\n", b"\n"))}
+        if blobs & old_blobs and not exempt:
             reasons.append("identical to baseline")
         text = raw.decode("utf8", "replace")
         score = 0

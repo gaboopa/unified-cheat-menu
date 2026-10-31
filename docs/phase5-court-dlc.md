@@ -36,17 +36,15 @@ Many of these baseline interactions are debug-only. Their buttons only appear wi
 ## Settings & Utilities
 
 - **This Menu:** clear second character; reset menu (also resets step to 1).
-- **Classic Menus:** the original event-based main menu, the decision sub-menu editor and the mod information decision.
 - **Debug Mode:** debug mode helper.
 
 ## Not done
 
-- **Spec 4.9 activity costs, phase skipping and inspiration completion:** no baseline tools were found beyond the linked interactions. The classic event menu has activity cheats.
-- **Government-specific systems** beyond those listed are reachable through the classic menus.
+- **Spec 4.9 activity costs, phase skipping and inspiration completion:** no baseline tools were found beyond the linked interactions.
+- **Government-specific systems** beyond those listed are not covered.
 
 ## In-game test checklist
 
 1. Court: appoint an NPC as chancellor from the menu. They take the seat.
 2. DLC: on an adult NPC ruler, Start Regency → Make Second Character the Diarch. Their diarchy shows the second character.
-3. Settings → Classic Menus: the event main menu opens.
 4. Check `error.log` for `ucm_` lines.

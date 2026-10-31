@@ -39,37 +39,12 @@ ucm_picker_apply_effect = {
 
 # --- Culture ------------------------------------------------------------------------------------------
 
-ucm_restore_ucm_selected_culture_scope_effect = {
-  if = {
-    limit = { has_variable = ucm_selected_culture_var }
-    var:ucm_selected_culture_var = { save_scope_as = ucm_selected_culture }
-  }
-}
-
 ucm_open_acm_culture_picker_effect = {
-  ucm_cheat_menu_sync_target_effect = yes
-  if = {
-    limit = {
-      exists = scope:ucm_cheat_menu_target
-      scope:ucm_cheat_menu_target = { exists = culture }
-    }
-    set_variable = { name = ucm_selected_culture_var value = scope:ucm_cheat_menu_target.culture }
-  }
   ucm_picker_fill_heritages_effect = yes
   add_character_flag = ucm_acm_culture_picker_open
 }
 
-# Opens the selected culture's vanilla window.
-ucm_acm_open_culture_vanilla_editor_effect = {
-  if = {
-    limit = { has_variable = ucm_selected_culture_var }
-    add_character_flag = ucm_culture_vanilla_edit_toolbar
-    var:ucm_selected_culture_var = { open_view_data = { view = culture_window } }
-  }
-}
-
 ucm_picker_pick_culture_effect = {
-  set_variable = { name = ucm_selected_culture_var value = scope:selected_culture }
   ucm_picker_apply_effect = { SET = set_culture PICK = selected_culture }
 }
 

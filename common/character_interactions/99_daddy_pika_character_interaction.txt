@@ -1,66 +1,4 @@
-﻿#角色编辑器 Thanks to Zhuge for all his work editing this
-daddy_pika_edit_character = {
-    category = interaction_category_uncategorized
-    desc = daddy_pika_edit_character_desc
-    common_interaction = yes
-    needs_recipient_to_open = no
-	icon = legend
-	interface_priority = 10993
-
-    auto_accept = yes
-    use_diplomatic_range = no
-    ignores_pending_interaction_block = yes
-	
-    is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
-        scope:actor = {
-            has_character_flag = bone_cheat_interactions_flag
-            is_ai = no
-        }
-    }
-	
-    on_send = {
-        scope:recipient = {
-            save_scope_as = char_editor
-        }
-        scope:actor = {
-            save_scope_as = char_editor_actor
-            trigger_event = dp_char_editor.1000
-        }
-    }
-}
-
-#货币菜单
-daddy_pika_character_currency_menu = {
-    category = interaction_category_uncategorized
-    desc = daddy_pika_character_currency_menu_desc
-    common_interaction = yes
-	icon = icon_gold
-	interface_priority = 10994
-
-    auto_accept = yes
-    use_diplomatic_range = no
-    ignores_pending_interaction_block = yes
-	
-    is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
-        scope:actor = {
-            is_ai = no
-            has_character_flag = bone_cheat_interactions_flag
-        }
-    }
-	
-    on_send = {
-        scope:recipient = {
-            save_scope_as = currency_scope
-        }
-        scope:actor = {
-            trigger_event = dp_char_interactions.10
-        }
-    }
-}
-
-daddy_pika_change_character = {
+﻿daddy_pika_change_character = {
 	category = interaction_category_uncategorized
 	interface_priority = 10988
 	desc = daddy_pika_change_character_desc
@@ -1277,32 +1215,6 @@ daddy_pika_impregnate_cheat = {
 
 	auto_accept = yes
 }
-
-### ATTEMPTING SLEEP WITH CHARACTER INTERACTION ###
-
-dp_sex_interaction = { #一起睡觉
-    category = interaction_category_uncategorized
-    use_diplomatic_range = no
-    ignores_pending_interaction_block = yes
-    icon = legend
-    interface_priority = 8983
-
-    is_shown = { ucm_single_player_trigger = yes 
-    	scope:actor = { has_character_flag = ucm_character_interaction_menu_open }
-        NOT = { scope:recipient = scope:actor }
-        scope:actor = {
-            is_ai = no
-            has_character_flag = bone_cheat_interactions_flag
-        }
-        scope:recipient = {
-            is_female = yes  # 确保目标角色是女性
-        }
-    }
-
-    on_accept = { scope:actor = { trigger_event = dp_char_interactions.11 } }
-    auto_accept = yes
-}
-
 
 #获得强牵制
 daddy_pika_add_strong_hook = {

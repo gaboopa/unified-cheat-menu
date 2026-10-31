@@ -64,11 +64,14 @@ def definitions(root):
 
 def tabs_problems(root):
     """Problems from the menu's source of truth, as (kind, name) pairs to check against definitions."""
-    try:
-        tabs = runpy.run_path(os.path.join(root, "tools", "gen_ucm_main_menu.py"), run_name="check_refs")["TABS"]
-    except Exception as e:
-        print(f"note: could not load TABS from {root}: {e}", file=sys.stderr)
+    gen = os.path.join(root, "tools", "gen_ucm_main_menu.py")
+    if not os.path.exists(gen):
         return set()
+    try:
+        tabs = runpy.run_path(gen, run_name="check_refs")["TABS"]
+    except Exception as e:
+        print(f"could not load TABS from {root}: {e}", file=sys.stderr)
+        return {("tabs", "load failure")}
     uses, kinds = set(), {"sg": "sgui", "ia": "interaction", "dec": "decision"}
     for _, items in tabs:
         for it in items:
@@ -109,7 +112,9 @@ def problems(root, vanilla, vanilla_loc, known):
     loc = load_loc("english", root)
     out = set()
     for kind, name in references(root, known):
-        if kind == "loc":
+        if kind == "tabs":
+            out.add((kind, name))
+        elif kind == "loc":
             if name not in loc and name not in vanilla_loc:
                 out.add((kind, name))
         elif name not in defs[kind] and name not in vanilla[kind]:

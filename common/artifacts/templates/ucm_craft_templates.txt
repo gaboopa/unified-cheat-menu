@@ -1,0 +1,9 @@
+# Used by every crafted artifact: anyone can equip, reforge or repair it.
+ucm_craft_artifact_template = {
+  can_equip = { always = yes }
+  can_reforge = { always = yes }
+  can_repair = { always = yes }
+  fallback = { }
+  ai_score = { value = 100 }
+  unique = yes
+}

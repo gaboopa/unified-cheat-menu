@@ -1,6 +1,4 @@
 ﻿l_russian:
- ucm_acm_repair.8001.next_page: "Следующая страница"
- ucm_acm_repair.8001.prev_page: "Предыдущая страница"
  ucm_art.3094.next_page: "Следующая страница (ещё артефакты)"
  ucm_art.3094.prev_page: "Предыдущая страница"
  ucm_court_positions.8001.opt_mass_player: "@skill_learning_icon! Назначить всех (мой двор)"
@@ -28,11 +26,5 @@
  ucm_officials.9084.back: "Вернуться к населению и контролю"
  ucm_officials.9085.back: "Вернуться к населению и контролю"
  ucm_cheat_menu.00x.close: "@cross_icon! Закрыть"
- ucm_cheat_menu.3093.opt_craft: "@artifact_icon! Создать артефакт"
- ucm_cheat_menu.3093.opt_durability: "@artifact_icon! Восстановить прочность"
- ucm_cheat_menu.3093.opt_durability_tt: "Восстановить максимальную прочность всех личных и придворных артефактов цели; качество и оснащение не меняются"
- ucm_cheat_menu.3093.opt_modify: "@skill_learning_icon! Изменить артефакт"
- ucm_cheat_menu.3093.opt_modify_tt: "Изменить название, описание, качество и оснащение личного или придворного артефакта персонажа"
- ucm_cheat_menu.3093.opt_steal: "@scheme_icon! Украсть артефакт"
  ucm_cheat_menu.page_next: "@skill_learning_icon! Следующий"
  ucm_cheat_menu.page_prev: "@skill_martial_icon! Предыдущее"

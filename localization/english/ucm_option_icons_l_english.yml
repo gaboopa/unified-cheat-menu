@@ -1,9 +1,7 @@
 ﻿l_english:
 
 
- ucm_acm_repair.8001.next_page: "@skill_learning_icon! Next Page"
 
- ucm_acm_repair.8001.prev_page: "@skill_martial_icon! Previous Page"
 
  ucm_art.3094.next_page: "@skill_learning_icon! Next Page (More Artifacts)"
 
@@ -227,17 +225,11 @@
 
 
 
- ucm_cheat_menu.3093.opt_craft: "@artifact_icon! Craft Artifact"
 
- ucm_cheat_menu.3093.opt_durability: "@artifact_icon! Restore Full Durability"
 
- ucm_cheat_menu.3093.opt_durability_tt: "@artifact_icon! Fully repair all artifacts in inventory and court display. Quality and modifiers remain unchanged."
 
- ucm_cheat_menu.3093.opt_modify: "@skill_learning_icon! Edit Artifact"
 
- ucm_cheat_menu.3093.opt_modify_tt: "@skill_learning_icon! Select an artifact to edit its name, description, quality and modifiers."
 
- ucm_cheat_menu.3093.opt_steal: "@scheme_icon! Steal Artifact"
 
 
 

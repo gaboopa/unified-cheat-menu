@@ -272,8 +272,6 @@
  UCM_SEC_EPIDEMICS: "Salgınlar"
  UCM_SEC_SITUATIONS: "Mücadeleler, Döngüler ve Bölgesel Sistemler"
  UCM_SEC_MENU: "Bu Menü"
- UCM_SEC_CLASSIC: "Klasik Menüler"
- UCM_CLASSIC_NOTE: "Özgün hile menüsünün olay tabanlı ana menüsü ve karar alt menüleri. Sundukları her şey orada kullanılmaya devam ediyor."
  UCM_SEC_DEBUG: "Hata Ayıklama Modu"
  ucm_diarchy_start_regency: "Naiplik Başlat"
  ucm_diarchy_start_regency_tt: "Hedef için naiplik başlatır. Naibi oyun seçer; değiştirmek için sonraki düğmeyi kullanın."

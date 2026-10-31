@@ -22,7 +22,6 @@ The cheats themselves don't block achievements, but the mod does change game dat
 - **Group actions** (Court and Realm tabs): pick a group taken from the target, such as courtiers, vassals, house or the realm's counties, then an action. You see a count and confirm before anything changes.
 - **Quick Actions** has the always-on cheats (income, health, levies and more) with strength, tier and frequency settings.
 - Buttons labelled as decisions act on you and your realm. Buttons that can't apply are greyed out.
-- The original event-based menus are still under **Settings & Utilities → Classic Menus**.
 
 **Single-player only:** everything is hidden and the timed cheats stop while a second player is connected.
 
@@ -43,12 +42,10 @@ English, German, Russian, Simplified Chinese and Turkish.
 | `tools/ck3parse.py` | Shared parsing helpers for the generators |
 | `tools/gen_ek2_compatch.py` | Regenerates the derived files in `compat/ek2/`, including the EK2 faith editor data and picker stubs |
 | `tools/gen_faith_editor.py` | Generates the faith editor's data effects from the 1.20 doctrine, tenet and religion databases |
-| `tools/gen_cast_culture_faith.py` | Generates the classic culture casting pages and their labels from the culture database |
-| `tools/gen_trait_editor.py` | Generates the classic base-game trait editor and its labels from the trait database |
+| `tools/gen_trait_editor.py` | Generates the trait editor window, its click dispatcher and its labels from the trait database |
 | `tools/gen_artifact_crafter.py` | Generates the artifact crafter and editor: stack modifiers, effects, scripted GUIs, labels and windows |
-| `tools/gen_lifestyle.py` | Generates the classic lifestyle pages and the perk labels from the perk database |
+| `tools/gen_lifestyle.py` | Generates the lifestyle editor from the perk database |
 | `tools/gen_court_positions.py` | Generates the one-click court reshuffle position lists from the court position types |
-| `tools/gen_beauty_companion.py` | Generates the beauty companion's classified culture picker and its labels |
 | `tools/gen_ucm_main_menu.py` | Generates `gui/ucm_main_menu.gui` from a list of tabs and buttons |
 | `tools/gen_ucm_extra.py` | Generates the Phase 12 actions merged into the main menu, the modifier editor and the tenet picker (run before `gen_ucm_main_menu.py`); other-language text comes from `tools/ucm_extra_translations.json` |
 | `tools/gen_ucm_translations.py` | Generates the German, Russian, Chinese and Turkish menu text from the English |

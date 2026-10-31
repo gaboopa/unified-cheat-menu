@@ -1,8 +1,6 @@
 ﻿l_simp_chinese:
  ucm_open_trait_editor_decision: "打开特质编辑器"
  ucm_open_trait_editor_decision_desc: "编辑所选角色的特质。"
- ucm_open_cheat_trait_editor_decision: "打开作弊特质编辑器"
- ucm_open_cheat_trait_editor_decision_desc: "编辑所选角色的作弊特质。"
  ucm_open_lifestyle_editor_decision: "打开生活方式编辑器"
  ucm_open_lifestyle_editor_decision_desc: "编辑所选角色的生活方式经验与技能。"
  ucm_open_sand_soldiers_decision: "打开军队生成器"

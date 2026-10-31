@@ -1,8 +1,6 @@
 ﻿l_english:
  ucm_open_trait_editor_decision: "Open Trait Editor"
  ucm_open_trait_editor_decision_desc: "Edit the selected character's traits."
- ucm_open_cheat_trait_editor_decision: "Open Cheat Trait Editor"
- ucm_open_cheat_trait_editor_decision_desc: "Edit the selected character's Cheat traits."
  ucm_open_lifestyle_editor_decision: "Open Lifestyle Editor"
  ucm_open_lifestyle_editor_decision_desc: "Edit the selected character's lifestyle experience and perks."
  ucm_open_sand_soldiers_decision: "Open Army Spawner"

@@ -23,32 +23,6 @@ ucm_monthly_tick.0001 = {
 		# Marriage ban: dissolve betrothals that involve a banned character.
 		ucm_marriage_ban_betrothal_sweep_effect = yes
 
-		# Strong deterrence: only while some vassal still carries this player's deterrence marker.
-		if = {
-			limit = {
-				any_vassal_or_below = { var:ucm_strong_deterrence_liege ?= prev }
-			}
-			ucm_cheat_menu_strong_deterrence_monthly_on_liege_effect = yes
-		}
-
-		# World deterrence (the effect checks its own flag).
-		ucm_cheat_menu_world_deterrence_monthly_on_liege_effect = yes
-
-		# Realm authority lock.
-		if = {
-			limit = { has_character_flag = ucm_realm_authority_locked }
-			ucm_cheat_menu_maintain_locked_realm_authority_effect = yes
-			ucm_dissolve_liberty_factions_targeting_root_effect = yes
-			ucm_clear_authority_rollback_variables_effect = yes
-		}
-		else_if = {
-			limit = {
-				has_variable = ucm_realm_authority_desired_level
-				is_independent_ruler = yes
-			}
-			ucm_cheat_menu_maintain_desired_realm_authority_effect = yes
-		}
-
 		# Government lock: maintain only for players already locked by a menu action.
 		if = {
 			limit = { has_character_flag = ucm_player_government_locked }

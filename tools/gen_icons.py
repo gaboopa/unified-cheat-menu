@@ -23,7 +23,7 @@ FONT = {c: bytes.fromhex(h) for c, h in zip("0123456789ABCDEFGHIJKLMNOPQRSTUVWXY
 3F4040403F 1F2040201F 3F4038403F 6314081463 0708700807 6151494543""".split())}
 GLYPHS = {"on": "ON", "off": "NO"}
 # Folder name -> shape. Everything else is a rounded square.
-SHAPES = {"traits": "circle", "casus_bellis": "diamond", "artifact": "circle", "men_at_arms_big": "rect"}
+SHAPES = {"traits": "circle", "casus_bellis": "diamond", "men_at_arms_big": "rect"}
 
 
 def glyphs(stem):

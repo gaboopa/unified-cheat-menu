@@ -96,7 +96,7 @@ def main():
         if not path or (prefixes and not any(path == p or path.startswith(p + "/") for p in prefixes)):
             continue
         full = os.path.join(MOD_DIR, path)
-        if not os.path.exists(full):
+        if path.startswith(".claude/") or not os.path.isfile(full):
             continue
         reasons, exempt = [], path in EXEMPT
         with open(full, "rb") as fh:

@@ -1,6 +1,6 @@
 """Regenerate the derived files of the Elder Kings 2 compatch (compat/ek2/).
 
-Generated here (everything else under compat/ek2/ is hand-written: descriptor, event stubs, region triggers):
+Generated here (everything else under compat/ek2/ is hand-written: descriptor, event stubs):
 - common/scripted_effects/ucm_acm_faith_editor_data_effects.txt: the faith editor data built from EK2's
   religion databases (see gen_faith_editor.py).
 - events/ucm_cast_culture_faith_generated.txt, ucm_beauty_companion_classified_generated.txt: stubs keeping only

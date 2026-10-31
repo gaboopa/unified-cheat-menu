@@ -847,19 +847,10 @@
  # 政府转换选项
  # send_name本地化
  # 财宝制作事件本地化
- ucm_cw_tradition_menu_title: "传统选择"
- ucm_cw_tradition_warning: "需要 DLC"
  # 子女生成菜单
  ucm_cheat_menu.0190.t: "强制订婚/结婚"
  ucm_cheat_menu.0190.force_betrothal: "💍 强制订婚"
  ucm_cheat_menu.0190.force_marriage: "👰 强制结婚"
- ucm_acm_religion_picker_title: "宗教目录"
- ucm_acm_religion_picker_subtitle: "按宗教大类分组浏览全部信仰（共 49 个大类、155 个教派）；点击箭头展开。"
- ucm_acm_religion_picker_hint: "① 点击信仰名称，将其应用于所选角色；② 点击»打开该信仰的编辑器。"
- ucm_acm_religion_picker_list_caption: "宗教分组（点击箭头展开教派）"
- ucm_acm_religion_picker_open_editor_tt: "打开信仰详情并编辑教义"
- ucm_acm_religion_picker_footer_edit: "打开信仰详情（已选中）"
- ucm_acm_religion_picker_footer_edit_tt: "对当前已保存的选中教派打开信仰详情编辑窗"
  ucm_cheat_menu.2900.t: "文化编辑"
  ucm_cheat_menu.2900.desc: "选择要编辑的文化，可修改传承、支柱、传统与革新。"
  ucm_cheat_menu.2900.select_culture: "选择文化"
@@ -869,13 +860,6 @@
  ucm_cheat_menu.2900.edit_language: "编辑语言"
  ucm_cheat_menu.2900.edit_heritage: "编辑传承"
  ucm_cheat_menu.2900.unlock_all_innovations: "一键解锁全部革新"
- ucm_acm_culture_picker_title: "文化目录"
- ucm_acm_culture_picker_subtitle: "按传承分组浏览全部文化；点击箭头展开具体文化。"
- ucm_acm_culture_picker_hint: "点文化名将其应用到所选角色；点 » 打开该文化的原版窗口；底部按钮进入 文化编辑。"
- ucm_acm_culture_picker_list_caption: "传承分组（点击展开）"
- ucm_acm_culture_picker_footer_edit: "进入文化编辑（已选中）"
- ucm_acm_culture_picker_footer_edit_tt: "编辑当前选中的文化。"
- ucm_acm_culture_picker_open_vanilla_tt: "打开该文化的文化窗口。"
  # 文化革新编辑器本地化
  ucm_cheat_menu.5000.t: "文化革新编辑器"
  ucm_cheat_menu.5000.desc: "选择要修改的文化"

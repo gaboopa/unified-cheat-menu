@@ -118,10 +118,19 @@ def problems(root, vanilla, vanilla_loc, known):
 
 
 def extract(rev, dest):
-    data = subprocess.run(["git", "-C", MOD_DIR, "archive", rev, "common", "events", "gui", "localization", "tools"],
+    data = subprocess.run(["git", "-C", MOD_DIR, "archive", rev, "common", "events", "gui", "localization"],
                           capture_output=True, check=True).stdout
     with tarfile.open(fileobj=io.BytesIO(data)) as tar:
         tar.extractall(dest, filter="data")
+    # tools/ is export-ignore, so archive leaves it out.
+    os.makedirs(os.path.join(dest, "tools"))
+    names = subprocess.run(["git", "-C", MOD_DIR, "ls-tree", "--name-only", f"{rev}:tools"],
+                           capture_output=True, text=True, check=True).stdout.split()
+    for name in names:
+        if name.endswith((".py", ".json")):
+            blob = subprocess.run(["git", "-C", MOD_DIR, "show", f"{rev}:tools/{name}"], capture_output=True, check=True).stdout
+            with open(os.path.join(dest, "tools", name), "wb") as fh:
+                fh.write(blob)
 
 
 def self_check():

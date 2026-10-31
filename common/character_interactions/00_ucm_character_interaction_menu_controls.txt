@@ -40,9 +40,6 @@ ucm_close_character_interaction_menu = {
 	on_send = {
 		scope:actor = {
 			remove_character_flag = ucm_character_interaction_menu_open
-			remove_character_flag = toc_showdebsflag
-			remove_character_flag = toc_showspecsflag
-			remove_character_flag = toc_showtextrasflag
 		}
 	}
 

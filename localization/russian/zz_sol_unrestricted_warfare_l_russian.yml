@@ -1,7 +1,5 @@
 ﻿l_russian:
 # Неограниченное Войско
-sol_expansion_war_interaction:0 "Война без границ"
-sol_expansion_war_interaction_desc:0 "Объявите [войну|E] [получателю.GetShortUINameNoTooltip] без [casus_belli|E]."
 
 # Захват заложников при победе
 sol_captive_war_cb_prisoners.tt_attacker:1 "Некоторые [защитника.GetShortUINamePossessive] [дворяне|E] будут взяты в плен, в зависимости от их положения."

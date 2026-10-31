@@ -79,17 +79,13 @@
  toc_celibate_interaction:0 "Add Celibate Trait"
  toc_givearmyhorde_interaction:0 "Spawn Horde Army"
  toc_religionconvert_interaction:0 "Convert Religion"
- mega_preg_toc:0 "Trigger Pregnancy"
  toc_setheira_interaction:0 "Set as Primary Heir"
  toc_deposed_interaction:0 "Retire or Depose Character"
  toc_deposed_interaction_desc:0 "Remove this character from landed office. Administrative governors retire to their family estate; other rulers use CK3's landless continuation flow."
- ucm_deposed_to_estate_tt:0 "[recipient.GetShortUIName|U] steps down from all landed offices and continues as the head of [recipient.GetHerHis] administrative estate."
- ucm_depose_requires_landless_play_tt:0 "Roads to Power is required to depose a player character without ending the game"
  toc_yapaconvert_interaction:0 "Convert to Heresy"
  toc_addwombmancourtier_interaction:0 "Spawn Female Courtier"
  toc_addcourtier_interaction:0 "Spawn Male Courtier"
  toc_addcharacter_interaction:0 "Spawn Character Menu"
- toc_forcedivorce_interaction:0 "Force Divorce"
  toc_finishcounciltask_interaction:0 "Instantly Finish Council Task"
 
  # Modifiers
@@ -260,8 +256,6 @@
  toc_spawn_character_interaction:0 "Cheat: Spawn Character"
  toc_spawn_character_interaction_desc:0 "Generate a new custom character in this character's court."
  
- toc_torture_and_perks_interaction:0 "Cheat Perks and Punishment"
- toc_torture_and_perks_interaction_desc:0 "Manage perks, restrictions, alliances, and punishments for the selected character."
  
  toc_county_modifier_interaction:0 "Modify Capital County"
  toc_county_modifier_interaction_desc:0 "Add or remove special modifiers on the selected character's capital county."

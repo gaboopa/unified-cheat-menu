@@ -1,144 +1,34 @@
-﻿# 法理转封：凡境内领地与封臣关系不符合法理链，一律强制 change_liege 拉回。
-# 优先最近一层境内法理上级（含 root）；该链上无境内持有者时再上溯；仍无解则挂 root。
-
-# —— 头衔 scope（this = 伯爵领/男爵领/公国等）：第 N 层法理上级在境内且持有人须改 liege ——
-
-# —— 人物 scope：沿主头衔法理链向上查找可转封目标 ——
-
-ucm_vassal_has_de_jure_transfer_target_in_realm_trigger = {
-  OR = {
-    AND = {
-      exists = primary_title.de_jure_liege
-      exists = primary_title.de_jure_liege.holder
-      primary_title.de_jure_liege.holder = {
-        NOT = { this = root }
-        is_vassal_or_below_of = root
-        NOT = { is_at_war_with = root }
-      }
-      NOT = { liege = primary_title.de_jure_liege.holder }
-    }
-    AND = {
-      exists = primary_title.de_jure_liege.de_jure_liege
-      exists = primary_title.de_jure_liege.de_jure_liege.holder
-      OR = {
-        NOT = { exists = primary_title.de_jure_liege.holder }
-        primary_title.de_jure_liege.holder = root
-      }
-      primary_title.de_jure_liege.de_jure_liege.holder = {
-        NOT = { this = root }
-        is_vassal_or_below_of = root
-        NOT = { is_at_war_with = root }
-      }
-      NOT = { liege = primary_title.de_jure_liege.de_jure_liege.holder }
-    }
-    AND = {
-      exists = primary_title.de_jure_liege.de_jure_liege.de_jure_liege
-      exists = primary_title.de_jure_liege.de_jure_liege.de_jure_liege.holder
-      OR = {
-        NOT = { exists = primary_title.de_jure_liege.holder }
-        primary_title.de_jure_liege.holder = root
-      }
-      OR = {
-        NOT = { exists = primary_title.de_jure_liege.de_jure_liege.holder }
-        primary_title.de_jure_liege.de_jure_liege.holder = root
-      }
-      primary_title.de_jure_liege.de_jure_liege.de_jure_liege.holder = {
-        NOT = { this = root }
-        is_vassal_or_below_of = root
-        NOT = { is_at_war_with = root }
-      }
-      NOT = { liege = primary_title.de_jure_liege.de_jure_liege.de_jure_liege.holder }
-    }
-    AND = {
-      exists = primary_title.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege
-      exists = primary_title.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.holder
-      OR = {
-        NOT = { exists = primary_title.de_jure_liege.holder }
-        primary_title.de_jure_liege.holder = root
-      }
-      OR = {
-        NOT = { exists = primary_title.de_jure_liege.de_jure_liege.holder }
-        primary_title.de_jure_liege.de_jure_liege.holder = root
-      }
-      OR = {
-        NOT = { exists = primary_title.de_jure_liege.de_jure_liege.de_jure_liege.holder }
-        primary_title.de_jure_liege.de_jure_liege.de_jure_liege.holder = root
-      }
-      primary_title.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.holder = {
-        NOT = { this = root }
-        is_vassal_or_below_of = root
-        NOT = { is_at_war_with = root }
-      }
-      NOT = { liege = primary_title.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.holder }
-    }
-    AND = {
-      exists = primary_title.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege
-      exists = primary_title.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.holder
-      OR = {
-        NOT = { exists = primary_title.de_jure_liege.holder }
-        primary_title.de_jure_liege.holder = root
-      }
-      OR = {
-        NOT = { exists = primary_title.de_jure_liege.de_jure_liege.holder }
-        primary_title.de_jure_liege.de_jure_liege.holder = root
-      }
-      OR = {
-        NOT = { exists = primary_title.de_jure_liege.de_jure_liege.de_jure_liege.holder }
-        primary_title.de_jure_liege.de_jure_liege.de_jure_liege.holder = root
-      }
-      OR = {
-        NOT = { exists = primary_title.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.holder }
-        primary_title.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.holder = root
-      }
-      primary_title.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.holder = {
-        NOT = { this = root }
-        is_vassal_or_below_of = root
-        NOT = { is_at_war_with = root }
-      }
-      NOT = { liege = primary_title.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.holder }
-    }
-    AND = {
-      exists = primary_title.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege
-      exists = primary_title.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.holder
-      OR = {
-        NOT = { exists = primary_title.de_jure_liege.holder }
-        primary_title.de_jure_liege.holder = root
-      }
-      OR = {
-        NOT = { exists = primary_title.de_jure_liege.de_jure_liege.holder }
-        primary_title.de_jure_liege.de_jure_liege.holder = root
-      }
-      OR = {
-        NOT = { exists = primary_title.de_jure_liege.de_jure_liege.de_jure_liege.holder }
-        primary_title.de_jure_liege.de_jure_liege.de_jure_liege.holder = root
-      }
-      OR = {
-        NOT = { exists = primary_title.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.holder }
-        primary_title.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.holder = root
-      }
-      OR = {
-        NOT = { exists = primary_title.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.holder }
-        primary_title.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.holder = root
-      }
-      primary_title.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.holder = {
-        NOT = { this = root }
-        is_vassal_or_below_of = root
-        NOT = { is_at_war_with = root }
-      }
-      NOT = { liege = primary_title.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.de_jure_liege.holder }
-    }
-  }
+﻿# Character scope: someone in the realm a vassal (scope:ucm_dj_vassal) can move under. Root = the ruler.
+ucm_de_jure_transfer_holder_trigger = {
+	NOT = { this = root }
+	NOT = { this = scope:ucm_dj_vassal }
+	is_vassal_or_below_of = root
+	NOT = { is_vassal_or_below_of = scope:ucm_dj_vassal }
+	NOT = { is_at_war_with = root }
 }
 
+# Vassal scope, root = the ruler. True when a title above the vassal's primary title in the de jure
+# chain is held by someone else in the realm, and their liege doesn't already hold one (the ruler doesn't count).
 ucm_vassal_needs_de_jure_transfer_trigger = {
-  is_landed = yes
-  exists = primary_title
-  NOT = { is_at_war_with = root }
-  ucm_vassal_has_de_jure_transfer_target_in_realm_trigger = yes
+	is_landed = yes
+	exists = primary_title
+	NOT = { is_at_war_with = root }
+	save_temporary_scope_as = ucm_dj_vassal
+	primary_title = {
+		any_this_title_or_de_jure_above = {
+			exists = holder
+			holder = { ucm_de_jure_transfer_holder_trigger = yes }
+		}
+		NOT = {
+			any_this_title_or_de_jure_above = {
+				exists = holder
+				holder = scope:ucm_dj_vassal.liege
+				NOT = { holder = root }
+			}
+		}
+	}
 }
 
 ucm_has_de_jure_transferable_direct_vassals_trigger = {
-  any_vassal_or_below = {
-    ucm_vassal_needs_de_jure_transfer_trigger = yes
-  }
+	any_vassal_or_below = { ucm_vassal_needs_de_jure_transfer_trigger = yes }
 }

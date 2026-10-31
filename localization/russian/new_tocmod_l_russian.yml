@@ -79,17 +79,13 @@
  toc_celibate_interaction:0 "Добавить свойство: Целибат"
  toc_givearmyhorde_interaction:0 "Призвать армию орды"
  toc_religionconvert_interaction:0 "Обратить в религию наготы"
- mega_preg_toc:0 "Вызвать беременность"
  toc_setheira_interaction:0 "Назначить основным наследником"
  toc_deposed_interaction:0 "Отправить в отставку или свергнуть"
  toc_deposed_interaction_desc:0 "Лишает персонажа земельной должности. Административный губернатор удаляется в родовое поместье, а для других правителей используется современное продолжение игры без земель."
- ucm_deposed_to_estate_tt:0 "[recipient.GetShortUIName|U] оставляет все земельные должности и продолжает управлять своим административным поместьем."
- ucm_depose_requires_landless_play_tt:0 "Чтобы свергнуть персонажа игрока без завершения игры, требуется Roads to Power"
  toc_yapaconvert_interaction:0 "Обратить в ересь"
  toc_addwombmancourtier_interaction:0 "Призвать придворную-женщину"
  toc_addcourtier_interaction:0 "Призвать придворного-мужчину"
  toc_addcharacter_interaction:0 "Меню создания персонажа"
- toc_forcedivorce_interaction:0 "Принудительный развод"
  toc_finishcounciltask_interaction:0 "Мгновенно завершить задачу совета"
 
  # Modifiers
@@ -254,8 +250,6 @@
  toc_spawn_character_interaction:0 ": Создать персонажа"
  toc_spawn_character_interaction_desc:0 "Создать нового пользовательского персонажа при дворе этого правителя."
  
- toc_torture_and_perks_interaction:0 ": достоинства и наказания"
- toc_torture_and_perks_interaction_desc:0 "Управлять достоинствами, ограничениями двора, союзами и наказаниями выбранного персонажа."
  
  toc_county_modifier_interaction:0 "Изменить столичное графство"
  toc_county_modifier_interaction_desc:0 "Добавить или удалить особые модификаторы в столичном графстве выбранного персонажа."

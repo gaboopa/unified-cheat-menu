@@ -1,7 +1,5 @@
 ﻿l_german:
 # Interaktion: Krieg ohne Einschränkungen
- sol_expansion_war_interaction:0 "Krieg ohne Grenzen"
- sol_expansion_war_interaction_desc:0 "Erkläre [recipient.GetShortUINameNoTooltip] offen den [war|E], ohne an [casus_belli|E] oder [claim|E] gebunden zu sein."
 
 # Gefangene nach dem Sieg
  sol_captive_war_cb_prisoners.tt_attacker:1 "Nach eurem Sieg werden viele von [defender.GetShortUINamePossessive] [courtiers|E] zu euren Gefangenen. Ihre Zahl richtet sich nach dem Rang von [defender.GetHerHis]."

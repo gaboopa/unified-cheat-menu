@@ -1,9 +1,7 @@
 ﻿l_russian:
- pope_select_flag_desc:0 "«Ты — новый Папа!»"
  pope_select_interaction:0 "Назначить нового Папу"
  pope_select_interaction_desc:0 "«Папа должен быть из моего рода!»"
 
- grandmaster_select_flag_desc:0 "«Ты — новый магистр!»"
  grandmaster_select_interaction:0 "Назначить нового магистра"
  grandmaster_select_interaction_desc:0 "«Магистр должен быть из моего рода!»"
 

@@ -4,7 +4,6 @@
  culture_cheat_tooltip:0 "Over 100 traditions to be established."
  
  # Modifiers
- culture_acceptance_gain_mult:0 "Cultural Openness"
  
  # Decision Menu
  yyz_open_menu_decision:0 "Talent Finder Menu"
@@ -17,11 +16,6 @@
  
  
  ucm_change_age_interaction:0 "Change Character Age"
-    flag_age_6:0 "6 years old"
-    flag_age_16:0 "16 years old"
-    flag_age_25:0 "25 years old"
-    flag_age_42:0 "42 years old"
-    flag_age_64:0 "64 years old"
   
  siege_weapon_max_size_mult:0 "Max Siege Weapon Size"
   

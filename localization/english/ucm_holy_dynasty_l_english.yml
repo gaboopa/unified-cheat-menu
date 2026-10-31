@@ -1,9 +1,7 @@
 ﻿l_english:
- pope_select_flag_desc:0 "“You are the new Pope!”"
  pope_select_interaction:0 "Appoint New Pope"
  pope_select_interaction_desc:0 "“The Pope should come from my house!”"
 
- grandmaster_select_flag_desc:0 "“You are the new Grandmaster!”"
  grandmaster_select_interaction:0 "Appoint New Grandmaster"
  grandmaster_select_interaction_desc:0 "“The Grandmaster should come from my house!”"
 

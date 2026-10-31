@@ -5,7 +5,6 @@
  culture_cheat_tooltip:0 "Über 100 Traditionen werden eingeführt."
 
  # Modifikatoren
- culture_acceptance_gain_mult:0 "Kulturelle Offenheit"
 
  # Entscheidungsmenü
  yyz_open_menu_decision:0 "Menü: Talentsuche"
@@ -17,11 +16,6 @@
 
 
  ucm_change_age_interaction:0 "Alter des Charakters ändern"
- flag_age_6:0 "6 Jahre"
- flag_age_16:0 "16 Jahre"
- flag_age_25:0 "25 Jahre"
- flag_age_42:0 "42 Jahre"
- flag_age_64:0 "64 Jahre"
 
  siege_weapon_max_size_mult:0 "Maximale Belagerungswaffengröße"
 
@@ -32,5 +26,3 @@
  change_govt_japan_administrative_government:0 "Das Ritsuryō-System einführen"
  change_govt_japan_administrative_government_desc:0 "Ordne dein Reich nach dem Ritsuryō-Verwaltungssystem neu und regiere durch Adelsfamilien sowie Provinzbeamte."
 
- game_concept_wanderer:0 "Wanderer"
- game_concept_wanderer_desc:0 "Ein Charakter, der ohne Landtitel lebt und frei durch die Welt zieht."

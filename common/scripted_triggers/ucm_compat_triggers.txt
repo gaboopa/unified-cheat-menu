@@ -6,11 +6,6 @@ ucm_compat_orient_loaded_trigger = {
   exists = global_var:orient_empires_loaded
 }
 
-# A Game of Thrones（2962333032）；由 zzz_ucm_compat_probe 开局写入
-ucm_compat_agot_loaded_trigger = {
-  has_global_variable = ucm_compat_agot_loaded
-}
-
 # Elder Kings 2（2887120253）；由 zzz_ucm_compat_probe 开局写入
 ucm_compat_ek2_loaded_trigger = {
   has_global_variable = ucm_compat_ek2_loaded

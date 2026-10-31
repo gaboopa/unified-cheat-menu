@@ -5,12 +5,7 @@ on_game_start_after_lobby = {
 
 ucm_compat_probe = {
 	effect = {
-		remove_global_variable = ucm_compat_agot_loaded
 		remove_global_variable = ucm_compat_ek2_loaded
-		if = {
-			limit = { exists = title:e_the_iron_islands }
-			set_global_variable = { name = ucm_compat_agot_loaded value = 1 }
-		}
 		if = {
 			limit = { exists = title:h_tamriel }
 			set_global_variable = { name = ucm_compat_ek2_loaded value = 1 }

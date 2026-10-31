@@ -82,7 +82,7 @@
  ucm_learn_all_realm_officials_secrets_decision_confirm: "知晓"
  ucm_seduce_shield_for_consorts_decision_title_on: "#bold [开]#! 内室守望"
  ucm_seduce_shield_for_consorts_decision_title_off: "#bold [关]#! 内室守望"
- ucm_seduce_shield_for_consorts_decision_desc_on: "已启用。你的配偶只能被你诱惑，也不会诱惑他人；AI人物不能诱惑、求爱或私奔。你家中的情爱与绑架阴谋每日终止，配偶保持贞洁与忠诚。点击关闭。"
+ ucm_seduce_shield_for_consorts_decision_desc_on: "已启用。你的配偶只能被你诱惑，也不会诱惑他人；AI人物不能诱惑、求爱或私奔。你家中的情爱与绑架阴谋每月终止，配偶保持贞洁与忠诚。点击关闭。"
  ucm_seduce_shield_for_consorts_decision_desc_off: "未启用。开启后保护配偶免受诱惑，并阻止AI情爱阴谋。"
  ucm_seduce_shield_for_consorts_decision_confirm_disable: "关闭"
  ucm_seduce_shield_for_consorts_decision_confirm_enable: "开启"

@@ -1,4 +1,4 @@
-"""Regenerate gui/ucm_main_menu.gui, the Unified Cheat Menu window, from TABS below.
+﻿"""Regenerate gui/ucm_main_menu.gui, the Unified Cheat Menu window, from TABS below.
 
 Each tab is a list of items:
     ("h", loc_key)        section header
@@ -321,7 +321,7 @@ def crozier_buttons(name, ind):
         levelled = rest in gen_ucm_crozier.LEVELLED
         out = [
             _cz_button(sg, f"{key}_ON", f"{key}_TT", 376 if levelled else 430, attrs=f' visible = "[And( Not( GameHasMultiplePlayers ), {st} )]" down = yes',
-                       fx=f"UCM_CROZIER_CHEATS_FX_{rest}" if levelled else ""),
+                       fx=f"×[GetGlobalVariable( 'ucm_crozier_cheats_fx_{rest}' ).GetValue|0]" if levelled else ""),
             _cz_button(sg, f"{key}_OFF", f"{key}_TT", 430, attrs=f' visible = "[And( Not( GameHasMultiplePlayers ), Not( {st} ) )]"'),
         ]
     elif kind in CZ_FIXED and rest.isdigit():

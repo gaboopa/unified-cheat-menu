@@ -47,7 +47,7 @@
  ucm_learn_all_realm_officials_secrets_decision_tooltip: "TGP eklentisi ve uygun yönetim gerekir."
  ucm_seduce_shield_for_consorts_decision_title_on: "#bold [AÇIK]#! Oda Nöbeti"
  ucm_seduce_shield_for_consorts_decision_title_off: "#bold [KAPALI]#! Oda Nöbeti"
- ucm_seduce_shield_for_consorts_decision_desc_on: "Etkin. Eşlerini yalnızca sen baştan çıkarabilirsin, onlar da kimseyi çıkaramaz; yapay zekâ karakterleri baştan çıkaramaz, kur yapamaz, kaçamaz. Hanendeki aşk ve kaçırma entrikaları her gün biter, eşlerin iffetli ve sadık kalır. Kapatmak için tıkla."
+ ucm_seduce_shield_for_consorts_decision_desc_on: "Etkin. Eşlerini yalnızca sen baştan çıkarabilirsin, onlar da kimseyi çıkaramaz; yapay zekâ karakterleri baştan çıkaramaz, kur yapamaz, kaçamaz. Hanendeki aşk ve kaçırma entrikaları her ay biter, eşlerin iffetli ve sadık kalır. Kapatmak için tıkla."
  ucm_seduce_shield_for_consorts_decision_desc_off: "Etkin değil. Eşlerini baştan çıkarmadan korumak ve yapay zekâ aşk entrikalarını durdurmak için aç."
  ucm_seduce_shield_for_consorts_decision_confirm_disable: "Kapat"
  ucm_seduce_shield_for_consorts_decision_confirm_enable: "Aç"

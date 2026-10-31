@@ -76,7 +76,7 @@
  ucm_learn_all_realm_officials_secrets_decision_confirm: "Провести расследование"
  ucm_seduce_shield_for_consorts_decision_title_on: "#bold [ВКЛ]#! Стража покоев"
  ucm_seduce_shield_for_consorts_decision_title_off: "#bold [ВЫКЛ]#! Стража покоев"
- ucm_seduce_shield_for_consorts_decision_desc_on: "Активно. Ваших супругов может соблазнить только вы, и сами они никого не соблазняют; персонажи ИИ не могут соблазнять, ухаживать и сбегать. Любовные козни и похищения вокруг вашего дома прекращаются ежедневно, а супруги остаются целомудренными и верными. Нажмите, чтобы выключить."
+ ucm_seduce_shield_for_consorts_decision_desc_on: "Активно. Ваших супругов может соблазнить только вы, и сами они никого не соблазняют; персонажи ИИ не могут соблазнять, ухаживать и сбегать. Любовные козни и похищения вокруг вашего дома прекращаются ежемесячно, а супруги остаются целомудренными и верными. Нажмите, чтобы выключить."
  ucm_seduce_shield_for_consorts_decision_desc_off: "Неактивно. Включите, чтобы защитить супругов от соблазнения и остановить любовные козни ИИ."
  ucm_seduce_shield_for_consorts_decision_confirm_disable: "Выключить"
  ucm_seduce_shield_for_consorts_decision_confirm_enable: "Включить"

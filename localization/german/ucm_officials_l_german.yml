@@ -76,7 +76,7 @@
  ucm_learn_all_realm_officials_secrets_decision_confirm: "Ausführen"
  ucm_seduce_shield_for_consorts_decision_title_on: "#bold [AN]#! Gemachwache"
  ucm_seduce_shield_for_consorts_decision_title_off: "#bold [AUS]#! Gemachwache"
- ucm_seduce_shield_for_consorts_decision_desc_on: "Aktiv. Deine Gefährten können nur von dir verführt werden und niemanden verführen; KI-Figuren können nicht verführen, werben oder durchbrennen. Liebes- und Entführungsintrigen um deinen Haushalt enden täglich, und deine Gefährten bleiben keusch und loyal. Zum Ausschalten klicken."
+ ucm_seduce_shield_for_consorts_decision_desc_on: "Aktiv. Deine Gefährten können nur von dir verführt werden und niemanden verführen; KI-Figuren können nicht verführen, werben oder durchbrennen. Liebes- und Entführungsintrigen um deinen Haushalt enden monatlich, und deine Gefährten bleiben keusch und loyal. Zum Ausschalten klicken."
  ucm_seduce_shield_for_consorts_decision_desc_off: "Inaktiv. Einschalten schützt deine Gefährten vor Verführung und stoppt KI-Liebesintrigen."
  ucm_seduce_shield_for_consorts_decision_confirm_disable: "Ausschalten"
  ucm_seduce_shield_for_consorts_decision_confirm_enable: "Einschalten"

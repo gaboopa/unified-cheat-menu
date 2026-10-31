@@ -81,7 +81,7 @@
  ucm_learn_all_realm_officials_secrets_decision_confirm: "Investigate"
  ucm_seduce_shield_for_consorts_decision_title_on: "#bold [ON]#! Chamber Watch"
  ucm_seduce_shield_for_consorts_decision_title_off: "#bold [OFF]#! Chamber Watch"
- ucm_seduce_shield_for_consorts_decision_desc_on: "Active. Your consorts can't seduce or be seduced except by you, and AI characters can't seduce, court or elope. Love and abduction schemes around your household end each day, and your consorts stay Chaste and Loyal. Click to turn off."
+ ucm_seduce_shield_for_consorts_decision_desc_on: "Active. Your consorts can't seduce or be seduced except by you, and AI characters can't seduce, court or elope. Love and abduction schemes around your household end each month, and your consorts stay Chaste and Loyal. Click to turn off."
  ucm_seduce_shield_for_consorts_decision_desc_off: "Inactive. Turn it on to protect your consorts from seduction and stop AI romance schemes."
  ucm_seduce_shield_for_consorts_decision_confirm_disable: "Turn Off"
  ucm_seduce_shield_for_consorts_decision_confirm_enable: "Turn On"

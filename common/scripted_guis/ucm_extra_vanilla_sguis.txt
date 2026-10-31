@@ -2304,13 +2304,6 @@ ucm_legend_beauty = {
 	effect = { var:ucm_target = { save_scope_as = ucm_cheat_menu_target } ucm_legend_master_add_beauty_effect = yes }
 }
 
-ucm_legend_black_heart = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { save_scope_as = ucm_cheat_menu_target } ucm_legend_master_add_black_heart_effect = yes }
-}
-
 ucm_legend_builder = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
@@ -2360,13 +2353,6 @@ ucm_legend_enchanter = {
 	effect = { var:ucm_target = { save_scope_as = ucm_cheat_menu_target } ucm_legend_master_add_enchanter_effect = yes }
 }
 
-ucm_legend_eternal_watcher = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { save_scope_as = ucm_cheat_menu_target } ucm_legend_master_add_eternal_watcher_effect = yes }
-}
-
 ucm_legend_fate_weaver = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
@@ -2386,27 +2372,6 @@ ucm_legend_giant_slayer = {
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes }
 	effect = { var:ucm_target = { save_scope_as = ucm_cheat_menu_target } ucm_legend_master_add_giant_slayer_effect = yes }
-}
-
-ucm_legend_golden_voice = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { save_scope_as = ucm_cheat_menu_target } ucm_legend_master_add_golden_voice_effect = yes }
-}
-
-ucm_legend_healer = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { save_scope_as = ucm_cheat_menu_target } ucm_legend_master_add_healer_effect = yes }
-}
-
-ucm_legend_holy_hermit = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { save_scope_as = ucm_cheat_menu_target } ucm_legend_master_add_holy_hermit_effect = yes }
 }
 
 ucm_legend_just_ruler = {
@@ -2435,13 +2400,6 @@ ucm_legend_miracle_worker = {
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes }
 	effect = { var:ucm_target = { save_scope_as = ucm_cheat_menu_target } ucm_legend_master_add_miracle_worker_effect = yes }
-}
-
-ucm_legend_motion_divine = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { save_scope_as = ucm_cheat_menu_target } ucm_legend_master_add_motion_divine_effect = yes }
 }
 
 ucm_legend_pilgrim = {
@@ -2491,13 +2449,6 @@ ucm_legend_seed_carolingian_legacy = {
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes }
 	effect = { var:ucm_target = { save_scope_as = ucm_cheat_menu_target } ucm_legend_master_add_seed_carolingian_legacy_effect = yes }
-}
-
-ucm_legend_seed_chinese_emperor = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { save_scope_as = ucm_cheat_menu_target } ucm_legend_master_add_seed_chinese_emperor_effect = yes }
 }
 
 ucm_legend_seed_egyptian_god = {
@@ -2568,13 +2519,6 @@ ucm_legend_tyrant = {
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes }
 	effect = { var:ucm_target = { save_scope_as = ucm_cheat_menu_target } ucm_legend_master_add_tyrant_effect = yes }
-}
-
-ucm_legend_undead_blood = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { save_scope_as = ucm_cheat_menu_target } ucm_legend_master_add_undead_blood_effect = yes }
 }
 
 ucm_legend_undead_hunter = {

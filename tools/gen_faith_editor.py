@@ -1,4 +1,4 @@
-"""Generate the faith editor's data effects from the CK3 1.20 religion databases.
+﻿"""Generate the faith editor's data effects from the CK3 1.20 religion databases.
 
 Writes common/scripted_effects/ucm_acm_faith_editor_data_effects.txt (vanilla + this mod). gen_ek2_compatch.py
 calls build() for the Elder Kings 2 version in compat/ek2/.
@@ -69,36 +69,43 @@ def build(dirs, header):
         add(L, "  ", "ucm_acm_doctrine_list_core_tenets", t)
     L += ["}", ""]
 
-    # What the selected faith's main rite has now.
-    L += ["ucm_acm_faith_refresh_display_lists_effect = {", "  if = {", "    limit = { has_variable = ucm_selected_faith_var }"]
-    L += [f"    clear_global_variable_list = ucm_acm_fe_display_{n}" for n in ["core_tenets"] + CATEGORIES]
-    L.append("    var:ucm_selected_faith_var = { main_rite = { save_scope_as = ucm_fe_rite } }")
+    # What the selected faith's main rite has now, one effect per list.
+    L += ["ucm_acm_fe_refresh_core_tenets = {", "  clear_global_variable_list = ucm_acm_fe_display_core_tenets"]
     for t in tenets:
-        L += ["    if = {", f"      limit = {{ scope:ucm_fe_rite = {{ rite_has_tenet = {t} }} }}"]
-        add(L, "      ", "ucm_acm_fe_display_core_tenets", t)
-        L.append("    }")
+        L += ["  if = {", f"    limit = {{ scope:ucm_fe_rite = {{ rite_has_tenet = {t} }} }}"]
+        add(L, "    ", "ucm_acm_fe_display_core_tenets", t)
+        L.append("  }")
+    L += ["}", ""]
     for c in CATEGORIES:
+        L += [f"ucm_acm_fe_refresh_{c} = {{", f"  clear_global_variable_list = ucm_acm_fe_display_{c}"]
         for g, ds in shown[c]:
             for i, d in enumerate(ds):
-                L += [f"    {'if' if i == 0 else 'else_if'} = {{", f"      limit = {{ scope:ucm_fe_rite = {{ rite_has_doctrine = {d} }} }}"]
-                add(L, "      ", f"ucm_acm_fe_display_{c}", d)
-                L.append("    }")
+                L += [f"  {'if' if i == 0 else 'else_if'} = {{", f"    limit = {{ scope:ucm_fe_rite = {{ rite_has_doctrine = {d} }} }}"]
+                add(L, "    ", f"ucm_acm_fe_display_{c}", d)
+                L.append("  }")
             if g not in optional:  # every rite has one; show the first so the group can still be picked
-                L.append("    else = {")
-                add(L, "      ", f"ucm_acm_fe_display_{c}", ds[0])
-                L.append("    }")
+                L.append("  else = {")
+                add(L, "    ", f"ucm_acm_fe_display_{c}", ds[0])
+                L.append("  }")
+        L += ["}", ""]
+    L += ["ucm_acm_faith_refresh_display_lists_effect = {", "  if = {", "    limit = { has_variable = ucm_selected_faith_var }",
+          "    var:ucm_selected_faith_var = { main_rite = { save_scope_as = ucm_fe_rite } }"]
+    L += [f"    ucm_acm_fe_refresh_{n} = yes" for n in ["core_tenets"] + CATEGORIES]
     L += ["  }", "}", ""]
 
-    # scope:ucm_pick_doctrine (a clicked tenet or doctrine) -> the choices that can replace it.
+    # The choices that can replace a clicked tenet or doctrine: one list per group, then a key -> group lookup.
     picks = [tenets] + [ds for c in CATEGORIES for _, ds in shown[c]]
-    L += ["ucm_acm_faith_fill_choices_effect = {", "  clear_global_variable_list = ucm_acm_fe_pick_current"]
     for i, ds in enumerate(picks):
-        L += [f"  {'if' if i == 0 else 'else_if'} = {{", "    limit = {", "      OR = {"]
-        L += [f"        {KEY} = flag:{d}" for d in ds]
-        L += ["      }", "    }"]
+        L.append(f"ucm_acm_fe_choices_{i} = {{")
         for d in ds:
-            add(L, "    ", "ucm_acm_fe_pick_current", d)
-        L.append("  }")
+            add(L, "  ", "ucm_acm_fe_pick_current", d)
+        L += ["}", ""]
+    L += ["ucm_acm_faith_fill_choices_effect = {", "  clear_global_variable_list = ucm_acm_fe_pick_current"]
+    first = True
+    for i, ds in enumerate(picks):
+        for d in ds:
+            L.append(f"  {'if' if first else 'else_if'} = {{ limit = {{ {KEY} = flag:{d} }} ucm_acm_fe_choices_{i} = yes }}")
+            first = False
     L += ["}", ""]
 
     # Drop the clicked core tenet before the replacement is added.

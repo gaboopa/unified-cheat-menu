@@ -1,4 +1,4 @@
-# Culture, religion, tradition and faith pickers (gui/ucm_picker_*.gui, tools/gen_pickers.py). Root = player.
+﻿# Culture, religion, tradition and faith pickers (gui/ucm_picker_*.gui, tools/gen_pickers.py). Root = player.
 # global_var:ucm_cheat_menu_recipient is the locked character; without one, the player is the target.
 
 # One culture per heritage; the GUI lists each heritage's cultures itself.
@@ -97,14 +97,6 @@ ucm_picker_faith_apply_effect = {
 
 # --- Traditions ---------------------------------------------------------------------------------------
 
-ucm_cw_clear_tradition_picker_lists_effect = {
-  clear_global_variable_list = ucm_cw_realm_tradition_list
-  clear_global_variable_list = ucm_cw_combat_tradition_list
-  clear_global_variable_list = ucm_cw_societal_tradition_list
-  clear_global_variable_list = ucm_cw_ritual_tradition_list
-  clear_global_variable_list = ucm_cw_regional_tradition_list
-}
-
 # scope:culture = the culture to edit.
 ucm_cw_open_tradition_picker_effect = {
   if = {
@@ -129,10 +121,7 @@ ucm_picker_tradition_toggle_effect = {
 # --- Startup: saved flags must not reopen a window --------------------------------------------------------
 
 ucm_acm_gui_startup_cleanup_effect = {
-  remove_character_flag = ucm_acm_culture_picker_open
-  remove_character_flag = ucm_acm_religion_picker_open
-  remove_character_flag = ucm_cw_tradition_picker_open
-  remove_character_flag = ucm_acm_faith_editor_open
+  ucm_picker_close_all_windows_effect = yes
   remove_variable = ucm_selected_culture_var
   ucm_picker_faith_clear_pick_effect = yes
 }

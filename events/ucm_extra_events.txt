@@ -37,3 +37,22 @@ ucm_extra.2 = {
 	}
 	option = { name = ucm_extra.b }
 }
+
+ucm_extra.3 = {
+	type = character_event
+	title = ucm_extra.3.t
+	desc = ucm_extra.3.desc
+	theme = stewardship
+	left_portrait = { character = var:ucm_target }
+	trigger = { ucm_single_player_trigger = yes }
+	widgets = {
+		widget = {
+			gui = "event_window_widget_name_child"
+			container = "dynamic_birth_name"
+			controller = name_character
+			setup_scope = { var:ucm_target = { save_scope_as = name_character_target } }
+		}
+	}
+
+	option = { name = ucm_extra.close }
+}

@@ -1,8 +1,5 @@
 ﻿l_simp_chinese:
  # CK3 1.20 cleanup: keys the script referenced but no loc file defined, plus raw-text strings turned into keys
- LIT_learned_trait_check_max_TT:0 "该特质进度已达上限。"
- LIT_learned_trait_check_missing_TT:0 "角色没有该特质，因此未增加经验。"
- dp_char_editor.traits.lifestyle_TT:0 "浏览生活方式特质。"
  dead_group:0 "已消亡文化"
  merge_titles.1.desc:0 ""
  special_gift_interaction_message_title:0 "不朽之礼"

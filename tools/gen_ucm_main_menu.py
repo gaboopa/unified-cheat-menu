@@ -93,7 +93,6 @@ TABS = [
     ("character", [
         ("h", "UCM_SEC_EDITORS"),
         ("sg", "ucm_open_trait_editor"), ("sg", "ucm_open_lifestyle_editor"),
-        ("ia", "daddy_pika_edit_character"),
         ("h", "UCM_SEC_IDENTITY"),
         ("ia", "ucm_change_age_interaction"),
         ("row", ["ucm_sexuality_heterosexual", "ucm_sexuality_homosexual", "ucm_sexuality_bisexual", "ucm_sexuality_asexual"]),
@@ -122,8 +121,6 @@ TABS = [
         ("ia", "set_super_governor_interaction"), ("ia", "set_unsuper_governor_interaction"),
         ("ia", "set_super_general_interaction"), ("ia", "set_unsuper_general_interaction"),
         ("ia", "set_all_in_one_interaction"), ("ia", "set_unall_in_one_interaction"),
-        ("h", "UCM_SEC_RESOURCES"),
-        ("ia", "daddy_pika_character_currency_menu"),
     ]),
     ("relationships", [
         ("h", "UCM_SEC_SECOND"),

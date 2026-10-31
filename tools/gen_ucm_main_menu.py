@@ -232,7 +232,7 @@ TABS = [
         ("h", "UCM_SEC_COURT_TOOLS"),
         ("t", "UCM_DECISIONS_NOTE"),
         ("dec", "ucm_court_management_decision"),
-        ("dec", "yyz_open_menu_decision"), ("dec", "ucm_bulk_guardian_run_decision"),
+        ("dec", "ucm_bulk_guardian_run_decision"),
         ("row", ["ucm_cure_illness", "ucm_cure_congenital"]),
         ("h", "UCM_SEC_PRISON"),
         ("cz", "t_t_hostage"), ("cz", "t_t_hostage_free"), ("cz", "t_t_family_hostages"),

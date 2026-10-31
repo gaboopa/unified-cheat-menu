@@ -45,7 +45,7 @@ English, German, Russian, Simplified Chinese and Turkish.
 | `tools/gen_faith_editor.py` | Generates the faith editor's data effects from the 1.20 doctrine, tenet and religion databases |
 | `tools/gen_cast_culture_faith.py` | Generates the classic culture casting pages and their labels from the culture database |
 | `tools/gen_trait_editor.py` | Generates the classic base-game trait editor and its labels from the trait database |
-| `tools/gen_advcm_modifiers.py` | Generates the artifact crafting slot modifiers from the slot list and the game's modifier formats |
+| `tools/gen_artifact_crafter.py` | Generates the artifact crafter and editor: stack modifiers, effects, scripted GUIs, labels and windows |
 | `tools/gen_lifestyle.py` | Generates the classic lifestyle pages and the perk labels from the perk database |
 | `tools/gen_court_positions.py` | Generates the one-click court reshuffle position lists from the court position types |
 | `tools/gen_beauty_companion.py` | Generates the beauty companion's classified culture picker and its labels |

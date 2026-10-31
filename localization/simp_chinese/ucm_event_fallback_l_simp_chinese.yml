@@ -1,9 +1,5 @@
 ﻿l_simp_chinese:
  ucm_companion_stored_culture:0 "Stored Companion Culture"
- ucm_craft_m1:0 "Artifact Modifier Group 1"
- ucm_craft_m2:0 "Artifact Modifier Group 2"
- ucm_craft_m3:0 "Artifact Modifier Group 3"
- ucm_craft_m4:0 "Artifact Modifier Group 4"
  ucm_gc_macro_east_asia:0 "East Asia"
  ucm_gc_macro_mena_central_asia:0 "Middle East and Central Asia"
  ucm_gc_macro_sea_oceania:0 "Southeast Asia and Oceania"

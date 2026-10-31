@@ -10,22 +10,6 @@ ucm_cheat_menu_menu_enabled_trigger = {
   }
 }
 
-# 宝物修改选择列表（不依赖UCM主菜单旗标，避免翻页后选项全部消失）
-ucm_acm_repair_picker_enabled_trigger = {
-  OR = {
-    ucm_cheat_menu_menu_enabled_trigger = yes
-    has_character_flag = ucm_acm_repair_picker_active
-  }
-}
-
-# 获得头衔列表（翻页后仍显示选项）
-ucm_title_pick_picker_enabled_trigger = {
-  OR = {
-    ucm_cheat_menu_menu_enabled_trigger = yes
-    has_character_flag = ucm_title_pick_picker_active
-  }
-}
-
 # 宝物窃取列表（翻页后勿因主菜单旗标丢失而整页选项消失）
 ucm_steal_picker_enabled_trigger = {
   OR = {

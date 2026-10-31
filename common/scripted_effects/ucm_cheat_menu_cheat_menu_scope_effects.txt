@@ -169,46 +169,6 @@ ucm_cheat_menu_open_steal_artifact_effect = {
   }
 }
 
-ucm_cheat_menu_open_artifact_craft_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  if = {
-    limit = {
-      exists = scope:actor
-      scope:actor = { ucm_player_may_use_artifact_craft_trigger = yes }
-    }
-  scope:actor = {
-    save_scope_as = ucm_acm_craft_creator
-    remove_character_flag = ucm_acm_modify_session
-    ucm_cheat_menu_sync_target_effect = yes
-    if = {
-      limit = { exists = scope:ucm_cheat_menu_target }
-      set_global_variable = {
-        name = ucm_acm_recipient
-        value = scope:ucm_cheat_menu_target
-      }
-    }
-    else_if = {
-      limit = { exists = scope:recipient }
-      set_global_variable = {
-        name = ucm_acm_recipient
-        value = scope:recipient
-      }
-    }
-    add_character_flag = ucm_craft_give_to_recipient
-    ucm_craft_init_modifier_slot_defaults_effect = yes
-    if = {
-      limit = { NOT = { has_variable = ucm_acm_artifact_type } }
-      ucm_acm_init_artifact_type_defaults_effect = yes
-    }
-    if = {
-      limit = { NOT = { has_character_flag = ucm_artifact_quality_set } }
-      ucm_acm_set_quality_common_effect = yes
-    }
-    add_character_flag = ucm_acm_gui_open
-  }
-  }
-}
-
 ucm_cheat_menu_sync_plant_scopes_effect = {
   ucm_cheat_menu_sync_target_effect = yes
   scope:ucm_cheat_menu_target = {

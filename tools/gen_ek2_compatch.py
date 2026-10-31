@@ -8,7 +8,7 @@ Generated here (everything else under compat/ek2/ is hand-written: descriptor, e
 - compat/ek2/gui/*.gui: 3-way merge (base vanilla) of every GUI file both UCM and EK2 override.
 - compat/ek2/<UCM file>: copies of UCM files whose top-level keys EK2 also defines with changes of its own,
   with each such block 3-way merged (base vanilla), so EK2's edits survive UCM's override.
-- compat/ek2/common/scripted_effects/pcm_historical_relics_effects.txt: the main-mod relic list minus the
+- compat/ek2/common/scripted_effects/ucm_historical_relics_effects.txt: the main-mod relic list minus the
   vanilla artifact effects EK2 removes.
 - compat/ek2/common/religion/religion_types/ucm_force_marry_religion.txt: EK2 family + hostility doctrine.
 
@@ -34,7 +34,7 @@ from ck3parse import _match_brace, effective_files, strip_comments, top_level_ob
 MOD_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 COMPAT = os.path.join(MOD_DIR, "compat", "ek2")
 RELIGIONS = os.path.join("common", "religion", "religion_types")
-RELICS_REL = os.path.join("common", "scripted_effects", "pcm_historical_relics_effects.txt")
+RELICS_REL = os.path.join("common", "scripted_effects", "ucm_historical_relics_effects.txt")
 FORCE_MARRY_REL = os.path.join(RELIGIONS, "ucm_force_marry_religion.txt")
 # Folders whose entries merge instead of colliding, or that a step below already handles.
 NO_KEY_MERGE = {os.path.join("common", "on_action"), RELIGIONS}

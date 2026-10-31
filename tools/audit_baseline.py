@@ -18,6 +18,7 @@ MIN_LINE = 13
 MOD_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEXT = (".txt", ".gui", ".yml")
 EXEMPT = {"LICENSE", "README.md", "tools/audit_baseline.py"}
+PREFIX = re.compile(r"\b(?:ucm_|zhuge_|dp_|yyz_|pcm_|skone_|skonester_|toc_|tgp_|acm_|cheat_menu_|cheat_)+", re.I)
 IDENT = re.compile(r"skonester|\bskone_|\bDP_|\bdp_|daddy_?pika|\byyz_|\bpcm_|\bzhuge_|\bzhueg_|\w*_0?toc(?![a-z])\w*|\btoc_|tocmod", re.I)
 
 
@@ -35,8 +36,9 @@ def tree(rev):
 
 
 def norm(text):
-    """Comparable lines: stripped, without comments or short boilerplate like `limit = {`."""
-    return [s for s in (l.strip() for l in text.splitlines()) if len(s) >= MIN_LINE and not s.startswith("#")]
+    """Comparable lines: stripped, without comments, short boilerplate like `limit = {`, or namespace prefixes,
+    so code renamed into `ucm_` still matches."""
+    return [PREFIX.sub("", s) for s in (l.strip() for l in text.splitlines()) if len(s) >= MIN_LINE and not s.startswith("#")]
 
 
 def runs(lines, inherited, min_len=RUN_LEN):
@@ -72,6 +74,7 @@ def self_check():
     assert runs(["a", "x", "b"], {"a", "b"}, 2) == []
     assert runs(["a", "b"], {"a", "b"}, 2) == [2]
     assert norm("  short\n# a comment that is long enough\n  long enough to count\n") == ["long enough to count"]
+    assert norm("  ucm_long_name_here = yes") == norm("  DP_long_name_here = yes")
     assert IDENT.search("DP_general_page_effect") and IDENT.search("zzzzzzzz_0toc_deb") and not IDENT.search("ucm_stock_gold")
     print("audit_baseline self-check OK")
 

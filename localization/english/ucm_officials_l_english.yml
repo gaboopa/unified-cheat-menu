@@ -2,428 +2,102 @@
  ucm_ui_no_hover_tooltip: "Select an action"
  ucm_cheat_menu_cheat_menu_desc: "Unified Cheat Menu"
  ucm_console_helper_title: "Console Helper"
- ucm_console_helper_body: "Click the button below to toggle debug mode. The command console only functions while debug mode is active."
+ ucm_console_helper_body: "Debug mode must be on for the command console to work. Use the button below to switch it."
  ucm_console_helper_toggle_debug: "Toggle Debug Mode"
- ucm_console_helper_toggle_debug_tt: "Equivalent to the debug_mode console command. Click again to disable debug mode.\n\n$UCM_DEBUG_ACHIEVEMENT_WARNING$"
- ucm_console_helper_hotkey_hint: "With debug mode enabled: press ` (Backtick) or Shift+Alt+C to show or hide the console."
-
-
-
-
+ ucm_console_helper_toggle_debug_tt: "Does the same as the debug_mode console command. Click again to turn it off.\n\n$UCM_DEBUG_ACHIEVEMENT_WARNING$"
+ ucm_console_helper_hotkey_hint: "While debug mode is on, ` (backtick) or Shift+Alt+C opens and closes the console."
  ucm_world_deterrence_fear_opinion: "Fears Your Might"
-
-
-
- ucm_cheat_menu_artifact_craft_menu_interaction_desc: "Create new artifacts: select type, subtype, rarity and up to five modifier sets."
-
-
- ucm_court_positions.8001.t: "Manage Court Positions"
- ucm_court_positions.8001.desc: "Manage court offices for [ucm_pos_reshuffle_liege.GetShortUIName] (court jobs only, excludes council)."
- ucm_court_positions.toast_mass_done_t: "Court Positions Reassigned"
-
-
-
-
-
- ucm_cheat_menu_steal_artifact_interaction_desc: "Paginated list (3 items per page). Use page controls to browse; steal artifacts individually or take all on the final page."
-
-
- ucm_cheat_menu_replace_official_no_candidate_tt: "No one eligible to succeed (requires a courtier, dynasty member, or landless AI meeting civil/military skill thresholds)."
- ucm_ro_pick.3100.t: "Select Successor"
- ucm_ro_pick.3100.empty: "(No eligible candidates)"
- ucm_ro_pick.3100.prev_page: "Previous Page"
- ucm_ro_pick.3100.next_page: "Next Page"
- ucm_ro_pick.3100.pick_0: "Succeed: [ucm_ro_slot0.GetName]"
- ucm_ro_pick.3100.pick_1: "Succeed: [ucm_ro_slot1.GetName]"
- ucm_ro_pick.3100.pick_2: "Succeed: [ucm_ro_slot2.GetName]"
- ucm_ro_pick.3100.pick_3: "Succeed: [ucm_ro_slot3.GetName]"
- ucm_ro_pick.3100.pick_4: "Succeed: [ucm_ro_slot4.GetName]"
- ucm_ro_pick.3100.pick_5: "Succeed: [ucm_ro_slot5.GetName]"
- ucm_ro_pick.3100.pick_6: "Succeed: [ucm_ro_slot6.GetName]"
- ucm_ro_pick.3100.pick_7: "Succeed: [ucm_ro_slot7.GetName]"
  ucm_close: "Close"
- ucm_confirm: "Confirm"
-
-
-
-
-
-
-
-
-
- ucm_cheat_menu.0015.disable_all: "Disable All"
-
-
-
-
-
-
  ucm_force_marry_religion: " (Internal)"
  ucm_force_marry_religion_adj: "Cheat"
- ucm_force_marry_faith: "Unrestricted Union"
+ ucm_force_marry_faith: "Free Marriage"
  ucm_force_marry_faith_adj: "Unrestricted"
-
-
- ucm_art.3094.t: "Steal Artifact"
- ucm_art.3094.steal_0: "Steal: [ucm_steal_slot0.GetName]"
- ucm_art.3094.steal_0_tt: "#T [ucm_steal_slot0.GetNameNoTooltip]#!\n[ucm_steal_slot0.GetDescription|F]"
- ucm_art.3094.steal_1: "Steal: [ucm_steal_slot1.GetName]"
- ucm_art.3094.steal_1_tt: "#T [ucm_steal_slot1.GetNameNoTooltip]#!\n[ucm_steal_slot1.GetDescription|F]"
- ucm_art.3094.steal_2: "Steal: [ucm_steal_slot2.GetName]"
- ucm_art.3094.steal_2_tt: "#T [ucm_steal_slot2.GetNameNoTooltip]#!\n[ucm_steal_slot2.GetDescription|F]"
- ucm_art.3094.steal_all: "Steal All Artifacts"
-
-
-
-
-
-
-
-
-
-
-
- ucm_clear_secrets_no_secrets_hint_loc: "#weak (This character has no secrets to clear)#!\n"
- ucm_zw_empty_loc: ""
- ucm_clear_secrets_os_head_loc: "Personal Secrets:\n"
- ucm_clear_secrets_ts_head_loc: "Secrets Targeting This Character:\n"
- ucm_clear_secrets_kn_head_loc: "Secrets Known About Others:\n"
-
- ucm_sec_bullet_murder_attempt: "• Murder Plot\n"
- ucm_sec_bullet_murder: "• Murder\n"
- ucm_sec_bullet_incest: "• Incest\n"
- ucm_sec_bullet_cannibal: "• Cannibalism\n"
- ucm_sec_bullet_deviant: "Deviant Acts\n"
- ucm_sec_bullet_non_believer: "• Non-Believer\n"
- ucm_sec_bullet_homosexual: "• Homosexuality\n"
- ucm_sec_bullet_witch: "• Witchcraft\n"
- ucm_sec_bullet_disputed_heritage: "• Disputed Lineage\n"
- ucm_sec_bullet_embezzler: "• Embezzlement\n"
- ucm_sec_bullet_bastard: "• Illegitimate Child\n"
- ucm_sec_bullet_lover: "• Lover\n"
-
- ucm_cheat_menu_gain_good_physique_interaction_gain_loc: "Grant Superior Congenital Traits"
- ucm_cheat_menu_gain_good_physique_interaction_remove_loc: "Remove Superior Congenital Traits"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- ucm_trait_immortal_ageless: "Ageless Immortal"
- ucm_trait_immortal_ageless_desc: "Time cannot touch you. You do not age, cannot become infirm, possess strong disease resistance, and are nearly immune to murder and hostile plots."
+ ucm_trait_immortal_ageless: "Undying and Ageless"
+ ucm_trait_immortal_ageless_desc: "You never age or grow infirm, shrug off most disease, and murder and hostile schemes rarely touch you."
  ucm_trait_yannian_dan: "Longevity Elixir"
- ucm_trait_yannian_dan_desc: "A potent elixir that preserves youth, extends lifespan and wards off illness."
+ ucm_trait_yannian_dan_desc: "A strong elixir: stay young, live longer, fall ill less."
  ucm_trait_yannian_dan_mid: "Refined Longevity Elixir"
- ucm_trait_yannian_dan_mid_desc: "A refined elixir that preserves youth, greatly extends lifespan and wards off illness."
+ ucm_trait_yannian_dan_mid_desc: "A purer elixir: stay young, live much longer, fall ill less."
  ucm_trait_yannian_dan_best: "Supreme Longevity Elixir"
- ucm_trait_yannian_dan_best_desc: "A peerless elixir that defies mortal aging, grants an extended life and full protection from sickness."
+ ucm_trait_yannian_dan_best_desc: "The finest elixir: no aging, a far longer life, no sickness."
  ucm_trait_baidubuqin: "Poison Immunity"
- ucm_trait_baidubuqin_desc: "Immune to disease and plague. All existing illnesses are cured upon gaining this trait."
+ ucm_trait_baidubuqin_desc: "Diseases and plagues can't touch you, and gaining this trait cures any you have."
  ucm_trait_xinwuguai: "Peace of Mind"
- ucm_trait_xinwuguai_desc: "Your mind is free of burden. Stress remains at zero and accumulates almost never. All current stress is removed when obtained."
+ ucm_trait_xinwuguai_desc: "Nothing weighs on you. Your stress drops to zero and almost never rises."
  ucm_trait_marriage_ban: "Marriage Restricted"
- ucm_trait_marriage_ban_desc: "Cannot marry or be betrothed. All existing marriages and betrothals are dissolved. Toggle this trait again to remove the restriction."
+ ucm_trait_marriage_ban_desc: "Ends any marriage or betrothal and blocks new ones. Remove the trait to lift the ban."
  ucm_trait_stats_100_locked: "Maxed Attributes (Locked)"
- ucm_trait_stats_100_locked_desc: "All core attributes and Prowess are locked at 100. No event, aging or effect can alter them."
-
- trait_ucm_cheat_menu: "Special Trait"
-
- trait_ucm_trait_immortal_ageless: "$ucm_trait_immortal_ageless$"
- trait_ucm_trait_immortal_ageless_desc: "$ucm_trait_immortal_ageless_desc$"
- trait_ucm_trait_yannian_dan: "$ucm_trait_yannian_dan$"
- trait_ucm_trait_yannian_dan_desc: "$ucm_trait_yannian_dan_desc$"
- trait_ucm_trait_yannian_dan_mid: "$ucm_trait_yannian_dan_mid$"
- trait_ucm_trait_yannian_dan_mid_desc: "$ucm_trait_yannian_dan_mid_desc$"
- trait_ucm_trait_yannian_dan_best: "$ucm_trait_yannian_dan_best$"
- trait_ucm_trait_yannian_dan_best_desc: "$ucm_trait_yannian_dan_best_desc$"
- trait_ucm_trait_baidubuqin: "Poison Immunity"
- trait_ucm_trait_baidubuqin_desc: "Immune to disease and plague. All existing illnesses are cured upon gaining this trait."
- trait_ucm_trait_xinwuguai: "Peace of Mind"
- trait_ucm_trait_xinwuguai_desc: "Your mind is free of burden. Stress remains at zero and accumulates almost never. All current stress is removed when obtained."
+ ucm_trait_stats_100_locked_desc: "All skills and prowess stay at 100, whatever events or age may do."
  trait_ucm_trait_marriage_ban: "$ucm_trait_marriage_ban$"
  trait_ucm_trait_marriage_ban_desc: "$ucm_trait_marriage_ban_desc$"
  trait_ucm_trait_stats_100_locked: "$ucm_trait_stats_100_locked$"
  trait_ucm_trait_stats_100_locked_desc: "$ucm_trait_stats_100_locked_desc$"
-
- ucm_cheat_menu_sterilized_modifier: "Sterilized"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- trait_warlord_god: "God of a Hundred Battles"
- trait_warlord_god_desc: "#bold Cheat Trait#! for commanders. Greatly increases [martial|e] and #bold Prowess#! ($game_concept_prowess$). Raises #bold knight#! limits and battlefield effectiveness, boosts #bold army#! damage, toughness and #bold siege#! strength. Grants higher base #bold Dread#!, accelerates #bold levy#! replenishment and cuts #bold army upkeep#!. Movement and terrain bonuses are granted via personality modifiers. #bold Non-heritable#!. Excluded from Ruler Designer and random trait pools. Does not grant an unbeatable combat flag. Can be applied by right-clicking a character in the Cheat main menu, or via command: #bold add_trait = warlord_god#!. This trait stacks separately with #bold Celestial Immortal#!. Icon: #bold Golden Helm & Crossed Swords#! ([commander|e] theme)."
-
-
-
- ucm_one_click_grant_titles_decision: "Distribute Surplus Titles"
- ucm_one_click_grant_titles_decision_desc: "Grant out all unassigned titles in your possession."
- ucm_one_click_grant_titles_decision_tooltip: "You hold titles available for grant, and there are eligible recipients."
- ucm_one_click_grant_titles_decision_confirm: "Confirm Grant"
-
- ucm_one_click_purge_bad_governors_decision: "Dismiss Incompetent Rulers"
- ucm_one_click_purge_bad_governors_decision_desc: "Remove officials and vassals with poor martial and stewardship attributes across all ranks."
- ucm_one_click_purge_bad_governors_decision_tooltip: "Dismiss all incompetent administrators."
+ ucm_one_click_purge_bad_governors_decision: "Dismiss Poor Rulers"
+ ucm_one_click_purge_bad_governors_decision_desc: "Removes officials and vassals with weak martial and stewardship, at any rank you pick."
+ ucm_one_click_purge_bad_governors_decision_tooltip: "Someone qualifies for dismissal."
  ucm_one_click_purge_bad_governors_decision_confirm: "Open Rank Menu"
-
- ucm_officials.9040.t: "Dismiss Incompetent Rulers"
- ucm_officials.9040.all_tiers: "Purge holders of all primary titles at once, from county to empire (governors and landed vassals alike)."
- ucm_officials.9040.county: "Purge: County Primary Titles (Governors & Vassals)"
- ucm_officials.9040.duchy: "Purge: Duchy Primary Titles (Governors & Vassals)"
- ucm_officials.9040.kingdom: "Purge: Kingdom Primary Titles (Governors & Vassals)"
- ucm_officials.9040.empire: "Purge: Empire Primary Titles (Governors & Vassals)"
-
- ucm_one_click_transfer_vassals_decision: "De Jure Vassal Reassignment"
- ucm_one_click_transfer_vassals_decision_desc: "Reassign vassals within your realm up the de jure chain of their primary title (transfer whole vassals; do not split counties or grant them out)."
- ucm_one_click_transfer_vassals_decision_tooltip: "At least one vassal whose de jure liege is in your realm has an incorrect liege relationship."
- ucm_one_click_transfer_vassals_decision_confirm: "Confirm Reassignment"
-
+ ucm_officials.9040.t: "Dismiss Poor Rulers"
+ ucm_officials.9040.all_tiers: "Every rank, county to empire"
+ ucm_officials.9040.county: "Rulers whose primary title is a county"
+ ucm_officials.9040.duchy: "Rulers whose primary title is a duchy"
+ ucm_officials.9040.kingdom: "Rulers whose primary title is a kingdom"
+ ucm_officials.9040.empire: "Rulers whose primary title is an empire"
  ucm_imprison_vassals_decision: "Imprison Vassals"
- ucm_imprison_vassals_decision_desc: "Choose to imprison either direct vassals or all vassals within your realm."
- ucm_imprison_vassals_decision_tooltip: "There are vassals who can be placed under arrest."
+ ucm_imprison_vassals_decision_desc: "Throw your direct vassals, or every vassal in your realm, into prison."
+ ucm_imprison_vassals_decision_tooltip: "Someone can be arrested."
  ucm_imprison_vassals_decision_confirm: "Open Menu"
-
  ucm_officials.9102.t: "Imprison Vassals"
- ucm_officials.9102.desc: "Select the scope of arrest: only your direct vassals, or every vassal within your domain including their subordinates."
+ ucm_officials.9102.desc: "Who goes to prison: your direct vassals, or every vassal below you?"
  ucm_officials.9102.c: "Close"
-
  ucm_imprison_all_direct_vassals_decision: "Imprison All Direct Vassals"
- ucm_imprison_all_direct_vassals_decision_desc: "Arrest every vassal who swears fealty directly to you."
- ucm_imprison_all_direct_vassals_decision_tooltip: "Some direct vassals are not currently imprisoned."
+ ucm_imprison_all_direct_vassals_decision_desc: "Arrests all your direct vassals."
+ ucm_imprison_all_direct_vassals_decision_tooltip: "At least one direct vassal is free."
  ucm_imprison_all_direct_vassals_decision_confirm: "Imprison All"
-
  ucm_imprison_all_realm_vassals_decision: "Imprison All Realm Vassals"
- ucm_imprison_all_realm_vassals_decision_desc: "Arrest every vassal across your entire realm, including vassals of vassals."
+ ucm_imprison_all_realm_vassals_decision_desc: "Arrests every vassal in your realm, at any level."
  ucm_imprison_all_realm_vassals_decision_confirm: "Imprison All"
-
  ucm_realm_repair_holding_bases_decision: "Fix Zero-Tax Holdings (Realm)"
- ucm_realm_repair_holding_bases_decision_desc: "Resolve the bug causing certain holdings to generate no tax income."
+ ucm_realm_repair_holding_bases_decision_desc: "Fixes holdings in your realm that pay no tax because of a bug."
  ucm_realm_repair_holding_bases_decision_confirm: "Apply Fix"
-
-
  ucm_one_click_imperial_examination_promote_decision: "Scholar Official Promotion"
- ucm_one_click_imperial_examination_promote_decision_desc: "Boost the competence, martial and stewardship attributes of officials throughout the realm."
- ucm_one_click_imperial_examination_promote_decision_tooltip: "Eligible landed vassals present. Requires TGP and compatible government framework."
+ ucm_one_click_imperial_examination_promote_decision_desc: "Raises the skills of officials across your realm."
+ ucm_one_click_imperial_examination_promote_decision_tooltip: "Needs the TGP expansion, a fitting government and a landed vassal."
  ucm_one_click_imperial_examination_promote_decision_confirm: "Confirm Promotion"
-
- ucm_fiscal_treasury_officials_decision: "Privy Purse & Tax Collection"
- ucm_fiscal_treasury_officials_decision_desc: "Set income limits for officials and collect revenue in one click."
- ucm_fiscal_treasury_officials_decision_tooltip: "Open menu to set tax caps and seize funds instantly."
- ucm_fiscal_treasury_officials_decision_confirm: "Open Menu"
-
- ucm_officials.9050.t: "Privy Purse & Tax Collection"
- ucm_officials.9050.desc: "Set collection limits by rank, or seize funds from officials."
- ucm_officials.9050.configure_tiers: "Set Tax Caps by Rank"
- ucm_officials.9050.seize_to_treasury: "Seize Gold from All Eligible Officials"
-
  ucm_population_management_hub_decision: "Population Administration"
- ucm_population_management_hub_decision_desc: "Manage population growth, clear idle populace and eradicate realm-wide plagues."
- ucm_population_management_hub_decision_tooltip: "Open the population management submenu."
+ ucm_population_management_hub_decision_desc: "Thin out your dynasty, the character pool or your realm."
+ ucm_population_management_hub_decision_tooltip: "Opens the population tools."
  ucm_population_management_hub_decision_confirm: "Open Menu"
-
  ucm_officials.9080.t: "Population Administration"
- ucm_officials.9080.desc: "Tools for dynasty population control, rootless commoner purges, birth limits and realm-wide plague cleansing (AI-only)."
- ucm_officials.9080.option_dynasty: "Dynasty Population Purge"
- ucm_officials.9080.option_world: "Purge Rootless Commoners"
- ucm_officials.9080.option_family_planning: "Single Child Rule & Dynasty Exemption (Toggle)"
- ucm_officials.9080.option_samge: "Midnight Reaping: Restless Spirits (Single Wave)"
-
- ucm_officials.9084.t: "Single Child Rule & Dynasty Protection"
- ucm_officials.9084.desc: "#bold Single Child Rule#!: applies to all AI fathers. Judged by living child count — if the father already has 1 living child, the newborn is culled. Dead children do not count; after the only living child dies, another child may be kept. Only AI children of AI fathers are culled; human player fathers are exempt. Optional dynasty protection excludes the player dynasty. Mutually exclusive with Dynasty Male Single Child Restriction."
- ucm_officials.9084.enable: "Enable Single Child Rule"
- ucm_officials.9084.disable: "Disable Single Child Rule"
- ucm_officials.9084.exempt_dynasty_on: "Exempt Player Dynasty"
- ucm_officials.9084.exempt_dynasty_off: "Revoke Dynasty Exemption"
-
- ucm_officials.9087.enable: "Enable Dynasty Male Child Limit"
- ucm_officials.9087.disable: "Disable Dynasty Male Child Limit"
-
- ucm_officials.9085.t: "Midnight Reaping: Restless Spirits"
- ucm_officials.9085.desc: "Unleash a plague-like purge across your realm. Affects AI characters only."
- ucm_officials.9085.enable: "Trigger One Reaping Wave Now"
- ucm_officials.9085.disable: "Disable Annual Reaping Cycle"
-
- ucm_samge_realm_death_toast_t: "Realm: Death by Pestilence"
- ucm_samge_realm_death_toast_desc: "#EMP [Character.GetTitledFirstName]#! has perished from pestilence during the Midnight Reaping. Portrait shown on the left."
-
-
- ucm_officials.9081.t: "Dynasty Population Purge"
- ucm_officials.9081.desc: "Remove unworthy dynasty members: those aged 16 or younger with poor attributes, and those over 50 lacking martial prowess."
- ucm_officials.9081.execute: "Execute Purge"
- ucm_officials.9081.execute_tt: "Complete dynasty purge and return to menu."
-
- ucm_officials.9083.t: "Purge Rootless Commoners"
- ucm_officials.9083.desc: "Safely remove unused AI wanderers from the character pool. The purge processes only 25 characters every three days and never targets courtiers, guests, rulers, adventurers, or your protected family. Only one purge can run at a time."
- ucm_officials.9083.cap_1000: "Purge up to 1000"
- ucm_officials.9083.cap_1000_tt: "Start a background purge capped at 1000 unused AI pool characters."
- ucm_officials.9083.cap_2000: "Purge up to 2000"
- ucm_officials.9083.cap_2000_tt: "Start a background purge capped at 2000 unused AI pool characters."
- ucm_officials.9083.cap_3000: "Purge up to 3000"
- ucm_officials.9083.cap_3000_tt: "Start a background purge capped at 3000 unused AI pool characters."
- ucm_officials.9083.cancel: "Cancel Active Purge"
- ucm_officials.9083.cancel_tt: "Stop the background purge before its next batch."
-
- ucm_dynasty_grant_titles_decision: "Dynasty Enfeoffment"
- ucm_dynasty_grant_titles_decision_desc: "Award surplus titles to members of your dynasty."
- ucm_dynasty_grant_titles_decision_tooltip: "You hold grantable titles and have eligible dynasty members."
- ucm_dynasty_grant_titles_decision_confirm: "Grant to Dynasty"
-
-
-
- ucm_officials.9060.t: "Set Tax Caps by Rank"
- ucm_officials.9060.desc: ""
- ucm_officials.9060.tier_barony: "Barony Primary Title"
- ucm_officials.9060.tier_county: "County Primary Title"
- ucm_officials.9060.tier_duchy: "Duchy Primary Title"
- ucm_officials.9060.tier_kingdom: "Kingdom Primary Title"
- ucm_officials.9060.tier_empire: "Empire Primary Title"
- ucm_officials.9060.tier_hegemony: "Hegemony Primary Title"
-
-
+ ucm_officials.9080.desc: "Pick what to thin out. Nothing here touches you or your closest family."
  ucm_government_changed_feudal_toast_title: "Government Changed to Feudal"
- ucm_government_changed_feudal_toast_desc: "Your government type was changed to Feudal. If you did not confirm this in the Change Government menu, check whether you clicked a nearby decision by mistake."
- ucm_government_lock_reverted_toast_title: "Government Automatically Restored"
- ucm_government_lock_reverted_toast_desc: "An unexpected government change was detected and your previously locked government type was restored. To change it intentionally, use the Change Government menu."
+ ucm_government_changed_feudal_toast_desc: "You are now feudal. If you didn't choose this, a nearby decision may have been clicked by mistake."
+ ucm_government_lock_reverted_toast_title: "Government Restored"
+ ucm_government_lock_reverted_toast_desc: "Your meritocratic government changed unexpectedly, so it was put back."
  ucm_government_feudal_blocked_toast_title: "Forced Feudal Conversion Blocked"
- ucm_government_feudal_blocked_toast_desc: "A script attempted to change your government to Feudal and was blocked. Meritocracy, Celestial, and other special governments will not be auto-downgraded."
- ucm_tt_no_landed_vassal_for_strip_fail: "No titles can be reclaimed from vassals (all county holdings and duchies+ are already held by you)."
-
-
-
-
-
- ucm_tt_no_vassal_for_mass_gov_fail: "No vassals eligible for conversion. Target government already active, candidates are ineligible, or their primary title rank is below county level."
- ucm_tt_has_grantable_title_for_one_click_fail: "No unassigned titles available to grant."
- ucm_tt_has_grant_recipient_available_fail: "No suitable recipients to receive titles."
- ucm_tt_has_dynasty_grant_recipient_available_fail: "No adult dynasty members qualified to receive titles under current rules."
- ucm_tt_has_anyone_to_purge_fail: "No eligible targets found. Requires incompetent governors or landed nobles holding matching-rank primary titles, who also have a designated heir — primary heir, player heir or any living heir (including heirs generated under Provincial Administration)."
- ucm_tt_has_de_jure_transferable_direct_vassals_fail: "No vassals can be reassigned to their de jure liege."
- ucm_tt_no_imprisonable_direct_vassal_fail: "No direct vassals can be imprisoned. All are already incarcerated or exempt from scripted arrest."
- ucm_tt_no_imprisonable_realm_vassal_fail: "No vassals across the realm can be imprisoned. All are already incarcerated or exempt from scripted arrest."
- ucm_tt_no_official_for_land_cap_fail: "No eligible landed vassals. Requires vassals holding county rank or higher; your own titles do not qualify."
- ucm_tt_no_tribal_holding_to_feudalize_fail: "No tribal, nomadic or pastoral settlements within your realm can be converted to castles."
- ucm_tt_no_merit_official_to_promote_fail: "No eligible vassals. Candidates must hold landed titles; merit-based officials must not have reached maximum rank, while regular landed vassals are always qualified."
- ucm_tt_no_official_gold_to_exploit_fail: "No officials eligible for fund seizure. Rank limit must be greater than zero and targets must possess gold."
-
- ucm_official_land_cap_decision: "Consolidate Titles"
- ucm_official_land_cap_decision_desc: "Force county-tier and higher vassals to keep only their primary title and one county; stripped excess titles are granted to others in the realm—they do not pile on you."
- ucm_official_land_cap_decision_tooltip: "At least one vassal in the realm still holds excess titles."
- ucm_official_land_cap_decision_confirm: "Confirm"
- ucm_land_cap_batch_complete_toast_title: "Title Consolidation Complete"
- ucm_land_cap_batch_complete_toast_desc: "Land-cap enforcement is finished across the realm; excess titles were granted out and were not piled on you."
-
- ucm_one_click_strip_official_titles_decision: "One-Click Title Seizure"
- ucm_one_click_strip_official_titles_decision_desc: "A single click initiates repeated title revocations until finished: all counties, duchies and higher-tier titles inside your realm revert to you."
- ucm_one_click_strip_official_titles_decision_tooltip: "Revoke every title within your realm, granting them directly to you."
- ucm_one_click_strip_official_titles_decision_confirm: "Confirm Seizure"
- ucm_one_click_strip_official_titles_effect_tt: "Automatically performs successive title revocations until there are no more counties, duchies or superior titles left to claim in your realm. Independent foreign rulers are unaffected."
-
- ucm_tt_learn_secrets_none_unknown_fail: "You already know every secret this character possesses."
-
-
-
-
-
-
+ ucm_government_feudal_blocked_toast_desc: "A script tried to make you feudal and was stopped. Special governments aren't downgraded automatically."
  ucm_learn_all_realm_officials_secrets_decision: "Realm-Wide Inquisition"
- ucm_learn_all_realm_officials_secrets_decision_desc: "Uncover all secrets held by officials across your realm."
- ucm_learn_all_realm_officials_secrets_decision_tooltip: "Requires TGP and a compatible framework government."
+ ucm_learn_all_realm_officials_secrets_decision_desc: "You learn every secret your realm's officials hold."
+ ucm_learn_all_realm_officials_secrets_decision_tooltip: "Needs the TGP expansion and a fitting government."
  ucm_learn_all_realm_officials_secrets_decision_confirm: "Investigate"
-
- ucm_seduce_shield_for_consorts_decision_title_on: "#bold 【ON】#! Inner-Chamber Vigil"
- ucm_seduce_shield_for_consorts_decision_title_off: "#bold 【OFF】#! Inner-Chamber Vigil"
- ucm_seduce_shield_for_consorts_decision_desc_on: "Vigil is active. Outsiders may not seduce your consorts, and your consorts may not seduce others (including AI), except towards you. Universal Rules: All AI are barred from Seduction, Courtship and Elopement; extramarital lover ties for married AI are cleared daily. Daily Effects: Refreshes Chaste and Loyal traits; ends all incoming and outgoing romance, abduction and elopement schemes involving your household; removes lover bonds to anyone other than yourself. A yearly trait refresh acts as additional backup. Click to disable."
- ucm_seduce_shield_for_consorts_decision_desc_off: "Vigil is inactive. New campaigns enable the vigil by default until manually disabled, after which it remains off. When active, consorts are protected from seduction, global AI romance restrictions apply, hostile schemes are cleared daily and unrelated lover bonds are removed. Chaste and Loyal traits receive daily and yearly refreshes."
- ucm_seduce_shield_for_consorts_decision_confirm_disable: "Disable Vigil"
- ucm_seduce_shield_for_consorts_decision_confirm_enable: "Enable Vigil"
-
- ucm_bulk_guardian_run_decision: "Bulk Assign Guardians"
- ucm_bulk_guardian_run_decision_desc: "Appoint qualified guardians for all children in your realm. Optional: run \"$ucm_court_management_decision$\" first so better-qualified courtiers are available as guardians."
- ucm_bulk_guardian_run_decision_tooltip: "At least one ward is eligible. Restricted to human players."
- ucm_bulk_guardian_run_decision_confirm: "Execute"
-
- ucm_court_management_decision: "Court Purge & Recruit"
- ucm_court_management_decision_desc: "Dismiss useless courtiers (excluding dynasty members) and recruit new courtiers with superior attributes."
- ucm_court_management_decision_tooltip: "Restricted to human players. Performs a single round of purge and recruitment."
- ucm_court_management_decision_confirm: "Execute"
- ucm_court_mgmt_msg_title: "Court Reorganized"
- ucm_court_mgmt_msg_desc: ""
-
-
- ucm_officials.9071.t: "Set Rank Income Cap"
- ucm_officials.9071.desc: ""
-
-
-
- ucm_boost_world_ai_rulers_decision: "Empower All Independent AI Realms"
-
-
-
-
-
+ ucm_seduce_shield_for_consorts_decision_title_on: "#bold [ON]#! Chamber Watch"
+ ucm_seduce_shield_for_consorts_decision_title_off: "#bold [OFF]#! Chamber Watch"
+ ucm_seduce_shield_for_consorts_decision_desc_on: "Active. Your consorts can't seduce or be seduced except by you, and AI characters can't seduce, court or elope. Love and abduction schemes around your household end each month, and your consorts stay Chaste and Loyal. Click to turn off."
+ ucm_seduce_shield_for_consorts_decision_desc_off: "Inactive. Turn it on to protect your consorts from seduction and stop AI romance schemes."
+ ucm_seduce_shield_for_consorts_decision_confirm_disable: "Turn Off"
+ ucm_seduce_shield_for_consorts_decision_confirm_enable: "Turn On"
  ucm_ai_realm_governance_support: "Governance Support"
- ucm_ai_realm_governance_support_desc: "Roughly 50% army upkeep reduction; drastically increased men-at-arms cap & unit size. Boosted construction speed and domain income alongside improved diplomacy and belligerent inclination. AI gains higher greed alongside reduced compassion and honor; domain limit +2. All independent realms obtain yearly expansion bonuses plus stackable surge modifiers, elevated vassal dues and EP3 administrative perks. Permanent automatic de jure vassal reassignment enabled."
-
-
-
-
- martial_custom_equal: "Equal Rights"
+ ucm_ai_realm_governance_support_desc: "Half army upkeep, far more and larger men-at-arms, faster building, more domain income, +2 domain limit, greedier and less honorable AI, and automatic de jure vassal sorting."
+ martial_custom_equal: "Both Sexes"
  martial_custom_male_only: "Men Only"
  martial_custom_female_only: "Women Only"
-
-
-
-
-
-
-
-
-
-
-
- ucm_positions_mass_reshuffle_decision: "Court Positions"
-
-
-
-
-
-
  ucm_imprison_all_realm_vassals_decision_tooltip: ""
- ucm_de_jure_transfer_batch_complete_toast_title: "De Jure Reassignment Complete"
- ucm_de_jure_transfer_batch_complete_toast_desc: "All eligible vassals have been reassigned along their primary title's de jure chain (holdings were not split)."
+ ucm_de_jure_transfer_batch_complete_toast_title: "Vassals Sorted De Jure"
+ ucm_de_jure_transfer_batch_complete_toast_desc: "Your vassals now follow their primary title's de jure chain. No holdings were split."
+ ucm_population_cull_dynasty: "Cull Weak Landless Kin"
+ ucm_population_cull_dynasty_tt: "Landless dynasty members of 16 or older with low skills die."
+ ucm_population_world_purge: "Purge Idle Pool Characters"
+ ucm_population_world_purge_tt: "Removes up to 2000 unused AI pool characters over time. Courtiers, guests, rulers and your family are safe."
+ ucm_population_world_purge_cancel: "Stop the Purge"
+ ucm_population_reap: "Reap the Realm"
+ ucm_population_reap_tt: "Up to 1000 random AI characters of your realm die of disease. Your family and spouses are safe."
+ ucm_population_close: "Close"

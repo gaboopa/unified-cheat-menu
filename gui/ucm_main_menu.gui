@@ -1714,105 +1714,11 @@ window = {
             hbox = {
               layoutpolicy_horizontal = expanding
               spacing = 4
-              visible = "[And( GetDecisionWithKey( 'ucm_imprison_vassals_decision' ).IsShownForPlayer, GetDecisionWithKey( 'ucm_dynasty_grant_titles_decision' ).IsShownForPlayer )]"
+              visible = "[GetDecisionWithKey( 'ucm_imprison_vassals_decision' ).IsShownForPlayer]"
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
                 datacontext = "[GetDecisionWithKey( 'ucm_imprison_vassals_decision' )]"
-                text = "[Decision.GetTitleForPlayer]"
-                tooltip = "[Decision.GetShortDescForPlayer]"
-                onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
-              }
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                datacontext = "[GetDecisionWithKey( 'ucm_dynasty_grant_titles_decision' )]"
-                text = "[Decision.GetTitleForPlayer]"
-                tooltip = "[Decision.GetShortDescForPlayer]"
-                onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
-              }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              visible = "[And( Not( GetDecisionWithKey( 'ucm_imprison_vassals_decision' ).IsShownForPlayer ), GetDecisionWithKey( 'ucm_dynasty_grant_titles_decision' ).IsShownForPlayer )]"
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                datacontext = "[GetDecisionWithKey( 'ucm_dynasty_grant_titles_decision' )]"
-                text = "[Decision.GetTitleForPlayer]"
-                tooltip = "[Decision.GetShortDescForPlayer]"
-                onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
-              }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              visible = "[And( GetDecisionWithKey( 'ucm_imprison_vassals_decision' ).IsShownForPlayer, Not( GetDecisionWithKey( 'ucm_dynasty_grant_titles_decision' ).IsShownForPlayer ) )]"
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                datacontext = "[GetDecisionWithKey( 'ucm_imprison_vassals_decision' )]"
-                text = "[Decision.GetTitleForPlayer]"
-                tooltip = "[Decision.GetShortDescForPlayer]"
-                onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
-              }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              visible = "[And( GetDecisionWithKey( 'ucm_one_click_grant_titles_decision' ).IsShownForPlayer, GetDecisionWithKey( 'ucm_official_land_cap_decision' ).IsShownForPlayer )]"
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                datacontext = "[GetDecisionWithKey( 'ucm_one_click_grant_titles_decision' )]"
-                text = "[Decision.GetTitleForPlayer]"
-                tooltip = "[Decision.GetShortDescForPlayer]"
-                onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
-              }
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                datacontext = "[GetDecisionWithKey( 'ucm_official_land_cap_decision' )]"
-                text = "[Decision.GetTitleForPlayer]"
-                tooltip = "[Decision.GetShortDescForPlayer]"
-                onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
-              }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              visible = "[And( Not( GetDecisionWithKey( 'ucm_one_click_grant_titles_decision' ).IsShownForPlayer ), GetDecisionWithKey( 'ucm_official_land_cap_decision' ).IsShownForPlayer )]"
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                datacontext = "[GetDecisionWithKey( 'ucm_official_land_cap_decision' )]"
-                text = "[Decision.GetTitleForPlayer]"
-                tooltip = "[Decision.GetShortDescForPlayer]"
-                onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
-              }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              visible = "[And( GetDecisionWithKey( 'ucm_one_click_grant_titles_decision' ).IsShownForPlayer, Not( GetDecisionWithKey( 'ucm_official_land_cap_decision' ).IsShownForPlayer ) )]"
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                datacontext = "[GetDecisionWithKey( 'ucm_one_click_grant_titles_decision' )]"
-                text = "[Decision.GetTitleForPlayer]"
-                tooltip = "[Decision.GetShortDescForPlayer]"
-                onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
-              }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              visible = "[GetDecisionWithKey( 'ucm_one_click_strip_official_titles_decision' ).IsShownForPlayer]"
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                datacontext = "[GetDecisionWithKey( 'ucm_one_click_strip_official_titles_decision' )]"
                 text = "[Decision.GetTitleForPlayer]"
                 tooltip = "[Decision.GetShortDescForPlayer]"
                 onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
@@ -2508,6 +2414,47 @@ window = {
                 onclick = "[GetScriptedGui( 'ucm_declare_empire' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
             }
+            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_REALM_TITLES" using = Font_Size_Medium default_format = "#high" }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_grant_titles" using = Font_Size_Small }
+                tooltip = "ucm_grant_titles_tt"
+                enabled = "[GetScriptedGui( 'ucm_grant_titles' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_grant_titles' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_grant_titles_dynasty" using = Font_Size_Small }
+                tooltip = "ucm_grant_titles_dynasty_tt"
+                enabled = "[GetScriptedGui( 'ucm_grant_titles_dynasty' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_grant_titles_dynasty' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_land_cap" using = Font_Size_Small }
+                tooltip = "ucm_land_cap_tt"
+                enabled = "[GetScriptedGui( 'ucm_land_cap' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_land_cap' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_strip_realm_titles" using = Font_Size_Small }
+                tooltip = "ucm_strip_realm_titles_tt"
+                enabled = "[GetScriptedGui( 'ucm_strip_realm_titles' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_strip_realm_titles' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+            }
           }
         }
       }
@@ -3039,45 +2986,11 @@ window = {
             hbox = {
               layoutpolicy_horizontal = expanding
               spacing = 4
-              visible = "[And( GetDecisionWithKey( 'ucm_fiscal_treasury_officials_decision' ).IsShownForPlayer, GetDecisionWithKey( 'ucm_population_management_hub_decision' ).IsShownForPlayer )]"
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                datacontext = "[GetDecisionWithKey( 'ucm_fiscal_treasury_officials_decision' )]"
-                text = "[Decision.GetTitleForPlayer]"
-                tooltip = "[Decision.GetShortDescForPlayer]"
-                onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
-              }
+              visible = "[GetDecisionWithKey( 'ucm_population_management_hub_decision' ).IsShownForPlayer]"
               button_standard = {
                 layoutpolicy_horizontal = expanding
                 size = { 0 30 }
                 datacontext = "[GetDecisionWithKey( 'ucm_population_management_hub_decision' )]"
-                text = "[Decision.GetTitleForPlayer]"
-                tooltip = "[Decision.GetShortDescForPlayer]"
-                onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
-              }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              visible = "[And( Not( GetDecisionWithKey( 'ucm_fiscal_treasury_officials_decision' ).IsShownForPlayer ), GetDecisionWithKey( 'ucm_population_management_hub_decision' ).IsShownForPlayer )]"
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                datacontext = "[GetDecisionWithKey( 'ucm_population_management_hub_decision' )]"
-                text = "[Decision.GetTitleForPlayer]"
-                tooltip = "[Decision.GetShortDescForPlayer]"
-                onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
-              }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              visible = "[And( GetDecisionWithKey( 'ucm_fiscal_treasury_officials_decision' ).IsShownForPlayer, Not( GetDecisionWithKey( 'ucm_population_management_hub_decision' ).IsShownForPlayer ) )]"
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                datacontext = "[GetDecisionWithKey( 'ucm_fiscal_treasury_officials_decision' )]"
                 text = "[Decision.GetTitleForPlayer]"
                 tooltip = "[Decision.GetShortDescForPlayer]"
                 onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
@@ -3434,6 +3347,18 @@ window = {
                 tooltip = "ucm_ai_build_tt"
                 enabled = "[GetScriptedGui( 'ucm_ai_build' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
                 onclick = "[GetScriptedGui( 'ucm_ai_build' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+            }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_seize_vassal_gold" using = Font_Size_Small }
+                tooltip = "ucm_seize_vassal_gold_tt"
+                enabled = "[GetScriptedGui( 'ucm_seize_vassal_gold' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_seize_vassal_gold' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
               }
             }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_BUILD_CATALOG" using = Font_Size_Medium default_format = "#high" }
@@ -5419,54 +5344,6 @@ window = {
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } enabled = "[GetScriptedGui( 'ucm_crozier_cheats_sg_t_t_cp_master_assassin' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'ucm_crozier_cheats_char', GetPlayer.MakeScope.Var( 'ucm_target' ).Char.MakeScope ).End )]" tooltip = "UCM_CROZIER_CHEATS_B_t_cp_master_assassin_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_t_t_cp_master_assassin' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'ucm_crozier_cheats_char', GetPlayer.MakeScope.Var( 'ucm_target' ).Char.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_t_cp_master_assassin" max_width = 460 fontsize_min = 9 using = Font_Size_Small } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } enabled = "[GetScriptedGui( 'ucm_crozier_cheats_sg_t_t_cp_royal_architect' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'ucm_crozier_cheats_char', GetPlayer.MakeScope.Var( 'ucm_target' ).Char.MakeScope ).End )]" tooltip = "UCM_CROZIER_CHEATS_B_t_cp_royal_architect_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_t_t_cp_royal_architect' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'ucm_crozier_cheats_char', GetPlayer.MakeScope.Var( 'ucm_target' ).Char.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_t_cp_royal_architect" max_width = 460 fontsize_min = 9 using = Font_Size_Small } }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_COURT_TOOLS" using = Font_Size_Medium default_format = "#high" }
-            text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 560 text = "UCM_DECISIONS_NOTE" default_format = "#low" }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              visible = "[And( GetDecisionWithKey( 'ucm_court_management_decision' ).IsShownForPlayer, GetDecisionWithKey( 'ucm_bulk_guardian_run_decision' ).IsShownForPlayer )]"
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                datacontext = "[GetDecisionWithKey( 'ucm_court_management_decision' )]"
-                text = "[Decision.GetTitleForPlayer]"
-                tooltip = "[Decision.GetShortDescForPlayer]"
-                onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
-              }
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                datacontext = "[GetDecisionWithKey( 'ucm_bulk_guardian_run_decision' )]"
-                text = "[Decision.GetTitleForPlayer]"
-                tooltip = "[Decision.GetShortDescForPlayer]"
-                onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
-              }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              visible = "[And( Not( GetDecisionWithKey( 'ucm_court_management_decision' ).IsShownForPlayer ), GetDecisionWithKey( 'ucm_bulk_guardian_run_decision' ).IsShownForPlayer )]"
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                datacontext = "[GetDecisionWithKey( 'ucm_bulk_guardian_run_decision' )]"
-                text = "[Decision.GetTitleForPlayer]"
-                tooltip = "[Decision.GetShortDescForPlayer]"
-                onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
-              }
-            }
-            hbox = {
-              layoutpolicy_horizontal = expanding
-              spacing = 4
-              visible = "[And( GetDecisionWithKey( 'ucm_court_management_decision' ).IsShownForPlayer, Not( GetDecisionWithKey( 'ucm_bulk_guardian_run_decision' ).IsShownForPlayer ) )]"
-              button_standard = {
-                layoutpolicy_horizontal = expanding
-                size = { 0 30 }
-                datacontext = "[GetDecisionWithKey( 'ucm_court_management_decision' )]"
-                text = "[Decision.GetTitleForPlayer]"
-                tooltip = "[Decision.GetShortDescForPlayer]"
-                onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
-              }
-            }
             hbox = {
               layoutpolicy_horizontal = expanding
               spacing = 4
@@ -5496,6 +5373,27 @@ window = {
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } enabled = "[GetScriptedGui( 'ucm_crozier_cheats_sg_t_t_depose' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'ucm_crozier_cheats_char', GetPlayer.MakeScope.Var( 'ucm_target' ).Char.MakeScope ).End )]" tooltip = "UCM_CROZIER_CHEATS_B_t_depose_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_t_t_depose' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'ucm_crozier_cheats_char', GetPlayer.MakeScope.Var( 'ucm_target' ).Char.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_t_depose" max_width = 460 fontsize_min = 9 using = Font_Size_Small } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } enabled = "[GetScriptedGui( 'ucm_crozier_cheats_sg_t_t_banish' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'ucm_crozier_cheats_char', GetPlayer.MakeScope.Var( 'ucm_target' ).Char.MakeScope ).End )]" tooltip = "UCM_CROZIER_CHEATS_B_t_banish_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_t_t_banish' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'ucm_crozier_cheats_char', GetPlayer.MakeScope.Var( 'ucm_target' ).Char.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_t_banish" max_width = 460 fontsize_min = 9 using = Font_Size_Small } }
             button_standard = { layoutpolicy_horizontal = expanding size = { 0 28 } enabled = "[GetScriptedGui( 'ucm_crozier_cheats_sg_t_t_execute' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'ucm_crozier_cheats_char', GetPlayer.MakeScope.Var( 'ucm_target' ).Char.MakeScope ).End )]" tooltip = "UCM_CROZIER_CHEATS_B_t_execute_TT" onclick = "[GetScriptedGui( 'ucm_crozier_cheats_sg_t_t_execute' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'ucm_crozier_cheats_char', GetPlayer.MakeScope.Var( 'ucm_target' ).Char.MakeScope ).End )]" text_single = { parentanchor = vcenter|left position = { 10 0 } text = "UCM_CROZIER_CHEATS_B_t_execute" max_width = 460 fontsize_min = 9 using = Font_Size_Small } }
+            text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_YOUR_COURT" using = Font_Size_Medium default_format = "#high" }
+            hbox = {
+              layoutpolicy_horizontal = expanding
+              spacing = 4
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_tidy_court" using = Font_Size_Small }
+                tooltip = "ucm_tidy_court_tt"
+                enabled = "[GetScriptedGui( 'ucm_tidy_court' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_tidy_court' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+              button_standard = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                text_single = { parentanchor = vcenter|left position = { 10 0 } text = "ucm_assign_guardians" using = Font_Size_Small }
+                tooltip = "ucm_assign_guardians_tt"
+                enabled = "[GetScriptedGui( 'ucm_assign_guardians' ).IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+                onclick = "[GetScriptedGui( 'ucm_assign_guardians' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+              }
+            }
             text_single = { layoutpolicy_horizontal = expanding text = "UCM_SEC_SPAWN_OPTIONS" using = Font_Size_Medium default_format = "#high" }
             hbox = {
               layoutpolicy_horizontal = expanding

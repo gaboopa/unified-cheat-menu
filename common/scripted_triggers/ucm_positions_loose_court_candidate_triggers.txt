@@ -1,4 +1,0 @@
-﻿# Court appointment candidates, checking only that the character can serve at all (not faith, gender and so on).
-ucm_positions_loose_court_appointment_candidate_trigger = { is_adult = yes is_imprisoned = no is_incapable = no }
-ucm_positions_loose_court_appointment_candidate_for_reshuffle_trigger = { is_adult = yes is_imprisoned = no is_incapable = no NOT = { this = scope:ucm_pos_reshuffle_liege } }
-ucm_positions_court_reshuffle_vassal_loose_candidate_trigger = { is_adult = yes is_imprisoned = no is_incapable = no is_vassal_of = scope:ucm_pos_reshuffle_liege }

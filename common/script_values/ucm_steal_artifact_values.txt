@@ -1,3 +1,0 @@
-﻿# The steal picker shows 3 artifacts per page (ucm_cheat_menu.3094).
-ucm_steal_page_offset_value = { value = var:ucm_steal_page multiply = 3 }
-ucm_steal_next_page_min_total_value = { value = ucm_steal_page_offset_value add = 3 }

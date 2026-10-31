@@ -1,208 +1,24 @@
-﻿# 人类玩家政体锁定：开局记录 TGP/特殊政体；仅在手改政体菜单确认后同步新政体；异常变更自动恢复。
-
+﻿# A player the menu made meritocratic stays meritocratic; ucm_monthly_tick_events reverts other changes.
 ucm_player_government_lock_apply_effect = {
-  if = {
-    limit = {
-      is_ai = no
-      is_playable_character = yes
-      ucm_player_government_lock_eligible_trigger = yes
-    }
-    add_character_flag = ucm_player_government_locked
-    ucm_player_government_lock_sync_from_character_effect = yes
-  }
-}
-
-ucm_player_government_lock_sync_from_character_effect = {
-  if = {
-    limit = { has_government = meritocratic_government }
-    set_variable = {
-      name = ucm_locked_government_type
-      value = 1
-    }
-  }
-  else_if = {
-    limit = { has_government = celestial_government }
-    set_variable = {
-      name = ucm_locked_government_type
-      value = 2
-    }
-  }
-  else_if = {
-    limit = { has_government = administrative_government }
-    set_variable = {
-      name = ucm_locked_government_type
-      value = 3
-    }
-  }
-  else_if = {
-    limit = { has_government = steppe_admin_government }
-    set_variable = {
-      name = ucm_locked_government_type
-      value = 4
-    }
-  }
-  else_if = {
-    limit = { has_government = japan_administrative_government }
-    set_variable = {
-      name = ucm_locked_government_type
-      value = 5
-    }
-  }
-  else_if = {
-    limit = { has_government = japan_feudal_government }
-    set_variable = {
-      name = ucm_locked_government_type
-      value = 6
-    }
-  }
-  else_if = {
-    limit = { has_government = feudal_government }
-    set_variable = {
-      name = ucm_locked_government_type
-      value = 7
-    }
-  }
-  else_if = {
-    limit = { has_government = tribal_government }
-    set_variable = {
-      name = ucm_locked_government_type
-      value = 8
-    }
-  }
-  else_if = {
-    limit = { has_government = clan_government }
-    set_variable = {
-      name = ucm_locked_government_type
-      value = 9
-    }
-  }
-  else_if = {
-    limit = { has_government = republic_government }
-    set_variable = {
-      name = ucm_locked_government_type
-      value = 10
-    }
-  }
-  else = {
-    remove_character_flag = ucm_player_government_locked
-    if = {
-      limit = { has_variable = ucm_locked_government_type }
-      remove_variable = ucm_locked_government_type
-    }
-  }
+	if = {
+		limit = { is_ai = no }
+		add_character_flag = ucm_player_government_locked
+	}
 }
 
 ucm_player_government_lock_maintain_effect = {
-  if = {
-    limit = {
-      is_ai = no
-      has_character_flag = ucm_player_government_locked
-      has_variable = ucm_locked_government_type
-    }
-    if = {
-      limit = {
-        var:ucm_locked_government_type = 1
-        NOT = { has_government = meritocratic_government }
-      }
-      ucm_convert_character_to_meritocratic_government_effect = yes
-      ucm_player_government_lock_send_revert_toast_effect = yes
-    }
-    else_if = {
-      limit = {
-        var:ucm_locked_government_type = 2
-        NOT = { has_government = celestial_government }
-      }
-      ucm_convert_character_to_celestial_government_effect = yes
-      ucm_player_government_lock_send_revert_toast_effect = yes
-    }
-    else_if = {
-      limit = {
-        var:ucm_locked_government_type = 3
-        NOT = { has_government = administrative_government }
-      }
-      ucm_convert_character_to_administrative_government_effect = yes
-      ucm_player_government_lock_send_revert_toast_effect = yes
-    }
-    else_if = {
-      limit = {
-        var:ucm_locked_government_type = 4
-        NOT = { has_government = steppe_admin_government }
-      }
-      ucm_convert_character_to_steppe_admin_government_effect = yes
-      ucm_player_government_lock_send_revert_toast_effect = yes
-    }
-    else_if = {
-      limit = {
-        var:ucm_locked_government_type = 5
-        NOT = { has_government = japan_administrative_government }
-      }
-      ucm_convert_character_to_japan_administrative_government_effect = yes
-      ucm_player_government_lock_send_revert_toast_effect = yes
-    }
-    else_if = {
-      limit = {
-        var:ucm_locked_government_type = 6
-        NOT = { has_government = japan_feudal_government }
-      }
-      ucm_convert_character_to_japan_feudal_government_effect = yes
-      ucm_player_government_lock_send_revert_toast_effect = yes
-    }
-    else_if = {
-      limit = {
-        var:ucm_locked_government_type = 7
-        NOT = { has_government = feudal_government }
-      }
-      ucm_convert_character_to_feudal_government_effect = yes
-      ucm_player_government_lock_send_revert_toast_effect = yes
-    }
-    else_if = {
-      limit = {
-        var:ucm_locked_government_type = 8
-        NOT = { has_government = tribal_government }
-      }
-      ucm_convert_character_to_tribal_government_effect = yes
-      ucm_player_government_lock_send_revert_toast_effect = yes
-    }
-    else_if = {
-      limit = {
-        var:ucm_locked_government_type = 9
-        NOT = { has_government = clan_government }
-      }
-      ucm_convert_character_to_clan_government_effect = yes
-      ucm_player_government_lock_send_revert_toast_effect = yes
-    }
-    else_if = {
-      limit = {
-        var:ucm_locked_government_type = 10
-        NOT = { has_government = republic_government }
-      }
-      ucm_convert_character_to_republic_government_effect = yes
-      ucm_player_government_lock_send_revert_toast_effect = yes
-    }
-  }
+	if = {
+		limit = { is_ai = no has_character_flag = ucm_player_government_locked NOT = { has_government = meritocratic_government } }
+		ucm_convert_character_to_meritocratic_government_effect = yes
+		send_interface_toast = { title = ucm_government_lock_reverted_toast_title desc = ucm_government_lock_reverted_toast_desc }
+	}
 }
 
-ucm_player_government_lock_send_revert_toast_effect = {
-  send_interface_toast = {
-    title = ucm_government_lock_reverted_toast_title
-    desc = ucm_government_lock_reverted_toast_desc
-  }
-}
-
-# 模组脚本尝试误转封建被拦截时提示（冷却 30 日，避免脉冲重复弹窗）
+# At most once a month, since mass conversions can repeat.
 ucm_player_government_feudal_blocked_notify_effect = {
-  if = {
-    limit = {
-      NOT = { has_character_flag = ucm_government_feudal_block_toast_recent }
-    }
-    send_interface_toast = {
-      title = ucm_government_feudal_blocked_toast_title
-      desc = ucm_government_feudal_blocked_toast_desc
-    }
-    add_character_flag = {
-      flag = ucm_government_feudal_block_toast_recent
-      days = 30
-    }
-  }
+	if = {
+		limit = { NOT = { has_character_flag = ucm_government_feudal_block_toast_recent } }
+		send_interface_toast = { title = ucm_government_feudal_blocked_toast_title desc = ucm_government_feudal_blocked_toast_desc }
+		add_character_flag = { flag = ucm_government_feudal_block_toast_recent days = 30 }
+	}
 }
-

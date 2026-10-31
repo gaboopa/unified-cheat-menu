@@ -1,13 +1,4 @@
-﻿# 庸碌罢免：按 root.var:ucm_purge_tier（0 = 伯至帝主衔一次全清；1–4 = 仅该档）；总督走辞任 modifier + 强制卸任；非总督仅有地封臣走强制卸任（不套总督辞任 modifier）
-# 罢免结束后：整理头衔 + 多余头衔授予，仅择优非庸碌人选（root.var:ucm_grant_excellent_only）
-
-ucm_purge_auto_grant_excellent_talent_effect = {
-  root = { set_variable = { name = ucm_grant_excellent_only value = 1 } }
-  ucm_official_land_cap_full_effect = yes
-  ucm_one_click_grant_realm_titles_effect = yes
-  root = { remove_variable = ucm_grant_excellent_only }
-}
-
+﻿# Removes mediocre rulers at root.var:ucm_purge_tier (0 = county to empire, 1-4 = one tier), then redistributes titles.
 ucm_purge_mediocre_governors_at_selected_tier_effect = {
   every_vassal_or_below = {
     limit = {
@@ -100,6 +91,7 @@ ucm_purge_mediocre_governors_at_selected_tier_effect = {
     }
   }
   root = {
-    ucm_purge_auto_grant_excellent_talent_effect = yes
+    ucm_official_land_cap_full_effect = yes
+    ucm_one_click_grant_realm_titles_effect = yes
   }
 }

@@ -1,4 +1,4 @@
-# Window state and buttons of the artifact crafter and editor; the per-value buttons are in ucm_craft_generated_guis.txt.
+﻿# Window state and buttons of the artifact crafter and editor; the per-value buttons are in ucm_craft_generated_guis.txt.
 
 ucm_craft_window_shown = {
   scope = character
@@ -36,7 +36,7 @@ ucm_craft_close = {
 ucm_craft_create = {
   scope = character
   is_shown = { ucm_single_player_trigger = yes }
-  is_valid = { ucm_player_may_use_artifact_craft_trigger = yes has_variable = ucm_craft_recipient }
+  is_valid = { is_ai = no has_variable = ucm_craft_recipient }
   effect = { ucm_craft_create_effect = yes }
 }
 

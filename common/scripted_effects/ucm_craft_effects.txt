@@ -1,4 +1,4 @@
-# Artifact crafter and editor. All state is on the player: slots ucm_craft_m1..5 with amounts ucm_craft_m1_cnt..5_cnt,
+﻿# Artifact crafter and editor. All state is on the player: slots ucm_craft_m1..5 with amounts ucm_craft_m1_cnt..5_cnt,
 # the highlighted slot ucm_craft_slot, and ucm_craft_picked, the value of that slot. Scripted GUIs run these with root = player.
 
 ucm_craft_set_slot_effect = {
@@ -291,7 +291,7 @@ ucm_craft_lock_recipient_effect = {
 
 ucm_cheat_menu_open_artifact_craft_effect = {
   if = {
-    limit = { scope:actor = { ucm_player_may_use_artifact_craft_trigger = yes } }
+    limit = { scope:actor = { is_ai = no } }
     ucm_craft_lock_recipient_effect = yes
     scope:actor = {
       if = {

@@ -1,4 +1,20 @@
 ﻿# Custom traits. Only the trait editor grants them (see ucm_cheat_menu_grant_cheat_trait_effect).
+
+# Never ages or grows infirm, shrugs off most disease; hostile schemes can't succeed.
+ucm_trait_immortal_ageless = {
+  icon = "ucm_trait_immortal_ageless.dds"
+  physical = yes
+  immortal = yes
+  flag = immortal_visuals
+  flag = immortal_fertility
+  flag = immortal_incapability
+  opposites = { incapable }
+  no_prowess_loss_from_age = yes
+  health = 3
+  epidemic_resistance = 500
+  enemy_hostile_scheme_success_chance_max_add = -100
+}
+
 ucm_trait_yannian_dan = {
   icon = "ucm_trait_yannian_dan.dds"
   physical = yes
@@ -76,18 +92,4 @@ ucm_trait_marriage_ban = {
   icon = "ucm_trait_marriage_ban.dds"
   physical = yes
   category = lifestyle
-}
-
-ucm_trait_immortal_ageless = {
-  icon = "ucm_trait_immortal_ageless.dds"
-  physical = yes
-  immortal = yes
-  opposites = { incapable }
-  no_prowess_loss_from_age = yes
-  long_reign_bonus_mult = 200
-  health = 3
-  epidemic_resistance = 500
-  enemy_hostile_scheme_success_chance_add = -1000
-  enemy_hostile_scheme_success_chance_max_add = -100
-  enemy_hostile_scheme_phase_duration_add = 999
 }

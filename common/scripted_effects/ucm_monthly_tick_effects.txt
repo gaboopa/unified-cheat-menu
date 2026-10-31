@@ -104,9 +104,7 @@ ucm_fidelity_affair_sweep_effect = {
       }
     }
   }
-  ucm_seduce_shield_grant_chastity_traits_to_consorts_effect = yes
-  ucm_seduce_shield_strip_non_patron_lovers_from_consorts_effect = yes
-  ucm_seduce_shield_enforce_global_ai_fidelity_rules_effect = yes
+  ucm_seduce_shield_upkeep_effect = yes
 }
 
 # Marriage ban: break betrothals of the player/courtiers that involve a banned (or vowed) character. root/this = the player.

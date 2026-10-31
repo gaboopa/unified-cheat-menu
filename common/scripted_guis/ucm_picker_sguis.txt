@@ -33,7 +33,7 @@ ucm_picker_tradition_close = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { always = yes }
-	effect = { remove_character_flag = ucm_cw_tradition_picker_open ucm_cw_clear_tradition_picker_lists_effect = yes }
+	effect = { remove_character_flag = ucm_cw_tradition_picker_open  }
 }
 
 ucm_picker_faith_visible = {

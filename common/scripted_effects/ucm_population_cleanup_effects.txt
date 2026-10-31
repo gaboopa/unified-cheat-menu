@@ -114,7 +114,10 @@ ucm_world_purge_landless_ai_effect = {
       trigger_event = { id = ucm_officials.9088 days = 3 }
     }
 
-    else = { remove_character_flag = ucm_world_purge_active remove_variable = ucm_world_purge_remaining }
+    else = {
+      remove_character_flag = ucm_world_purge_active
+      remove_variable = ucm_world_purge_remaining
+    }
     remove_variable = ucm_world_purge_batch_kills
   }
 }

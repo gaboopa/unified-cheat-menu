@@ -122,3 +122,9 @@ ucm_seduce_shield_enforce_global_ai_fidelity_rules_effect = {
     }
   }
 }
+
+ucm_seduce_shield_upkeep_effect = {
+  ucm_seduce_shield_grant_chastity_traits_to_consorts_effect = yes
+  ucm_seduce_shield_strip_non_patron_lovers_from_consorts_effect = yes
+  ucm_seduce_shield_enforce_global_ai_fidelity_rules_effect = yes
+}

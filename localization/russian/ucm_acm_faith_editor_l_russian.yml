@@ -24,8 +24,5 @@
  ucm_acm_faith_editor_mts_fill: "Заполнить 20 пустых слотов"
  ucm_acm_faith_editor_mts_clear: "Очистить пустые слоты"
  ucm_acm_faith_editor_mts_empty: "Пустой слот"
- ucm_acm_faith_editor_ce_heading: "Грехи и добродетели (неограниченная этика)"
- ucm_acm_faith_editor_ce_sins: "Черта греха"
- ucm_acm_faith_editor_ce_virtues: "Черта добродетели"
  ucm_acm_faith_doctrine_select_tt: "#T [DoctrineType.GetNameNoTooltip(Faith.Self)]#!\n[DoctrineType.GetEffectsDescription( Faith.GetMainRite )]\n[DoctrineType.GetDescription(Faith.Self)|F]\n#IНажмите, чтобы выбрать#!"
  ucm_acm_faith_doctrine_picker_tt: "#T [DoctrineType.GetNameNoTooltip(Faith.Self)]#!\n[DoctrineType.GetEffectsDescription( Faith.GetMainRite )]\n[DoctrineType.GetDescription(Faith.Self)|F]\n#IДобавить в текущую веру#!"

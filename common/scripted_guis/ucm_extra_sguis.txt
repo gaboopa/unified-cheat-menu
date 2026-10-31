@@ -179,43 +179,43 @@ ucm_visual_age_100 = {
 ucm_lock_stress = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { NOT = { has_character_modifier = no_stress_change } } }
-	effect = { var:ucm_target = { add_character_modifier = no_stress_change } }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { NOT = { has_character_modifier = ucm_extra_lock_stress } } }
+	effect = { var:ucm_target = { add_character_modifier = ucm_extra_lock_stress } }
 }
 
 ucm_unlock_stress = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { has_character_modifier = no_stress_change } }
-	effect = { var:ucm_target = { remove_character_modifier = no_stress_change } }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { has_character_modifier = ucm_extra_lock_stress } }
+	effect = { var:ucm_target = { remove_character_modifier = ucm_extra_lock_stress } }
 }
 
 ucm_lock_tyranny = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { NOT = { has_character_modifier = no_tyranny_change } } }
-	effect = { var:ucm_target = { add_character_modifier = no_tyranny_change } }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { NOT = { has_character_modifier = ucm_extra_lock_tyranny } } }
+	effect = { var:ucm_target = { add_character_modifier = ucm_extra_lock_tyranny } }
 }
 
 ucm_unlock_tyranny = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { has_character_modifier = no_tyranny_change } }
-	effect = { var:ucm_target = { remove_character_modifier = no_tyranny_change } }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { has_character_modifier = ucm_extra_lock_tyranny } }
+	effect = { var:ucm_target = { remove_character_modifier = ucm_extra_lock_tyranny } }
 }
 
 ucm_lock_dread = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { NOT = { has_character_modifier = no_dread_change } } }
-	effect = { var:ucm_target = { add_character_modifier = no_dread_change } }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { NOT = { has_character_modifier = ucm_extra_lock_dread } } }
+	effect = { var:ucm_target = { add_character_modifier = ucm_extra_lock_dread } }
 }
 
 ucm_unlock_dread = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { has_character_modifier = no_dread_change } }
-	effect = { var:ucm_target = { remove_character_modifier = no_dread_change } }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { has_character_modifier = ucm_extra_lock_dread } }
+	effect = { var:ucm_target = { remove_character_modifier = ucm_extra_lock_dread } }
 }
 
 ucm_lock_legitimacy = {
@@ -365,165 +365,46 @@ ucm_rename_target = {
 	effect = { trigger_event = ucm_extra.3 }
 }
 
-ucm_mod_trait_100_stat_man = {
+ucm_mod_trait_omnipotent = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { if = { limit = { has_trait = 100_stat_man } remove_trait = 100_stat_man } else = { add_trait = 100_stat_man } } }
+	effect = { var:ucm_target = { if = { limit = { has_trait = ucm_trait_omnipotent } remove_trait = ucm_trait_omnipotent } else = { add_trait = ucm_trait_omnipotent } } }
 }
 
-ucm_mod_trait_nnn_challenger = {
+ucm_mod_trait_challenger = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { if = { limit = { has_trait = nnn_challenger } remove_trait = nnn_challenger } else = { add_trait = nnn_challenger } } }
+	effect = { var:ucm_target = { if = { limit = { has_trait = ucm_trait_challenger } remove_trait = ucm_trait_challenger } else = { add_trait = ucm_trait_challenger } } }
 }
 
-ucm_mod_trait_build_speed_cheat = {
+ucm_mod_trait_instant_build = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { if = { limit = { has_trait = build_speed_cheat } remove_trait = build_speed_cheat } else = { add_trait = build_speed_cheat } } }
+	effect = { var:ucm_target = { if = { limit = { has_trait = ucm_trait_instant_build } remove_trait = ucm_trait_instant_build } else = { add_trait = ucm_trait_instant_build } } }
 }
 
-ucm_mod_trait_stress_gain_remove = {
+ucm_mod_trait_no_stress = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { if = { limit = { has_trait = stress_gain_remove } remove_trait = stress_gain_remove } else = { add_trait = stress_gain_remove } } }
+	effect = { var:ucm_target = { if = { limit = { has_trait = ucm_trait_no_stress } remove_trait = ucm_trait_no_stress } else = { add_trait = ucm_trait_no_stress } } }
 }
 
-ucm_mod_trait_tyranny_gain_remove = {
+ucm_mod_trait_no_tyranny = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { if = { limit = { has_trait = tyranny_gain_remove } remove_trait = tyranny_gain_remove } else = { add_trait = tyranny_gain_remove } } }
+	effect = { var:ucm_target = { if = { limit = { has_trait = ucm_trait_no_tyranny } remove_trait = ucm_trait_no_tyranny } else = { add_trait = ucm_trait_no_tyranny } } }
 }
 
-ucm_mod_trait_gigasuperseed = {
+ucm_mod_trait_undying = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { if = { limit = { has_trait = gigasuperseed } remove_trait = gigasuperseed } else = { add_trait = gigasuperseed } } }
-}
-
-ucm_mod_trait_borntorule_seed = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { if = { limit = { has_trait = borntorule_seed } remove_trait = borntorule_seed } else = { add_trait = borntorule_seed } } }
-}
-
-ucm_mod_trait_sneed_seed = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { if = { limit = { has_trait = sneed_seed } remove_trait = sneed_seed } else = { add_trait = sneed_seed } } }
-}
-
-ucm_mod_trait_blood_art_1 = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { if = { limit = { has_trait = blood_art_1 } remove_trait = blood_art_1 } else = { add_trait = blood_art_1 } } }
-}
-
-ucm_mod_trait_blood_knight_1 = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { if = { limit = { has_trait = blood_knight_1 } remove_trait = blood_knight_1 } else = { add_trait = blood_knight_1 } } }
-}
-
-ucm_mod_trait_blood_knight_2 = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { if = { limit = { has_trait = blood_knight_2 } remove_trait = blood_knight_2 } else = { add_trait = blood_knight_2 } } }
-}
-
-ucm_mod_trait_blood_knight_3 = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { if = { limit = { has_trait = blood_knight_3 } remove_trait = blood_knight_3 } else = { add_trait = blood_knight_3 } } }
-}
-
-ucm_mod_trait_blood_knight_4 = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { if = { limit = { has_trait = blood_knight_4 } remove_trait = blood_knight_4 } else = { add_trait = blood_knight_4 } } }
-}
-
-ucm_mod_trait_blood_ancester_1 = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { if = { limit = { has_trait = blood_ancester_1 } remove_trait = blood_ancester_1 } else = { add_trait = blood_ancester_1 } } }
-}
-
-ucm_mod_trait_blood_ancester_2 = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { if = { limit = { has_trait = blood_ancester_2 } remove_trait = blood_ancester_2 } else = { add_trait = blood_ancester_2 } } }
-}
-
-ucm_mod_trait_blood_ancester_4 = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { if = { limit = { has_trait = blood_ancester_4 } remove_trait = blood_ancester_4 } else = { add_trait = blood_ancester_4 } } }
-}
-
-ucm_mod_trait_blood_ancester_5 = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { if = { limit = { has_trait = blood_ancester_5 } remove_trait = blood_ancester_5 } else = { add_trait = blood_ancester_5 } } }
-}
-
-ucm_mod_trait_blood_ancester_6 = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { if = { limit = { has_trait = blood_ancester_6 } remove_trait = blood_ancester_6 } else = { add_trait = blood_ancester_6 } } }
-}
-
-ucm_mod_trait_blood_ancester_7 = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { if = { limit = { has_trait = blood_ancester_7 } remove_trait = blood_ancester_7 } else = { add_trait = blood_ancester_7 } } }
-}
-
-ucm_mod_trait_blood_ancester_8 = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { if = { limit = { has_trait = blood_ancester_8 } remove_trait = blood_ancester_8 } else = { add_trait = blood_ancester_8 } } }
-}
-
-ucm_mod_trait_blood_ancester_9 = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { if = { limit = { has_trait = blood_ancester_9 } remove_trait = blood_ancester_9 } else = { add_trait = blood_ancester_9 } } }
-}
-
-ucm_mod_trait_blood_ancester_10 = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { if = { limit = { has_trait = blood_ancester_10 } remove_trait = blood_ancester_10 } else = { add_trait = blood_ancester_10 } } }
-}
-
-ucm_mod_trait_blood_ancester_11 = {
-	scope = character
-	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { if = { limit = { has_trait = blood_ancester_11 } remove_trait = blood_ancester_11 } else = { add_trait = blood_ancester_11 } } }
+	effect = { var:ucm_target = { if = { limit = { has_trait = ucm_trait_undying } remove_trait = ucm_trait_undying } else = { add_trait = ucm_trait_undying } } }
 }
 
 ucm_max_learned_trait_xp = {
@@ -565,14 +446,14 @@ ucm_make_immortal = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { var:ucm_target = { add_trait = zg_buxiu set_immortal_age = 25 } }
+	effect = { var:ucm_target = { add_trait = ucm_trait_undying set_immortal_age = 25 } }
 }
 
 ucm_make_mortal = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { has_trait = zg_buxiu } }
-	effect = { var:ucm_target = { remove_trait = zg_buxiu } }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { has_trait = ucm_trait_undying } }
+	effect = { var:ucm_target = { remove_trait = ucm_trait_undying } }
 }
 
 ucm_baby_male = {
@@ -866,28 +747,28 @@ ucm_declare_county = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { is_ruler = yes } global_var:ucm_crozier_cheats_other = { is_landed = yes } }
-	effect = { var:ucm_target = { start_war = { cb = sol_expansion_war_county target = global_var:ucm_crozier_cheats_other } } }
+	effect = { var:ucm_target = { start_war = { cb = ucm_war_county target = global_var:ucm_crozier_cheats_other } } }
 }
 
 ucm_declare_duchy = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { is_ruler = yes } global_var:ucm_crozier_cheats_other = { is_landed = yes } }
-	effect = { var:ucm_target = { start_war = { cb = sol_expansion_war_duchy target = global_var:ucm_crozier_cheats_other } } }
+	effect = { var:ucm_target = { start_war = { cb = ucm_war_duchy target = global_var:ucm_crozier_cheats_other } } }
 }
 
 ucm_declare_kingdom = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { is_ruler = yes } global_var:ucm_crozier_cheats_other = { is_landed = yes } }
-	effect = { var:ucm_target = { start_war = { cb = sol_expansion_war target = global_var:ucm_crozier_cheats_other } } }
+	effect = { var:ucm_target = { start_war = { cb = ucm_war_kingdom target = global_var:ucm_crozier_cheats_other } } }
 }
 
 ucm_declare_empire = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { is_ruler = yes } global_var:ucm_crozier_cheats_other = { is_landed = yes } }
-	effect = { var:ucm_target = { start_war = { cb = sol_expansion_war_empire target = global_var:ucm_crozier_cheats_other } } }
+	effect = { var:ucm_target = { start_war = { cb = ucm_war_empire target = global_var:ucm_crozier_cheats_other } } }
 }
 
 ucm_county_control_down = {

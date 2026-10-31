@@ -2,7 +2,3 @@
  # \regiment_types
  open_optroop_menu:0 "Открыть меню Домовой гвардии"
  open_optroop_menu_desc:0 "[recipient.GetShortUINameNoTooltip|U] получит доступ к параметрам Домовой гвардии"
- inheritable_optroop_interaction:0 "Создать 1000 солдат Домовой гвардии"
- inheritable_optroop_interaction_desc:0 "[recipient.GetShortUINameNoTooltip|U] получит 1000 солдат Домовой гвардии, которые будут переданы его наследникам"
- non_inheritable_optroop_interaction:0 "Создать 10000 солдат Домовой гвардии"
- non_inheritable_optroop_interaction_desc:0 "[recipient.GetShortUINameNoTooltip|U] получит 10000 солдат Домовой гвардии, которые будут переданы его наследникам"

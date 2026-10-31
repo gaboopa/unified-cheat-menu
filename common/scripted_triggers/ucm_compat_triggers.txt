@@ -24,8 +24,3 @@ ucm_is_tgp_minister_trigger = {
   liege ?= { government_has_flag = government_is_celestial }
   tgp_is_any_minister = yes
 }
-
-# 文化兵种扩展（2846371321）；用其独有决议探测，避免存档残留变量误显示页签
-ucm_compat_orient_expansion_loaded_trigger = {
-  exists = decision:dfbz_zfz_001_decision
-}

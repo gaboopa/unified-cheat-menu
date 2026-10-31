@@ -1,0 +1,90 @@
+﻿# Started only by the menu's Declare buttons (start_war); valid_to_start hides them from the war screen.
+
+ucm_war_county = {
+	icon = county_crown
+	group = ucm_war
+	target_titles = none
+	target_title_tier = all
+	allow_hostages = no
+	valid_to_start = { always = no }
+	cb_name = UCM_WAR_COUNTY_NAME
+	war_name = UCM_WAR_COUNTY_WAR_NAME
+	war_name_base = UCM_WAR_COUNTY_WAR_NAME
+	should_invalidate = { scope:defender = { is_landed = no } }
+	on_invalidated_desc = ucm_war_invalidated
+	on_victory_desc = ucm_war_county_victory
+	on_victory = { ucm_war_victory_effect = { TIER = tier_county } }
+	on_white_peace_desc = ucm_war_no_change
+	on_defeat_desc = ucm_war_no_change
+	on_primary_attacker_death = inherit
+	on_primary_defender_death = inherit
+	attacker_allies_inherit = yes
+	defender_allies_inherit = yes
+}
+
+ucm_war_duchy = {
+	icon = duchy_crown
+	group = ucm_war
+	target_titles = none
+	target_title_tier = all
+	allow_hostages = no
+	valid_to_start = { always = no }
+	cb_name = UCM_WAR_DUCHY_NAME
+	war_name = UCM_WAR_DUCHY_WAR_NAME
+	war_name_base = UCM_WAR_DUCHY_WAR_NAME
+	should_invalidate = { scope:defender = { is_landed = no } }
+	on_invalidated_desc = ucm_war_invalidated
+	on_victory_desc = ucm_war_duchy_victory
+	on_victory = { ucm_war_victory_effect = { TIER = tier_duchy } }
+	on_white_peace_desc = ucm_war_no_change
+	on_defeat_desc = ucm_war_no_change
+	on_primary_attacker_death = inherit
+	on_primary_defender_death = inherit
+	attacker_allies_inherit = yes
+	defender_allies_inherit = yes
+}
+
+ucm_war_kingdom = {
+	icon = kingdom_crown
+	group = ucm_war
+	target_titles = none
+	target_title_tier = all
+	allow_hostages = no
+	valid_to_start = { always = no }
+	cb_name = UCM_WAR_KINGDOM_NAME
+	war_name = UCM_WAR_KINGDOM_WAR_NAME
+	war_name_base = UCM_WAR_KINGDOM_WAR_NAME
+	should_invalidate = { scope:defender = { is_landed = no } }
+	on_invalidated_desc = ucm_war_invalidated
+	on_victory_desc = ucm_war_kingdom_victory
+	on_victory = { ucm_war_victory_effect = { TIER = tier_kingdom } }
+	on_white_peace_desc = ucm_war_no_change
+	on_defeat_desc = ucm_war_no_change
+	on_primary_attacker_death = inherit
+	on_primary_defender_death = inherit
+	attacker_allies_inherit = yes
+	defender_allies_inherit = yes
+}
+
+ucm_war_empire = {
+	icon = empire_crown
+	group = ucm_war
+	target_titles = none
+	target_title_tier = all
+	allow_hostages = no
+	valid_to_start = { always = no }
+	cb_name = UCM_WAR_EMPIRE_NAME
+	war_name = UCM_WAR_EMPIRE_WAR_NAME
+	war_name_base = UCM_WAR_EMPIRE_WAR_NAME
+	should_invalidate = { scope:defender = { is_landed = no } }
+	on_invalidated_desc = ucm_war_invalidated
+	on_victory_desc = ucm_war_empire_victory
+	on_victory = { ucm_war_victory_effect = { TIER = tier_empire } }
+	on_white_peace_desc = ucm_war_no_change
+	on_defeat_desc = ucm_war_no_change
+	on_primary_attacker_death = inherit
+	on_primary_defender_death = inherit
+	attacker_allies_inherit = yes
+	defender_allies_inherit = yes
+}
+

@@ -1,0 +1,110 @@
+﻿# The trait editor's top-tier fame traits. Keys are the editor's; cheat-only like every trait in this mod.
+
+trait_warlord_eternal = {
+	name = trait_trait_warlord_eternal
+	desc = trait_trait_warlord_eternal_desc
+	inherit_chance = 0
+	birth = 0
+	random_creation = 0
+	genetic = no
+	category = fame
+	icon = "trait_warlord_eternal.dds"
+	martial = 15
+	prowess = 12
+	advantage = 20
+	army_damage_mult = 0.6
+	army_toughness_mult = 0.6
+	knight_limit = 40
+	movement_speed = 10
+	supply_limit_mult = 1
+	retreat_losses = -0.99
+	army_siege_value_mult = 2
+	no_water_crossing_penalty = yes
+}
+
+trait_wealth_sovereign_max = {
+	name = trait_trait_wealth_sovereign_max
+	desc = trait_trait_wealth_sovereign_max_desc
+	inherit_chance = 0
+	birth = 0
+	random_creation = 0
+	genetic = no
+	icon = "trait_wealth_sovereign_max.dds"
+	stewardship = 20
+	diplomacy = 8
+	monthly_income_mult = 5
+	development_growth_factor = 6
+	army_maintenance_mult = -0.99
+	domain_limit = 80
+	vassal_limit = 200
+}
+
+trait_ultimate_intrigue_master = {
+	name = trait_trait_ultimate_intrigue_master
+	desc = trait_trait_ultimate_intrigue_master_desc
+	inherit_chance = 0
+	birth = 0
+	random_creation = 0
+	genetic = no
+	icon = "trait_ultimate_intrigue_master.dds"
+	intrigue = 25
+	dread_baseline_add = 150
+	enemy_hostile_scheme_success_chance_add = -1000
+	owned_hostile_scheme_success_chance_add = 999
+	owned_personal_scheme_success_chance_add = 999
+	max_hostile_schemes_add = 10
+	max_personal_schemes_add = 10
+}
+
+trait_nether_conspiracy_lord = {
+	name = trait_trait_nether_conspiracy_lord
+	desc = trait_trait_nether_conspiracy_lord_desc
+	inherit_chance = 0
+	birth = 0
+	random_creation = 0
+	genetic = no
+	category = fame
+	icon = "trait_nether_conspiracy_lord.dds"
+	intrigue = 50
+	owned_hostile_scheme_success_chance_add = 9999
+	owned_personal_scheme_success_chance_add = 9999
+	enemy_hostile_scheme_success_chance_add = -9999
+	monthly_dread = 5
+	dread_baseline_add = 150
+	vassal_opinion = 80
+	general_opinion = 60
+}
+
+trait_eternal_nether_lord = {
+	name = trait_trait_eternal_nether_lord
+	desc = trait_trait_eternal_nether_lord_desc
+	inherit_chance = 0
+	birth = 0
+	random_creation = 0
+	genetic = no
+	category = fame
+	icon = "trait_eternal_nether_lord.dds"
+	intrigue = 45
+	stress_gain_mult = -0.99
+	stress_loss_mult = 5
+	monthly_dread = 8
+	dread_baseline_add = 200
+	enemy_hostile_scheme_success_chance_add = -9999
+	vassal_opinion = 80
+	general_opinion = 60
+}
+
+trait_great_builder_god = {
+	name = trait_trait_great_builder_god
+	desc = trait_trait_great_builder_god_desc
+	inherit_chance = 0
+	birth = 0
+	random_creation = 0
+	genetic = no
+	category = fame
+	icon = "trait_great_builder_god.dds"
+	build_speed = -9999.99
+	holding_build_speed = -9999.99
+	build_gold_cost = -99999.99
+	holding_build_gold_cost = -99999.99
+}

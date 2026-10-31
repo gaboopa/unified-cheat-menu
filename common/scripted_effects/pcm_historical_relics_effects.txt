@@ -1,3 +1,0 @@
-﻿pcm_create_historical_relics_effect = {
-  ucm_create_historical_relics_effect = { OWNER = scope:owner }
-}

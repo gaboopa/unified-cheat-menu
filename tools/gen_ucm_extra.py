@@ -79,9 +79,7 @@ AUTHORITY = (("crown_authority", 0, 3), ("tribal_authority", 0, 3), ("nomadic_au
 
 # --- Character: stats, locks, resources -----------------------------------------------------------
 # The trait editor lists only the game's traits, so these get their own toggles.
-MOD_TRAITS = ["100_stat_man", "nnn_challenger", "build_speed_cheat", "stress_gain_remove", "tyranny_gain_remove",
-              "gigasuperseed", "borntorule_seed", "sneed_seed", "blood_art_1",
-              *(f"blood_knight_{n}" for n in (1, 2, 3, 4)), *(f"blood_ancester_{n}" for n in (1, 2, 4, 5, 6, 7, 8, 9, 10, 11))]
+MOD_TRAITS = ["omnipotent", "challenger", "instant_build", "no_stress", "no_tyranny", "undying"]
 LEARNED_TRACKS = {"pilgrim": [], "lifestyle_mystic": [], "lifestyle_blademaster": [], "lifestyle_reveler": [], "lifestyle_physician": [],
                   "lifestyle_hunter": ["hunter", "falconer"], "lifestyle_traveler": ["travel", "danger"],
                   "tourney_participant": ["foot", "bow", "horse", "wit"],
@@ -99,7 +97,7 @@ def character():
     ages = [sg(f"ucm_visual_age_{a}", f"Look {a}", f"Set the immortal target's visual age to {a}.", f"{T} {TG} = {{ is_immortal = yes }}",
                f"{TG} = {{ set_immortal_age = {a} }}") for a in (18, 30, 50, 100)]
     items.append(("row", ages))
-    for lock, mod, name in (("stress", "no_stress_change", "stress"), ("tyranny", "no_tyranny_change", "tyranny"), ("dread", "no_dread_change", "dread"),
+    for lock, mod, name in (("stress", "ucm_extra_lock_stress", "stress"), ("tyranny", "ucm_extra_lock_tyranny", "tyranny"), ("dread", "ucm_extra_lock_dread", "dread"),
                             ("legitimacy", "ucm_extra_lock_legitimacy", "legitimacy"), ("fulfillment", "ucm_extra_divine_grace", "spiritual fulfillment")):
         items.append(("row", [
             sg(f"ucm_lock_{lock}", f"Lock {name}", f"Stop the target's {name} from changing naturally.",
@@ -119,8 +117,8 @@ def character():
     items.append(sg_item("ucm_rename_target", "Rename…", "Choose a new first name for the target.", T, "trigger_event = ucm_extra.3"))
     items.append(h("UCM_SEC_MOD_TRAITS", "Traits From This Mod"))
     for i in range(0, len(MOD_TRAITS), 3):
-        items.append(("row", [sg(f"ucm_mod_trait_{t}", f"$trait_{t}$", "Add this trait to the target, or remove it if they have it.", T,
-                                 f"{TG} = {{ if = {{ limit = {{ has_trait = {t} }} remove_trait = {t} }} else = {{ add_trait = {t} }} }}")
+        items.append(("row", [sg(f"ucm_mod_trait_{t}", f"$trait_ucm_trait_{t}$", "Add this trait to the target, or remove it if they have it.", T,
+                                 f"{TG} = {{ if = {{ limit = {{ has_trait = ucm_trait_{t} }} remove_trait = ucm_trait_{t} }} else = {{ add_trait = ucm_trait_{t} }} }}")
                               for t in MOD_TRAITS[i:i + 3]]))
     def add_xp(t, tracks):
         return " ".join(f"add_trait_xp = {{ trait = {t} {f'track = {k} ' if k else ''}value = 100 }}" for k in tracks or [None])
@@ -133,8 +131,8 @@ def character():
                          f"ucm_menu_close_effect = yes set_player_character = {TG}"))
     items.append(sg_item("ucm_heal_target", "Heal", "Remove diseases, wounds and maimings from the target.", T,
                          f"{TG} = {{ " + " ".join(f"remove_trait = {x}" for x in HEAL_TRAITS) + " }"))
-    items.append(("row", [sg("ucm_make_immortal", "Make Immortal", "The target stops aging and can't die of old age.", T, f"{TG} = {{ add_trait = zg_buxiu set_immortal_age = 25 }}"),
-                          sg("ucm_make_mortal", "Make Mortal", "Remove the target's immortality.", f"{T} {TG} = {{ has_trait = zg_buxiu }}", f"{TG} = {{ remove_trait = zg_buxiu }}")]))
+    items.append(("row", [sg("ucm_make_immortal", "Make Immortal", "The target stops aging and can't die of old age.", T, f"{TG} = {{ add_trait = ucm_trait_undying set_immortal_age = 25 }}"),
+                          sg("ucm_make_mortal", "Make Mortal", "Remove the target's immortality.", f"{T} {TG} = {{ has_trait = ucm_trait_undying }}", f"{TG} = {{ remove_trait = ucm_trait_undying }}")]))
     return items
 
 
@@ -242,7 +240,7 @@ def titles():
                          f"{TG}.faith = {{ start_great_holy_war = {{ target_character = {SEC} target_title = {SEC}.primary_title delay = 110 }} }}"))
     declare = f"{P} {TG} = {{ is_ruler = yes }} {SEC} = {{ is_landed = yes }}"
     items.append(("row", [sg(f"ucm_declare_{t}", f"Declare: {n}", f"The target declares a {n.lower()} war on the second character.", declare,
-                             f"{TG} = {{ start_war = {{ cb = sol_expansion_war{'' if t == 'kingdom' else '_' + t} target = {SEC} }} }}")
+                             f"{TG} = {{ start_war = {{ cb = ucm_war_{t} target = {SEC} }} }}")
                           for t, n in (("county", "County"), ("duchy", "Duchy"), ("kingdom", "Kingdom"), ("empire", "Empire"))]))
     return items
 
@@ -444,7 +442,7 @@ SPAWN_EFFECTS = """ucm_spawn_create_effect = {
 		}
 		if = {
 			limit = { root = { has_character_flag = ucm_spawn_immortal } }
-			add_trait = zg_buxiu
+			add_trait = ucm_trait_undying
 			set_immortal_age = 25
 		}
 		force_character_skill_recalculation = yes
@@ -861,11 +859,14 @@ def main():
     mods = "".join(f"ucm_extra_county_{k} = {{\n\ticon = county_modifier_development_positive\n\t{body}\n}}\n\n" for k, _, body in MODS)
     mods += ("ucm_extra_building_slot = {\n\ticon = county_modifier_development_positive\n\tbuilding_slot_add = 1\n}\n\n"
              "ucm_extra_lock_legitimacy = {\n\ticon = social_positive\n\tlegitimacy_gain_mult = -1\n\tlegitimacy_loss_mult = -1\n}\n\n"
+             "ucm_extra_lock_stress = {\n\ticon = social_positive\n\tstress_gain_mult = -10\n\tstress_loss_mult = -10\n}\n\n"
+             "ucm_extra_lock_tyranny = {\n\ticon = social_positive\n\ttyranny_gain_mult = -10\n\ttyranny_loss_mult = -10\n}\n\n"
+             "ucm_extra_lock_dread = {\n\ticon = social_positive\n\tdread_decay_mult = -10\n\tdread_gain_mult = -10\n\tdread_loss_mult = -10\n}\n\n"
              "ucm_extra_divine_grace = {\n\ticon = social_positive\n\tcharacter_spiritual_fulfillment_loss_mult = -1\n}\n")
     write("common/modifiers/ucm_extra_modifiers.txt", head + mods)
     for k, name, _ in MODS:
         LOC[f"ucm_extra_county_{k}"] = name
-    LOC.update(ucm_extra_building_slot="Extra Building Slot", ucm_extra_lock_legitimacy="Legitimacy Locked", ucm_extra_divine_grace="Fulfillment Protected")
+    LOC.update(ucm_extra_building_slot="Extra Building Slot", ucm_extra_lock_legitimacy="Legitimacy Locked", ucm_extra_lock_stress="Stress Locked", ucm_extra_lock_tyranny="Tyranny Locked", ucm_extra_lock_dread="Dread Locked", ucm_extra_divine_grace="Fulfillment Protected")
     LOC.update({"ucm_extra.1.t": "Remove Holdings", "ucm_extra.1.desc": "Every holding in the target's capital county, except the county capital, will be removed. Restoring a save is the only way back.",
                 "ucm_extra.2.t": "Destroy Title", "ucm_extra.2.desc": "The target's primary title will be destroyed. Restoring a save is the only way back.",
                 "ucm_extra.3.t": "Rename", "ucm_extra.3.desc": "Type the target's new first name.", "ucm_extra.close": "Done",

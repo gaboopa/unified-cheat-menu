@@ -58,7 +58,7 @@ def baseline_lines(old, vanilla_dir):
     for path, blob in old.items():
         if path.endswith(TEXT):
             lines.update(norm(git("cat-file", "-p", blob).decode("utf8", "replace")))
-    for root in ("common", "events", "gui", os.path.join("localization", "english")):
+    for root in ("common", "events", "gui", "localization"):
         for dp, _, files in os.walk(os.path.join(vanilla_dir, root)):
             for f in files:
                 if f.endswith(TEXT):

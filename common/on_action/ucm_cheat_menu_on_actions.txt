@@ -31,18 +31,10 @@ ucm_cheat_menu_game_start = {
       remove_character_flag = toc_showdebsflag
       remove_character_flag = toc_showspecsflag
       remove_character_flag = toc_showtextrasflag
-      remove_character_flag = ucm_acm_gui_open
-      remove_character_flag = ucm_acm_repair_gui_open
+      remove_character_flag = ucm_craft_gui_open
+      remove_character_flag = ucm_craft_edit_gui_open
       remove_character_flag = ucm_trait_editor_open
       remove_character_flag = ucm_lifestyle_open
-    }
-    if = {
-      limit = { has_global_variable = ucm_acm_repair_target }
-      remove_global_variable = ucm_acm_repair_target
-    }
-    if = {
-      limit = { has_global_variable = ucm_acm_recipient }
-      remove_global_variable = ucm_acm_recipient
     }
     if = {
       limit = { has_global_variable = ucm_cheat_menu_recipient }
@@ -61,18 +53,10 @@ ucm_cheat_menu_after_lobby = {
       remove_character_flag = toc_showdebsflag
       remove_character_flag = toc_showspecsflag
       remove_character_flag = toc_showtextrasflag
-      remove_character_flag = ucm_acm_gui_open
-      remove_character_flag = ucm_acm_repair_gui_open
+      remove_character_flag = ucm_craft_gui_open
+      remove_character_flag = ucm_craft_edit_gui_open
       remove_character_flag = ucm_trait_editor_open
       remove_character_flag = ucm_lifestyle_open
-    }
-    if = {
-      limit = { has_global_variable = ucm_acm_repair_target }
-      remove_global_variable = ucm_acm_repair_target
-    }
-    if = {
-      limit = { has_global_variable = ucm_acm_recipient }
-      remove_global_variable = ucm_acm_recipient
     }
     if = {
       limit = { has_global_variable = ucm_cheat_menu_recipient }

@@ -1,0 +1,151 @@
+namespace = ucm_artifact_craft
+
+# Pick one of the target's artifacts to edit, five to a page.
+ucm_artifact_craft.1 = {
+  type = character_event
+  title = ucm_craft_pick_title
+  desc = ucm_ui_no_hover_tooltip
+  theme = default
+  left_portrait = root
+  right_portrait = scope:ucm_craft_pick_owner
+
+  immediate = {
+    set_variable = {
+      name = ucm_craft_pick_row
+      value = {
+        value = var:ucm_craft_pick_page
+        multiply = -5
+      }
+    }
+    var:ucm_craft_recipient = {
+      save_scope_as = ucm_craft_pick_owner
+      ordered_character_artifact = {
+        order_by = artifact_wealth_quality_average_value
+        max = 1000
+        check_range_bounds = no
+        ucm_craft_pick_row_effect = yes
+      }
+    }
+  }
+
+  option = {
+    name = ucm_craft_pick_prev
+    trigger = { var:ucm_craft_pick_page > 0 }
+    change_variable = { name = ucm_craft_pick_page add = -1 }
+    trigger_event = { id = ucm_artifact_craft.1 days = 0 }
+  }
+  option = {
+    name = ucm_craft_pick_next
+    trigger = { exists = scope:ucm_craft_pick_more }
+    change_variable = { name = ucm_craft_pick_page add = 1 }
+    trigger_event = { id = ucm_artifact_craft.1 days = 0 }
+  }
+  option = {
+    name = ucm_craft_pick_0
+    trigger = { exists = scope:ucm_craft_pick_0 }
+    scope:ucm_craft_pick_0 = { ucm_craft_edit_artifact_effect = yes }
+  }
+  option = {
+    name = ucm_craft_pick_1
+    trigger = { exists = scope:ucm_craft_pick_1 }
+    scope:ucm_craft_pick_1 = { ucm_craft_edit_artifact_effect = yes }
+  }
+  option = {
+    name = ucm_craft_pick_2
+    trigger = { exists = scope:ucm_craft_pick_2 }
+    scope:ucm_craft_pick_2 = { ucm_craft_edit_artifact_effect = yes }
+  }
+  option = {
+    name = ucm_craft_pick_3
+    trigger = { exists = scope:ucm_craft_pick_3 }
+    scope:ucm_craft_pick_3 = { ucm_craft_edit_artifact_effect = yes }
+  }
+  option = {
+    name = ucm_craft_pick_4
+    trigger = { exists = scope:ucm_craft_pick_4 }
+    scope:ucm_craft_pick_4 = { ucm_craft_edit_artifact_effect = yes }
+  }
+  option = {
+    name = ucm_cheat_menu.00x.close
+  }
+}
+
+# Custom name.
+ucm_artifact_craft.2 = {
+  type = character_event
+  title = ucm_craft_name_event_title
+  desc = ucm_craft_name_event_desc
+  theme = stewardship
+  left_portrait = root
+
+  widget = {
+    gui = "event_window_widget_enter_text"
+    container = "dynamic_birth_name"
+    controller = {
+      type = text
+      data = {
+        key = ucm_craft_custom_name
+        default = ucm_craft_default_name
+      }
+    }
+    setup_scope = {
+      root = { save_scope_as = text_target }
+    }
+  }
+
+  option = {
+    name = ucm_craft_text_confirm
+    add_character_flag = ucm_craft_has_custom_name
+    remove_character_flag = ucm_craft_text_edit_open
+  }
+  option = {
+    name = ucm_craft_text_clear
+    remove_localized_text = ucm_craft_custom_name
+    remove_character_flag = ucm_craft_has_custom_name
+    remove_character_flag = ucm_craft_text_edit_open
+  }
+  option = {
+    name = ucm_cheat_menu.00x.close
+    remove_character_flag = ucm_craft_text_edit_open
+  }
+}
+
+# Custom description.
+ucm_artifact_craft.3 = {
+  type = character_event
+  title = ucm_craft_desc_event_title
+  desc = ucm_craft_desc_event_desc
+  theme = stewardship
+  left_portrait = root
+
+  widget = {
+    gui = "event_window_widget_enter_text"
+    container = "dynamic_birth_name"
+    controller = {
+      type = text
+      data = {
+        key = ucm_craft_custom_desc
+        default = ucm_craft_default_desc
+      }
+    }
+    setup_scope = {
+      root = { save_scope_as = text_target }
+    }
+  }
+
+  option = {
+    name = ucm_craft_text_confirm
+    add_character_flag = ucm_craft_has_custom_desc
+    remove_character_flag = ucm_craft_text_edit_open
+  }
+  option = {
+    name = ucm_craft_text_clear
+    remove_localized_text = ucm_craft_custom_desc
+    remove_character_flag = ucm_craft_has_custom_desc
+    remove_character_flag = ucm_craft_text_edit_open
+  }
+  option = {
+    name = ucm_cheat_menu.00x.close
+    remove_character_flag = ucm_craft_text_edit_open
+  }
+}

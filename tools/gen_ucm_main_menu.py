@@ -10,9 +10,9 @@ Each tab is a list of items:
                           shown/enabled/named exactly as the interaction itself
     ("dec", decision)     button opening an existing decision's detail view; decisions
                           always act on the player, not the target
-    ("cz", name)          the Crozier cheat panel's button(s) for ucm_crozier_cheats_sg_<name>,
-                          copied from gui/window_character.gui and pointed at the target
-    ("czrow", [name, ...], label_key)  the same at their original size, side by side
+    ("cz", name)          button(s) for ucm_crozier_cheats_sg_<name> (tools/gen_ucm_crozier.py);
+                          a tog_ toggle shows as an on/off pair
+    ("czrow", [name, ...], label_key)  the same, side by side
     ("picks", [group, ...])  group-action picker buttons (ucm_group_pick_<group>), shown pressed
                           when that group is picked
     ("steps",)            step-size selector (ucm_step_*)
@@ -25,11 +25,9 @@ Run after editing TABS:
     python tools/gen_ucm_main_menu.py
 """
 import os
-import re
 
+import gen_ucm_crozier
 import gen_ucm_extra
-
-re_size = re.compile(r"size = \{ \d+ \d+ \}")
 
 MOD_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(MOD_DIR, "gui", "ucm_main_menu.gui")
@@ -306,42 +304,49 @@ def sgui_button(name, ind, width="0", expand=True):
     ]
 
 
-_PANEL = None
+# Fixed-size buttons in a czrow: name prefix -> (width, label key, tooltip key).
+CZ_FIXED = {
+    "pow": (58, "UCM_CROZIER_CHEATS_POW_{}", "UCM_CROZIER_CHEATS_POW_TT"),
+    "tier": (78, "UCM_CROZIER_CHEATS_TIER_{}", "UCM_CROZIER_CHEATS_TIER_TT"),
+}
+CZ_ALL = {"pon_char_self": "ALLON", "poff_char_self": "ALLOFF"}
 
 
-def crozier_buttons(name, ind, keep_size=False):
-    """Copy the Crozier cheat panel's button(s) for scripted GUI `ucm_crozier_cheats_sg_<name>`
-    from gui/window_character.gui, retargeted from the character window's character to the
-    menu's target. Toggles come as an on/off pair of buttons; both are copied."""
-    global _PANEL
-    if _PANEL is None:
-        with open(os.path.join(MOD_DIR, "gui", "window_character.gui"), encoding="utf-8-sig") as fh:
-            _PANEL = fh.read()
-    t, key, found = _PANEL, f"'ucm_crozier_cheats_sg_{name}'", []
-    pos = t.find(key)
-    while pos >= 0:
-        s = t.rfind("button_standard = {", 0, pos)
-        depth, e = 0, s
-        for e in range(t.find("{", s), len(t)):
-            depth += (t[e] == "{") - (t[e] == "}")
-            if depth == 0:
-                break
-        if s < 0 or e < pos:  # unbalanced braces / key outside any button: would loop forever
-            raise ValueError(f"cannot parse Crozier button block for {name} near offset {pos}")
-        block = " ".join(t[s:e + 1].split())
-        if block not in found:
-            found.append(block)
-        pos = t.find(key, e)
-    if not found:
+def _cz_button(sg, text, tooltip, label_width, scope=R, size="layoutpolicy_horizontal = expanding size = { 0 28 }", attrs="", fx=""):
+    fx_label = f' text_single = {{ parentanchor = vcenter|right position = {{ -10 0 }} text = "{fx}" using = Font_Size_Small default_format = "#high" }}' if fx else ""
+    return (f'button_standard = {{ {size}{attrs} tooltip = "{tooltip}" onclick = "[GetScriptedGui( ' + repr(sg) + f' ).Execute( {scope} )]" '
+            f'text_single = {{ parentanchor = vcenter|left position = {{ 10 0 }} text = "{text}" max_width = {label_width} fontsize_min = 9 using = Font_Size_Small }}{fx_label} }}')
+
+
+def crozier_buttons(name, ind):
+    """The button(s) for scripted GUI ucm_crozier_cheats_sg_<name>; see gen_ucm_crozier.py for the naming."""
+    sg = f"ucm_crozier_cheats_sg_{name}"
+    kind, _, rest = name.partition("_")
+    if kind == "tog" and rest in gen_ucm_crozier.TOGGLES:
+        st = f"GetScriptedGui( 'ucm_crozier_cheats_sg_st_{rest}' ).IsShown( {R} )"
+        key = f"UCM_CROZIER_CHEATS_B_{rest}"
+        levelled = rest in gen_ucm_crozier.LEVELLED
+        out = [
+            _cz_button(sg, f"{key}_ON", f"{key}_TT", 376 if levelled else 430, attrs=f' visible = "[And( Not( GameHasMultiplePlayers ), {st} )]" down = yes',
+                       fx=f"UCM_CROZIER_CHEATS_FX_{rest}" if levelled else ""),
+            _cz_button(sg, f"{key}_OFF", f"{key}_TT", 430, attrs=f' visible = "[And( Not( GameHasMultiplePlayers ), Not( {st} ) )]"'),
+        ]
+    elif kind in CZ_FIXED and rest.isdigit():
+        width, text, tooltip = CZ_FIXED[kind]
+        out = [_cz_button(sg, text.format(rest), tooltip, width - 16, size=f"size = {{ {width} 26 }}", attrs=f" down = \"[GetScriptedGui( '{sg}' ).IsShown( {R} )]\"")]
+    elif name in CZ_ALL:
+        key = f"UCM_CROZIER_CHEATS_PANEL_{CZ_ALL[name]}"
+        out = [_cz_button(sg, key, f"{key}_TT", 184, size="size = { 200 26 }")]
+    elif name == "do_toasts_toggle" or (kind == "do" and name in gen_ucm_crozier.ACTIONS):
+        key = f"UCM_CROZIER_CHEATS_B_{rest}"
+        out = [_cz_button(sg, key, f"{key}_TT", 430)]
+    elif kind == "t" and name in gen_ucm_crozier.ACTIONS:
+        key = f"UCM_CROZIER_CHEATS_B_{rest}"
+        scope = R.replace(".End", f".AddScope( 'ucm_crozier_cheats_char', {C}.MakeScope ).End")
+        out = [_cz_button(sg, key, f"{key}_TT", 460, scope=scope, attrs=f" enabled = \"[GetScriptedGui( '{sg}' ).IsValid( {scope} )]\"")]
+    else:
         raise ValueError(f"no Crozier button for {name}")
-    out = []
-    for b in found:
-        b = re.sub(r"\bCharacter\.", C + ".", b)
-        if not keep_size:
-            b = b.replace("button_standard = { size = {", "button_standard = { layoutpolicy_horizontal = expanding size = {", 1)
-            b = re_size.sub("size = { 0 28 }", b, count=1)
-        out.append(ind + b)
-    return out
+    return [ind + b for b in out]
 
 
 def item(it, ind):
@@ -380,7 +385,7 @@ def item(it, ind):
         if len(it) > 2:
             lines.append(f'{ind}  text_single = {{ text = "{it[2]}" using = Font_Size_Small }}')
         for name in it[1]:
-            lines += crozier_buttons(name, ind + "  ", keep_size=True)
+            lines += crozier_buttons(name, ind + "  ")
         return lines + [f"{ind}  expand = {{}}", f"{ind}}}"]
     kind = it[0]
     if kind == "h":

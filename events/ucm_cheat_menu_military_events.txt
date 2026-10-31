@@ -71,11 +71,7 @@ ucm_cheat_menu.3085 = {
     name = ucm_cheat_menu.3080.opt_sand_soldiers
     custom_tooltip = ucm_cheat_menu.3080.opt_sand_soldiers_tt
     root = {
-      ucm_military_ensure_target_effect = yes
-      ucm_sand_soldiers_request_open_effect = yes
-      hidden_effect = {
-        ucm_open_sand_soldiers_effect = yes
-      }
+      hidden_effect = { ucm_army_spawner_open_effect = yes }
     }
   }
 }
@@ -144,19 +140,6 @@ ucm_cheat_menu.3099 = {
         limit = { is_at_war = yes }
         trigger_event = { id = ucm_cheat_menu.3099 days = 7 }
       }
-    }
-  }
-}
-
-# 撒豆成兵 GUI 桥接（备用：互动等路径仍走 pending + 本事件）
-ucm_cheat_menu.3082 = {
-  type = character_event
-  hidden = yes
-  immediate = {
-    if = {
-      limit = { has_character_flag = ucm_sand_soldiers_pending_open }
-      ucm_military_ensure_target_effect = yes
-      ucm_open_sand_soldiers_effect = yes
     }
   }
 }

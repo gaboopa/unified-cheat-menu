@@ -1,4 +1,4 @@
-﻿ucm_dynasty_grant_titles_decision = {
+ucm_dynasty_grant_titles_decision = {
   picture = {
     reference = "gfx/interface/illustrations/decisions/8.dds"
   }
@@ -22,7 +22,7 @@
 
   is_shown = { ucm_single_player_trigger = yes 
 
-    has_character_flag = pcm_b_show_decision_flag
+    has_character_flag = ucm_menu_open
     ucm_officials_decision_visible_for_player_trigger = yes
   }
 
@@ -68,7 +68,7 @@ ucm_one_click_grant_titles_decision = {
 
   is_shown = { ucm_single_player_trigger = yes 
 
-    has_character_flag = pcm_b_show_decision_flag
+    has_character_flag = ucm_menu_open
     ucm_officials_decision_visible_for_player_trigger = yes
   }
 

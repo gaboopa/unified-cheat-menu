@@ -37,12 +37,6 @@ ucm_menu_sub_flags_effect = {
 	$DO$ = { FLAG = toc_showdebsflag }
 	$DO$ = { FLAG = toc_showspecsflag }
 	$DO$ = { FLAG = toc_showtextrasflag }
-	$DO$ = { FLAG = daddy_pika_cheat_menu }
-	$DO$ = { FLAG = govt_menu }
-	$DO$ = { FLAG = covt_menu }
-	$DO$ = { FLAG = zhuge_juese_menu_01 }
-	$DO$ = { FLAG = pcm_show_decision_flag }
-	$DO$ = { FLAG = pcm_b_show_decision_flag }
 	$DO$ = { FLAG = open_optroop_menu }
 	$DO$ = { FLAG = sol_war_without_bounds_open }
 }

@@ -1,4 +1,4 @@
-﻿ucm_imprison_vassals_decision = {
+ucm_imprison_vassals_decision = {
   picture = {
     reference = "gfx/interface/illustrations/decisions/8.dds"
   }
@@ -14,7 +14,7 @@
 
   is_shown = { ucm_single_player_trigger = yes 
 
-    has_character_flag = pcm_b_show_decision_flag
+    has_character_flag = ucm_menu_open
     ucm_officials_decision_visible_for_player_trigger = yes
   }
 

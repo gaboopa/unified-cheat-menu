@@ -4,7 +4,7 @@ Writes common/scripted_effects/ucm_acm_faith_editor_data_effects.txt (vanilla + 
 calls build() for the Elder Kings 2 version in compat/ek2/.
 
 1.20 keeps core tenets and doctrines on Rites, so everything here reads and edits the selected faith's main
-rite: rite_has_doctrine / rite_has_tenet / trait_is_virtue_rite to display it, change_rite_doctrine (which
+rite: rite_has_doctrine / rite_has_tenet to display it, change_rite_doctrine (which
 replaces the group's current doctrine) and add_rite_tenet / remove_rite_tenet to edit it. Categories, groups
 and their order come from doctrine_category_types and doctrine_group_types, so new DLC groups show up on rerun.
 
@@ -17,14 +17,14 @@ import os
 import re
 import sys
 
-from ck3parse import child_objects_text, effective_files, entries, top_level_objects
+from ck3parse import effective_files, top_level_objects
 
 MOD_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_REL = os.path.join("common", "scripted_effects", "ucm_acm_faith_editor_data_effects.txt")
 REL = os.path.join("common", "religion")
 # Doctrine categories the editor shows, in GUI order. GUI list name: ucm_acm_fe_display_<category>.
 CATEGORIES = ["main_group", "marriage", "crimes", "clergy"]
-KEY = "var:ucm_acm_pick_doctrine_key"
+KEY = "scope:pick_doctrine"
 
 
 def objects(sub, dirs):
@@ -37,74 +37,42 @@ def field(body, name):
     return m and m.group(1)
 
 
-def traits_of(body):
-    """(sins, virtues) from a depth-1 `traits = { sins = {..} virtues = {..} }` block."""
-    out = {"sins": [], "virtues": []}
-    for k, b in child_objects_text(body):
-        if k == "traits":
-            for g, gb in child_objects_text(b):
-                if g in out:
-                    out[g] += entries(gb)
-    return out["sins"], out["virtues"]
-
-
 def load(dirs):
     """dirs: {sub: [dir, ...]} per religion database, so a replace_path can drop vanilla for one of them."""
     groups = {}  # group -> (category, has is_available_on_create), in definition order
     for k, b in objects("doctrine_group_types", dirs["doctrine_group_types"]):
         groups[k] = (field(b, "category"), "is_available_on_create" in b)
     by_group = {g: [] for g in groups}
-    traits = {"sins": [], "virtues": []}
-
-    def note(body):
-        for lst, ts in zip(("sins", "virtues"), traits_of(body)):
-            traits[lst] += [t for t in ts if t not in traits[lst]]
-
     for k, b in objects("doctrine_types", dirs["doctrine_types"]):
         g = field(b, "doctrine_group_type")
         if g not in by_group:
             sys.exit(f"doctrine {k}: unknown doctrine_group_type {g!r}")
         by_group[g].append((int(field(b, "index") or 0), k))
-        note(b)
-    tenets = []
-    for k, b in objects("tenet_types", dirs["tenet_types"]):
-        tenets.append(k)
-        note(b)
-    for sub in ("religion_types", "faith_types", "rite_types"):
-        for _, b in objects(sub, dirs[sub]):
-            note(b)
+    tenets = [k for k, _ in objects("tenet_types", dirs["tenet_types"])]
     shown = {c: [(g, [d for _, d in sorted(by_group[g])]) for g, (cat, _) in groups.items() if cat == c and by_group[g]]
              for c in CATEGORIES}
     optional = {g for g, (_, opt) in groups.items() if opt}
-    return shown, optional, tenets, traits
+    return shown, optional, tenets
 
 
 def add(lines, ind, name, target):
-    lines += [f"{ind}add_to_global_variable_list = {{", f"{ind}  name = {name}", f"{ind}  target = flag:{target}", f"{ind}}}"]
+    lines.append(f"{ind}add_to_global_variable_list = {{ name = {name} target = flag:{target} }}")
 
 
 def build(dirs, header):
-    shown, optional, tenets, traits = load(dirs)
+    shown, optional, tenets = load(dirs)
     L = header + [""]
 
-    # Doctrine library lists (ucm_acm_faith_doctrine_picker.gui).
-    L.append("ucm_acm_faith_populate_doctrine_catalog_effect = {")
-    for name, items in [("core_tenets", tenets)] + [(c, [d for _, ds in shown[c] for d in ds]) for c in CATEGORIES]:
-        L.append(f"  clear_global_variable_list = ucm_acm_doctrine_list_{name}")
-        for t in items:
-            add(L, "  ", f"ucm_acm_doctrine_list_{name}", t)
+    # Every core tenet (gui/ucm_tenet_picker.gui). Filled at game start.
+    L += ["ucm_acm_faith_populate_doctrine_catalog_effect = {", "  clear_global_variable_list = ucm_acm_doctrine_list_core_tenets"]
+    for t in tenets:
+        add(L, "  ", "ucm_acm_doctrine_list_core_tenets", t)
     L += ["}", ""]
 
     # What the selected faith's main rite has now.
     L += ["ucm_acm_faith_refresh_display_lists_effect = {", "  if = {", "    limit = { has_variable = ucm_selected_faith_var }"]
-    lists = ["core_tenets"] + CATEGORIES + ["sin_traits", "virtue_traits"]
-    L += [f"    clear_global_variable_list = ucm_acm_fe_display_{n}" for n in lists]
+    L += [f"    clear_global_variable_list = ucm_acm_fe_display_{n}" for n in ["core_tenets"] + CATEGORIES]
     L.append("    var:ucm_selected_faith_var = { main_rite = { save_scope_as = ucm_fe_rite } }")
-    for lst, trig in (("sins", "trait_is_sin_rite"), ("virtues", "trait_is_virtue_rite")):
-        for t in traits[lst]:
-            L += ["    if = {", f"      limit = {{ scope:ucm_fe_rite = {{ {trig} = {t} }} }}"]
-            add(L, "      ", f"ucm_acm_fe_display_{lst[:-1]}_traits", t)
-            L.append("    }")
     for t in tenets:
         L += ["    if = {", f"      limit = {{ scope:ucm_fe_rite = {{ rite_has_tenet = {t} }} }}"]
         add(L, "      ", "ucm_acm_fe_display_core_tenets", t)
@@ -121,50 +89,42 @@ def build(dirs, header):
                 L.append("    }")
     L += ["  }", "}", ""]
 
-    # Picked doctrine or tenet -> its group (flag:doctrine_core_tenets for tenets).
-    picks = [("doctrine_core_tenets", tenets)] + [(g, ds) for c in CATEGORIES for g, ds in shown[c]]
-    L += ["ucm_acm_faith_resolve_pick_group_effect = {", "  remove_variable = ucm_acm_pick_group_name", "  if = {",
-          "    limit = { has_variable = ucm_acm_pick_doctrine_key }"]
-    for i, (g, ds) in enumerate(picks):
-        L += [f"    {'if' if i == 0 else 'else_if'} = {{", "      limit = {", "        OR = {"]
-        L += [f"          {KEY} = flag:{d}" for d in ds]
-        L += ["        }", "      }", "      set_variable = {", "        name = ucm_acm_pick_group_name",
-              f"        value = flag:{g}", "      }", "    }"]
-    L += ["  }", "}", ""]
-
-    # Choices for the picked group.
-    L += ["ucm_acm_faith_populate_pick_current_effect = {", "  clear_global_variable_list = ucm_acm_fe_pick_current",
-          "  if = {", "    limit = { has_variable = ucm_acm_pick_group_name }"]
-    for i, (g, ds) in enumerate(picks):
-        L += [f"    {'if' if i == 0 else 'else_if'} = {{", f"      limit = {{ var:ucm_acm_pick_group_name = flag:{g} }}"]
+    # scope:pick_doctrine (a clicked tenet or doctrine) -> the choices that can replace it.
+    picks = [tenets] + [ds for c in CATEGORIES for _, ds in shown[c]]
+    L += ["ucm_acm_faith_fill_choices_effect = {", "  clear_global_variable_list = ucm_acm_fe_pick_current"]
+    for i, ds in enumerate(picks):
+        L += [f"  {'if' if i == 0 else 'else_if'} = {{", "    limit = {", "      OR = {"]
+        L += [f"        {KEY} = flag:{d}" for d in ds]
+        L += ["      }", "    }"]
         for d in ds:
-            add(L, "      ", "ucm_acm_fe_pick_current", d)
-        L.append("    }")
-    L += ["  }", "}", ""]
+            add(L, "    ", "ucm_acm_fe_pick_current", d)
+        L.append("  }")
+    L += ["}", ""]
 
     # Drop the clicked core tenet before the replacement is added.
-    L += ["ucm_acm_faith_remove_pick_slot_doctrine_effect = {", "  if = {", "    limit = {",
-          "      has_variable = ucm_selected_faith_var", "      has_variable = ucm_acm_pick_slot", "    }"]
+    L.append("ucm_acm_faith_remove_slot_tenet_effect = {")
     for i, t in enumerate(tenets):
-        L += [f"    {'if' if i == 0 else 'else_if'} = {{", f"      limit = {{ var:ucm_acm_pick_slot = flag:{t} }}",
-              f"      var:ucm_selected_faith_var = {{ main_rite = {{ remove_rite_tenet = tenet:{t} }} }}", "    }"]
-    L += ["  }", "}", ""]
+        L += [f"  {'if' if i == 0 else 'else_if'} = {{", f"    limit = {{ var:ucm_acm_pick_slot = flag:{t} }}",
+              f"    var:ucm_selected_faith_var = {{ main_rite = {{ remove_rite_tenet = tenet:{t} }} }}", "  }"]
+    L += ["}", ""]
 
-    # Apply the pick: a tenet is added, a doctrine replaces its group's current one.
-    L += ["ucm_acm_faith_add_doctrine_to_selected_effect = {", "  if = {", "    limit = {",
-          "      has_variable = ucm_selected_faith_var", "      has_variable = ucm_acm_pick_doctrine_key", "    }"]
-    first = True
-    for eff, ks in (("add_rite_tenet", tenets), ("change_rite_doctrine", [d for _, ds in picks[1:] for d in ds])):
-        for k in ks:
-            L += [f"    {'if' if first else 'else_if'} = {{", f"      limit = {{ {KEY} = flag:{k} }}",
-                  f"      var:ucm_selected_faith_var = {{ main_rite = {{ {eff} = {k} }} }}", "    }"]
-            first = False
-    L += ["  }", "}", ""]
+    # Apply scope:pick_doctrine: a tenet replaces the clicked one unless the rite already has it,
+    # a doctrine replaces its group's current one.
+    L.append("ucm_acm_faith_apply_choice_effect = {")
+    for i, t in enumerate(tenets):
+        L += [f"  {'if' if i == 0 else 'else_if'} = {{", "    limit = {", f"      {KEY} = flag:{t}",
+              f"      var:ucm_selected_faith_var = {{ main_rite = {{ NOT = {{ rite_has_tenet = {t} }} }} }}", "    }",
+              "    ucm_acm_faith_remove_slot_tenet_effect = yes",
+              f"    var:ucm_selected_faith_var = {{ main_rite = {{ add_rite_tenet = {t} }} }}", "  }"]
+    for d in [d for ds in picks[1:] for d in ds]:
+        L += ["  else_if = {", f"    limit = {{ {KEY} = flag:{d} }}",
+              f"    var:ucm_selected_faith_var = {{ main_rite = {{ change_rite_doctrine = {d} }} }}", "  }"]
+    L += ["}", ""]
     return "\n".join(L)
 
 
 def vanilla_dirs(game):
-    subs = ["doctrine_group_types", "doctrine_types", "tenet_types", "religion_types", "faith_types", "rite_types"]
+    subs = ["doctrine_group_types", "doctrine_types", "tenet_types"]
     return {s: [game, MOD_DIR] for s in subs}
 
 

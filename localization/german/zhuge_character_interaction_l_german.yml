@@ -5,19 +5,13 @@
  zhuge_destroy_title:0 "Primärtitel zerstören"
  zhuge_destroy_title_desc:0 "Zerschmettere deine eigene Krone und tilge den Titel aus der Geschichte, als hätte er niemals existiert – ein kühner Schritt, doch für die meisten reine Torheit."
 
- zhuge_buff_01:0 "Kaiserliche Ermächtigung"
- zhuge_buff_01_desc:0 "Trinke tief aus dem Kelch der Macht, auch wenn jeder Schluck die Kerze deines Lebens ein wenig schneller abbrennen lässt."
 
- zhuge_buff_01_tt:0 "Die Eigenschaft „Kaiserliche Ermächtigung“ umschalten?"
 
  zhuge_buff_02:0 "Großmarschall"
  zhuge_buff_02_desc:0 "Befehlshaber zahlloser Banner, Hüter der Grenzen und Schrecken aller Eidbrecher. Eine Gestalt, deren Taten in den Met-Hallen besungen werden."
 
  zhuge_buff_02_tt:0 "Die Eigenschaft „Großmarschall“ umschalten?"
 
- zhuge_buff_03:0 "Großgelehrter"
- zhuge_buff_03_desc:0 "Hüter uralten Wissens und Schreiber der Weisheit, dessen Feder das Reich besser lenkt als hundert Schwerter."
- zhuge_buff_03_tt:0 "Die Eigenschaft „Großgelehrter“ umschalten?"
 
  zhuge_buff_04:0 "Ihre Sprache erlernen"
  zhuge_buff_04_desc:0 "Durch Verstand oder Zauberei eignest du dir die Sprache eines fremden Volkes nahezu augenblicklich an."
@@ -26,20 +20,11 @@
  zhuge_buff_05:0 "Ritterehre verleihen"
  zhuge_buff_05_desc:0 "Verleihe diesem Ritter Ruhm und Ehre, damit sein Name in Hallen und an Herden gleichermaßen gepriesen werde."
  zhuge_buff_05_tt:0 "Die Eigenschaft „Ritterehre“ umschalten?"
- zhuge_buff_05_high_tt:0 "2.500 Ruhm hinzufügen (füllt die [accolade|E] vollständig)."
- zhuge_buff_05_low_tt:0 "500 Ruhm hinzufügen."
- zhuge_buff_05_delete01_tt:0 "500 Ruhm entfernen."
- zhuge_buff_05_delete02_tt:0 "Ruhm auf null zurücksetzen."
 
  daddy_pika_add_strong_hook:0 "Starkes Druckmittel erhalten"
  daddy_pika_add_strong_hook_desc:0 "Erringe ein mächtiges Druckmittel über diese Person – eine verborgene Kette, unsichtbar und doch unzerbrechlich."
 
- strong_hook:0 "Göttliche Bindung"
- strong_hook_desc:0 "Diese Seele richtet ihre Gebete an eine unsichtbare Macht. Ob die Götter erhören oder sich bei Met und Gelächter über sie amüsieren, bleibt ein Geheimnis."
 
- zhuge_bloodline_03:0 "Von Barbara gesalbt"
- zhuge_bloodline_03_desc:0 "Diese Person ist unter allen hervorgehoben; ihr Blut trägt einen besonderen göttlichen Segen."
- zhuge_bloodline_03_tt:0 "Die Eigenschaft „Göttliche Blutlinie“ umschalten?"
 
  zhuge_yixue_01:0 "Medizinisches Wunder"
  zhuge_yixue_01_desc:0 "Heile Leib und Seele von allen Gebrechen und verwandle Schwäche in eine Kraft, um die selbst die Götter beneiden könnten."
@@ -69,12 +54,6 @@
  zhuge_set_relation_interaction_desc:0 "Bestimme das Verhältnis zwischen dir und [recipient.GetShortUIName] neu – Freund, Feind oder irgendetwas dazwischen."
  
  zhuge_add_truce_interaction:0 "Waffenstillstand anpassen"
- zhuge_danx_hd_01_desc:0 "Einseitig (erhalten)"
- zhuge_danx_give_01_desc:0 "Einseitig (gewähren)"
- zhuge_danx_sx_01_desc:0 "Beidseitig"
- zhuge_danx_sx_02_desc:0 "Waffenstillstand aufheben"
- ZHUGE_TRUCE:0 "#Y Zhuge-Waffenstillstand zur Gesichtswahrung#!"
- zhuge_remove_truce_effect:0 "Dein [truce|E] ist beendet – so viel zum „ewigen Frieden“."
 
  zhuge_set_authority_inter:0 "Autoritätsstufe festlegen"
  zhuge_set_authority_inter_desc:0 "Bestimme die Macht der Krone – von kaum wahrnehmbar bis hin zum unumstößlichen Willen des Herrschers."
@@ -82,13 +61,10 @@
  zhuge_set_artifact_interaction:0 "Glänzendes Artefakt beschwören"
  zhuge_set_artifact_interaction_desc:0 "Siehe da! Ein Relikt erscheint. Hinterfrage dein Glück besser nicht."
 
- zhuge_kill_xingzh_house_interaction:0 "Dem Adel einen kleinen Schubs geben (von der Klippe)"
- zhuge_kill_xingzh_house_interaction_desc:0 "Diese edlen Häuser sind träge und selbstzufrieden geworden. Zeit für einen kleinen Frühjahrsputz ... direkt an der Klippe."
 
  zhuge_huoqu_artifact_interaction:0 "Königliche Leihgabe (natürlich nur vorübergehend)"
  zhuge_huoqu_artifact_interaction_desc:0 "Ein wahrlich prachtvoller Schatz. Ich werde ihn eine Weile für dich aufbewahren."
 
- zhuge_jiequ_artifact_player:0 "Schöner Schatz. Den nehme ich."
 
 
 

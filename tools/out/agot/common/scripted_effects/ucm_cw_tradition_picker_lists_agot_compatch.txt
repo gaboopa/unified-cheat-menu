@@ -139,8 +139,8 @@ ucm_cw_build_tradition_picker_lists_agot_effect = {
   add_to_global_variable_list = { name = ucm_cw_ritual_tradition_list target = culture_tradition:tradition_sacred_hunts }
   add_to_global_variable_list = { name = ucm_cw_ritual_tradition_list target = culture_tradition:tradition_sacred_mountains }
   add_to_global_variable_list = { name = ucm_cw_ritual_tradition_list target = culture_tradition:tradition_sorcerous_metallurgy }
-  add_to_global_variable_list = { name = ucm_cw_ritual_tradition_list target = culture_tradition:tradition_zz_cultural_polygamy_three_wives }
-  add_to_global_variable_list = { name = ucm_cw_ritual_tradition_list target = culture_tradition:tradition_zz_cultural_polygamy_two_wives }
+  add_to_global_variable_list = { name = ucm_cw_ritual_tradition_list target = culture_tradition:tradition_ucm_three_wives }
+  add_to_global_variable_list = { name = ucm_cw_ritual_tradition_list target = culture_tradition:tradition_ucm_two_wives }
 
   # regional (152)
   add_to_global_variable_list = { name = ucm_cw_regional_tradition_list target = culture_tradition:tradition_agot_andal }
@@ -271,7 +271,6 @@ ucm_cw_build_tradition_picker_lists_agot_effect = {
   add_to_global_variable_list = { name = ucm_cw_regional_tradition_list target = culture_tradition:tradition_agot_zoqora }
   add_to_global_variable_list = { name = ucm_cw_regional_tradition_list target = culture_tradition:tradition_caravaneers }
   add_to_global_variable_list = { name = ucm_cw_regional_tradition_list target = culture_tradition:tradition_cultivation }
-  add_to_global_variable_list = { name = ucm_cw_regional_tradition_list target = culture_tradition:tradition_debug }
   add_to_global_variable_list = { name = ucm_cw_regional_tradition_list target = culture_tradition:tradition_devoted_horsemanship }
   add_to_global_variable_list = { name = ucm_cw_regional_tradition_list target = culture_tradition:tradition_ep3_audacious_cadets }
   add_to_global_variable_list = { name = ucm_cw_regional_tradition_list target = culture_tradition:tradition_ep3_imperial_tagmata }

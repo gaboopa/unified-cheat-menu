@@ -8,8 +8,3 @@ ucm_ai_automation = {
 	sort_order = 295
 	gui_tags = { big_button }
 }
-
-ucm_talent_finder = {
-	sort_order = 284
-	gui_tags = { big_button }
-}

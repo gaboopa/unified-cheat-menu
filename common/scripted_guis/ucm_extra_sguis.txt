@@ -978,21 +978,21 @@ ucm_estate_economy = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { set_global_variable = { name = ucm_cheat_menu_recipient value = var:ucm_target } save_scope_as = actor ucm_cheat_menu_domicile_preset_economy_apply_effect = yes }
+	effect = { var:ucm_target = { ucm_domicile_preset_economy_effect = yes } }
 }
 
 ucm_estate_military = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { set_global_variable = { name = ucm_cheat_menu_recipient value = var:ucm_target } save_scope_as = actor ucm_cheat_menu_domicile_preset_military_apply_effect = yes }
+	effect = { var:ucm_target = { ucm_domicile_preset_military_effect = yes } }
 }
 
 ucm_estate_balanced = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { set_global_variable = { name = ucm_cheat_menu_recipient value = var:ucm_target } save_scope_as = actor ucm_cheat_menu_domicile_preset_balanced_apply_effect = yes }
+	effect = { var:ucm_target = { ucm_domicile_preset_balanced_effect = yes } }
 }
 
 ucm_legend_clear = {

@@ -2,3 +2,7 @@
  # CK3 1.20 cleanup: keys the script referenced but no loc file defined, plus raw-text strings turned into keys
  dead_group:0 "Ausgestorbene Kulturen"
  special_gift_interaction_message_title:0 "Gabe der Unsterblichkeit"
+ tolerance_advantage_mod: "$MOD_FAITH_HOSTILITY_ADVANTAGE_MOD$"
+ no_prowess_loss_from_age: "$MOD_NO_PROWESS_LOSS_FROM_AGE$"
+ no_water_crossing_penalty: "$MOD_NO_WATER_CROSSING_PENALTY$"
+ FAITH_WINDOW_TENET_TOOLTIP: "[TenetType.GetNameNoTooltip( Rite.Self )]"

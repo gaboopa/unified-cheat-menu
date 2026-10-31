@@ -5,7 +5,7 @@ ucm_legend_master_finalize_new_legend_effect = {
     random_legend = {
       limit = {
         legend_owner = scope:ucm_cheat_menu_target
-        NOT = { legend_quality = mythical }
+        NOR = { legend_quality = mythical }
       }
       change_legend_quality_effect = { VALUE = 100 }
       change_legend_quality_effect = { VALUE = 100 }

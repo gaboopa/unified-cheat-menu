@@ -156,8 +156,7 @@ TABS = [
         ("h", "UCM_SEC_WARS"),
         ("sg", "ucm_end_wars_white_peace"),
         ("h", "UCM_SEC_AI"),
-        ("dec", "ucm_ai_yearly_pulse_toggle_decision"), ("dec", "ucm_ai_yearly_de_jure_transfer_toggle_decision"),
-        ("dec", "ucm_ai_yearly_admin_conversion_toggle_decision"), ("dec", "ucm_ai_boost_toggle_decision"),
+        ("dec", "ucm_ai_boost_toggle_decision"),
     ]),
     ("faith_culture", [
         ("h", "UCM_SEC_EDITORS"),

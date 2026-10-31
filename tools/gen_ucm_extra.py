@@ -383,7 +383,8 @@ def activities_legends():
                       sg("ucm_activity_cancel", "Cancel", "Cancel the target's activity outright.", act, f"{TG}.involved_activity = {{ invalidate_activity = yes }}")]),
              h("UCM_SEC_ESTATE_PRESETS", "Estate Presets")]
     setup = f"set_global_variable = {{ name = ucm_cheat_menu_recipient value = {TG} }} save_scope_as = actor"
-    items.append(("row", [sg(f"ucm_estate_{p}", n, f"Apply the {n.lower()} estate preset to the target's domicile.", T,
+    estate = f"{T} {TG} = {{ is_alive = yes domicile ?= {{ OR = {{ is_domicile_type = estate is_domicile_type = east_asian_estate is_domicile_type = japanese_manor }} }} }}"
+    items.append(("row", [sg(f"ucm_estate_{p}", n, f"Apply the {n.lower()} estate preset to the target's domicile.", estate,
                              f"{TG} = {{ ucm_domicile_preset_{p}_effect = yes }}") for p, n in (("economy", "Economic"), ("military", "Military"), ("balanced", "Balanced"))]))
     items.append(h("UCM_SEC_LEGEND_MAKER", "Create a Legend for the Target"))
     items.append(sg_item("ucm_legend_clear", "Clear Target's Legends", "Remove the legends the target owns.", T, f"{setup} ucm_legend_master_clear_owned_legends_effect = yes"))

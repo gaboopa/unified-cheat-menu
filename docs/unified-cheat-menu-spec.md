@@ -1,9 +1,11 @@
 # Unified CK3 Cheat Menu
 
+> History: this spec predates the rewrite that removed all inherited code. "Baseline mod" means the mod this project started from; `old_` names are its identifiers, kept here only to explain past decisions.
+
 **Proposed Functional and Interface Specification — Version 1.3**
 
 **Target:** Crusader Kings III 1.20.x "Crozier" (verified against 1.20.1.2 game files)\
-**Baseline:** started from Skonester Cheat Menu Gold at upstream commit `bfcb175` (CC BY 4.0), since heavily rewritten\
+**Baseline:** started from the baseline mod at upstream commit `bfcb175` (CC BY 4.0), since heavily rewritten\
 **Feature reference:** Daddy Pika's Cheat Menu / Divine Intervention (behavior only; no code or assets)\
 **Status:** Phases 0–7 implemented, followed by review, upstream-cleanup and simplification passes (Phases 8–11) and an Elder Kings 2 compatch (`compat/ek2/`, [ek2-compatch-plan.md](ek2-compatch-plan.md)). See the phase notes in docs/. Most features still need in-game testing; Phases 9–11 and the compatch haven't been load-tested yet.
 
@@ -31,16 +33,16 @@ Corrections from the game's own `script_docs` output (1.20.1.2), which replaces 
 - Rewrote the Faith Editor for the 1.20 Faith → **Rite** model and limited tenet-slot claims to what's been verified.
 - Added **multiplayer-safe targeting**: per-player state lives on the player's character, not in global variables.
 - Added a **vanilla override inventory**, a **global defines** review, and an **error.log baseline** to Phase 0.
-- Settled licensing: Skonester is CC BY 4.0.
+- Settled licensing: the baseline mod is CC BY 4.0.
 - Added Appendix A (engine verification evidence) and Appendix B (baseline audit).
 
 ---
 
 ## Design direction
 
-Take Skonester's character-interaction workflow, organized submenus, and convenient one-click cheats as the starting point, and add Divine Intervention's more advanced editing capabilities.
+Take the baseline mod's character-interaction workflow, organized submenus, and convenient one-click cheats as the starting point, and add Divine Intervention's more advanced editing capabilities.
 
-Use a hybrid interface rather than merging both mods' menus wholesale. Most actions stay accessible by right-clicking a character, as in Skonester. More complicated operations, such as artifact construction and detailed diplomacy, open dedicated editors without requiring a separate permanent HUD.
+Use a hybrid interface rather than merging both mods' menus wholesale. Most actions stay accessible by right-clicking a character, as in the baseline mod. More complicated operations, such as artifact construction and detailed diplomacy, open dedicated editors without requiring a separate permanent HUD.
 
 This specification is a proposed design. It doesn't claim these features already work together.
 
@@ -48,13 +50,13 @@ This specification is a proposed design. It doesn't claim these features already
 
 ## 1. Project objectives
 
-Create a comprehensive CK3 cheat menu that keeps Skonester's convenient character interactions and organized menus and adds the advanced controls associated with Divine Intervention.
+Create a comprehensive CK3 cheat menu that keeps the baseline mod's convenient character interactions and organized menus and adds the advanced controls associated with Divine Intervention.
 
 The resulting mod must work standalone. Players shouldn't need to install either original mod.
 
 ### 1.1 Governing requirements
 
-1. **Preserve existing functionality.** All working Skonester features stay accessible and keep their existing behavior unless deliberately improved.
+1. **Preserve existing functionality.** All working the baseline mod features stay accessible and keep their existing behavior unless deliberately improved.
 2. **Interaction-first design.** Right-clicking characters remains the primary entry point. Dedicated GUI windows are used only where they substantially improve complex editing.
 3. **Context-aware actions.** The menu identifies the relevant character, realm, title, culture, faith, or other target automatically.
 4. **Minimal clutter.** Don't flood the normal character interaction menu with hundreds of cheats.
@@ -68,7 +70,7 @@ The resulting mod must work standalone. Players shouldn't need to install either
 
 ### 1.2 Preservation policy
 
-Inventory existing Skonester functionality against the forked baseline before development begins.
+Inventory existing the baseline mod functionality against the forked baseline before development begins.
 
 Reuse working features where appropriate rather than reimplementing them unnecessarily.
 
@@ -132,13 +134,13 @@ Group actions (Section 5) live inside the category they belong to. For example, 
 
 Each category opens a focused submenu. Complex categories may open a dedicated GUI editor.
 
-Layer 2 is a single custom window with tabs, opened from the Layer 1 interaction. Skonester already uses this pattern (`common/character_interactions/01_ucm_gui_launcher_interactions.txt`). Skonester's existing decision-based menus stay available during migration.
+Layer 2 is a single custom window with tabs, opened from the Layer 1 interaction. the baseline mod already uses this pattern (`common/character_interactions/01_ucm_gui_launcher_interactions.txt`). the baseline mod's existing decision-based menus stay available during migration.
 
 ### Layer 3 — Specialized editors
 
 Use dedicated editing windows for operations that involve large lists, many values, or several interacting targets.
 
-| Editor               | Intended functionality                                             | Skonester starting point                       |
+| Editor               | Intended functionality                                             | the baseline mod starting point                       |
 | -------------------- | ------------------------------------------------------------------ | ---------------------------------------------- |
 | Character Editor     | Skills, traits, genetics, health, sexuality, age, perks, modifiers | `ucm_trait_editor.gui`, `ucm_lifestyle.gui`, `ucm_cheat_trait_editor.gui` |
 | Relationship Editor  | Clicked and second character: relationship status, family relationships | None                                      |
@@ -256,7 +258,7 @@ Required functions:
 - Apply one increment to all six attributes.
 - Apply predefined skill presets.
 - Reset attributes to an explicitly defined baseline, where technically supported.
-- Preserve Skonester's powerful attribute-enhancement options.
+- Preserve the baseline mod's powerful attribute-enhancement options.
 
 The editor shows current values and expected results before significant changes.
 
@@ -413,7 +415,7 @@ Provide:
 - Create cadet branch.
 - Designate primary heir.
 - Restore inheritance.
-- Exterminate selected dynasty, preserving Skonester's existing functionality.
+- Exterminate selected dynasty, preserving the baseline mod's existing functionality.
 
 Validate parentage changes to prevent ancestry cycles, contradictory parent assignments, and invalid family structures.
 
@@ -442,7 +444,7 @@ Provide:
 - Reveal secrets.
 - Remove secrets.
 - Create selected secrets where supported.
-- Preserve Skonester's fabricated-secret functionality.
+- Preserve the baseline mod's fabricated-secret functionality.
 - View the intended holder and target of each hook.
 
 ### Advanced Relationship Editor
@@ -484,7 +486,7 @@ Provide:
 - Destroy title.
 - Revoke title.
 - Grant title.
-- Merge titles using Skonester's existing behavior (`ucm_merge_titles.txt`).
+- Merge titles using the baseline mod's existing behavior (`ucm_merge_titles.txt`).
 - Select titles by rank.
 - Select all titles held by a specified character.
 - Select realm and sub-realm titles.
@@ -533,7 +535,7 @@ Provide succession controls for:
 - House Seniority
 - Applicable elective systems (baseline overrides `common/succession_election/_succession_election.info`)
 
-Preserve Skonester's existing succession controls and government-specific choices.
+Preserve the baseline mod's existing succession controls and government-specific choices.
 
 ### Authority & Stability
 
@@ -652,7 +654,7 @@ Provide:
 - Edit clergy doctrines.
 - Edit religious-head settings.
 - Select sins and virtues (the game keeps at most `MAX_VIRTUES_SINS = 7`, chosen from core and approved tenets).
-- ~~Preserve Skonester's empty-tenet-slot fill and cleanup tools~~ Dropped in Phase 11: nothing in Skonester or this mod ever called them.
+- ~~Preserve the baseline mod's empty-tenet-slot fill and cleanup tools~~ Dropped in Phase 11: nothing in the baseline mod or this mod ever called them.
 
 **Unverified: extra core tenets.** There's no slot-adding effect or define, but `add_rite_tenet` documents no limit. Whether a rite can hold more core tenets than usual has to be tested in game. Treat it as experimental until then.
 
@@ -720,7 +722,7 @@ Building pickers use a **generated building catalog** built from the game's `com
 
 ### Estates & Domicile Buildings
 
-Preserve Skonester's:
+Preserve the baseline mod's:
 
 - Family estate upgrades.
 - Worldwide estate upgrades.
@@ -734,7 +736,7 @@ Add more granular building selection where possible.
 
 **High-risk controls:** Removing holdings, changing county capitals, and adding potentially irreversible building slots require confirmation.
 
-> **Baseline note:** Skonester overrides `NProvince.MAX_BUILDINGS = 1453` in `common/defines`. That changes the building limit for every province in the game, not just for cheat users. Review it in Phase 0 (Section 7.4).
+> **Baseline note:** the baseline mod overrides `NProvince.MAX_BUILDINGS = 1453` in `common/defines`. That changes the building limit for every province in the game, not just for cheat users. Review it in Phase 0 (Section 7.4).
 
 ---
 
@@ -808,7 +810,7 @@ Provide:
 - Increase knight effectiveness.
 - Create/manage eligible accolades.
 - Name accolades with the text-entry widget (vanilla does this in `accolade_events.txt`).
-- Preserve Skonester's virtual accolade functionality.
+- Preserve the baseline mod's virtual accolade functionality.
 - Boost accolade glory.
 
 ### Wars & Military Operations
@@ -862,7 +864,7 @@ Creation workflow:
 
 ### Artifact Modifiers
 
-Preserve Skonester's five-slot artifact modifier system, including custom modifier amounts.
+Preserve the baseline mod's five-slot artifact modifier system, including custom modifier amounts.
 
 Modifier categories include:
 
@@ -983,7 +985,7 @@ Provide:
 
 ### Automated Court Management
 
-Preserve Skonester's automatic appointment system.
+Preserve the baseline mod's automatic appointment system.
 
 Provide:
 
@@ -1024,7 +1026,7 @@ Provide:
 - Remove legend-spread modifiers.
 - Restore normal spread.
 
-Preserve Skonester's specialized legend controls.
+Preserve the baseline mod's specialized legend controls.
 
 ### Activities
 
@@ -1187,7 +1189,7 @@ Use CK3's existing visual language:
 - Standard game tooltips.
 - Consistent spacing and navigation.
 - Clear grouping of actions.
-- Existing Skonester terminology where it's familiar and accurate.
+- Existing the baseline mod terminology where it's familiar and accurate.
 
 Avoid an elaborate standalone HUD.
 
@@ -1372,7 +1374,7 @@ Avoid:
 - Unbounded recurring character scans.
 - Persistent global modifiers where a one-time change is enough.
 - Global defines changes that affect players who aren't using cheats.
-- Overwriting existing Skonester identifiers without a migration plan.
+- Overwriting existing the baseline mod identifiers without a migration plan.
 
 Where baseline components are kept, reuse them carefully, and use a new project-specific namespace for additions.
 
@@ -1496,9 +1498,9 @@ Compatibility patches may also be needed for replaced vanilla screens or gamepla
 
 ## 9.4 Standalone behavior and licensing
 
-The finished menu must not depend on having either Skonester or Divine Intervention loaded. It started from Skonester's code but has been heavily rewritten, so it is better described as inspired by Skonester Cheat Menu Gold and Daddy Pika's Cheat Menu than as a patched copy.
+The finished menu must not depend on having either the baseline mod or Divine Intervention loaded. It started from the baseline mod's code but has been heavily rewritten, so it is better described as inspired by the baseline mod and Daddy Pika's Cheat Menu than as a patched copy.
 
-The baseline is licensed under **Creative Commons Attribution 4.0 International**. Adapting and modifying it is permitted. Every release must credit Skonester, Daddy Pika (Daddy Pika's Cheat Menu), Zhuge, and the contributors named in the baseline README, link the license, and state that changes were made.
+The baseline is licensed under **Creative Commons Attribution 4.0 International**. Adapting and modifying it is permitted. Every release must credit the baseline mod, Daddy Pika (Daddy Pika's Cheat Menu), Zhuge, and the contributors named in the baseline README, link the license, and state that changes were made.
 
 Divine Intervention's publicly documented behavior can serve as a feature reference. Don't copy its code or assets without permission.
 
@@ -1510,7 +1512,7 @@ All ten feature categories are in the final scope, but development proceeds in c
 
 | Phase                | Scope                                                                                | Exit requirement                              |
 | -------------------- | ------------------------------------------------------------------------------------ | --------------------------------------------- |
-| 0 — Baseline         | Audit Skonester, establish a clean test build, inventory working behavior, record the error.log baseline, review vanilla overrides and global defines | Existing-feature regression baseline and recorded error count |
+| 0 — Baseline         | Audit the baseline mod, establish a clean test build, inventory working behavior, record the error.log baseline, review vanilla overrides and global defines | Existing-feature regression baseline and recorded error count |
 | 1 — Foundation       | Navigation, clicked-target and second-character targeting, group-action framework, single-player gate, validation, execution, confirmations | Stable single-target and group workflows; menu hidden when a second player connects |
 | 2 — Characters       | Attributes, traits, genetics, health, lifestyle, relationships, family               | Character and relationship tests pass         |
 | 3 — Realm            | Titles, government, diplomacy, culture, faith/rite, construction                     | Realm-changing effects validated              |
@@ -1518,7 +1520,7 @@ All ten feature categories are in the final scope, but development proceeds in c
 | 5 — Court & DLC      | Spawning, automated appointments, legends, activities, schemes, regencies, domiciles | DLC-dependent tests pass                      |
 | 6 — Group Actions    | Group versions of actions across supported modules, large-group handling             | Group correctness and performance tests pass  |
 | 7 — Hardening        | Localization, compatibility, accessibility, packaging, regressions, catalog regeneration | Release acceptance suite passes           |
-| 8–11 (added)         | Whole-repo review fixes; upstream-code fixes ([upstream-review.md](upstream-review.md)); dead-code removal; simplification | Done, not yet load-tested; see below |
+| 8–11 (added)         | Whole-repo review fixes; upstream-code fixes (the earlier code review); dead-code removal; simplification | Done, not yet load-tested; see below |
 | EK2 compatch (added) | Detection, vanilla-data isolation, `compat/ek2/` mod | Done except the load test; see [ek2-compatch-plan.md](ek2-compatch-plan.md) |
 
 ### Phase 0 tasks
@@ -1530,7 +1532,7 @@ All ten feature categories are in the final scope, but development proceeds in c
 5. Recover or rewrite the missing `gen_ucm_cw_innovation_sguis.py` generator. (Rewritten in Phase 0, then removed in Phase 10 as unused.)
 6. Click through each existing feature and record whether it works, using the "Verify" notes in `agent.md`.
 
-Phase 0 progress and findings are recorded in [phase0-baseline.md](phase0-baseline.md). Phase 1 is described in [phase1-foundation.md](phase1-foundation.md), Phase 2 in [phase2-characters.md](phase2-characters.md), Phase 3 in [phase3-realm.md](phase3-realm.md), Phase 4 in [phase4-military-artifacts.md](phase4-military-artifacts.md), Phase 5 in [phase5-court-dlc.md](phase5-court-dlc.md), Phase 6 in [phase6-group-actions.md](phase6-group-actions.md), Phase 7 in [phase7-hardening.md](phase7-hardening.md), Phase 8 in [phase8-review-fixes.md](phase8-review-fixes.md), Phase 9 in [phase9-upstream-fixes.md](phase9-upstream-fixes.md), Phase 10 in [phase10-dead-code.md](phase10-dead-code.md), Phase 11 in [phase11-simplification.md](phase11-simplification.md), Phase 12 (features recreated from the Skonester and Divine Intervention gap review) in [phase12-gap-features.md](phase12-gap-features.md).
+Phase 0 progress and findings are recorded in [phase0-baseline.md](phase0-baseline.md). Phase 1 is described in [phase1-foundation.md](phase1-foundation.md), Phase 2 in [phase2-characters.md](phase2-characters.md), Phase 3 in [phase3-realm.md](phase3-realm.md), Phase 4 in [phase4-military-artifacts.md](phase4-military-artifacts.md), Phase 5 in [phase5-court-dlc.md](phase5-court-dlc.md), Phase 6 in [phase6-group-actions.md](phase6-group-actions.md), Phase 7 in [phase7-hardening.md](phase7-hardening.md), Phase 8 in [phase8-review-fixes.md](phase8-review-fixes.md), Phase 9 in [phase9-upstream-fixes.md](phase9-upstream-fixes.md), Phase 10 in [phase10-dead-code.md](phase10-dead-code.md), Phase 11 in [phase11-simplification.md](phase11-simplification.md), Phase 12 (features recreated from the the baseline mod and Divine Intervention gap review) in [phase12-gap-features.md](phase12-gap-features.md).
 
 Keep a usable build at the end of every phase.
 
@@ -1542,7 +1544,7 @@ Don't combine large structural changes with unrelated feature additions in the s
 
 ## 11.1 Preservation
 
-- Existing Skonester interactions remain accessible.
+- Existing the baseline mod interactions remain accessible.
 - Existing behavior is unchanged unless deliberately replaced.
 - Previously working military presets still work.
 - Existing artifacts can still be created, edited, and repaired.
@@ -1611,7 +1613,7 @@ A visible button or localization entry alone doesn't make a feature complete.
 
 # 12. Final Product Definition
 
-The finished Unified CK3 Cheat Menu offers the breadth of a full game editor while keeping the speed and convenience of Skonester's right-click interface.
+The finished Unified CK3 Cheat Menu offers the breadth of a full game editor while keeping the speed and convenience of the baseline mod's right-click interface.
 
 Its defining characteristics:
 
@@ -1629,7 +1631,7 @@ Its defining characteristics:
 
 The governing design principle:
 
-**Skonester's presentation, expanded with Divine Intervention's depth, implemented as one coherent and maintainable mod.**
+**the baseline mod's presentation, expanded with Divine Intervention's depth, implemented as one coherent and maintainable mod.**
 
 ---
 
@@ -1657,12 +1659,12 @@ Checked against the game's own documentation (`script_docs` output: `logs/effect
 
 # Appendix B — Baseline audit summary
 
-This records the original Skonester baseline at the start of the project, not the current repo.
+This records the original the baseline mod baseline at the start of the project, not the current repo.
 
-- **Source:** `https://github.com/skonester/Skonester-Cheat-Menu`, commit `bfcb175` ("Portrait GUI Cheats"), cloned with full history. The local clone's remote is named `upstream`.
+- **Source:** `the baseline repository`, commit `bfcb175` ("Portrait GUI Cheats"), cloned with full history. The local clone's remote is named `upstream`.
 - **Version:** `descriptor.mod` version `10.22.26-BGA3`, `supported_version="1.20.*"`, tag "1.20 'Crozier'".
 - **License:** CC BY 4.0.
 - **Size:** about 159 scripted-effect files, 53 scripted-trigger files, 61 event files, 27 GUI files, 22 scripted-GUI files, 17 character-interaction files, and localization in five languages.
-- **Entry points:** right-click → "Open Skonester Character Tools"; Decisions → Realm & Government Tools → Open Sub Menu Editor.
+- **Entry points:** right-click → "Open the baseline mod Character Tools"; Decisions → Realm & Government Tools → Open Sub Menu Editor.
 - **Known state:** ported to 1.20 and reaches the map with vanilla. Features still need clicking through (`agent.md`).
 - **Risks:** 10 vanilla file overrides (Section 7.4.1), global defines changes (Section 7.4.2), global-variable targeting that isn't multiplayer-safe (moot since v1.3: single-player only), large starting error count (Section 10), missing innovation generator script (Section 7.3; later removed as unused).

@@ -138,21 +138,21 @@ ucm_holding_realm_castle_holding = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_landed = yes } }
-	effect = { var:ucm_target = { every_sub_realm_barony = { limit = { OR = { holder = root.var:ucm_target holder.primary_title.tier = tier_barony } } title_province = { if = { limit = { has_ongoing_construction = no NOT = { has_holding_type = castle_holding } } set_holding_type = castle_holding } } } } }
+	effect = { var:ucm_target = { every_sub_realm_barony = { limit = { holder ?= { OR = { this = root.var:ucm_target primary_title.tier = tier_barony } } } title_province = { if = { limit = { has_ongoing_construction = no NOT = { has_holding_type = castle_holding } } set_holding_type = castle_holding } } } } }
 }
 
 ucm_holding_realm_city_holding = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_landed = yes } }
-	effect = { var:ucm_target = { every_sub_realm_barony = { limit = { OR = { holder = root.var:ucm_target holder.primary_title.tier = tier_barony } } title_province = { if = { limit = { has_ongoing_construction = no NOT = { has_holding_type = city_holding } } set_holding_type = city_holding } } } } }
+	effect = { var:ucm_target = { every_sub_realm_barony = { limit = { holder ?= { OR = { this = root.var:ucm_target primary_title.tier = tier_barony } } } title_province = { if = { limit = { has_ongoing_construction = no NOT = { has_holding_type = city_holding } } set_holding_type = city_holding } } } } }
 }
 
 ucm_holding_realm_church_holding = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_landed = yes } }
-	effect = { var:ucm_target = { every_sub_realm_barony = { limit = { OR = { holder = root.var:ucm_target holder.primary_title.tier = tier_barony } } title_province = { if = { limit = { has_ongoing_construction = no NOT = { has_holding_type = church_holding } } set_holding_type = church_holding } } } } }
+	effect = { var:ucm_target = { every_sub_realm_barony = { limit = { holder ?= { OR = { this = root.var:ucm_target primary_title.tier = tier_barony } } } title_province = { if = { limit = { has_ongoing_construction = no NOT = { has_holding_type = church_holding } } set_holding_type = church_holding } } } } }
 }
 
 ucm_realm_max_buildings = {
@@ -186,13 +186,13 @@ ucm_cure_congenital = {
 ucm_dynasty_pope = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { exists = dynasty NOT = { dynasty = { has_dynasty_modifier = dynasty_pope_modifier } } } }
-	effect = { var:ucm_target.dynasty = { add_dynasty_modifier = { modifier = dynasty_pope_modifier } } }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { exists = dynasty NOT = { dynasty = { has_dynasty_modifier = ucm_dynasty_pope_modifier } } } }
+	effect = { var:ucm_target.dynasty = { add_dynasty_modifier = { modifier = ucm_dynasty_pope_modifier } } }
 }
 
 ucm_dynasty_grandmaster = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { exists = dynasty NOT = { dynasty = { has_dynasty_modifier = dynasty_grandmaster_modifier } } } }
-	effect = { var:ucm_target.dynasty = { add_dynasty_modifier = { modifier = dynasty_grandmaster_modifier } } }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { exists = dynasty NOT = { dynasty = { has_dynasty_modifier = ucm_dynasty_grandmaster_modifier } } } }
+	effect = { var:ucm_target.dynasty = { add_dynasty_modifier = { modifier = ucm_dynasty_grandmaster_modifier } } }
 }

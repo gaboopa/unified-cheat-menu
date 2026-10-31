@@ -15,11 +15,11 @@ ucm_trait_immortal_ageless = {
   immortal = yes
   opposites = { incapable }
   no_prowess_loss_from_age = yes
-  long_reign_bonus_mult = 150
+  long_reign_bonus_mult = 200
 
   # 抗病增强 + 阴谋免疫（把针对自己的敌对阴谋成功率打到极低）
   health = 3
-  epidemic_resistance = 300
+  epidemic_resistance = 500
   enemy_hostile_scheme_success_chance_add = -1000
   enemy_hostile_scheme_success_chance_max_add = -100
   enemy_hostile_scheme_phase_duration_add = 999

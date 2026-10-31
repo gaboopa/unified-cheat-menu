@@ -1,0 +1,5 @@
+﻿l_turkish:
+ ucm_ai_boost_title_on: "#bold [AÇIK]#! YZ Diyar Bonusları"
+ ucm_ai_boost_title_off: "#bold [KAPALI]#! YZ Diyar Bonusları"
+ ucm_ai_boost_desc: "Topraklı tüm YZ karakterlerine yönetim bonusu verir veya kaldırır: beceri, gelir, ordu ve savaş isteği."
+ ucm_ai_boost_confirm: "Topraklı tüm YZ karakterleri için bonus değiştirilsin mi?"

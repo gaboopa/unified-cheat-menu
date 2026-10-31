@@ -1,0 +1,15 @@
+﻿l_simp_chinese:
+ GET_TARGET_TITLE_NAME:0 "[target.GetBaseNameNoTierNoTooltip]"
+ GET_TARGET_TITLE_ADJECTIVE:0 "[target.GetAdjectiveNoTooltip]" #未使用
+ ucm_create_titular.back:0 "返回"
+ ucm_create_titular:0 "创建名义头衔"
+ ucm_create_titular.1000.t:0 "选择所有者"
+ ucm_create_titular.1000.desc:0 "#S 谁应该获得头衔？ #!"
+ ucm_create_titular.1000.me:0 "我自己夺取！"
+ ucm_create_titular.1000.recipient:0 "授予 [recipient.GetNameNoTooltip]"
+ ucm_create_titular.1001.desc:0 "#S 选择头衔的期望等级 #!"
+ ucm_create_titular.1001.t:0 "头衔等级"
+ ucm_create_titular.1001.duchy:0 "创建公国 #!"
+ ucm_create_titular.1001.kingdom:0 "创建王国"
+ ucm_create_titular.1001.empire:0 "创建帝国"
+ ucm_create_titular.1001.hegemony:0 "创建霸权"

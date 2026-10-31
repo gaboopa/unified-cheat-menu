@@ -20,8 +20,8 @@ Kept as documented in Phase 0: `window_character.gui` and `interaction_menu_wind
 ## Packaging
 
 - New `README.md` covering install, use, the single-player rule and repository layout, with credits and the CC BY 4.0 change notice.
-- New `thumbnail.png` (generated; no Skonester branding). The Skonester logo images are removed.
-- The upstream README and development notes moved to `docs/upstream/`.
+- New `thumbnail.png` (generated; no the baseline mod branding). The the baseline mod logo images are removed.
+- The upstream README and development notes moved to `earlier notes/`.
 
 ## Load test
 

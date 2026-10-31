@@ -1,0 +1,20 @@
+﻿# While AI Realm Bonuses is on, rulers who gained land since last month get the bonus too.
+ucm_monthly_tick = {
+	on_actions = { ucm_ai_boost_upkeep }
+}
+
+ucm_ai_boost_upkeep = {
+	trigger = {
+		ucm_single_player_trigger = yes
+		has_global_variable = ucm_ai_boost_enabled
+	}
+	effect = {
+		every_ruler = {
+			limit = {
+				is_ai = yes
+				NOT = { has_character_modifier = ucm_ai_realm_governance_support }
+			}
+			add_character_modifier = ucm_ai_realm_governance_support
+		}
+	}
+}

@@ -85,7 +85,7 @@ ucm_picker_faith_begin_doctrine_effect = {
 
 # Remembers the clicked tenet, which the choice replaces.
 ucm_picker_faith_begin_tenet_effect = {
-  set_variable = { name = ucm_acm_pick_slot value = scope:pick_doctrine }
+  set_variable = { name = ucm_acm_pick_slot value = scope:ucm_pick_doctrine }
   ucm_acm_faith_fill_choices_effect = yes
 }
 

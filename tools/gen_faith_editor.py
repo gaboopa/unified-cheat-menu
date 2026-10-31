@@ -24,7 +24,7 @@ OUT_REL = os.path.join("common", "scripted_effects", "ucm_acm_faith_editor_data_
 REL = os.path.join("common", "religion")
 # Doctrine categories the editor shows, in GUI order. GUI list name: ucm_acm_fe_display_<category>.
 CATEGORIES = ["main_group", "marriage", "crimes", "clergy"]
-KEY = "scope:pick_doctrine"
+KEY = "scope:ucm_pick_doctrine"
 
 
 def objects(sub, dirs):
@@ -89,7 +89,7 @@ def build(dirs, header):
                 L.append("    }")
     L += ["  }", "}", ""]
 
-    # scope:pick_doctrine (a clicked tenet or doctrine) -> the choices that can replace it.
+    # scope:ucm_pick_doctrine (a clicked tenet or doctrine) -> the choices that can replace it.
     picks = [tenets] + [ds for c in CATEGORIES for _, ds in shown[c]]
     L += ["ucm_acm_faith_fill_choices_effect = {", "  clear_global_variable_list = ucm_acm_fe_pick_current"]
     for i, ds in enumerate(picks):
@@ -108,7 +108,7 @@ def build(dirs, header):
               f"    var:ucm_selected_faith_var = {{ main_rite = {{ remove_rite_tenet = tenet:{t} }} }}", "  }"]
     L += ["}", ""]
 
-    # Apply scope:pick_doctrine: a tenet replaces the clicked one unless the rite already has it,
+    # Apply scope:ucm_pick_doctrine: a tenet replaces the clicked one unless the rite already has it,
     # a doctrine replaces its group's current one.
     L.append("ucm_acm_faith_apply_choice_effect = {")
     for i, t in enumerate(tenets):

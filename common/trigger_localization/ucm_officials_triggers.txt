@@ -18,16 +18,8 @@ ucm_has_de_jure_transferable_direct_vassals_trigger = {
   global_not = ucm_tt_has_de_jure_transferable_direct_vassals_fail
 }
 
-ucm_de_jure_transfer_batch_not_active_trigger = {
-  global_not = ucm_de_jure_transfer_batch_in_progress_tt
-}
-
 ucm_has_any_official_for_land_cap_decision_trigger = {
   global_not = ucm_tt_no_official_for_land_cap_fail
-}
-
-ucm_land_cap_batch_not_active_trigger = {
-  global_not = ucm_land_cap_batch_in_progress_tt
 }
 
 ucm_has_any_landed_vassal_for_strip_decision_trigger = {

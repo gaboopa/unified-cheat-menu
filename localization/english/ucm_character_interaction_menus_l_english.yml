@@ -3,5 +3,4 @@
  ucm_open_character_interaction_menu_desc:0 "Show the organized Cheat character interaction menus. Debug tools appear only when the game is launched in debug mode."
  ucm_close_character_interaction_menu:0 "Close Cheat Character Tools"
  ucm_close_character_interaction_menu_desc:0 "Hide all Cheat character interaction tools."
- zhuge_add_truce_interaction_desc:0 "Add, remove, or change a truce with this character."
 

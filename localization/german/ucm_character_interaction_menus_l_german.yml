@@ -3,5 +3,4 @@
  ucm_open_character_interaction_menu_desc:0 "Zeigt die geordneten Charakterinteraktionsmenüs. Debugwerkzeuge erscheinen nur, wenn das Spiel im Debugmodus gestartet wurde."
  ucm_close_character_interaction_menu:0 "Charakterwerkzeuge schließen"
  ucm_close_character_interaction_menu_desc:0 "Blendet alle Charakterinteraktionswerkzeuge aus."
- zhuge_add_truce_interaction_desc:0 "Fügt einen Waffenstillstand mit diesem Charakter hinzu, entfernt oder ändert ihn."
 

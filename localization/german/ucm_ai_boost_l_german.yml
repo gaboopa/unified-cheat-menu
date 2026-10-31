@@ -1,0 +1,5 @@
+﻿l_german:
+ ucm_ai_boost_title_on: "#bold [AN]#! KI-Reichsboni"
+ ucm_ai_boost_title_off: "#bold [AUS]#! KI-Reichsboni"
+ ucm_ai_boost_desc: "Gibt oder entfernt den Verwaltungsbonus aller KI-Charaktere mit Land: bessere Werte, Einkommen, Armeen und Kriegslust."
+ ucm_ai_boost_confirm: "Bonus für alle KI-Charaktere mit Land umschalten?"

@@ -46,7 +46,7 @@
                 datacontext = "[Faith.GetMainRite]"
                 layoutpolicy_horizontal = expanding
                 size = { 0 52 }
-                onclick = "[GetScriptedGui('ucm_picker_faith_begin_tenet').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('pick_doctrine', MakeScopeFlag(Scope.GetFlagName)).End)]"
+                onclick = "[GetScriptedGui('ucm_picker_faith_begin_tenet').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('ucm_pick_doctrine', MakeScopeFlag(Scope.GetFlagName)).End)]"
                 tooltip = "FAITH_WINDOW_TENET_TOOLTIP"
                 hbox = {
                   layoutpolicy_horizontal = expanding
@@ -69,7 +69,7 @@
                 datacontext = "[Faith.GetMainRite]"
                 layoutpolicy_horizontal = expanding
                 size = { 0 52 }
-                onclick = "[GetScriptedGui('ucm_picker_faith_begin_doctrine').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('pick_doctrine', MakeScopeFlag(Scope.GetFlagName)).End)]"
+                onclick = "[GetScriptedGui('ucm_picker_faith_begin_doctrine').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('ucm_pick_doctrine', MakeScopeFlag(Scope.GetFlagName)).End)]"
                 tooltip = "FAITH_WINDOW_DOCTRINE_TOOLTIP_WITH_FAITH"
                 hbox = {
                   layoutpolicy_horizontal = expanding
@@ -93,7 +93,7 @@
                 datacontext = "[Faith.GetMainRite]"
                 layoutpolicy_horizontal = expanding
                 size = { 0 52 }
-                onclick = "[GetScriptedGui('ucm_picker_faith_begin_doctrine').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('pick_doctrine', MakeScopeFlag(Scope.GetFlagName)).End)]"
+                onclick = "[GetScriptedGui('ucm_picker_faith_begin_doctrine').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('ucm_pick_doctrine', MakeScopeFlag(Scope.GetFlagName)).End)]"
                 tooltip = "FAITH_WINDOW_DOCTRINE_TOOLTIP_WITH_FAITH"
                 hbox = {
                   layoutpolicy_horizontal = expanding
@@ -117,7 +117,7 @@
                 datacontext = "[Faith.GetMainRite]"
                 layoutpolicy_horizontal = expanding
                 size = { 0 52 }
-                onclick = "[GetScriptedGui('ucm_picker_faith_begin_doctrine').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('pick_doctrine', MakeScopeFlag(Scope.GetFlagName)).End)]"
+                onclick = "[GetScriptedGui('ucm_picker_faith_begin_doctrine').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('ucm_pick_doctrine', MakeScopeFlag(Scope.GetFlagName)).End)]"
                 tooltip = "FAITH_WINDOW_DOCTRINE_TOOLTIP_WITH_FAITH"
                 hbox = {
                   layoutpolicy_horizontal = expanding
@@ -141,7 +141,7 @@
                 datacontext = "[Faith.GetMainRite]"
                 layoutpolicy_horizontal = expanding
                 size = { 0 52 }
-                onclick = "[GetScriptedGui('ucm_picker_faith_begin_doctrine').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('pick_doctrine', MakeScopeFlag(Scope.GetFlagName)).End)]"
+                onclick = "[GetScriptedGui('ucm_picker_faith_begin_doctrine').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('ucm_pick_doctrine', MakeScopeFlag(Scope.GetFlagName)).End)]"
                 tooltip = "FAITH_WINDOW_DOCTRINE_TOOLTIP_WITH_FAITH"
                 hbox = {
                   layoutpolicy_horizontal = expanding
@@ -175,7 +175,7 @@
                 datacontext = "[Faith.GetMainRite]"
                 layoutpolicy_horizontal = expanding
                 size = { 0 52 }
-                onclick = "[GetScriptedGui('ucm_picker_faith_apply').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('pick_doctrine', MakeScopeFlag(Scope.GetFlagName)).End)]"
+                onclick = "[GetScriptedGui('ucm_picker_faith_apply').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('ucm_pick_doctrine', MakeScopeFlag(Scope.GetFlagName)).End)]"
                 tooltip = "FAITH_WINDOW_DOCTRINE_TOOLTIP_WITH_FAITH"
                 hbox = {
                   layoutpolicy_horizontal = expanding
@@ -199,7 +199,7 @@
                 datacontext = "[Faith.GetMainRite]"
                 layoutpolicy_horizontal = expanding
                 size = { 0 52 }
-                onclick = "[GetScriptedGui('ucm_picker_faith_apply').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('pick_doctrine', MakeScopeFlag(Scope.GetFlagName)).End)]"
+                onclick = "[GetScriptedGui('ucm_picker_faith_apply').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('ucm_pick_doctrine', MakeScopeFlag(Scope.GetFlagName)).End)]"
                 tooltip = "FAITH_WINDOW_TENET_TOOLTIP"
                 hbox = {
                   layoutpolicy_horizontal = expanding

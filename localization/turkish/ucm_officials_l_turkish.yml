@@ -1,0 +1,12 @@
+﻿l_turkish:
+ ucm_officials.9083.t:0 "Köksüz Halkı Temizle"
+ ucm_officials.9083.desc:0 "Karakter havuzundaki kullanılmayan yapay zekâ gezginlerini güvenle kaldırır. Her üç günde yalnızca 25 karakter işlenir; saray mensupları, misafirler, hükümdarlar, maceracılar ve korunan aileniz asla hedef alınmaz. Aynı anda yalnızca bir temizlik çalışabilir."
+ ucm_officials.9083.cap_1000:0 "En fazla 1000 kişiyi temizle"
+ ucm_officials.9083.cap_1000_tt:0 "En fazla 1000 kullanılmayan yapay zekâ havuz karakteri için arka plan temizliği başlat."
+ ucm_officials.9083.cap_2000:0 "En fazla 2000 kişiyi temizle"
+ ucm_officials.9083.cap_2000_tt:0 "En fazla 2000 kullanılmayan yapay zekâ havuz karakteri için arka plan temizliği başlat."
+ ucm_officials.9083.cap_3000:0 "En fazla 3000 kişiyi temizle"
+ ucm_officials.9083.cap_3000_tt:0 "En fazla 3000 kullanılmayan yapay zekâ havuz karakteri için arka plan temizliği başlat."
+ ucm_officials.9083.cancel:0 "Etkin Temizliği İptal Et"
+ ucm_officials.9083.cancel_tt:0 "Arka plan temizliğini bir sonraki gruptan önce durdur."
+ ucm_officials.9083.back:0 "Geri"

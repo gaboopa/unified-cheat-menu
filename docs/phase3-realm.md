@@ -9,7 +9,7 @@ Same approach as Phase 2, plus one new button type:
 - **Interaction buttons** open the baseline's right-click interaction on the target.
 - **Decision buttons** (new) open a baseline decision's detail view (`OpenGameViewData( 'decision_detail', … )`). Decisions always act on **you**, not the target, and each section that uses them says so.
 - **New scripted GUIs** are in `common/scripted_guis/ucm_realm_sguis.txt`.
-- Opening the menu now turns on every sub-menu toggle the baseline's interactions and decisions need: `toc_*` debug toggles, the decision sub-menus, house guard and unrestricted warfare. Closing the menu turns off whichever ones it turned on. While the menu is open, those entries also show in the right-click menu and the decision list.
+- Opening the menu now turns on every sub-menu toggle the baseline's interactions and decisions need: `old_*` debug toggles, the decision sub-menus, house guard and unrestricted warfare. Closing the menu turns off whichever ones it turned on. While the menu is open, those entries also show in the right-click menu and the decision list.
 
 ## Titles, Government & Diplomacy
 

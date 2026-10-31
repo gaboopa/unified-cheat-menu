@@ -1,14 +1,3 @@
 ﻿l_german:
- pope_select_interaction:0 "Neuen Papst ernennen"
- pope_select_interaction_desc:0 "„Der Papst soll aus meinem Haus stammen!“"
-
- grandmaster_select_interaction:0 "Neuen Großmeister ernennen"
- grandmaster_select_interaction_desc:0 "„Der Großmeister soll aus meinem Haus stammen!“"
-
- dynasty_grandmaster_0_decision:0 "Einen neuen Großmeister ernennen"
-
- dynasty_pope_0_decision:0 "Einen neuen Papst ernennen"
-
- dynasty_pope_modifier:0 "Papstdynastie"
- dynasty_grandmaster_modifier:0 "Heilige Ritterdynastie"
-
+ ucm_dynasty_pope_modifier:0 "Papstdynastie"
+ ucm_dynasty_grandmaster_modifier:0 "Heilige Ritterdynastie"

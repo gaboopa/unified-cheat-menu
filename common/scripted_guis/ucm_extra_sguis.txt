@@ -977,21 +977,21 @@ ucm_activity_cancel = {
 ucm_estate_economy = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_alive = yes domicile ?= { OR = { is_domicile_type = estate is_domicile_type = east_asian_estate is_domicile_type = japanese_manor } } } }
 	effect = { var:ucm_target = { ucm_domicile_preset_economy_effect = yes } }
 }
 
 ucm_estate_military = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_alive = yes domicile ?= { OR = { is_domicile_type = estate is_domicile_type = east_asian_estate is_domicile_type = japanese_manor } } } }
 	effect = { var:ucm_target = { ucm_domicile_preset_military_effect = yes } }
 }
 
 ucm_estate_balanced = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_alive = yes domicile ?= { OR = { is_domicile_type = estate is_domicile_type = east_asian_estate is_domicile_type = japanese_manor } } } }
 	effect = { var:ucm_target = { ucm_domicile_preset_balanced_effect = yes } }
 }
 

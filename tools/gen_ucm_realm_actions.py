@@ -434,14 +434,14 @@ def sguis():
                       f"{TG}.capital_province = {{ set_holding_type = {h} }}"))
     for h in REALM_HOLDINGS:
         out.append(sg(f"ucm_holding_realm_{h}", f"{T} {TG} = {{ is_landed = yes }}",
-                      f"{TG} = {{ every_sub_realm_barony = {{ limit = {{ OR = {{ holder = root.var:ucm_target holder.primary_title.tier = tier_barony }} }} title_province = {{ if = {{ limit = {{ has_ongoing_construction = no NOT = {{ has_holding_type = {h} }} }} set_holding_type = {h} }} }} }} }}"))
+                      f"{TG} = {{ every_sub_realm_barony = {{ limit = {{ holder ?= {{ OR = {{ this = root.var:ucm_target primary_title.tier = tier_barony }} }} }} title_province = {{ if = {{ limit = {{ has_ongoing_construction = no NOT = {{ has_holding_type = {h} }} }} set_holding_type = {h} }} }} }} }}"))
     every_province = "every_sub_realm_county = { every_county_province = { limit = { has_holding = yes } %s } }"
     out.append(sg("ucm_realm_max_buildings", f"{T} {TG} = {{ is_landed = yes }}", f"{TG} = {{ {every_province % 'ucm_province_upgrade_buildings_effect = yes'} }}"))
     slot = "if = { limit = { NOT = { has_province_modifier = ucm_extra_building_slot } } add_province_modifier = ucm_extra_building_slot }"
     out.append(sg("ucm_realm_building_slots", f"{T} {TG} = {{ is_landed = yes }}", f"{TG} = {{ {every_province % slot} }}"))
     out.append(sg("ucm_cure_illness", T, cure(ILLNESS)))
     out.append(sg("ucm_cure_congenital", T, cure(CONGENITAL)))
-    for key, mod in (("ucm_dynasty_pope", "dynasty_pope_modifier"), ("ucm_dynasty_grandmaster", "dynasty_grandmaster_modifier")):
+    for key, mod in (("ucm_dynasty_pope", "ucm_dynasty_pope_modifier"), ("ucm_dynasty_grandmaster", "ucm_dynasty_grandmaster_modifier")):
         out.append(sg(key, f"{T} {TG} = {{ exists = dynasty NOT = {{ dynasty = {{ has_dynasty_modifier = {mod} }} }} }}",
                       f"{TG}.dynasty = {{ add_dynasty_modifier = {{ modifier = {mod} }} }}"))
     return "\n".join(out)

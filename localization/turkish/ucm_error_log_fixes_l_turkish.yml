@@ -16,4 +16,3 @@
  ucm_acm_anm_wpn_staff:0 "Staff"
  ucm_acm_craft_artifact_desc:0 "[ROOT.Char.GetLocalizedText('ucm_acm_edit_artifact_desc')]"
  ucm_acm_craft_artifact_name:0 "[ROOT.Char.GetLocalizedText('ucm_acm_edit_artifact_name')]"
- ucm_lsf.pk_family_man_perk:0 "Family Man"

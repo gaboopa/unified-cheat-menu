@@ -1,4 +1,0 @@
-﻿ucm_military_ensure_target_effect = { ucm_cheat_menu_sync_target_effect = yes }
-
-# The army spawner's close effect still calls this; its page is gone, so closing just closes.
-ucm_military_reopen_3085_effect = { }

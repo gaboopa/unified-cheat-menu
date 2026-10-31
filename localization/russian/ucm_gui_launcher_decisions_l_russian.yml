@@ -1,8 +1,6 @@
 ﻿l_russian:
  ucm_open_trait_editor_decision: "Открыть редактор черт"
  ucm_open_trait_editor_decision_desc: "Изменить черты выбранного персонажа."
- ucm_open_cheat_trait_editor_decision: "Открыть редактор чит-черт"
- ucm_open_cheat_trait_editor_decision_desc: "Изменить чит-черты выбранного персонажа."
  ucm_open_lifestyle_editor_decision: "Открыть редактор образа жизни"
  ucm_open_lifestyle_editor_decision_desc: "Изменить опыт и навыки образа жизни выбранного персонажа."
  ucm_open_sand_soldiers_decision: "Открыть создание армии"

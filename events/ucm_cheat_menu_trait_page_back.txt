@@ -1,7 +1,0 @@
-﻿namespace = ucm_cheat_menu
-
-# The generated trait pages' back button still targets this; the page it opened is gone, so back just closes.
-ucm_cheat_menu.0110 = {
-	type = character_event
-	hidden = yes
-}

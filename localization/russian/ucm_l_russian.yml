@@ -29,8 +29,6 @@
  ucm_quick_piety_tt: "Даёт цели 1000 благочестия."
  ucm_open_trait_editor: "Редактор черт"
  ucm_open_trait_editor_tt: "Открывает редактор черт для цели."
- ucm_open_cheat_trait_editor: "Редактор чит-черт"
- ucm_open_cheat_trait_editor_tt: "Открывает редактор чит-черт для цели."
  ucm_open_lifestyle_editor: "Редактор образа жизни"
  ucm_open_lifestyle_editor_tt: "Открывает редактор образа жизни для цели."
  ucm_second_set_target: "Сделать цель вторым персонажем"

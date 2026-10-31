@@ -19,26 +19,6 @@ ucm_cheat_menu_must_strip_ucm_traits_trigger = {
   NOT = { has_character_flag = ucm_traits_player_authorized }
 }
 
-# 参数 $TRAIT$：是否为本模组UCM作弊特质（须走 grant_cheat_trait 授权链）
-ucm_cheat_menu_is_cheat_trait_trigger = {
-  OR = {
-    trait:$TRAIT$ = trait:ucm_trait_immortal_ageless
-    trait:$TRAIT$ = trait:ucm_trait_yannian_dan
-    trait:$TRAIT$ = trait:ucm_trait_yannian_dan_mid
-    trait:$TRAIT$ = trait:ucm_trait_yannian_dan_best
-    trait:$TRAIT$ = trait:ucm_trait_baidubuqin
-    trait:$TRAIT$ = trait:ucm_trait_xinwuguai
-    trait:$TRAIT$ = trait:ucm_trait_marriage_ban
-    trait:$TRAIT$ = trait:ucm_trait_stats_100_locked
-    trait:$TRAIT$ = trait:trait_warlord_eternal
-    trait:$TRAIT$ = trait:trait_wealth_sovereign_max
-    trait:$TRAIT$ = trait:trait_ultimate_intrigue_master
-    trait:$TRAIT$ = trait:trait_great_builder_god
-    trait:$TRAIT$ = trait:trait_nether_conspiracy_lord
-    trait:$TRAIT$ = trait:trait_eternal_nether_lord
-  }
-}
-
 ucm_has_any_cheat_menu_trait_trigger = {
   OR = {
     has_trait = ucm_trait_immortal_ageless

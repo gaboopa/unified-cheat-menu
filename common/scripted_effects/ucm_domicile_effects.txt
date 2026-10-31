@@ -44,22 +44,23 @@ ucm_domicile_remove_effect = {
 	}
 }
 
-# Saves the character whose estate a preset changes: the target, else their house head, else a house
-# member (administrative estates often sit with the noble family rather than the title holder).
+# Saves the character whose estate a preset changes: the target, else, if the target has no domicile at all,
+# their house head or oldest house member with one (administrative estates often sit with the noble family).
 ucm_domicile_holder_effect = {
 	if = {
 		limit = { is_alive = yes domicile ?= { OR = { is_domicile_type = estate is_domicile_type = east_asian_estate is_domicile_type = japanese_manor } } }
 		save_scope_as = ucm_domicile_holder
 	}
 	else_if = {
-		limit = { house.house_head ?= { is_alive = yes domicile ?= { OR = { is_domicile_type = estate is_domicile_type = east_asian_estate is_domicile_type = japanese_manor } } } }
+		limit = { has_domicile = no house.house_head ?= { is_alive = yes domicile ?= { OR = { is_domicile_type = estate is_domicile_type = east_asian_estate is_domicile_type = japanese_manor } } } }
 		house.house_head = { save_scope_as = ucm_domicile_holder }
 	}
 	else_if = {
-		limit = { house ?= { any_house_member = { is_alive = yes domicile ?= { OR = { is_domicile_type = estate is_domicile_type = east_asian_estate is_domicile_type = japanese_manor } } } } }
+		limit = { has_domicile = no house ?= { any_house_member = { is_alive = yes domicile ?= { OR = { is_domicile_type = estate is_domicile_type = east_asian_estate is_domicile_type = japanese_manor } } } } }
 		house = {
-			random_house_member = {
+			ordered_house_member = {
 				limit = { is_alive = yes domicile ?= { OR = { is_domicile_type = estate is_domicile_type = east_asian_estate is_domicile_type = japanese_manor } } }
+				order_by = age
 				save_scope_as = ucm_domicile_holder
 			}
 		}
@@ -180,11 +181,6 @@ ucm_domicile_upgrade_2_6_effect = {
 	ucm_domicile_upgrade_effect = { FROM = $T$_03 TO = $T$_04 }
 	ucm_domicile_upgrade_effect = { FROM = $T$_04 TO = $T$_05 }
 	ucm_domicile_upgrade_effect = { FROM = $T$_05 TO = $T$_06 }
-}
-
-ucm_domicile_upgrade_3_4_effect = {
-	ucm_domicile_upgrade_effect = { FROM = $T$_02 TO = $T$_03 }
-	ucm_domicile_upgrade_effect = { FROM = $T$_03 TO = $T$_04 }
 }
 
 ucm_domicile_upgrade_4_6_effect = {
@@ -375,6 +371,166 @@ ucm_domicile_east_asian_estate_main_effect = {
 }
 
 ucm_domicile_east_asian_estate_clear_external_effect = {
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_performance_stage }
+	ucm_domicile_remove_effect = { B = east_asian_estate_performance_stage_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_pavilion }
+	ucm_domicile_remove_effect = { B = east_asian_estate_pavilion_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_gate_plaques }
+	ucm_domicile_remove_effect = { B = east_asian_estate_gate_plaques_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_donation_box }
+	ucm_domicile_remove_effect = { B = east_asian_estate_donation_box_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_disciples_hall }
+	ucm_domicile_remove_effect = { B = east_asian_estate_disciples_hall_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_rotation_paddocks }
+	ucm_domicile_remove_effect = { B = east_asian_estate_rotation_paddocks_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_salt_lick_terraces }
+	ucm_domicile_remove_effect = { B = east_asian_estate_salt_lick_terraces_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_watering_ditches }
+	ucm_domicile_remove_effect = { B = east_asian_estate_watering_ditches_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_veterinary_shed }
+	ucm_domicile_remove_effect = { B = east_asian_estate_veterinary_shed_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_seasonal_shelters }
+	ucm_domicile_remove_effect = { B = east_asian_estate_seasonal_shelters_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_weights_measures_bench }
+	ucm_domicile_remove_effect = { B = east_asian_estate_weights_measures_bench_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_drying_loft }
+	ucm_domicile_remove_effect = { B = east_asian_estate_drying_loft_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_ledger_office }
+	ucm_domicile_remove_effect = { B = east_asian_estate_ledger_office_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_millhouse }
+	ucm_domicile_remove_effect = { B = east_asian_estate_millhouse_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_ever_normal_granaries }
+	ucm_domicile_remove_effect = { B = east_asian_estate_ever_normal_granaries_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_leatherworks }
+	ucm_domicile_remove_effect = { B = east_asian_estate_leatherworks_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_lacquer_studio }
+	ucm_domicile_remove_effect = { B = east_asian_estate_lacquer_studio_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_ceramics_kiln }
+	ucm_domicile_remove_effect = { B = east_asian_estate_ceramics_kiln_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_ink_brush_makers }
+	ucm_domicile_remove_effect = { B = east_asian_estate_ink_brush_makers_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_paper_mill }
+	ucm_domicile_remove_effect = { B = east_asian_estate_paper_mill_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_fodder_reserves }
+	ucm_domicile_remove_effect = { B = east_asian_estate_fodder_reserves_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_bloodline_records_office }
+	ucm_domicile_remove_effect = { B = east_asian_estate_bloodline_records_office_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_farriers_office }
+	ucm_domicile_remove_effect = { B = east_asian_estate_farriers_office_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_riding_arena }
+	ucm_domicile_remove_effect = { B = east_asian_estate_riding_arena_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_foaling_pens }
+	ucm_domicile_remove_effect = { B = east_asian_estate_foaling_pens_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_fruit_trees }
+	ucm_domicile_remove_effect = { B = east_asian_estate_fruit_trees_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_lotus_pond }
+	ucm_domicile_remove_effect = { B = east_asian_estate_lotus_pond_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_scholars_rocks }
+	ucm_domicile_remove_effect = { B = east_asian_estate_scholars_rocks_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_four_gentlemen }
+	ucm_domicile_remove_effect = { B = east_asian_estate_four_gentlemen_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_aviary }
+	ucm_domicile_remove_effect = { B = east_asian_estate_aviary_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_crossbow_storage }
+	ucm_domicile_remove_effect = { B = east_asian_estate_crossbow_storage_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_regular_patrols }
+	ucm_domicile_remove_effect = { B = east_asian_estate_regular_patrols_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_signal_fires }
+	ucm_domicile_remove_effect = { B = east_asian_estate_signal_fires_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_gunpowder_storage }
+	ucm_domicile_remove_effect = { B = east_asian_estate_gunpowder_storage_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_pass_office }
+	ucm_domicile_remove_effect = { B = east_asian_estate_pass_office_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_drill_yard }
+	ucm_domicile_remove_effect = { B = east_asian_estate_drill_yard_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_sergeants_school }
+	ucm_domicile_remove_effect = { B = east_asian_estate_sergeants_school_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_quartermaster }
+	ucm_domicile_remove_effect = { B = east_asian_estate_quartermaster_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_veterans_hall }
+	ucm_domicile_remove_effect = { B = east_asian_estate_veterans_hall_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_armorer }
+	ucm_domicile_remove_effect = { B = east_asian_estate_armorer_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_memorial_archway }
+	ucm_domicile_remove_effect = { B = east_asian_estate_memorial_archway_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_rites_office }
+	ucm_domicile_remove_effect = { B = east_asian_estate_rites_office_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_ancestral_orchard }
+	ucm_domicile_remove_effect = { B = east_asian_estate_ancestral_orchard_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_history_school }
+	ucm_domicile_remove_effect = { B = east_asian_estate_history_school_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_genealogy_hall }
+	ucm_domicile_remove_effect = { B = east_asian_estate_genealogy_hall_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_chanting_hall }
+	ucm_domicile_remove_effect = { B = east_asian_estate_chanting_hall_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_guesthouse }
+	ucm_domicile_remove_effect = { B = east_asian_estate_guesthouse_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_lecture_pavilion }
+	ucm_domicile_remove_effect = { B = east_asian_estate_lecture_pavilion_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_temple_land_office }
+	ucm_domicile_remove_effect = { B = east_asian_estate_temple_land_office_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_bell_drum_tower }
+	ucm_domicile_remove_effect = { B = east_asian_estate_bell_drum_tower_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_herb_drying_terrace }
+	ucm_domicile_remove_effect = { B = east_asian_estate_herb_drying_terrace_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_field_surgeon_cart }
+	ucm_domicile_remove_effect = { B = east_asian_estate_field_surgeon_cart_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_medical_library }
+	ucm_domicile_remove_effect = { B = east_asian_estate_medical_library_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_hot_baths }
+	ucm_domicile_remove_effect = { B = east_asian_estate_hot_baths_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_pharmacy }
+	ucm_domicile_remove_effect = { B = east_asian_estate_pharmacy_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_teahouse }
+	ucm_domicile_remove_effect = { B = east_asian_estate_teahouse_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_tea_tax_office }
+	ucm_domicile_remove_effect = { B = east_asian_estate_tea_tax_office_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_tea_horse_road_office }
+	ucm_domicile_remove_effect = { B = east_asian_estate_tea_horse_road_office_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_grading_hall }
+	ucm_domicile_remove_effect = { B = east_asian_estate_grading_hall_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_roasting_house }
+	ucm_domicile_remove_effect = { B = east_asian_estate_roasting_house_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_silk_storage }
+	ucm_domicile_remove_effect = { B = east_asian_estate_silk_storage_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_mulberry_nursery }
+	ucm_domicile_remove_effect = { B = east_asian_estate_mulberry_nursery_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_inspection_office }
+	ucm_domicile_remove_effect = { B = east_asian_estate_inspection_office_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_sericulture_school }
+	ucm_domicile_remove_effect = { B = east_asian_estate_sericulture_school_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_dye_works }
+	ucm_domicile_remove_effect = { B = east_asian_estate_dye_works_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_courier_posthouse }
+	ucm_domicile_remove_effect = { B = east_asian_estate_courier_posthouse_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_fire_brigade }
+	ucm_domicile_remove_effect = { B = east_asian_estate_fire_brigade_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_night_watch }
+	ucm_domicile_remove_effect = { B = east_asian_estate_night_watch_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_meeting_houses }
+	ucm_domicile_remove_effect = { B = east_asian_estate_meeting_houses_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_weighing_house }
+	ucm_domicile_remove_effect = { B = east_asian_estate_weighing_house_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_jar_kiln }
+	ucm_domicile_remove_effect = { B = east_asian_estate_jar_kiln_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_cellar_cave }
+	ucm_domicile_remove_effect = { B = east_asian_estate_cellar_cave_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_wine_press }
+	ucm_domicile_remove_effect = { B = east_asian_estate_wine_press_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_vintner_halls }
+	ucm_domicile_remove_effect = { B = east_asian_estate_vintner_halls_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_ration_wine_stores }
+	ucm_domicile_remove_effect = { B = east_asian_estate_ration_wine_stores_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_militia_muster_green }
+	ucm_domicile_remove_effect = { B = east_asian_estate_militia_muster_green_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_rice_fish_duck_ponds }
+	ucm_domicile_remove_effect = { B = east_asian_estate_rice_fish_duck_ponds_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_buffer_stock_granary }
+	ucm_domicile_remove_effect = { B = east_asian_estate_buffer_stock_granary_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_field_surveyors_office }
+	ucm_domicile_remove_effect = { B = east_asian_estate_field_surveyors_office_01 }
+	ucm_domicile_lower_4_2_effect = { T = east_asian_estate_waterways_office }
+	ucm_domicile_remove_effect = { B = east_asian_estate_waterways_office_01 }
 	ucm_domicile_lower_6_2_effect = { T = east_asian_estate_gate }
 	ucm_domicile_remove_effect = { B = east_asian_estate_gate_01 }
 	ucm_domicile_lower_6_4_effect = { T = east_asian_estate_elephant_pasture }
@@ -455,7 +611,8 @@ ucm_domicile_east_asian_estate_upgrade_all_effect = {
 	ucm_domicile_upgrade_2_6_effect = { T = east_asian_estate_gate }
 	ucm_domicile_add_internal_effect = { PARENT = east_asian_estate_main_01 B = east_asian_estate_library_01 }
 	ucm_domicile_upgrade_effect = { FROM = east_asian_estate_library_01 TO = east_asian_estate_library_02 }
-	ucm_domicile_upgrade_3_4_effect = { T = east_asian_estate_library_education }
+	ucm_domicile_upgrade_effect = { FROM = east_asian_estate_library_02 TO = east_asian_estate_library_education_03 }
+	ucm_domicile_upgrade_effect = { FROM = east_asian_estate_library_education_03 TO = east_asian_estate_library_education_04 }
 	ucm_domicile_add_internal_effect = { PARENT = east_asian_estate_main_01 B = east_asian_estate_taxation_01 }
 	ucm_domicile_upgrade_2_4_effect = { T = east_asian_estate_taxation }
 	ucm_domicile_add_internal_effect = { PARENT = east_asian_estate_main_01 B = east_asian_peasant_quarters_01 }
@@ -719,6 +876,78 @@ ucm_domicile_japanese_manor_main_effect = {
 }
 
 ucm_domicile_japanese_manor_clear_external_effect = {
+	ucm_domicile_lower_6_2_effect = { T = japanese_orchard }
+	ucm_domicile_remove_effect = { B = japanese_orchard_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_kazan_display }
+	ucm_domicile_remove_effect = { B = japanese_kazan_display_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_rock_garden }
+	ucm_domicile_remove_effect = { B = japanese_rock_garden_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_asobi_colony }
+	ucm_domicile_remove_effect = { B = japanese_asobi_colony_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_performance_stage }
+	ucm_domicile_remove_effect = { B = japanese_performance_stage_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_guest_house }
+	ucm_domicile_remove_effect = { B = japanese_guest_house_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_carpenter }
+	ucm_domicile_remove_effect = { B = japanese_carpenter_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_lacquerer }
+	ucm_domicile_remove_effect = { B = japanese_lacquerer_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_bowyer }
+	ucm_domicile_remove_effect = { B = japanese_bowyer_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_hunting_lodge }
+	ucm_domicile_remove_effect = { B = japanese_hunting_lodge_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_farrier }
+	ucm_domicile_remove_effect = { B = japanese_farrier_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_yabusame_ground }
+	ucm_domicile_remove_effect = { B = japanese_yabusame_ground_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_roastery }
+	ucm_domicile_remove_effect = { B = japanese_roastery_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_medicine_house }
+	ucm_domicile_remove_effect = { B = japanese_medicine_house_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_matcha_factory }
+	ucm_domicile_remove_effect = { B = japanese_matcha_factory_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_riding_school }
+	ucm_domicile_remove_effect = { B = japanese_riding_school_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_ox_breeder }
+	ucm_domicile_remove_effect = { B = japanese_ox_breeder_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_stud_farm }
+	ucm_domicile_remove_effect = { B = japanese_stud_farm_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_prison }
+	ucm_domicile_remove_effect = { B = japanese_prison_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_infiltrators }
+	ucm_domicile_remove_effect = { B = japanese_infiltrators_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_spy_network }
+	ucm_domicile_remove_effect = { B = japanese_spy_network_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_barracks }
+	ucm_domicile_remove_effect = { B = japanese_barracks_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_armorer }
+	ucm_domicile_remove_effect = { B = japanese_armorer_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_bladesmith }
+	ucm_domicile_remove_effect = { B = japanese_bladesmith_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_messenger_service }
+	ucm_domicile_remove_effect = { B = japanese_messenger_service_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_law_library }
+	ucm_domicile_remove_effect = { B = japanese_law_library_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_schoolhouse }
+	ucm_domicile_remove_effect = { B = japanese_schoolhouse_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_sumo_hall }
+	ucm_domicile_remove_effect = { B = japanese_sumo_hall_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_gambling_den }
+	ucm_domicile_remove_effect = { B = japanese_gambling_den_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_koshu_cellars }
+	ucm_domicile_remove_effect = { B = japanese_koshu_cellars_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_monastery }
+	ucm_domicile_remove_effect = { B = japanese_monastery_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_shokubo }
+	ucm_domicile_remove_effect = { B = japanese_shokubo_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_cemetery }
+	ucm_domicile_remove_effect = { B = japanese_cemetery_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_tenant_farmers }
+	ucm_domicile_remove_effect = { B = japanese_tenant_farmers_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_rice_broker }
+	ucm_domicile_remove_effect = { B = japanese_rice_broker_01 }
+	ucm_domicile_lower_6_2_effect = { T = japanese_granary }
+	ucm_domicile_remove_effect = { B = japanese_granary_01 }
 	ucm_domicile_lower_6_2_effect = { T = japanese_garden }
 	ucm_domicile_remove_effect = { B = japanese_garden_01 }
 	ucm_domicile_lower_6_2_effect = { T = japanese_tea_house }
@@ -894,14 +1123,17 @@ ucm_domicile_preset_economy_effect = {
 	if = {
 		limit = { exists = scope:ucm_domicile_holder }
 		scope:ucm_domicile_holder = {
-			domicile = {
-				switch = {
-					trigger = is_domicile_type
-					estate = { ucm_domicile_estate_economy_effect = yes }
-					east_asian_estate = { ucm_domicile_east_asian_estate_economy_effect = yes }
-					japanese_manor = { ucm_domicile_japanese_manor_economy_effect = yes }
+			hidden_effect = {
+				domicile = {
+					switch = {
+						trigger = is_domicile_type
+						estate = { ucm_domicile_estate_economy_effect = yes }
+						east_asian_estate = { ucm_domicile_east_asian_estate_economy_effect = yes }
+						japanese_manor = { ucm_domicile_japanese_manor_economy_effect = yes }
+					}
 				}
 			}
+			remove_character_modifier = ucm_domicile_preset_economy_bonus_modifier
 			remove_character_modifier = ucm_domicile_preset_military_bonus_modifier
 			remove_character_modifier = ucm_domicile_preset_balanced_bonus_modifier
 			add_character_modifier = ucm_domicile_preset_economy_bonus_modifier
@@ -914,15 +1146,18 @@ ucm_domicile_preset_military_effect = {
 	if = {
 		limit = { exists = scope:ucm_domicile_holder }
 		scope:ucm_domicile_holder = {
-			domicile = {
-				switch = {
-					trigger = is_domicile_type
-					estate = { ucm_domicile_estate_military_effect = yes }
-					east_asian_estate = { ucm_domicile_east_asian_estate_military_effect = yes }
-					japanese_manor = { ucm_domicile_japanese_manor_military_effect = yes }
+			hidden_effect = {
+				domicile = {
+					switch = {
+						trigger = is_domicile_type
+						estate = { ucm_domicile_estate_military_effect = yes }
+						east_asian_estate = { ucm_domicile_east_asian_estate_military_effect = yes }
+						japanese_manor = { ucm_domicile_japanese_manor_military_effect = yes }
+					}
 				}
 			}
 			remove_character_modifier = ucm_domicile_preset_economy_bonus_modifier
+			remove_character_modifier = ucm_domicile_preset_military_bonus_modifier
 			remove_character_modifier = ucm_domicile_preset_balanced_bonus_modifier
 			add_character_modifier = ucm_domicile_preset_military_bonus_modifier
 		}
@@ -934,16 +1169,19 @@ ucm_domicile_preset_balanced_effect = {
 	if = {
 		limit = { exists = scope:ucm_domicile_holder }
 		scope:ucm_domicile_holder = {
-			domicile = {
-				switch = {
-					trigger = is_domicile_type
-					estate = { ucm_domicile_estate_balanced_effect = yes }
-					east_asian_estate = { ucm_domicile_east_asian_estate_balanced_effect = yes }
-					japanese_manor = { ucm_domicile_japanese_manor_balanced_effect = yes }
+			hidden_effect = {
+				domicile = {
+					switch = {
+						trigger = is_domicile_type
+						estate = { ucm_domicile_estate_balanced_effect = yes }
+						east_asian_estate = { ucm_domicile_east_asian_estate_balanced_effect = yes }
+						japanese_manor = { ucm_domicile_japanese_manor_balanced_effect = yes }
+					}
 				}
 			}
 			remove_character_modifier = ucm_domicile_preset_economy_bonus_modifier
 			remove_character_modifier = ucm_domicile_preset_military_bonus_modifier
+			remove_character_modifier = ucm_domicile_preset_balanced_bonus_modifier
 			add_character_modifier = ucm_domicile_preset_balanced_bonus_modifier
 		}
 	}

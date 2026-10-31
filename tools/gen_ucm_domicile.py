@@ -92,22 +92,23 @@ ucm_domicile_remove_effect = {
 	}
 }
 
-# Saves the character whose estate a preset changes: the target, else their house head, else a house
-# member (administrative estates often sit with the noble family rather than the title holder).
+# Saves the character whose estate a preset changes: the target, else, if the target has no domicile at all,
+# their house head or oldest house member with one (administrative estates often sit with the noble family).
 ucm_domicile_holder_effect = {
 	if = {
 		limit = { %(holds)s }
 		save_scope_as = ucm_domicile_holder
 	}
 	else_if = {
-		limit = { house.house_head ?= { %(holds)s } }
+		limit = { has_domicile = no house.house_head ?= { %(holds)s } }
 		house.house_head = { save_scope_as = ucm_domicile_holder }
 	}
 	else_if = {
-		limit = { house ?= { any_house_member = { %(holds)s } } }
+		limit = { has_domicile = no house ?= { any_house_member = { %(holds)s } } }
 		house = {
-			random_house_member = {
+			ordered_house_member = {
 				limit = { %(holds)s }
+				order_by = age
 				save_scope_as = ucm_domicile_holder
 			}
 		}
@@ -174,9 +175,23 @@ def upgrades(buildings, slot):
         if len(siblings) > 1:
             others = " ".join(f"has_domicile_building_or_higher = {k}" for k in siblings[1:])
             steps.append(f"if = {{ limit = {{ NOR = {{ {others} }} }} ucm_domicile_upgrade_effect = {{ FROM = {prev} TO = {b} }} }}")
-        else:
+        elif tier(prev) == (tier(b)[0], tier(b)[1] - 1):
             steps.append(("upgrade", b))
+        else:  # The track continues under another name.
+            steps.append(f"ucm_domicile_upgrade_effect = {{ FROM = {prev} TO = {b} }}")
     return steps
+
+
+def clear_steps(buildings):
+    """Steps emptying the external slots, starting with the internal buildings inside them."""
+    def external_root(b):
+        while buildings[b][0] == "internal":
+            b = buildings[b][1]
+        return buildings[b][0] == "external"
+
+    inner = [b for b in reversed(walk(buildings, "internal")) if external_root(b)]
+    return [f"ucm_domicile_remove_effect = {{ B = {b} }}" if buildings[b][1] is None or buildings[buildings[b][1]][0] != buildings[b][0]
+            else ("lower", b) for b in inner + list(reversed(walk(buildings, "external")))]
 
 
 def tier(b):
@@ -229,9 +244,7 @@ def generate(buildings):
         if missing:
             raise SystemExit(f"{t}: not in the game's domicile buildings: {missing}")
         out.append(effect(f"ucm_domicile_{t}_main_effect", compress([("add", b) for b in walk(own, "main")], ladders)))
-        out.append(effect(f"ucm_domicile_{t}_clear_external_effect", compress([
-            f"ucm_domicile_remove_effect = {{ B = {b} }}" if own[b][1] is None else ("lower", b)
-            for b in reversed(walk(own, "external"))], ladders)))
+        out.append(effect(f"ucm_domicile_{t}_clear_external_effect", compress(clear_steps(own), ladders)))
         out.append(effect(f"ucm_domicile_{t}_upgrade_all_effect", compress(upgrades(own, "external") + upgrades(own, "internal"), ladders)))
         for preset, tips in PRESETS[t].items():
             lines = [f"ucm_domicile_{t}_main_effect = yes", f"ucm_domicile_{t}_clear_external_effect = yes"]
@@ -241,10 +254,10 @@ def generate(buildings):
             out.append(effect(f"ucm_domicile_{t}_{preset}_effect", lines))
     for preset in ("economy", "military", "balanced"):
         lines = ["ucm_domicile_holder_effect = yes", "if = {", "\tlimit = { exists = scope:ucm_domicile_holder }", "\tscope:ucm_domicile_holder = {",
-                 "\t\tdomicile = {", "\t\t\tswitch = {", "\t\t\t\ttrigger = is_domicile_type"]
-        lines += [f"\t\t\t\t{t} = {{ ucm_domicile_{t}_{preset}_effect = yes }}" for t in PRESETS]
-        lines += ["\t\t\t}", "\t\t}"]
-        lines += [f"\t\tremove_character_modifier = ucm_domicile_preset_{p}_bonus_modifier" for p in ("economy", "military", "balanced") if p != preset]
+                 "\t\thidden_effect = {", "\t\t\tdomicile = {", "\t\t\t\tswitch = {", "\t\t\t\t\ttrigger = is_domicile_type"]
+        lines += [f"\t\t\t\t\t{t} = {{ ucm_domicile_{t}_{preset}_effect = yes }}" for t in PRESETS]
+        lines += ["\t\t\t\t}", "\t\t\t}", "\t\t}"]
+        lines += [f"\t\tremove_character_modifier = ucm_domicile_preset_{p}_bonus_modifier" for p in ("economy", "military", "balanced")]
         lines += [f"\t\tadd_character_modifier = ucm_domicile_preset_{preset}_bonus_modifier", "\t}", "}"]
         out.append(effect(f"ucm_domicile_preset_{preset}_effect", lines))
     return "\n".join([HEADER % {"holds": holds}, *[ladder(*l) for l in sorted(ladders)], *out])
@@ -257,12 +270,16 @@ def self_check():
     ladders = set()
     ext = compress(upgrades(own, "external"), ladders)
     assert ext[0] == "ucm_domicile_upgrade_2_3_effect = { T = a }"
+    renamed = {"a_01": ("internal", None), "a_02": ("internal", "a_01"), "b_03": ("internal", "a_02"), "b_04": ("internal", "b_03")}
+    assert "FROM = a_02 TO = b_03" in " ".join(compress(upgrades(renamed, "internal"), set()))
     assert "NOR = { has_domicile_building_or_higher = y_04 }" in ext[1] and "TO = x_04" in ext[1]
     assert ext[2] == "ucm_domicile_upgrade_5_6_effect = { T = y }" and len(ext) == 3
     assert compress(upgrades(own, "internal"), ladders) == ["ucm_domicile_add_internal_effect = { PARENT = m_01 B = i_01 }",
                                                             "ucm_domicile_upgrade_effect = { FROM = i_01 TO = i_02 }"]
     assert compress([("lower", "y_06"), ("lower", "y_05"), ("lower", "x_04")], ladders)[0] == "ucm_domicile_lower_6_5_effect = { T = y }"
     assert "FROM = $T$_04 TO = $T$_05" in ladder("upgrade", 5, 6) and "$T$_05" in ladder("lower", 6, 5)
+    assert clear_steps({"m_01": ("main", None), "e_01": ("external", None), "e_02": ("external", "e_01"), "i_01": ("internal", "e_01"), "j_01": ("internal", "m_01")}) == [
+        "ucm_domicile_remove_effect = { B = i_01 }", ("lower", "e_02"), "ucm_domicile_remove_effect = { B = e_01 }"]
     print("gen_ucm_domicile self-check OK")
 
 

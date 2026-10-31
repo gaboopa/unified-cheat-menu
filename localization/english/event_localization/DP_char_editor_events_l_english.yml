@@ -1,8 +1,0 @@
-﻿l_english:
- education_republican_knowledge_4:1 "Republican Heir"
- modifier_mult_tag:0 "#weak (Multiplier)#!"
- modifier_baron_tag:0 "#weak (Includes Baronies)#!"
- modifier_ex_heir_tag:0 "#weak (Excludes Heirs)#!"
- tolerance_advantage_mod:0 "$MOD_FAITH_HOSTILITY_ADVANTAGE_MOD$"
- no_prowess_loss_from_age:0 "$MOD_NO_PROWESS_LOSS_FROM_AGE$"
- no_water_crossing_penalty:0 "$MOD_NO_WATER_CROSSING_PENALTY$"

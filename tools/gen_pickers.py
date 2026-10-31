@@ -18,7 +18,7 @@ TRADITION_CATS = ("realm", "combat", "societal", "ritual", "regional")
 DOCTRINE_CATS = (("main_group", "FAITH_DOCTRINES_IMPORTANT"), ("marriage", "FAITH_DOCTRINES_MARRIAGE"),
                  ("crimes", "FAITH_DOCTRINES_CRIMES"), ("clergy", "FAITH_DOCTRINES_CLERGY"))
 FAITH_CTX = "GetPlayer.MakeScope.Var('ucm_selected_faith_var').Faith"
-FLAG_ROOT = "GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('pick_doctrine', MakeScopeFlag(Scope.GetFlagName)).End"
+FLAG_ROOT = "GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('ucm_pick_doctrine', MakeScopeFlag(Scope.GetFlagName)).End"
 DOCTRINE_ICONS = ('icon_doctrine = { visible = "[DoctrineType.GetGroup.GetCategory.HasTag( \'main\' )]" size = { 40 40 } texture = "[DoctrineType.GetIcon]" }\n'
                   '                  icon_doctrine = { visible = "[Not( DoctrineType.GetGroup.GetCategory.HasTag( \'main\' ) )]" size = { 40 40 } texture = "[DoctrineType.GetGroup.GetIcon]" }')
 TENET_ICON = 'icon = { size = { 40 40 } texture = "[TenetType.GetIcon( Faith.Self )]" }'
@@ -39,9 +39,9 @@ for key, scope, valid, effect in (
         ("faith_pick", "selected_faith", "exists = scope:selected_faith", "ucm_picker_pick_faith_effect = yes"),
         ("faith_edit", "selected_faith", "exists = scope:selected_faith", "ucm_save_ucm_selected_faith_effect = yes ucm_picker_faith_open_effect = yes"),
         ("tradition_toggle", "tradition", "has_variable = ucm_selected_culture_var", "ucm_picker_tradition_toggle_effect = yes"),
-        ("faith_begin_doctrine", "pick_doctrine", "has_variable = ucm_selected_faith_var", "ucm_picker_faith_begin_doctrine_effect = yes"),
-        ("faith_begin_tenet", "pick_doctrine", "has_variable = ucm_selected_faith_var", "ucm_picker_faith_begin_tenet_effect = yes"),
-        ("faith_apply", "pick_doctrine", "has_variable = ucm_selected_faith_var", "ucm_picker_faith_apply_effect = yes")):
+        ("faith_begin_doctrine", "ucm_pick_doctrine", "has_variable = ucm_selected_faith_var", "ucm_picker_faith_begin_doctrine_effect = yes"),
+        ("faith_begin_tenet", "ucm_pick_doctrine", "has_variable = ucm_selected_faith_var", "ucm_picker_faith_begin_tenet_effect = yes"),
+        ("faith_apply", "ucm_pick_doctrine", "has_variable = ucm_selected_faith_var", "ucm_picker_faith_apply_effect = yes")):
     SGUIS += (f"\nucm_picker_{key} = {{\n\tscope = character\n\tsaved_scopes = {{ {scope} }}\n\tis_shown = {{ ucm_single_player_trigger = yes }}\n"
               f"\tis_valid = {{ {valid} }}\n\teffect = {{ {effect} }}\n}}\n")
 SGUIS += """

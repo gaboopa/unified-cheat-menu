@@ -1520,28 +1520,28 @@ window = {
               onclick = "[GetScriptedGui('ucm_trait_editor_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_trait_immortal_ageless')).End)]"
             }
             ucm_trait_editor_row = {
-              datacontext = "[GetTrait('trait_warlord_eternal')]"
-              onclick = "[GetScriptedGui('ucm_trait_editor_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_warlord_eternal')).End)]"
+              datacontext = "[GetTrait('ucm_fame_warlord_eternal')]"
+              onclick = "[GetScriptedGui('ucm_trait_editor_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_fame_warlord_eternal')).End)]"
             }
             ucm_trait_editor_row = {
-              datacontext = "[GetTrait('trait_wealth_sovereign_max')]"
-              onclick = "[GetScriptedGui('ucm_trait_editor_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_wealth_sovereign_max')).End)]"
+              datacontext = "[GetTrait('ucm_fame_wealth_sovereign_max')]"
+              onclick = "[GetScriptedGui('ucm_trait_editor_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_fame_wealth_sovereign_max')).End)]"
             }
             ucm_trait_editor_row = {
-              datacontext = "[GetTrait('trait_ultimate_intrigue_master')]"
-              onclick = "[GetScriptedGui('ucm_trait_editor_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_ultimate_intrigue_master')).End)]"
+              datacontext = "[GetTrait('ucm_fame_ultimate_intrigue_master')]"
+              onclick = "[GetScriptedGui('ucm_trait_editor_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_fame_ultimate_intrigue_master')).End)]"
             }
             ucm_trait_editor_row = {
-              datacontext = "[GetTrait('trait_great_builder_god')]"
-              onclick = "[GetScriptedGui('ucm_trait_editor_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_great_builder_god')).End)]"
+              datacontext = "[GetTrait('ucm_fame_great_builder_god')]"
+              onclick = "[GetScriptedGui('ucm_trait_editor_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_fame_great_builder_god')).End)]"
             }
             ucm_trait_editor_row = {
-              datacontext = "[GetTrait('trait_nether_conspiracy_lord')]"
-              onclick = "[GetScriptedGui('ucm_trait_editor_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_nether_conspiracy_lord')).End)]"
+              datacontext = "[GetTrait('ucm_fame_nether_conspiracy_lord')]"
+              onclick = "[GetScriptedGui('ucm_trait_editor_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_fame_nether_conspiracy_lord')).End)]"
             }
             ucm_trait_editor_row = {
-              datacontext = "[GetTrait('trait_eternal_nether_lord')]"
-              onclick = "[GetScriptedGui('ucm_trait_editor_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('trait_eternal_nether_lord')).End)]"
+              datacontext = "[GetTrait('ucm_fame_eternal_nether_lord')]"
+              onclick = "[GetScriptedGui('ucm_trait_editor_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('ucm_fame_eternal_nether_lord')).End)]"
             }
             ucm_trait_editor_row = {
               datacontext = "[GetTrait('ucm_trait_yannian_dan')]"

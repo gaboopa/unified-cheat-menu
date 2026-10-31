@@ -38,7 +38,3 @@ ucm_de_jure_transfer_sync_full_effect = {
 	}
 }
 
-# ucm_officials.9130 still calls these.
-ucm_de_jure_transfer_batch_step_effect = { ucm_de_jure_transfer_sync_full_effect = yes }
-ucm_de_jure_transfer_batch_build_vassal_queue_effect = { }
-ucm_de_jure_transfer_batch_finish_effect = { remove_character_flag = ucm_de_jure_transfer_batch_active }

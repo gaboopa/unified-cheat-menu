@@ -30,13 +30,10 @@ ucm_menu_flag_off_effect = {
 	}
 }
 
-# The baseline sub-menu toggles, each passed to DO (ucm_menu_flag_on_effect / _off_effect).
+# The sub-menu toggles, each passed to DO (ucm_menu_flag_on_effect / _off_effect).
 ucm_menu_sub_flags_effect = {
 	$DO$ = { FLAG = ucm_character_interaction_menu_open }
 	$DO$ = { FLAG = bone_cheat_interactions_flag }
-	$DO$ = { FLAG = toc_showdebsflag }
-	$DO$ = { FLAG = toc_showspecsflag }
-	$DO$ = { FLAG = toc_showtextrasflag }
 	$DO$ = { FLAG = open_optroop_menu }
 }
 

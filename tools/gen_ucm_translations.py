@@ -2,7 +2,6 @@
 from the English keys in localization/english/ucm_l_english.yml and the translations below.
 Run after adding English keys (it stops and lists any key without a translation):
     python tools/gen_ucm_translations.py [mod_dir]      (default: the repo this script lives in)
-Also checks that localization/replace/<lang>/ has exactly the English replace key set.
 """
 import os, re, sys
 
@@ -685,7 +684,6 @@ def loc_keys(path):
 
 en_lines = open(MOD + "/localization/english/ucm_l_english.yml", "rb").read().decode("utf-8-sig").split("\n")
 keys = [re.match(r"^ ([\w.\-]+):", l).group(1) for l in en_lines[1:] if re.match(r"^ ([\w.\-]+):", l)]
-en_replace = loc_keys(f"{MOD}/localization/replace/english/ucm_debug_l_english.yml")
 pending = []
 for lang, d in LANGS.items():
     tr = build(lang, d)
@@ -693,10 +691,6 @@ for lang, d in LANGS.items():
     extra = [k for k in tr if k not in keys]
     if missing or extra:
         raise SystemExit(f"{lang}: missing translations {missing}, unknown keys {extra}")
-    rp = loc_keys(f"{MOD}/localization/replace/{lang}/ucm_debug_l_{lang}.yml")
-    if set(rp) != set(en_replace) or len(rp) != len(set(rp)):
-        raise SystemExit(f"{lang}: localization/replace key set differs from English: "
-                         f"missing {sorted(set(en_replace) - set(rp))}, extra {sorted(set(rp) - set(en_replace))}")
     body = "\n".join(' %s: "%s"' % (k, tr[k].replace('"', "'")) for k in keys)
     path = f"{MOD}/localization/{lang}/ucm_l_{lang}.yml"
     pending.append((lang, path, b"\xef\xbb\xbf" + (f"l_{lang}:\n{AUTOGEN}\n" + body + "\n").encode("utf-8")))

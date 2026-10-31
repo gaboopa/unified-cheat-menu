@@ -3,5 +3,4 @@
  ucm_open_character_interaction_menu_desc:0 "Показывает упорядоченные меню взаимодействий. Отладочные инструменты появляются только при запуске игры в режиме отладки."
  ucm_close_character_interaction_menu:0 "Закрыть инструменты персонажа"
  ucm_close_character_interaction_menu_desc:0 "Скрывает все инструменты взаимодействий."
- zhuge_add_truce_interaction_desc:0 "Добавить, удалить или изменить перемирие с этим персонажем."
 

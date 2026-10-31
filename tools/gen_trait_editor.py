@@ -47,12 +47,12 @@ def pill(trait, base):
 # This mod's traits and what clicking one runs on the target.
 CUSTOM = {
     "ucm_trait_immortal_ageless": "ucm_trait_editor_toggle_immortal_effect = yes",
-    "trait_warlord_eternal": plain("trait_warlord_eternal"),
-    "trait_wealth_sovereign_max": plain("trait_wealth_sovereign_max"),
-    "trait_ultimate_intrigue_master": plain("trait_ultimate_intrigue_master"),
-    "trait_great_builder_god": plain("trait_great_builder_god"),
-    "trait_nether_conspiracy_lord": plain("trait_nether_conspiracy_lord"),
-    "trait_eternal_nether_lord": plain("trait_eternal_nether_lord"),
+    "ucm_fame_warlord_eternal": plain("ucm_fame_warlord_eternal"),
+    "ucm_fame_wealth_sovereign_max": plain("ucm_fame_wealth_sovereign_max"),
+    "ucm_fame_ultimate_intrigue_master": plain("ucm_fame_ultimate_intrigue_master"),
+    "ucm_fame_great_builder_god": plain("ucm_fame_great_builder_god"),
+    "ucm_fame_nether_conspiracy_lord": plain("ucm_fame_nether_conspiracy_lord"),
+    "ucm_fame_eternal_nether_lord": plain("ucm_fame_eternal_nether_lord"),
     "ucm_trait_yannian_dan": pill("ucm_trait_yannian_dan", "ucm_yannian_dan"),
     "ucm_trait_yannian_dan_mid": pill("ucm_trait_yannian_dan_mid", "ucm_yannian_dan_mid"),
     "ucm_trait_yannian_dan_best": pill("ucm_trait_yannian_dan_best", "ucm_yannian_dan_best"),

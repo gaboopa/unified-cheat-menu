@@ -82,7 +82,7 @@ ucm_picker_tradition_toggle = {
 
 ucm_picker_faith_begin_doctrine = {
 	scope = character
-	saved_scopes = { pick_doctrine }
+	saved_scopes = { ucm_pick_doctrine }
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { has_variable = ucm_selected_faith_var }
 	effect = { ucm_picker_faith_begin_doctrine_effect = yes }
@@ -90,7 +90,7 @@ ucm_picker_faith_begin_doctrine = {
 
 ucm_picker_faith_begin_tenet = {
 	scope = character
-	saved_scopes = { pick_doctrine }
+	saved_scopes = { ucm_pick_doctrine }
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { has_variable = ucm_selected_faith_var }
 	effect = { ucm_picker_faith_begin_tenet_effect = yes }
@@ -98,7 +98,7 @@ ucm_picker_faith_begin_tenet = {
 
 ucm_picker_faith_apply = {
 	scope = character
-	saved_scopes = { pick_doctrine }
+	saved_scopes = { ucm_pick_doctrine }
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { has_variable = ucm_selected_faith_var }
 	effect = { ucm_picker_faith_apply_effect = yes }

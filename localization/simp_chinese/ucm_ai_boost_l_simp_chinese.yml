@@ -1,0 +1,5 @@
+﻿l_simp_chinese:
+ ucm_ai_boost_title_on: "#bold 【开】#! AI 领地加成"
+ ucm_ai_boost_title_off: "#bold 【关】#! AI 领地加成"
+ ucm_ai_boost_desc: "为所有有地 AI 角色授予或移除治理加成：能力、收入、军队与开战意愿。"
+ ucm_ai_boost_confirm: "切换所有有地 AI 角色的加成？"

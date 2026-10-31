@@ -94,7 +94,7 @@ def references(root, known):
         if os.path.join("common", "on_action") in f:
             uses.update(("event", n) for n in re.findall(rf"\b([a-z_]\w*\.\d+){END}", text))
         for k in re.findall(KEY, text):
-            if k.endswith("_effect") or k in known["effect"]:
+            if (k.endswith("_effect") and k != "hidden_effect") or k in known["effect"]:
                 uses.add(("effect", k))
             elif k.endswith("_trigger") or k in known["trigger"]:
                 uses.add(("trigger", k))

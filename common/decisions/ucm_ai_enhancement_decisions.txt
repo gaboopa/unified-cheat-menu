@@ -1,349 +1,40 @@
-ucm_ai_yearly_pulse_toggle_decision = {
-  picture = {
-    reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
-  }
-  decision_group_type = ucm_ai_automation
-  sort_order = 81
-  title = {
-    first_valid = {
-      triggered_desc = {
-        trigger = {
-          NOT = { has_global_variable = ucm_ai_yearly_pulse_disabled }
-        }
-        desc = ucm_ai_yearly_pulse_toggle_title_on
-      }
-      desc = ucm_ai_yearly_pulse_toggle_title_off
-    }
-  }
-  desc = {
-    first_valid = {
-      triggered_desc = {
-        trigger = {
-          NOT = { has_global_variable = ucm_ai_yearly_pulse_disabled }
-        }
-        desc = ucm_ai_yearly_pulse_toggle_desc_on
-      }
-      desc = ucm_ai_yearly_pulse_toggle_desc_off
-    }
-  }
-  selection_tooltip = {
-    first_valid = {
-      triggered_desc = {
-        trigger = {
-          NOT = { has_global_variable = ucm_ai_yearly_pulse_disabled }
-        }
-        desc = ucm_ai_yearly_pulse_toggle_tooltip_on
-      }
-      desc = ucm_ai_yearly_pulse_toggle_tooltip_off
-    }
-  }
-  confirm_text = {
-    first_valid = {
-      triggered_desc = {
-        trigger = {
-          NOT = { has_global_variable = ucm_ai_yearly_pulse_disabled }
-        }
-        desc = ucm_ai_yearly_pulse_toggle_confirm_disable
-      }
-      desc = ucm_ai_yearly_pulse_toggle_confirm_enable
-    }
-  }
+﻿ucm_ai_boost_toggle_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
+	}
+	decision_group_type = ucm_ai_automation
+	sort_order = 78
+	title = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { has_global_variable = ucm_ai_boost_enabled }
+				desc = ucm_ai_boost_title_on
+			}
+			desc = ucm_ai_boost_title_off
+		}
+	}
+	desc = ucm_ai_boost_desc
+	selection_tooltip = ucm_ai_boost_desc
+	confirm_text = ucm_ai_boost_confirm
 
-  ai_potential = { always = no }
-  ai_check_interval_by_tier = {
-    barony = 0
-    county = 90
-    duchy = 90
-    kingdom = 90
-    empire = 90
-    hegemony = 90
-  }
+	ai_potential = { always = no }
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 90
+		duchy = 90
+		kingdom = 90
+		empire = 90
+		hegemony = 90
+	}
 
-  is_shown = { ucm_single_player_trigger = yes 
-
-    has_character_flag = ucm_menu_open
-    ucm_officials_decision_visible_for_player_trigger = yes
-    is_playable_character = yes
-    is_ai = no
-  }
-
-  is_valid = { always = yes }
-
-  effect = {
-    if = {
-      limit = {
-        NOT = { has_global_variable = ucm_ai_yearly_pulse_disabled }
-      }
-      set_global_variable = {
-        name = ucm_ai_yearly_pulse_disabled
-        value = yes
-      }
-      custom_tooltip = ucm_ai_yearly_pulse_toggle_effect_disabled_tt
-    }
-    else = {
-      remove_global_variable = ucm_ai_yearly_pulse_disabled
-      custom_tooltip = ucm_ai_yearly_pulse_toggle_effect_enabled_tt
-    }
-  }
-
-  ai_will_do = { base = 0 }
+	is_shown = {
+		ucm_single_player_trigger = yes
+		has_character_flag = ucm_menu_open
+		ucm_officials_decision_visible_for_player_trigger = yes
+		is_playable_character = yes
+		is_ai = no
+	}
+	is_valid = { always = yes }
+	effect = { ucm_ai_boost_toggle_effect = yes }
+	ai_will_do = { base = 0 }
 }
-
-ucm_ai_yearly_de_jure_transfer_toggle_decision = {
-  picture = {
-    reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
-  }
-  decision_group_type = ucm_ai_automation
-  sort_order = 80
-  title = {
-    first_valid = {
-      triggered_desc = {
-        trigger = { has_global_variable = ucm_ai_yearly_de_jure_transfer_enabled }
-        desc = ucm_ai_yearly_de_jure_transfer_toggle_title_on
-      }
-      desc = ucm_ai_yearly_de_jure_transfer_toggle_title_off
-    }
-  }
-  desc = {
-    first_valid = {
-      triggered_desc = {
-        trigger = { has_global_variable = ucm_ai_yearly_de_jure_transfer_enabled }
-        desc = ucm_ai_yearly_de_jure_transfer_toggle_desc_on
-      }
-      desc = ucm_ai_yearly_de_jure_transfer_toggle_desc_off
-    }
-  }
-  selection_tooltip = {
-    first_valid = {
-      triggered_desc = {
-        trigger = { has_global_variable = ucm_ai_yearly_de_jure_transfer_enabled }
-        desc = ucm_ai_yearly_de_jure_transfer_toggle_tooltip_on
-      }
-      desc = ucm_ai_yearly_de_jure_transfer_toggle_tooltip_off
-    }
-  }
-  confirm_text = {
-    first_valid = {
-      triggered_desc = {
-        trigger = { has_global_variable = ucm_ai_yearly_de_jure_transfer_enabled }
-        desc = ucm_ai_yearly_de_jure_transfer_toggle_confirm_disable
-      }
-      desc = ucm_ai_yearly_de_jure_transfer_toggle_confirm_enable
-    }
-  }
-
-  ai_potential = { always = no }
-  ai_check_interval_by_tier = {
-    barony = 0
-    county = 90
-    duchy = 90
-    kingdom = 90
-    empire = 90
-    hegemony = 90
-  }
-
-  is_shown = { ucm_single_player_trigger = yes 
-
-    has_character_flag = ucm_menu_open
-    ucm_officials_decision_visible_for_player_trigger = yes
-    is_playable_character = yes
-    is_ai = no
-    NOT = { has_global_variable = ucm_ai_yearly_pulse_disabled }
-  }
-
-  is_valid = { always = yes }
-
-  effect = {
-    if = {
-      limit = { has_global_variable = ucm_ai_yearly_de_jure_transfer_enabled }
-      remove_global_variable = ucm_ai_yearly_de_jure_transfer_enabled
-      custom_tooltip = ucm_ai_yearly_de_jure_transfer_toggle_effect_disabled_tt
-    }
-    else = {
-      set_global_variable = {
-        name = ucm_ai_yearly_de_jure_transfer_enabled
-        value = yes
-      }
-      custom_tooltip = ucm_ai_yearly_de_jure_transfer_toggle_effect_enabled_tt
-    }
-  }
-
-  ai_will_do = { base = 0 }
-}
-
-ucm_ai_yearly_admin_conversion_toggle_decision = {
-  picture = {
-    reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
-  }
-  decision_group_type = ucm_ai_automation
-  sort_order = 79
-  title = {
-    first_valid = {
-      triggered_desc = {
-        trigger = {
-          NOT = { has_global_variable = ucm_ai_yearly_admin_conversion_disabled }
-        }
-        desc = ucm_ai_yearly_admin_conversion_toggle_title_on
-      }
-      desc = ucm_ai_yearly_admin_conversion_toggle_title_off
-    }
-  }
-  desc = {
-    first_valid = {
-      triggered_desc = {
-        trigger = {
-          NOT = { has_global_variable = ucm_ai_yearly_admin_conversion_disabled }
-        }
-        desc = ucm_ai_yearly_admin_conversion_toggle_desc_on
-      }
-      desc = ucm_ai_yearly_admin_conversion_toggle_desc_off
-    }
-  }
-  selection_tooltip = {
-    first_valid = {
-      triggered_desc = {
-        trigger = {
-          NOT = { has_global_variable = ucm_ai_yearly_admin_conversion_disabled }
-        }
-        desc = ucm_ai_yearly_admin_conversion_toggle_tooltip_on
-      }
-      desc = ucm_ai_yearly_admin_conversion_toggle_tooltip_off
-    }
-  }
-  confirm_text = {
-    first_valid = {
-      triggered_desc = {
-        trigger = {
-          NOT = { has_global_variable = ucm_ai_yearly_admin_conversion_disabled }
-        }
-        desc = ucm_ai_yearly_admin_conversion_toggle_confirm_disable
-      }
-      desc = ucm_ai_yearly_admin_conversion_toggle_confirm_enable
-    }
-  }
-
-  ai_potential = { always = no }
-  ai_check_interval_by_tier = {
-    barony = 0
-    county = 90
-    duchy = 90
-    kingdom = 90
-    empire = 90
-    hegemony = 90
-  }
-
-  is_shown = { ucm_single_player_trigger = yes 
-
-    has_character_flag = ucm_menu_open
-    ucm_officials_decision_visible_for_player_trigger = yes
-    is_playable_character = yes
-    is_ai = no
-    NOT = { has_global_variable = ucm_ai_yearly_pulse_disabled }
-  }
-
-  is_valid = { always = yes }
-
-  effect = {
-    if = {
-      limit = {
-        NOT = { has_global_variable = ucm_ai_yearly_admin_conversion_disabled }
-      }
-      set_global_variable = {
-        name = ucm_ai_yearly_admin_conversion_disabled
-        value = yes
-      }
-      custom_tooltip = ucm_ai_yearly_admin_conversion_toggle_effect_disabled_tt
-    }
-    else = {
-      remove_global_variable = ucm_ai_yearly_admin_conversion_disabled
-      custom_tooltip = ucm_ai_yearly_admin_conversion_toggle_effect_enabled_tt
-    }
-  }
-
-  ai_will_do = { base = 0 }
-}
-
-ucm_ai_boost_toggle_decision = {
-  picture = {
-    reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
-  }
-  decision_group_type = ucm_ai_automation
-  sort_order = 78
-  title = {
-    first_valid = {
-      triggered_desc = {
-        trigger = { NOT = { has_global_variable = ucm_ai_boost_disabled } }
-        desc = ucm_ai_boost_toggle_decision_title_on
-      }
-      desc = ucm_ai_boost_toggle_decision_title_off
-    }
-  }
-  desc = {
-    first_valid = {
-      triggered_desc = {
-        trigger = { NOT = { has_global_variable = ucm_ai_boost_disabled } }
-        desc = ucm_ai_boost_toggle_decision_desc_on
-      }
-      desc = ucm_ai_boost_toggle_decision_desc_off
-    }
-  }
-  selection_tooltip = {
-    first_valid = {
-      triggered_desc = {
-        trigger = { NOT = { has_global_variable = ucm_ai_boost_disabled } }
-        desc = ucm_ai_boost_toggle_decision_desc_on
-      }
-      desc = ucm_ai_boost_toggle_decision_desc_off
-    }
-  }
-  confirm_text = {
-    first_valid = {
-      triggered_desc = {
-        trigger = { NOT = { has_global_variable = ucm_ai_boost_disabled } }
-        desc = ucm_ai_boost_toggle_decision_confirm_disable
-      }
-      desc = ucm_ai_boost_toggle_decision_confirm_enable
-    }
-  }
-
-  ai_potential = { always = no }
-  ai_check_interval_by_tier = {
-    barony = 0
-    county = 90
-    duchy = 90
-    kingdom = 90
-    empire = 90
-    hegemony = 90
-  }
-
-  is_shown = { ucm_single_player_trigger = yes 
-
-    has_character_flag = ucm_menu_open
-    ucm_officials_decision_visible_for_player_trigger = yes
-    is_playable_character = yes
-    is_ai = no
-  }
-
-  is_valid = { always = yes }
-
-  effect = {
-    if = {
-      limit = { NOT = { has_global_variable = ucm_ai_boost_disabled } }
-      set_global_variable = { name = ucm_ai_boost_disabled value = yes }
-      if = { limit = { has_global_variable = ucm_ai_boost_enabled } remove_global_variable = ucm_ai_boost_enabled }
-      custom_tooltip = ucm_ai_boost_toggle_effect_disabled_tt
-    }
-    else = {
-      remove_global_variable = ucm_ai_boost_disabled
-      set_global_variable = { name = ucm_ai_boost_enabled value = yes }
-      if = { limit = { has_global_variable = ucm_world_ai_boost_disabled } remove_global_variable = ucm_world_ai_boost_disabled }
-      if = { limit = { has_global_variable = ucm_world_ai_boost_active } remove_global_variable = ucm_world_ai_boost_active }
-      ucm_ai_world_ai_boost_spread_batch_effect = yes
-      custom_tooltip = ucm_ai_boost_toggle_effect_enabled_tt
-    }
-  }
-
-  ai_will_do = { base = 0 }
-}
-
-

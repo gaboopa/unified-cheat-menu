@@ -1,9 +1,6 @@
 ﻿l_simp_chinese:
- toc_main_debug_interaction:0 "打开调试事件菜单"
- toc_main_debug_interaction_desc:0 "打开针对所选角色的分类调试操作。"
  ucm_open_character_interaction_menu:0 "打开角色工具"
  ucm_open_character_interaction_menu_desc:0 "显示整理后的角色互动菜单。调试工具仅在以调试模式启动游戏时显示。"
  ucm_close_character_interaction_menu:0 "关闭角色工具"
  ucm_close_character_interaction_menu_desc:0 "隐藏所有角色互动工具。"
- zhuge_add_truce_interaction_desc:0 "添加、移除或更改与该角色的停战协议。"
 

@@ -23,7 +23,7 @@ A whole-repo review (new menu code, vanilla overrides, on_actions, inherited scr
 | AI buffs: the "disabled" defaults were only written on a new game, so adding the mod to a save turned them on | Defaults written once per save (`ucm_ai_defaults_written`) by `ucm_ai_write_defaults_once_effect`, which every AI pulse calls first and the player's quarterly pulse calls on loaded saves (`on_game_start_after_lobby` only fires for new games). The decisions still toggle them; on a loaded save they can show "on" for up to a quarter until the defaults are written |
 | `has_too_many_held_duchies_trigger` 3 → 5 | Removed (vanilla) |
 | 11 vanilla congenital/beauty traits (stale copies, changed inheritance) | Removed (vanilla) |
-| Elective, tribal elective and noble-family succession laws loosened | Removed (vanilla). The mod's own `oligarchic`, `peasant` and `skone_theocratic` laws stay |
+| Elective, tribal elective and noble-family succession laws loosened | Removed (vanilla). The mod's own `oligarchic`, `peasant` and `old_theocratic` laws stay |
 | `nomadic_authority_1-5` values ×5 | Removed (vanilla) |
 | Pre-1.20 copies of `can_be_chancellor/steward/marshal_trigger`, `can_be_granted_titles_by` | Removed (vanilla) |
 | Brewery requirement, `beauty` portrait morphs | Removed (vanilla) |
@@ -73,8 +73,8 @@ CK3 1.20.1.2, only this mod.
 - The first run added 19 "should be in utf8-bom" entries (edited files had lost their BOM) and moved an old `scheme_type = romance` error (1.20 calls it `courting`). Both fixed.
 - Two months on the Phase 0 save showed the AI ruthless-governance pulse firing on 1 January (806 entries): the "off" defaults were only written from `on_game_start_after_lobby`, which doesn't fire on load, and the monthly tick likewise only started on new games. Fixed with the quarterly player bootstrap in `ucm_monthly_tick.txt`.
 - Re-run on the same save past 1 January with temporary error probes: the quarterly bootstrap ran, wrote the AI defaults, then the monthly tick fired a month later. No ruthless-governance entries. Probes removed.
-- Remaining errors are inherited: 653 never-set variable/flag warnings, the character editor (`dp_char_editor.txt`), Great Ming government code, other mods' titles, vanilla scheme scripts on that save.
-- Saves from before the rebrand reference `skonester_force_marry_religion`/`_faith`, which no longer exist; that custom faith is lost on load.
+- Remaining errors are inherited: 653 never-set variable/flag warnings, the character editor (`old_char_editor.txt`), Great Ming government code, other mods' titles, vanilla scheme scripts on that save.
+- Saves from before the rebrand reference `the baseline mod_force_marry_religion`/`_faith`, which no longer exist; that custom faith is lost on load.
 
 ## Test checklist
 

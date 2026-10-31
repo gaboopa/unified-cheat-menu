@@ -952,103 +952,103 @@ ucm_acm_faith_fill_choices_effect = {
   if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:tenet_peace_of_god
-        scope:pick_doctrine = flag:tenet_dulia
-        scope:pick_doctrine = flag:tenet_transubstantiation
-        scope:pick_doctrine = flag:tenet_ora_et_labora
-        scope:pick_doctrine = flag:tenet_hyperdulia
-        scope:pick_doctrine = flag:tenet_simony
-        scope:pick_doctrine = flag:tenet_monophysitism
-        scope:pick_doctrine = flag:tenet_acts_of_apostles
-        scope:pick_doctrine = flag:tenet_purgatory
-        scope:pick_doctrine = flag:tenet_be_fruitful_and_multiply
-        scope:pick_doctrine = flag:tenet_apostolic_succession
-        scope:pick_doctrine = flag:tenet_confession
-        scope:pick_doctrine = flag:tenet_original_sin
-        scope:pick_doctrine = flag:tenet_celestial_hierarchy
-        scope:pick_doctrine = flag:tenet_miles_christi
-        scope:pick_doctrine = flag:tenet_philanthropia
-        scope:pick_doctrine = flag:tenet_scholasticism
-        scope:pick_doctrine = flag:tenet_adoptionism
-        scope:pick_doctrine = flag:tenet_love_thy_neighbour
-        scope:pick_doctrine = flag:tenet_divine_liturgy
-        scope:pick_doctrine = flag:tenet_miaphysitism
-        scope:pick_doctrine = flag:tenet_hesychasm
-        scope:pick_doctrine = flag:tenet_anachoresis
-        scope:pick_doctrine = flag:tenet_mortification_of_the_flesh
-        scope:pick_doctrine = flag:tenet_holy_myron
-        scope:pick_doctrine = flag:tenet_khachkar
-        scope:pick_doctrine = flag:tenet_aniconism
-        scope:pick_doctrine = flag:tenet_alexandrian_catechism
-        scope:pick_doctrine = flag:tenet_armed_pilgrimages
-        scope:pick_doctrine = flag:tenet_carnal_exaltation
-        scope:pick_doctrine = flag:tenet_communal_identity
-        scope:pick_doctrine = flag:tenet_communion
-        scope:pick_doctrine = flag:tenet_consolamentum
-        scope:pick_doctrine = flag:tenet_divine_marriage
-        scope:pick_doctrine = flag:tenet_gnosticism
-        scope:pick_doctrine = flag:tenet_mendicant_preachers
-        scope:pick_doctrine = flag:tenet_pacifism
-        scope:pick_doctrine = flag:tenet_pentarchy
-        scope:pick_doctrine = flag:tenet_unrelenting_faith
-        scope:pick_doctrine = flag:tenet_vows_of_poverty
-        scope:pick_doctrine = flag:tenet_pastoral_isolation
-        scope:pick_doctrine = flag:tenet_adaptive
-        scope:pick_doctrine = flag:tenet_esotericism
-        scope:pick_doctrine = flag:tenet_legalism
-        scope:pick_doctrine = flag:tenet_literalism
-        scope:pick_doctrine = flag:tenet_reincarnation
-        scope:pick_doctrine = flag:tenet_religious_legal_pronouncements
-        scope:pick_doctrine = flag:tenet_struggle_submission
-        scope:pick_doctrine = flag:tenet_false_conversion_sanction
-        scope:pick_doctrine = flag:tenet_tax_nonbelievers
-        scope:pick_doctrine = flag:tenet_asceticism
-        scope:pick_doctrine = flag:tenet_bhakti
-        scope:pick_doctrine = flag:tenet_dharmic_pacifism
-        scope:pick_doctrine = flag:tenet_inner_journey
-        scope:pick_doctrine = flag:tenet_ritual_hospitality
-        scope:pick_doctrine = flag:tenet_adorcism
-        scope:pick_doctrine = flag:tenet_ancestor_worship
-        scope:pick_doctrine = flag:tenet_astrology
-        scope:pick_doctrine = flag:tenet_hedonistic
-        scope:pick_doctrine = flag:tenet_human_sacrifice
-        scope:pick_doctrine = flag:tenet_mystical_birthright
-        scope:pick_doctrine = flag:tenet_ritual_celebrations
-        scope:pick_doctrine = flag:tenet_sacred_childbirth
-        scope:pick_doctrine = flag:tenet_sanctity_of_nature
-        scope:pick_doctrine = flag:tenet_sun_worship
-        scope:pick_doctrine = flag:tenet_warmonger
-        scope:pick_doctrine = flag:tenet_gruesome_festivals
-        scope:pick_doctrine = flag:tenet_cthonic_redoubts
-        scope:pick_doctrine = flag:tenet_household_gods
-        scope:pick_doctrine = flag:tenet_sinitic_syncretism
-        scope:pick_doctrine = flag:tenet_eastern_syncretism
-        scope:pick_doctrine = flag:tenet_unreformed_syncretism
-        scope:pick_doctrine = flag:tenet_christian_syncretism
-        scope:pick_doctrine = flag:tenet_islamic_syncretism
-        scope:pick_doctrine = flag:tenet_jewish_syncretism
-        scope:pick_doctrine = flag:tenet_exaltation_of_pain
-        scope:pick_doctrine = flag:tenet_natural_primitivism
-        scope:pick_doctrine = flag:tenet_pursuit_of_power
-        scope:pick_doctrine = flag:tenet_ritual_cannibalism
-        scope:pick_doctrine = flag:tenet_sacred_shadows
-        scope:pick_doctrine = flag:tenet_polyamory
-        scope:pick_doctrine = flag:tenet_sacrificial_ceremonies
-        scope:pick_doctrine = flag:tenet_megaliths
-        scope:pick_doctrine = flag:tenet_fp3_fedayeen
-        scope:pick_doctrine = flag:tenet_communal_possessions
-        scope:pick_doctrine = flag:tenet_pure_land
-        scope:pick_doctrine = flag:tenet_no_mind
-        scope:pick_doctrine = flag:tenet_mountain_worship
-        scope:pick_doctrine = flag:tenet_extinction_of_dharma
-        scope:pick_doctrine = flag:tenet_cranial_trophies
-        scope:pick_doctrine = flag:tenet_pursuit_of_knowledge
-        scope:pick_doctrine = flag:tenet_benevolent_governance
-        scope:pick_doctrine = flag:tenet_filial_piety
-        scope:pick_doctrine = flag:tenet_harmonious_society
-        scope:pick_doctrine = flag:tenet_sacred_destruction
-        scope:pick_doctrine = flag:tenet_preservation
-        scope:pick_doctrine = flag:tenet_takamin
+        scope:ucm_pick_doctrine = flag:tenet_peace_of_god
+        scope:ucm_pick_doctrine = flag:tenet_dulia
+        scope:ucm_pick_doctrine = flag:tenet_transubstantiation
+        scope:ucm_pick_doctrine = flag:tenet_ora_et_labora
+        scope:ucm_pick_doctrine = flag:tenet_hyperdulia
+        scope:ucm_pick_doctrine = flag:tenet_simony
+        scope:ucm_pick_doctrine = flag:tenet_monophysitism
+        scope:ucm_pick_doctrine = flag:tenet_acts_of_apostles
+        scope:ucm_pick_doctrine = flag:tenet_purgatory
+        scope:ucm_pick_doctrine = flag:tenet_be_fruitful_and_multiply
+        scope:ucm_pick_doctrine = flag:tenet_apostolic_succession
+        scope:ucm_pick_doctrine = flag:tenet_confession
+        scope:ucm_pick_doctrine = flag:tenet_original_sin
+        scope:ucm_pick_doctrine = flag:tenet_celestial_hierarchy
+        scope:ucm_pick_doctrine = flag:tenet_miles_christi
+        scope:ucm_pick_doctrine = flag:tenet_philanthropia
+        scope:ucm_pick_doctrine = flag:tenet_scholasticism
+        scope:ucm_pick_doctrine = flag:tenet_adoptionism
+        scope:ucm_pick_doctrine = flag:tenet_love_thy_neighbour
+        scope:ucm_pick_doctrine = flag:tenet_divine_liturgy
+        scope:ucm_pick_doctrine = flag:tenet_miaphysitism
+        scope:ucm_pick_doctrine = flag:tenet_hesychasm
+        scope:ucm_pick_doctrine = flag:tenet_anachoresis
+        scope:ucm_pick_doctrine = flag:tenet_mortification_of_the_flesh
+        scope:ucm_pick_doctrine = flag:tenet_holy_myron
+        scope:ucm_pick_doctrine = flag:tenet_khachkar
+        scope:ucm_pick_doctrine = flag:tenet_aniconism
+        scope:ucm_pick_doctrine = flag:tenet_alexandrian_catechism
+        scope:ucm_pick_doctrine = flag:tenet_armed_pilgrimages
+        scope:ucm_pick_doctrine = flag:tenet_carnal_exaltation
+        scope:ucm_pick_doctrine = flag:tenet_communal_identity
+        scope:ucm_pick_doctrine = flag:tenet_communion
+        scope:ucm_pick_doctrine = flag:tenet_consolamentum
+        scope:ucm_pick_doctrine = flag:tenet_divine_marriage
+        scope:ucm_pick_doctrine = flag:tenet_gnosticism
+        scope:ucm_pick_doctrine = flag:tenet_mendicant_preachers
+        scope:ucm_pick_doctrine = flag:tenet_pacifism
+        scope:ucm_pick_doctrine = flag:tenet_pentarchy
+        scope:ucm_pick_doctrine = flag:tenet_unrelenting_faith
+        scope:ucm_pick_doctrine = flag:tenet_vows_of_poverty
+        scope:ucm_pick_doctrine = flag:tenet_pastoral_isolation
+        scope:ucm_pick_doctrine = flag:tenet_adaptive
+        scope:ucm_pick_doctrine = flag:tenet_esotericism
+        scope:ucm_pick_doctrine = flag:tenet_legalism
+        scope:ucm_pick_doctrine = flag:tenet_literalism
+        scope:ucm_pick_doctrine = flag:tenet_reincarnation
+        scope:ucm_pick_doctrine = flag:tenet_religious_legal_pronouncements
+        scope:ucm_pick_doctrine = flag:tenet_struggle_submission
+        scope:ucm_pick_doctrine = flag:tenet_false_conversion_sanction
+        scope:ucm_pick_doctrine = flag:tenet_tax_nonbelievers
+        scope:ucm_pick_doctrine = flag:tenet_asceticism
+        scope:ucm_pick_doctrine = flag:tenet_bhakti
+        scope:ucm_pick_doctrine = flag:tenet_dharmic_pacifism
+        scope:ucm_pick_doctrine = flag:tenet_inner_journey
+        scope:ucm_pick_doctrine = flag:tenet_ritual_hospitality
+        scope:ucm_pick_doctrine = flag:tenet_adorcism
+        scope:ucm_pick_doctrine = flag:tenet_ancestor_worship
+        scope:ucm_pick_doctrine = flag:tenet_astrology
+        scope:ucm_pick_doctrine = flag:tenet_hedonistic
+        scope:ucm_pick_doctrine = flag:tenet_human_sacrifice
+        scope:ucm_pick_doctrine = flag:tenet_mystical_birthright
+        scope:ucm_pick_doctrine = flag:tenet_ritual_celebrations
+        scope:ucm_pick_doctrine = flag:tenet_sacred_childbirth
+        scope:ucm_pick_doctrine = flag:tenet_sanctity_of_nature
+        scope:ucm_pick_doctrine = flag:tenet_sun_worship
+        scope:ucm_pick_doctrine = flag:tenet_warmonger
+        scope:ucm_pick_doctrine = flag:tenet_gruesome_festivals
+        scope:ucm_pick_doctrine = flag:tenet_cthonic_redoubts
+        scope:ucm_pick_doctrine = flag:tenet_household_gods
+        scope:ucm_pick_doctrine = flag:tenet_sinitic_syncretism
+        scope:ucm_pick_doctrine = flag:tenet_eastern_syncretism
+        scope:ucm_pick_doctrine = flag:tenet_unreformed_syncretism
+        scope:ucm_pick_doctrine = flag:tenet_christian_syncretism
+        scope:ucm_pick_doctrine = flag:tenet_islamic_syncretism
+        scope:ucm_pick_doctrine = flag:tenet_jewish_syncretism
+        scope:ucm_pick_doctrine = flag:tenet_exaltation_of_pain
+        scope:ucm_pick_doctrine = flag:tenet_natural_primitivism
+        scope:ucm_pick_doctrine = flag:tenet_pursuit_of_power
+        scope:ucm_pick_doctrine = flag:tenet_ritual_cannibalism
+        scope:ucm_pick_doctrine = flag:tenet_sacred_shadows
+        scope:ucm_pick_doctrine = flag:tenet_polyamory
+        scope:ucm_pick_doctrine = flag:tenet_sacrificial_ceremonies
+        scope:ucm_pick_doctrine = flag:tenet_megaliths
+        scope:ucm_pick_doctrine = flag:tenet_fp3_fedayeen
+        scope:ucm_pick_doctrine = flag:tenet_communal_possessions
+        scope:ucm_pick_doctrine = flag:tenet_pure_land
+        scope:ucm_pick_doctrine = flag:tenet_no_mind
+        scope:ucm_pick_doctrine = flag:tenet_mountain_worship
+        scope:ucm_pick_doctrine = flag:tenet_extinction_of_dharma
+        scope:ucm_pick_doctrine = flag:tenet_cranial_trophies
+        scope:ucm_pick_doctrine = flag:tenet_pursuit_of_knowledge
+        scope:ucm_pick_doctrine = flag:tenet_benevolent_governance
+        scope:ucm_pick_doctrine = flag:tenet_filial_piety
+        scope:ucm_pick_doctrine = flag:tenet_harmonious_society
+        scope:ucm_pick_doctrine = flag:tenet_sacred_destruction
+        scope:ucm_pick_doctrine = flag:tenet_preservation
+        scope:ucm_pick_doctrine = flag:tenet_takamin
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:tenet_peace_of_god }
@@ -1152,9 +1152,9 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:doctrine_gender_male_dominated
-        scope:pick_doctrine = flag:doctrine_gender_equal
-        scope:pick_doctrine = flag:doctrine_gender_female_dominated
+        scope:ucm_pick_doctrine = flag:doctrine_gender_male_dominated
+        scope:ucm_pick_doctrine = flag:doctrine_gender_equal
+        scope:ucm_pick_doctrine = flag:doctrine_gender_female_dominated
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:doctrine_gender_male_dominated }
@@ -1164,9 +1164,9 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:doctrine_pluralism_fundamentalist
-        scope:pick_doctrine = flag:doctrine_pluralism_righteous
-        scope:pick_doctrine = flag:doctrine_pluralism_pluralistic
+        scope:ucm_pick_doctrine = flag:doctrine_pluralism_fundamentalist
+        scope:ucm_pick_doctrine = flag:doctrine_pluralism_righteous
+        scope:ucm_pick_doctrine = flag:doctrine_pluralism_pluralistic
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:doctrine_pluralism_fundamentalist }
@@ -1176,8 +1176,8 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:doctrine_theocracy_temporal
-        scope:pick_doctrine = flag:doctrine_theocracy_lay_clergy
+        scope:ucm_pick_doctrine = flag:doctrine_theocracy_temporal
+        scope:ucm_pick_doctrine = flag:doctrine_theocracy_lay_clergy
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:doctrine_theocracy_temporal }
@@ -1186,9 +1186,9 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:doctrine_no_head
-        scope:pick_doctrine = flag:doctrine_spiritual_head
-        scope:pick_doctrine = flag:doctrine_temporal_head
+        scope:ucm_pick_doctrine = flag:doctrine_no_head
+        scope:ucm_pick_doctrine = flag:doctrine_spiritual_head
+        scope:ucm_pick_doctrine = flag:doctrine_temporal_head
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:doctrine_no_head }
@@ -1198,11 +1198,11 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:doctrine_pilgrimage_forbidden
-        scope:pick_doctrine = flag:doctrine_pilgrimage_encouraged
-        scope:pick_doctrine = flag:doctrine_pilgrimage_local_rites
-        scope:pick_doctrine = flag:doctrine_pilgrimage_mandatory
-        scope:pick_doctrine = flag:doctrine_pilgrimage_mandatory_hajj
+        scope:ucm_pick_doctrine = flag:doctrine_pilgrimage_forbidden
+        scope:ucm_pick_doctrine = flag:doctrine_pilgrimage_encouraged
+        scope:ucm_pick_doctrine = flag:doctrine_pilgrimage_local_rites
+        scope:ucm_pick_doctrine = flag:doctrine_pilgrimage_mandatory
+        scope:ucm_pick_doctrine = flag:doctrine_pilgrimage_mandatory_hajj
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:doctrine_pilgrimage_forbidden }
@@ -1214,8 +1214,8 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:doctrine_monotheist
-        scope:pick_doctrine = flag:doctrine_polytheist
+        scope:ucm_pick_doctrine = flag:doctrine_monotheist
+        scope:ucm_pick_doctrine = flag:doctrine_polytheist
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:doctrine_monotheist }
@@ -1224,10 +1224,10 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:muhammad_succession_sunni_doctrine
-        scope:pick_doctrine = flag:muhammad_succession_shia_doctrine
-        scope:pick_doctrine = flag:muhammad_succession_muhakkima_doctrine
-        scope:pick_doctrine = flag:muhammad_succession_zandaqa_doctrine
+        scope:ucm_pick_doctrine = flag:muhammad_succession_sunni_doctrine
+        scope:ucm_pick_doctrine = flag:muhammad_succession_shia_doctrine
+        scope:ucm_pick_doctrine = flag:muhammad_succession_muhakkima_doctrine
+        scope:ucm_pick_doctrine = flag:muhammad_succession_zandaqa_doctrine
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:muhammad_succession_sunni_doctrine }
@@ -1238,10 +1238,10 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:temple_authority_rabbinic_doctrine
-        scope:pick_doctrine = flag:temple_authority_toric_doctrine
-        scope:pick_doctrine = flag:temple_authority_kohanim_doctrine
-        scope:pick_doctrine = flag:temple_authority_samaritan_torah_doctrine
+        scope:ucm_pick_doctrine = flag:temple_authority_rabbinic_doctrine
+        scope:ucm_pick_doctrine = flag:temple_authority_toric_doctrine
+        scope:ucm_pick_doctrine = flag:temple_authority_kohanim_doctrine
+        scope:ucm_pick_doctrine = flag:temple_authority_samaritan_torah_doctrine
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:temple_authority_rabbinic_doctrine }
@@ -1252,8 +1252,8 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:doctrine_major_branch_behdin
-        scope:pick_doctrine = flag:doctrine_heretic_branch_zandik
+        scope:ucm_pick_doctrine = flag:doctrine_major_branch_behdin
+        scope:ucm_pick_doctrine = flag:doctrine_heretic_branch_zandik
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:doctrine_major_branch_behdin }
@@ -1262,8 +1262,8 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:special_doctrine_ecumenical_christian
-        scope:pick_doctrine = flag:special_doctrine_ecumenical_miaphysite
+        scope:ucm_pick_doctrine = flag:special_doctrine_ecumenical_christian
+        scope:ucm_pick_doctrine = flag:special_doctrine_ecumenical_miaphysite
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:special_doctrine_ecumenical_christian }
@@ -1272,9 +1272,9 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:doctrine_monogamy
-        scope:pick_doctrine = flag:doctrine_polygamy
-        scope:pick_doctrine = flag:doctrine_concubines
+        scope:ucm_pick_doctrine = flag:doctrine_monogamy
+        scope:ucm_pick_doctrine = flag:doctrine_polygamy
+        scope:ucm_pick_doctrine = flag:doctrine_concubines
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:doctrine_monogamy }
@@ -1284,9 +1284,9 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:doctrine_divorce_disallowed
-        scope:pick_doctrine = flag:doctrine_divorce_approval
-        scope:pick_doctrine = flag:doctrine_divorce_allowed
+        scope:ucm_pick_doctrine = flag:doctrine_divorce_disallowed
+        scope:ucm_pick_doctrine = flag:doctrine_divorce_approval
+        scope:ucm_pick_doctrine = flag:doctrine_divorce_allowed
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:doctrine_divorce_disallowed }
@@ -1296,9 +1296,9 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:doctrine_bastardry_none
-        scope:pick_doctrine = flag:doctrine_bastardry_legitimization
-        scope:pick_doctrine = flag:doctrine_bastardry_all
+        scope:ucm_pick_doctrine = flag:doctrine_bastardry_none
+        scope:ucm_pick_doctrine = flag:doctrine_bastardry_legitimization
+        scope:ucm_pick_doctrine = flag:doctrine_bastardry_all
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:doctrine_bastardry_none }
@@ -1308,11 +1308,11 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:doctrine_consanguinity_dynastic
-        scope:pick_doctrine = flag:doctrine_consanguinity_restricted
-        scope:pick_doctrine = flag:doctrine_consanguinity_cousins
-        scope:pick_doctrine = flag:doctrine_consanguinity_aunt_nephew_and_uncle_niece
-        scope:pick_doctrine = flag:doctrine_consanguinity_unrestricted
+        scope:ucm_pick_doctrine = flag:doctrine_consanguinity_dynastic
+        scope:ucm_pick_doctrine = flag:doctrine_consanguinity_restricted
+        scope:ucm_pick_doctrine = flag:doctrine_consanguinity_cousins
+        scope:ucm_pick_doctrine = flag:doctrine_consanguinity_aunt_nephew_and_uncle_niece
+        scope:ucm_pick_doctrine = flag:doctrine_consanguinity_unrestricted
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:doctrine_consanguinity_dynastic }
@@ -1324,9 +1324,9 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:doctrine_homosexuality_crime
-        scope:pick_doctrine = flag:doctrine_homosexuality_shunned
-        scope:pick_doctrine = flag:doctrine_homosexuality_accepted
+        scope:ucm_pick_doctrine = flag:doctrine_homosexuality_crime
+        scope:ucm_pick_doctrine = flag:doctrine_homosexuality_shunned
+        scope:ucm_pick_doctrine = flag:doctrine_homosexuality_accepted
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:doctrine_homosexuality_crime }
@@ -1336,10 +1336,10 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:doctrine_deviancy_crime
-        scope:pick_doctrine = flag:doctrine_deviancy_shunned
-        scope:pick_doctrine = flag:doctrine_deviancy_accepted
-        scope:pick_doctrine = flag:doctrine_deviancy_virtuous
+        scope:ucm_pick_doctrine = flag:doctrine_deviancy_crime
+        scope:ucm_pick_doctrine = flag:doctrine_deviancy_shunned
+        scope:ucm_pick_doctrine = flag:doctrine_deviancy_accepted
+        scope:ucm_pick_doctrine = flag:doctrine_deviancy_virtuous
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:doctrine_deviancy_crime }
@@ -1350,9 +1350,9 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:doctrine_adultery_men_crime
-        scope:pick_doctrine = flag:doctrine_adultery_men_shunned
-        scope:pick_doctrine = flag:doctrine_adultery_men_accepted
+        scope:ucm_pick_doctrine = flag:doctrine_adultery_men_crime
+        scope:ucm_pick_doctrine = flag:doctrine_adultery_men_shunned
+        scope:ucm_pick_doctrine = flag:doctrine_adultery_men_accepted
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:doctrine_adultery_men_crime }
@@ -1362,9 +1362,9 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:doctrine_adultery_women_crime
-        scope:pick_doctrine = flag:doctrine_adultery_women_shunned
-        scope:pick_doctrine = flag:doctrine_adultery_women_accepted
+        scope:ucm_pick_doctrine = flag:doctrine_adultery_women_crime
+        scope:ucm_pick_doctrine = flag:doctrine_adultery_women_shunned
+        scope:ucm_pick_doctrine = flag:doctrine_adultery_women_accepted
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:doctrine_adultery_women_crime }
@@ -1374,11 +1374,11 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:doctrine_kinslaying_any_dynasty_member_crime
-        scope:pick_doctrine = flag:doctrine_kinslaying_extended_family_crime
-        scope:pick_doctrine = flag:doctrine_kinslaying_close_kin_crime
-        scope:pick_doctrine = flag:doctrine_kinslaying_shunned
-        scope:pick_doctrine = flag:doctrine_kinslaying_accepted
+        scope:ucm_pick_doctrine = flag:doctrine_kinslaying_any_dynasty_member_crime
+        scope:ucm_pick_doctrine = flag:doctrine_kinslaying_extended_family_crime
+        scope:ucm_pick_doctrine = flag:doctrine_kinslaying_close_kin_crime
+        scope:ucm_pick_doctrine = flag:doctrine_kinslaying_shunned
+        scope:ucm_pick_doctrine = flag:doctrine_kinslaying_accepted
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:doctrine_kinslaying_any_dynasty_member_crime }
@@ -1390,10 +1390,10 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:doctrine_witchcraft_crime
-        scope:pick_doctrine = flag:doctrine_witchcraft_shunned
-        scope:pick_doctrine = flag:doctrine_witchcraft_accepted
-        scope:pick_doctrine = flag:doctrine_witchcraft_virtuous
+        scope:ucm_pick_doctrine = flag:doctrine_witchcraft_crime
+        scope:ucm_pick_doctrine = flag:doctrine_witchcraft_shunned
+        scope:ucm_pick_doctrine = flag:doctrine_witchcraft_accepted
+        scope:ucm_pick_doctrine = flag:doctrine_witchcraft_virtuous
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:doctrine_witchcraft_crime }
@@ -1404,9 +1404,9 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:doctrine_clerical_function_taxation
-        scope:pick_doctrine = flag:doctrine_clerical_function_alms_and_pacification
-        scope:pick_doctrine = flag:doctrine_clerical_function_recruitment
+        scope:ucm_pick_doctrine = flag:doctrine_clerical_function_taxation
+        scope:ucm_pick_doctrine = flag:doctrine_clerical_function_alms_and_pacification
+        scope:ucm_pick_doctrine = flag:doctrine_clerical_function_recruitment
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:doctrine_clerical_function_taxation }
@@ -1416,9 +1416,9 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:doctrine_clerical_gender_male_only
-        scope:pick_doctrine = flag:doctrine_clerical_gender_either
-        scope:pick_doctrine = flag:doctrine_clerical_gender_female_only
+        scope:ucm_pick_doctrine = flag:doctrine_clerical_gender_male_only
+        scope:ucm_pick_doctrine = flag:doctrine_clerical_gender_either
+        scope:ucm_pick_doctrine = flag:doctrine_clerical_gender_female_only
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:doctrine_clerical_gender_male_only }
@@ -1428,8 +1428,8 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:doctrine_clerical_marriage_allowed
-        scope:pick_doctrine = flag:doctrine_clerical_marriage_disallowed
+        scope:ucm_pick_doctrine = flag:doctrine_clerical_marriage_allowed
+        scope:ucm_pick_doctrine = flag:doctrine_clerical_marriage_disallowed
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:doctrine_clerical_marriage_allowed }
@@ -1438,11 +1438,11 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:doctrine_clerical_succession_temporal_appointment
-        scope:pick_doctrine = flag:doctrine_clerical_succession_spiritual_appointment
-        scope:pick_doctrine = flag:doctrine_clerical_succession_temporal_fixed_appointment
-        scope:pick_doctrine = flag:doctrine_clerical_succession_spiritual_fixed_appointment
-        scope:pick_doctrine = flag:doctrine_clerical_succession_conditional
+        scope:ucm_pick_doctrine = flag:doctrine_clerical_succession_temporal_appointment
+        scope:ucm_pick_doctrine = flag:doctrine_clerical_succession_spiritual_appointment
+        scope:ucm_pick_doctrine = flag:doctrine_clerical_succession_temporal_fixed_appointment
+        scope:ucm_pick_doctrine = flag:doctrine_clerical_succession_spiritual_fixed_appointment
+        scope:ucm_pick_doctrine = flag:doctrine_clerical_succession_conditional
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:doctrine_clerical_succession_temporal_appointment }
@@ -1454,12 +1454,12 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:doctrine_funeral_stoic
-        scope:pick_doctrine = flag:doctrine_funeral_bewailment
-        scope:pick_doctrine = flag:doctrine_funeral_cremation
-        scope:pick_doctrine = flag:doctrine_funeral_sky_burial
-        scope:pick_doctrine = flag:doctrine_funeral_mummification
-        scope:pick_doctrine = flag:doctrine_family_rites
+        scope:ucm_pick_doctrine = flag:doctrine_funeral_stoic
+        scope:ucm_pick_doctrine = flag:doctrine_funeral_bewailment
+        scope:ucm_pick_doctrine = flag:doctrine_funeral_cremation
+        scope:ucm_pick_doctrine = flag:doctrine_funeral_sky_burial
+        scope:ucm_pick_doctrine = flag:doctrine_funeral_mummification
+        scope:ucm_pick_doctrine = flag:doctrine_family_rites
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:doctrine_funeral_stoic }
@@ -1472,9 +1472,9 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:doctrine_no_anointment
-        scope:pick_doctrine = flag:doctrine_anointment_permitted
-        scope:pick_doctrine = flag:doctrine_imperial_anointment
+        scope:ucm_pick_doctrine = flag:doctrine_no_anointment
+        scope:ucm_pick_doctrine = flag:doctrine_anointment_permitted
+        scope:ucm_pick_doctrine = flag:doctrine_imperial_anointment
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:doctrine_no_anointment }
@@ -1484,10 +1484,10 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:doctrine_monasticism_encouraged
-        scope:pick_doctrine = flag:doctrine_monasticism_accepted
-        scope:pick_doctrine = flag:doctrine_monasticism_absent
-        scope:pick_doctrine = flag:doctrine_monasticism_forbidden
+        scope:ucm_pick_doctrine = flag:doctrine_monasticism_encouraged
+        scope:ucm_pick_doctrine = flag:doctrine_monasticism_accepted
+        scope:ucm_pick_doctrine = flag:doctrine_monasticism_absent
+        scope:ucm_pick_doctrine = flag:doctrine_monasticism_forbidden
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:doctrine_monasticism_encouraged }
@@ -1498,8 +1498,8 @@ ucm_acm_faith_fill_choices_effect = {
   else_if = {
     limit = {
       OR = {
-        scope:pick_doctrine = flag:doctrine_sacraments_central
-        scope:pick_doctrine = flag:doctrine_sacraments_absent
+        scope:ucm_pick_doctrine = flag:doctrine_sacraments_central
+        scope:ucm_pick_doctrine = flag:doctrine_sacraments_absent
       }
     }
     add_to_global_variable_list = { name = ucm_acm_fe_pick_current target = flag:doctrine_sacraments_central }
@@ -1901,7 +1901,7 @@ ucm_acm_faith_remove_slot_tenet_effect = {
 ucm_acm_faith_apply_choice_effect = {
   if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_peace_of_god
+      scope:ucm_pick_doctrine = flag:tenet_peace_of_god
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_peace_of_god } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -1909,7 +1909,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_dulia
+      scope:ucm_pick_doctrine = flag:tenet_dulia
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_dulia } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -1917,7 +1917,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_transubstantiation
+      scope:ucm_pick_doctrine = flag:tenet_transubstantiation
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_transubstantiation } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -1925,7 +1925,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_ora_et_labora
+      scope:ucm_pick_doctrine = flag:tenet_ora_et_labora
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_ora_et_labora } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -1933,7 +1933,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_hyperdulia
+      scope:ucm_pick_doctrine = flag:tenet_hyperdulia
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_hyperdulia } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -1941,7 +1941,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_simony
+      scope:ucm_pick_doctrine = flag:tenet_simony
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_simony } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -1949,7 +1949,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_monophysitism
+      scope:ucm_pick_doctrine = flag:tenet_monophysitism
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_monophysitism } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -1957,7 +1957,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_acts_of_apostles
+      scope:ucm_pick_doctrine = flag:tenet_acts_of_apostles
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_acts_of_apostles } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -1965,7 +1965,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_purgatory
+      scope:ucm_pick_doctrine = flag:tenet_purgatory
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_purgatory } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -1973,7 +1973,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_be_fruitful_and_multiply
+      scope:ucm_pick_doctrine = flag:tenet_be_fruitful_and_multiply
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_be_fruitful_and_multiply } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -1981,7 +1981,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_apostolic_succession
+      scope:ucm_pick_doctrine = flag:tenet_apostolic_succession
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_apostolic_succession } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -1989,7 +1989,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_confession
+      scope:ucm_pick_doctrine = flag:tenet_confession
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_confession } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -1997,7 +1997,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_original_sin
+      scope:ucm_pick_doctrine = flag:tenet_original_sin
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_original_sin } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2005,7 +2005,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_celestial_hierarchy
+      scope:ucm_pick_doctrine = flag:tenet_celestial_hierarchy
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_celestial_hierarchy } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2013,7 +2013,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_miles_christi
+      scope:ucm_pick_doctrine = flag:tenet_miles_christi
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_miles_christi } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2021,7 +2021,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_philanthropia
+      scope:ucm_pick_doctrine = flag:tenet_philanthropia
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_philanthropia } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2029,7 +2029,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_scholasticism
+      scope:ucm_pick_doctrine = flag:tenet_scholasticism
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_scholasticism } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2037,7 +2037,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_adoptionism
+      scope:ucm_pick_doctrine = flag:tenet_adoptionism
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_adoptionism } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2045,7 +2045,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_love_thy_neighbour
+      scope:ucm_pick_doctrine = flag:tenet_love_thy_neighbour
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_love_thy_neighbour } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2053,7 +2053,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_divine_liturgy
+      scope:ucm_pick_doctrine = flag:tenet_divine_liturgy
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_divine_liturgy } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2061,7 +2061,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_miaphysitism
+      scope:ucm_pick_doctrine = flag:tenet_miaphysitism
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_miaphysitism } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2069,7 +2069,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_hesychasm
+      scope:ucm_pick_doctrine = flag:tenet_hesychasm
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_hesychasm } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2077,7 +2077,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_anachoresis
+      scope:ucm_pick_doctrine = flag:tenet_anachoresis
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_anachoresis } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2085,7 +2085,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_mortification_of_the_flesh
+      scope:ucm_pick_doctrine = flag:tenet_mortification_of_the_flesh
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_mortification_of_the_flesh } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2093,7 +2093,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_holy_myron
+      scope:ucm_pick_doctrine = flag:tenet_holy_myron
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_holy_myron } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2101,7 +2101,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_khachkar
+      scope:ucm_pick_doctrine = flag:tenet_khachkar
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_khachkar } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2109,7 +2109,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_aniconism
+      scope:ucm_pick_doctrine = flag:tenet_aniconism
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_aniconism } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2117,7 +2117,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_alexandrian_catechism
+      scope:ucm_pick_doctrine = flag:tenet_alexandrian_catechism
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_alexandrian_catechism } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2125,7 +2125,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_armed_pilgrimages
+      scope:ucm_pick_doctrine = flag:tenet_armed_pilgrimages
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_armed_pilgrimages } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2133,7 +2133,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_carnal_exaltation
+      scope:ucm_pick_doctrine = flag:tenet_carnal_exaltation
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_carnal_exaltation } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2141,7 +2141,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_communal_identity
+      scope:ucm_pick_doctrine = flag:tenet_communal_identity
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_communal_identity } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2149,7 +2149,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_communion
+      scope:ucm_pick_doctrine = flag:tenet_communion
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_communion } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2157,7 +2157,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_consolamentum
+      scope:ucm_pick_doctrine = flag:tenet_consolamentum
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_consolamentum } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2165,7 +2165,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_divine_marriage
+      scope:ucm_pick_doctrine = flag:tenet_divine_marriage
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_divine_marriage } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2173,7 +2173,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_gnosticism
+      scope:ucm_pick_doctrine = flag:tenet_gnosticism
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_gnosticism } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2181,7 +2181,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_mendicant_preachers
+      scope:ucm_pick_doctrine = flag:tenet_mendicant_preachers
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_mendicant_preachers } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2189,7 +2189,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_pacifism
+      scope:ucm_pick_doctrine = flag:tenet_pacifism
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_pacifism } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2197,7 +2197,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_pentarchy
+      scope:ucm_pick_doctrine = flag:tenet_pentarchy
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_pentarchy } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2205,7 +2205,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_unrelenting_faith
+      scope:ucm_pick_doctrine = flag:tenet_unrelenting_faith
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_unrelenting_faith } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2213,7 +2213,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_vows_of_poverty
+      scope:ucm_pick_doctrine = flag:tenet_vows_of_poverty
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_vows_of_poverty } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2221,7 +2221,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_pastoral_isolation
+      scope:ucm_pick_doctrine = flag:tenet_pastoral_isolation
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_pastoral_isolation } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2229,7 +2229,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_adaptive
+      scope:ucm_pick_doctrine = flag:tenet_adaptive
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_adaptive } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2237,7 +2237,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_esotericism
+      scope:ucm_pick_doctrine = flag:tenet_esotericism
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_esotericism } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2245,7 +2245,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_legalism
+      scope:ucm_pick_doctrine = flag:tenet_legalism
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_legalism } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2253,7 +2253,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_literalism
+      scope:ucm_pick_doctrine = flag:tenet_literalism
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_literalism } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2261,7 +2261,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_reincarnation
+      scope:ucm_pick_doctrine = flag:tenet_reincarnation
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_reincarnation } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2269,7 +2269,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_religious_legal_pronouncements
+      scope:ucm_pick_doctrine = flag:tenet_religious_legal_pronouncements
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_religious_legal_pronouncements } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2277,7 +2277,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_struggle_submission
+      scope:ucm_pick_doctrine = flag:tenet_struggle_submission
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_struggle_submission } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2285,7 +2285,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_false_conversion_sanction
+      scope:ucm_pick_doctrine = flag:tenet_false_conversion_sanction
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_false_conversion_sanction } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2293,7 +2293,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_tax_nonbelievers
+      scope:ucm_pick_doctrine = flag:tenet_tax_nonbelievers
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_tax_nonbelievers } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2301,7 +2301,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_asceticism
+      scope:ucm_pick_doctrine = flag:tenet_asceticism
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_asceticism } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2309,7 +2309,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_bhakti
+      scope:ucm_pick_doctrine = flag:tenet_bhakti
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_bhakti } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2317,7 +2317,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_dharmic_pacifism
+      scope:ucm_pick_doctrine = flag:tenet_dharmic_pacifism
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_dharmic_pacifism } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2325,7 +2325,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_inner_journey
+      scope:ucm_pick_doctrine = flag:tenet_inner_journey
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_inner_journey } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2333,7 +2333,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_ritual_hospitality
+      scope:ucm_pick_doctrine = flag:tenet_ritual_hospitality
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_ritual_hospitality } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2341,7 +2341,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_adorcism
+      scope:ucm_pick_doctrine = flag:tenet_adorcism
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_adorcism } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2349,7 +2349,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_ancestor_worship
+      scope:ucm_pick_doctrine = flag:tenet_ancestor_worship
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_ancestor_worship } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2357,7 +2357,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_astrology
+      scope:ucm_pick_doctrine = flag:tenet_astrology
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_astrology } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2365,7 +2365,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_hedonistic
+      scope:ucm_pick_doctrine = flag:tenet_hedonistic
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_hedonistic } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2373,7 +2373,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_human_sacrifice
+      scope:ucm_pick_doctrine = flag:tenet_human_sacrifice
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_human_sacrifice } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2381,7 +2381,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_mystical_birthright
+      scope:ucm_pick_doctrine = flag:tenet_mystical_birthright
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_mystical_birthright } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2389,7 +2389,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_ritual_celebrations
+      scope:ucm_pick_doctrine = flag:tenet_ritual_celebrations
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_ritual_celebrations } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2397,7 +2397,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_sacred_childbirth
+      scope:ucm_pick_doctrine = flag:tenet_sacred_childbirth
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_sacred_childbirth } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2405,7 +2405,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_sanctity_of_nature
+      scope:ucm_pick_doctrine = flag:tenet_sanctity_of_nature
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_sanctity_of_nature } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2413,7 +2413,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_sun_worship
+      scope:ucm_pick_doctrine = flag:tenet_sun_worship
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_sun_worship } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2421,7 +2421,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_warmonger
+      scope:ucm_pick_doctrine = flag:tenet_warmonger
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_warmonger } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2429,7 +2429,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_gruesome_festivals
+      scope:ucm_pick_doctrine = flag:tenet_gruesome_festivals
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_gruesome_festivals } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2437,7 +2437,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_cthonic_redoubts
+      scope:ucm_pick_doctrine = flag:tenet_cthonic_redoubts
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_cthonic_redoubts } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2445,7 +2445,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_household_gods
+      scope:ucm_pick_doctrine = flag:tenet_household_gods
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_household_gods } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2453,7 +2453,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_sinitic_syncretism
+      scope:ucm_pick_doctrine = flag:tenet_sinitic_syncretism
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_sinitic_syncretism } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2461,7 +2461,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_eastern_syncretism
+      scope:ucm_pick_doctrine = flag:tenet_eastern_syncretism
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_eastern_syncretism } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2469,7 +2469,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_unreformed_syncretism
+      scope:ucm_pick_doctrine = flag:tenet_unreformed_syncretism
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_unreformed_syncretism } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2477,7 +2477,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_christian_syncretism
+      scope:ucm_pick_doctrine = flag:tenet_christian_syncretism
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_christian_syncretism } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2485,7 +2485,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_islamic_syncretism
+      scope:ucm_pick_doctrine = flag:tenet_islamic_syncretism
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_islamic_syncretism } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2493,7 +2493,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_jewish_syncretism
+      scope:ucm_pick_doctrine = flag:tenet_jewish_syncretism
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_jewish_syncretism } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2501,7 +2501,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_exaltation_of_pain
+      scope:ucm_pick_doctrine = flag:tenet_exaltation_of_pain
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_exaltation_of_pain } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2509,7 +2509,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_natural_primitivism
+      scope:ucm_pick_doctrine = flag:tenet_natural_primitivism
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_natural_primitivism } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2517,7 +2517,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_pursuit_of_power
+      scope:ucm_pick_doctrine = flag:tenet_pursuit_of_power
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_pursuit_of_power } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2525,7 +2525,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_ritual_cannibalism
+      scope:ucm_pick_doctrine = flag:tenet_ritual_cannibalism
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_ritual_cannibalism } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2533,7 +2533,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_sacred_shadows
+      scope:ucm_pick_doctrine = flag:tenet_sacred_shadows
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_sacred_shadows } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2541,7 +2541,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_polyamory
+      scope:ucm_pick_doctrine = flag:tenet_polyamory
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_polyamory } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2549,7 +2549,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_sacrificial_ceremonies
+      scope:ucm_pick_doctrine = flag:tenet_sacrificial_ceremonies
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_sacrificial_ceremonies } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2557,7 +2557,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_megaliths
+      scope:ucm_pick_doctrine = flag:tenet_megaliths
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_megaliths } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2565,7 +2565,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_fp3_fedayeen
+      scope:ucm_pick_doctrine = flag:tenet_fp3_fedayeen
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_fp3_fedayeen } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2573,7 +2573,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_communal_possessions
+      scope:ucm_pick_doctrine = flag:tenet_communal_possessions
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_communal_possessions } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2581,7 +2581,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_pure_land
+      scope:ucm_pick_doctrine = flag:tenet_pure_land
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_pure_land } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2589,7 +2589,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_no_mind
+      scope:ucm_pick_doctrine = flag:tenet_no_mind
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_no_mind } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2597,7 +2597,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_mountain_worship
+      scope:ucm_pick_doctrine = flag:tenet_mountain_worship
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_mountain_worship } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2605,7 +2605,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_extinction_of_dharma
+      scope:ucm_pick_doctrine = flag:tenet_extinction_of_dharma
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_extinction_of_dharma } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2613,7 +2613,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_cranial_trophies
+      scope:ucm_pick_doctrine = flag:tenet_cranial_trophies
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_cranial_trophies } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2621,7 +2621,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_pursuit_of_knowledge
+      scope:ucm_pick_doctrine = flag:tenet_pursuit_of_knowledge
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_pursuit_of_knowledge } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2629,7 +2629,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_benevolent_governance
+      scope:ucm_pick_doctrine = flag:tenet_benevolent_governance
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_benevolent_governance } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2637,7 +2637,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_filial_piety
+      scope:ucm_pick_doctrine = flag:tenet_filial_piety
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_filial_piety } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2645,7 +2645,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_harmonious_society
+      scope:ucm_pick_doctrine = flag:tenet_harmonious_society
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_harmonious_society } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2653,7 +2653,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_sacred_destruction
+      scope:ucm_pick_doctrine = flag:tenet_sacred_destruction
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_sacred_destruction } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2661,7 +2661,7 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_preservation
+      scope:ucm_pick_doctrine = flag:tenet_preservation
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_preservation } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
@@ -2669,386 +2669,386 @@ ucm_acm_faith_apply_choice_effect = {
   }
   else_if = {
     limit = {
-      scope:pick_doctrine = flag:tenet_takamin
+      scope:ucm_pick_doctrine = flag:tenet_takamin
       var:ucm_selected_faith_var = { main_rite = { NOT = { rite_has_tenet = tenet_takamin } } }
     }
     ucm_acm_faith_remove_slot_tenet_effect = yes
     var:ucm_selected_faith_var = { main_rite = { add_rite_tenet = tenet_takamin } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_gender_male_dominated }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_gender_male_dominated }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_gender_male_dominated } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_gender_equal }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_gender_equal }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_gender_equal } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_gender_female_dominated }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_gender_female_dominated }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_gender_female_dominated } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_pluralism_fundamentalist }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_pluralism_fundamentalist }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_pluralism_fundamentalist } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_pluralism_righteous }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_pluralism_righteous }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_pluralism_righteous } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_pluralism_pluralistic }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_pluralism_pluralistic }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_pluralism_pluralistic } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_theocracy_temporal }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_theocracy_temporal }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_theocracy_temporal } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_theocracy_lay_clergy }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_theocracy_lay_clergy }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_theocracy_lay_clergy } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_no_head }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_no_head }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_no_head } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_spiritual_head }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_spiritual_head }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_spiritual_head } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_temporal_head }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_temporal_head }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_temporal_head } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_pilgrimage_forbidden }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_pilgrimage_forbidden }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_pilgrimage_forbidden } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_pilgrimage_encouraged }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_pilgrimage_encouraged }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_pilgrimage_encouraged } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_pilgrimage_local_rites }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_pilgrimage_local_rites }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_pilgrimage_local_rites } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_pilgrimage_mandatory }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_pilgrimage_mandatory }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_pilgrimage_mandatory } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_pilgrimage_mandatory_hajj }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_pilgrimage_mandatory_hajj }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_pilgrimage_mandatory_hajj } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_monotheist }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_monotheist }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_monotheist } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_polytheist }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_polytheist }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_polytheist } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:muhammad_succession_sunni_doctrine }
+    limit = { scope:ucm_pick_doctrine = flag:muhammad_succession_sunni_doctrine }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = muhammad_succession_sunni_doctrine } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:muhammad_succession_shia_doctrine }
+    limit = { scope:ucm_pick_doctrine = flag:muhammad_succession_shia_doctrine }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = muhammad_succession_shia_doctrine } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:muhammad_succession_muhakkima_doctrine }
+    limit = { scope:ucm_pick_doctrine = flag:muhammad_succession_muhakkima_doctrine }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = muhammad_succession_muhakkima_doctrine } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:muhammad_succession_zandaqa_doctrine }
+    limit = { scope:ucm_pick_doctrine = flag:muhammad_succession_zandaqa_doctrine }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = muhammad_succession_zandaqa_doctrine } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:temple_authority_rabbinic_doctrine }
+    limit = { scope:ucm_pick_doctrine = flag:temple_authority_rabbinic_doctrine }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = temple_authority_rabbinic_doctrine } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:temple_authority_toric_doctrine }
+    limit = { scope:ucm_pick_doctrine = flag:temple_authority_toric_doctrine }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = temple_authority_toric_doctrine } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:temple_authority_kohanim_doctrine }
+    limit = { scope:ucm_pick_doctrine = flag:temple_authority_kohanim_doctrine }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = temple_authority_kohanim_doctrine } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:temple_authority_samaritan_torah_doctrine }
+    limit = { scope:ucm_pick_doctrine = flag:temple_authority_samaritan_torah_doctrine }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = temple_authority_samaritan_torah_doctrine } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_major_branch_behdin }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_major_branch_behdin }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_major_branch_behdin } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_heretic_branch_zandik }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_heretic_branch_zandik }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_heretic_branch_zandik } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:special_doctrine_ecumenical_christian }
+    limit = { scope:ucm_pick_doctrine = flag:special_doctrine_ecumenical_christian }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = special_doctrine_ecumenical_christian } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:special_doctrine_ecumenical_miaphysite }
+    limit = { scope:ucm_pick_doctrine = flag:special_doctrine_ecumenical_miaphysite }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = special_doctrine_ecumenical_miaphysite } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_monogamy }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_monogamy }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_monogamy } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_polygamy }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_polygamy }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_polygamy } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_concubines }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_concubines }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_concubines } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_divorce_disallowed }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_divorce_disallowed }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_divorce_disallowed } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_divorce_approval }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_divorce_approval }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_divorce_approval } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_divorce_allowed }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_divorce_allowed }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_divorce_allowed } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_bastardry_none }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_bastardry_none }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_bastardry_none } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_bastardry_legitimization }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_bastardry_legitimization }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_bastardry_legitimization } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_bastardry_all }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_bastardry_all }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_bastardry_all } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_consanguinity_dynastic }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_consanguinity_dynastic }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_consanguinity_dynastic } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_consanguinity_restricted }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_consanguinity_restricted }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_consanguinity_restricted } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_consanguinity_cousins }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_consanguinity_cousins }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_consanguinity_cousins } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_consanguinity_aunt_nephew_and_uncle_niece }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_consanguinity_aunt_nephew_and_uncle_niece }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_consanguinity_aunt_nephew_and_uncle_niece } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_consanguinity_unrestricted }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_consanguinity_unrestricted }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_consanguinity_unrestricted } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_homosexuality_crime }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_homosexuality_crime }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_homosexuality_crime } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_homosexuality_shunned }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_homosexuality_shunned }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_homosexuality_shunned } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_homosexuality_accepted }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_homosexuality_accepted }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_homosexuality_accepted } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_deviancy_crime }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_deviancy_crime }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_deviancy_crime } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_deviancy_shunned }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_deviancy_shunned }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_deviancy_shunned } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_deviancy_accepted }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_deviancy_accepted }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_deviancy_accepted } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_deviancy_virtuous }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_deviancy_virtuous }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_deviancy_virtuous } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_adultery_men_crime }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_adultery_men_crime }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_adultery_men_crime } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_adultery_men_shunned }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_adultery_men_shunned }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_adultery_men_shunned } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_adultery_men_accepted }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_adultery_men_accepted }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_adultery_men_accepted } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_adultery_women_crime }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_adultery_women_crime }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_adultery_women_crime } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_adultery_women_shunned }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_adultery_women_shunned }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_adultery_women_shunned } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_adultery_women_accepted }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_adultery_women_accepted }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_adultery_women_accepted } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_kinslaying_any_dynasty_member_crime }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_kinslaying_any_dynasty_member_crime }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_kinslaying_any_dynasty_member_crime } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_kinslaying_extended_family_crime }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_kinslaying_extended_family_crime }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_kinslaying_extended_family_crime } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_kinslaying_close_kin_crime }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_kinslaying_close_kin_crime }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_kinslaying_close_kin_crime } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_kinslaying_shunned }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_kinslaying_shunned }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_kinslaying_shunned } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_kinslaying_accepted }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_kinslaying_accepted }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_kinslaying_accepted } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_witchcraft_crime }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_witchcraft_crime }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_witchcraft_crime } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_witchcraft_shunned }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_witchcraft_shunned }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_witchcraft_shunned } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_witchcraft_accepted }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_witchcraft_accepted }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_witchcraft_accepted } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_witchcraft_virtuous }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_witchcraft_virtuous }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_witchcraft_virtuous } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_clerical_function_taxation }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_clerical_function_taxation }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_clerical_function_taxation } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_clerical_function_alms_and_pacification }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_clerical_function_alms_and_pacification }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_clerical_function_alms_and_pacification } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_clerical_function_recruitment }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_clerical_function_recruitment }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_clerical_function_recruitment } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_clerical_gender_male_only }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_clerical_gender_male_only }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_clerical_gender_male_only } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_clerical_gender_either }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_clerical_gender_either }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_clerical_gender_either } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_clerical_gender_female_only }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_clerical_gender_female_only }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_clerical_gender_female_only } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_clerical_marriage_allowed }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_clerical_marriage_allowed }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_clerical_marriage_allowed } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_clerical_marriage_disallowed }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_clerical_marriage_disallowed }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_clerical_marriage_disallowed } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_clerical_succession_temporal_appointment }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_clerical_succession_temporal_appointment }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_clerical_succession_temporal_appointment } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_clerical_succession_spiritual_appointment }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_clerical_succession_spiritual_appointment }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_clerical_succession_spiritual_appointment } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_clerical_succession_temporal_fixed_appointment }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_clerical_succession_temporal_fixed_appointment }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_clerical_succession_temporal_fixed_appointment } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_clerical_succession_spiritual_fixed_appointment }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_clerical_succession_spiritual_fixed_appointment }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_clerical_succession_spiritual_fixed_appointment } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_clerical_succession_conditional }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_clerical_succession_conditional }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_clerical_succession_conditional } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_funeral_stoic }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_funeral_stoic }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_funeral_stoic } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_funeral_bewailment }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_funeral_bewailment }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_funeral_bewailment } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_funeral_cremation }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_funeral_cremation }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_funeral_cremation } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_funeral_sky_burial }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_funeral_sky_burial }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_funeral_sky_burial } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_funeral_mummification }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_funeral_mummification }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_funeral_mummification } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_family_rites }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_family_rites }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_family_rites } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_no_anointment }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_no_anointment }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_no_anointment } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_anointment_permitted }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_anointment_permitted }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_anointment_permitted } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_imperial_anointment }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_imperial_anointment }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_imperial_anointment } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_monasticism_encouraged }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_monasticism_encouraged }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_monasticism_encouraged } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_monasticism_accepted }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_monasticism_accepted }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_monasticism_accepted } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_monasticism_absent }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_monasticism_absent }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_monasticism_absent } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_monasticism_forbidden }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_monasticism_forbidden }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_monasticism_forbidden } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_sacraments_central }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_sacraments_central }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_sacraments_central } }
   }
   else_if = {
-    limit = { scope:pick_doctrine = flag:doctrine_sacraments_absent }
+    limit = { scope:ucm_pick_doctrine = flag:doctrine_sacraments_absent }
     var:ucm_selected_faith_var = { main_rite = { change_rite_doctrine = doctrine_sacraments_absent } }
   }
 }

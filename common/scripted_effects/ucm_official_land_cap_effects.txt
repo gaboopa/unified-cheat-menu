@@ -658,58 +658,6 @@ ucm_enforce_official_land_cap_effect = {
   }
 }
 
-# 分批脉冲：每名官员每轮最多剥 8 件头衔
-ucm_enforce_official_land_cap_bounded_effect = {
-  save_scope_as = ucm_off
-  if = {
-    limit = {
-      exists = scope:ucm_off.top_liege
-      scope:ucm_off = {
-        is_landed = yes
-      }
-    }
-    add_character_flag = ucm_land_cap_strip_in_progress
-    ucm_land_cap_setup_kept_county_effect = yes
-    while = {
-      count = 8
-      limit = {
-        exists = scope:ucm_kept_county
-        scope:ucm_off = {
-          any_held_title = {
-            title_tier = county
-            NOT = { this = scope:ucm_kept_county }
-            is_noble_family_title = no
-            is_leased_out = no
-          }
-        }
-      }
-      ucm_land_cap_strip_one_excess_county_effect = yes
-    }
-    while = {
-      count = 8
-      limit = {
-        scope:ucm_off = {
-          any_held_title = {
-            OR = {
-              tier = tier_duchy
-              tier = tier_kingdom
-              tier = tier_empire
-            }
-            NOT = { this = scope:ucm_off.primary_title }
-            is_noble_family_title = no
-            is_landless_type_title = no
-          }
-        }
-      }
-      ucm_land_cap_strip_one_excess_high_tier_effect = yes
-    }
-    scope:ucm_off = {
-      ucm_land_cap_cleanup_official_vars_effect = yes
-    }
-    clear_saved_scope = ucm_kept_county
-  }
-}
-
 ucm_land_cap_send_complete_toast_effect = {
   send_interface_toast = {
     type = event_toast_effect_good
@@ -718,73 +666,10 @@ ucm_land_cap_send_complete_toast_effect = {
   }
 }
 
-ucm_land_cap_batch_finish_effect = {
-  remove_character_flag = ucm_land_cap_batch_active
-  clear_variable_list = ucm_land_cap_official_queue
-  every_vassal_or_below = {
-    limit = {
-      has_character_flag = ucm_land_cap_strip_in_progress
-    }
-    remove_character_flag = ucm_land_cap_strip_in_progress
-  }
-  ucm_land_cap_send_complete_toast_effect = yes
-}
-
-ucm_land_cap_batch_step_effect = {
-  while = {
-    count = 2
-    limit = {
-      variable_list_size = {
-        name = ucm_land_cap_official_queue
-        value > 0
-      }
-    }
-    ordered_in_list = {
-      variable = ucm_land_cap_official_queue
-      order_by = highest_held_title_tier
-      position = 0
-      save_scope_as = ucm_land_cap_queue_official
-    }
-    scope:ucm_land_cap_queue_official = {
-      ucm_enforce_official_land_cap_bounded_effect = yes
-    }
-    if = {
-      limit = {
-        scope:ucm_land_cap_queue_official = {
-          ucm_official_needs_land_cap_enforcement_trigger = yes
-        }
-      }
-      remove_list_variable = {
-        name = ucm_land_cap_official_queue
-        target = scope:ucm_land_cap_queue_official
-      }
-      root = {
-        add_to_variable_list = {
-          name = ucm_land_cap_official_queue
-          target = scope:ucm_land_cap_queue_official
-        }
-      }
-    }
-    else = {
-      remove_list_variable = {
-        name = ucm_land_cap_official_queue
-        target = scope:ucm_land_cap_queue_official
-      }
-    }
-    clear_saved_scope = ucm_land_cap_queue_official
-  }
-}
-
 # 整理头衔完整流程：点击一次，全领地同步整理直至无多余头衔（多轮扫尾）
 ucm_official_land_cap_full_effect = {
   root = {
-    if = {
-      limit = {
-        has_character_flag = ucm_land_cap_batch_active
-      }
-      ucm_land_cap_batch_finish_effect = yes
-    }
-    while = {
+while = {
       count = 24
       limit = {
         any_vassal_or_below = {

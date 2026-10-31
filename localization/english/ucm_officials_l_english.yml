@@ -16,7 +16,6 @@
 
  ucm_cheat_menu_artifact_craft_menu_interaction_desc: "Create new artifacts: select type, subtype, rarity and up to five modifier sets."
 
- ucm_artifact_max_durability_toast_t: "Artifact Durability Restored"
 
  ucm_court_positions.8001.t: "Manage Court Positions"
  ucm_court_positions.8001.desc: "Manage court offices for [ucm_pos_reshuffle_liege.GetShortUIName] (court jobs only, excludes council)."
@@ -49,13 +48,6 @@
 
 
 
- ethos_bellicose: "$ethos_bellicose_name$"
- ethos_bureaucratic: "$ethos_bureaucratic_name$"
- ethos_communal: "$ethos_communal_name$"
- ethos_courtly: "$ethos_courtly_name$"
- ethos_egalitarian: "$ethos_egalitarian_name$"
- ethos_spiritual: "$ethos_spiritual_name$"
- ethos_stoic: "$ethos_stoic_name$"
 
 
 
@@ -161,29 +153,6 @@
  ucm_trait_stats_100_locked_desc: "All core attributes and Prowess are locked at 100. No event, aging or effect can alter them."
 
  trait_ucm_cheat_menu: "Special Trait"
- trait_warlord_eternal: "Eternal Warlord"
- trait_warlord_eternal_desc: "A master of warfare. Troops fight harder, movement speed is greatly increased, terrain penalties are negated, and sieges end swiftly."
- trait_wealth_sovereign_max: "Wealth Sovereign"
- trait_wealth_sovereign_max_desc: "Master of commerce and taxation. Income, vassal contributions and treasury reserves are vastly improved."
- trait_ultimate_intrigue_master: "Mystic Seer"
- trait_ultimate_intrigue_master_desc: "Unmatched in shadowy plots. Enemy schemes against you fail easily, while your own plots remain hidden and nearly guaranteed to succeed."
- trait_great_builder_god: "Divine Builder"
- trait_great_builder_god_desc: "Supreme mastery of construction. Realm buildings and holdings are built for minimal cost and time. Stewardship, taxes, development, fortifications and levies all receive massive boosts."
- trait_nether_conspiracy_lord: "Nether Conspiracy Lord"
- trait_nether_conspiracy_lord_desc: "A grand master of intrigue. Your plots are stealthier and more effective, while enemy plots are slowed and weakened. Dread rises and court opinion leans in your favor."
- trait_eternal_nether_lord: "Eternal Nether Lord"
- trait_eternal_nether_lord_desc: "An undying presence of shadow. Stress has little effect, dread is immense, intrigue power is heightened. Hostile plots rarely succeed, and vassals and courtiers hold you in awe."
- trait_the_wake: "Fenstalker"
- trait_the_wake_desc: "The pinnacle of fen raiders. Strong in wetlands and skilled at raiding, yet despised by Norman cultures."
- trait_lifestyle_traveler: "Wanderer"
- trait_lifestyle_traveler_desc: "A tiered trait from the Wandering lifestyle. Gains power from travels, discoveries and journeys across the realm."
- trait_child_of_concubine_female: "Daughter of a Concubine"
- trait_child_of_concubine_female_desc: "Born to a secondary consort. Succession and family laws may treat her differently from legitimate children."
- trait_child_of_concubine_male: "Son of a Concubine"
- trait_child_of_concubine_male_desc: "Born to a secondary consort. Succession and family laws may treat him differently from legitimate children."
- trait_hajjaj: "Hajji"
- trait_shieldmaiden: "Shieldmaiden"
- trait_viking: "Viking Raider"
 
  trait_ucm_trait_immortal_ageless: "$ucm_trait_immortal_ageless$"
  trait_ucm_trait_immortal_ageless_desc: "$ucm_trait_immortal_ageless_desc$"
@@ -201,18 +170,6 @@
  trait_ucm_trait_marriage_ban_desc: "$ucm_trait_marriage_ban_desc$"
  trait_ucm_trait_stats_100_locked: "$ucm_trait_stats_100_locked$"
  trait_ucm_trait_stats_100_locked_desc: "$ucm_trait_stats_100_locked_desc$"
- trait_trait_warlord_eternal: "$trait_warlord_eternal$"
- trait_trait_warlord_eternal_desc: "$trait_warlord_eternal_desc$"
- trait_trait_wealth_sovereign_max: "$trait_wealth_sovereign_max$"
- trait_trait_wealth_sovereign_max_desc: "$trait_wealth_sovereign_max_desc$"
- trait_trait_ultimate_intrigue_master: "$trait_ultimate_intrigue_master$"
- trait_trait_ultimate_intrigue_master_desc: "$trait_ultimate_intrigue_master_desc$"
- trait_trait_great_builder_god: "$trait_great_builder_god$"
- trait_trait_great_builder_god_desc: "$trait_great_builder_god_desc$"
- trait_trait_nether_conspiracy_lord: "$trait_nether_conspiracy_lord$"
- trait_trait_nether_conspiracy_lord_desc: "$trait_nether_conspiracy_lord_desc$"
- trait_trait_eternal_nether_lord: "$trait_eternal_nether_lord$"
- trait_trait_eternal_nether_lord_desc: "$trait_eternal_nether_lord_desc$"
 
  ucm_cheat_menu_sterilized_modifier: "Sterilized"
 
@@ -256,9 +213,6 @@
  ucm_one_click_transfer_vassals_decision_desc: "Reassign vassals within your realm up the de jure chain of their primary title (transfer whole vassals; do not split counties or grant them out)."
  ucm_one_click_transfer_vassals_decision_tooltip: "At least one vassal whose de jure liege is in your realm has an incorrect liege relationship."
  ucm_one_click_transfer_vassals_decision_confirm: "Confirm Reassignment"
- ucm_de_jure_transfer_batch_in_progress_tt: "De jure reassignment is in progress. Wait until it completes before clicking again (you will be notified when done)."
- ucm_de_jure_transfer_batch_complete_toast_title: "De Jure Reassignment Complete"
- ucm_de_jure_transfer_batch_complete_toast_desc: "All eligible vassals have been reassigned along their primary title's de jure chain (holdings were not split)."
 
  ucm_imprison_vassals_decision: "Imprison Vassals"
  ucm_imprison_vassals_decision_desc: "Choose to imprison either direct vassals or all vassals within your realm."
@@ -436,63 +390,15 @@
  ucm_officials.9071.desc: ""
 
 
- ucm_world_ai_boost_pause_decision: "Pause Global AI Realm Bonuses"
- ucm_world_ai_boost_resume_decision: "Resume Global AI Realm Bonuses"
 
  ucm_boost_world_ai_rulers_decision: "Empower All Independent AI Realms"
 
- ucm_ai_yearly_admin_conversion_toggle_title_on: "#bold 【ON】#! Annual Trigger: Automatic AI Administrative Government Reform"
- ucm_ai_yearly_admin_conversion_toggle_title_off: "#bold 【OFF】#! Annual Trigger: Automatic AI Administrative Government Reform"
- ucm_ai_yearly_admin_conversion_toggle_desc_on: "Currently enabled. Requires Roads to Power (EP3). Every year, all independent landed AI plus their vassals are automatically shifted into Administrative Government. Enabled by default, separate from manual AI empowerment. Nomadic/Tribal/Steppe overlords no longer bulk-convert their vassals to prevent unintended secession. Even after disabling this toggle, enhanced vassal dues and expansion modifiers remain functional. Click to disable automatic yearly government conversion."
- ucm_ai_yearly_admin_conversion_toggle_desc_off: "Currently disabled. Annual script no longer upgrades AI realms into EP3 Administrative Government. Vassal obligation bonuses and yearly expansion buffs persist; manual government alteration is still accessible via the polity menu. Click to re-enable automated yearly reform."
- ucm_ai_yearly_admin_conversion_toggle_tooltip_on: "Active: Independent AI yearly administrative conversion (EP3 needed). Click to disable."
- ucm_ai_yearly_admin_conversion_toggle_tooltip_off: "Inactive: No automated annual government shift for AI. Click to enable."
- ucm_ai_yearly_admin_conversion_toggle_confirm_disable: "Turn Off Annual Administrative Auto-Reform"
- ucm_ai_yearly_admin_conversion_toggle_confirm_enable: "Turn On Annual Administrative Auto-Reform"
- ucm_ai_yearly_admin_conversion_toggle_effect_disabled_tt: "Disabled: Annual automated Administrative Government conversion for AI is halted."
- ucm_ai_yearly_admin_conversion_toggle_effect_enabled_tt: "Enabled: Qualified independent AI convert to Administrative Government yearly (EP3 prerequisite)."
 
- ucm_ai_yearly_pulse_toggle_title_on: "#bold 【ON】#! Annual Global Pulse (Master Toggle)"
- ucm_ai_yearly_pulse_toggle_title_off: "#bold 【OFF】#! Annual Global Pulse (Master Toggle)"
- ucm_ai_yearly_pulse_toggle_desc_on: "Set to enabled by default. All independent landed AI receive complete yearly pulse benefits: expansion & war modifiers, raised vassal taxation, yearly anti-hegemony coalition refresh. Sub-options: Administrative conversion default-on, De Jure vassal reshuffle default-off. First campaign year skips full pulse entirely. Master toggle off hides all sub-options and halts relevant scripts. Does not interact with monthly automatic AI buff system. Click to disable entire annual pulse system."
- ucm_ai_yearly_pulse_toggle_desc_off: "Currently disabled. Event 9200 stops firing; mod-specific yearly anti-player coalition refresh ceases (quarterly/monthly checks unaffected). Click to reactivate annual global pulse."
- ucm_ai_yearly_pulse_toggle_tooltip_on: "Default active, full annual pulse operational; click shut down master switch."
- ucm_ai_yearly_pulse_toggle_tooltip_off: "All annual pulse mechanics suspended; click to activate master switch."
- ucm_ai_yearly_pulse_toggle_confirm_disable: "Disable Annual Pulse Master Switch"
- ucm_ai_yearly_pulse_toggle_confirm_enable: "Enable Annual Pulse Master Switch"
- ucm_ai_yearly_pulse_toggle_effect_disabled_tt: "Disabled: Event 9200 and yearly anti-hegemony coalition refresh no longer execute."
- ucm_ai_yearly_pulse_toggle_effect_enabled_tt: "Enabled: Annual pulse runs following individual sub-toggle configurations."
 
- ucm_ai_yearly_de_jure_transfer_toggle_title_on: "#bold 【ON】#! Annual Pulse: Automated AI De Jure Vassal Reassignment"
- ucm_ai_yearly_de_jure_transfer_toggle_title_off: "#bold 【OFF】#! Annual Pulse: Automated AI De Jure Vassal Reassignment"
- ucm_ai_yearly_de_jure_transfer_toggle_desc_on: "Currently enabled. Independent AI automatically executes identical bulk de jure vassal restructuring available to player decisions once per year. Alters vanilla starting vassal layout (Hexi, Gobi etc.), disabled by default. Disabling leaves expansion buffs, tax surcharges and administrative auto-reform intact; players retain manual de jure transfer resolution. Click to disable automatic AI de jure reshuffling."
- ucm_ai_yearly_de_jure_transfer_toggle_desc_off: "Default set to disabled. Annual pulse skips AI vassal legal rearrangement to preserve original vanilla starting borders. All newly-started campaigns skip the entire first-year annual pulse. Click to enable automated de jure vassal transfer."
- ucm_ai_yearly_de_jure_transfer_toggle_tooltip_on: "Active: Independent AI auto-de jure yearly; click disable."
- ucm_ai_yearly_de_jure_transfer_toggle_tooltip_off: "Default inactive: No automated legal vassal shift; click enable."
- ucm_ai_yearly_de_jure_transfer_toggle_confirm_disable: "Turn Off Annual Automated De Jure Reassignment"
- ucm_ai_yearly_de_jure_transfer_toggle_confirm_enable: "Turn On Annual Automated De Jure Reassignment"
- ucm_ai_yearly_de_jure_transfer_toggle_effect_disabled_tt: "Disabled: Annual pulse no longer runs automated de jure vassal restructuring."
- ucm_ai_yearly_de_jure_transfer_toggle_effect_enabled_tt: "Enabled: Independent AI realms undergo yearly de jure vassal reorganization."
 
- ucm_ai_boost_toggle_decision_title_on: "#bold 【ON】#! Monthly Passive AI Reinforcement"
- ucm_ai_boost_toggle_decision_title_off: "#bold 【OFF】#! Monthly Passive AI Reinforcement"
- ucm_ai_boost_toggle_decision_desc_on: "Monthly automatic AI stat buffs active. Up to 600 landed AI lords receive realm bonuses radiating outward from the player’s domain every calendar month, stacking alongside manual one-click AI empowerment. Click disable."
- ucm_ai_boost_toggle_decision_desc_off: "Monthly passive AI enhancement inactive. Click enable this function, toggle again for shutdown."
- ucm_ai_boost_toggle_decision_confirm_disable: "Suspend Monthly Automatic AI Buffs"
- ucm_ai_boost_toggle_decision_confirm_enable: "Activate Monthly Automatic AI Buffs"
- ucm_ai_boost_toggle_effect_enabled_tt: "Monthly AI reinforcement active: Max 600 landed AI gain outward-radiating national perks per month."
- ucm_ai_boost_toggle_effect_disabled_tt: "Monthly AI reinforcement suspended: No further passive stat bonuses applied automatically."
 
  ucm_ai_realm_governance_support: "Governance Support"
  ucm_ai_realm_governance_support_desc: "Roughly 50% army upkeep reduction; drastically increased men-at-arms cap & unit size. Boosted construction speed and domain income alongside improved diplomacy and belligerent inclination. AI gains higher greed alongside reduced compassion and honor; domain limit +2. All independent realms obtain yearly expansion bonuses plus stackable surge modifiers, elevated vassal dues and EP3 administrative perks. Permanent automatic de jure vassal reassignment enabled."
- ucm_ai_expansion_push: "Yearly Expansion Surge"
- ucm_ai_expansion_push_desc: "Mod yearly modifier: ~60% faster construction, ~70% cheaper men-at-arms maintenance. Shifts AI war desire, rationality and ambition to pursue claims more readily without forcing arbitrary declarations of war."
- ucm_ai_stable_surge: "Major Annual Expansion Surge"
- ucm_ai_stable_surge_desc: "Yearly incremental boost to AI bellicosity, boldness, rationality and ambition stacking atop base expansion surge; all war declarations abide by unmodified base-game native AI logic."
- ucm_ai_counter_player_pressure: "Anti-Hegemony Coalition"
- ucm_ai_counter_player_pressure_desc: "Triggered if player owns an empire title or rules over 80+ counties: all independent AI gain temporary boosts to diplomatic range, sociability, intrigue and warlikeness to encourage alliance formation against overwhelming player dominance. Declarations of war, abductions and royal marriages follow unaltered vanilla AI calculation rules."
- ucm_ai_counter_player_pressure_heavy: "Counter Player Dominance (Heavy)"
- ucm_ai_counter_player_pressure_heavy_desc: "Your realm has exceeded a critical size threshold: all AI receive stronger diplomacy, intrigue, diplomatic range, and war/grudge weights, making alliances against a dominant player more likely. AI decisions still follow the base engine rules."
 
 
 
@@ -519,3 +425,5 @@
 
 
  ucm_imprison_all_realm_vassals_decision_tooltip: ""
+ ucm_de_jure_transfer_batch_complete_toast_title: "De Jure Reassignment Complete"
+ ucm_de_jure_transfer_batch_complete_toast_desc: "All eligible vassals have been reassigned along their primary title's de jure chain (holdings were not split)."

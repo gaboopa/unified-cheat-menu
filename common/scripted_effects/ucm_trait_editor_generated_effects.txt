@@ -1364,28 +1364,28 @@ ucm_trait_editor_dispatch_effect = {
       ucm_trait_editor_toggle_immortal_effect = yes
     }
     else_if = {
-      limit = { scope:trait_flag = flag:trait_warlord_eternal }
-      ucm_trait_editor_toggle_cheat_effect = { TRAIT = trait_warlord_eternal }
+      limit = { scope:trait_flag = flag:ucm_fame_warlord_eternal }
+      ucm_trait_editor_toggle_cheat_effect = { TRAIT = ucm_fame_warlord_eternal }
     }
     else_if = {
-      limit = { scope:trait_flag = flag:trait_wealth_sovereign_max }
-      ucm_trait_editor_toggle_cheat_effect = { TRAIT = trait_wealth_sovereign_max }
+      limit = { scope:trait_flag = flag:ucm_fame_wealth_sovereign_max }
+      ucm_trait_editor_toggle_cheat_effect = { TRAIT = ucm_fame_wealth_sovereign_max }
     }
     else_if = {
-      limit = { scope:trait_flag = flag:trait_ultimate_intrigue_master }
-      ucm_trait_editor_toggle_cheat_effect = { TRAIT = trait_ultimate_intrigue_master }
+      limit = { scope:trait_flag = flag:ucm_fame_ultimate_intrigue_master }
+      ucm_trait_editor_toggle_cheat_effect = { TRAIT = ucm_fame_ultimate_intrigue_master }
     }
     else_if = {
-      limit = { scope:trait_flag = flag:trait_great_builder_god }
-      ucm_trait_editor_toggle_cheat_effect = { TRAIT = trait_great_builder_god }
+      limit = { scope:trait_flag = flag:ucm_fame_great_builder_god }
+      ucm_trait_editor_toggle_cheat_effect = { TRAIT = ucm_fame_great_builder_god }
     }
     else_if = {
-      limit = { scope:trait_flag = flag:trait_nether_conspiracy_lord }
-      ucm_trait_editor_toggle_cheat_effect = { TRAIT = trait_nether_conspiracy_lord }
+      limit = { scope:trait_flag = flag:ucm_fame_nether_conspiracy_lord }
+      ucm_trait_editor_toggle_cheat_effect = { TRAIT = ucm_fame_nether_conspiracy_lord }
     }
     else_if = {
-      limit = { scope:trait_flag = flag:trait_eternal_nether_lord }
-      ucm_trait_editor_toggle_cheat_effect = { TRAIT = trait_eternal_nether_lord }
+      limit = { scope:trait_flag = flag:ucm_fame_eternal_nether_lord }
+      ucm_trait_editor_toggle_cheat_effect = { TRAIT = ucm_fame_eternal_nether_lord }
     }
     else_if = {
       limit = { scope:trait_flag = flag:ucm_trait_yannian_dan }

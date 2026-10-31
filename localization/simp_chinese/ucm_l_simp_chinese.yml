@@ -29,8 +29,6 @@
  ucm_quick_piety_tt: "给予目标 1,000 虔诚。"
  ucm_open_trait_editor: "特质编辑器"
  ucm_open_trait_editor_tt: "为目标打开特质编辑器。"
- ucm_open_cheat_trait_editor: "作弊特质编辑器"
- ucm_open_cheat_trait_editor_tt: "为目标打开作弊特质编辑器。"
  ucm_open_lifestyle_editor: "生活方式编辑器"
  ucm_open_lifestyle_editor_tt: "为目标打开生活方式编辑器。"
  ucm_second_set_target: "将目标设为第二人物"

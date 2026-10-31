@@ -29,8 +29,6 @@
  ucm_quick_piety_tt: "Gibt dem Ziel 1.000 Frömmigkeit."
  ucm_open_trait_editor: "Eigenschaftseditor"
  ucm_open_trait_editor_tt: "Öffnet den Eigenschaftseditor für das Ziel."
- ucm_open_cheat_trait_editor: "Cheat-Eigenschaftseditor"
- ucm_open_cheat_trait_editor_tt: "Öffnet den Cheat-Eigenschaftseditor für das Ziel."
  ucm_open_lifestyle_editor: "Lebensstil-Editor"
  ucm_open_lifestyle_editor_tt: "Öffnet den Lebensstil-Editor für das Ziel."
  ucm_second_set_target: "Ziel zur zweiten Person machen"

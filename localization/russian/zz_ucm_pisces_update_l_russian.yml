@@ -17,10 +17,6 @@
  tradition_zz_cultural_polygamy_three_wives_name:0 "Культурное многоженство"
  tradition_zz_cultural_polygamy_three_wives_desc:0 "В этой культуре правители высших рангов по традиции содержат дом с несколькими супругами и наложницами, чтобы обеспечить многочисленность и стабильность своей династии."
  
- tenet_zz_empty_1_name:0 "Четвертый догмат"
- tenet_zz_empty_1_desc:0 "Дополнительный религиозный догмат."
- tenet_zz_empty_2_name:0 "Пятый догмат"
- tenet_zz_empty_2_desc:0 "Дополнительный религиозный догмат."
  
  ucm_change_age_interaction:0 "Изменить возраст персонажа"
     flag_age_6:0 "6 лет"

@@ -391,86 +391,6 @@ ucm_acm_faith_populate_doctrine_catalog_effect = {
     name = ucm_acm_doctrine_list_core_tenets
     target = flag:tenet_takamin
   }
-  add_to_global_variable_list = {
-    name = ucm_acm_doctrine_list_core_tenets
-    target = flag:tenet_zz_empty_1
-  }
-  add_to_global_variable_list = {
-    name = ucm_acm_doctrine_list_core_tenets
-    target = flag:tenet_zz_empty_2
-  }
-  add_to_global_variable_list = {
-    name = ucm_acm_doctrine_list_core_tenets
-    target = flag:tenet_zz_empty_3
-  }
-  add_to_global_variable_list = {
-    name = ucm_acm_doctrine_list_core_tenets
-    target = flag:tenet_zz_empty_4
-  }
-  add_to_global_variable_list = {
-    name = ucm_acm_doctrine_list_core_tenets
-    target = flag:tenet_zz_empty_5
-  }
-  add_to_global_variable_list = {
-    name = ucm_acm_doctrine_list_core_tenets
-    target = flag:tenet_zz_empty_6
-  }
-  add_to_global_variable_list = {
-    name = ucm_acm_doctrine_list_core_tenets
-    target = flag:tenet_zz_empty_7
-  }
-  add_to_global_variable_list = {
-    name = ucm_acm_doctrine_list_core_tenets
-    target = flag:tenet_zz_empty_8
-  }
-  add_to_global_variable_list = {
-    name = ucm_acm_doctrine_list_core_tenets
-    target = flag:tenet_zz_empty_9
-  }
-  add_to_global_variable_list = {
-    name = ucm_acm_doctrine_list_core_tenets
-    target = flag:tenet_zz_empty_10
-  }
-  add_to_global_variable_list = {
-    name = ucm_acm_doctrine_list_core_tenets
-    target = flag:tenet_zz_empty_11
-  }
-  add_to_global_variable_list = {
-    name = ucm_acm_doctrine_list_core_tenets
-    target = flag:tenet_zz_empty_12
-  }
-  add_to_global_variable_list = {
-    name = ucm_acm_doctrine_list_core_tenets
-    target = flag:tenet_zz_empty_13
-  }
-  add_to_global_variable_list = {
-    name = ucm_acm_doctrine_list_core_tenets
-    target = flag:tenet_zz_empty_14
-  }
-  add_to_global_variable_list = {
-    name = ucm_acm_doctrine_list_core_tenets
-    target = flag:tenet_zz_empty_15
-  }
-  add_to_global_variable_list = {
-    name = ucm_acm_doctrine_list_core_tenets
-    target = flag:tenet_zz_empty_16
-  }
-  add_to_global_variable_list = {
-    name = ucm_acm_doctrine_list_core_tenets
-    target = flag:tenet_zz_empty_17
-  }
-  add_to_global_variable_list = {
-    name = ucm_acm_doctrine_list_core_tenets
-    target = flag:tenet_zz_empty_18
-  }
-  add_to_global_variable_list = {
-    name = ucm_acm_doctrine_list_core_tenets
-    target = flag:tenet_zz_empty_19
-  }
-  add_to_global_variable_list = {
-    name = ucm_acm_doctrine_list_core_tenets
-    target = flag:tenet_zz_empty_20
-  }
   clear_global_variable_list = ucm_acm_doctrine_list_main_group
   add_to_global_variable_list = {
     name = ucm_acm_doctrine_list_main_group
@@ -935,80 +855,24 @@ ucm_acm_faith_refresh_display_lists_effect = {
       }
     }
     if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = adulterer } }
+      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = wrathful } }
       add_to_global_variable_list = {
         name = ucm_acm_fe_display_sin_traits
-        target = flag:adulterer
+        target = flag:wrathful
       }
     }
     if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = albino } }
+      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = cynical } }
       add_to_global_variable_list = {
         name = ucm_acm_fe_display_sin_traits
-        target = flag:albino
+        target = flag:cynical
       }
     }
     if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = ambitious } }
+      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = lazy } }
       add_to_global_variable_list = {
         name = ucm_acm_fe_display_sin_traits
-        target = flag:ambitious
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = arbitrary } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:arbitrary
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = arrogant } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:arrogant
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = beauty_bad_3 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:beauty_bad_3
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = beauty_good_3 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:beauty_good_3
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = berserker } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:berserker
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = lifestyle_blademaster } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:lifestyle_blademaster
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = blind } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:blind
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = brave } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:brave
+        target = flag:lazy
       }
     }
     if = {
@@ -1019,24 +883,31 @@ ucm_acm_faith_refresh_display_lists_effect = {
       }
     }
     if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = calm } }
+      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = generous } }
       add_to_global_variable_list = {
         name = ucm_acm_fe_display_sin_traits
-        target = flag:calm
+        target = flag:generous
       }
     }
     if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = cannibal } }
+      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = trusting } }
       add_to_global_variable_list = {
         name = ucm_acm_fe_display_sin_traits
-        target = flag:cannibal
+        target = flag:trusting
       }
     }
     if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = celibate } }
+      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = shy } }
       add_to_global_variable_list = {
         name = ucm_acm_fe_display_sin_traits
-        target = flag:celibate
+        target = flag:shy
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = vengeful } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_sin_traits
+        target = flag:vengeful
       }
     }
     if = {
@@ -1044,6 +915,132 @@ ucm_acm_faith_refresh_display_lists_effect = {
       add_to_global_variable_list = {
         name = ucm_acm_fe_display_sin_traits
         target = flag:chaste
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = paranoid } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_sin_traits
+        target = flag:paranoid
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = arrogant } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_sin_traits
+        target = flag:arrogant
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = disloyal } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_sin_traits
+        target = flag:disloyal
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = ambitious } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_sin_traits
+        target = flag:ambitious
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = craven } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_sin_traits
+        target = flag:craven
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = greedy } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_sin_traits
+        target = flag:greedy
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = zealous } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_sin_traits
+        target = flag:zealous
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = sadistic } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_sin_traits
+        target = flag:sadistic
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = impatient } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_sin_traits
+        target = flag:impatient
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = gregarious } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_sin_traits
+        target = flag:gregarious
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = lustful } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_sin_traits
+        target = flag:lustful
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = arbitrary } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_sin_traits
+        target = flag:arbitrary
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = fickle } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_sin_traits
+        target = flag:fickle
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = architect } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_sin_traits
+        target = flag:architect
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = stubborn } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_sin_traits
+        target = flag:stubborn
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = lifestyle_reveler } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_sin_traits
+        target = flag:lifestyle_reveler
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = inappetetic } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_sin_traits
+        target = flag:inappetetic
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = temperate } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_sin_traits
+        target = flag:temperate
       }
     }
     if = {
@@ -1061,157 +1058,10 @@ ucm_acm_faith_refresh_display_lists_effect = {
       }
     }
     if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = craven } }
+      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = loyal } }
       add_to_global_variable_list = {
         name = ucm_acm_fe_display_sin_traits
-        target = flag:craven
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = cynical } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:cynical
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = diligent } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:diligent
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = disfigured } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:disfigured
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = disloyal } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:disloyal
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = dull } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:dull
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = dwarf } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:dwarf
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = education_diplomacy_4 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:education_diplomacy_4
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = education_intrigue_4 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:education_intrigue_4
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = education_learning_4 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:education_learning_4
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = education_martial_4 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:education_martial_4
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = education_stewardship_4 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:education_stewardship_4
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = eunuch_1 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:eunuch_1
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = excommunicated } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:excommunicated
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = fecund } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:fecund
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = fickle } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:fickle
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = forgiving } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:forgiving
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = fornicator } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:fornicator
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = generous } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:generous
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = giant } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:giant
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = greedy } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:greedy
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = gregarious } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:gregarious
+        target = flag:loyal
       }
     }
     if = {
@@ -1222,325 +1072,10 @@ ucm_acm_faith_refresh_display_lists_effect = {
       }
     }
     if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = humble } }
+      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = forgiving } }
       add_to_global_variable_list = {
         name = ucm_acm_fe_display_sin_traits
-        target = flag:humble
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = lifestyle_hunter } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:lifestyle_hunter
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = impatient } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:impatient
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = inbred } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:inbred
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = incestuous } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:incestuous
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = intellect_bad_3 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:intellect_bad_3
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = intellect_good_3 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:intellect_good_3
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = just } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:just
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = lazy } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:lazy
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = lifestyle_herbalist } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:lifestyle_herbalist
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = loyal } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:loyal
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = lunatic_1 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:lunatic_1
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = lustful } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:lustful
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = murderer } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:murderer
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = lifestyle_mystic } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:lifestyle_mystic
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = one_eyed } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:one_eyed
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = order_member } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:order_member
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = paranoid } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:paranoid
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = patient } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:patient
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = lifestyle_physician } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:lifestyle_physician
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = physique_bad_3 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:physique_bad_3
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = physique_good_3 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:physique_good_3
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = lifestyle_poet } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:lifestyle_poet
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = possessed_1 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:possessed_1
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = pregnant } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:pregnant
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = pure_blooded } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:pure_blooded
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = reincarnation } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:reincarnation
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = lifestyle_reveler } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:lifestyle_reveler
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = sadistic } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:sadistic
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = scaly } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:scaly
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = scarred } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:scarred
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = shieldmaiden } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:shieldmaiden
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = shrewd } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:shrewd
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = shy } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:shy
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = strong } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:strong
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = stubborn } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:stubborn
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = temperate } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:temperate
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = trusting } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:trusting
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = varangian } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:varangian
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = vengeful } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:vengeful
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = viking } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:viking
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = weak } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:weak
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = wrathful } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:wrathful
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = zealous } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:zealous
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = architect } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:architect
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_sin_rite = inappetetic } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_sin_traits
-        target = flag:inappetetic
+        target = flag:forgiving
       }
     }
     if = {
@@ -1621,83 +1156,6 @@ ucm_acm_faith_refresh_display_lists_effect = {
       }
     }
     if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = adulterer } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:adulterer
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = albino } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:albino
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = ambitious } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:ambitious
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = arbitrary } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:arbitrary
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = beauty_bad_3 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:beauty_bad_3
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = beauty_good_3 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:beauty_good_3
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = berserker } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:berserker
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = lifestyle_blademaster } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:lifestyle_blademaster
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = blind } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:blind
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = brave } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:brave
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = callous } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:callous
-      }
-    }
-    if = {
       limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = calm } }
       add_to_global_variable_list = {
         name = ucm_acm_fe_display_virtue_traits
@@ -1705,500 +1163,10 @@ ucm_acm_faith_refresh_display_lists_effect = {
       }
     }
     if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = cannibal } }
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = consecrated_blood } }
       add_to_global_variable_list = {
         name = ucm_acm_fe_display_virtue_traits
-        target = flag:cannibal
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = celibate } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:celibate
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = chaste } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:chaste
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = compassionate } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:compassionate
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = content } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:content
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = craven } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:craven
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = cynical } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:cynical
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = diligent } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:diligent
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = disfigured } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:disfigured
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = disloyal } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:disloyal
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = dull } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:dull
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = dwarf } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:dwarf
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = education_diplomacy_4 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:education_diplomacy_4
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = education_intrigue_4 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:education_intrigue_4
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = education_learning_4 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:education_learning_4
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = education_martial_4 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:education_martial_4
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = education_stewardship_4 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:education_stewardship_4
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = eunuch_1 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:eunuch_1
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = excommunicated } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:excommunicated
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = fecund } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:fecund
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = fickle } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:fickle
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = forgiving } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:forgiving
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = fornicator } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:fornicator
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = generous } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:generous
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = giant } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:giant
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = gluttonous } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:gluttonous
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = greedy } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:greedy
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = gregarious } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:gregarious
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = humble } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:humble
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = lifestyle_hunter } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:lifestyle_hunter
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = impatient } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:impatient
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = inbred } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:inbred
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = incestuous } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:incestuous
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = intellect_bad_3 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:intellect_bad_3
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = intellect_good_3 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:intellect_good_3
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = just } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:just
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = kinslayer_3 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:kinslayer_3
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = lazy } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:lazy
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = lifestyle_herbalist } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:lifestyle_herbalist
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = loyal } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:loyal
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = lunatic_1 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:lunatic_1
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = lustful } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:lustful
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = murderer } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:murderer
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = lifestyle_mystic } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:lifestyle_mystic
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = one_eyed } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:one_eyed
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = order_member } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:order_member
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = paranoid } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:paranoid
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = patient } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:patient
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = lifestyle_physician } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:lifestyle_physician
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = physique_bad_3 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:physique_bad_3
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = physique_good_3 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:physique_good_3
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = lifestyle_poet } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:lifestyle_poet
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = possessed_1 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:possessed_1
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = pregnant } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:pregnant
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = pure_blooded } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:pure_blooded
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = reincarnation } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:reincarnation
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = lifestyle_reveler } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:lifestyle_reveler
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = sadistic } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:sadistic
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = scaly } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:scaly
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = scarred } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:scarred
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = shieldmaiden } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:shieldmaiden
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = shrewd } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:shrewd
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = shy } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:shy
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = sodomite } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:sodomite
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = strong } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:strong
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = trusting } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:trusting
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = varangian } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:varangian
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = vengeful } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:vengeful
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = viking } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:viking
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = weak } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:weak
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = wrathful } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_virtue_traits
-        target = flag:wrathful
+        target = flag:consecrated_blood
       }
     }
     if = {
@@ -2209,10 +1177,87 @@ ucm_acm_faith_refresh_display_lists_effect = {
       }
     }
     if = {
-      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = consecrated_blood } }
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = diligent } }
       add_to_global_variable_list = {
         name = ucm_acm_fe_display_virtue_traits
-        target = flag:consecrated_blood
+        target = flag:diligent
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = pregnant } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:pregnant
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = compassionate } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:compassionate
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = greedy } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:greedy
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = humble } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:humble
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = gregarious } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:gregarious
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = forgiving } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:forgiving
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = fecund } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:fecund
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = trusting } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:trusting
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = loyal } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:loyal
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = content } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:content
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = brave } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:brave
       }
     }
     if = {
@@ -2230,10 +1275,31 @@ ucm_acm_faith_refresh_display_lists_effect = {
       }
     }
     if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = generous } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:generous
+      }
+    }
+    if = {
       limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = legitimized_bastard } }
       add_to_global_variable_list = {
         name = ucm_acm_fe_display_virtue_traits
         target = flag:legitimized_bastard
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = patient } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:patient
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = shy } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:shy
       }
     }
     if = {
@@ -2251,10 +1317,59 @@ ucm_acm_faith_refresh_display_lists_effect = {
       }
     }
     if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = chaste } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:chaste
+      }
+    }
+    if = {
       limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = eccentric } }
       add_to_global_variable_list = {
         name = ucm_acm_fe_display_virtue_traits
         target = flag:eccentric
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = lustful } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:lustful
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = pure_blooded } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:pure_blooded
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = incestuous } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:incestuous
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = fickle } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:fickle
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = lifestyle_mystic } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:lifestyle_mystic
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = just } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:just
       }
     }
     if = {
@@ -2265,6 +1380,20 @@ ucm_acm_faith_refresh_display_lists_effect = {
       }
     }
     if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = paranoid } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:paranoid
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = possessed_1 } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:possessed_1
+      }
+    }
+    if = {
       limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = possessed_genetic } }
       add_to_global_variable_list = {
         name = ucm_acm_fe_display_virtue_traits
@@ -2272,10 +1401,31 @@ ucm_acm_faith_refresh_display_lists_effect = {
       }
     }
     if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = gluttonous } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:gluttonous
+      }
+    }
+    if = {
       limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = gout_ridden } }
       add_to_global_variable_list = {
         name = ucm_acm_fe_display_virtue_traits
         target = flag:gout_ridden
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = sadistic } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:sadistic
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = giant } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:giant
       }
     }
     if = {
@@ -2293,6 +1443,34 @@ ucm_acm_faith_refresh_display_lists_effect = {
       }
     }
     if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = ambitious } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:ambitious
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = disloyal } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:disloyal
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = cannibal } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:cannibal
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = vengeful } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:vengeful
+      }
+    }
+    if = {
       limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = architect } }
       add_to_global_variable_list = {
         name = ucm_acm_fe_display_virtue_traits
@@ -2307,10 +1485,38 @@ ucm_acm_faith_refresh_display_lists_effect = {
       }
     }
     if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = callous } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:callous
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = cynical } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:cynical
+      }
+    }
+    if = {
       limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = confucian_education } }
       add_to_global_variable_list = {
         name = ucm_acm_fe_display_virtue_traits
         target = flag:confucian_education
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = wrathful } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:wrathful
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = lifestyle_hunter } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:lifestyle_hunter
       }
     }
     if = {
@@ -2321,10 +1527,24 @@ ucm_acm_faith_refresh_display_lists_effect = {
       }
     }
     if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = lifestyle_poet } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:lifestyle_poet
+      }
+    }
+    if = {
       limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = violet_poet } }
       add_to_global_variable_list = {
         name = ucm_acm_fe_display_virtue_traits
         target = flag:violet_poet
+      }
+    }
+    if = {
+      limit = { scope:ucm_fe_rite = { trait_is_virtue_rite = one_eyed } }
+      add_to_global_variable_list = {
+        name = ucm_acm_fe_display_virtue_traits
+        target = flag:one_eyed
       }
     }
     if = {
@@ -3011,146 +2231,6 @@ ucm_acm_faith_refresh_display_lists_effect = {
       add_to_global_variable_list = {
         name = ucm_acm_fe_display_core_tenets
         target = flag:tenet_takamin
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { rite_has_tenet = tenet_zz_empty_1 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_core_tenets
-        target = flag:tenet_zz_empty_1
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { rite_has_tenet = tenet_zz_empty_2 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_core_tenets
-        target = flag:tenet_zz_empty_2
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { rite_has_tenet = tenet_zz_empty_3 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_core_tenets
-        target = flag:tenet_zz_empty_3
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { rite_has_tenet = tenet_zz_empty_4 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_core_tenets
-        target = flag:tenet_zz_empty_4
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { rite_has_tenet = tenet_zz_empty_5 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_core_tenets
-        target = flag:tenet_zz_empty_5
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { rite_has_tenet = tenet_zz_empty_6 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_core_tenets
-        target = flag:tenet_zz_empty_6
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { rite_has_tenet = tenet_zz_empty_7 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_core_tenets
-        target = flag:tenet_zz_empty_7
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { rite_has_tenet = tenet_zz_empty_8 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_core_tenets
-        target = flag:tenet_zz_empty_8
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { rite_has_tenet = tenet_zz_empty_9 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_core_tenets
-        target = flag:tenet_zz_empty_9
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { rite_has_tenet = tenet_zz_empty_10 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_core_tenets
-        target = flag:tenet_zz_empty_10
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { rite_has_tenet = tenet_zz_empty_11 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_core_tenets
-        target = flag:tenet_zz_empty_11
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { rite_has_tenet = tenet_zz_empty_12 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_core_tenets
-        target = flag:tenet_zz_empty_12
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { rite_has_tenet = tenet_zz_empty_13 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_core_tenets
-        target = flag:tenet_zz_empty_13
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { rite_has_tenet = tenet_zz_empty_14 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_core_tenets
-        target = flag:tenet_zz_empty_14
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { rite_has_tenet = tenet_zz_empty_15 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_core_tenets
-        target = flag:tenet_zz_empty_15
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { rite_has_tenet = tenet_zz_empty_16 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_core_tenets
-        target = flag:tenet_zz_empty_16
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { rite_has_tenet = tenet_zz_empty_17 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_core_tenets
-        target = flag:tenet_zz_empty_17
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { rite_has_tenet = tenet_zz_empty_18 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_core_tenets
-        target = flag:tenet_zz_empty_18
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { rite_has_tenet = tenet_zz_empty_19 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_core_tenets
-        target = flag:tenet_zz_empty_19
-      }
-    }
-    if = {
-      limit = { scope:ucm_fe_rite = { rite_has_tenet = tenet_zz_empty_20 } }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_display_core_tenets
-        target = flag:tenet_zz_empty_20
       }
     }
     if = {
@@ -4056,26 +3136,6 @@ ucm_acm_faith_resolve_pick_group_effect = {
           var:ucm_acm_pick_doctrine_key = flag:tenet_sacred_destruction
           var:ucm_acm_pick_doctrine_key = flag:tenet_preservation
           var:ucm_acm_pick_doctrine_key = flag:tenet_takamin
-          var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_1
-          var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_2
-          var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_3
-          var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_4
-          var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_5
-          var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_6
-          var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_7
-          var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_8
-          var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_9
-          var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_10
-          var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_11
-          var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_12
-          var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_13
-          var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_14
-          var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_15
-          var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_16
-          var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_17
-          var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_18
-          var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_19
-          var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_20
         }
       }
       set_variable = {
@@ -4853,86 +3913,6 @@ ucm_acm_faith_populate_pick_current_effect = {
       add_to_global_variable_list = {
         name = ucm_acm_fe_pick_current
         target = flag:tenet_takamin
-      }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_pick_current
-        target = flag:tenet_zz_empty_1
-      }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_pick_current
-        target = flag:tenet_zz_empty_2
-      }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_pick_current
-        target = flag:tenet_zz_empty_3
-      }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_pick_current
-        target = flag:tenet_zz_empty_4
-      }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_pick_current
-        target = flag:tenet_zz_empty_5
-      }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_pick_current
-        target = flag:tenet_zz_empty_6
-      }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_pick_current
-        target = flag:tenet_zz_empty_7
-      }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_pick_current
-        target = flag:tenet_zz_empty_8
-      }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_pick_current
-        target = flag:tenet_zz_empty_9
-      }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_pick_current
-        target = flag:tenet_zz_empty_10
-      }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_pick_current
-        target = flag:tenet_zz_empty_11
-      }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_pick_current
-        target = flag:tenet_zz_empty_12
-      }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_pick_current
-        target = flag:tenet_zz_empty_13
-      }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_pick_current
-        target = flag:tenet_zz_empty_14
-      }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_pick_current
-        target = flag:tenet_zz_empty_15
-      }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_pick_current
-        target = flag:tenet_zz_empty_16
-      }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_pick_current
-        target = flag:tenet_zz_empty_17
-      }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_pick_current
-        target = flag:tenet_zz_empty_18
-      }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_pick_current
-        target = flag:tenet_zz_empty_19
-      }
-      add_to_global_variable_list = {
-        name = ucm_acm_fe_pick_current
-        target = flag:tenet_zz_empty_20
       }
     }
     else_if = {
@@ -5792,86 +4772,6 @@ ucm_acm_faith_remove_pick_slot_doctrine_effect = {
       limit = { var:ucm_acm_pick_slot = flag:tenet_takamin }
       var:ucm_selected_faith_var = { main_rite = { remove_rite_tenet = tenet:tenet_takamin } }
     }
-    else_if = {
-      limit = { var:ucm_acm_pick_slot = flag:tenet_zz_empty_1 }
-      var:ucm_selected_faith_var = { main_rite = { remove_rite_tenet = tenet:tenet_zz_empty_1 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_slot = flag:tenet_zz_empty_2 }
-      var:ucm_selected_faith_var = { main_rite = { remove_rite_tenet = tenet:tenet_zz_empty_2 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_slot = flag:tenet_zz_empty_3 }
-      var:ucm_selected_faith_var = { main_rite = { remove_rite_tenet = tenet:tenet_zz_empty_3 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_slot = flag:tenet_zz_empty_4 }
-      var:ucm_selected_faith_var = { main_rite = { remove_rite_tenet = tenet:tenet_zz_empty_4 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_slot = flag:tenet_zz_empty_5 }
-      var:ucm_selected_faith_var = { main_rite = { remove_rite_tenet = tenet:tenet_zz_empty_5 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_slot = flag:tenet_zz_empty_6 }
-      var:ucm_selected_faith_var = { main_rite = { remove_rite_tenet = tenet:tenet_zz_empty_6 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_slot = flag:tenet_zz_empty_7 }
-      var:ucm_selected_faith_var = { main_rite = { remove_rite_tenet = tenet:tenet_zz_empty_7 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_slot = flag:tenet_zz_empty_8 }
-      var:ucm_selected_faith_var = { main_rite = { remove_rite_tenet = tenet:tenet_zz_empty_8 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_slot = flag:tenet_zz_empty_9 }
-      var:ucm_selected_faith_var = { main_rite = { remove_rite_tenet = tenet:tenet_zz_empty_9 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_slot = flag:tenet_zz_empty_10 }
-      var:ucm_selected_faith_var = { main_rite = { remove_rite_tenet = tenet:tenet_zz_empty_10 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_slot = flag:tenet_zz_empty_11 }
-      var:ucm_selected_faith_var = { main_rite = { remove_rite_tenet = tenet:tenet_zz_empty_11 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_slot = flag:tenet_zz_empty_12 }
-      var:ucm_selected_faith_var = { main_rite = { remove_rite_tenet = tenet:tenet_zz_empty_12 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_slot = flag:tenet_zz_empty_13 }
-      var:ucm_selected_faith_var = { main_rite = { remove_rite_tenet = tenet:tenet_zz_empty_13 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_slot = flag:tenet_zz_empty_14 }
-      var:ucm_selected_faith_var = { main_rite = { remove_rite_tenet = tenet:tenet_zz_empty_14 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_slot = flag:tenet_zz_empty_15 }
-      var:ucm_selected_faith_var = { main_rite = { remove_rite_tenet = tenet:tenet_zz_empty_15 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_slot = flag:tenet_zz_empty_16 }
-      var:ucm_selected_faith_var = { main_rite = { remove_rite_tenet = tenet:tenet_zz_empty_16 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_slot = flag:tenet_zz_empty_17 }
-      var:ucm_selected_faith_var = { main_rite = { remove_rite_tenet = tenet:tenet_zz_empty_17 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_slot = flag:tenet_zz_empty_18 }
-      var:ucm_selected_faith_var = { main_rite = { remove_rite_tenet = tenet:tenet_zz_empty_18 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_slot = flag:tenet_zz_empty_19 }
-      var:ucm_selected_faith_var = { main_rite = { remove_rite_tenet = tenet:tenet_zz_empty_19 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_slot = flag:tenet_zz_empty_20 }
-      var:ucm_selected_faith_var = { main_rite = { remove_rite_tenet = tenet:tenet_zz_empty_20 } }
-    }
   }
 }
 
@@ -6268,86 +5168,6 @@ ucm_acm_faith_add_doctrine_to_selected_effect = {
     else_if = {
       limit = { var:ucm_acm_pick_doctrine_key = flag:tenet_takamin }
       var:ucm_selected_faith_var = { main_rite = { add_rite_tenet = tenet_takamin } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_1 }
-      var:ucm_selected_faith_var = { main_rite = { add_rite_tenet = tenet_zz_empty_1 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_2 }
-      var:ucm_selected_faith_var = { main_rite = { add_rite_tenet = tenet_zz_empty_2 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_3 }
-      var:ucm_selected_faith_var = { main_rite = { add_rite_tenet = tenet_zz_empty_3 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_4 }
-      var:ucm_selected_faith_var = { main_rite = { add_rite_tenet = tenet_zz_empty_4 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_5 }
-      var:ucm_selected_faith_var = { main_rite = { add_rite_tenet = tenet_zz_empty_5 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_6 }
-      var:ucm_selected_faith_var = { main_rite = { add_rite_tenet = tenet_zz_empty_6 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_7 }
-      var:ucm_selected_faith_var = { main_rite = { add_rite_tenet = tenet_zz_empty_7 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_8 }
-      var:ucm_selected_faith_var = { main_rite = { add_rite_tenet = tenet_zz_empty_8 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_9 }
-      var:ucm_selected_faith_var = { main_rite = { add_rite_tenet = tenet_zz_empty_9 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_10 }
-      var:ucm_selected_faith_var = { main_rite = { add_rite_tenet = tenet_zz_empty_10 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_11 }
-      var:ucm_selected_faith_var = { main_rite = { add_rite_tenet = tenet_zz_empty_11 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_12 }
-      var:ucm_selected_faith_var = { main_rite = { add_rite_tenet = tenet_zz_empty_12 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_13 }
-      var:ucm_selected_faith_var = { main_rite = { add_rite_tenet = tenet_zz_empty_13 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_14 }
-      var:ucm_selected_faith_var = { main_rite = { add_rite_tenet = tenet_zz_empty_14 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_15 }
-      var:ucm_selected_faith_var = { main_rite = { add_rite_tenet = tenet_zz_empty_15 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_16 }
-      var:ucm_selected_faith_var = { main_rite = { add_rite_tenet = tenet_zz_empty_16 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_17 }
-      var:ucm_selected_faith_var = { main_rite = { add_rite_tenet = tenet_zz_empty_17 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_18 }
-      var:ucm_selected_faith_var = { main_rite = { add_rite_tenet = tenet_zz_empty_18 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_19 }
-      var:ucm_selected_faith_var = { main_rite = { add_rite_tenet = tenet_zz_empty_19 } }
-    }
-    else_if = {
-      limit = { var:ucm_acm_pick_doctrine_key = flag:tenet_zz_empty_20 }
-      var:ucm_selected_faith_var = { main_rite = { add_rite_tenet = tenet_zz_empty_20 } }
     }
     else_if = {
       limit = { var:ucm_acm_pick_doctrine_key = flag:doctrine_gender_male_dominated }

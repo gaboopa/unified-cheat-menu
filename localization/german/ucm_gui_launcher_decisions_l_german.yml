@@ -1,8 +1,6 @@
 ﻿l_german:
  ucm_open_trait_editor_decision: "Eigenschaftseditor öffnen"
  ucm_open_trait_editor_decision_desc: "Bearbeitet die Eigenschaften des ausgewählten Charakters."
- ucm_open_cheat_trait_editor_decision: "Cheat-Eigenschaftseditor öffnen"
- ucm_open_cheat_trait_editor_decision_desc: "Bearbeitet die Cheat-Eigenschaften des ausgewählten Charakters."
  ucm_open_lifestyle_editor_decision: "Lebenswandeleditor öffnen"
  ucm_open_lifestyle_editor_decision_desc: "Bearbeitet die Lebenswandel-Erfahrung und Vorteile des ausgewählten Charakters."
  ucm_open_sand_soldiers_decision: "Armee-Generator öffnen"

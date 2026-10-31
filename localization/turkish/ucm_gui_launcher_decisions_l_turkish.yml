@@ -1,8 +1,6 @@
 ﻿l_turkish:
  ucm_open_trait_editor_decision: "Özellik Düzenleyicisini Aç"
  ucm_open_trait_editor_decision_desc: "Seçili karakterin özelliklerini düzenle."
- ucm_open_cheat_trait_editor_decision: "Hile Özelliği Düzenleyicisini Aç"
- ucm_open_cheat_trait_editor_decision_desc: "Seçili karakterin Hile özelliklerini düzenle."
  ucm_open_lifestyle_editor_decision: "Yaşam Tarzı Düzenleyicisini Aç"
  ucm_open_lifestyle_editor_decision_desc: "Seçili karakterin yaşam tarzı tecrübesini ve becerilerini düzenle."
  ucm_open_sand_soldiers_decision: "Ordu Oluşturucuyu Aç"

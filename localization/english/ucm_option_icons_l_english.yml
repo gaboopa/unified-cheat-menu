@@ -133,14 +133,6 @@
 
  ucm_cheat_menu.00x.close: "@cross_icon! Close"
 
- ucm_cheat_menu.0100.back: "@skill_martial_icon! Back"
-
- ucm_cheat_menu.0100.close: "@cross_icon! Close"
-
- ucm_cheat_menu.0101.back: "@skill_martial_icon! Back"
-
- ucm_cheat_menu.0101.close: "@cross_icon! Close"
-
 
 
  ucm_cheat_menu.0110.page_next: "@skill_learning_icon! Next Page"
@@ -173,8 +165,6 @@
  ucm_cheat_menu.0180.opt_spawn_now: "@dynasty_icon! Generate Now"
 
  ucm_cheat_menu.0185.back_hub: "@skill_martial_icon! Back"
-
- ucm_cheat_menu.0288.back_main: "@skill_martial_icon! Back to Main Categories"
 
 
  ucm_cheat_menu.2900.back_select: "@skill_learning_icon! Re-select Culture"

@@ -28,8 +28,6 @@
  ucm_quick_piety_tt: "Give the target 1,000 piety."
  ucm_open_trait_editor: "Trait Editor"
  ucm_open_trait_editor_tt: "Open the trait editor for the target."
- ucm_open_cheat_trait_editor: "Cheat Trait Editor"
- ucm_open_cheat_trait_editor_tt: "Open the cheat trait editor for the target."
  ucm_open_lifestyle_editor: "Lifestyle Editor"
  ucm_open_lifestyle_editor_tt: "Open the lifestyle editor for the target."
  ucm_second_set_target: "Make Target the Second Character"

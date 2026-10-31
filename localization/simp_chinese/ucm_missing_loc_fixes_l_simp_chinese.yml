@@ -1,16 +1,5 @@
 ﻿l_simp_chinese:
  # CK3 1.20 cleanup: keys the script referenced but no loc file defined, plus raw-text strings turned into keys
- ucm_cheat_menu.3091.opt_activity_controls:0 "@skill_learning_icon! 管理当前活动"
- ucm_cheat_menu.3091.opt_activity_controls_tt:0 "跳过、加速、完成或取消目标正在参与的活动。"
- ucm_cheat_menu.3091.opt_finish_activity:0 "@skull_icon! 结束当前活动"
- ucm_cheat_menu.3091.opt_finish_activity_tt:0 "完成或取消目标正在参与的活动。"
- ucm_cheat_menu.3092.opt_more_entertainment:0 "@prestige_icon! 更多娱乐活动"
- ucm_cheat_menu.3092.opt_more_entertainment_tt:0 "显示下一页娱乐活动。"
- ucm_cheat_menu.3092.back_page1:0 "返回第1页"
- ucm_cheat_menu.3097.opt_more_other:0 "@prestige_icon! 更多活动"
- ucm_cheat_menu.3097.opt_more_other_tt:0 "显示下一页其他活动。"
- ucm_cheat_menu.3097.back_page1:0 "返回第1页"
- ucm_activity_cheat_toast_fast_phase_title:0 "活动已推进一天"
  LIT_learned_trait_check_max_TT:0 "该特质进度已达上限。"
  LIT_learned_trait_check_missing_TT:0 "角色没有该特质，因此未增加经验。"
  dp_char_editor.traits.lifestyle_TT:0 "浏览生活方式特质。"

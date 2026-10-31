@@ -191,13 +191,6 @@ window = {
       layoutpolicy_horizontal = expanding
       margin = { 8 4 }
       spacing = 8
-
-      button_standard = {
-        layoutpolicy_horizontal = expanding
-        text = ucm_acm_culture_picker_footer_edit
-        tooltip = ucm_acm_culture_picker_footer_edit_tt
-        onclick = "[GetScriptedGui('ucm_acm_culture_picker_continue_edit').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-      }
     }
   }
 }

@@ -1,16 +1,5 @@
 ﻿l_english:
  # CK3 1.20 cleanup: keys the script referenced but no loc file defined, plus raw-text strings turned into keys
- ucm_cheat_menu.3091.opt_activity_controls:0 "@skill_learning_icon! Manage Current Activity"
- ucm_cheat_menu.3091.opt_activity_controls_tt:0 "Skip, speed up, complete or cancel the activity the target is taking part in."
- ucm_cheat_menu.3091.opt_finish_activity:0 "@skull_icon! End Current Activity"
- ucm_cheat_menu.3091.opt_finish_activity_tt:0 "Complete or cancel the activity the target is taking part in."
- ucm_cheat_menu.3092.opt_more_entertainment:0 "@prestige_icon! More Entertainment Activities"
- ucm_cheat_menu.3092.opt_more_entertainment_tt:0 "Show the next page of entertainment activities."
- ucm_cheat_menu.3092.back_page1:0 "Back to Page 1"
- ucm_cheat_menu.3097.opt_more_other:0 "@prestige_icon! More Activities"
- ucm_cheat_menu.3097.opt_more_other_tt:0 "Show the next page of other activities."
- ucm_cheat_menu.3097.back_page1:0 "Back to Page 1"
- ucm_activity_cheat_toast_fast_phase_title:0 "Activity advanced by one day"
  LIT_learned_trait_check_max_TT:0 "This trait track is already at its maximum."
  LIT_learned_trait_check_missing_TT:0 "The character does not have this trait, so no experience was added."
  dp_char_editor.traits.lifestyle_TT:0 "Browse lifestyle traits."

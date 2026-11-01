@@ -1,4 +1,4 @@
-﻿# 族内人口清理：无地同宗成员，年满 16 且五主属性之和低于 50（外交+军事+管理+谋略+学识，不含勇武）；不清理玩家本人、人类玩家、玩家子女与孙辈；不分性别
+﻿# Dynasty population cleanup: landless dynasty members aged 16+ whose five main skills sum below 50 (diplomacy + martial + stewardship + intrigue + learning, no prowess). Spares the player, human players, and the player's children and grandchildren. Any gender
 ucm_dynasty_cull_unlanded_weak_effect = {
   dynasty ?= {
     every_dynasty_member = {
@@ -55,7 +55,7 @@ ucm_world_purge_landless_ai_effect = {
     }
   }
 
-  # 世界只扫一次建名单，再 while 最多取 25 个（旧写法的批量计数放在 every_ 的 limit 里，并不能封顶）
+  # Scan the world once to build a list, then a while loop takes at most 25 (the old batch count inside every_'s limit could not cap it)
   if = {
     limit = {
       root = {

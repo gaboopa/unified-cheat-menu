@@ -28,11 +28,11 @@ import os
 
 import gen_ucm_crozier
 import gen_ucm_extra
+from ck3parse import ROOT, WINDOW_BACKGROUND
 
 MOD_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(MOD_DIR, "gui", "ucm_main_menu.gui")
-R = "GuiScope.SetRoot( GetPlayer.MakeScope ).End"
-C = "GetPlayer.MakeScope.Var( 'ucm_target' ).Char"
+TARGET = "GetPlayer.MakeScope.Var( 'ucm_target' ).Char"
 
 EK2_LIFESTYLES = {"magic": "Magic", "dark_arts": "Dark Arts"}
 EK2_TREES = ["conjuration", "destruction", "alteration", "illusion", "restoration", "necromancy"]
@@ -99,7 +99,7 @@ TABS = [
         ("skill", "intrigue"), ("skill", "learning"), ("skill", "prowess"),
         ("row", ["ucm_skill_all_down", "ucm_skill_all_up"]),
         ("row", ["ucm_weight_down", "ucm_weight_up"]),
-        ("value", "UCM_RENOWN", f"{C}.GetDynasty.GetPrestige|0", "ucm_renown"),
+        ("value", "UCM_RENOWN", f"{TARGET}.GetDynasty.GetPrestige|0", "ucm_renown"),
         ("row", ["ucm_renown_1000_down", "ucm_renown_1000_up"]),
         ("row", ["ucm_renown_level_down", "ucm_renown_level_up"]),
         ("h", "UCM_SEC_HEALTH"),
@@ -261,8 +261,8 @@ TABS = [
         ("h", "UCM_SEC_EK2_ARCANA"),
         ("sg", "ucm_ek2_max_arcana"), ("sg", "ucm_ek2_refill_magicka"),
         ("steps",),
-        ("value", "UCM_SKILL_ARCANA", f"{C}.MakeScope.ScriptValue( 'ucm_ek2_arcana_value' )|0", "ucm_ek2_arcana"),
-        ("value", "UCM_SKILL_MAGICKA", f"{C}.MakeScope.ScriptValue( 'ucm_ek2_magicka_value' )|0", "ucm_ek2_magicka"),
+        ("value", "UCM_SKILL_ARCANA", f"{TARGET}.MakeScope.ScriptValue( 'ucm_ek2_arcana_value' )|0", "ucm_ek2_arcana"),
+        ("value", "UCM_SKILL_MAGICKA", f"{TARGET}.MakeScope.ScriptValue( 'ucm_ek2_magicka_value' )|0", "ucm_ek2_magicka"),
         ("h", "UCM_SEC_EK2_LIFESTYLE"),
         *[("sg", f"ucm_ek2_{ls}_{k}") for ls in EK2_LIFESTYLES for k in ("point", "xp")],
         ("h", "UCM_SEC_EK2_SCHOOLS"),
@@ -291,8 +291,8 @@ def sgui_button(name, ind, width="0", expand=True):
         f"{ind}  size = {{ {width} 30 }}",
         f'{ind}  text_single = {{ parentanchor = vcenter|left position = {{ 10 0 }} text = "{name}" using = Font_Size_Small }}',
         f'{ind}  tooltip = "{name}_tt"',
-        f"{ind}  enabled = \"[GetScriptedGui( '{name}' ).IsValid( {R} )]\"",
-        f"{ind}  onclick = \"[GetScriptedGui( '{name}' ).Execute( {R} )]\"",
+        f"{ind}  enabled = \"[GetScriptedGui( '{name}' ).IsValid( {ROOT} )]\"",
+        f"{ind}  onclick = \"[GetScriptedGui( '{name}' ).Execute( {ROOT} )]\"",
         f"{ind}}}",
     ]
 
@@ -305,38 +305,38 @@ CZ_FIXED = {
 CZ_ALL = {"pon_char_self": "ALLON", "poff_char_self": "ALLOFF"}
 
 
-def _cz_button(sg, text, tooltip, label_width, scope=R, size="layoutpolicy_horizontal = expanding size = { 0 28 }", attrs="", fx=""):
+def _cz_button(sgui, text, tooltip, *, label_width, scope=ROOT, size="layoutpolicy_horizontal = expanding size = { 0 28 }", attrs="", fx=""):
     fx_label = f' text_single = {{ parentanchor = vcenter|right position = {{ -10 0 }} text = "{fx}" using = Font_Size_Small default_format = "#high" }}' if fx else ""
-    return (f'button_standard = {{ {size}{attrs} tooltip = "{tooltip}" onclick = "[GetScriptedGui( ' + repr(sg) + f' ).Execute( {scope} )]" '
+    return (f'button_standard = {{ {size}{attrs} tooltip = "{tooltip}" onclick = "[GetScriptedGui( ' + repr(sgui) + f' ).Execute( {scope} )]" '
             f'text_single = {{ parentanchor = vcenter|left position = {{ 10 0 }} text = "{text}" max_width = {label_width} fontsize_min = 9 using = Font_Size_Small }}{fx_label} }}')
 
 
 def crozier_buttons(name, ind):
     """The button(s) for scripted GUI ucm_crozier_cheats_sg_<name>; see gen_ucm_crozier.py for the naming."""
-    sg = f"ucm_crozier_cheats_sg_{name}"
+    sgui = f"ucm_crozier_cheats_sg_{name}"
     kind, _, rest = name.partition("_")
     if kind == "tog" and rest in gen_ucm_crozier.TOGGLES:
-        st = f"GetScriptedGui( 'ucm_crozier_cheats_sg_st_{rest}' ).IsShown( {R} )"
+        st = f"GetScriptedGui( 'ucm_crozier_cheats_sg_st_{rest}' ).IsShown( {ROOT} )"
         key = f"UCM_CROZIER_CHEATS_B_{rest}"
         levelled = rest in gen_ucm_crozier.LEVELLED
         out = [
-            _cz_button(sg, f"{key}_ON", f"{key}_TT", 376 if levelled else 430, attrs=f' visible = "[And( Not( GameHasMultiplePlayers ), {st} )]" down = yes',
+            _cz_button(sgui, f"{key}_ON", f"{key}_TT", label_width=376 if levelled else 430, attrs=f' visible = "[And( Not( GameHasMultiplePlayers ), {st} )]" down = yes',
                        fx=f"×[GetGlobalVariable( 'ucm_crozier_cheats_fx_{rest}' ).GetValue|0]" if levelled else ""),
-            _cz_button(sg, f"{key}_OFF", f"{key}_TT", 430, attrs=f' visible = "[And( Not( GameHasMultiplePlayers ), Not( {st} ) )]"'),
+            _cz_button(sgui, f"{key}_OFF", f"{key}_TT", label_width=430, attrs=f' visible = "[And( Not( GameHasMultiplePlayers ), Not( {st} ) )]"'),
         ]
     elif kind in CZ_FIXED and rest.isdigit():
         width, text, tooltip = CZ_FIXED[kind]
-        out = [_cz_button(sg, text.format(rest), tooltip, width - 16, size=f"size = {{ {width} 26 }}", attrs=f" down = \"[GetScriptedGui( '{sg}' ).IsShown( {R} )]\"")]
+        out = [_cz_button(sgui, text.format(rest), tooltip, label_width=width - 16, size=f"size = {{ {width} 26 }}", attrs=f" down = \"[GetScriptedGui( '{sgui}' ).IsShown( {ROOT} )]\"")]
     elif name in CZ_ALL:
         key = f"UCM_CROZIER_CHEATS_PANEL_{CZ_ALL[name]}"
-        out = [_cz_button(sg, key, f"{key}_TT", 184, size="size = { 200 26 }")]
+        out = [_cz_button(sgui, key, f"{key}_TT", label_width=184, size="size = { 200 26 }")]
     elif name == "do_toasts_toggle" or (kind == "do" and name in gen_ucm_crozier.ACTIONS):
         key = f"UCM_CROZIER_CHEATS_B_{rest}"
-        out = [_cz_button(sg, key, f"{key}_TT", 430)]
+        out = [_cz_button(sgui, key, f"{key}_TT", label_width=430)]
     elif kind == "t" and name in gen_ucm_crozier.ACTIONS:
         key = f"UCM_CROZIER_CHEATS_B_{rest}"
-        scope = R.replace(".End", f".AddScope( 'ucm_crozier_cheats_char', {C}.MakeScope ).End")
-        out = [_cz_button(sg, key, f"{key}_TT", 460, scope=scope, attrs=f" enabled = \"[GetScriptedGui( '{sg}' ).IsValid( {scope} )]\"")]
+        scope = ROOT.replace(".End", f".AddScope( 'ucm_crozier_cheats_char', {TARGET}.MakeScope ).End")
+        out = [_cz_button(sgui, key, f"{key}_TT", label_width=460, scope=scope, attrs=f" enabled = \"[GetScriptedGui( '{sgui}' ).IsValid( {scope} )]\"")]
     else:
         raise ValueError(f"no Crozier button for {name}")
     return [ind + b for b in out]
@@ -346,26 +346,26 @@ def hbox(ind, *body):
     return [f"{ind}hbox = {{", f"{ind}  layoutpolicy_horizontal = expanding", f"{ind}  spacing = 4", *body, f"{ind}}}"]
 
 
-def _item_vs(it, ind):
-    return [f"{ind}button_standard = {{", f"{ind}  layoutpolicy_horizontal = expanding", f"{ind}  size = {{ 0 30 }}", f'{ind}  text = "{it[2]}"',
-            f"{ind}  down = \"[GetVariableSystem.Exists( '{it[1]}' )]\"", f"{ind}  onclick = \"[GetVariableSystem.Toggle( '{it[1]}' )]\"", f"{ind}}}"]
+def _item_vs(entry, ind):
+    return [f"{ind}button_standard = {{", f"{ind}  layoutpolicy_horizontal = expanding", f"{ind}  size = {{ 0 30 }}", f'{ind}  text = "{entry[2]}"',
+            f"{ind}  down = \"[GetVariableSystem.Exists( '{entry[1]}' )]\"", f"{ind}  onclick = \"[GetVariableSystem.Toggle( '{entry[1]}' )]\"", f"{ind}}}"]
 
 
-def _item_togglerow(it, ind):
+def _item_togglerow(entry, ind):
     buttons = []
-    for name, flag in it[1]:
+    for name, flag in entry[1]:
         b = sgui_button(name, ind + "  ")
         b.insert(1, f"{ind}    down = \"[GetPlayer.MakeScope.HasFlag('{flag}')]\"")
         buttons += b
     return hbox(ind, *buttons)
 
 
-def _item_picks(it, ind):
+def _item_picks(entry, ind):
     # Rows of 3: a flowcontainer doesn't wrap, and one long row widens the whole pane past the window.
     lines = []
-    for i in range(0, len(it[1]), 3):
+    for i in range(0, len(entry[1]), 3):
         buttons = []
-        for g in it[1][i:i + 3]:
+        for g in entry[1][i:i + 3]:
             buttons += [
                 f"{ind}  button_standard = {{",
                 f"{ind}    layoutpolicy_horizontal = expanding",
@@ -373,51 +373,51 @@ def _item_picks(it, ind):
                 f'{ind}    text = "ucm_group_pick_{g}"',
                 f'{ind}    tooltip = "ucm_group_pick_{g}_tt"',
                 f"{ind}    down = \"[ObjectsEqual( GetPlayer.MakeScope.Var( 'ucm_group_pick' ).GetFlagName, '{g}' )]\"",
-                f"{ind}    onclick = \"[GetScriptedGui( 'ucm_group_pick_{g}' ).Execute( {R} )]\"",
+                f"{ind}    onclick = \"[GetScriptedGui( 'ucm_group_pick_{g}' ).Execute( {ROOT} )]\"",
                 f"{ind}  }}",
             ]
         lines += hbox(ind, *buttons)
     return lines
 
 
-def _item_czrow(it, ind):
+def _item_czrow(entry, ind):
     lines = [f"{ind}hbox = {{", f"{ind}  spacing = 2"]
-    if len(it) > 2:
-        lines.append(f'{ind}  text_single = {{ text = "{it[2]}" using = Font_Size_Small }}')
-    for name in it[1]:
+    if len(entry) > 2:
+        lines.append(f'{ind}  text_single = {{ text = "{entry[2]}" using = Font_Size_Small }}')
+    for name in entry[1]:
         lines += crozier_buttons(name, ind + "  ")
     return lines + [f"{ind}  expand = {{}}", f"{ind}}}"]
 
 
-def _item_row(it, ind):
+def _item_row(entry, ind):
     buttons = []
-    for name in it[1]:
+    for name in entry[1]:
         buttons += sgui_button(name, ind + "  ")
     return hbox(ind, *buttons)
 
 
-def _item_ia(it, ind):
-    k = it[1]
+def _item_ia(entry, ind):
+    k = entry[1]
     return [
         f"{ind}button_standard = {{",
         f"{ind}  layoutpolicy_horizontal = expanding",
         f"{ind}  size = {{ 0 30 }}",
-        f"{ind}  visible = \"[{C}.IsPlayerInteractionShown( '{k}' )]\"",
-        f"{ind}  enabled = \"[{C}.IsPlayerInteractionValid( '{k}' )]\"",
-        f"{ind}  text = \"[{C}.GetPlayerInteractionName( '{k}' )]\"",
-        f"{ind}  tooltip = \"[{C}.GetPlayerInteractionTooltip( '{k}' )]\"",
-        f"{ind}  onclick = \"[{C}.OpenPlayerInteraction( '{k}' )]\"",
+        f"{ind}  visible = \"[{TARGET}.IsPlayerInteractionShown( '{k}' )]\"",
+        f"{ind}  enabled = \"[{TARGET}.IsPlayerInteractionValid( '{k}' )]\"",
+        f"{ind}  text = \"[{TARGET}.GetPlayerInteractionName( '{k}' )]\"",
+        f"{ind}  tooltip = \"[{TARGET}.GetPlayerInteractionTooltip( '{k}' )]\"",
+        f"{ind}  onclick = \"[{TARGET}.OpenPlayerInteraction( '{k}' )]\"",
         f"{ind}}}",
     ]
 
 
-def _item_dec(it, ind):
+def _item_dec(entry, ind):
     return [
         f"{ind}button_standard = {{",
         f"{ind}  layoutpolicy_horizontal = expanding",
         f"{ind}  size = {{ 0 30 }}",
-        f"{ind}  datacontext = \"[GetDecisionWithKey( '{it[1]}' )]\"",
-        f"{ind}  visible = \"[GetDecisionWithKey( '{it[1]}' ).IsShownForPlayer]\"",  # spelled out: grid() lifts it onto the row, outside this datacontext
+        f"{ind}  datacontext = \"[GetDecisionWithKey( '{entry[1]}' )]\"",
+        f"{ind}  visible = \"[GetDecisionWithKey( '{entry[1]}' ).IsShownForPlayer]\"",  # spelled out: grid() lifts it onto the row, outside this datacontext
         f'{ind}  text = "[Decision.GetTitleForPlayer]"',
         f'{ind}  tooltip = "[Decision.GetShortDescForPlayer]"',
         f"{ind}  onclick = \"[OpenGameViewData( 'decision_detail', Decision.Self )]\"",
@@ -425,39 +425,39 @@ def _item_dec(it, ind):
     ]
 
 
-def _item_steps(it, ind):
+def _item_steps(entry, ind):
     buttons = [f'{ind}  text_single = {{ text = "UCM_STEP_LABEL" }}']
     for n in (1, 5, 10, 25, 100):
         buttons += sgui_button(f"ucm_step_{n}", ind + "  ", "56", expand=False)
     return hbox(ind, *buttons, f"{ind}  expand = {{}}")
 
 
-def _item_value(it, ind):
-    _, label, value, sg = it
+def _item_value(entry, ind):
+    _, label, value, sgui = entry
     return hbox(
         ind,
         f'{ind}  text_single = {{ size = {{ 140 30 }} text = "{label}" }}',
         f"{ind}  text_single = {{ size = {{ 50 30 }} raw_text = \"[{value}]\" default_format = \"#high\" }}",
-        *sgui_button(f"{sg}_down", ind + "  ", "56", expand=False),
-        *sgui_button(f"{sg}_up", ind + "  ", "56", expand=False),
+        *sgui_button(f"{sgui}_down", ind + "  ", "56", expand=False),
+        *sgui_button(f"{sgui}_up", ind + "  ", "56", expand=False),
         f"{ind}  expand = {{}}",
     )
 
 
-def _item_skill(it, ind):
-    s = it[1]
-    return _item_value(("value", f"UCM_SKILL_{s.upper()}", f"{C}.GetSkill( '{s}' )", f"ucm_skill_{s}"), ind)
+def _item_skill(entry, ind):
+    s = entry[1]
+    return _item_value(("value", f"UCM_SKILL_{s.upper()}", f"{TARGET}.GetSkill( '{s}' )", f"ucm_skill_{s}"), ind)
 
 
 ITEMS = {
     "vs": _item_vs,
     "togglerow": _item_togglerow,
-    "cz": lambda it, ind: crozier_buttons(it[1], ind),
+    "cz": lambda entry, ind: crozier_buttons(entry[1], ind),
     "picks": _item_picks,
     "czrow": _item_czrow,
-    "h": lambda it, ind: [f'{ind}text_single = {{ layoutpolicy_horizontal = expanding text = "{it[1]}" using = Font_Size_Medium default_format = "#high" }}'],
-    "t": lambda it, ind: [f'{ind}text_multi = {{ layoutpolicy_horizontal = expanding autoresize = yes max_width = 560 text = "{it[1]}" default_format = "#low" }}'],
-    "sg": lambda it, ind: sgui_button(it[1], ind),
+    "h": lambda entry, ind: [f'{ind}text_single = {{ layoutpolicy_horizontal = expanding text = "{entry[1]}" using = Font_Size_Medium default_format = "#high" }}'],
+    "t": lambda entry, ind: [f'{ind}text_multi = {{ layoutpolicy_horizontal = expanding autoresize = yes max_width = 560 text = "{entry[1]}" default_format = "#low" }}'],
+    "sg": lambda entry, ind: sgui_button(entry[1], ind),
     "row": _item_row,
     "ia": _item_ia,
     "dec": _item_dec,
@@ -467,10 +467,10 @@ ITEMS = {
 }
 
 
-def item(it, ind):
-    if it[0] not in ITEMS:
-        raise ValueError(it)
-    return ITEMS[it[0]](it, ind)
+def item(entry, ind):
+    if entry[0] not in ITEMS:
+        raise ValueError(entry)
+    return ITEMS[entry[0]](entry, ind)
 
 
 GRID_KINDS = ("sg", "ia", "dec")
@@ -500,7 +500,7 @@ def grid(run, ind):
         return out + [f"{ind}}}"]
 
     for i in range(0, len(run), 2):
-        pair = [_split_visible(item(it, ind + "  ")) for it in run[i:i + 2]]
+        pair = [_split_visible(item(entry, ind + "  ")) for entry in run[i:i + 2]]
         if len(pair) == 1:
             lines += row(pair[0][1], [pair[0][0]])
             continue
@@ -519,20 +519,20 @@ def grid(run, ind):
 
 def section(items, ind):
     out, run = [], []
-    for it in items + [None]:
-        if it is not None and it[0] in GRID_KINDS:
-            run.append(it)
+    for entry in items + [None]:
+        if entry is not None and entry[0] in GRID_KINDS:
+            run.append(entry)
             continue
         if run:
             out += grid(run, ind)
             run = []
-        if it is not None:
-            out += item(it, ind)
+        if entry is not None:
+            out += item(entry, ind)
     return out
 
 
 def main():
-    o = [
+    lines = [
         "# AUTO-GENERATED by tools/gen_ucm_main_menu.py; edit TABS there, not this file.",
         "# Unified Cheat Menu main menu (spec Section 2, Layer 2), opened by the ucm_open_cheat_menu interaction.",
         "# Tabs are GUI-only state (GetVariableSystem 'ucm_tab').",
@@ -544,12 +544,9 @@ def main():
         "  movable = yes",
         "  alwaystransparent = no",
         "  filter_mouse = all",
-        f"  visible = \"[GetScriptedGui( 'ucm_menu_visible' ).IsShown( {R} )]\"",
+        f"  visible = \"[GetScriptedGui( 'ucm_menu_visible' ).IsShown( {ROOT} )]\"",
         "",
-        "  widget = {",
-        "    size = { 100% 100% }",
-        "    background = { using = Background_Area_Dark alpha = 1.0 }",
-        "  }",
+        *WINDOW_BACKGROUND,
         "",
         "  vbox = {",
         "    using = Window_Margins",
@@ -560,7 +557,7 @@ def main():
         "    header_pattern = {",
         "      layoutpolicy_horizontal = expanding",
         '      blockoverride "header_text" { text = "UCM_MENU_TITLE" }',
-        f"      blockoverride \"button_close\" {{ onclick = \"[GetScriptedGui( 'ucm_menu_close' ).Execute( {R} )]\" }}",
+        f"      blockoverride \"button_close\" {{ onclick = \"[GetScriptedGui( 'ucm_menu_close' ).Execute( {ROOT} )]\" }}",
         "    }",
         "",
         '    text_single = { layoutpolicy_horizontal = expanding text = "UCM_MENU_TARGET" }',
@@ -587,33 +584,33 @@ def main():
         "        spacing = 4",
     ]
     for t, _ in TABS:
-        o += [
+        lines += [
             "        button_standard = {",
             "          size = { 220 34 }",
             f'          text = "UCM_TAB_{t.upper()}"',
-            *([f"          visible = \"[GetScriptedGui( '{TAB_GATES[t]}' ).IsShown( {R} )]\""] if t in TAB_GATES else []),
+            *([f"          visible = \"[GetScriptedGui( '{TAB_GATES[t]}' ).IsShown( {ROOT} )]\""] if t in TAB_GATES else []),
             f'          down = "{tab_shown(t)}"',
             f"          onclick = \"[GetVariableSystem.Set( 'ucm_tab', '{t}' )]\"",
             "        }",
         ]
-    o += ["        expand = {}", "      }", "", "      # Category contents"]
+    lines += ["        expand = {}", "      }", "", "      # Category contents"]
     for t, items in TABS:
-        o += [
+        lines += [
             "      scrollbox = {",
             "        size = { 600 540 }",
             f'        visible = "{tab_shown(t)}"' if t not in TAB_GATES else
-            f"        visible = \"[And( {tab_shown(t)[1:-1]}, GetScriptedGui( '{TAB_GATES[t]}' ).IsShown( {R} ) )]\"",
+            f"        visible = \"[And( {tab_shown(t)[1:-1]}, GetScriptedGui( '{TAB_GATES[t]}' ).IsShown( {ROOT} ) )]\"",
             '        blockoverride "scrollbox_content" {',
             "          vbox = {",
             "            layoutpolicy_horizontal = expanding",
             "            spacing = 4",
             f'            text_single = {{ layoutpolicy_horizontal = expanding text = "UCM_TAB_{t.upper()}" using = Font_Size_Big default_format = "#high" }}',
         ]
-        o += section(items, "            ")
-        o += ["          }", "        }", "      }"]
-    o += ["    }", "  }", "}"]
+        lines += section(items, "            ")
+        lines += ["          }", "        }", "      }"]
+    lines += ["    }", "  }", "}"]
     with open(OUT, "wb") as fh:
-        fh.write(b"\xef\xbb\xbf" + ("\r\n".join(o) + "\r\n").encode("utf-8"))
+        fh.write(b"\xef\xbb\xbf" + ("\r\n".join(lines) + "\r\n").encode("utf-8"))
     print(f"{sum(len(i) for _, i in TABS)} items -> {os.path.relpath(OUT, MOD_DIR)}")
 
 

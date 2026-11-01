@@ -1,5 +1,5 @@
-﻿# 世界无地清理：基础池（不含「本轮剩余名额」判断）
-# 不清理：玩家本人、人类玩家、玩家宗族、子女、孙辈、配偶与侍妾
+﻿# World landless cleanup: base pool (without the remaining-quota check)
+# Spared: the player, human players, the player's dynasty, children, grandchildren, spouses and concubines
 
 ucm_world_purge_landless_base_eligible_trigger = {
   is_alive = yes

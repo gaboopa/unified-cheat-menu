@@ -1,4 +1,4 @@
-﻿# 庸碌判定：文官看外交+管理+学识；武官看军事+勇武（与总督契约文武一致）
+﻿# Incompetence check: civil officials use diplomacy + stewardship + learning; military officials use martial + prowess (matching the governor contract's split)
 
 ucm_civil_skill_sum_for_purge_value = {
   value = 0
@@ -13,13 +13,13 @@ ucm_military_skill_sum_for_purge_value = {
   add = prowess
 }
 
-# 与「三项均约低于中等」相当：3 × medium_skill_rating
+# Equivalent to all three skills being roughly below medium: 3 × medium_skill_rating
 ucm_civil_mediocre_threshold_value = {
   value = medium_skill_rating
   multiply = 3
 }
 
-# 两项均约低于中等：2 × medium_skill_rating
+# Both skills roughly below medium: 2 × medium_skill_rating
 ucm_military_mediocre_threshold_value = {
   value = medium_skill_rating
   multiply = 2

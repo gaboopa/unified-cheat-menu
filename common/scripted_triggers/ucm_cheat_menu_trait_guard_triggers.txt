@@ -1,6 +1,6 @@
-﻿# UCM特质「保险丝」：检测持有 / 可否授予（与 trait 文件列表对齐）
+﻿# UCM trait safeguard: who holds them / who may get them (matches the list in the trait files)
 
-# 当前角色（root）可否被UCM菜单赋予自制特质：玩家本人，或 AI（须 scope:actor 为人类玩家）
+# May the current character (root) get a custom trait from the UCM menu: the player, or an AI when scope:actor is a human player
 ucm_cheat_menu_may_receive_cheat_trait_trigger = {
   OR = {
     is_ai = no
@@ -13,4 +13,4 @@ ucm_cheat_menu_may_receive_cheat_trait_trigger = {
   }
 }
 
-# 须剥除自制特质：未获玩家UCM菜单授权者（AI 仅玩家授予后可保留 authorized）
+# Must lose custom traits: not authorized through a player's UCM menu (an AI keeps them only when a player's grant authorized it)

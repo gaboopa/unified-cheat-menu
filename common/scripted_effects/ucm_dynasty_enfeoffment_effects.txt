@@ -1,4 +1,4 @@
-﻿# 族人授衔：与「册命维城」相同授衔链，但人才池仅限与 root 同宗族且仍在境内的成年候选人（由 ucm_grant_dynasty_only 变量收紧池）
+﻿# Dynasty titles: same granting chain as the surplus-title grant, but candidates are only adults of root's dynasty still in the realm (the ucm_grant_dynasty_only variable narrows the pool)
 
 ucm_dynasty_one_click_grant_realm_titles_effect = {
   root = {

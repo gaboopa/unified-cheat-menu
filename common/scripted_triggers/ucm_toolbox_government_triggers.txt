@@ -1,10 +1,10 @@
-﻿# 模组「神州工具箱」类决议/互动：不在政体上做限制，以便官吏统辖等条目在所有政体下条数一致。
+﻿# Toolbox-style decisions and interactions: no government restriction, so entries such as official management list the same on every government.
 
 ucm_toolbox_supported_player_government_trigger = {
   always = yes
 }
 
-# 「官吏统辖」分组：人类可扮演角色一律列出条目；原 DLC/独立/品级/有地等限制改到各决议 is_valid，避免封臣、非帝国、无地冒险家等界面缺项。
+# Official-management group: list the entries for every human-playable character; the old DLC/independence/rank/landed limits moved to each decision's is_valid, so vassals, non-empires and landless adventurers don't see missing entries.
 ucm_officials_decision_visible_for_player_trigger = {
   is_playable_character = yes
   is_ai = no

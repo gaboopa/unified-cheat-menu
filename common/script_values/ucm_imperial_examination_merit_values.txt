@@ -1,4 +1,4 @@
-﻿# 殿试阶段：原版 2000 + 按本场考试类型与角色属性折算的额外贤能（武：军事+勇武；其余：外交+管理+学识）
+﻿# Palace exam phase: vanilla 2000 + extra merit scaled by this exam's type and the character's skills (military: martial + prowess; otherwise diplomacy + stewardship + learning)
 ucm_imperial_exam_activity_scaled_bonus_merit_value = {
   value = 0
   if = {
@@ -28,7 +28,7 @@ ucm_imperial_exam_palace_total_merit_value = {
   add = ucm_imperial_exam_activity_scaled_bonus_merit_value
 }
 
-# 一键科举：与契约分支一致（武：军事任命；文：文职任命；其余按文官三项）
+# One-click exam: matches the contract branches (military: military appointment; civil: civil appointment; otherwise the three civil skills)
 ucm_one_click_exam_bonus_merit_value = {
   value = 0
   if = {

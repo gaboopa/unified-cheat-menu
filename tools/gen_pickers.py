@@ -10,7 +10,8 @@ common/scripted_effects/ucm_picker_effects.txt.
 """
 import os
 
-from gen_ucm_extra import R, group_list, window
+from ck3parse import ROOT
+from gen_ucm_extra import group_list, window
 
 MOD = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TRADITION_CATS = ("realm", "combat", "societal", "ritual", "regional")
@@ -79,7 +80,7 @@ LOC = {
 LANGS = ("english", "german", "russian", "simp_chinese", "turkish")
 
 
-def row(onclick, label, icons, tooltip, down="", contexts=(), height=52):
+def row(*, onclick, label, icons, tooltip, down="", contexts=(), height=52):
     """One list row: a button with icons and a name."""
     ctx = "".join(f'\n                datacontext = "[{c}]"' for c in contexts)
     dn = f'\n                down = "[{down}]"' if down else ""
@@ -122,16 +123,17 @@ def scrollbox(content, extra=""):
 
 def culture_gui():
     pick = "GetScriptedGui('ucm_picker_culture_pick').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('selected_culture', Culture.MakeScope).End)"
-    return window("ucm_picker_culture_window", "right|vcenter", None, "UCM_PICKER_CULTURE", "UCM_PICKER_CULTURE_NOTE",
-                  group_list("ucm_picker_heritages", "Scope.Culture.GetHeritage", "CulturePillar", "GetCulturesWithPillar", "Culture", pick), sgui="ucm_picker_culture")
+    body = group_list(datamodel="ucm_picker_heritages", group_ctx="Scope.Culture.GetHeritage", group="CulturePillar", children="GetCulturesWithPillar", item="Culture", onclick=pick)
+    return window(name="ucm_picker_culture_window", anchor="right|vcenter", title="UCM_PICKER_CULTURE", note="UCM_PICKER_CULTURE_NOTE", body=body, sgui="ucm_picker_culture")
 
 
 def religion_gui():
     root = "GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('selected_faith', Faith.MakeScope).End"
     edit = (f'\n                    button_standard = {{ parentanchor = vcenter|right position = {{ -4 0 }} size = {{ 32 24 }} tooltip = "UCM_PICKER_FAITH_EDIT_TT" '
             f"""onclick = "[GetScriptedGui('ucm_picker_faith_edit').Execute({root})]" text_single = {{ parentanchor = center raw_text = "»" }} }}""")
-    return window("ucm_picker_religion_window", "right|vcenter", None, "UCM_PICKER_RELIGION", "UCM_PICKER_RELIGION_NOTE",
-                  group_list("ucm_picker_religions", "Scope.Religion", "Religion", "GetFaiths", "Faith", f"GetScriptedGui('ucm_picker_faith_pick').Execute({root})", edit), sgui="ucm_picker_religion")
+    body = group_list(datamodel="ucm_picker_religions", group_ctx="Scope.Religion", group="Religion", children="GetFaiths", item="Faith",
+                      onclick=f"GetScriptedGui('ucm_picker_faith_pick').Execute({root})", extra=edit)
+    return window(name="ucm_picker_religion_window", anchor="right|vcenter", title="UCM_PICKER_RELIGION", note="UCM_PICKER_RELIGION_NOTE", body=body, sgui="ucm_picker_religion")
 
 
 def tradition_gui():
@@ -141,28 +143,28 @@ def tradition_gui():
     tabs = "\n".join(f"""      button_tab = {{ layoutpolicy_horizontal = expanding down = "[{shown(c)}]" onclick = "[GetVariableSystem.Set( 'ucm_picker_tradition_cat', '{c}' )]" text_single = {{ parentanchor = center text = "tradition_group_{c}" }} }}""" for c in TRADITION_CATS)
     icon = 'widget_tradition_icon = { size = { 74 40 } }'
     tip = "tooltipwidget = { using = culture_tradition_tooltip_clickable }"
-    item = row(f"GetScriptedGui('ucm_picker_tradition_toggle').Execute({root})", "[CultureTradition.GetNameNoTooltip]", icon, tip,
+    item = row(onclick=f"GetScriptedGui('ucm_picker_tradition_toggle').Execute({root})", label="[CultureTradition.GetNameNoTooltip]", icons=icon, tooltip=tip,
                down=f"GetScriptedGui('ucm_picker_tradition_has').IsValid({root})", contexts=("Scope.CultureTradition",))
     body = [f"    hbox = {{\n      layoutpolicy_horizontal = expanding\n{tabs}\n    }}"]
     for c in TRADITION_CATS:
         body.append(scrollbox(rows(f"ucm_cw_{c}_tradition_list", item), f'\n      visible = "[{shown(c)}]"'))
     extra = ('  datacontext = "[GetPlayer.MakeScope.Var(\'ucm_selected_culture_var\').Culture]"\n'
              "  state = { name = _show on_start = \"[GetVariableSystem.Set( 'ucm_picker_tradition_cat', 'realm' )]\" }")
-    return window("ucm_picker_tradition_window", "right|vcenter", None, "UCM_PICKER_TRADITION", "UCM_PICKER_TRADITION_NOTE", "\n".join(body), sgui="ucm_picker_tradition", size=(560, 720), extra=extra)
+    return window(name="ucm_picker_tradition_window", anchor="right|vcenter", title="UCM_PICKER_TRADITION", note="UCM_PICKER_TRADITION_NOTE", body="\n".join(body), sgui="ucm_picker_tradition", size=(560, 720), extra=extra)
 
 
 def faith_gui():
     def tenet_row(sgui):
-        return row(f"GetScriptedGui('{sgui}').Execute({FLAG_ROOT})", TENET_NAME, TENET_ICON, 'tooltip = "FAITH_WINDOW_TENET_TOOLTIP"', contexts=TENET_CTX)
+        return row(onclick=f"GetScriptedGui('{sgui}').Execute({FLAG_ROOT})", label=TENET_NAME, icons=TENET_ICON, tooltip='tooltip = "FAITH_WINDOW_TENET_TOOLTIP"', contexts=TENET_CTX)
 
     def doctrine_row(sgui, label):
-        return row(f"GetScriptedGui('{sgui}').Execute({FLAG_ROOT})", label, DOCTRINE_ICONS, 'tooltip = "FAITH_WINDOW_DOCTRINE_TOOLTIP_WITH_FAITH"', contexts=DOCTRINE_CTX)
+        return row(onclick=f"GetScriptedGui('{sgui}').Execute({FLAG_ROOT})", label=label, icons=DOCTRINE_ICONS, tooltip='tooltip = "FAITH_WINDOW_DOCTRINE_TOOLTIP_WITH_FAITH"', contexts=DOCTRINE_CTX)
     head = '        text_label_center = {{ layoutpolicy_horizontal = expanding text = "{}" }}'
     current = [head.format("FAITH_CORE_TENETS_HEADING"), rows("ucm_acm_fe_display_core_tenets", tenet_row("ucm_picker_faith_begin_tenet"))]
     label = f"[DoctrineType.GetGroup.GetName( Faith.Self )]: {DOCTRINE_NAME}"
     for c, title in DOCTRINE_CATS:
         current += [head.format(title), rows(f"ucm_acm_fe_display_{c}", doctrine_row("ucm_picker_faith_begin_doctrine", label))]
-    tenet = "GetScriptedGui('ucm_picker_faith_picking_tenet').IsShown(" + R + ")"
+    tenet = "GetScriptedGui('ucm_picker_faith_picking_tenet').IsShown(" + ROOT + ")"
     choices = (rows("ucm_acm_fe_pick_current", doctrine_row("ucm_picker_faith_apply", DOCTRINE_NAME), f"Not( {tenet} )") + "\n"
                + rows("ucm_acm_fe_pick_current", tenet_row("ucm_picker_faith_apply"), tenet))
     body = f"""    text_single = {{ raw_text = "[Faith.GetNameNoTooltip]" default_format = "#high" }}
@@ -182,7 +184,7 @@ def faith_gui():
       }}
     }}"""
     extra = f'  datacontext = "[{FAITH_CTX}]"'
-    return window("ucm_picker_faith_window", "center", None, "UCM_PICKER_FAITH", "UCM_PICKER_FAITH_NOTE", body, sgui="ucm_picker_faith", size=(1000, 860), extra=extra)
+    return window(name="ucm_picker_faith_window", anchor="center", title="UCM_PICKER_FAITH", note="UCM_PICKER_FAITH_NOTE", body=body, sgui="ucm_picker_faith", size=(1000, 860), extra=extra)
 
 
 def write(rel, text, eol="\r\n"):

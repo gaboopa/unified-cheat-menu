@@ -1,4 +1,4 @@
-﻿# 不可被「自动/批量转封建」降级的政体（玩家在手改政体菜单中显式确认时仍可通过 force 旗标转换）
+﻿# Governments that automatic/mass convert-to-feudal must not downgrade (an explicit player confirmation in the government menu can still convert, through the force flag)
 ucm_protected_from_forced_feudal_conversion_trigger = {
   OR = {
     has_government = meritocratic_government
@@ -10,7 +10,7 @@ ucm_protected_from_forced_feudal_conversion_trigger = {
   }
 }
 
-# 一键改封臣政府：可转化的有地封臣（含下级封臣），主头衔须伯爵及以上；不含玩家本人与内阁大臣职位持有者
+# One-click vassal government change: landed vassals that can convert (including lower tiers), primary title county or above; excludes the player and cabinet ministers
 
 ucm_mass_gov_conversion_target_trigger = {
   is_adult = yes

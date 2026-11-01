@@ -1,4 +1,4 @@
-﻿# 武官：总督契约军事任命；文官：文职任命（含标准/工业等省）。其余功勋有地臣按文官处理。
+﻿# Military: governor contract's military appointment; civil: civil appointment (including standard/industrial provinces etc.). Other meritocratic landed vassals count as civil.
 
 ucm_imperial_examination_promote_all_officials_effect = {
   every_vassal_or_below = {

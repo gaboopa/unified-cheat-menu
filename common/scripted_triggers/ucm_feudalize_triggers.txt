@@ -1,4 +1,4 @@
-﻿# 疆域内是否存在可改为城堡封建地产的男爵领：部落 / 游牧 / 牧民（不含已是城堡）
+﻿# Does the realm have a barony convertible to a feudal castle: tribal / nomad / herder (not already a castle)
 
 ucm_has_tribal_holding_in_realm_trigger = {
   any_sub_realm_county = {

@@ -1,15 +1,15 @@
-﻿# 油画「强制结婚」用：临时改信以便 marry / create_betrothal 通过引擎校验（近亲、同性、多信仰等）。仅脚本 set_character_faith 使用。
+﻿# For the Force Marry cheat: a temporary conversion so marry / create_betrothal pass engine validation (close kin, same sex, multiple faiths, etc.). Only used by scripted set_character_faith.
 # CK3 1.20: religions live in common/religion/religion_types, presentation settings go in religion_details,
 # and faiths are defined separately in common/religion/faith_types (see ucm_force_marry_faith.txt).
 ucm_force_marry_religion = {
   religion_details = {
-    family = rf_aurbis # EK2：无 rf_pagan
+    family = rf_aurbis # EK2 has no rf_pagan
     graphical_faith = pagan_gfx
   }
 
   pagan_roots = yes
 
-  doctrine = aurbic_hostility_doctrine # EK2：敌对教义须与宗教家族配套
+  doctrine = aurbic_hostility_doctrine # EK2: the hostility doctrine must match the religion family
 
   # Main group
   doctrine = doctrine_polytheist

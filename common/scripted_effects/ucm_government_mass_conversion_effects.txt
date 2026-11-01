@@ -1,4 +1,4 @@
-﻿# 首都部落/游牧/牧民地产改为城堡，再换东亚宅邸并改政府（对齐原版行政转换）
+﻿# Turn a tribal/nomad/herder capital into a castle, then switch to an East Asian estate and change government (matches vanilla's administrative conversion)
 
 ucm_capital_to_castle_effect = {
   if = {
@@ -125,7 +125,7 @@ ucm_convert_character_to_feudal_government_effect = {
         has_character_flag = ucm_chenzhi_force_feudal_conversion
         NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
       }
-      # 修复：开局日本律令（japan_administrative_government）不应被通用“转封建”误改
+      # Fix: Japanese administrative (a starting government) must not be changed by the generic convert-to-feudal
       NOT = { has_government = japan_administrative_government }
       NOT = { has_government = japan_feudal_government }
     }
@@ -179,7 +179,7 @@ ucm_convert_character_to_clan_government_effect = {
   if = {
     limit = {
       NOT = { has_government = clan_government }
-      # 保护日本政府不被转氏族制
+      # Don't convert Japanese governments to clan
       NOT = { has_government = japan_administrative_government }
       NOT = { has_government = japan_feudal_government }
     }
@@ -192,7 +192,7 @@ ucm_convert_character_to_republic_government_effect = {
   if = {
     limit = {
       NOT = { has_government = republic_government }
-      # 保护日本政府不被转共和制
+      # Don't convert Japanese governments to republic
       NOT = { has_government = japan_administrative_government }
       NOT = { has_government = japan_feudal_government }
     }

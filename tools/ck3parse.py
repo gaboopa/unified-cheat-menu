@@ -5,6 +5,9 @@ import os
 import re
 
 STRING = r'"(?:[^"\\\n]|\\.)*"'
+# GUI text shared by the generators.
+ROOT = "GuiScope.SetRoot( GetPlayer.MakeScope ).End"
+WINDOW_BACKGROUND = ("  widget = {", "    size = { 100% 100% }", "    background = { using = Background_Area_Dark alpha = 1.0 }", "  }")
 
 
 def strip_comments(text):

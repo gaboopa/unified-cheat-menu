@@ -409,7 +409,7 @@ def remove_traits(traits):
     return " ".join(f"remove_trait = {t}" for t in traits)
 
 
-def sg(key, valid, effect):
+def sgui_block(key, valid, effect):
     return f"{key} = {{\n\tscope = character\n\tis_shown = {{ ucm_single_player_trigger = yes }}\n\tis_valid = {{ {valid} }}\n\teffect = {{ {effect} }}\n}}\n"
 
 
@@ -421,28 +421,28 @@ def cure(traits):
 
 
 def sguis():
-    out = [HEAD + "# Root = player; target var:ucm_target.\n", sg("ucm_law_include_vassals", "always = yes",
+    out = [HEAD + "# Root = player; target var:ucm_target.\n", sgui_block("ucm_law_include_vassals", "always = yes",
            "if = { limit = { has_character_flag = ucm_law_include_vassals } remove_character_flag = ucm_law_include_vassals } else = { add_character_flag = ucm_law_include_vassals }")]
     for group, laws in (("realm", [r[0] for r in REALM_LAWS]), ("gender", GENDER_LAWS)):
         for law in laws:
-            out.append(sg(f"ucm_law_{law}", f"{T} OR = {{ has_character_flag = ucm_law_include_vassals {TG} = {{ ucm_law_lock_can_{group}_trigger = yes }} }}",
+            out.append(sgui_block(f"ucm_law_{law}", f"{T} OR = {{ has_character_flag = ucm_law_include_vassals {TG} = {{ ucm_law_lock_can_{group}_trigger = yes }} }}",
                           f"{TG} = {{ ucm_law_pick_effect = {{ GROUP = {group} LAW = {law} }} }}"))
-    out.append(sg("ucm_law_unlock", T,
+    out.append(sgui_block("ucm_law_unlock", T,
                   f"{TG} = {{ ucm_law_lock_clear_effect = yes }}"))
     for h in HOLDINGS:
-        out.append(sg(f"ucm_holding_capital_{h}", f"{T} exists = {TG}.capital_province {TG}.capital_province = {{ has_ongoing_construction = no NOT = {{ has_holding_type = {h} }} }}",
+        out.append(sgui_block(f"ucm_holding_capital_{h}", f"{T} exists = {TG}.capital_province {TG}.capital_province = {{ has_ongoing_construction = no NOT = {{ has_holding_type = {h} }} }}",
                       f"{TG}.capital_province = {{ set_holding_type = {h} }}"))
     for h in REALM_HOLDINGS:
-        out.append(sg(f"ucm_holding_realm_{h}", f"{T} {TG} = {{ is_landed = yes }}",
+        out.append(sgui_block(f"ucm_holding_realm_{h}", f"{T} {TG} = {{ is_landed = yes }}",
                       f"{TG} = {{ every_sub_realm_barony = {{ limit = {{ holder ?= {{ OR = {{ this = root.var:ucm_target primary_title.tier = tier_barony }} }} }} title_province = {{ if = {{ limit = {{ has_ongoing_construction = no NOT = {{ has_holding_type = {h} }} }} set_holding_type = {h} }} }} }} }}"))
     every_province = "every_sub_realm_county = { every_county_province = { limit = { has_holding = yes } %s } }"
-    out.append(sg("ucm_realm_max_buildings", f"{T} {TG} = {{ is_landed = yes }}", f"{TG} = {{ {every_province % 'ucm_province_upgrade_buildings_effect = yes'} }}"))
+    out.append(sgui_block("ucm_realm_max_buildings", f"{T} {TG} = {{ is_landed = yes }}", f"{TG} = {{ {every_province % 'ucm_province_upgrade_buildings_effect = yes'} }}"))
     slot = "if = { limit = { NOT = { has_province_modifier = ucm_extra_building_slot } } add_province_modifier = ucm_extra_building_slot }"
-    out.append(sg("ucm_realm_building_slots", f"{T} {TG} = {{ is_landed = yes }}", f"{TG} = {{ {every_province % slot} }}"))
-    out.append(sg("ucm_cure_illness", T, cure(ILLNESS)))
-    out.append(sg("ucm_cure_congenital", T, cure(CONGENITAL)))
+    out.append(sgui_block("ucm_realm_building_slots", f"{T} {TG} = {{ is_landed = yes }}", f"{TG} = {{ {every_province % slot} }}"))
+    out.append(sgui_block("ucm_cure_illness", T, cure(ILLNESS)))
+    out.append(sgui_block("ucm_cure_congenital", T, cure(CONGENITAL)))
     for key, mod in (("ucm_dynasty_pope", "ucm_dynasty_pope_modifier"), ("ucm_dynasty_grandmaster", "ucm_dynasty_grandmaster_modifier")):
-        out.append(sg(key, f"{T} {TG} = {{ exists = dynasty NOT = {{ dynasty = {{ has_dynasty_modifier = {mod} }} }} }}",
+        out.append(sgui_block(key, f"{T} {TG} = {{ exists = dynasty NOT = {{ dynasty = {{ has_dynasty_modifier = {mod} }} }} }}",
                       f"{TG}.dynasty = {{ add_dynasty_modifier = {{ modifier = {mod} }} }}"))
     return "\n".join(out)
 

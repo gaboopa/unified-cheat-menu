@@ -1,20 +1,20 @@
-﻿# 兼容：原版 / 东方王朝 / AGOT / EK2
-# 由 on_action 开局探测写入全局变量；各功能在引用对方 mod 专有 ID 前应检查对应 trigger。
+﻿# Compatibility: vanilla / Orient Empires / AGOT / EK2
+# An on_action probes at game start and writes global variables; features should check the matching trigger before using another mod's IDs.
 
-# 须 OE 本体在当次启动中已加载（orient_empires_loaded 由 OE on_game_start 写入）
+# Requires OE to be loaded this session (OE's on_game_start writes orient_empires_loaded)
 ucm_compat_orient_loaded_trigger = {
   exists = global_var:orient_empires_loaded
 }
 
-# Elder Kings 2（2887120253）；由 zzz_ucm_compat_probe 开局写入
+# Elder Kings 2 (2887120253); written at game start by zzz_ucm_compat_probe
 ucm_compat_ek2_loaded_trigger = {
   has_global_variable = ucm_compat_ek2_loaded
 }
 
-# TGP 大臣：原版 tgp_is_any_minister 定义在 10_tgp_triggers.txt，AGOT 以同名文件覆盖且不含此 trigger。
-# 调用处直接写它时，AGOT 下该 token 被丢弃，NOR/NOT/OR 结构被改写（候选人恒真或恒假）。
-# 这里先判天朝政体旗标（纯字符串，两端都能解析）：AGOT 无天朝 → 恒假，里面那行被丢弃也不影响结果；
-# 原版下与 tgp_is_any_minister 完全等价（其本身已要求宗主为天朝政体）。AGOT 下仅此处报 1 条加载错误。
+# TGP ministers: vanilla tgp_is_any_minister is in 10_tgp_triggers.txt; AGOT overrides that file and doesn't have this trigger.
+# Called directly, AGOT drops the token and the NOR/NOT/OR structure changes (candidates become always true or always false).
+# So check the celestial government flag first (a plain string, parses in both): AGOT has no celestial government, so this is always false and the dropped line doesn't matter;
+# in vanilla it's equivalent to tgp_is_any_minister (which already requires a celestial liege). AGOT logs 1 load error, only here.
 ucm_is_tgp_minister_trigger = {
   liege ?= { government_has_flag = government_is_celestial }
   tgp_is_any_minister = yes

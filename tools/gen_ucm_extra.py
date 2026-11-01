@@ -17,6 +17,7 @@ import os
 import re
 
 import ck3parse
+from ck3parse import ROOT, WINDOW_BACKGROUND
 
 MOD = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEFAULT_GAME = r"C:\Program Files (x86)\Steam\steamapps\common\Crusader Kings III\game"
@@ -50,7 +51,7 @@ def load_vanilla_loc(game):
                 VANILLA_LOC[m.group(1)] = True
 
 
-def sg(key, label, tip, valid, effect, out=SGUIS):
+def add_sgui(key, label, tip, valid, effect, out=SGUIS):
     out.append(f"{key} = {{\n\tscope = character\n\tis_shown = {{ ucm_single_player_trigger = yes }}\n"
                f"\tis_valid = {{ {valid} }}\n\teffect = {{ {effect} }}\n}}\n")
     LOC[key], LOC[key + "_tt"] = label, tip
@@ -59,11 +60,11 @@ def sg(key, label, tip, valid, effect, out=SGUIS):
 
 def steps(key, name, valid, effect):
     """- and + buttons; effect has {v} for the signed step."""
-    return ("row", [sg(f"{key}_down", f"− {name}", f"Lower the target's {name.lower()} by the step size.", valid, effect.replace("{v}", DOWN)),
-                    sg(f"{key}_up", f"+ {name}", f"Raise the target's {name.lower()} by the step size.", valid, effect.replace("{v}", UP))])
+    return ("row", [add_sgui(f"{key}_down", f"− {name}", f"Lower the target's {name.lower()} by the step size.", valid, effect.replace("{v}", DOWN)),
+                    add_sgui(f"{key}_up", f"+ {name}", f"Raise the target's {name.lower()} by the step size.", valid, effect.replace("{v}", UP))])
 
 
-def h(key, label):
+def section_header(key, label):
     LOC[key] = label
     return ("h", key)
 
@@ -87,24 +88,24 @@ LEARNED_TRACKS = {"pilgrim": [], "lifestyle_mystic": [], "lifestyle_blademaster"
 
 
 def character():
-    items = [h("UCM_SEC_STATS", "Stats")]
+    items = [section_header("UCM_SEC_STATS", "Stats")]
     items += [steps("ucm_stat_stress", "Stress", T, f"{TG} = {{ add_stress = {{v}} }}"),
               steps("ucm_stat_dread", "Dread", T, f"{TG} = {{ add_dread = {{v}} }}"),
               steps("ucm_stat_tyranny", "Tyranny", T, f"{TG} = {{ add_tyranny = {{v}} }}"),
               steps("ucm_stat_legitimacy", "Legitimacy", T, f"{TG} = {{ add_legitimacy = {{v}} }}"),
               steps("ucm_stat_fulfillment", "Spiritual Fulfillment", f"{T} {TG} = {{ is_playable_character = yes }}",
                     f"{TG} = {{ change_spiritual_fulfillment = {{v}} }}")]
-    ages = [sg(f"ucm_visual_age_{a}", f"Look {a}", f"Set the immortal target's visual age to {a}.", f"{T} {TG} = {{ is_immortal = yes }}",
+    ages = [add_sgui(f"ucm_visual_age_{a}", f"Look {a}", f"Set the immortal target's visual age to {a}.", f"{T} {TG} = {{ is_immortal = yes }}",
                f"{TG} = {{ set_immortal_age = {a} }}") for a in (18, 30, 50, 100)]
     items.append(("row", ages))
     for lock, mod, name in (("stress", "ucm_extra_lock_stress", "stress"), ("tyranny", "ucm_extra_lock_tyranny", "tyranny"), ("dread", "ucm_extra_lock_dread", "dread"),
                             ("legitimacy", "ucm_extra_lock_legitimacy", "legitimacy"), ("fulfillment", "ucm_extra_divine_grace", "spiritual fulfillment")):
         items.append(("row", [
-            sg(f"ucm_lock_{lock}", f"Lock {name}", f"Stop the target's {name} from changing naturally.",
+            add_sgui(f"ucm_lock_{lock}", f"Lock {name}", f"Stop the target's {name} from changing naturally.",
                f"{T} {TG} = {{ NOT = {{ has_character_modifier = {mod} }} }}", f"{TG} = {{ add_character_modifier = {mod} }}"),
-            sg(f"ucm_unlock_{lock}", f"Unlock {name}", f"Remove the {name} lock from the target.",
+            add_sgui(f"ucm_unlock_{lock}", f"Unlock {name}", f"Remove the {name} lock from the target.",
                f"{T} {TG} = {{ has_character_modifier = {mod} }}", f"{TG} = {{ remove_character_modifier = {mod} }}")]))
-    items.append(h("UCM_SEC_RES_EDITOR", "Resource Editor"))
+    items.append(section_header("UCM_SEC_RES_EDITOR", "Resource Editor"))
     items += [steps("ucm_res_gold", "Gold", T, f"{TG} = {{ add_gold = {{v}} }}"),
               steps("ucm_res_treasury", "Treasury or Gold", T, f"{TG} = {{ add_treasury_or_gold = {{v}} }}"),
               steps("ucm_res_prestige", "Prestige", T, f"{TG} = {{ add_prestige = {{v}} }}"),
@@ -113,11 +114,11 @@ def character():
               steps("ucm_res_merit", "Merit", T, f"{TG} = {{ change_merit = {{v}} }}"),
               steps("ucm_res_barter", "Barter Goods", T, f"{TG} = {{ add_barter_goods = {{v}} }}"),
               steps("ucm_res_herd", "Herd", f"{T} exists = {TG}.domicile {TG} = {{ government_has_flag = government_has_herd }}", f"{TG}.domicile = {{ change_herd = {{v}} }}")]
-    items.append(h("UCM_SEC_IDENTITY_EXTRA", "Name"))
+    items.append(section_header("UCM_SEC_IDENTITY_EXTRA", "Name"))
     items.append(sg_item("ucm_rename_target", "Rename…", "Choose a new first name for the target.", T, "trigger_event = ucm_extra.3"))
-    items.append(h("UCM_SEC_MOD_TRAITS", "Traits From This Mod"))
+    items.append(section_header("UCM_SEC_MOD_TRAITS", "Traits From This Mod"))
     for i in range(0, len(MOD_TRAITS), 3):
-        items.append(("row", [sg(f"ucm_mod_trait_{t}", f"$trait_ucm_trait_{t}$", "Add this trait to the target, or remove it if they have it.", T,
+        items.append(("row", [add_sgui(f"ucm_mod_trait_{t}", f"$trait_ucm_trait_{t}$", "Add this trait to the target, or remove it if they have it.", T,
                                  f"{TG} = {{ if = {{ limit = {{ has_trait = ucm_trait_{t} }} remove_trait = ucm_trait_{t} }} else = {{ add_trait = ucm_trait_{t} }} }}")
                               for t in MOD_TRAITS[i:i + 3]]))
     def add_xp(t, tracks):
@@ -125,51 +126,51 @@ def character():
     xp = "".join(f"if = {{ limit = {{ has_trait = {t} }} {add_xp(t, tracks)} }} " for t, tracks in LEARNED_TRACKS.items())
     items.append(sg_item("ucm_max_learned_trait_xp", "Max Learned Trait XP",
                          "Fill the experience of the target's pilgrim, lifestyle, traveler, tournament and criminal traits.", T, f"{TG} = {{ {xp}}}"))
-    items.append(h("UCM_SEC_TARGET_TOOLS", "Target Tools"))
+    items.append(section_header("UCM_SEC_TARGET_TOOLS", "Target Tools"))
     items.append(steps("ucm_age", "Age", T, f"{TG} = {{ change_age = {{v}} }}"))
     items.append(sg_item("ucm_play_as_target", "Play as Target", "Closes this menu and switches you to the target.", f"{T} NOT = {{ {TG} = root }}",
                          f"ucm_menu_close_effect = yes set_player_character = {TG}"))
     items.append(sg_item("ucm_heal_target", "Heal", "Remove diseases, wounds and maimings from the target.", T,
                          f"{TG} = {{ " + " ".join(f"remove_trait = {x}" for x in HEAL_TRAITS) + " }"))
-    items.append(("row", [sg("ucm_make_immortal", "Make Immortal", "The target stops aging and can't die of old age.", T, f"{TG} = {{ add_trait = ucm_trait_undying set_immortal_age = 25 }}"),
-                          sg("ucm_make_mortal", "Make Mortal", "Remove the target's immortality.", f"{T} {TG} = {{ has_trait = ucm_trait_undying }}", f"{TG} = {{ remove_trait = ucm_trait_undying }}")]))
+    items.append(("row", [add_sgui("ucm_make_immortal", "Make Immortal", "The target stops aging and can't die of old age.", T, f"{TG} = {{ add_trait = ucm_trait_undying set_immortal_age = 25 }}"),
+                          add_sgui("ucm_make_mortal", "Make Mortal", "Remove the target's immortality.", f"{T} {TG} = {{ has_trait = ucm_trait_undying }}", f"{TG} = {{ remove_trait = ucm_trait_undying }}")]))
     return items
 
 
 # --- Relationships ----------------------------------------------------------------------------------
 def relationships():
     preg = f"{T} {TG} = {{ is_pregnant = yes }}"
-    items = [h("UCM_SEC_BABY", "Baby's Sex"), ("row", [
-        sg("ucm_baby_male", "Boy", "Make the target's pregnancy a boy.", preg, f"{TG} = {{ set_pregnancy_gender = male }}"),
-        sg("ucm_baby_female", "Girl", "Make the target's pregnancy a girl.", preg, f"{TG} = {{ set_pregnancy_gender = female }}")])]
-    items.append(h("UCM_SEC_REMOVE_HOOKS", "Remove Hooks"))
+    items = [section_header("UCM_SEC_BABY", "Baby's Sex"), ("row", [
+        add_sgui("ucm_baby_male", "Boy", "Make the target's pregnancy a boy.", preg, f"{TG} = {{ set_pregnancy_gender = male }}"),
+        add_sgui("ucm_baby_female", "Girl", "Make the target's pregnancy a girl.", preg, f"{TG} = {{ set_pregnancy_gender = female }}")])]
+    items.append(section_header("UCM_SEC_REMOVE_HOOKS", "Remove Hooks"))
     items.append(("row", [
-        sg("ucm_remove_hook_second_on_target", "Remove Second's Hook", "Remove the second character's hook on the target.",
+        add_sgui("ucm_remove_hook_second_on_target", "Remove Second's Hook", "Remove the second character's hook on the target.",
            f"{P} {SEC} = {{ has_hook = root.{TG} }}", f"{SEC} = {{ remove_hook = {{ target = root.{TG} }} }}"),
-        sg("ucm_remove_hook_target_on_second", "Remove Target's Hook", "Remove the target's hook on the second character.",
+        add_sgui("ucm_remove_hook_target_on_second", "Remove Target's Hook", "Remove the target's hook on the second character.",
            f"{P} {TG} = {{ has_hook = {SEC} }}", f"{TG} = {{ remove_hook = {{ target = {SEC} }} }}")]))
     items.append(sg_item("ucm_make_house_head", "Make House Head", "Make the target the head of their house.",
                          f"{T} exists = {TG}.house NOT = {{ {TG}.house.house_head = {TG} }}", f"{TG}.house = {{ set_house_head = root.{TG} }}"))
     secrets = [("deviant", "Deviant"), ("homosexual", "Homosexual"), ("cannibal", "Cannibal"), ("witch", "Witch"), ("non_believer", "Non-believer")]
     paired = [("lover", "Lover"), ("incest", "Incest"), ("murder", "Murder")]
-    items.append(h("UCM_SEC_PLANT_SECRETS", "Plant Secrets"))
+    items.append(section_header("UCM_SEC_PLANT_SECRETS", "Plant Secrets"))
     for i in range(0, len(secrets), 3):
-        items.append(("row", [sg(f"ucm_plant_{k}", n, f"Give the target a {n.lower()} secret.", T,
+        items.append(("row", [add_sgui(f"ucm_plant_{k}", n, f"Give the target a {n.lower()} secret.", T,
                                  f"{TG} = {{ add_secret = {{ type = secret_{k} }} }}") for k, n in secrets[i:i + 3]]))
-    items.append(("row", [sg(f"ucm_plant_{k}", f"{n} (Second)", f"Give the target a {n.lower()} secret involving the second character.", P,
+    items.append(("row", [add_sgui(f"ucm_plant_{k}", f"{n} (Second)", f"Give the target a {n.lower()} secret involving the second character.", P,
                              f"{TG} = {{ add_secret = {{ type = secret_{k} target = {SEC} }} }}") for k, n in paired]))
-    items.append(h("UCM_SEC_SECOND_TIES", "Ties to Second"))
-    items.append(("row", [sg("ucm_concubine_of_second", "Concubine of Second", "Make the target a concubine of the second character.", f"{P} {TG} = {{ is_concubine = no }}", f"{SEC} = {{ make_concubine = root.{TG} }}"),
-                          sg("ucm_heir_of_second", "Heir of Second", "Make the target the second character's designated heir.", P, f"{SEC} = {{ set_designated_heir = root.{TG} }}")]))
-    items.append(("row", [sg("ucm_court_of_second", "Court of Second", "Move the target to the second character's court.", P, f"{SEC} = {{ add_courtier = root.{TG} }}"),
-                          sg("ucm_make_lowborn", "Make Lowborn", "Remove the target's house.", T, f"{TG} = {{ set_to_lowborn = yes }}")]))
-    items.append(("row", [sg("ucm_imprison_by_second", "Second Imprisons", "The second character imprisons the target.", P, f"{SEC} = {{ imprison = {{ target = root.{TG} type = dungeon }} }}"),
-                          sg("ucm_release_target", "Release", "Release the target from prison.", f"{T} {TG} = {{ is_imprisoned = yes }}", f"{TG} = {{ release_from_prison = yes }}")]))
+    items.append(section_header("UCM_SEC_SECOND_TIES", "Ties to Second"))
+    items.append(("row", [add_sgui("ucm_concubine_of_second", "Concubine of Second", "Make the target a concubine of the second character.", f"{P} {TG} = {{ is_concubine = no }}", f"{SEC} = {{ make_concubine = root.{TG} }}"),
+                          add_sgui("ucm_heir_of_second", "Heir of Second", "Make the target the second character's designated heir.", P, f"{SEC} = {{ set_designated_heir = root.{TG} }}")]))
+    items.append(("row", [add_sgui("ucm_court_of_second", "Court of Second", "Move the target to the second character's court.", P, f"{SEC} = {{ add_courtier = root.{TG} }}"),
+                          add_sgui("ucm_make_lowborn", "Make Lowborn", "Remove the target's house.", T, f"{TG} = {{ set_to_lowborn = yes }}")]))
+    items.append(("row", [add_sgui("ucm_imprison_by_second", "Second Imprisons", "The second character imprisons the target.", P, f"{SEC} = {{ imprison = {{ target = root.{TG} type = dungeon }} }}"),
+                          add_sgui("ucm_release_target", "Release", "Release the target from prison.", f"{T} {TG} = {{ is_imprisoned = yes }}", f"{TG} = {{ release_from_prison = yes }}")]))
     return items
 
 
 def sg_item(*a):
-    return ("sg", sg(*a))
+    return ("sg", add_sgui(*a))
 
 
 # --- Titles and diplomacy --------------------------------------------------------------------------
@@ -181,15 +182,15 @@ def titles():
     other = f"{primary} NOT = {{ {TG} = root }}"
     change = "create_title_and_vassal_change = {{ type = conquest save_scope_as = change }} {} resolve_title_and_vassal_change = scope:change"
     grab = "change_title_holder_include_vassals = { holder = root change = scope:change }"
-    items = [h("UCM_SEC_TAKEOVER", "Take Titles (for you)"),
+    items = [section_header("UCM_SEC_TAKEOVER", "Take Titles (for you)"),
              ("ia", "ucm_take_title"), ("ia", "ucm_claim_title"),
-             ("row", [sg("ucm_take_domain", "Take Domain", "You take every title the target holds, with their vassals.", other, change.format(f"{TG} = {{ every_held_title = {{ {grab} }} }}")),
-                      sg("ucm_take_realm", "Take Realm", "You take every county-or-higher title in the target's realm, with their vassals.", other,
+             ("row", [add_sgui("ucm_take_domain", "Take Domain", "You take every title the target holds, with their vassals.", other, change.format(f"{TG} = {{ every_held_title = {{ {grab} }} }}")),
+                      add_sgui("ucm_take_realm", "Take Realm", "You take every county-or-higher title in the target's realm, with their vassals.", other,
                          change.format(f"{TG} = {{ every_sub_realm_title = {{ limit = {{ tier > tier_barony }} {grab} }} }}")),
-                      sg("ucm_claim_creatable", "Claim Creatable", "You get a pressed claim on every title you could create.", "always = yes",
+                      add_sgui("ucm_claim_creatable", "Claim Creatable", "You get a pressed claim on every title you could create.", "always = yes",
                          "every_alert_creatable_title = { root = { add_pressed_claim = prev } }")]),
              ("ia", "ucm_modify_vassal_contract"),
-             h("UCM_SEC_MERGE", "Merge Titles"), ("ia", "ucm_merge_title"),
+             section_header("UCM_SEC_MERGE", "Merge Titles"), ("ia", "ucm_merge_title"),
              sg_item("ucm_merge_title_clear", "Forget Marked Title", "Clear the title marked for merging.", "has_variable = ucm_merge_title", "remove_variable = ucm_merge_title"),
              sg_item("ucm_organize_dejure", "Organize De Jure", "Make every lower-tier title held by the target and their direct vassals de jure under the target's primary title.", primary,
                      f"{TG} = {{ every_held_title = {{ limit = {{ tier > tier_barony this.tier < root.{TG}.primary_title.tier }} set_de_jure_liege_title = root.{TG}.primary_title }} "
@@ -198,11 +199,11 @@ def titles():
                      "ucm_has_de_jure_transferable_direct_vassals_trigger = yes", "ucm_one_click_transfer_direct_vassals_to_de_jure_liege_effect = yes"),
              sg_item("ucm_max_authority", "Max Realm Authority", "Raise the target's crown authority or equivalent law to the top level.", f"{T} {TG} = {{ is_independent_ruler = yes }}",
                      f"{TG} = {{ " + " ".join(f"if = {{ limit = {{ OR = {{ " + " ".join(f"has_realm_law = {law}_{i}" for i in range(low, top)) + f" }} }} add_realm_law = {law}_{top} }}" for law, low, top in AUTHORITY) + " }"),
-             h("UCM_SEC_CLAIM_REMOVE", "Remove Claims"), ("row", [
-        sg("ucm_remove_all_claims", "All Claims", "Remove every explicit claim the target has. Inherited claims from living relatives stay.", T, list_claims("")),
-        sg("ucm_remove_claims_on_second", "Claims on Second", "Remove the target's explicit claims on the second character's titles.", P,
+             section_header("UCM_SEC_CLAIM_REMOVE", "Remove Claims"), ("row", [
+        add_sgui("ucm_remove_all_claims", "All Claims", "Remove every explicit claim the target has. Inherited claims from living relatives stay.", T, list_claims("")),
+        add_sgui("ucm_remove_claims_on_second", "Claims on Second", "Remove the target's explicit claims on the second character's titles.", P,
            list_claims(f"limit = {{ holder ?= {SEC} }}"))])]
-    items.append(h("UCM_SEC_DEJURE_BUILD", "De Jure Tools"))
+    items.append(section_header("UCM_SEC_DEJURE_BUILD", "De Jure Tools"))
     liege = f"{TG}.primary_title.de_jure_liege"
     items.append(sg_item("ucm_create_dejure_liege", "Take De Jure Liege Title", "Give the target the unheld de jure liege title of their primary title.",
                          f"{primary} exists = {liege} NOT = {{ exists = {liege}.holder }}", f"{TG} = {{ get_title = {liege} }}"))
@@ -214,9 +215,9 @@ def titles():
     items.append(sg_item("ucm_destroy_primary_confirm", "Destroy Primary Title…", "Asks first, then destroys the target's primary title.", primary,
                          "trigger_event = ucm_extra.2"))
     gov = [("ecclesiastical", "Ecclesiastical"), ("wanua", "Wanua")]
-    items.append(("row", [sg(f"ucm_gov_{k}", n, f"Change the target's government to {n}.", primary,
+    items.append(("row", [add_sgui(f"ucm_gov_{k}", n, f"Change the target's government to {n}.", primary,
                              f"{TG} = {{ change_government = {k}_government }}") for k, n in gov]))
-    items.append(h("UCM_SEC_PACT", "Permanent Truce"))
+    items.append(section_header("UCM_SEC_PACT", "Permanent Truce"))
     items.append(sg_item("ucm_truce_second_permanent", "Permanent Truce", "A 9,999-year truce between the target and the second character.",
                          f"{P} {TG} = {{ is_ruler = yes }} {SEC} = {{ is_ruler = yes }}",
                          f"{TG} = {{ add_truce_both_ways = {{ character = {SEC} years = 9999 override = yes name = ucm_truce_name }} }}"))
@@ -229,17 +230,17 @@ def titles():
     atwar = f"{T} {TG} = {{ is_at_war = yes }}"
     leader = f"OR = {{ primary_attacker = root.{TG} primary_defender = root.{TG} }}"
     versus = f"{leader} is_participant = {SEC}"
-    items.append(h("UCM_SEC_WAR_OUTCOMES", "War Outcomes"))
-    items.append(("row", [sg("ucm_wars_win_all", "Win All Wars", "End every war the target leads as a victory.", atwar, wars(leader, True)),
-                          sg("ucm_wars_lose_all", "Lose All Wars", "End every war the target leads as a defeat.", atwar, wars(leader, False))]))
-    items.append(("row", [sg("ucm_wars_win_second", "Win vs Second", "Win the target's wars that involve the second character.", f"{atwar} {P}", wars(versus, True)),
-                          sg("ucm_wars_lose_second", "Lose vs Second", "Lose the target's wars that involve the second character.", f"{atwar} {P}", wars(versus, False)),
-                          sg("ucm_wars_peace_second", "White Peace vs Second", "White peace in the target's wars that involve the second character.", f"{atwar} {P}",
+    items.append(section_header("UCM_SEC_WAR_OUTCOMES", "War Outcomes"))
+    items.append(("row", [add_sgui("ucm_wars_win_all", "Win All Wars", "End every war the target leads as a victory.", atwar, wars(leader, True)),
+                          add_sgui("ucm_wars_lose_all", "Lose All Wars", "End every war the target leads as a defeat.", atwar, wars(leader, False))]))
+    items.append(("row", [add_sgui("ucm_wars_win_second", "Win vs Second", "Win the target's wars that involve the second character.", f"{atwar} {P}", wars(versus, True)),
+                          add_sgui("ucm_wars_lose_second", "Lose vs Second", "Lose the target's wars that involve the second character.", f"{atwar} {P}", wars(versus, False)),
+                          add_sgui("ucm_wars_peace_second", "White Peace vs Second", "White peace in the target's wars that involve the second character.", f"{atwar} {P}",
                              f"{TG} = {{ every_character_war = {{ limit = {{ {versus} }} end_war = white_peace }} }}")]))
     items.append(sg_item("ucm_holy_war_second", "Great Holy War on Second", "The target's faith calls a great holy war against the second character.", f"{P} {SEC} = {{ is_landed = yes }}",
                          f"{TG}.faith = {{ start_great_holy_war = {{ target_character = {SEC} target_title = {SEC}.primary_title delay = 110 }} }}"))
     declare = f"{P} {TG} = {{ is_ruler = yes }} {SEC} = {{ is_landed = yes }}"
-    items.append(("row", [sg(f"ucm_declare_{t}", f"Declare: {n}", f"The target declares a {n.lower()} war on the second character.", declare,
+    items.append(("row", [add_sgui(f"ucm_declare_{t}", f"Declare: {n}", f"The target declares a {n.lower()} war on the second character.", declare,
                              f"{TG} = {{ start_war = {{ cb = ucm_war_{t} target = {SEC} }} }}")
                           for t, n in (("county", "County"), ("duchy", "Duchy"), ("kingdom", "Kingdom"), ("empire", "Empire"))]))
     return items
@@ -248,17 +249,17 @@ def titles():
 # --- Your realm and court (always act on you, not the target) -----------------------------------------
 def realm_titles():
     can_grant = "is_landed = yes ucm_has_spare_title_trigger = yes"
-    return [h("UCM_SEC_REALM_TITLES", "Your Realm's Titles"),
-            ("row", [sg("ucm_grant_titles", "Grant Spare Titles", "Give your spare titles to the best candidates of your realm. You keep your primary title and capital county.", can_grant, "ucm_one_click_grant_realm_titles_effect = yes"),
-                     sg("ucm_grant_titles_dynasty", "Grant to Dynasty", "Give your spare titles to the best candidates of your dynasty. You keep your primary title and capital county.", f"{can_grant} exists = dynasty", "ucm_dynasty_one_click_grant_realm_titles_effect = yes")]),
-            ("row", [sg("ucm_land_cap", "Cap Vassal Land", "Every vassal keeps only their primary title and capital county. You take the rest.", "is_landed = yes", "ucm_official_land_cap_full_effect = yes"),
-                     sg("ucm_strip_realm_titles", "Reclaim All Titles", "Take every county and higher title in your realm from your vassals, except from anyone at war with you.", "is_landed = yes", "ucm_strip_realm_titles_effect = yes")])]
+    return [section_header("UCM_SEC_REALM_TITLES", "Your Realm's Titles"),
+            ("row", [add_sgui("ucm_grant_titles", "Grant Spare Titles", "Give your spare titles to the best candidates of your realm. You keep your primary title and capital county.", can_grant, "ucm_one_click_grant_realm_titles_effect = yes"),
+                     add_sgui("ucm_grant_titles_dynasty", "Grant to Dynasty", "Give your spare titles to the best candidates of your dynasty. You keep your primary title and capital county.", f"{can_grant} exists = dynasty", "ucm_dynasty_one_click_grant_realm_titles_effect = yes")]),
+            ("row", [add_sgui("ucm_land_cap", "Cap Vassal Land", "Every vassal keeps only their primary title and capital county. You take the rest.", "is_landed = yes", "ucm_official_land_cap_full_effect = yes"),
+                     add_sgui("ucm_strip_realm_titles", "Reclaim All Titles", "Take every county and higher title in your realm from your vassals, except from anyone at war with you.", "is_landed = yes", "ucm_strip_realm_titles_effect = yes")])]
 
 
 def realm_court():
-    return [h("UCM_SEC_YOUR_COURT", "Your Court"),
-            ("row", [sg("ucm_tidy_court", "Tidy Court", "Send away your guests and every unemployed courtier with poor skills. Your family, hostages and wards stay.", "is_ruler = yes", "ucm_tidy_court_effect = yes"),
-                     sg("ucm_assign_guardians", "Assign Guardians", "Give every child at your court without a guardian the most learned free courtier.", "is_ruler = yes", "ucm_assign_guardians_effect = yes")])]
+    return [section_header("UCM_SEC_YOUR_COURT", "Your Court"),
+            ("row", [add_sgui("ucm_tidy_court", "Tidy Court", "Send away your guests and every unemployed courtier with poor skills. Your family, hostages and wards stay.", "is_ruler = yes", "ucm_tidy_court_effect = yes"),
+                     add_sgui("ucm_assign_guardians", "Assign Guardians", "Give every child at your court without a guardian the most learned free courtier.", "is_ruler = yes", "ucm_assign_guardians_effect = yes")])]
 
 
 def seize_gold():
@@ -268,20 +269,20 @@ def seize_gold():
 # --- Faith and culture ----------------------------------------------------------------------------
 def faith_culture():
     tenets = "any_personal_tenet = { always = yes }"
-    items = [h("UCM_SEC_PERSONAL_TENETS", "Personal Tenets"),
+    items = [section_header("UCM_SEC_PERSONAL_TENETS", "Personal Tenets"),
              sg_item("ucm_copy_personal_tenets", "Copy Second's Personal Tenets", "Give the target each of the second character's personal tenets. The game drops the worst one when out of slots.",
                      f"{P} {TG} = {{ is_playable_character = yes }}",
                      f"{SEC} = {{ every_personal_tenet = {{ save_temporary_scope_as = ucm_tenet root.{TG} = {{ force_set_personal_tenet = scope:ucm_tenet }} }} }}"),
-             ("row", [sg("ucm_remove_worst_tenet", "Remove Worst Tenet", "Remove the target's worst personal tenet.", f"{T} {TG} = {{ {tenets} }}", f"{TG} = {{ remove_worst_personal_tenet = yes }}"),
-                      sg("ucm_clear_personal_tenets", "Clear Tenets", "Remove all of the target's personal tenets.", f"{T} {TG} = {{ {tenets} }}",
+             ("row", [add_sgui("ucm_remove_worst_tenet", "Remove Worst Tenet", "Remove the target's worst personal tenet.", f"{T} {TG} = {{ {tenets} }}", f"{TG} = {{ remove_worst_personal_tenet = yes }}"),
+                      add_sgui("ucm_clear_personal_tenets", "Clear Tenets", "Remove all of the target's personal tenets.", f"{T} {TG} = {{ {tenets} }}",
                          f"{TG} = {{ while = {{ limit = {{ {tenets} }} remove_worst_personal_tenet = yes }} }}")]),
-             h("UCM_SEC_RITES", "Rites & Clergy"),
-             ("row", [sg("ucm_learn_second_rite", "Learn Second's Rite", "The target learns the second character's rite without converting.", f"{P} {TG} = {{ is_playable_character = yes }}",
+             section_header("UCM_SEC_RITES", "Rites & Clergy"),
+             ("row", [add_sgui("ucm_learn_second_rite", "Learn Second's Rite", "The target learns the second character's rite without converting.", f"{P} {TG} = {{ is_playable_character = yes }}",
                          f"{TG} = {{ add_known_rite = {SEC}.rite }}"),
-                      sg("ucm_join_second_rite", "Join Second's Rite", "The target converts to the second character's rite.", P, f"{TG} = {{ set_character_rite = {SEC}.rite }}")]),
+                      add_sgui("ucm_join_second_rite", "Join Second's Rite", "The target converts to the second character's rite.", P, f"{TG} = {{ set_character_rite = {SEC}.rite }}")]),
              sg_item("ucm_make_cardinal", "Make Cardinal", "Appoint the target through the game's cardinalate rules.", f"{T} {TG} = {{ pam_can_receive_cardinalate_trigger = yes exists = capital_county }}",
                      f"{TG} = {{ grant_cardinal_title_effect = {{ CARDINAL_COUNTY = capital_county }} }}"),
-             h("UCM_SEC_CULTURE_TOOLS", "Culture Tools"),
+             section_header("UCM_SEC_CULTURE_TOOLS", "Culture Tools"),
              sg_item("ucm_create_divergent_culture", "Create Divergent Culture", "The target founds a divergent culture keeping the current pillars and traditions. Use the culture editors to change it.",
                      f"{T} exists = {TG}.culture", f"{TG} = {{ create_divergent_culture = yes }}"),
              sg_item("ucm_learn_second_language", "Learn Second's Language", "The target learns the language of the second character's culture.", P, f"{TG} = {{ learn_language_of_culture = {SEC}.culture }}"),
@@ -304,33 +305,33 @@ MODS = [("opinion", "Popular Opinion +100", "county_opinion_add = 100"), ("taxes
 
 
 def knights():
-    return [h("UCM_SEC_GLORY", "Glory"), steps("ucm_glory", "Glory", f"{T} {TG} = {{ is_acclaimed = yes }}", f"{TG} = {{ accolade = {{ add_glory = {{v}} }} }}")]
+    return [section_header("UCM_SEC_GLORY", "Glory"), steps("ucm_glory", "Glory", f"{T} {TG} = {{ is_acclaimed = yes }}", f"{TG} = {{ accolade = {{ add_glory = {{v}} }} }}")]
 
 
 def realm():
-    items = [h("UCM_SEC_CAPITAL_COUNTY", "Target's Capital County"),
+    items = [section_header("UCM_SEC_CAPITAL_COUNTY", "Target's Capital County"),
              steps("ucm_county_control", "Control", HAS_COUNTY, f"{COUNTY} = {{ change_county_control = {{v}} }}"),
              steps("ucm_county_development", "Development", HAS_COUNTY, f"{COUNTY} = {{ change_development_level = {{v}} }}")]
     presets = []
     for n in (0, 50, 100):
-        presets.append(sg(f"ucm_county_control_{n}", f"Control {n}", f"Set the capital county's control to {n}.", HAS_COUNTY,
+        presets.append(add_sgui(f"ucm_county_control_{n}", f"Control {n}", f"Set the capital county's control to {n}.", HAS_COUNTY,
                           f"{COUNTY} = {{ change_county_control = {{ value = {n} subtract = county_control }} }}"))
     items.append(("row", presets))
     presets = []
     for n in (0, 50, 100):
-        presets.append(sg(f"ucm_county_dev_{n}", f"Develop {n}", f"Set the capital county's development to {n}.", HAS_COUNTY,
+        presets.append(add_sgui(f"ucm_county_dev_{n}", f"Develop {n}", f"Set the capital county's development to {n}.", HAS_COUNTY,
                           f"{COUNTY} = {{ change_development_level = {{ value = {n} subtract = development_level }} }}"))
     items.append(("row", presets))
     for k, name, _ in MODS:
         mod = f"ucm_extra_county_{k}"
         items.append(("row", [
-            sg(f"ucm_add_{mod}", f"Add {name}", f"Add a lasting {name} modifier to the target's capital county.",
+            add_sgui(f"ucm_add_{mod}", f"Add {name}", f"Add a lasting {name} modifier to the target's capital county.",
                f"{HAS_COUNTY} NOT = {{ {COUNTY} = {{ has_county_modifier = {mod} }} }}", f"{COUNTY} = {{ add_county_modifier = {mod} }}"),
-            sg(f"ucm_rem_{mod}", f"Remove {name}", f"Remove this modifier from the target's capital county.",
+            add_sgui(f"ucm_rem_{mod}", f"Remove {name}", f"Remove this modifier from the target's capital county.",
                f"{HAS_COUNTY} {COUNTY} = {{ has_county_modifier = {mod} }}", f"{COUNTY} = {{ remove_county_modifier = {mod} }}")]))
     other_county = f"tier = tier_county NOT = {{ this = root.{COUNTY} }}"
     other_barony = f"tier = tier_barony title_province = {{ has_holding = yes NOT = {{ this = root.{PROV} }} }}"
-    items.append(h("UCM_SEC_CAPITALS", "Capitals & Holdings"))
+    items.append(section_header("UCM_SEC_CAPITALS", "Capitals & Holdings"))
     items.append(sg_item("ucm_move_realm_capital", "Move Realm Capital", "Move the target's realm capital to another county they personally hold, chosen at random.",
                          f"{T} {TG} = {{ any_held_title = {{ {other_county} }} }}",
                          f"{TG} = {{ random_held_title = {{ limit = {{ {other_county} }} save_temporary_scope_as = ucm_new_capital }} set_realm_capital = scope:ucm_new_capital }}"))
@@ -340,11 +341,11 @@ def realm():
     items.append(sg_item("ucm_remove_holdings_confirm", "Remove Other Holdings…", "Asks first, then removes every holding in the capital county except the county capital.", HAS_COUNTY,
                          "trigger_event = ucm_extra.1"))
     items.append(("row", [
-        sg("ucm_add_building_slot", "Add Building Slot", "Add a lasting extra building slot to the target's capital holding.",
+        add_sgui("ucm_add_building_slot", "Add Building Slot", "Add a lasting extra building slot to the target's capital holding.",
            f"{T} {PROV} = {{ NOT = {{ has_province_modifier = ucm_extra_building_slot }} }}", f"{PROV} = {{ add_province_modifier = ucm_extra_building_slot }}"),
-        sg("ucm_remove_building_slot", "Remove Slot", "Remove the extra building slot.",
+        add_sgui("ucm_remove_building_slot", "Remove Slot", "Remove the extra building slot.",
            f"{T} {PROV} = {{ has_province_modifier = ucm_extra_building_slot }}", f"{PROV} = {{ remove_province_modifier = ucm_extra_building_slot }}"),
-        sg("ucm_ai_build", "AI Builds One", "Add one building to the target's capital holding using the AI's choice.", T, f"{PROV} = {{ generate_building = yes }}")]))
+        add_sgui("ucm_ai_build", "AI Builds One", "Add one building to the target's capital holding using the AI's choice.", T, f"{PROV} = {{ generate_building = yes }}")]))
     return items
 
 
@@ -355,7 +356,7 @@ BUILDING_FILES = ("00_admin_buildings", "00_castle_buildings", "00_city_building
 
 
 def buildings(game):
-    items = [h("UCM_SEC_BUILD_CATALOG", "Build on Target's Capital Holding")]
+    items = [section_header("UCM_SEC_BUILD_CATALOG", "Build on Target's Capital Holding")]
     for stem in BUILDING_FILES:
         objs = {k: re.search(r"next_building\s*=\s*(\w+)", b) for k, b in ck3parse.top_level_objects(os.path.join(game, "common", "buildings", stem + ".txt"))}
         nexts = {m.group(1) for m in objs.values() if m}
@@ -368,8 +369,8 @@ def buildings(game):
             up = "".join(f"{'if' if i == 0 else 'else_if'} = {{ limit = {{ NOT = {{ has_building_or_higher = {b} }} }} add_building = {b} }} " for i, b in enumerate(chain))
             down = "".join(f"{'if' if i == 0 else 'else_if'} = {{ limit = {{ has_building = {b} }} remove_building = {b} }} " for i, b in enumerate(reversed(chain)))
             items.append(("row", [
-                sg(f"ucm_bld_{root}_down", f"− {name}", f"Remove the highest level of {name} from the target's capital holding.", T, f"{PROV} = {{ {down}}}", VANILLA_SGUIS),
-                sg(f"ucm_bld_{root}_up", f"+ {name}", f"Build the next level of {name} ({len(chain)} levels) on the target's capital holding.", T, f"{PROV} = {{ {up}}}", VANILLA_SGUIS)]))
+                add_sgui(f"ucm_bld_{root}_down", f"− {name}", f"Remove the highest level of {name} from the target's capital holding.", T, f"{PROV} = {{ {down}}}", VANILLA_SGUIS),
+                add_sgui(f"ucm_bld_{root}_up", f"+ {name}", f"Build the next level of {name} ({len(chain)} levels) on the target's capital holding.", T, f"{PROV} = {{ {up}}}", VANILLA_SGUIS)]))
     return items
 
 
@@ -383,36 +384,36 @@ def innovation_eras(game):
             m = re.search(r"culture_era\s*=\s*culture_era_(\w+)", b)
             if m and m.group(1) in by_era:
                 by_era[m.group(1)].append(k)
-    items = [h("UCM_SEC_INNOVATION_ERAS", "Innovations by Era")]
+    items = [section_header("UCM_SEC_INNOVATION_ERAS", "Innovations by Era")]
     valid = f"{T} exists = {TG}.culture"
     for e, n in ERAS:
         items.append(("row", [
-            sg(f"ucm_era_add_{e}", f"Add {n}", f"Add every {n} innovation to the target's culture.", valid,
+            add_sgui(f"ucm_era_add_{e}", f"Add {n}", f"Add every {n} innovation to the target's culture.", valid,
                f"{TG}.culture = {{ " + " ".join(f"add_innovation = {k}" for k in by_era[e]) + " }", VANILLA_SGUIS),
-            sg(f"ucm_era_remove_{e}", f"Remove {n}", f"Remove every {n} innovation from the target's culture.", valid,
+            add_sgui(f"ucm_era_remove_{e}", f"Remove {n}", f"Remove every {n} innovation from the target's culture.", valid,
                f"{TG}.culture = {{ " + " ".join(f"remove_innovation = {k}" for k in by_era[e]) + " }", VANILLA_SGUIS)]))
     return items
 
 
 def activities_legends():
     act = f"{T} exists = {TG}.involved_activity"
-    items = [h("UCM_SEC_ACTIVITY_CONTROLS", "Current Activity"),
-             ("row", [sg("ucm_activity_skip", "Skip Phase", "Skip the current phase of the target's activity.", act, f"{TG}.involved_activity = {{ skip_activity_phase = yes }}"),
-                      sg("ucm_activity_finish", "Finish", "Skip through the remaining phases of the target's activity (up to 8).", act,
+    items = [section_header("UCM_SEC_ACTIVITY_CONTROLS", "Current Activity"),
+             ("row", [add_sgui("ucm_activity_skip", "Skip Phase", "Skip the current phase of the target's activity.", act, f"{TG}.involved_activity = {{ skip_activity_phase = yes }}"),
+                      add_sgui("ucm_activity_finish", "Finish", "Skip through the remaining phases of the target's activity (up to 8).", act,
                          f"{TG}.involved_activity = {{ {' '.join(['skip_activity_phase = yes'] * 8)} }}"),
-                      sg("ucm_activity_cancel", "Cancel", "Cancel the target's activity outright.", act, f"{TG}.involved_activity = {{ invalidate_activity = yes }}")]),
-             h("UCM_SEC_ESTATE_PRESETS", "Estate Presets")]
+                      add_sgui("ucm_activity_cancel", "Cancel", "Cancel the target's activity outright.", act, f"{TG}.involved_activity = {{ invalidate_activity = yes }}")]),
+             section_header("UCM_SEC_ESTATE_PRESETS", "Estate Presets")]
     setup = f"set_global_variable = {{ name = ucm_cheat_menu_recipient value = {TG} }} save_scope_as = actor"
     estate = f"{T} {TG} = {{ is_alive = yes domicile ?= {{ OR = {{ is_domicile_type = estate is_domicile_type = east_asian_estate is_domicile_type = japanese_manor }} }} }}"
-    items.append(("row", [sg(f"ucm_estate_{p}", n, f"Apply the {n.lower()} estate preset to the target's domicile.", estate,
+    items.append(("row", [add_sgui(f"ucm_estate_{p}", n, f"Apply the {n.lower()} estate preset to the target's domicile.", estate,
                              f"{TG} = {{ ucm_domicile_preset_{p}_effect = yes }}") for p, n in (("economy", "Economic"), ("military", "Military"), ("balanced", "Balanced"))]))
-    items.append(h("UCM_SEC_LEGEND_MAKER", "Create a Legend for the Target"))
+    items.append(section_header("UCM_SEC_LEGEND_MAKER", "Create a Legend for the Target"))
     items.append(sg_item("ucm_legend_clear", "Clear Target's Legends", "Stop the target promoting a legend. CK3 has no way to delete one.", T, f"{setup} ucm_legend_master_clear_owned_legends_effect = yes"))
     with open(os.path.join(MOD, "common", "scripted_effects", "ucm_legend_master_effects.txt"), encoding="utf-8-sig") as fh:
         keys = sorted(set(re.findall(r"(?m)^ucm_legend_master_add_(\w+)_effect\s*=", fh.read())))
     row = []
     for k in keys:
-        row.append(sg(f"ucm_legend_{k}", humanize(k), f"Give the target the {humanize(k).lower()} legend.", T,
+        row.append(add_sgui(f"ucm_legend_{k}", humanize(k), f"Give the target the {humanize(k).lower()} legend.", T,
                       f"{TG} = {{ save_scope_as = ucm_cheat_menu_target }} ucm_legend_master_add_{k}_effect = yes", VANILLA_SGUIS))
         if len(row) == 2:
             items.append(("row", row))
@@ -497,22 +498,22 @@ ucm_spawn_{k}_value = {{
 def spawner(game):
     me = "GetPlayer.MakeScope.ScriptValue( '%s' )|0"
     LOC.update(UCM_SPAWN_AGE="Age", UCM_SPAWN_COUNT="Count")
-    items = [h("UCM_SEC_SPAWN_OPTIONS", "New Characters: Options"),
+    items = [section_header("UCM_SEC_SPAWN_OPTIONS", "New Characters: Options"),
              ("value", "UCM_SPAWN_AGE", me % "ucm_spawn_age_value", sg_pair("ucm_spawn_age", "age", "ucm_spawn_age_value", "ucm_step_value", 0, 100)),
              ("value", "UCM_SPAWN_COUNT", me % "ucm_spawn_count_value", sg_pair("ucm_spawn_count", "count", "ucm_spawn_count_value", "1", 1, 20))]
     opts = []
     for k, n, tip in (("female", "Female", "New characters are women."), ("no_traits", "No Traits", "New characters start without random traits."),
                       ("stats", "Max Skills", "New characters get +100 in every skill."), ("good", "Best Genes", "New characters get the best intellect, beauty and physique traits."),
                       ("immortal", "Immortal", "New characters are immortal.")):
-        opts.append((sg(f"ucm_spawn_opt_{k}", n, tip, "always = yes",
+        opts.append((add_sgui(f"ucm_spawn_opt_{k}", n, tip, "always = yes",
                         f"if = {{ limit = {{ has_character_flag = ucm_spawn_{k} }} remove_character_flag = ucm_spawn_{k} }} else = {{ add_character_flag = ucm_spawn_{k} }}"), f"ucm_spawn_{k}"))
-    items += [("togglerow", opts[:3]), ("togglerow", opts[3:]), ("vs", "ucm_spawn_picker", "ucm_open_spawn_picker"), h("UCM_SPAWN_SKILL_NOTE", "Skills (0 keeps the rolled skill)")]
+    items += [("togglerow", opts[:3]), ("togglerow", opts[3:]), ("vs", "ucm_spawn_picker", "ucm_open_spawn_picker"), section_header("UCM_SPAWN_SKILL_NOTE", "Skills (0 keeps the rolled skill)")]
     for k in SKILLS:
         LOC[f"UCM_SPAWN_{k.upper()}"] = k.capitalize()
         items.append(("value", f"UCM_SPAWN_{k.upper()}", me % f"ucm_spawn_{k}_value", sg_pair(f"ucm_spawn_{k}", k, f"ucm_spawn_{k}_value", "ucm_step_value", 0, 100)))
     spawn_picker_sguis()
     many = lambda dyn, after: f"while = {{ count = ucm_spawn_count_value ucm_spawn_create_effect = {{ DYNASTY = {dyn} }} {after} }}"
-    items.append(h("UCM_SEC_SPAWN_FAMILY", "New Family Members"))
+    items.append(section_header("UCM_SEC_SPAWN_FAMILY", "New Family Members"))
     younger = f"{T} ucm_spawn_age_value < {TG}.age"
     older = f"{T} ucm_spawn_age_value > {TG}.age"
     parent = f"if = {{ limit = {{ root.{TG} = {{ is_female = yes }} }} set_mother = root.{TG} }} else = {{ set_father = root.{TG} }}"
@@ -520,35 +521,35 @@ def spawner(game):
               f"else_if = {{ limit = {{ exists = root.{TG}.primary_spouse }} set_mother = root.{TG}.primary_spouse }}")
     house = f"if = {{ limit = {{ exists = root.{TG}.house }} set_house = root.{TG}.house }}"
     items.append(("row", [
-        sg("ucm_spawn_child", "Child", "Spawn children of the target (and their spouse). Must be younger than the target.", younger,
+        add_sgui("ucm_spawn_child", "Child", "Spawn children of the target (and their spouse). Must be younger than the target.", younger,
            many("none", f"scope:ucm_new = {{ {parent} {spouse} {house} }}")),
-        sg("ucm_spawn_sibling", "Sibling", "Spawn siblings of the target, sharing the target's parents.", f"{T} OR = {{ exists = {TG}.father exists = {TG}.mother }}",
+        add_sgui("ucm_spawn_sibling", "Sibling", "Spawn siblings of the target, sharing the target's parents.", f"{T} OR = {{ exists = {TG}.father exists = {TG}.mother }}",
            many("none", f"scope:ucm_new = {{ if = {{ limit = {{ exists = root.{TG}.father }} set_father = root.{TG}.father }} if = {{ limit = {{ exists = root.{TG}.mother }} set_mother = root.{TG}.mother }} {house} }}")),
     ]))
     items.append(("row", [
-        sg("ucm_spawn_parent", "Parent", "Spawn the target's missing mother (Female on) or father. Must be older than the target.",
+        add_sgui("ucm_spawn_parent", "Parent", "Spawn the target's missing mother (Female on) or father. Must be older than the target.",
            f"{older} OR = {{ AND = {{ has_character_flag = ucm_spawn_female NOT = {{ exists = {TG}.mother }} }} AND = {{ NOT = {{ has_character_flag = ucm_spawn_female }} NOT = {{ exists = {TG}.father }} }} }}",
            f"ucm_spawn_create_effect = {{ DYNASTY = generate }} if = {{ limit = {{ has_character_flag = ucm_spawn_female }} {TG} = {{ set_mother = scope:ucm_new }} }} else = {{ {TG} = {{ set_father = scope:ucm_new }} }}"),
-        sg("ucm_spawn_spouse", "Spouse", "Spawn a spouse and marry them to the target. Age must be 16 or more.", f"{T} {TG} = {{ is_adult = yes }} ucm_spawn_age_value >= 16",
+        add_sgui("ucm_spawn_spouse", "Spouse", "Spawn a spouse and marry them to the target. Age must be 16 or more.", f"{T} {TG} = {{ is_adult = yes }} ucm_spawn_age_value >= 16",
            f"ucm_spawn_create_effect = {{ DYNASTY = generate }} {TG} = {{ marry = scope:ucm_new }}"),
     ]))
-    items.append(h("UCM_SEC_SPAWN_COURT", "New Courtiers"))
+    items.append(section_header("UCM_SEC_SPAWN_COURT", "New Courtiers"))
     items.append(("row", [
-        sg("ucm_spawn_courtier", "Courtier", "Spawn courtiers with their own house at the target's court.", T, many("generate", "")),
-        sg("ucm_spawn_lowborn", "Lowborn", "Spawn lowborn courtiers at the target's court.", T, many("none", "")),
-    ] + [sg(f"ucm_spawn_{k}", n, f"Spawn {n.lower()}s with +25 {skill} at the target's court.", T, many("generate", f"scope:ucm_new = {{ add_{skill}_skill = 25 }}")) for k, n, skill in SKILL_ROLES]))
-    items.append(h("UCM_SEC_SPAWN_COUNCIL", "New Councillors (replaces the sitting one)"))
+        add_sgui("ucm_spawn_courtier", "Courtier", "Spawn courtiers with their own house at the target's court.", T, many("generate", "")),
+        add_sgui("ucm_spawn_lowborn", "Lowborn", "Spawn lowborn courtiers at the target's court.", T, many("none", "")),
+    ] + [add_sgui(f"ucm_spawn_{k}", n, f"Spawn {n.lower()}s with +25 {skill} at the target's court.", T, many("generate", f"scope:ucm_new = {{ add_{skill}_skill = 25 }}")) for k, n, skill in SKILL_ROLES]))
+    items.append(section_header("UCM_SEC_SPAWN_COUNCIL", "New Councillors (replaces the sitting one)"))
     adult = f"{T} {TG} = {{ is_ruler = yes }} ucm_spawn_age_value >= 16"
     for i in range(0, len(COUNCIL), 3):
-        items.append(("row", [sg(f"ucm_spawn_council_{k}", n, f"Spawn a {n.lower()} with +25 {skill} and seat them on the target's council.", adult,
+        items.append(("row", [add_sgui(f"ucm_spawn_council_{k}", n, f"Spawn a {n.lower()} with +25 {skill} and seat them on the target's council.", adult,
                                  f"ucm_spawn_create_effect = {{ DYNASTY = generate }} scope:ucm_new = {{ add_{skill}_skill = 25 }} {TG} = {{ assign_councillor_type = {{ type = councillor_{k} target = scope:ucm_new remove_existing_councillor = yes }} }}")
                               for k, n, skill in COUNCIL[i:i + 3]]))
-    items.append(h("UCM_SEC_SPAWN_POSITIONS", "New Court Position Holders"))
+    items.append(section_header("UCM_SEC_SPAWN_POSITIONS", "New Court Position Holders"))
     row = []
     for f in sorted(glob.glob(os.path.join(game, "common", "court_positions", "types", "*.txt"))):
         for k, _ in ck3parse.top_level_objects(f):
             n = vanilla_label(k, humanize(k.replace("_court_position", "")))
-            row.append(sg(f"ucm_spawn_pos_{k}", n, "Spawn a new character and appoint them to this position at the target's court.",
+            row.append(add_sgui(f"ucm_spawn_pos_{k}", n, "Spawn a new character and appoint them to this position at the target's court.",
                           f"{T} {TG} = {{ can_employ_court_position_type = {k} }}",
                           f"ucm_spawn_create_effect = {{ DYNASTY = generate }} {TG} = {{ appoint_court_position = {{ recipient = scope:ucm_new court_position = {k} }} }}", VANILLA_SGUIS))
             if len(row) == 2:
@@ -564,7 +565,7 @@ def spawn_picker_sguis():
                UCM_SPAWN_PICKER_NOTE="Click a culture or faith to give it to every character you spawn from now on. Until you pick one, they use the target's.",
                UCM_SPAWN_CULTURE_LABEL="Culture:", UCM_SPAWN_FAITH_LABEL="Faith:")
     for kind, name in (("culture", "culture"), ("faith", "faith")):
-        sg(f"ucm_spawn_{kind}_clear", "Use Target's", f"New characters use the target's {name} again.", f"has_variable = ucm_spawn_{kind}", f"remove_variable = ucm_spawn_{kind}")
+        add_sgui(f"ucm_spawn_{kind}_clear", "Use Target's", f"New characters use the target's {name} again.", f"has_variable = ucm_spawn_{kind}", f"remove_variable = ucm_spawn_{kind}")
         SGUIS.append(f"ucm_spawn_pick_{kind} = {{\n\tscope = character\n\tsaved_scopes = {{ selected_{kind} }}\n\tis_shown = {{ ucm_single_player_trigger = yes }}\n"
                      f"\tis_valid = {{ exists = scope:selected_{kind} }}\n\teffect = {{ set_variable = {{ name = ucm_spawn_{kind} value = scope:selected_{kind} }} }}\n}}\n")
     SGUIS.append("ucm_spawn_lists_load = {\n\tscope = character\n\tis_shown = { ucm_single_player_trigger = yes }\n\tis_valid = { always = yes }\n"
@@ -572,8 +573,8 @@ def spawn_picker_sguis():
 
 
 def sg_pair(key, name, value, step, lo, hi):
-    sg(f"{key}_up", "+", f"Raise the spawn {name}.", f"{value} < {hi}", f"set_variable = {{ name = {key} value = {{ value = {value} add = {step} max = {hi} }} }}")
-    sg(f"{key}_down", "−", f"Lower the spawn {name}.", f"{value} > {lo}", f"set_variable = {{ name = {key} value = {{ value = {value} subtract = {step} min = {lo} }} }}")
+    add_sgui(f"{key}_up", "+", f"Raise the spawn {name}.", f"{value} < {hi}", f"set_variable = {{ name = {key} value = {{ value = {value} add = {step} max = {hi} }} }}")
+    add_sgui(f"{key}_down", "−", f"Lower the spawn {name}.", f"{value} > {lo}", f"set_variable = {{ name = {key} value = {{ value = {value} subtract = {step} min = {lo} }} }}")
     return key
 
 
@@ -642,27 +643,43 @@ def modifier_editor(logs):
     return cat, mods, sguis
 
 
-R = "GuiScope.SetRoot( GetPlayer.MakeScope ).End"
-
-
-def window(name, anchor, var, title, note, body, sgui=None, size=(500, 720), extra=""):
+def window(*, name, anchor, title, note, body, var=None, sgui=None, size=(500, 720), extra=""):
     """The shared picker window. Opened by a VariableSystem toggle (var), or with sgui=key by a character flag:
     <key>_visible and <key>_close scripted GUIs, and no menu-target line since events open those too."""
-    close = f"GetScriptedGui( '{sgui}_close' ).Execute( {R} )" if sgui else f"GetVariableSystem.Toggle( '{var}' )"
-    shown = f"GetScriptedGui( '{sgui}_visible' ).IsShown( {R} )" if sgui else f"And( GetVariableSystem.Exists( '{var}' ), GetScriptedGui( 'ucm_menu_visible' ).IsShown( {R} ) )"
+    close = f"GetScriptedGui( '{sgui}_close' ).Execute( {ROOT} )" if sgui else f"GetVariableSystem.Toggle( '{var}' )"
+    shown = f"GetScriptedGui( '{sgui}_visible' ).IsShown( {ROOT} )" if sgui else f"And( GetVariableSystem.Exists( '{var}' ), GetScriptedGui( 'ucm_menu_visible' ).IsShown( {ROOT} ) )"
     return "\n".join([
-        "window = {", f'  name = "{name}"', f"  parentanchor = {anchor}", f"  size = {{ {size[0]} {size[1]} }}", "  layer = top", "  movable = yes", "  alwaystransparent = no", "  filter_mouse = all",
-        f'  visible = "[{shown}]"', *([extra] if extra else []),
-        "  widget = {", "    size = { 100% 100% }", "    background = { using = Background_Area_Dark alpha = 1.0 }", "  }",
-        "  vbox = {", "    using = Window_Margins", "    layoutpolicy_horizontal = expanding", "    layoutpolicy_vertical = expanding", "    spacing = 6",
-        "    header_pattern = {", "      layoutpolicy_horizontal = expanding", f'      blockoverride "header_text" {{ text = "{title}" }}',
-        f'      blockoverride "button_close" {{ onclick = "[{close}]" }}', "    }",
+        "window = {",
+        f'  name = "{name}"',
+        f"  parentanchor = {anchor}",
+        f"  size = {{ {size[0]} {size[1]} }}",
+        "  layer = top",
+        "  movable = yes",
+        "  alwaystransparent = no",
+        "  filter_mouse = all",
+        f'  visible = "[{shown}]"',
+        *([extra] if extra else []),
+        *WINDOW_BACKGROUND,
+        "  vbox = {",
+        "    using = Window_Margins",
+        "    layoutpolicy_horizontal = expanding",
+        "    layoutpolicy_vertical = expanding",
+        "    spacing = 6",
+        "    header_pattern = {",
+        "      layoutpolicy_horizontal = expanding",
+        f'      blockoverride "header_text" {{ text = "{title}" }}',
+        f'      blockoverride "button_close" {{ onclick = "[{close}]" }}',
+        "    }",
         *([] if sgui else ['    text_single = { layoutpolicy_horizontal = expanding text = "UCM_MENU_TARGET" }']),
         f'    text_multi = {{ layoutpolicy_horizontal = expanding autoresize = yes max_width = {size[0] - 40} text = "{note}" default_format = "#low" }}',
-        body, "  }", "}", ""])
+        body,
+        "  }",
+        "}",
+        "",
+    ])
 
 
-def group_list(datamodel, group_ctx, group, children, item, onclick, extra=""):
+def group_list(*, datamodel, group_ctx, group, children, item, onclick, extra=""):
     """Scrollbox of expandable groups from a global list: heritage -> culture, religion -> faith. extra goes inside each item."""
     expanded = f"ConcatIfNeitherEmpty({group}.GetNameNoTooltip,'children_visible')"
     return f"""    scrollbox = {{
@@ -710,24 +727,39 @@ def modifier_gui(cat):
         return f"[GetVariableSystem.HasValue( 'ucm_mod_cat', '{c}' )]"
 
     def btn(key, label, tip):
-        return (f'button_standard = {{ size = {{ 44 26 }} tooltip = "{tip}" enabled = "[GetScriptedGui( \'{key}\' ).IsValid( {R} )]" onclick = "[GetScriptedGui( \'{key}\' ).Execute( {R} )]" '
+        sgui = f"GetScriptedGui( '{key}' )"
+        return (f'button_standard = {{ size = {{ 44 26 }} tooltip = "{tip}" '
+                f'enabled = "[{sgui}.IsValid( {ROOT} )]" onclick = "[{sgui}.Execute( {ROOT} )]" '
                 f'text_single = {{ parentanchor = center raw_text = "{label}" }} }}')
-    o = []
+    lines = []
     for i in range(0, len(CATS), 4):
-        o.append("    hbox = {\n      layoutpolicy_horizontal = expanding\n      spacing = 4")
+        lines.append("    hbox = {\n      layoutpolicy_horizontal = expanding\n      spacing = 4")
         for c, _, _ in CATS[i:i + 4]:
-            o.append(f'      button_standard = {{ layoutpolicy_horizontal = expanding size = {{ 0 28 }} down = "{shown(c)}" onclick = "[GetVariableSystem.Set( \'ucm_mod_cat\', \'{c}\' )]" '
+            lines.append(f'      button_standard = {{ layoutpolicy_horizontal = expanding size = {{ 0 28 }} down = "{shown(c)}" '
+                     f'onclick = "[GetVariableSystem.Set( \'ucm_mod_cat\', \'{c}\' )]" '
                      f'text_single = {{ parentanchor = center text = "UCM_MODCAT_{c.upper()}" using = Font_Size_Small }} }}')
-        o.append("    }")
-    o.append(f'    button_standard = {{ size = {{ 120 28 }} tooltip = "ucm_mod_clear_tt" enabled = "[GetScriptedGui( \'ucm_mod_clear\' ).IsValid( {R} )]" onclick = "[GetScriptedGui( \'ucm_mod_clear\' ).Execute( {R} )]" text_single = {{ parentanchor = center text = "ucm_mod_clear" }} }}')
+        lines.append("    }")
+    clear = "GetScriptedGui( 'ucm_mod_clear' )"
+    lines.append(f'    button_standard = {{ size = {{ 120 28 }} tooltip = "ucm_mod_clear_tt" '
+             f'enabled = "[{clear}.IsValid( {ROOT} )]" onclick = "[{clear}.Execute( {ROOT} )]" '
+             'text_single = { parentanchor = center text = "ucm_mod_clear" } }')
     for c, _, _ in CATS:
-        o += ["    scrollbox = {", "      layoutpolicy_horizontal = expanding", "      layoutpolicy_vertical = expanding", f'      visible = "{shown(c)}"',
-              '      blockoverride "scrollbox_content" {', "        vbox = {", "          layoutpolicy_horizontal = expanding", "          spacing = 2"]
+        lines += [
+            "    scrollbox = {",
+            "      layoutpolicy_horizontal = expanding",
+            "      layoutpolicy_vertical = expanding",
+            f'      visible = "{shown(c)}"',
+            '      blockoverride "scrollbox_content" {',
+            "        vbox = {",
+            "          layoutpolicy_horizontal = expanding",
+            "          spacing = 2",
+        ]
         for t, _ in cat[c]:
-            o.append(f'          hbox = {{ layoutpolicy_horizontal = expanding spacing = 4 text_single = {{ layoutpolicy_horizontal = expanding size = {{ 0 26 }} text = "ucm_m_{t}" using = Font_Size_Small }} '
+            lines.append('          hbox = { layoutpolicy_horizontal = expanding spacing = 4 '
+                     f'text_single = {{ layoutpolicy_horizontal = expanding size = {{ 0 26 }} text = "ucm_m_{t}" using = Font_Size_Small }} '
                      f"{btn(f'ucm_m_{t}_down', '−', 'UCM_MOD_DOWN_TT')} {btn(f'ucm_m_{t}_up', '+', 'UCM_MOD_UP_TT')} }}")
-        o += ["        }", "      }", "    }"]
-    return window("ucm_modifier_editor_window", "left|vcenter", "ucm_modifier_editor", "UCM_MOD_EDITOR", "UCM_MOD_EDITOR_NOTE", "\n".join(o))
+        lines += ["        }", "      }", "    }"]
+    return window(name="ucm_modifier_editor_window", anchor="left|vcenter", var="ucm_modifier_editor", title="UCM_MOD_EDITOR", note="UCM_MOD_EDITOR_NOTE", body="\n".join(lines))
 
 
 def tenet_gui():
@@ -760,26 +792,29 @@ def tenet_gui():
         }}
       }}
     }}"""
-    return window("ucm_tenet_picker_window", "right|vcenter", "ucm_tenet_picker", "UCM_TENET_PICKER", "UCM_TENET_NOTE", body)
+    return window(name="ucm_tenet_picker_window", anchor="right|vcenter", var="ucm_tenet_picker", title="UCM_TENET_PICKER", note="UCM_TENET_NOTE", body=body)
 
 
 def spawn_picker_gui():
-    def section(kind, cap, label, datamodel, group_ctx, group, children, item):
+    def section(*, kind, cap, label, datamodel, group_ctx, group, children, item):
         var = f"GetPlayer.MakeScope.Var('ucm_spawn_{kind}')"
         clear = f"GetScriptedGui('ucm_spawn_{kind}_clear')"
-        load = f"""      state = {{ name = _show on_start = "[GetScriptedGui('ucm_spawn_lists_load').Execute({R})]" }}\n""" if kind == "culture" else ""
+        load = f"""      state = {{ name = _show on_start = "[GetScriptedGui('ucm_spawn_lists_load').Execute({ROOT})]" }}\n""" if kind == "culture" else ""
         return f"""    hbox = {{
       layoutpolicy_horizontal = expanding
       spacing = 6
 {load}      text_single = {{ text = "{label}" default_format = "#high" }}
       text_single = {{ layoutpolicy_horizontal = expanding visible = "[{var}.IsSet]" raw_text = "[{var}.{cap}.GetNameNoTooltip]" }}
       text_single = {{ layoutpolicy_horizontal = expanding visible = "[Not({var}.IsSet)]" text = "UCM_SPAWN_TARGETS" }}
-      button_standard = {{ size = {{ 130 28 }} tooltip = "ucm_spawn_{kind}_clear_tt" enabled = "[{clear}.IsValid({R})]" onclick = "[{clear}.Execute({R})]" text_single = {{ parentanchor = center text = "ucm_spawn_{kind}_clear" }} }}
+      button_standard = {{ size = {{ 130 28 }} tooltip = "ucm_spawn_{kind}_clear_tt" enabled = "[{clear}.IsValid({ROOT})]" onclick = "[{clear}.Execute({ROOT})]" text_single = {{ parentanchor = center text = "ucm_spawn_{kind}_clear" }} }}
     }}
-""" + group_list(datamodel, group_ctx, group, children, item, f"GetScriptedGui('ucm_spawn_pick_{kind}').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('selected_{kind}', {item}.MakeScope).End)")
-    body = (section("culture", "Culture", "UCM_SPAWN_CULTURE_LABEL", "ucm_picker_heritages", "Scope.Culture.GetHeritage", "CulturePillar", "GetCulturesWithPillar", "Culture") + "\n"
-            + section("faith", "Faith", "UCM_SPAWN_FAITH_LABEL", "ucm_picker_religions", "Scope.Religion", "Religion", "GetFaiths", "Faith"))
-    return window("ucm_spawn_picker_window", "right|vcenter", "ucm_spawn_picker", "UCM_SPAWN_PICKER", "UCM_SPAWN_PICKER_NOTE", body)
+""" + group_list(datamodel=datamodel, group_ctx=group_ctx, group=group, children=children, item=item,
+                 onclick=f"GetScriptedGui('ucm_spawn_pick_{kind}').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('selected_{kind}', {item}.MakeScope).End)")
+    body = (section(kind="culture", cap="Culture", label="UCM_SPAWN_CULTURE_LABEL", datamodel="ucm_picker_heritages", group_ctx="Scope.Culture.GetHeritage",
+                    group="CulturePillar", children="GetCulturesWithPillar", item="Culture") + "\n"
+            + section(kind="faith", cap="Faith", label="UCM_SPAWN_FAITH_LABEL", datamodel="ucm_picker_religions", group_ctx="Scope.Religion",
+                      group="Religion", children="GetFaiths", item="Faith"))
+    return window(name="ucm_spawn_picker_window", anchor="right|vcenter", var="ucm_spawn_picker", title="UCM_SPAWN_PICKER", note="UCM_SPAWN_PICKER_NOTE", body=body)
 
 
 def tenet_sgui(data_path):
@@ -809,16 +844,25 @@ def pillars_by_type(game):
 
 
 def pillar_gui(pillars):
-    o = ["    scrollbox = {", "      layoutpolicy_horizontal = expanding", "      layoutpolicy_vertical = expanding", '      blockoverride "scrollbox_content" {',
-         "        vbox = {", "          layoutpolicy_horizontal = expanding", "          spacing = 2"]
+    lines = [
+        "    scrollbox = {",
+        "      layoutpolicy_horizontal = expanding",
+        "      layoutpolicy_vertical = expanding",
+        '      blockoverride "scrollbox_content" {',
+        "        vbox = {",
+        "          layoutpolicy_horizontal = expanding",
+        "          spacing = 2",
+    ]
     for t, keys in pillars.items():
-        o.append(f'          text_single = {{ layoutpolicy_horizontal = expanding text = "UCM_PILLAR_{t.upper()}" default_format = "#high" }}')
+        lines.append('          text_single = { layoutpolicy_horizontal = expanding '
+                 f'text = "UCM_PILLAR_{t.upper()}" default_format = "#high" }}')
         for k in sorted(keys):
             sg_ref = f"GetScriptedGui( 'ucm_pillar_{k}' )"
-            o.append(f'          button_standard = {{ layoutpolicy_horizontal = expanding size = {{ 0 26 }} visible = "[{sg_ref}.IsShown( {R} )]" enabled = "[{sg_ref}.IsValid( {R} )]" onclick = "[{sg_ref}.Execute( {R} )]" '
+            lines.append('          button_standard = { layoutpolicy_horizontal = expanding size = { 0 26 } '
+                     f'visible = "[{sg_ref}.IsShown( {ROOT} )]" enabled = "[{sg_ref}.IsValid( {ROOT} )]" onclick = "[{sg_ref}.Execute( {ROOT} )]" '
                      f'text_single = {{ parentanchor = center text = "{k}_name" using = Font_Size_Small }} }}')
-    o += ["        }", "      }", "    }"]
-    return window("ucm_pillar_picker_window", "right|vcenter", "ucm_pillar_picker", "UCM_PILLAR_PICKER", "UCM_PILLAR_NOTE", "\n".join(o))
+    lines += ["        }", "      }", "    }"]
+    return window(name="ucm_pillar_picker_window", anchor="right|vcenter", var="ucm_pillar_picker", title="UCM_PILLAR_PICKER", note="UCM_PILLAR_NOTE", body="\n".join(lines))
 
 
 def pillar_sguis(pillars):

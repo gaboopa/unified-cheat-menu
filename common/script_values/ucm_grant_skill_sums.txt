@@ -1,5 +1,5 @@
-﻿# 一键授予择优：公国→伯爵档按文官分（外交+管理+学识），边区 March 改武官分。
-# 王/帝国至伯（县段）仍用 ucm_grant_empire_to_county_pick_value；男爵武官。
+﻿# One-click grants, best candidate: duchy to county tier uses the civil score (diplomacy + stewardship + learning); marches use the military score.
+# Kingdom/empire down to county still uses ucm_grant_empire_to_county_pick_value; baronies use the military score.
 
 ucm_grant_duchy_pick_value = {
   if = {

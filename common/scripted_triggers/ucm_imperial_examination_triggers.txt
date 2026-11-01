@@ -1,4 +1,4 @@
-﻿# 一键科举：至少一名有地封臣可处理（非功勋制任意有地臣，或功勋制品级未封顶）；非神州皇帝
+﻿# One-click exam: at least one landed vassal can be processed (any non-meritocratic landed vassal, or meritocratic below max rank); not the Emperor of China
 
 ucm_has_any_merit_official_to_promote_trigger = {
   any_vassal_or_below = {

@@ -1,7 +1,7 @@
-﻿# 椒房护持：以家主（配偶或妾主）身负 ucm_seduce_shield_active 为准，覆盖其配偶/妾/侧室（is_concubine）
-# 不再兼用 is_playable_character（未封爵配偶等会漏网）；人类家主 = is_ai = no，AI 不持此旗标。
+﻿# Chamber Watch: based on the head of household (spouse or concubinist) having ucm_seduce_shield_active; covers their spouses and concubines (is_concubine)
+# No longer also uses is_playable_character (landless spouses slipped through); human head of household = is_ai = no, AI never has this flag.
 
-# 当前角色是「家主护持下」的配偶或妾：其任一配偶、或其妾主持有护持旗标
+# This character is a spouse or concubine under the watch: any spouse, or their concubinist, has the flag
 ucm_seduce_shield_active_for_target_trigger = {
   OR = {
     any_spouse = { has_character_flag = ucm_seduce_shield_active }
@@ -23,7 +23,7 @@ ucm_fidelity_scheme_type_trigger = {
   }
 }
 
-# 任一人类家主开启椒房护持时，启用「全局 AI 禁欲/禁出轨」规则（等同篡改游戏规则）
+# While any human has Chamber Watch on, enable the global AI no-lust/no-adultery rule (effectively changes a game rule)
 ucm_seduce_shield_global_ai_rules_active_trigger = {
   any_player = {
     is_ai = no

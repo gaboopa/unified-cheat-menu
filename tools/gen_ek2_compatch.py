@@ -143,7 +143,7 @@ def gen_key_merges(game, ek2):
                     blocks.append("\n".join(l.rstrip() for l in strip_comments(t[s:e]).replace("    ", "\t").split("\n") if l.strip()) + "\n")
                 merged = merge3(*blocks, what=f"{sub}/{f}: {k}").rstrip("\n")
                 s, e = raw_block_span(text, k)
-                text = text[:s] + f"# EK2：此块已与 Elder Kings 2 的修改三方合并（tools/gen_ek2_compatch.py）\n" + merged + text[e:]
+                text = text[:s] + f"# EK2: this block is a three-way merge with Elder Kings 2's changes (tools/gen_ek2_compatch.py)\n" + merged + text[e:]
             if changed:
                 write(os.path.join(COMPAT, sub, f), text)
                 print(f"  merged {', '.join(changed)}")
@@ -153,9 +153,9 @@ def gen_key_merges(game, ek2):
 
 def gen_force_marry():
     text = read(os.path.join(MOD_DIR, FORCE_MARRY_REL))
-    for old, new in (("    family = rf_pagan\n", "    family = rf_aurbis # EK2：无 rf_pagan\n"),
+    for old, new in (("    family = rf_pagan\n", "    family = rf_aurbis # EK2 has no rf_pagan\n"),
                      ("  doctrine = pagan_hostility_doctrine\n",
-                      "  doctrine = aurbic_hostility_doctrine # EK2：敌对教义须与宗教家族配套\n")):
+                      "  doctrine = aurbic_hostility_doctrine # EK2: the hostility doctrine must match the religion family\n")):
         if text.count(old) != 1:
             sys.exit(f"{FORCE_MARRY_REL}: expected one {old.strip()!r}; update gen_force_marry")
         text = text.replace(old, new)

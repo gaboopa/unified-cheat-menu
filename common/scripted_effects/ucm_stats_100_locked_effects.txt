@@ -1,4 +1,4 @@
-﻿# 属性100：将六维钳制在 100；由特质授予时立即执行，并由 monthly_global_pulse 持续校正。
+﻿# Stats 100: clamp the six skills to 100; runs at once when the trait is granted and is kept up by monthly_global_pulse.
 
 ucm_stats_100_clamp_all_skills_effect = {
   while = {

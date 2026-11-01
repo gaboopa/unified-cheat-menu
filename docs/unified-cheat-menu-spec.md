@@ -1380,7 +1380,7 @@ Where baseline components are kept, reuse them carefully, and use a new project-
 
 ### 7.4.1 Vanilla override inventory
 
-This is the Phase 0 inventory of the baseline. Since then: `gui/interaction_confirmation.gui` and the debug localization overrides were removed in Phase 7 (replaced by `localization/replace/`), `09_mpo_values.txt` in Phase 9; the two `.info` files are no longer in the repo. The later rewrite removed `gui/window_character.gui`, `gui/interaction_menu_window.gui`, `gui/frontend_ingame_menu.gui` and `tgp_china_minister_on_action.txt` too, so the repo now has none of these overrides.
+This is the Phase 0 inventory of the baseline. Since then: `gui/interaction_confirmation.gui` and the debug localization overrides were removed in Phase 7 (replaced by `localization/replace/`, since removed as well), `09_mpo_values.txt` in Phase 9; the two `.info` files are no longer in the repo. The later rewrite removed `gui/window_character.gui`, `gui/interaction_menu_window.gui`, `gui/frontend_ingame_menu.gui` and `tgp_china_minister_on_action.txt` too, so the repo now has none of these overrides.
 
 The baseline replaced these vanilla files outright. Any other mod that changes the same file conflicts, and the last one in load order wins.
 
@@ -1592,7 +1592,7 @@ Test at minimum:
 - A two-player multiplayer session, to confirm the mod is disabled.
 - Representative modded traits, buildings, units, cultures, and faiths, using regenerated catalogs.
 - Relevant total-conversion combinations, tested separately.
-- At least one popular UI mod, to check conflicts with the overrides in Section 7.4.1.
+- At least one popular UI mod, to check for conflicts.
 
 ## 11.6 Release completion
 

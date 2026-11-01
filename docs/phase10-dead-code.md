@@ -1,4 +1,4 @@
-# Phase 10: Dead code: faith doctrine lists, scripted GUIs, events
+# Phase 10: Dead code in faith doctrine lists, scripted GUIs and events
 
 Removes upstream code that nothing can reach, from the "Dead code" section of the earlier code review. Nothing reachable changed. This phase has not been load-tested yet.
 

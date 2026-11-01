@@ -1,4 +1,4 @@
-# Phase 9: Upstream fixes: global side effects and broken references
+# Phase 9: Upstream fixes for global side effects and broken references
 
 Fixes the Critical items C1–C10 from the earlier code review and removes the code that pointed at content missing from 1.20.1.2. The first load test and its follow-up fixes are below; the re-run in the checklist is still open.
 

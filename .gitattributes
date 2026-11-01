@@ -14,6 +14,7 @@ localization/*/ucm_l_*.yml text eol=lf
 # Keep dev-only files out of `git archive` (release zips)
 docs/ export-ignore
 tools/ export-ignore
+.github/ export-ignore
 README.md export-ignore
 .gitignore export-ignore
 .gitattributes export-ignore

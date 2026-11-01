@@ -50,6 +50,13 @@ ucm_create_divergent_culture = {
 	effect = { var:ucm_target = { create_divergent_culture = yes } }
 }
 
+ucm_learn_second_language = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_pair_valid_trigger = yes }
+	effect = { var:ucm_target = { learn_language_of_culture = global_var:ucm_crozier_cheats_other.culture } }
+}
+
 ucm_acceptance_second_down = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
@@ -172,43 +179,43 @@ ucm_visual_age_100 = {
 ucm_lock_stress = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { NOT = { has_character_modifier = no_stress_change } } }
-	effect = { var:ucm_target = { add_character_modifier = no_stress_change } }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { NOT = { has_character_modifier = ucm_extra_lock_stress } } }
+	effect = { var:ucm_target = { add_character_modifier = ucm_extra_lock_stress } }
 }
 
 ucm_unlock_stress = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { has_character_modifier = no_stress_change } }
-	effect = { var:ucm_target = { remove_character_modifier = no_stress_change } }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { has_character_modifier = ucm_extra_lock_stress } }
+	effect = { var:ucm_target = { remove_character_modifier = ucm_extra_lock_stress } }
 }
 
 ucm_lock_tyranny = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { NOT = { has_character_modifier = no_tyranny_change } } }
-	effect = { var:ucm_target = { add_character_modifier = no_tyranny_change } }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { NOT = { has_character_modifier = ucm_extra_lock_tyranny } } }
+	effect = { var:ucm_target = { add_character_modifier = ucm_extra_lock_tyranny } }
 }
 
 ucm_unlock_tyranny = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { has_character_modifier = no_tyranny_change } }
-	effect = { var:ucm_target = { remove_character_modifier = no_tyranny_change } }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { has_character_modifier = ucm_extra_lock_tyranny } }
+	effect = { var:ucm_target = { remove_character_modifier = ucm_extra_lock_tyranny } }
 }
 
 ucm_lock_dread = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { NOT = { has_character_modifier = no_dread_change } } }
-	effect = { var:ucm_target = { add_character_modifier = no_dread_change } }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { NOT = { has_character_modifier = ucm_extra_lock_dread } } }
+	effect = { var:ucm_target = { add_character_modifier = ucm_extra_lock_dread } }
 }
 
 ucm_unlock_dread = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { has_character_modifier = no_dread_change } }
-	effect = { var:ucm_target = { remove_character_modifier = no_dread_change } }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { has_character_modifier = ucm_extra_lock_dread } }
+	effect = { var:ucm_target = { remove_character_modifier = ucm_extra_lock_dread } }
 }
 
 ucm_lock_legitimacy = {
@@ -337,6 +344,118 @@ ucm_res_barter_up = {
 	effect = { var:ucm_target = { add_barter_goods = ucm_step_value } }
 }
 
+ucm_res_herd_down = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes exists = var:ucm_target.domicile var:ucm_target = { government_has_flag = government_has_herd } }
+	effect = { var:ucm_target.domicile = { change_herd = ucm_step_negative_value } }
+}
+
+ucm_res_herd_up = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes exists = var:ucm_target.domicile var:ucm_target = { government_has_flag = government_has_herd } }
+	effect = { var:ucm_target.domicile = { change_herd = ucm_step_value } }
+}
+
+ucm_rename_target = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes }
+	effect = { trigger_event = ucm_extra.3 }
+}
+
+ucm_mod_trait_omnipotent = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes }
+	effect = { var:ucm_target = { if = { limit = { has_trait = ucm_trait_omnipotent } remove_trait = ucm_trait_omnipotent } else = { add_trait = ucm_trait_omnipotent } } }
+}
+
+ucm_mod_trait_challenger = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes }
+	effect = { var:ucm_target = { if = { limit = { has_trait = ucm_trait_challenger } remove_trait = ucm_trait_challenger } else = { add_trait = ucm_trait_challenger } } }
+}
+
+ucm_mod_trait_instant_build = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes }
+	effect = { var:ucm_target = { if = { limit = { has_trait = ucm_trait_instant_build } remove_trait = ucm_trait_instant_build } else = { add_trait = ucm_trait_instant_build } } }
+}
+
+ucm_mod_trait_no_stress = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes }
+	effect = { var:ucm_target = { if = { limit = { has_trait = ucm_trait_no_stress } remove_trait = ucm_trait_no_stress } else = { add_trait = ucm_trait_no_stress } } }
+}
+
+ucm_mod_trait_no_tyranny = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes }
+	effect = { var:ucm_target = { if = { limit = { has_trait = ucm_trait_no_tyranny } remove_trait = ucm_trait_no_tyranny } else = { add_trait = ucm_trait_no_tyranny } } }
+}
+
+ucm_mod_trait_undying = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes }
+	effect = { var:ucm_target = { if = { limit = { has_trait = ucm_trait_undying } remove_trait = ucm_trait_undying } else = { add_trait = ucm_trait_undying } } }
+}
+
+ucm_max_learned_trait_xp = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes }
+	effect = { var:ucm_target = { if = { limit = { has_trait = pilgrim } add_trait_xp = { trait = pilgrim value = 100 } } if = { limit = { has_trait = lifestyle_mystic } add_trait_xp = { trait = lifestyle_mystic value = 100 } } if = { limit = { has_trait = lifestyle_blademaster } add_trait_xp = { trait = lifestyle_blademaster value = 100 } } if = { limit = { has_trait = lifestyle_reveler } add_trait_xp = { trait = lifestyle_reveler value = 100 } } if = { limit = { has_trait = lifestyle_physician } add_trait_xp = { trait = lifestyle_physician value = 100 } } if = { limit = { has_trait = lifestyle_hunter } add_trait_xp = { trait = lifestyle_hunter track = hunter value = 100 } add_trait_xp = { trait = lifestyle_hunter track = falconer value = 100 } } if = { limit = { has_trait = lifestyle_traveler } add_trait_xp = { trait = lifestyle_traveler track = travel value = 100 } add_trait_xp = { trait = lifestyle_traveler track = danger value = 100 } } if = { limit = { has_trait = tourney_participant } add_trait_xp = { trait = tourney_participant track = foot value = 100 } add_trait_xp = { trait = tourney_participant track = bow value = 100 } add_trait_xp = { trait = tourney_participant track = horse value = 100 } add_trait_xp = { trait = tourney_participant track = wit value = 100 } } if = { limit = { has_trait = gallowsbait } add_trait_xp = { trait = gallowsbait track = bandit value = 100 } add_trait_xp = { trait = gallowsbait track = trickster value = 100 } add_trait_xp = { trait = gallowsbait track = thief value = 100 } add_trait_xp = { trait = gallowsbait track = poacher value = 100 } add_trait_xp = { trait = gallowsbait track = marauder value = 100 } } } }
+}
+
+ucm_age_down = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes }
+	effect = { var:ucm_target = { change_age = ucm_step_negative_value } }
+}
+
+ucm_age_up = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes }
+	effect = { var:ucm_target = { change_age = ucm_step_value } }
+}
+
+ucm_play_as_target = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes NOT = { var:ucm_target = root } }
+	effect = { ucm_menu_close_effect = yes set_player_character = var:ucm_target }
+}
+
+ucm_heal_target = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes }
+	effect = { var:ucm_target = { remove_trait = bubonic_plague remove_trait = smallpox remove_trait = typhus remove_trait = cancer remove_trait = consumption remove_trait = gout_ridden remove_trait = sickly remove_trait = ill remove_trait = pneumonic remove_trait = great_pox remove_trait = early_great_pox remove_trait = lovers_pox remove_trait = leper remove_trait = wounded_1 remove_trait = wounded_2 remove_trait = wounded_3 remove_trait = maimed remove_trait = one_legged remove_trait = disfigured remove_trait = infirm remove_trait = incapable remove_trait = blind remove_trait = inbred } }
+}
+
+ucm_make_immortal = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes }
+	effect = { var:ucm_target = { add_trait = ucm_trait_undying set_immortal_age = 25 } }
+}
+
+ucm_make_mortal = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { has_trait = ucm_trait_undying } }
+	effect = { var:ucm_target = { remove_trait = ucm_trait_undying } }
+}
+
 ucm_baby_male = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
@@ -426,6 +545,97 @@ ucm_plant_murder = {
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_pair_valid_trigger = yes }
 	effect = { var:ucm_target = { add_secret = { type = secret_murder target = global_var:ucm_crozier_cheats_other } } }
+}
+
+ucm_concubine_of_second = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { is_concubine = no } }
+	effect = { global_var:ucm_crozier_cheats_other = { make_concubine = root.var:ucm_target } }
+}
+
+ucm_heir_of_second = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_pair_valid_trigger = yes }
+	effect = { global_var:ucm_crozier_cheats_other = { set_designated_heir = root.var:ucm_target } }
+}
+
+ucm_court_of_second = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_pair_valid_trigger = yes }
+	effect = { global_var:ucm_crozier_cheats_other = { add_courtier = root.var:ucm_target } }
+}
+
+ucm_make_lowborn = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes }
+	effect = { var:ucm_target = { set_to_lowborn = yes } }
+}
+
+ucm_imprison_by_second = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_pair_valid_trigger = yes }
+	effect = { global_var:ucm_crozier_cheats_other = { imprison = { target = root.var:ucm_target type = dungeon } } }
+}
+
+ucm_release_target = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_imprisoned = yes } }
+	effect = { var:ucm_target = { release_from_prison = yes } }
+}
+
+ucm_take_domain = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_landed = yes } NOT = { var:ucm_target = root } }
+	effect = { create_title_and_vassal_change = { type = conquest save_scope_as = change } var:ucm_target = { every_held_title = { change_title_holder_include_vassals = { holder = root change = scope:change } } } resolve_title_and_vassal_change = scope:change }
+}
+
+ucm_take_realm = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_landed = yes } NOT = { var:ucm_target = root } }
+	effect = { create_title_and_vassal_change = { type = conquest save_scope_as = change } var:ucm_target = { every_sub_realm_title = { limit = { tier > tier_barony } change_title_holder_include_vassals = { holder = root change = scope:change } } } resolve_title_and_vassal_change = scope:change }
+}
+
+ucm_claim_creatable = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { always = yes }
+	effect = { every_alert_creatable_title = { root = { add_pressed_claim = prev } } }
+}
+
+ucm_merge_title_clear = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { has_variable = ucm_merge_title }
+	effect = { remove_variable = ucm_merge_title }
+}
+
+ucm_organize_dejure = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_landed = yes } }
+	effect = { var:ucm_target = { every_held_title = { limit = { tier > tier_barony this.tier < root.var:ucm_target.primary_title.tier } set_de_jure_liege_title = root.var:ucm_target.primary_title } every_vassal = { every_held_title = { limit = { tier > tier_barony this.tier < root.var:ucm_target.primary_title.tier } set_de_jure_liege_title = root.var:ucm_target.primary_title } } } }
+}
+
+ucm_sort_vassals_dejure = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_has_de_jure_transferable_direct_vassals_trigger = yes }
+	effect = { ucm_one_click_transfer_direct_vassals_to_de_jure_liege_effect = yes }
+}
+
+ucm_max_authority = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_independent_ruler = yes } }
+	effect = { var:ucm_target = { if = { limit = { OR = { has_realm_law = crown_authority_0 has_realm_law = crown_authority_1 has_realm_law = crown_authority_2 } } add_realm_law = crown_authority_3 } if = { limit = { OR = { has_realm_law = tribal_authority_0 has_realm_law = tribal_authority_1 has_realm_law = tribal_authority_2 } } add_realm_law = tribal_authority_3 } if = { limit = { OR = { has_realm_law = nomadic_authority_1 has_realm_law = nomadic_authority_2 has_realm_law = nomadic_authority_3 has_realm_law = nomadic_authority_4 } } add_realm_law = nomadic_authority_5 } if = { limit = { OR = { has_realm_law = imperial_bureaucracy_0 has_realm_law = imperial_bureaucracy_1 has_realm_law = imperial_bureaucracy_2 } } add_realm_law = imperial_bureaucracy_3 } if = { limit = { OR = { has_realm_law = celestial_bureaucracy_0 has_realm_law = celestial_bureaucracy_1 has_realm_law = celestial_bureaucracy_2 } } add_realm_law = celestial_bureaucracy_3 } } }
 }
 
 ucm_remove_all_claims = {
@@ -526,32 +736,67 @@ ucm_wars_peace_second = {
 	effect = { var:ucm_target = { every_character_war = { limit = { OR = { primary_attacker = root.var:ucm_target primary_defender = root.var:ucm_target } is_participant = global_var:ucm_crozier_cheats_other } end_war = white_peace } } }
 }
 
+ucm_holy_war_second = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_pair_valid_trigger = yes global_var:ucm_crozier_cheats_other = { is_landed = yes } }
+	effect = { var:ucm_target.faith = { start_great_holy_war = { target_character = global_var:ucm_crozier_cheats_other target_title = global_var:ucm_crozier_cheats_other.primary_title delay = 110 } } }
+}
+
 ucm_declare_county = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { is_ruler = yes } global_var:ucm_crozier_cheats_other = { is_landed = yes } }
-	effect = { var:ucm_target = { start_war = { cb = sol_expansion_war_county target = global_var:ucm_crozier_cheats_other } } }
+	effect = { var:ucm_target = { start_war = { cb = ucm_war_county target = global_var:ucm_crozier_cheats_other } } }
 }
 
 ucm_declare_duchy = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { is_ruler = yes } global_var:ucm_crozier_cheats_other = { is_landed = yes } }
-	effect = { var:ucm_target = { start_war = { cb = sol_expansion_war_duchy target = global_var:ucm_crozier_cheats_other } } }
+	effect = { var:ucm_target = { start_war = { cb = ucm_war_duchy target = global_var:ucm_crozier_cheats_other } } }
 }
 
 ucm_declare_kingdom = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { is_ruler = yes } global_var:ucm_crozier_cheats_other = { is_landed = yes } }
-	effect = { var:ucm_target = { start_war = { cb = sol_expansion_war target = global_var:ucm_crozier_cheats_other } } }
+	effect = { var:ucm_target = { start_war = { cb = ucm_war_kingdom target = global_var:ucm_crozier_cheats_other } } }
 }
 
 ucm_declare_empire = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_pair_valid_trigger = yes var:ucm_target = { is_ruler = yes } global_var:ucm_crozier_cheats_other = { is_landed = yes } }
-	effect = { var:ucm_target = { start_war = { cb = sol_expansion_war_empire target = global_var:ucm_crozier_cheats_other } } }
+	effect = { var:ucm_target = { start_war = { cb = ucm_war_empire target = global_var:ucm_crozier_cheats_other } } }
+}
+
+ucm_grant_titles = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { is_landed = yes ucm_has_spare_title_trigger = yes }
+	effect = { ucm_one_click_grant_realm_titles_effect = yes }
+}
+
+ucm_grant_titles_dynasty = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { is_landed = yes ucm_has_spare_title_trigger = yes exists = dynasty }
+	effect = { ucm_dynasty_one_click_grant_realm_titles_effect = yes }
+}
+
+ucm_land_cap = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { is_landed = yes }
+	effect = { ucm_official_land_cap_full_effect = yes }
+}
+
+ucm_strip_realm_titles = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { is_landed = yes }
+	effect = { ucm_strip_realm_titles_effect = yes }
 }
 
 ucm_county_control_down = {
@@ -736,6 +981,13 @@ ucm_ai_build = {
 	effect = { var:ucm_target.capital_province = { generate_building = yes } }
 }
 
+ucm_seize_vassal_gold = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { any_vassal_or_below = { gold > 0 } }
+	effect = { ucm_seize_vassal_gold_effect = yes }
+}
+
 ucm_activity_skip = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
@@ -760,22 +1012,22 @@ ucm_activity_cancel = {
 ucm_estate_economy = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { set_global_variable = { name = ucm_cheat_menu_recipient value = var:ucm_target } save_scope_as = actor ucm_cheat_menu_domicile_preset_economy_apply_effect = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_alive = yes domicile ?= { OR = { is_domicile_type = estate is_domicile_type = east_asian_estate is_domicile_type = japanese_manor } } } }
+	effect = { var:ucm_target = { ucm_domicile_preset_economy_effect = yes } }
 }
 
 ucm_estate_military = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { set_global_variable = { name = ucm_cheat_menu_recipient value = var:ucm_target } save_scope_as = actor ucm_cheat_menu_domicile_preset_military_apply_effect = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_alive = yes domicile ?= { OR = { is_domicile_type = estate is_domicile_type = east_asian_estate is_domicile_type = japanese_manor } } } }
+	effect = { var:ucm_target = { ucm_domicile_preset_military_effect = yes } }
 }
 
 ucm_estate_balanced = {
 	scope = character
 	is_shown = { ucm_single_player_trigger = yes }
-	is_valid = { ucm_menu_target_valid_trigger = yes }
-	effect = { set_global_variable = { name = ucm_cheat_menu_recipient value = var:ucm_target } save_scope_as = actor ucm_cheat_menu_domicile_preset_balanced_apply_effect = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_alive = yes domicile ?= { OR = { is_domicile_type = estate is_domicile_type = east_asian_estate is_domicile_type = japanese_manor } } } }
+	effect = { var:ucm_target = { ucm_domicile_preset_balanced_effect = yes } }
 }
 
 ucm_legend_clear = {
@@ -783,6 +1035,20 @@ ucm_legend_clear = {
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes }
 	effect = { set_global_variable = { name = ucm_cheat_menu_recipient value = var:ucm_target } save_scope_as = actor ucm_legend_master_clear_owned_legends_effect = yes }
+}
+
+ucm_tidy_court = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { is_ruler = yes }
+	effect = { ucm_tidy_court_effect = yes }
+}
+
+ucm_assign_guardians = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { is_ruler = yes }
+	effect = { ucm_assign_guardians_effect = yes }
 }
 
 ucm_spawn_age_up = {
@@ -846,6 +1112,127 @@ ucm_spawn_opt_immortal = {
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { always = yes }
 	effect = { if = { limit = { has_character_flag = ucm_spawn_immortal } remove_character_flag = ucm_spawn_immortal } else = { add_character_flag = ucm_spawn_immortal } }
+}
+
+ucm_spawn_diplomacy_up = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_spawn_diplomacy_value < 100 }
+	effect = { set_variable = { name = ucm_spawn_diplomacy value = { value = ucm_spawn_diplomacy_value add = ucm_step_value max = 100 } } }
+}
+
+ucm_spawn_diplomacy_down = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_spawn_diplomacy_value > 0 }
+	effect = { set_variable = { name = ucm_spawn_diplomacy value = { value = ucm_spawn_diplomacy_value subtract = ucm_step_value min = 0 } } }
+}
+
+ucm_spawn_martial_up = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_spawn_martial_value < 100 }
+	effect = { set_variable = { name = ucm_spawn_martial value = { value = ucm_spawn_martial_value add = ucm_step_value max = 100 } } }
+}
+
+ucm_spawn_martial_down = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_spawn_martial_value > 0 }
+	effect = { set_variable = { name = ucm_spawn_martial value = { value = ucm_spawn_martial_value subtract = ucm_step_value min = 0 } } }
+}
+
+ucm_spawn_stewardship_up = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_spawn_stewardship_value < 100 }
+	effect = { set_variable = { name = ucm_spawn_stewardship value = { value = ucm_spawn_stewardship_value add = ucm_step_value max = 100 } } }
+}
+
+ucm_spawn_stewardship_down = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_spawn_stewardship_value > 0 }
+	effect = { set_variable = { name = ucm_spawn_stewardship value = { value = ucm_spawn_stewardship_value subtract = ucm_step_value min = 0 } } }
+}
+
+ucm_spawn_intrigue_up = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_spawn_intrigue_value < 100 }
+	effect = { set_variable = { name = ucm_spawn_intrigue value = { value = ucm_spawn_intrigue_value add = ucm_step_value max = 100 } } }
+}
+
+ucm_spawn_intrigue_down = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_spawn_intrigue_value > 0 }
+	effect = { set_variable = { name = ucm_spawn_intrigue value = { value = ucm_spawn_intrigue_value subtract = ucm_step_value min = 0 } } }
+}
+
+ucm_spawn_learning_up = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_spawn_learning_value < 100 }
+	effect = { set_variable = { name = ucm_spawn_learning value = { value = ucm_spawn_learning_value add = ucm_step_value max = 100 } } }
+}
+
+ucm_spawn_learning_down = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_spawn_learning_value > 0 }
+	effect = { set_variable = { name = ucm_spawn_learning value = { value = ucm_spawn_learning_value subtract = ucm_step_value min = 0 } } }
+}
+
+ucm_spawn_prowess_up = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_spawn_prowess_value < 100 }
+	effect = { set_variable = { name = ucm_spawn_prowess value = { value = ucm_spawn_prowess_value add = ucm_step_value max = 100 } } }
+}
+
+ucm_spawn_prowess_down = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_spawn_prowess_value > 0 }
+	effect = { set_variable = { name = ucm_spawn_prowess value = { value = ucm_spawn_prowess_value subtract = ucm_step_value min = 0 } } }
+}
+
+ucm_spawn_culture_clear = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { has_variable = ucm_spawn_culture }
+	effect = { remove_variable = ucm_spawn_culture }
+}
+
+ucm_spawn_pick_culture = {
+	scope = character
+	saved_scopes = { selected_culture }
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { exists = scope:selected_culture }
+	effect = { set_variable = { name = ucm_spawn_culture value = scope:selected_culture } }
+}
+
+ucm_spawn_faith_clear = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { has_variable = ucm_spawn_faith }
+	effect = { remove_variable = ucm_spawn_faith }
+}
+
+ucm_spawn_pick_faith = {
+	scope = character
+	saved_scopes = { selected_faith }
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { exists = scope:selected_faith }
+	effect = { set_variable = { name = ucm_spawn_faith value = scope:selected_faith } }
+}
+
+ucm_spawn_lists_load = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { always = yes }
+	effect = { ucm_picker_fill_heritages_effect = yes ucm_picker_fill_religions_effect = yes }
 }
 
 ucm_spawn_child = {
@@ -937,4 +1324,18 @@ ucm_spawn_council_court_chaplain = {
 	is_shown = { ucm_single_player_trigger = yes }
 	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_ruler = yes } ucm_spawn_age_value >= 16 }
 	effect = { ucm_spawn_create_effect = { DYNASTY = generate } scope:ucm_new = { add_learning_skill = 25 } var:ucm_target = { assign_councillor_type = { type = councillor_court_chaplain target = scope:ucm_new remove_existing_councillor = yes } } }
+}
+
+ucm_glory_down = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_acclaimed = yes } }
+	effect = { var:ucm_target = { accolade = { add_glory = ucm_step_negative_value } } }
+}
+
+ucm_glory_up = {
+	scope = character
+	is_shown = { ucm_single_player_trigger = yes }
+	is_valid = { ucm_menu_target_valid_trigger = yes var:ucm_target = { is_acclaimed = yes } }
+	effect = { var:ucm_target = { accolade = { add_glory = ucm_step_value } } }
 }

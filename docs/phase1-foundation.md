@@ -1,6 +1,6 @@
 # Phase 1 — Foundation
 
-Implements spec v1.3 Phase 1: single-player gate, clicked-target and second-character targeting, the main menu, and the group-action framework with confirmation. Checked in single-player on 2026-10-23: the menu's buttons open the Skonester editors or apply their action. The multiplayer gate, group-action counts and `error.log` haven't been checked yet (checklist items 5–10).
+Implements spec v1.3 Phase 1: single-player gate, clicked-target and second-character targeting, the main menu, and the group-action framework with confirmation. Checked in single-player on 2026-10-23: the menu's buttons open the the baseline mod editors or apply their action. The multiplayer gate, group-action counts and `error.log` haven't been checked yet (checklist items 5–10).
 
 ## What changed
 
@@ -8,7 +8,7 @@ Implements spec v1.3 Phase 1: single-player gate, clicked-target and second-char
 
 - `is_shown` of all 204 interactions, all 92 decisions, and all 2,153 scripted GUIs (653 had no `is_shown` and got one).
 - `trigger` of 36 cheat pulse on_actions, such as `ucm_crozier_cheats_quarterly`, the authority/government locks, deterrence, water of life, supply and levy pulses, and the AI boost pulses. Startup, compatibility, trait-guard, and cleanup on_actions are left alone.
-- GUI elements Skonester injects into vanilla screens, which now also check `Not( GameHasMultiplePlayers )`: 115 Crozier cheat elements in `window_character.gui`, the menu-height controls in `interaction_menu_window.gui`, the pause-menu debug button, and the yyz shortcut buttons.
+- GUI elements the baseline mod injects into vanilla screens, which now also check `Not( GameHasMultiplePlayers )`: 115 Crozier cheat elements in `window_character.gui`, the menu-height controls in `interaction_menu_window.gui`, the pause-menu debug button, and the yyz shortcut buttons.
 - `tools/gen_ucm_cw_innovation_sguis.py` (since removed, Phase 10), which then emitted the gate.
 
 New interactions, decisions, scripted GUIs, and cheat pulses must include it too.
@@ -46,7 +46,7 @@ The picker interactions in `01_ucm_gui_launcher_interactions.txt` now call share
 
 Load with only this mod, as in the Phase 0 baseline.
 
-1. Start or load a single-player game. Right-click any character: **Open Cheat Menu** and **Set as Second Character** appear alongside the usual Skonester entries.
+1. Start or load a single-player game. Right-click any character: **Open Cheat Menu** and **Set as Second Character** appear alongside the usual the baseline mod entries.
 2. Open Cheat Menu on an NPC. The window shows "Target: <their name>" and the Quick Actions tab.
 3. Click **Add 1,000 Gold**. The NPC's gold goes up, not yours.
 4. Click through each tab. Every button opens its editor for the NPC, and closing the editor returns you to the menu.

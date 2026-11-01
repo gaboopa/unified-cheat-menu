@@ -3,11 +3,25 @@
 
 ucm_spawn_create_effect = {
 	if = {
-		limit = { has_character_flag = ucm_spawn_no_traits }
-		create_character = { age = ucm_spawn_age_value gender_female_chance = ucm_spawn_female_chance_value random_traits = no culture = root.var:ucm_target.culture faith = root.var:ucm_target.faith dynasty = $DYNASTY$ employer = root.var:ucm_target save_temporary_scope_as = ucm_new }
+		limit = { exists = root.var:ucm_spawn_culture }
+		root.var:ucm_spawn_culture = { save_temporary_scope_as = ucm_spawn_culture }
 	}
 	else = {
-		create_character = { age = ucm_spawn_age_value gender_female_chance = ucm_spawn_female_chance_value culture = root.var:ucm_target.culture faith = root.var:ucm_target.faith dynasty = $DYNASTY$ employer = root.var:ucm_target save_temporary_scope_as = ucm_new }
+		root.var:ucm_target.culture = { save_temporary_scope_as = ucm_spawn_culture }
+	}
+	if = {
+		limit = { exists = root.var:ucm_spawn_faith }
+		root.var:ucm_spawn_faith = { save_temporary_scope_as = ucm_spawn_faith }
+	}
+	else = {
+		root.var:ucm_target.faith = { save_temporary_scope_as = ucm_spawn_faith }
+	}
+	if = {
+		limit = { has_character_flag = ucm_spawn_no_traits }
+		create_character = { age = ucm_spawn_age_value gender_female_chance = ucm_spawn_female_chance_value random_traits = no culture = scope:ucm_spawn_culture faith = scope:ucm_spawn_faith dynasty = $DYNASTY$ employer = root.var:ucm_target save_temporary_scope_as = ucm_new }
+	}
+	else = {
+		create_character = { age = ucm_spawn_age_value gender_female_chance = ucm_spawn_female_chance_value culture = scope:ucm_spawn_culture faith = scope:ucm_spawn_faith dynasty = $DYNASTY$ employer = root.var:ucm_target save_temporary_scope_as = ucm_new }
 	}
 	scope:ucm_new = {
 		if = {
@@ -21,8 +35,16 @@ ucm_spawn_create_effect = {
 		}
 		if = {
 			limit = { root = { has_character_flag = ucm_spawn_immortal } }
-			add_trait = zg_buxiu
+			add_trait = ucm_trait_undying
 			set_immortal_age = 25
 		}
+		force_character_skill_recalculation = yes
+		if = { limit = { root = { ucm_spawn_diplomacy_value > 0 } } add_diplomacy_skill = { value = root.var:ucm_spawn_diplomacy subtract = diplomacy } }
+		if = { limit = { root = { ucm_spawn_martial_value > 0 } } add_martial_skill = { value = root.var:ucm_spawn_martial subtract = martial } }
+		if = { limit = { root = { ucm_spawn_stewardship_value > 0 } } add_stewardship_skill = { value = root.var:ucm_spawn_stewardship subtract = stewardship } }
+		if = { limit = { root = { ucm_spawn_intrigue_value > 0 } } add_intrigue_skill = { value = root.var:ucm_spawn_intrigue subtract = intrigue } }
+		if = { limit = { root = { ucm_spawn_learning_value > 0 } } add_learning_skill = { value = root.var:ucm_spawn_learning subtract = learning } }
+		if = { limit = { root = { ucm_spawn_prowess_value > 0 } } add_prowess_skill = { value = root.var:ucm_spawn_prowess subtract = prowess } }
+		force_character_skill_recalculation = yes
 	}
 }

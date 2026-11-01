@@ -1,0 +1,69 @@
+﻿# Window state and buttons of the artifact crafter and editor; the per-value buttons are in ucm_craft_generated_guis.txt.
+
+ucm_craft_window_shown = {
+  scope = character
+  is_shown = {
+    ucm_single_player_trigger = yes
+    has_character_flag = ucm_craft_gui_open
+    NOT = { has_character_flag = ucm_craft_text_edit_open }
+  }
+  is_valid = { always = yes }
+}
+
+ucm_craft_edit_window_shown = {
+  scope = character
+  is_shown = {
+    ucm_single_player_trigger = yes
+    has_character_flag = ucm_craft_edit_gui_open
+    NOT = { has_character_flag = ucm_craft_text_edit_open }
+  }
+  is_valid = { always = yes }
+}
+
+ucm_craft_has_edit_target = {
+  scope = character
+  is_shown = { ucm_single_player_trigger = yes has_variable = ucm_craft_edit_target }
+  is_valid = { always = yes }
+}
+
+ucm_craft_close = {
+  scope = character
+  is_shown = { ucm_single_player_trigger = yes }
+  is_valid = { always = yes }
+  effect = { ucm_craft_close_effect = yes }
+}
+
+ucm_craft_create = {
+  scope = character
+  is_shown = { ucm_single_player_trigger = yes }
+  is_valid = { is_ai = no has_variable = ucm_craft_recipient }
+  effect = { ucm_craft_create_effect = yes }
+}
+
+ucm_craft_save = {
+  scope = character
+  is_shown = { ucm_single_player_trigger = yes }
+  is_valid = { has_variable = ucm_craft_edit_target }
+  effect = { ucm_craft_save_edit_effect = yes }
+}
+
+ucm_craft_repick = {
+  scope = character
+  is_shown = { ucm_single_player_trigger = yes }
+  is_valid = { always = yes }
+  effect = { ucm_craft_open_picker_effect = yes }
+}
+
+ucm_craft_edit_name = {
+  scope = character
+  is_shown = { ucm_single_player_trigger = yes }
+  is_valid = { always = yes }
+  effect = { ucm_craft_open_text_event_effect = { EVENT = ucm_artifact_craft.2 } }
+}
+
+ucm_craft_edit_desc = {
+  scope = character
+  is_shown = { ucm_single_player_trigger = yes }
+  is_valid = { always = yes }
+  effect = { ucm_craft_open_text_event_effect = { EVENT = ucm_artifact_craft.3 } }
+}

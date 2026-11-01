@@ -177,27 +177,6 @@ ucm_convert_character_to_feudal_government_effect = {
       # 修复：开局日本律令（japan_administrative_government）不应被通用“转封建”误改
       NOT = { has_government = japan_administrative_government }
       NOT = { has_government = japan_feudal_government }
-      # 额外保护：日本文化角色不应被强制转封建
-      NOT = {
-        AND = {
-          culture = japanese
-          OR = {
-            has_government = japan_administrative_government
-            has_government = japan_feudal_government
-          }
-        }
-      }
-      # 额外保护：日本帝国头衔持有者不应被强制转封建
-      NOT = {
-        AND = {
-          highest_held_title_tier >= tier_empire
-          culture = japanese
-          OR = {
-            has_government = japan_administrative_government
-            has_government = japan_feudal_government
-          }
-        }
-      }
     }
     if = {
       limit = { is_landed = yes }
@@ -228,9 +207,8 @@ ucm_convert_character_to_feudal_government_effect = {
     limit = {
       is_ai = no
       is_playable_character = yes
-      NOT = { has_government = feudal_government }
+      NOR = { has_government = feudal_government has_character_flag = ucm_chenzhi_force_feudal_conversion }
       ucm_protected_from_forced_feudal_conversion_trigger = yes
-      NOT = { has_character_flag = ucm_chenzhi_force_feudal_conversion }
     }
     ucm_player_government_feudal_blocked_notify_effect = yes
   }
@@ -239,31 +217,7 @@ ucm_convert_character_to_feudal_government_effect = {
 ucm_convert_character_to_tribal_government_effect = {
   if = {
     limit = {
-      NOT = { has_government = tribal_government }
-      # 保护日本政府不被转部落制
-      NOT = { has_government = japan_administrative_government }
-      NOT = { has_government = japan_feudal_government }
-      # 额外保护：日本文化角色不应被强制转部落制
-      NOT = {
-        AND = {
-          culture = japanese
-          OR = {
-            has_government = japan_administrative_government
-            has_government = japan_feudal_government
-          }
-        }
-      }
-      # 额外保护：日本帝国头衔持有者不应被强制转部落制
-      NOT = {
-        AND = {
-          highest_held_title_tier >= tier_empire
-          culture = japanese
-          OR = {
-            has_government = japan_administrative_government
-            has_government = japan_feudal_government
-          }
-        }
-      }
+      NOR = { has_government = tribal_government has_government = japan_administrative_government has_government = japan_feudal_government }
     }
     if = {
       limit = { is_landed = yes }
@@ -292,27 +246,6 @@ ucm_convert_character_to_clan_government_effect = {
       # 保护日本政府不被转氏族制
       NOT = { has_government = japan_administrative_government }
       NOT = { has_government = japan_feudal_government }
-      # 额外保护：日本文化角色不应被强制转氏族制
-      NOT = {
-        AND = {
-          culture = japanese
-          OR = {
-            has_government = japan_administrative_government
-            has_government = japan_feudal_government
-          }
-        }
-      }
-      # 额外保护：日本帝国头衔持有者不应被强制转氏族制
-      NOT = {
-        AND = {
-          highest_held_title_tier >= tier_empire
-          culture = japanese
-          OR = {
-            has_government = japan_administrative_government
-            has_government = japan_feudal_government
-          }
-        }
-      }
     }
     if = {
       limit = { is_landed = yes }
@@ -341,27 +274,6 @@ ucm_convert_character_to_republic_government_effect = {
       # 保护日本政府不被转共和制
       NOT = { has_government = japan_administrative_government }
       NOT = { has_government = japan_feudal_government }
-      # 额外保护：日本文化角色不应被强制转共和制
-      NOT = {
-        AND = {
-          culture = japanese
-          OR = {
-            has_government = japan_administrative_government
-            has_government = japan_feudal_government
-          }
-        }
-      }
-      # 额外保护：日本帝国头衔持有者不应被强制转共和制
-      NOT = {
-        AND = {
-          highest_held_title_tier >= tier_empire
-          culture = japanese
-          OR = {
-            has_government = japan_administrative_government
-            has_government = japan_feudal_government
-          }
-        }
-      }
     }
     change_government = republic_government
   }

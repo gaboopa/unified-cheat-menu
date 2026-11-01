@@ -1,13 +1,13 @@
-"""Generate the classic-menu base-game trait editor from the CK3 trait database.
+"""Generate the trait editor window from the CK3 trait database.
 
-Writes events/ucm_cheat_menu_trait_editor_generated.txt (category hub 0100/0196/0288/0289 and the paged trait
-lists from 9000) and localization/<lang>/ucm_officials_trait_editor_gen_l_<lang>.yml (hub/category text with
-trait counts, page titles, and one toggle label per trait).
+Writes gui/ucm_trait_editor.gui (a category sidebar and one row per trait), the click dispatcher
+common/scripted_effects/ucm_trait_editor_generated_effects.txt, and localization/<lang>/ucm_trait_editor_l_<lang>.yml.
+The hand-written effects it calls are in common/scripted_effects/ucm_trait_editor_effects.txt.
 
-Traits are the game's own common/traits (not this mod's or other mods'), minus debug_ traits. A trait with a
-`category` goes to that category; the rest go to the extended categories by EXTENDED below, and anything left
-over to genetic_physical (genetic = yes) or misc_other. A new trait category in a CK3 update stops the script:
-add it to CATEGORIES and the translations.
+Traits are the game's own common/traits, minus debug_ traits, plus this mod's CUSTOM traits. A trait with a
+`category` goes to that category; the rest go to the categories by EXTENDED below, and anything left over to
+genetic_physical (genetic = yes) or misc_other. A new trait category in a CK3 update stops the script: add it to
+CATEGORIES and the translations. Adding a trait removes the others in its `group` first.
 
 Run after a CK3 update:
     python tools/gen_trait_editor.py --game-dir <CK3>/game
@@ -21,126 +21,84 @@ import sys
 from ck3parse import effective_files, top_level_objects
 
 MOD_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUT_REL = os.path.join("events", "ucm_cheat_menu_trait_editor_generated.txt")
-LOC_NAME = "ucm_officials_trait_editor_gen_l_{0}.yml"
+GUI_REL = os.path.join("gui", "ucm_trait_editor.gui")
+EFFECTS_REL = os.path.join("common", "scripted_effects", "ucm_trait_editor_generated_effects.txt")
+LOC_NAME = "ucm_trait_editor_l_{0}.yml"
 TRAITS = os.path.join("common", "traits")
-PAGE_SIZE, FIRST_ID, ID_LIMIT = 7, 9000, 9100
-# (hub event, [categories] it opens); category pages go back to their hub. The vanilla ones (0100/0196) show a count.
-HUBS = [("0100", ["childhood", "personality", "education", "commander", "winter_commander"]),
-        ("0196", ["court_type", "lifestyle", "health", "fame"]),
-        ("0288", ["genetic_physical", "appearance", "intellect", "physique"]),
-        ("0289", ["fertility", "edu_martial_prowess", "edu_republic", "struggle_fp3", "misc_other"])]
-CATEGORIES = [c for _, cs in HUBS for c in cs]
-COUNTED = set(HUBS[0][1] + HUBS[1][1])
-# Uncategorized traits: (extended category, [patterns in display order]); a pattern matches a key prefix.
+CATEGORIES = ["childhood", "personality", "education", "commander", "winter_commander", "court_type", "lifestyle",
+              "health", "fame", "genetic_physical", "appearance", "intellect", "physique", "fertility",
+              "edu_martial_prowess", "edu_republic", "struggle_fp3", "misc_other", "custom"]
+# Uncategorized traits: (category, [patterns in display order]); a pattern matches a key prefix.
 EXTENDED = [("appearance", ["beauty_"]), ("intellect", ["intellect_", "dull$", "shrewd$"]),
             ("physique", ["physique_", "strong$", "weak$"]), ("fertility", ["fecund$", "impotent$", "infertile$"]),
             ("edu_martial_prowess", ["education_martial_prowess_"]), ("edu_republic", ["education_republican_knowledge_"]),
             ("struggle_fp3", ["fp3_struggle_"]), ("genetic_physical", ["inbred$|pure_blooded$"])]
 
+
+def plain(trait):
+    return f"ucm_trait_editor_toggle_cheat_effect = {{ TRAIT = {trait} }}"
+
+
+def pill(trait, base):
+    return (f"ucm_trait_editor_toggle_age_pill_effect = {{ TRAIT = {trait} FLAG = {base}_active "
+            f"AGE_VAR = {base}_original_age }}")
+
+
+# This mod's traits and what clicking one runs on the target.
+CUSTOM = {
+    "ucm_trait_immortal_ageless": "ucm_trait_editor_toggle_immortal_effect = yes",
+    "ucm_fame_warlord_eternal": plain("ucm_fame_warlord_eternal"),
+    "ucm_fame_wealth_sovereign_max": plain("ucm_fame_wealth_sovereign_max"),
+    "ucm_fame_ultimate_intrigue_master": plain("ucm_fame_ultimate_intrigue_master"),
+    "ucm_fame_great_builder_god": plain("ucm_fame_great_builder_god"),
+    "ucm_fame_nether_conspiracy_lord": plain("ucm_fame_nether_conspiracy_lord"),
+    "ucm_fame_eternal_nether_lord": plain("ucm_fame_eternal_nether_lord"),
+    "ucm_trait_yannian_dan": pill("ucm_trait_yannian_dan", "ucm_yannian_dan"),
+    "ucm_trait_yannian_dan_mid": pill("ucm_trait_yannian_dan_mid", "ucm_yannian_dan_mid"),
+    "ucm_trait_yannian_dan_best": pill("ucm_trait_yannian_dan_best", "ucm_yannian_dan_best"),
+    "ucm_trait_baidubuqin": "ucm_trait_editor_toggle_baidubuqin_effect = yes",
+    "ucm_trait_xinwuguai": plain("ucm_trait_xinwuguai"),
+    "ucm_trait_stats_100_locked": "ucm_trait_editor_toggle_stats_100_effect = yes",
+    "ucm_trait_marriage_ban": "ucm_trait_editor_toggle_marriage_ban_effect = yes",
+}
+
+# Window title, then one name per CATEGORIES entry.
 LANGS = {
-    "english": dict(
-        page="{0} (Page {1}/{2})", count="{0} ({1})",
-        head={
-            "ucm_trait_gui_window_title": "Base Game Traits",
-            "ucm_cheat_trait_gui_window_title": "Custom Traits",
-            "ucm_cheat_menu.0100.t": "Base Game Traits - Categories",
-            "ucm_cheat_menu.0100.desc": "(Page 1) Categories I–V. Toggle traits to add or remove them. Maximum 11 entries per page. Warning: Personality, Education and Lifestyle traits affect numerous game mechanics.",
-        },
-        tail={
-            "ucm_cheat_menu.0196.desc": "(Page 2) Categories VI–IX. Use extended categories for congenital traits, appearance, martial prowess and more.",
-            "ucm_cheat_menu.0196.more_categories": "Extended Categories (Congenital · Appearance · Prowess …)",
-            "ucm_cheat_menu.0288.t": "Base Traits - Extended Categories (1/2)",
-            "ucm_cheat_menu.0289.t": "Base Traits - Extended Categories (2/2)",
-            "ucm_cheat_menu.0288.desc": "Extended Categories (1/2): Congenital, Appearance, Intellect, Physique. Click an entry to toggle the corresponding trait.",
-            "ucm_cheat_menu.0289.desc": "Extended Categories (2/2): Fertility, Martial Prowess Education, Republican Knowledge, FP3 Struggle, Miscellaneous.",
-            "ucm_cheat_menu.0101.t": "Base Game Traits",
-        },
-        cats=["I. Childhood", "II. Personality", "III. Education", "IV. Commander", "V. Winter Commander",
-              "VI. Court Traits", "VII. Lifestyle", "VIII. Health", "IX. Prestige Traits",
-              "X. Congenital & Physique Traits", "XI. Appearance", "XII. Intellect", "XIII. Physique",
-              "XIV. Fertility", "XV. Martial Prowess Education", "XVI. Republican Knowledge",
-              "XVII. FP3 Struggle Traits", "XVIII. Miscellaneous"],
-    ),
-    "german": dict(
-        page="{0} (Seite {1}/{2})", count="{0} ({1})",
-        head={
-            "ucm_trait_gui_window_title": "Basisspiel-Merkmale",
-            "ucm_cheat_trait_gui_window_title": "Benutzerdefinierte Merkmale",
-            "ucm_cheat_menu.0100.t": "Basisspiel-Merkmale (Kategorien)",
-            "ucm_cheat_menu.0100.desc": "(Seite 1) Kategorien I–V. Merkmale umschalten (entfernen, falls vorhanden / hinzufügen, falls nicht vorhanden). Maximal 11 Optionen pro Seite. Hinweis: Persönlichkeit, Bildung und Lebensstil beeinflussen zahlreiche Spielsysteme.",
-        },
-        tail={
-            "ucm_cheat_menu.0196.desc": "(Seite 2) Kategorien VI–IX; Weitere Kategorien für angeborene Merkmale, Aussehen, Kampffertigkeiten und mehr.",
-            "ucm_cheat_menu.0196.more_categories": "Weitere Kategorien (Angeboren · Aussehen · Kampffertigkeit ...)",
-            "ucm_cheat_menu.0288.t": "Basismerkmale · Weitere Kategorien (1/2)",
-            "ucm_cheat_menu.0289.t": "Basismerkmale · Weitere Kategorien (2/2)",
-            "ucm_cheat_menu.0288.desc": "Weitere Kategorien (1/2): Angeborene Merkmale, Aussehen, Intellekt, Körperbau. Wähle eine Kategorie zum Bearbeiten der Merkmale.",
-            "ucm_cheat_menu.0289.desc": "Weitere Kategorien (2/2): Fruchtbarkeit, Kampffertigkeitsbildung, republikanisches Wissen, FP3-Konflikt, Sonstiges.",
-            "ucm_cheat_menu.0101.t": "Basisspiel-Merkmale",
-        },
-        cats=["I. Kindheitsmerkmale", "II. Persönlichkeit", "III. Bildung", "IV. Feldherr", "V. Winterfeldherr",
-              "VI. Hofmerkmale", "VII. Lebensstil", "VIII. Gesundheit", "IX. Ruhm",
-              "X. Angeborene & körperliche Merkmale", "XI. Aussehen", "XII. Intellekt", "XIII. Körperbau",
-              "XIV. Fruchtbarkeit", "XV. Kampffertigkeitsbildung", "XVI. Republikanisches Wissen",
-              "XVII. FP3-Konfliktmerkmale", "XVIII. Sonstige Merkmale"],
-    ),
-    "russian": dict(
-        page="{0} (стр. {1}/{2})", count="{0} ({1})",
-        head={
-            "ucm_trait_gui_window_title": "Игровые особенности",
-            "ucm_cheat_trait_gui_window_title": "Пользовательские черты",
-            "ucm_cheat_menu.0100.t": "Игровые особенности (категории)",
-            "ucm_cheat_menu.0100.desc": "(Страница 1) Категории I-V. Черты переключателей (удалить, если они присутствуют, добавить, если их нет). Макс 11 опций на странице. Предупреждение: Личность/Образование/Стиль жизни влияют на многие системы.",
-        },
-        tail={
-            "ucm_cheat_menu.0196.desc": "(Страница 2) Категории VI-IX; используйте дополнительные категории для врожденных/красивых/военных линий мастерства и т.д.",
-            "ucm_cheat_menu.0196.more_categories": "Больше категорий (врожденная · красота · доблесть ...)",
-            "ucm_cheat_menu.0288.t": "Базовые черты · Больше категорий (1/2)",
-            "ucm_cheat_menu.0289.t": "Базовые черты · Больше категорий (2/2)",
-            "ucm_cheat_menu.0288.desc": "Больше категорий (1/2): врожденная, красота, интеллект, телосложение. Откройте ряд, чтобы переключать черты.",
-            "ucm_cheat_menu.0289.desc": "Больше категорий (2/2): фертильность, военное образование, республиканские знания, борьба FP3, другие.",
-            "ucm_cheat_menu.0101.t": "Игровые черты Base Game",
-        },
-        cats=["I. Детство", "II. Личность", "III. Образование", "IV. Командующий", "V. Зимний командир",
-              "VI. Тип суда", "VII. Образ жизни", "VIII. Здоровье", "IX. Слава",
-              "X. Врожденные и физические черты", "XI. Красота", "XII. Интеллект", "XIII. Физика",
-              "XIV. Плодородие", "XV. Воинское мастерство в образовании", "XVI. Республиканские знания",
-              "XVII. Борьба FP3", "XVIII. Прочие"],
-    ),
-    "simp_chinese": dict(
-        page="{0}（第 {1}/{2} 页）", count="{0}（{1}）",
-        head={
-            "ucm_trait_gui_window_title": "本体特质",
-            "ucm_cheat_trait_gui_window_title": "自制特质",
-            "ucm_cheat_menu.0100.t": "本体特质（分类）",
-            "ucm_cheat_menu.0100.desc": "（第 1 页）按一至五类浏览并开关本体特质（有则移除，无则授予）。每页最多 11 个选项。注意：性格/教育/生活方式等会影响大量系统，乱改可能导致 AI/事件异常。",
-        },
-        tail={
-            "ucm_cheat_menu.0196.desc": "（第 2 页）六至九类；另有「更多分类」含先天/容貌/勇武教育等。每页最多 11 个选项。",
-            "ucm_cheat_menu.0196.more_categories": "更多分类（先天·容貌·勇武教育…）",
-            "ucm_cheat_menu.0288.t": "本体特质 · 更多分类（1/2）",
-            "ucm_cheat_menu.0289.t": "本体特质 · 更多分类（2/2）",
-            "ucm_cheat_menu.0288.desc": "更多分类第 1 页：先天与体征、容貌、智力、体格。点击选项进入对应特质列表；有则移除，无则授予。",
-            "ucm_cheat_menu.0289.desc": "更多分类第 2 页：生育力、勇武教育、共和学识、斗争特质（FP3）及其他。点击选项进入列表开关特质。",
-            "ucm_cheat_menu.0101.t": "本体特质",
-        },
-        cats=["一、童年特质", "二、性格特质", "三、教育特质", "四、将领特质", "五、冬将军",
-              "六、宫廷类型特质", "七、生活方式特质", "八、健康特质", "九、名声特质",
-              "十、先天与体征", "十一、容貌", "十二、智力", "十三、体格",
-              "十四、生育力", "十五、勇武教育", "十六、共和学识",
-              "十七、斗争特质（FP3）", "十八、其他"],
-    ),
+    "english": ("Trait Editor", [
+        "Childhood", "Personality", "Education", "Commander", "Winter Commander", "Court Traits", "Lifestyle",
+        "Health", "Prestige Traits", "Congenital & Physique", "Appearance", "Intellect", "Physique", "Fertility",
+        "Martial Prowess Education", "Republican Knowledge", "FP3 Struggle Traits", "Miscellaneous", "Custom Traits"]),
+    "german": ("Eigenschaftseditor", [
+        "Kindheitsmerkmale", "Persönlichkeit", "Bildung", "Feldherr", "Winterfeldherr", "Hofmerkmale", "Lebensstil",
+        "Gesundheit", "Ruhm", "Angeboren & körperlich", "Aussehen", "Intellekt", "Körperbau", "Fruchtbarkeit",
+        "Kampffertigkeitsbildung", "Republikanisches Wissen", "FP3-Konfliktmerkmale", "Sonstige Merkmale",
+        "Benutzerdefinierte Merkmale"]),
+    "russian": ("Редактор черт", [
+        "Детство", "Личность", "Образование", "Командующий", "Зимний командир", "Тип двора", "Образ жизни",
+        "Здоровье", "Слава", "Врождённые и физические", "Красота", "Интеллект", "Телосложение", "Плодородие",
+        "Воинское образование", "Республиканские знания", "Борьба FP3", "Прочие", "Пользовательские черты"]),
+    "simp_chinese": ("特质编辑器", [
+        "童年特质", "性格特质", "教育特质", "将领特质", "冬将军", "宫廷类型特质", "生活方式特质",
+        "健康特质", "名声特质", "先天与体征", "容貌", "智力", "体格", "生育力",
+        "勇武教育", "共和学识", "斗争特质（FP3）", "其他", "自制特质"]),
+    "turkish": ("Özellik Düzenleyici", [
+        "Çocukluk", "Kişilik", "Eğitim", "Komutan", "Kış Komutanı", "Saray Özellikleri", "Yaşam Tarzı",
+        "Sağlık", "Ün", "Doğuştan ve Fiziksel", "Görünüm", "Zeka", "Fizik", "Üreme",
+        "Savaş Ustalığı Eğitimi", "Cumhuriyet Bilgisi", "FP3 Mücadele Özellikleri", "Diğer", "Özel Özellikler"]),
 }
 
 
 def load(game):
-    """{category: [trait, ...]} in display order, from the game's own trait files only."""
+    """({category: [trait, ...]} in display order, {trait: group}) from the game's own trait files."""
     by = {c: [] for c in CATEGORIES}
+    group_of = {}
     for f in effective_files(TRAITS, game):
         for k, b in top_level_objects(f):
             if k.startswith("debug_"):
                 continue
+            g = re.search(r"(?m)^\s*group\s*=\s*(\w+)", b)
+            if g:
+                group_of[k] = g.group(1)
             m = re.search(r"(?m)^\s*category\s*=\s*(\w+)", b)
             if m:
                 if m.group(1) not in by:
@@ -155,78 +113,180 @@ def load(game):
             else:
                 genetic = re.search(r"(?m)^\s*genetic\s*=\s*yes", b)
                 by["genetic_physical" if genetic else "misc_other"].append((0, k))
-    return {c: [k for _, k in sorted(ts)] for c, ts in by.items()}
+    cats = {c: [k for _, k in sorted(ts)] for c, ts in by.items()}
+    clash = set(CUSTOM).intersection(t for ts in cats.values() for t in ts)
+    if clash:
+        sys.exit(f"vanilla now defines {sorted(clash)}: rename them in CUSTOM")
+    cats["custom"] = list(CUSTOM)
+    return cats, group_of
 
 
-def option(name, *body):
-    return ["  option = {", f"    name = {name}"] + [f"    {line}" for line in body] + ["  }"]
+def groups(group_of):
+    """{group: [traits]} for groups with more than one member."""
+    out = {}
+    for t, g in sorted(group_of.items()):
+        out.setdefault(g, []).append(t)
+    return {g: ts for g, ts in out.items() if len(ts) > 1}
 
 
-def go(eid):
-    return f"scope:actor = {{ trigger_event = ucm_cheat_menu.{eid} }}"
-
-
-def event(eid, title, desc, opts):
-    return [f"ucm_cheat_menu.{eid} = {{", "  type = character_event", f"  title = ucm_cheat_menu.{title}",
-            f"  desc = ucm_cheat_menu.{desc}", "  theme = learning", "  right_portrait = scope:ucm_trait_edit_target", "",
-            "  immediate = {", "    ucm_cheat_menu_sync_trait_edit_target_effect = yes", "  }", ""] + opts + ["}"]
-
-
-def pages(items):
-    return [items[i:i + PAGE_SIZE] for i in range(0, len(items), PAGE_SIZE)] or [[]]
-
-
-def build(cats):
-    first, nxt = {}, FIRST_ID
+def build_effects(cats, group_of):
+    grouped = groups(group_of)
+    L = ["# AUTO-GENERATED by tools/gen_trait_editor.py from the CK3 trait database. Do not edit; rerun the script.", ""]
+    for g, ts in grouped.items():
+        L += [f"ucm_trait_editor_clear_{g}_effect = {{"]
+        L += [f"  ucm_trait_editor_remove_effect = {{ TRAIT = {t} }}" for t in ts]
+        L += ["}", ""]
+    L += ["# Root = player. scope:trait_flag names the clicked trait; the toggles run on the window's target.",
+          "ucm_trait_editor_dispatch_effect = {", "  save_scope_as = actor",
+          "  # The shared effects read the target from this global; the rest of the menu keeps its own afterwards.",
+          "  if = {", "    limit = { exists = global_var:ucm_cheat_menu_recipient }",
+          "    global_var:ucm_cheat_menu_recipient = { save_scope_as = ucm_trait_editor_previous_recipient }", "  }",
+          "  set_global_variable = { name = ucm_cheat_menu_recipient value = var:ucm_trait_editor_target }",
+          "  ucm_cheat_menu_sync_trait_edit_target_effect = yes", "  scope:ucm_trait_edit_target = {"]
+    word = "if"
     for c in CATEGORIES:
-        first[c], nxt = nxt, nxt + len(pages(cats[c]))
-    if nxt > ID_LIMIT:
-        sys.exit(f"trait pages ran past ucm_cheat_menu.{ID_LIMIT}")
-    L = ["namespace = ucm_cheat_menu", "",
-         "## AUTO-GENERATED by tools/gen_trait_editor.py from the CK3 trait database. Do not edit; rerun the script.",
-         f"## Hub: 0100/0196 (categories I-IX), 0288/0289 (extended). Page size: {PAGE_SIZE}", ""]
-    cat_opts = {c: option(f"ucm_cheat_menu.0100.cat_{c}", go(first[c])) for c in CATEGORIES}
-    back = option("ucm_cheat_menu.0100.back", go("0110"))
-    close = option("ucm_cheat_menu.0100.close")
-    back_main = option("ucm_cheat_menu.0288.back_main", go("0196"))
-    cats_of = {hub: [o for c in cs for o in cat_opts[c]] for hub, cs in HUBS}
-    hubs = {"0100": cats_of["0100"] + option("ucm_cheat_menu.page_next", go("0196")) + back + close,
-            "0196": cats_of["0196"] + option("ucm_cheat_menu.0196.more_categories", go("0288"))
-            + option("ucm_cheat_menu.page_prev", go("0100")) + back + close,
-            "0288": cats_of["0288"] + option("ucm_cheat_menu.page_next", go("0289")) + back_main + close,
-            "0289": option("ucm_cheat_menu.page_prev", go("0288")) + cats_of["0289"] + back_main + close}
-    for eid, opts in hubs.items():
-        L += event(eid, "0100.t" if eid in ("0100", "0196") else f"{eid}.t", f"{eid}.desc", opts)
-    for hub, cs in HUBS:
-        for c in cs:
-            ps = pages(cats[c])
-            for i, chunk in enumerate(ps):
-                eid = first[c] + i
-                opts = [o for t in chunk for o in option(f"ucm_cheat_menu_trait_opt_{t}", "ucm_cheat_menu_sync_trait_edit_target_effect = yes",
-                                                         f"ucm_cheat_menu_toggle_base_trait_effect = {{ TRAIT = {t} }}", go(eid))]
-                if i:
-                    opts += option("ucm_cheat_menu.page_prev", go(eid - 1))
-                if i + 1 < len(ps):
-                    opts += option("ucm_cheat_menu.page_next", go(eid + 1))
-                opts += option("ucm_cheat_menu.0101.back", go(hub)) + option("ucm_cheat_menu.0101.close")
-                L += event(eid, "0101.t", f"0101.desc_{c}_{i + 1}", opts)
+        for t in cats[c]:
+            g = group_of.get(t)
+            if t in CUSTOM:
+                call = CUSTOM[t]
+            elif g in grouped:
+                call = f"ucm_trait_editor_toggle_grouped_effect = {{ TRAIT = {t} CLEAR = ucm_trait_editor_clear_{g}_effect }}"
+            else:
+                call = f"ucm_trait_editor_toggle_effect = {{ TRAIT = {t} }}"
+            L += [f"    {word} = {{", f"      limit = {{ scope:trait_flag = flag:{t} }}", f"      {call}", "    }"]
+            word = "else_if"
+    L += ["  }", "  if = {", "    limit = { exists = scope:ucm_trait_editor_previous_recipient }",
+          "    set_global_variable = { name = ucm_cheat_menu_recipient value = scope:ucm_trait_editor_previous_recipient }",
+          "  }", "}"]
+    return "\n".join(L) + "\n"
+
+
+GUI_HEAD = """# AUTO-GENERATED by tools/gen_trait_editor.py from the CK3 trait database. Do not edit; rerun the script.
+# Only the open category's rows are live, and they read Character.HasTrait directly: no scripted GUI runs per row.
+
+types ucm_trait_editor_types {
+  type ucm_trait_editor_row = button_standard_hover {
+    layoutpolicy_horizontal = expanding
+    size = { 0 38 }
+    down = "[Character.HasTrait(Trait.Self)]"
+    tooltipwidget = {
+      using = character_trait_tooltip
+    }
+    hbox = {
+      margin = { 8 0 }
+      spacing = 8
+      icon = {
+        size = { 28 28 }
+        texture = "[Trait.GetIcon(Character.Self)]"
+      }
+      text_single = {
+        layoutpolicy_horizontal = expanding
+        text = "[Trait.GetNameNoTooltip(Character.Self)]"
+        default_format = "#clickable"
+      }
+      text_single = {
+        text = "[SelectLocalization(Character.HasTrait(Trait.Self), 'ucm_cheat_menu_trait_minus', 'ucm_cheat_menu_trait_plus')]"
+      }
+    }
+  }
+
+  type ucm_trait_editor_category = button_standard {
+    layoutpolicy_horizontal = expanding
+    size = { 0 34 }
+  }
+}
+
+window = {
+  name = "ucm_trait_editor_window"
+  parentanchor = center
+  size = { 980 720 }
+  layer = top
+  filter_mouse = all
+  movable = yes
+
+  widget = {
+    size = { 100% 100% }
+    background = {
+      using = Background_Area_Dark
+    }
+  }
+
+  visible = "[GetScriptedGui('ucm_trait_editor_visible').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+  datacontext = "[GetVariableSystem]"
+  datacontext = "[GetPlayer.MakeScope.Var('ucm_trait_editor_target').Char]"
+
+  state = {
+    name = ucm_trait_editor_init
+    trigger_on_create = yes
+    on_start = "[GetVariableSystem.Set('ucm_trait_editor_category', 'childhood')]"
+  }
+
+  vbox = {
+    using = Window_Margins
+    layoutpolicy_horizontal = expanding
+    layoutpolicy_vertical = expanding
+    spacing = 6
+
+    header_pattern = {
+      layoutpolicy_horizontal = expanding
+      blockoverride "header_text" {
+        text = "ucm_trait_editor_title"
+      }
+      blockoverride "button_close" {
+        onclick = "[GetScriptedGui('ucm_trait_editor_close').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+      }
+    }
+
+    hbox = {
+      layoutpolicy_horizontal = expanding
+      spacing = 10
+      margin = { 4 0 }
+
+      portrait_head_small = {}
+
+      text_single = {
+        layoutpolicy_horizontal = expanding
+        text = "[Character.GetShortUINameNoTooltip]"
+        default_format = "#high"
+        align = left|nobaseline
+      }
+    }
+
+    hbox = {
+      layoutpolicy_horizontal = expanding
+      layoutpolicy_vertical = expanding
+      spacing = 10
+"""
+
+
+def build_gui(cats):
+    L = [GUI_HEAD.rstrip("\n"), "", "      scrollbox = {", "        minimumsize = { 220 0 }", "        maximumsize = { 240 -1 }",
+         "        layoutpolicy_vertical = expanding", '        blockoverride "scrollbox_content" {', "          vbox = {",
+         "            layoutpolicy_horizontal = expanding", "            spacing = 2"]
+    for c in CATEGORIES:
+        L += ["            ucm_trait_editor_category = {",
+              f"""              onclick = "[GetVariableSystem.Set('ucm_trait_editor_category', '{c}')]\"""",
+              f"""              down = "[GetVariableSystem.HasValue('ucm_trait_editor_category', '{c}')]\"""",
+              f'              text = "ucm_trait_editor_cat_{c}"', "            }"]
+    L += ["          }", "        }", "      }", "", "      scrollbox = {", "        layoutpolicy_horizontal = expanding",
+          "        layoutpolicy_vertical = expanding", '        blockoverride "scrollbox_content" {']
+    for c in CATEGORIES:
+        L += ["          vbox = {", "            layoutpolicy_horizontal = expanding", "            spacing = 4",
+              f"""            visible = "[GetVariableSystem.HasValue('ucm_trait_editor_category', '{c}')]\""""]
+        for t in cats[c]:
+            L += ["            ucm_trait_editor_row = {", f"""              datacontext = "[GetTrait('{t}')]\"""",
+                  f"""              onclick = "[GetScriptedGui('ucm_trait_editor_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('trait_flag', MakeScopeFlag('{t}')).End)]\"""",
+                  "            }"]
+        L += ["          }"]
+    L += ["        }", "      }", "    }", "  }", "}"]
     return "\n".join(L) + "\n"
 
 
 def loc_file(lang, cats):
-    t = LANGS[lang]
-    label = {c: t["count"].format(name, len(cats[c])) if c in COUNTED else name for c, name in zip(CATEGORIES, t["cats"])}
-    L = [f"l_{lang}:"] + [f' {k}: "{v}"' for k, v in t["head"].items()]
-    L += [f' ucm_cheat_menu.0100.cat_{c}: "{label[c]}"' for c in CATEGORIES]
-    L += [f' {k}: "{v}"' for k, v in t["tail"].items()]
-    for c in CATEGORIES:
-        n = len(pages(cats[c]))
-        L += [f' ucm_cheat_menu.0101.desc_{c}_{i}: "{t["page"].format(label[c], i, n)}"' for i in range(1, n + 1)]
+    title, names = LANGS[lang]
+    L = [f"l_{lang}:", f' ucm_trait_editor_title: "{title}"']
+    L += [f' ucm_trait_editor_cat_{c}: "{n} ({len(cats[c])})"' for c, n in zip(CATEGORIES, names)]
     L += [' ucm_cheat_menu_trait_minus: "#N −#!"', ' ucm_cheat_menu_trait_plus: "#P +#!"']
-    for tr in sorted(tr for ts in cats.values() for tr in ts):
-        g = f"GetTrait('{tr}')"
-        L.append(f' ucm_cheat_menu_trait_opt_{tr}: "[{g}.GetName( ucm_trait_edit_target )][{g}.GetTextIcon][{g}.GetIcon] '
-                 f"[SelectLocalization( ucm_trait_edit_target.HasTrait( {g} ), 'ucm_cheat_menu_trait_minus', 'ucm_cheat_menu_trait_plus' )]\"")
     return "\n".join(L) + "\n"
 
 
@@ -243,8 +303,9 @@ def main():
     args = ap.parse_args()
     if not args.game_dir or not os.path.isdir(os.path.join(args.game_dir, TRAITS)):
         sys.exit(f"--game-dir: no {TRAITS} under {args.game_dir!r}")
-    cats = load(args.game_dir)
-    write(os.path.join(MOD_DIR, OUT_REL), build(cats))
+    cats, group_of = load(args.game_dir)
+    write(os.path.join(MOD_DIR, GUI_REL), build_gui(cats))
+    write(os.path.join(MOD_DIR, EFFECTS_REL), build_effects(cats, group_of))
     for lang in LANGS:
         write(os.path.join(MOD_DIR, "localization", lang, LOC_NAME.format(lang)), loc_file(lang, cats))
 

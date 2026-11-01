@@ -1,0 +1,33 @@
+# Cheat-only elite troops: nobody can recruit them, the army spawner and spawn_army grant them.
+
+house_guard_type = {
+	type = house_guard_type
+	icon = house_guard
+	damage = 180
+	toughness = 80
+	pursuit = 120
+	screen = 150
+	can_recruit = { always = no }
+	counters = { heavy_infantry = 5 pikemen = 6 archers = 5 skirmishers = 4 peasant_militia = 8 light_cavalry = 8 heavy_cavalry = 5 camel_cavalry = 6 elephant_cavalry = 4 }
+	buy_cost = { gold = 1 }
+	stack = 500
+	max_sub_regiments = 40
+	low_maintenance_cost = { gold = 0 }
+	high_maintenance_cost = { gold = 0 }
+}
+
+house_cavalry_type = {
+	type = house_cavalry_type
+	icon = house_cavalry
+	damage = 150
+	toughness = 50
+	pursuit = 50
+	screen = 40
+	can_recruit = { always = no }
+	counters = { archers = 2 light_cavalry = 8 heavy_cavalry = 5 camel_cavalry = 6 elephant_cavalry = 4 }
+	buy_cost = { gold = 1 }
+	stack = 200
+	max_sub_regiments = 40
+	low_maintenance_cost = { gold = 0 }
+	high_maintenance_cost = { gold = 0 }
+}

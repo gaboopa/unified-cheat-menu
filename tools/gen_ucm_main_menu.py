@@ -1,4 +1,4 @@
-"""Regenerate gui/ucm_main_menu.gui, the Unified Cheat Menu window, from TABS below.
+﻿"""Regenerate gui/ucm_main_menu.gui, the Unified Cheat Menu window, from TABS below.
 
 Each tab is a list of items:
     ("h", loc_key)        section header
@@ -10,9 +10,9 @@ Each tab is a list of items:
                           shown/enabled/named exactly as the interaction itself
     ("dec", decision)     button opening an existing decision's detail view; decisions
                           always act on the player, not the target
-    ("cz", name)          the Crozier cheat panel's button(s) for ucm_crozier_cheats_sg_<name>,
-                          copied from gui/window_character.gui and pointed at the target
-    ("czrow", [name, ...], label_key)  the same at their original size, side by side
+    ("cz", name)          button(s) for ucm_crozier_cheats_sg_<name> (tools/gen_ucm_crozier.py);
+                          a tog_ toggle shows as an on/off pair
+    ("czrow", [name, ...], label_key)  the same, side by side
     ("picks", [group, ...])  group-action picker buttons (ucm_group_pick_<group>), shown pressed
                           when that group is picked
     ("steps",)            step-size selector (ucm_step_*)
@@ -25,11 +25,9 @@ Run after editing TABS:
     python tools/gen_ucm_main_menu.py
 """
 import os
-import re
 
+import gen_ucm_crozier
 import gen_ucm_extra
-
-re_size = re.compile(r"size = \{ \d+ \d+ \}")
 
 MOD_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(MOD_DIR, "gui", "ucm_main_menu.gui")
@@ -92,12 +90,9 @@ TABS = [
     ]),
     ("character", [
         ("h", "UCM_SEC_EDITORS"),
-        ("sg", "ucm_open_trait_editor"), ("sg", "ucm_open_cheat_trait_editor"), ("sg", "ucm_open_lifestyle_editor"),
-        ("ia", "daddy_pika_edit_character"),
+        ("sg", "ucm_open_trait_editor"), ("sg", "ucm_open_lifestyle_editor"),
         ("h", "UCM_SEC_IDENTITY"),
-        ("ia", "ucm_change_age_interaction"),
         ("row", ["ucm_sexuality_heterosexual", "ucm_sexuality_homosexual", "ucm_sexuality_bisexual", "ucm_sexuality_asexual"]),
-        ("ia", "daddy_pika_change_dynasty"), ("ia", "daddy_pika_change_character"),
         ("h", "UCM_SEC_ATTRIBUTES"),
         ("steps",),
         ("skill", "diplomacy"), ("skill", "martial"), ("skill", "stewardship"),
@@ -107,23 +102,8 @@ TABS = [
         ("value", "UCM_RENOWN", f"{C}.GetDynasty.GetPrestige|0", "ucm_renown"),
         ("row", ["ucm_renown_1000_down", "ucm_renown_1000_up"]),
         ("row", ["ucm_renown_level_down", "ucm_renown_level_up"]),
-        ("ia", "daddy_pika_boost_stats"),
-        ("h", "UCM_SEC_TRAITS"),
-        ("ia", "zhuge_yixue_02"), ("ia", "zhueg_yixue_03"), ("ia", "zhuge_yixue_04"), ("ia", "zhuge_yixue_06"),
         ("h", "UCM_SEC_HEALTH"),
         ("sg", "ucm_clear_stress"),
-        ("ia", "zhuge_yixue_01"), ("ia", "zhuge_yixue_05"),
-        ("ia", "set_immortal_interaction"), ("ia", "set_mortal_interaction"),
-        ("ia", "toc_celibate_interaction"),
-        ("h", "UCM_SEC_LIFESTYLE"),
-        ("ia", "zhuge_lifexp_all_xp"),
-        ("h", "UCM_SEC_PRESETS"),
-        ("ia", "set_super_interaction"), ("ia", "set_unsuper_interaction"),
-        ("ia", "set_super_governor_interaction"), ("ia", "set_unsuper_governor_interaction"),
-        ("ia", "set_super_general_interaction"), ("ia", "set_unsuper_general_interaction"),
-        ("ia", "set_all_in_one_interaction"), ("ia", "set_unall_in_one_interaction"),
-        ("h", "UCM_SEC_RESOURCES"),
-        ("ia", "daddy_pika_character_currency_menu"),
     ]),
     ("relationships", [
         ("h", "UCM_SEC_SECOND"),
@@ -133,90 +113,57 @@ TABS = [
         ("row", ["ucm_relation_friend", "ucm_relation_best_friend", "ucm_relation_rival"]),
         ("row", ["ucm_relation_nemesis", "ucm_relation_lover", "ucm_relation_soulmate"]),
         ("sg", "ucm_relation_clear"),
-        ("ia", "zhuge_set_relation_interaction"),
         ("h", "UCM_SEC_MARRIAGE"),
         ("row", ["ucm_marry_second", "ucm_marry_second_matrilineal"]),
         ("row", ["ucm_betroth_second", "ucm_betroth_second_matrilineal"]),
         ("row", ["ucm_break_betrothal_second", "ucm_divorce_second"]),
-        ("ia", "daddy_pika_arrange_marriage_inter"), ("ia", "divorce_character_cheat"), ("ia", "daddy_pika_concubine_cheat"),
         ("h", "UCM_SEC_FAMILY"),
         ("row", ["ucm_second_as_father", "ucm_second_as_real_father", "ucm_second_as_mother"]),
         ("sg", "ucm_join_second_house"),
-        ("ia", "daddy_pika_adopt_m"), ("ia", "daddy_pika_adopt_f"), ("ia", "daddy_pika_disown"),
-        ("ia", "daddy_pika_designate_heir"), ("ia", "toc_setheira_interaction"), ("ia", "toc_disinherit_interaction"),
-        ("ia", "daddy_pika_extermination_process"),
         ("h", "UCM_SEC_PREGNANCY"),
         ("row", ["ucm_pregnant_by_second_1", "ucm_pregnant_by_second_2", "ucm_pregnant_by_second_3"]),
         ("sg", "ucm_end_pregnancy"),
-        ("ia", "toc_pregnancy_interaction"),
         ("h", "UCM_SEC_HOOKS"),
         ("row", ["ucm_second_hook_on_target", "ucm_target_hook_on_second"]),
-        ("ia", "daddy_pika_add_strong_hook"),
         ("row", ["ucm_learn_target_secrets", "ucm_expose_target_secrets"]),
     ]),
     ("titles", [
         ("h", "UCM_SEC_CLAIMS"),
         ("sg", "ucm_target_claims_second_title"),
-        ("ia", "daddy_pika_usurpy_surp"), ("ia", "daddy_pika_claim_title"), ("ia", "daddy_pika_revoke_title"),
-        ("ia", "take_title_interaction"), ("ia", "take_title_and_vassals_interaction"),
-        ("ia", "take_domain_interaction"), ("ia", "take_realm_interaction"),
-        ("ia", "get_claim_interaction"), ("ia", "get_claim_on_all_creatable_interaction"),
-        ("ia", "ucm_create_titular"), ("ia", "mt_merge_titles_interaction"), ("ia", "mt_clear_selection_interaction"),
-        ("ia", "destroy_title_interaction"), ("ia", "zhuge_destroy_title"),
-        ("ia", "become_conqueror_interaction"), ("ia", "remove_conqueror_interaction"),
-        ("h", "UCM_SEC_DEJURE"),
-        ("ia", "zhuge_organize_titles"), ("dec", "ucm_one_click_transfer_vassals_decision"),
+        ("ia", "ucm_create_titular"),
         ("h", "UCM_SEC_VASSALS"),
         ("row", ["ucm_target_independent", "ucm_target_vassal_of_second"]),
-        ("ia", "daddy_pika_offer_vassal_inter"), ("ia", "daddy_pika_char_modify_vassal_contract_inter"),
-        ("ia", "daddy_pika_vassal_mod_vassal_contract_inter"), ("ia", "zhuge_mpo_qiyue"),
-        ("dec", "ucm_imprison_vassals_decision"), ("dec", "ucm_dynasty_grant_titles_decision"),
-        ("dec", "ucm_one_click_grant_titles_decision"), ("dec", "ucm_official_land_cap_decision"),
-        ("dec", "ucm_one_click_strip_official_titles_decision"),
+        ("dec", "ucm_imprison_vassals_decision"),
         ("h", "UCM_SEC_GOVERNMENT"),
         ("row", ["ucm_gov_feudal", "ucm_gov_clan", "ucm_gov_tribal"]),
         ("row", ["ucm_gov_administrative", "ucm_gov_republic", "ucm_gov_theocracy"]),
         ("row", ["ucm_gov_nomadic", "ucm_gov_herder", "ucm_gov_celestial"]),
         ("row", ["ucm_gov_meritocratic", "ucm_gov_mandala", "ucm_gov_steppe_admin"]),
         ("row", ["ucm_gov_japan_feudal", "ucm_gov_japan_administrative"]),
-        ("ia", "zhuge_set_authority_inter"),
-        ("h", "UCM_SEC_YOUR_SUCCESSION"),
-        ("t", "UCM_DECISIONS_NOTE"),
-        ("dec", "change_Realm_succession_law_mod_decision"), ("dec", "change_succession_single"),
-        ("dec", "change_succession_single_youngest"), ("dec", "gender_Succession_events_mod_decision"),
+        ("h", "UCM_SEC_TARGET_SUCCESSION"),
+        ("t", "ucm_law_note"),
+        ("togglerow", [("ucm_law_include_vassals", "ucm_law_include_vassals")]),
+        ("row", ["ucm_law_confederate_partition_succession_law", "ucm_law_partition_succession_law", "ucm_law_high_partition_succession_law"]),
+        ("row", ["ucm_law_single_heir_succession_law", "ucm_law_single_heir_succession_law_youngest", "ucm_law_single_heir_dynasty_house"]),
+        ("row", ["ucm_law_male_only_law", "ucm_law_male_preference_law", "ucm_law_equal_law"]),
+        ("row", ["ucm_law_female_preference_law", "ucm_law_female_only_law"]),
+        ("sg", "ucm_law_unlock"),
         ("dec", "dynasty_of_many_crowns_decision"),
         ("h", "UCM_SEC_DIPLOMACY"),
         ("row", ["ucm_ally_second", "ucm_break_alliance_second", "ucm_truce_second"]),
-        ("ia", "debug_alliance_interaction"), ("ia", "zhuge_add_truce_interaction"), ("ia", "debug_add_truce_interaction"),
         ("h", "UCM_SEC_WARS"),
         ("sg", "ucm_end_wars_white_peace"),
-        ("ia", "sol_war_without_bounds_interaction"), ("ia", "sol_expansion_war_interaction"),
-        ("ia", "dp_debug_start_great_holy_war_interaction"),
-        ("ia", "dp_debug_start_era_of_crusades_interaction"), ("ia", "dp_debug_start_era_of_jihads_interaction"),
         ("h", "UCM_SEC_AI"),
-        ("dec", "ucm_ai_yearly_pulse_toggle_decision"), ("dec", "ucm_ai_yearly_de_jure_transfer_toggle_decision"),
-        ("dec", "ucm_ai_yearly_admin_conversion_toggle_decision"), ("dec", "ucm_ai_boost_toggle_decision"),
-        ("dec", "ucm_world_ai_boost_pause_decision"), ("dec", "ucm_world_ai_boost_resume_decision"),
-        ("dec", "ucm_boost_world_ai_rulers_decision"),
+        ("dec", "ucm_ai_boost_toggle_decision"),
     ]),
     ("faith_culture", [
         ("h", "UCM_SEC_EDITORS"),
         ("sg", "ucm_open_culture_picker"), ("sg", "ucm_open_religion_picker"), ("sg", "ucm_open_tradition_picker"),
         ("h", "UCM_SEC_FAITH"),
         ("sg", "ucm_adopt_second_faith"),
-        ("ia", "daddy_pika_change_religion"), ("ia", "toc_religionconvert_interaction"), ("ia", "toc_yapaconvert_interaction"),
-        ("ia", "daddy_pika_excommunicate"), ("ia", "daddy_pika_remove_excommunication"),
-        ("ia", "pope_select_interaction"), ("ia", "grandmaster_select_interaction"),
-        ("dec", "dynasty_pope_0_decision"), ("dec", "dynasty_grandmaster_0_decision"),
+        ("row", ["ucm_dynasty_pope", "ucm_dynasty_grandmaster"]),
         ("h", "UCM_SEC_CULTURE"),
         ("sg", "ucm_adopt_second_culture"), ("sg", "ucm_culture_all_innovations"),
-        ("ia", "daddy_pika_change_culture"), ("ia", "change_cultural_acceptance_debug_interaction"),
-        ("ia", "learn_language_debug_interaction"), ("ia", "zhuge_buff_04"),
-        ("h", "UCM_SEC_REALM_CONVERSION"),
-        ("t", "UCM_DECISIONS_NOTE"),
-        ("dec", "convert_religion"), ("dec", "convert_culture"),
-        ("dec", "pcm_convert_subrealm_to_religion_decision"), ("dec", "pcm_convert_subrealm_to_culture_decision"),
-        ("dec", "culture_cheat"), ("dec", "X_unify"),
     ]),
     ("realm", [
         ("h", "UCM_SEC_GROUP_PICKER"),
@@ -227,20 +174,14 @@ TABS = [
         ("row", ["ucm_group_run_max_development", "ucm_group_run_max_control"]),
         ("row", ["ucm_group_run_county_faith", "ucm_group_run_county_culture"]),
         ("h", "UCM_SEC_COUNTIES"),
-        ("ia", "toc_county_modifier_interaction"), ("ia", "debug_change_every_county"),
-        ("t", "UCM_DECISIONS_NOTE"),
-        ("dec", "realm_control"), ("dec", "realm_development"),
         ("h", "UCM_SEC_HOLDINGS"),
-        ("dec", "ch_convert_holding_to_castle_decision"), ("dec", "ch_convert_holding_to_city_decision"),
-        ("dec", "ch_convert_holding_to_temple_decision"), ("dec", "ch_convert_holding_to_temple_citadel_decision"),
-        ("dec", "ch_convert_holding_to_tribal_decision"), ("dec", "ch_convert_holding_to_nomad_decision"),
+        ("row", ["ucm_holding_capital_castle_holding", "ucm_holding_capital_city_holding", "ucm_holding_capital_church_holding"]),
+        ("row", ["ucm_holding_capital_temple_citadel_holding", "ucm_holding_capital_tribal_holding", "ucm_holding_capital_nomad_holding"]),
+        ("row", ["ucm_holding_realm_castle_holding", "ucm_holding_realm_city_holding", "ucm_holding_realm_church_holding"]),
         ("dec", "ucm_realm_repair_holding_bases_decision"),
         ("h", "UCM_SEC_BUILDINGS"),
-        ("dec", "pcm_b_max_all_buildings_sub_realm_decision"), ("dec", "pcm_b_add_building_slot_7_sub_realm_decision"),
-        ("dec", "pcm_b_lucky_7_sub_realm_decision"),
-        ("dec", "X_build"), ("dec", "X_city"), ("dec", "X_temple"), ("dec", "X_castle"),
+        ("row", ["ucm_realm_max_buildings", "ucm_realm_building_slots"]),
         ("h", "UCM_SEC_ECONOMY"),
-        ("dec", "pcm_money_decision"), ("dec", "ucm_fiscal_treasury_officials_decision"),
         ("dec", "ucm_population_management_hub_decision"),
         ("h", "UCM_SEC_OFFICIALS"),
         ("dec", "ucm_one_click_purge_bad_governors_decision"), ("dec", "ucm_one_click_imperial_examination_promote_decision"),
@@ -249,13 +190,10 @@ TABS = [
     ("military", [
         ("h", "UCM_SEC_ARMIES"),
         ("sg", "ucm_open_army_spawner"),
-        ("ia", "inheritable_optroop_interaction"), ("ia", "non_inheritable_optroop_interaction"),
-        ("ia", "toc_givearmyhorde_interaction"),
         ("cz", "do_combo_army"), ("cz", "tog_levy"), ("cz", "t_t_armies_to"),
         ("h", "UCM_SEC_ENEMY_ARMIES"),
         ("cz", "t_enemy_commander"), ("cz", "t_enemy_deplete"), ("cz", "t_enemy_supply"),
         ("h", "UCM_SEC_KNIGHTS"),
-        ("ia", "zhuge_buff_05"), ("ia", "add_glory_interaction"), ("ia", "zhuge_buff_02"),
         ("cz", "t_t_knight_force"), ("cz", "t_t_knight_off"),
     ]),
     ("artifacts", [
@@ -263,12 +201,9 @@ TABS = [
         ("sg", "ucm_open_artifact_crafter"), ("sg", "ucm_open_artifact_repair"),
         ("h", "UCM_SEC_TARGET_ARTIFACTS"),
         ("row", ["ucm_artifacts_repair_all", "ucm_artifacts_all_illustrious"]),
-        ("ia", "add_artifact_interaction"), ("ia", "take_artifact_interaction"), ("ia", "add_artifact_claim_interaction"),
-        ("ia", "debug_destroy_artifact_interaction"), ("ia", "generate_artifact_with_history_interaction"),
-        ("ia", "zhuge_set_artifact_interaction"), ("ia", "zhuge_huoqu_artifact_interaction"),
         ("cz", "t_t_rob_artifacts"), ("cz", "t_t_artifact_claims"),
         ("h", "UCM_SEC_YOUR_ARTIFACTS"),
-        ("cz", "do_forge_crown"), ("dec", "Artifact_1000"),
+        ("cz", "do_forge_crown"),
     ]),
     ("court", [
         ("h", "UCM_SEC_GROUP_PICKER"),
@@ -280,31 +215,22 @@ TABS = [
         ("row", ["ucm_group_run_convert_faith", "ucm_group_run_convert_culture", "ucm_group_run_max_opinion"]),
         ("row", ["ucm_group_run_prestige", "ucm_group_run_piety"]),
         ("h", "UCM_SEC_GENERATION"),
-        ("ia", "daddy_pika_character_spawner"), ("ia", "toc_spawn_character_interaction"), ("ia", "toc_addcharacter_interaction"),
-        ("ia", "toc_addcourtier_interaction"), ("ia", "toc_addwombmancourtier_interaction"), ("ia", "spawn_courtier_interaction"),
         ("cz", "t_t_child_now"), ("cz", "t_t_child_me"),
         ("h", "UCM_SEC_COURT"),
-        ("ia", "daddy_pika_add_to_court"), ("ia", "add_to_court_interaction"), ("ia", "jkm_send_courtier_interaction"),
-        ("cz", "t_t_guest"), ("ia", "antagonise_court"),
+        ("cz", "t_t_guest"), 
         ("h", "UCM_SEC_COUNCIL"),
         ("cz", "t_t_councillor_chancellor"), ("cz", "t_t_councillor_steward"), ("cz", "t_t_councillor_marshal"),
         ("cz", "t_t_councillor_spymaster"), ("cz", "t_t_councillor_court_chaplain"),
         ("cz", "t_t_cp_court_physician"), ("cz", "t_t_cp_court_tutor"), ("cz", "t_t_cp_bodyguard"),
         ("cz", "t_t_cp_champion"), ("cz", "t_t_cp_master_assassin"), ("cz", "t_t_cp_royal_architect"),
-        ("ia", "debug_change_council_task_interaction"), ("ia", "toc_finishcounciltask_interaction"),
         ("h", "UCM_SEC_COURT_TOOLS"),
-        ("t", "UCM_DECISIONS_NOTE"),
-        ("dec", "ucm_court_management_decision"), ("dec", "ucm_positions_mass_reshuffle_decision"),
-        ("dec", "yyz_open_menu_decision"), ("dec", "ucm_bulk_guardian_run_decision"),
-        ("dec", "pcm_cure_all_decision"), ("dec", "pcm_cure_pox_decision"), ("dec", "pcm_cure_inbred_decision"),
+        ("row", ["ucm_cure_illness", "ucm_cure_congenital"]),
         ("h", "UCM_SEC_PRISON"),
-        ("ia", "daddy_pika_imprison"), ("ia", "debug_imprison_simple_interaction"),
         ("cz", "t_t_hostage"), ("cz", "t_t_hostage_free"), ("cz", "t_t_family_hostages"),
         ("h", "UCM_SEC_DANGER"),
         ("t", "UCM_DANGER_NOTE"),
-        ("ia", "toc_deposed_interaction"), ("cz", "t_t_depose"), ("cz", "t_t_banish"),
-        ("ia", "daddy_pika_murder"), ("ia", "slay_character_interaction"), ("cz", "t_t_execute"),
-        ("ia", "daddy_pika_commit_suicide"),
+        ("cz", "t_t_depose"), ("cz", "t_t_banish"),
+        ("cz", "t_t_execute"),
     ]),
     ("dlc", [
         ("h", "UCM_SEC_REGENCY"),
@@ -314,38 +240,21 @@ TABS = [
         ("row", ["ucm_diarchy_swing_down", "ucm_diarchy_swing_up"]),
         ("sg", "ucm_diarchy_end"),
         ("h", "UCM_SEC_SCHEMES"),
-        ("ia", "debug_buff_schemes"), ("ia", "debug_progress_all_active_schemes_interaction"),
-        ("ia", "debug_clear_agents_from_schemes"), ("ia", "give_infinite_schemes_of_type_interaction"),
         ("cz", "t_t_schemes_end"), ("cz", "t_t_schemes_expose"),
-        ("h", "UCM_SEC_INSPIRATIONS"),
-        ("ia", "inspire_interaction"), ("ia", "sponsor_inspiration_debug"),
         ("h", "UCM_SEC_LEGENDS"),
-        ("ia", "spawn_legend_interaction"), ("cz", "tog_legend_spread"),
-        ("h", "UCM_SEC_ACTIVITIES"),
-        ("ia", "start_bout_interaction"), ("ia", "change_hunt_success_chance"), ("ia", "change_tournament_score"),
-        ("ia", "debug_give_animal_interaction"), ("ia", "change_coronation_law"),
-        ("ia", "debug_coronation_add_to_guest_subset_interaction"),
+        ("cz", "tog_legend_spread"),
         ("h", "UCM_SEC_ADVENTURERS"),
-        ("ia", "debug_move_domicile_interaction"), ("ia", "debug_make_laamp"), ("ia", "create_task_contract_interaction"),
-        ("ia", "debug_populate_contracts"), ("ia", "debug_add_to_contact_list_interaction"),
-        ("ia", "debug_travel_to_ruler_interaction"), ("cz", "do_travel_arrive"),
+        ("cz", "do_travel_arrive"),
         ("h", "UCM_SEC_EPIDEMICS"),
-        ("ia", "spawn_epidemic_interaction"),
         ("cz", "t_t_epidemic_bubonic_plague"), ("cz", "t_t_epidemic_smallpox"), ("cz", "t_t_epidemic_measles"),
         ("cz", "t_t_epidemic_consumption"), ("cz", "t_t_epidemic_dysentery"), ("cz", "t_t_epidemic_typhus"),
         ("cz", "t_t_epidemic_ergotism"), ("cz", "t_t_pneumonic"),
-        ("h", "UCM_SEC_SITUATIONS"),
-        ("ia", "debug_change_dynastic_cycle"), ("ia", "debug_change_silk_road_cycle"), ("ia", "debug_set_mandala_aspect"),
-        ("ia", "debug_change_the_great_steppe"), ("ia", "zhuge_great_steppe"), ("ia", "zhuge_ymbuff_02"),
     ]),
     ("settings", [
         ("h", "UCM_SEC_MENU"),
         ("sg", "ucm_second_clear"), ("sg", "ucm_menu_reset"),
-        ("h", "UCM_SEC_CLASSIC"),
-        ("t", "UCM_CLASSIC_NOTE"),
-        ("ia", "cheateb_editmenu_interaction"), ("dec", "open_daddypika_menu"), ("dec", "daddy_pika_information"),
         ("h", "UCM_SEC_DEBUG"),
-        ("sg", "ucm_open_console_helper"), ("ia", "toc_main_debug_interaction"),
+        ("sg", "ucm_open_console_helper"), 
     ]),
     # Effects live in compat/ek2; the main mod ships is_shown = no stubs, so the tab only appears with EK2.
     ("ek2", [
@@ -388,42 +297,49 @@ def sgui_button(name, ind, width="0", expand=True):
     ]
 
 
-_PANEL = None
+# Fixed-size buttons in a czrow: name prefix -> (width, label key, tooltip key).
+CZ_FIXED = {
+    "pow": (58, "UCM_CROZIER_CHEATS_POW_{}", "UCM_CROZIER_CHEATS_POW_TT"),
+    "tier": (78, "UCM_CROZIER_CHEATS_TIER_{}", "UCM_CROZIER_CHEATS_TIER_TT"),
+}
+CZ_ALL = {"pon_char_self": "ALLON", "poff_char_self": "ALLOFF"}
 
 
-def crozier_buttons(name, ind, keep_size=False):
-    """Copy the Crozier cheat panel's button(s) for scripted GUI `ucm_crozier_cheats_sg_<name>`
-    from gui/window_character.gui, retargeted from the character window's character to the
-    menu's target. Toggles come as an on/off pair of buttons; both are copied."""
-    global _PANEL
-    if _PANEL is None:
-        with open(os.path.join(MOD_DIR, "gui", "window_character.gui"), encoding="utf-8-sig") as fh:
-            _PANEL = fh.read()
-    t, key, found = _PANEL, f"'ucm_crozier_cheats_sg_{name}'", []
-    pos = t.find(key)
-    while pos >= 0:
-        s = t.rfind("button_standard = {", 0, pos)
-        depth, e = 0, s
-        for e in range(t.find("{", s), len(t)):
-            depth += (t[e] == "{") - (t[e] == "}")
-            if depth == 0:
-                break
-        if s < 0 or e < pos:  # unbalanced braces / key outside any button: would loop forever
-            raise ValueError(f"cannot parse Crozier button block for {name} near offset {pos}")
-        block = " ".join(t[s:e + 1].split())
-        if block not in found:
-            found.append(block)
-        pos = t.find(key, e)
-    if not found:
+def _cz_button(sg, text, tooltip, label_width, scope=R, size="layoutpolicy_horizontal = expanding size = { 0 28 }", attrs="", fx=""):
+    fx_label = f' text_single = {{ parentanchor = vcenter|right position = {{ -10 0 }} text = "{fx}" using = Font_Size_Small default_format = "#high" }}' if fx else ""
+    return (f'button_standard = {{ {size}{attrs} tooltip = "{tooltip}" onclick = "[GetScriptedGui( ' + repr(sg) + f' ).Execute( {scope} )]" '
+            f'text_single = {{ parentanchor = vcenter|left position = {{ 10 0 }} text = "{text}" max_width = {label_width} fontsize_min = 9 using = Font_Size_Small }}{fx_label} }}')
+
+
+def crozier_buttons(name, ind):
+    """The button(s) for scripted GUI ucm_crozier_cheats_sg_<name>; see gen_ucm_crozier.py for the naming."""
+    sg = f"ucm_crozier_cheats_sg_{name}"
+    kind, _, rest = name.partition("_")
+    if kind == "tog" and rest in gen_ucm_crozier.TOGGLES:
+        st = f"GetScriptedGui( 'ucm_crozier_cheats_sg_st_{rest}' ).IsShown( {R} )"
+        key = f"UCM_CROZIER_CHEATS_B_{rest}"
+        levelled = rest in gen_ucm_crozier.LEVELLED
+        out = [
+            _cz_button(sg, f"{key}_ON", f"{key}_TT", 376 if levelled else 430, attrs=f' visible = "[And( Not( GameHasMultiplePlayers ), {st} )]" down = yes',
+                       fx=f"×[GetGlobalVariable( 'ucm_crozier_cheats_fx_{rest}' ).GetValue|0]" if levelled else ""),
+            _cz_button(sg, f"{key}_OFF", f"{key}_TT", 430, attrs=f' visible = "[And( Not( GameHasMultiplePlayers ), Not( {st} ) )]"'),
+        ]
+    elif kind in CZ_FIXED and rest.isdigit():
+        width, text, tooltip = CZ_FIXED[kind]
+        out = [_cz_button(sg, text.format(rest), tooltip, width - 16, size=f"size = {{ {width} 26 }}", attrs=f" down = \"[GetScriptedGui( '{sg}' ).IsShown( {R} )]\"")]
+    elif name in CZ_ALL:
+        key = f"UCM_CROZIER_CHEATS_PANEL_{CZ_ALL[name]}"
+        out = [_cz_button(sg, key, f"{key}_TT", 184, size="size = { 200 26 }")]
+    elif name == "do_toasts_toggle" or (kind == "do" and name in gen_ucm_crozier.ACTIONS):
+        key = f"UCM_CROZIER_CHEATS_B_{rest}"
+        out = [_cz_button(sg, key, f"{key}_TT", 430)]
+    elif kind == "t" and name in gen_ucm_crozier.ACTIONS:
+        key = f"UCM_CROZIER_CHEATS_B_{rest}"
+        scope = R.replace(".End", f".AddScope( 'ucm_crozier_cheats_char', {C}.MakeScope ).End")
+        out = [_cz_button(sg, key, f"{key}_TT", 460, scope=scope, attrs=f" enabled = \"[GetScriptedGui( '{sg}' ).IsValid( {scope} )]\"")]
+    else:
         raise ValueError(f"no Crozier button for {name}")
-    out = []
-    for b in found:
-        b = re.sub(r"\bCharacter\.", C + ".", b)
-        if not keep_size:
-            b = b.replace("button_standard = { size = {", "button_standard = { layoutpolicy_horizontal = expanding size = {", 1)
-            b = re_size.sub("size = { 0 28 }", b, count=1)
-        out.append(ind + b)
-    return out
+    return [ind + b for b in out]
 
 
 def item(it, ind):
@@ -462,7 +378,7 @@ def item(it, ind):
         if len(it) > 2:
             lines.append(f'{ind}  text_single = {{ text = "{it[2]}" using = Font_Size_Small }}')
         for name in it[1]:
-            lines += crozier_buttons(name, ind + "  ", keep_size=True)
+            lines += crozier_buttons(name, ind + "  ")
         return lines + [f"{ind}  expand = {{}}", f"{ind}}}"]
     kind = it[0]
     if kind == "h":

@@ -1,0 +1,98 @@
+﻿# The trait editor's top-tier fame traits. Cheat-only like every trait in this mod.
+
+ucm_fame_warlord_eternal = {
+	inherit_chance = 0
+	birth = 0
+	random_creation = 0
+	genetic = no
+	category = fame
+	icon = "trait_warlord_eternal.dds"
+	prowess = 12
+	martial = 15
+	advantage = 20
+	knight_limit = 40
+	army_damage_mult = 0.6
+	army_toughness_mult = 0.6
+	army_siege_value_mult = 2
+	supply_limit_mult = 1
+	movement_speed = 10
+	retreat_losses = -0.99
+	no_water_crossing_penalty = yes
+}
+
+ucm_fame_wealth_sovereign_max = {
+	inherit_chance = 0
+	birth = 0
+	random_creation = 0
+	genetic = no
+	icon = "trait_wealth_sovereign_max.dds"
+	diplomacy = 8
+	stewardship = 20
+	domain_limit = 80
+	vassal_limit = 200
+	monthly_income_mult = 5
+	development_growth_factor = 6
+	army_maintenance_mult = -0.99
+}
+
+ucm_fame_ultimate_intrigue_master = {
+	inherit_chance = 0
+	birth = 0
+	random_creation = 0
+	genetic = no
+	icon = "trait_ultimate_intrigue_master.dds"
+	intrigue = 25
+	max_hostile_schemes_add = 12
+	max_personal_schemes_add = 10
+	owned_personal_scheme_success_chance_add = 500
+	owned_hostile_scheme_success_chance_add = 500
+	enemy_hostile_scheme_success_chance_add = -500
+	dread_baseline_add = 150
+}
+
+ucm_fame_nether_conspiracy_lord = {
+	inherit_chance = 0
+	birth = 0
+	random_creation = 0
+	genetic = no
+	category = fame
+	icon = "trait_nether_conspiracy_lord.dds"
+	intrigue = 50
+	general_opinion = 50
+	vassal_opinion = 70
+	monthly_dread = 5
+	dread_baseline_add = 150
+	owned_hostile_scheme_success_chance_add = 1000
+	owned_personal_scheme_success_chance_add = 1000
+	enemy_hostile_scheme_success_chance_add = -1000
+}
+
+ucm_fame_eternal_nether_lord = {
+	inherit_chance = 0
+	birth = 0
+	random_creation = 0
+	genetic = no
+	category = fame
+	icon = "trait_eternal_nether_lord.dds"
+	intrigue = 45
+	general_opinion = 60
+	vassal_opinion = 80
+	stress_loss_mult = 5
+	stress_gain_mult = -0.99
+	monthly_dread = 8
+	dread_baseline_add = 200
+	enemy_hostile_scheme_success_chance_add = -1000
+}
+
+ucm_fame_great_builder_god = {
+	inherit_chance = 0
+	birth = 0
+	random_creation = 0
+	genetic = no
+	category = fame
+	icon = "trait_great_builder_god.dds"
+	build_gold_cost = -0.99
+	holding_build_gold_cost = -0.99
+	build_speed = -0.99
+	holding_build_speed = -0.99
+}

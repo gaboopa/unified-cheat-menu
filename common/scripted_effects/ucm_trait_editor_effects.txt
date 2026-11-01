@@ -1,0 +1,118 @@
+﻿# Trait editor window (gui/ucm_trait_editor.gui). The click dispatcher is generated: ucm_trait_editor_generated_effects.txt.
+
+# Scope = player.
+ucm_open_trait_editor_gui_effect = {
+  if = {
+    limit = { exists = global_var:ucm_cheat_menu_recipient }
+    set_variable = { name = ucm_trait_editor_target value = global_var:ucm_cheat_menu_recipient }
+    add_character_flag = ucm_trait_editor_open
+  }
+}
+
+ucm_close_trait_editor_gui_effect = {
+  remove_character_flag = ucm_trait_editor_open
+}
+
+# The toggles below run on the target, with scope:actor = player.
+
+ucm_trait_editor_toggle_effect = {
+  if = {
+    limit = { has_trait = $TRAIT$ }
+    remove_trait = $TRAIT$
+  }
+  else = {
+    add_trait = $TRAIT$
+  }
+}
+
+ucm_trait_editor_remove_effect = {
+  if = {
+    limit = { has_trait = $TRAIT$ }
+    remove_trait = $TRAIT$
+  }
+}
+
+# $CLEAR$ removes the rest of the trait's group, which the game doesn't do for us.
+ucm_trait_editor_toggle_grouped_effect = {
+  if = {
+    limit = { has_trait = $TRAIT$ }
+    remove_trait = $TRAIT$
+  }
+  else = {
+    $CLEAR$ = yes
+    add_trait = $TRAIT$
+  }
+}
+
+ucm_trait_editor_toggle_cheat_effect = {
+  if = {
+    limit = { has_trait = $TRAIT$ }
+    remove_trait = $TRAIT$
+  }
+  else = {
+    ucm_cheat_menu_grant_cheat_trait_effect = { TRAIT = $TRAIT$ }
+  }
+}
+
+ucm_trait_editor_make_young_effect = {
+  set_age = 25
+  if = {
+    limit = { has_trait = incapable }
+    remove_trait = incapable
+  }
+}
+
+ucm_trait_editor_toggle_immortal_effect = {
+  if = {
+    limit = { NOT = { has_trait = ucm_trait_immortal_ageless } }
+    ucm_trait_editor_make_young_effect = yes
+  }
+  ucm_trait_editor_toggle_cheat_effect = { TRAIT = ucm_trait_immortal_ageless }
+}
+
+# Takes the target to 25 and remembers the age, to restore when toggled off.
+ucm_trait_editor_toggle_age_pill_effect = {
+  if = {
+    limit = { has_trait = $TRAIT$ }
+    remove_character_flag = $FLAG$
+    if = {
+      limit = { has_variable = $AGE_VAR$ }
+      set_age = var:$AGE_VAR$
+      remove_variable = $AGE_VAR$
+    }
+    remove_trait = $TRAIT$
+  }
+  else = {
+    add_character_flag = $FLAG$
+    if = {
+      limit = { NOT = { has_variable = $AGE_VAR$ } }
+      set_variable = { name = $AGE_VAR$ value = age }
+    }
+    ucm_trait_editor_make_young_effect = yes
+    add_trait = $TRAIT$
+  }
+}
+
+ucm_trait_editor_toggle_baidubuqin_effect = {
+  if = {
+    limit = { has_trait = ucm_trait_baidubuqin }
+    ucm_trait_baidubuqin_revoke_effect = yes
+  }
+  ucm_trait_editor_toggle_cheat_effect = { TRAIT = ucm_trait_baidubuqin }
+}
+
+ucm_trait_editor_toggle_stats_100_effect = {
+  ucm_trait_editor_toggle_cheat_effect = { TRAIT = ucm_trait_stats_100_locked }
+  if = {
+    limit = { has_trait = ucm_trait_stats_100_locked }
+    ucm_stats_100_clamp_all_skills_effect = yes
+  }
+}
+
+ucm_trait_editor_toggle_marriage_ban_effect = {
+  if = {
+    limit = { NOT = { has_trait = ucm_trait_marriage_ban } }
+    ucm_cheat_menu_marriage_ban_strip_wedlocks_effect = yes
+  }
+  ucm_trait_editor_toggle_cheat_effect = { TRAIT = ucm_trait_marriage_ban }
+}

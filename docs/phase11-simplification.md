@@ -1,6 +1,6 @@
 # Phase 11 — Simplification, bug fixes, dead code round 2
 
-Works through the rest of [upstream-review.md](upstream-review.md) after [phase10-dead-code.md](phase10-dead-code.md). Nothing here has been load-tested yet. Mechanical rewrites were done by Haiku agents and the two design-heavy ones (artifact windows, monthly pulses) by Sonnet agents; every result was re-checked as described below.
+Works through the rest of the earlier code review after [phase10-dead-code.md](phase10-dead-code.md). Nothing here has been load-tested yet. Mechanical rewrites were done by Haiku agents and the two design-heavy ones (artifact windows, monthly pulses) by Sonnet agents; every result was re-checked as described below.
 
 **Equivalence checker.** Where a rewrite should not change behaviour, a script inlined the new parameterised helpers (substituting `$PARAM$`) and compared every top-level object with the git HEAD version, ignoring whitespace and comments. "N/N equivalent" below means every effect or event expands back to exactly the old text.
 
@@ -25,8 +25,8 @@ Works through the rest of [upstream-review.md](upstream-review.md) after [phase1
 | File | Lines | Check |
 | --- | --- | --- |
 | `events/ucm_char_design_events.txt` + new `common/scripted_effects/ucm_char_design_effects.txt` | 40,023 → 25,269 + 5,291. 306 option bodies call 102 helpers (`PARENT`, `CHANCE`); option wrappers stay in the events because names and triggers can't move into an effect | 61/61 equivalent |
-| `DP_modifier_effects.txt` | 5,569 → 1,943 (5 helpers over 266 keys; about 11 irregular blocks left written out) | 9/9 equivalent |
-| `DP_child_effects.txt` | 2,819 → 869 (4 helpers; the age-18 heirs have extra traits, so they get their own two) | 70/70 equivalent |
+| `old_modifier_effects.txt` | 5,569 → 1,943 (5 helpers over 266 keys; about 11 irregular blocks left written out) | 9/9 equivalent |
+| `old_child_effects.txt` | 2,819 → 869 (4 helpers; the age-18 heirs have extra traits, so they get their own two) | 70/70 equivalent |
 
 ## GUI work per frame
 

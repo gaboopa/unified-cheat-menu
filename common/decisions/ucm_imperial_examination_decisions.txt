@@ -1,6 +1,6 @@
-﻿ucm_one_click_imperial_examination_promote_decision = {
+ucm_one_click_imperial_examination_promote_decision = {
   picture = {
-    reference = "gfx/interface/illustrations/decisions/8.dds"
+    reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
   }
   decision_group_type = ucm_officials
   sort_order = 35
@@ -14,7 +14,7 @@
 
   is_shown = { ucm_single_player_trigger = yes 
 
-    has_character_flag = pcm_b_show_decision_flag
+    has_character_flag = ucm_menu_open
     ucm_officials_decision_visible_for_player_trigger = yes
   }
 

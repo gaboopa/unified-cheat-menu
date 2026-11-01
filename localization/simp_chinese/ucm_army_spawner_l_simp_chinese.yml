@@ -1,0 +1,11 @@
+﻿l_simp_chinese:
+ ucm_army_spawner_title: "军队生成器"
+ ucm_army_spawner_hint: "选择常备军类型和团数，然后为目标生成。"
+ ucm_army_spawner_size: "团数：[GetPlayer.MakeScope.Var('ucm_army_size').GetValue|0]"
+ ucm_army_spawner_spawn: "生成"
+ ucm_army_spawner_spawn_tt: "为目标添加军团。优先扩充该类型的现有军团。"
+ ucm_army_spawner_ok_title: "军队已生成"
+ ucm_army_spawner_ok_desc: "常备军已添加给[ucm_cheat_menu_target.GetShortUIName]。"
+ ucm_army_spawner_fail_title: "生成失败"
+ ucm_army_spawner_fail_target: "请先右键点击角色并打开菜单以设定目标。"
+ ucm_army_spawner_fail_maa: "无法添加军团。目标必须是有领地的统治者。"

@@ -1,0 +1,63 @@
+﻿window = {
+  name = "ucm_picker_religion_window"
+  parentanchor = right|vcenter
+  size = { 500 720 }
+  layer = top
+  movable = yes
+  alwaystransparent = no
+  filter_mouse = all
+  visible = "[GetScriptedGui( 'ucm_picker_religion_visible' ).IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+  widget = {
+    size = { 100% 100% }
+    background = { using = Background_Area_Dark alpha = 1.0 }
+  }
+  vbox = {
+    using = Window_Margins
+    layoutpolicy_horizontal = expanding
+    layoutpolicy_vertical = expanding
+    spacing = 6
+    header_pattern = {
+      layoutpolicy_horizontal = expanding
+      blockoverride "header_text" { text = "UCM_PICKER_RELIGION" }
+      blockoverride "button_close" { onclick = "[GetScriptedGui( 'ucm_picker_religion_close' ).Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]" }
+    }
+    text_multi = { layoutpolicy_horizontal = expanding autoresize = yes max_width = 460 text = "UCM_PICKER_RELIGION_NOTE" default_format = "#low" }
+    scrollbox = {
+      layoutpolicy_horizontal = expanding
+      layoutpolicy_vertical = expanding
+      blockoverride "scrollbox_content" {
+        vbox = {
+          layoutpolicy_horizontal = expanding
+          datamodel = "[GetGlobalList('ucm_picker_religions')]"
+          item = {
+            vbox = {
+              layoutpolicy_horizontal = expanding
+              datacontext = "[Scope.Religion]"
+              button_standard_hover = {
+                layoutpolicy_horizontal = expanding
+                size = { 0 30 }
+                onclick = "[GetVariableSystem.Toggle(ConcatIfNeitherEmpty(Religion.GetNameNoTooltip,'children_visible'))]"
+                text_single = { parentanchor = vcenter|left position = { 8 0 } text = "[Religion.GetNameNoTooltip]" default_format = "#high" }
+              }
+              vbox = {
+                layoutpolicy_horizontal = expanding
+                margin_left = 12
+                datamodel = "[Religion.GetFaiths]"
+                visible = "[GetVariableSystem.Exists(ConcatIfNeitherEmpty(Religion.GetNameNoTooltip,'children_visible'))]"
+                item = {
+                  button_standard_hover = {
+                    layoutpolicy_horizontal = expanding
+                    size = { 0 28 }
+                    onclick = "[GetScriptedGui('ucm_picker_faith_pick').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('selected_faith', Faith.MakeScope).End)]"
+                    text_single = { parentanchor = vcenter|left position = { 8 0 } text = "[Faith.GetNameNoTooltip]" default_format = "#clickable" }
+                    button_standard = { parentanchor = vcenter|right position = { -4 0 } size = { 32 24 } tooltip = "UCM_PICKER_FAITH_EDIT_TT" onclick = "[GetScriptedGui('ucm_picker_faith_edit').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('selected_faith', Faith.MakeScope).End)]" text_single = { parentanchor = center raw_text = "»" } }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

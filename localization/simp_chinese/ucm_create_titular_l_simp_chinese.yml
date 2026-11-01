@@ -1,0 +1,9 @@
+﻿l_simp_chinese:
+ UCM_TITULAR_NAME: "[target.GetBaseNameNoTierNoTooltip]"
+ UCM_TITULAR_ADJECTIVE: "[target.GetAdjectiveNoTooltip]"
+ ucm_create_titular: "创建名义头衔"
+ ucm_create_titular_desc: "选择这位统治者的一个头衔，以其命名新的名义头衔。头衔归该统治者所有。"
+ ucm_create_titular_duchy: "公国（默认）"
+ ucm_create_titular_kingdom: "王国"
+ ucm_create_titular_empire: "帝国"
+ ucm_create_titular_hegemony: "霸权"

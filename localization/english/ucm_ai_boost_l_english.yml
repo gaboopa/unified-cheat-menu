@@ -1,0 +1,5 @@
+﻿l_english:
+ ucm_ai_boost_title_on: "#bold [ON]#! AI Realm Bonuses"
+ ucm_ai_boost_title_off: "#bold [OFF]#! AI Realm Bonuses"
+ ucm_ai_boost_desc: "Gives or removes the governance bonus on every landed AI character: better skills, income, armies and war appetite."
+ ucm_ai_boost_confirm: "Toggle the bonus for every landed AI character?"

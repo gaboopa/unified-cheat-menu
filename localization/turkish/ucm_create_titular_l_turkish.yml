@@ -1,0 +1,9 @@
+﻿l_turkish:
+ UCM_TITULAR_NAME: "[target.GetBaseNameNoTierNoTooltip]"
+ UCM_TITULAR_ADJECTIVE: "[target.GetAdjectiveNoTooltip]"
+ ucm_create_titular: "Sembolik Unvan Oluştur"
+ ucm_create_titular_desc: "Yeni sembolik unvana adını verecek, bu hükümdarın bir unvanını seç. Unvan onda kalır."
+ ucm_create_titular_duchy: "Dükalık (varsayılan)"
+ ucm_create_titular_kingdom: "Krallık"
+ ucm_create_titular_empire: "İmparatorluk"
+ ucm_create_titular_hegemony: "Hegemonya"

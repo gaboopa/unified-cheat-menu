@@ -1,6 +1,6 @@
 # Phase 12 — Features recreated from the gap review
 
-A comparison against Skonester Cheat Menu Gold (`bfcb175`) and Divine Intervention v0.4.0 found features UCM lacked or couldn't reach. They are rebuilt here as native menu actions. DI was used as a behaviour reference only. Static checks pass. **Not tested in game.**
+A comparison against the baseline mod (`bfcb175`) and Divine Intervention v0.4.0 found features UCM lacked or couldn't reach. They are rebuilt here as native menu actions. DI was used as a behaviour reference only. Static checks pass. **Not tested in game.**
 
 `tools/gen_ucm_extra.py` generates the actions, and `gen_ucm_main_menu.py` merges them into the tabs. Run them in that order. The modifier list comes from `modifiers.log` (`script_docs`), so regenerate it after a game update with `CK3_LOG_DIR` set if the logs aren't in the default place.
 

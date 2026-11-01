@@ -74,60 +74,14 @@ ucm_governor_is_mediocre_by_branch_trigger = {
   }
 }
 
-ucm_has_purge_target_county_tier_trigger = {
-  any_vassal_or_below = {
-    OR = {
-      ucm_purge_eligible_governor_base_trigger = yes
-      ucm_purge_eligible_non_governor_vassal_base_trigger = yes
-    }
-    ucm_governor_is_mediocre_by_branch_trigger = yes
-    highest_held_title_tier = tier_county
-  }
+ucm_purge_target_trigger = {
+  OR = { ucm_purge_eligible_governor_base_trigger = yes ucm_purge_eligible_non_governor_vassal_base_trigger = yes }
+  ucm_governor_is_mediocre_by_branch_trigger = yes
 }
 
-ucm_has_purge_target_duchy_tier_trigger = {
-  any_vassal_or_below = {
-    OR = {
-      ucm_purge_eligible_governor_base_trigger = yes
-      ucm_purge_eligible_non_governor_vassal_base_trigger = yes
-    }
-    ucm_governor_is_mediocre_by_branch_trigger = yes
-    highest_held_title_tier = tier_duchy
-  }
-}
-
-ucm_has_purge_target_kingdom_tier_trigger = {
-  any_vassal_or_below = {
-    OR = {
-      ucm_purge_eligible_governor_base_trigger = yes
-      ucm_purge_eligible_non_governor_vassal_base_trigger = yes
-    }
-    ucm_governor_is_mediocre_by_branch_trigger = yes
-    highest_held_title_tier = tier_kingdom
-  }
-}
-
-ucm_has_purge_target_empire_tier_trigger = {
-  any_vassal_or_below = {
-    OR = {
-      ucm_purge_eligible_governor_base_trigger = yes
-      ucm_purge_eligible_non_governor_vassal_base_trigger = yes
-    }
-    ucm_governor_is_mediocre_by_branch_trigger = yes
-    highest_held_title_tier = tier_empire
-  }
-}
-
-ucm_has_anyone_to_purge_trigger = {
-  OR = {
-    ucm_has_purge_target_county_tier_trigger = yes
-    ucm_has_purge_target_duchy_tier_trigger = yes
-    ucm_has_purge_target_kingdom_tier_trigger = yes
-    ucm_has_purge_target_empire_tier_trigger = yes
-  }
-}
-
-# 无特定授予头衔时默认按伯爵线（更换官员、整理头衔转封等）
-ucm_is_excellent_talent_for_grant_trigger = {
-  ucm_is_talent_for_grant_tier_county_trigger = yes
-}
+ucm_has_purge_target_tier_trigger = { any_vassal_or_below = { ucm_purge_target_trigger = yes highest_held_title_tier = $TIER$ } }
+ucm_has_purge_target_county_tier_trigger = { ucm_has_purge_target_tier_trigger = { TIER = tier_county } }
+ucm_has_purge_target_duchy_tier_trigger = { ucm_has_purge_target_tier_trigger = { TIER = tier_duchy } }
+ucm_has_purge_target_kingdom_tier_trigger = { ucm_has_purge_target_tier_trigger = { TIER = tier_kingdom } }
+ucm_has_purge_target_empire_tier_trigger = { ucm_has_purge_target_tier_trigger = { TIER = tier_empire } }
+ucm_has_anyone_to_purge_trigger = { any_vassal_or_below = { ucm_purge_target_trigger = yes highest_held_title_tier >= tier_county } }

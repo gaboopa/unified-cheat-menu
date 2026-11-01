@@ -1,222 +1,58 @@
-﻿# UCM右键作弊菜单：统一用 global_var 锁定右击对象（与 ucm_acm_recipient 同套路）。
-# interaction 的 save_scope_as 不会随 trigger_event 传入事件，导致「点了没反应」。
+﻿# The menu target lives in a global variable: an interaction's saved scopes don't reach the events and windows it opens.
 
 ucm_cheat_menu_lock_recipient_effect = {
-  if = {
-    limit = { exists = scope:recipient }
-    set_global_variable = {
-      name = ucm_cheat_menu_recipient
-      value = scope:recipient
-    }
-  }
-  else_if = {
-    limit = { exists = scope:ucm_cheat_menu_target }
-    set_global_variable = {
-      name = ucm_cheat_menu_recipient
-      value = scope:ucm_cheat_menu_target
-    }
-  }
-  else_if = {
-    limit = { exists = scope:actor }
-    set_global_variable = {
-      name = ucm_cheat_menu_recipient
-      value = scope:actor
-    }
-  }
-  else_if = {
-    limit = { has_global_variable = ucm_cheat_menu_recipient }
-  }
+	if = {
+		limit = { exists = scope:recipient }
+		set_global_variable = { name = ucm_cheat_menu_recipient value = scope:recipient }
+	}
+	else_if = {
+		limit = { exists = scope:ucm_cheat_menu_target }
+		set_global_variable = { name = ucm_cheat_menu_recipient value = scope:ucm_cheat_menu_target }
+	}
+	else_if = {
+		limit = { exists = scope:actor }
+		set_global_variable = { name = ucm_cheat_menu_recipient value = scope:actor }
+	}
 }
 
 ucm_cheat_menu_sync_target_effect = {
-  if = {
-    limit = { exists = global_var:ucm_cheat_menu_recipient }
-    global_var:ucm_cheat_menu_recipient = {
-      save_scope_as = ucm_cheat_menu_target
-    }
-  }
-  else_if = {
-    limit = { exists = scope:recipient }
-    scope:recipient = {
-      save_scope_as = ucm_cheat_menu_target
-    }
-  }
-  else_if = {
-    limit = {
-      exists = root
-      root = { has_variable = ucm_military_menu_victim }
-    }
-    root = {
-      var:ucm_military_menu_victim = { save_scope_as = ucm_cheat_menu_target }
-    }
-  }
-  else_if = {
-    limit = { exists = scope:actor }
-    scope:actor = {
-      save_scope_as = ucm_cheat_menu_target
-    }
-  }
-}
-
-ucm_cheat_menu_clear_recipient_effect = {
-  if = {
-    limit = { has_global_variable = ucm_cheat_menu_recipient }
-    remove_global_variable = ucm_cheat_menu_recipient
-  }
-  if = {
-    limit = {
-      exists = root
-      root = { has_variable = ucm_military_menu_victim }
-    }
-    root = { remove_variable = ucm_military_menu_victim }
-  }
+	if = {
+		limit = { exists = global_var:ucm_cheat_menu_recipient }
+		global_var:ucm_cheat_menu_recipient = { save_scope_as = ucm_cheat_menu_target }
+	}
+	else_if = {
+		limit = { exists = scope:recipient }
+		scope:recipient = { save_scope_as = ucm_cheat_menu_target }
+	}
+	else_if = {
+		limit = { exists = scope:actor }
+		scope:actor = { save_scope_as = ucm_cheat_menu_target }
+	}
 }
 
 ucm_cheat_menu_sync_trait_edit_target_effect = {
-  ucm_cheat_menu_sync_target_effect = yes
-  scope:ucm_cheat_menu_target = {
-    save_scope_as = ucm_trait_edit_target
-  }
-}
-
-ucm_cheat_menu_sync_relation_target_effect = {
-  ucm_cheat_menu_sync_target_effect = yes
-  scope:ucm_cheat_menu_target = {
-    save_scope_as = ucm_relation_target
-  }
+	ucm_cheat_menu_sync_target_effect = yes
+	scope:ucm_cheat_menu_target = { save_scope_as = ucm_trait_edit_target }
 }
 
 ucm_cheat_menu_sync_lifestyle_target_effect = {
-  ucm_cheat_menu_sync_target_effect = yes
-  scope:ucm_cheat_menu_target = {
-    save_scope_as = ucm_lifestyle_target
-  }
-}
-
-ucm_cheat_menu_sync_pregnancy_target_effect = {
-  ucm_cheat_menu_sync_target_effect = yes
-  scope:ucm_cheat_menu_target = {
-    save_scope_as = ucm_pregnancy_target
-  }
-}
-
-ucm_cheat_menu_sync_switch_target_effect = {
-  ucm_cheat_menu_sync_target_effect = yes
-  scope:ucm_cheat_menu_target = {
-    save_scope_as = ucm_switch_target
-  }
-}
-
-ucm_cheat_menu_open_culture_edit_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  scope:actor = {
-    ucm_cheat_menu_sync_target_effect = yes
-    ucm_open_acm_culture_picker_effect = yes
-  }
-}
-
-ucm_cheat_menu_open_religion_edit_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  scope:actor = {
-    ucm_open_acm_religion_picker_effect = yes
-  }
+	ucm_cheat_menu_sync_target_effect = yes
+	scope:ucm_cheat_menu_target = { save_scope_as = ucm_lifestyle_target }
 }
 
 ucm_cheat_menu_open_sand_soldiers_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  scope:actor = {
-    if = {
-      limit = { exists = scope:recipient }
-      set_variable = {
-        name = ucm_military_menu_victim
-        value = scope:recipient
-      }
-    }
-    ucm_military_ensure_target_effect = yes
-    ucm_sand_soldiers_request_open_effect = yes
-    trigger_event = { id = ucm_cheat_menu.3082 days = 0 }
-  }
-}
-
-ucm_cheat_menu_open_new_traits_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  scope:actor = {
-    ucm_open_cheat_trait_editor_gui_effect = yes
-  }
+	ucm_cheat_menu_lock_recipient_effect = yes
+	scope:actor = { ucm_army_spawner_open_effect = yes }
 }
 
 ucm_cheat_menu_open_base_game_traits_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  scope:actor = {
-    ucm_open_trait_editor_gui_effect = yes
-  }
+	ucm_cheat_menu_lock_recipient_effect = yes
+	scope:actor = { ucm_open_trait_editor_gui_effect = yes }
 }
 
 ucm_cheat_menu_open_lifestyle_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  ucm_cheat_menu_sync_lifestyle_target_effect = yes
-  scope:actor = {
-    ucm_open_lifestyle_gui_effect = yes
-  }
+	ucm_cheat_menu_lock_recipient_effect = yes
+	ucm_cheat_menu_sync_lifestyle_target_effect = yes
+	scope:actor = { ucm_open_lifestyle_gui_effect = yes }
 }
 
-ucm_cheat_menu_open_steal_artifact_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  scope:actor = {
-    ucm_cheat_menu_sync_target_effect = yes
-    add_character_flag = ucm_steal_picker_active
-    set_variable = { name = ucm_steal_victim value = scope:ucm_cheat_menu_target }
-    set_variable = { name = ucm_steal_page value = 0 }
-    trigger_event = ucm_cheat_menu.3094
-  }
-}
-
-ucm_cheat_menu_open_artifact_craft_effect = {
-  ucm_cheat_menu_lock_recipient_effect = yes
-  if = {
-    limit = {
-      exists = scope:actor
-      scope:actor = { ucm_player_may_use_artifact_craft_trigger = yes }
-    }
-  scope:actor = {
-    save_scope_as = ucm_acm_craft_creator
-    remove_character_flag = ucm_acm_modify_session
-    ucm_cheat_menu_sync_target_effect = yes
-    if = {
-      limit = { exists = scope:ucm_cheat_menu_target }
-      set_global_variable = {
-        name = ucm_acm_recipient
-        value = scope:ucm_cheat_menu_target
-      }
-    }
-    else_if = {
-      limit = { exists = scope:recipient }
-      set_global_variable = {
-        name = ucm_acm_recipient
-        value = scope:recipient
-      }
-    }
-    add_character_flag = ucm_craft_give_to_recipient
-    ucm_craft_init_modifier_slot_defaults_effect = yes
-    if = {
-      limit = { NOT = { has_variable = ucm_acm_artifact_type } }
-      ucm_acm_init_artifact_type_defaults_effect = yes
-    }
-    if = {
-      limit = { NOT = { has_character_flag = ucm_artifact_quality_set } }
-      ucm_acm_set_quality_common_effect = yes
-    }
-    add_character_flag = ucm_acm_gui_open
-  }
-  }
-}
-
-ucm_cheat_menu_sync_plant_scopes_effect = {
-  ucm_cheat_menu_sync_target_effect = yes
-  scope:ucm_cheat_menu_target = {
-    save_scope_as = ucm_plant_menu_recipient
-  }
-  scope:actor = {
-    save_scope_as = ucm_plant_menu_actor
-  }
-}

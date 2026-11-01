@@ -16,11 +16,11 @@ religions, doctrines, holy sites, landed titles, dynasties and all history. Vani
 |---|---|---|
 | `gui/window_character.gui` | EK2 also ships it (149 changed lines vs vanilla: arcana, praxis, important characters, modifier layout). UCM changes 409 lines. Whichever loads last wipes the other. | **Blocker** |
 | `gui/frontend_ingame_menu.gui`, `gui/interaction_menu_window.gui` | EK2 keeps vanilla, so UCM's override still works | OK |
-| Hardcoded cultures | ~250 vanilla cultures; **none** exist in EK2 (EK2 has 100). Files: `events/dp_char_editor.txt` (228), `events/ucm_cast_culture_faith_generated.txt` (242), `events/ucm_char_design_events.txt` (184), `common/scripted_effects/ucm_acm_culture_list_effects.txt` (143), `events/ucm_culture_taxonomy_events.txt` (143), `events/ucm_beauty_companion_classified_generated.txt` (108) | High: load errors + broken pickers |
+| Hardcoded cultures | ~250 vanilla cultures; **none** exist in EK2 (EK2 has 100). Files: `events/old_char_editor.txt` (228), `events/ucm_cast_culture_faith_generated.txt` (242), `events/ucm_char_design_events.txt` (184), `common/scripted_effects/ucm_acm_culture_list_effects.txt` (143), `events/ucm_culture_taxonomy_events.txt` (143), `events/ucm_beauty_companion_classified_generated.txt` (108) | High: load errors + broken pickers |
 | Hardcoded faiths/religions | 78 faiths, 49 religions; none exist (EK2 has 73 faiths in `faith_types`, 36 religions). Same files plus `ucm_acm_faith_editor_data_effects.txt` | High |
 | Doctrines | 3,120 used, only 14 missing (Abrahamic/Sinitic/Eastern/pagan hostility, Muhammad succession, temple authority, Zoroastrian branches). EK2 keeps vanilla doctrine keys. `ucm_force_marry_religion.txt` uses one missing hostility doctrine | Medium |
-| Titles | 24 missing: `h_china`, `h_roman_empire`, the Mongol/Horde/Yuan empires, `e_france`, `e_spain`, `e_britannia`, `k_england`... in `ucm_legend_master_effects.txt`, `rse_vanilla_overrides.txt`, `zzz_ucm_sand_spawn_maa_fix.txt`, `yyz_paradox_kludges.txt`, the compat probe, the China safety triggers | Medium |
-| Scripted effects EK2 removes | 119 vanilla historical-artifact effects (`create_artifact_excalibur_effect`...) are gone; all are called from `common/decisions/pcm_decisions.txt` (12 decisions). Triggers, script values, modifiers: 0 hits | Medium |
+| Titles | 24 missing: `h_china`, `h_roman_empire`, the Mongol/Horde/Yuan empires, `e_france`, `e_spain`, `e_britannia`, `k_england`... in `ucm_legend_master_effects.txt`, `rse_vanilla_overrides.txt`, `zzz_ucm_sand_spawn_maa_fix.txt`, `old_paradox_kludges.txt`, the compat probe, the China safety triggers | Medium |
+| Scripted effects EK2 removes | 119 vanilla historical-artifact effects (`create_artifact_excalibur_effect`...) are gone; all are called from `common/decisions/old_decisions.txt` (12 decisions). Triggers, script values, modifiers: 0 hits | Medium |
 | Duplicate keys (both mods define them) | 56 character interactions (EK2 `00_debug_interactions.txt` vs UCM `99_ucm_interactions_modified.txt`), 5 gender laws (`rse_gender_laws.txt` vs EK2 `00_succession_laws.txt`), 7 succession/marriage triggers (`rse_vanilla_overrides.txt`), 3 vassal-contract script values | Medium: EK2's edits to those keys may be lost; needs a per-key diff |
 | MAA | All 13 UCM-referenced types exist. EK2 adds 202 types the generated MAA catalog doesn't list | Low (feature gap) |
 | Buildings | 179 vanilla special buildings referenced by UCM catalogs don't exist; EK2's own buildings aren't listed | Low-medium |
@@ -62,15 +62,15 @@ or `is_shown` holding only that check becomes empty, which counts as **true**. F
 - `zzz_ucm_sand_spawn_maa_fix.txt`: the China/Liao branches would spawn MAA on a missing title →
   `ucm_is_h_china_emperor_title_holder_trigger` / `exists = title:e_great_liao`.
 - `99_ucm_interactions_modified.txt`: dynastic-cycle interaction shown to everyone → same China trigger.
-- `yyz_paradox_kludges.txt`: keeper-of-swans / chief-qadi aptitude granted to everyone → `exists` guards.
+- `old_paradox_kludges.txt`: keeper-of-swans / chief-qadi aptitude granted to everyone → `exists` guards.
 - `99_ucm_consolidated.txt`: Crusade/Jihad interactions shown but inert → `exists = faith:...`.
-- `zzzzzzzz_0toc_deb_int.txt`: Adamite convert → `exists = faith:adamites`.
+- `old_debug_interactions.txt`: Adamite convert → `exists = faith:adamites`.
 - `ucm_legend_master_events.txt`: seed-legends page (vanilla characters/titles/cultures) hidden under EK2 and AGOT.
 - `ucm_acm_faith_editor_data_effects.txt`: Toric virtue display gated on EK2. Superseded: `tools/gen_faith_editor.py`
   now generates this file, and the compatch ships its own copy built from EK2's databases.
 
 Left alone on purpose:
-- `pcm_decisions.txt` is **one** decision (`Artifact_1000`) with 119 calls, not 12. Missing effects
+- `old_decisions.txt` is **one** decision (`Artifact_1000`) with 119 calls, not 12. Missing effects
   are just dropped, so gating them changes nothing. Its books, equipment and banners still work.
 - `rse_vanilla_overrides.txt` Mongol `OR` lists: a dropped entry in an `OR` is harmless.
 - Faith-editor `remove_doctrine` blocks and `flag:` keys: they collapse to empty or are plain strings.
@@ -81,11 +81,11 @@ Every vanilla-only data block now sits in its own file, which the compatch repla
 
 | Main-mod file (vanilla data) | Moved from | EK2 compatch version |
 |---|---|---|
-| `events/dp_char_editor_culture_faith.txt` | `dp_char_editor.39`–`.42` | stub pages that go back to `.1000`; the entries in `.1000` are hidden under EK2 |
+| `events/old_char_editor_culture_faith.txt` | `old_char_editor.39`–`.42` | stub pages that go back to `.1000`; the entries in `.1000` are hidden under EK2 |
 | `events/ucm_char_design_culture_faith.txt` | `sarc_char_design.1051`–`.1054` | stub pages that go back to `.9999`; the hub options are hidden under EK2 (the new character keeps root's culture/faith) |
 | `common/scripted_triggers/ucm_acm_culture_region_triggers.txt` | region whitelists in `ucm_acm_culture_list_effects.txt` | `always = no` (the picker only ever shows "all") |
 | `common/scripted_effects/ucm_acm_faith_editor_data_effects.txt` | (whole file) | generated from EK2's doctrine, tenet and religion databases |
-| `common/scripted_effects/pcm_historical_relics_effects.txt` | sections 1/1B of `Artifact_1000` | generated: keeps the 14 relics EK2 still defines |
+| `common/scripted_effects/old_historical_relics_effects.txt` | sections 1/1B of `Artifact_1000` | generated: keeps the 14 relics EK2 still defines |
 
 These legacy menus keep their files, and under EK2 their entry points in `ucm_cheat_menu_events.txt` open the runtime
 culture picker (`ucm_open_acm_culture_picker_effect`):
@@ -123,7 +123,7 @@ The only overlap is the illness purge (Baidubuqin / water of life). It also cure
 same way EK2's own cure does.
 
 If the trait list is ever regenerated to include EK2 traits, route those three groups through EK2's effects in
-`ucm_cheat_menu_toggle_trait_on_character_effect`.
+`ucm_trait_editor_toggle_effect`.
 
 Known leftovers (load-log lines only, behaviour already guarded):
 - `ucm_legend_master_effects.txt`: seed legends; their menu page is hidden under EK2.

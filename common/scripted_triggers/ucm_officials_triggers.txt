@@ -1,0 +1,105 @@
+# Who and what the realm and court actions touch. Root = the player.
+
+# this = a title the player holds and can spare.
+ucm_grant_spare_title_trigger = {
+	NOR = {
+		this = root.primary_title
+		this = root.capital_county
+		tier = root.primary_title.tier
+		is_leased_out = yes
+		is_nomad_title = yes
+		is_landless_type_title = yes
+		is_noble_family_title = yes
+		is_capital_barony = yes
+	}
+	trigger_if = {
+		limit = { tier = tier_barony }
+		title_province = { has_holding = yes }
+	}
+}
+
+ucm_has_spare_title_trigger = {
+	any_held_title = { ucm_grant_spare_title_trigger = yes }
+}
+
+ucm_grant_candidate_trigger = {
+	is_adult = yes
+	is_imprisoned = no
+	NOT = { this = root }
+	NOR = { has_trait = devoted has_trait = gallivanter }
+	can_be_granted_titles_by = { RULER = root }
+	trigger_if = {
+		limit = { root = { has_variable = ucm_grant_dynasty_only } }
+		dynasty ?= root.dynasty
+	}
+}
+
+ucm_grant_count_trigger = { ucm_grant_candidate_trigger = yes highest_held_title_tier = tier_county }
+ucm_grant_duke_trigger = { ucm_grant_candidate_trigger = yes highest_held_title_tier = tier_duchy }
+ucm_grant_king_trigger = { ucm_grant_candidate_trigger = yes highest_held_title_tier = tier_kingdom }
+ucm_grant_landless_trigger = {
+	ucm_grant_candidate_trigger = yes
+	NOT = { any_held_title = { tier >= tier_county is_noble_family_title = no } }
+}
+
+# A duchy or higher goes to someone with land inside it; otherwise the game would destroy the title.
+ucm_grant_fits_title_trigger = {
+	trigger_if = {
+		limit = { scope:ucm_grant_title = { tier >= tier_duchy } }
+		any_held_title = { tier = tier_county target_is_de_jure_liege_or_above = scope:ucm_grant_title }
+	}
+}
+
+# this = any title of the realm below the player.
+ucm_reclaimable_title_trigger = {
+	tier >= tier_county
+	exists = holder
+	NOT = { holder = root }
+	holder = { NOT = { is_at_war_with = root } }
+	NOR = { is_noble_family_title = yes is_landless_type_title = yes is_leased_out = yes }
+}
+
+ucm_land_cap_excess_title_trigger = {
+	ucm_reclaimable_title_trigger = yes
+	holder = { NOR = { is_imprisoned = yes is_incapable = yes } }
+	NOR = { this = holder.primary_title this = holder.capital_county }
+}
+
+# Unemployed adult courtiers with bad skills; the family, hostages and wards stay.
+ucm_court_dismissable_trigger = {
+	is_adult = yes
+	sum_of_all_skills_value < sum_of_all_skills_threshold_poor
+	NOT = { ucm_court_kept_trigger = yes }
+	NOR = {
+		is_councillor_of = root
+		is_knight = yes
+		has_any_court_position = yes
+	}
+}
+
+ucm_court_kept_trigger = {
+	OR = {
+		is_close_or_extended_family_of = root
+		is_spouse_of = root
+		is_concubine_of = root
+		is_hostage = yes
+		has_relation_guardian = root
+	}
+}
+
+ucm_needs_guardian_trigger = {
+	is_adult = no
+	age >= 6
+	is_imprisoned = no
+	NOT = { any_relation = { type = guardian } }
+}
+
+# this = a courtier; scope:ucm_ward = the child.
+ucm_free_guardian_trigger = {
+	is_adult = yes
+	is_imprisoned = no
+	is_incapable = no
+	learning >= 10
+	NOT = { this = scope:ucm_ward }
+	NOT = { any_relation = { type = ward } }
+}

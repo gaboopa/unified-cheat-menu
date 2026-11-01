@@ -1,6 +1,6 @@
 ﻿ucm_learn_all_realm_officials_secrets_decision = {
   picture = {
-    reference = "gfx/interface/illustrations/decisions/8.dds"
+    reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
   }
   decision_group_type = ucm_officials
   sort_order = 70
@@ -22,7 +22,7 @@
 
   is_shown = { ucm_single_player_trigger = yes 
 
-    has_character_flag = pcm_b_show_decision_flag
+    has_character_flag = ucm_menu_open
     ucm_officials_decision_visible_for_player_trigger = yes
   }
 
@@ -43,7 +43,7 @@
 
 ucm_seduce_shield_for_consorts_decision = {
   picture = {
-    reference = "gfx/interface/illustrations/decisions/8.dds"
+    reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
   }
   decision_group_type = ucm_officials
   sort_order = 72
@@ -103,7 +103,7 @@ ucm_seduce_shield_for_consorts_decision = {
 
   is_shown = { ucm_single_player_trigger = yes 
 
-    has_character_flag = pcm_b_show_decision_flag
+    has_character_flag = ucm_menu_open
     is_playable_character = yes
     is_ai = no
   }
@@ -114,23 +114,12 @@ ucm_seduce_shield_for_consorts_decision = {
 
   effect = {
     if = {
-      limit = {
-        has_character_flag = ucm_seduce_shield_active
-      }
+      limit = { has_character_flag = ucm_seduce_shield_active }
       remove_character_flag = ucm_seduce_shield_active
-      # è®°å½•ã€Œå®¶ä¸»å·²ä¸»åŠ¨å…³é—­ã€ï¼Œä¾¿äºŽ on_game_start_after_lobby ä¸è¦å†æ¬¡é»˜è®¤æ‰“å¼€
-      add_character_flag = ucm_seduce_shield_opted_out
     }
     else = {
       add_character_flag = ucm_seduce_shield_active
-      if = {
-        limit = {
-          has_character_flag = ucm_seduce_shield_opted_out
-        }
-        remove_character_flag = ucm_seduce_shield_opted_out
-      }
-      ucm_seduce_shield_grant_chastity_traits_to_consorts_effect = yes
-      ucm_seduce_shield_enforce_global_ai_fidelity_rules_effect = yes
+      ucm_seduce_shield_upkeep_effect = yes
     }
   }
 

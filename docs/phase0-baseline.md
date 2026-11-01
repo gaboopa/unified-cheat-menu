@@ -22,7 +22,7 @@ The repo is registered as a local mod: `Documents/Paradox Interactive/Crusader K
 
 The existing log (2,892 lines, from Community Flavor Pack + Divine Intervention, without this mod) isn't usable as a baseline.
 
-Note: `mod/Skonester_Cheat_Menu_Gold/` is an old **1.19** build (`9.27.26-PreBGA`) with no `.mod` file, so the launcher doesn't load it. It can be deleted.
+Note: `mod/the baseline mod_Gold/` is an old **1.19** build (`9.27.26-PreBGA`) with no `.mod` file, so the launcher doesn't load it. It can be deleted.
 
 ## Error.log baseline (task 1)
 
@@ -38,7 +38,7 @@ Run on 2026-10-23: CK3 1.20.1.2, all DLC, playset with only this mod (`dlc_load.
 | Count | What | Where |
 | --- | --- | --- |
 | 1,198 | Variable/flag used but never set | Mod variables and flags throughout |
-| 377 | Script system error (bad trigger/effect arguments) | Mostly the domicile presets (158), `dp_char_editor.txt` (36), `ucm_government_bianshen_daming_effects.txt` (30), `GM_value_on_action.txt` (29) |
+| 377 | Script system error (bad trigger/effect arguments) | Mostly the domicile presets (158), `old_char_editor.txt` (36), `ucm_government_bianshen_daming_effects.txt` (30), `GM_value_on_action.txt` (29) |
 | 185 | Landed title not found | `yan_on_action.txt` (78), `GM_value_on_action.txt` (52), authority/expansion title effects. These reference titles from other mods |
 | 135 | Tradition not found | `ucm_cw_tradition_picker_lists_generated.txt`: AGOT-only keys, expected per the file header. Goes away when the picker uses `every_culture_tradition` |
 | 92 | Variable set but never used | Mod variables |
@@ -69,7 +69,7 @@ Each override is a full copy of the 1.20.1.2 vanilla file with small edits (whit
 | `common/on_action/dlc/tgp/tgp_china_minister_on_action.txt` | Replaces 9 `would_be_valid_for_court_position` checks with `ucm_positions_loose_court_appointment_candidate_trigger` | **Changes AI behavior for every Chinese-government ruler**, not just cheat users. Move behind a game rule or player check, or remove |
 | `common/script_values/09_mpo_values.txt` | +19 in `study_commander_trait_success_chance_value`: +50/+100/+666 for `bloodline_god_1/2/3` | Only affects cheat-trait holders. Keep, but must be re-merged on every game update |
 | `common/culture/traditions/_traditions.info`, `common/succession_election/_succession_election.info` | Documentation files; not loaded | Delete the copies |
-| `localization/english/debug_l_english.yml` | Renames the debug interaction labels ("DEBUG Main" → "Skonester Cheat Menu") | Move the changed keys to `localization/replace/english/` instead of overriding the whole file |
+| `localization/english/debug_l_english.yml` | Renames the debug interaction labels ("DEBUG Main" → "the baseline mod") | Move the changed keys to `localization/replace/english/` instead of overriding the whole file |
 | `localization/german/debug_l_german.yml` | Whole file differs (out-of-date translation) | Same: move only the changed keys to `localization/replace/german/` |
 
 Finding for the spec: GUI can call `ExecuteConsoleCommand`. That's narrower than generic console access (it needs debug mode for most commands), so spec 7.3's "don't promise console commands" still stands.
@@ -93,14 +93,14 @@ Finding for the spec: GUI can call `ExecuteConsoleCommand`. That's narrower than
 - **Targets:** `ucm_crozier_cheats_other`, `ucm_crozier_cheats_prev_char`, `ucm_cheat_menu_recipient`, `ucm_acm_recipient`, `ucm_acm_repair_target`. The primary target is already a character variable (`var:ucm_crozier_cheats_target`), so only the secondary targets are global.
 - **Persistent cheat toggles:** 32 cheats, each with three globals: `ucm_crozier_cheats_on_<cheat>` (flag), `_fx_<cheat>` and `_lv_<cheat>` (numbers). Cheats include income, health, stress, skills, immortal, levy, legend spread, and auto-ascension. In multiplayer, one player enabling a cheat enables it for everyone the tick applies to.
 - **Toggle settings:** `ucm_crozier_cheats_tier`, `_power`, `_freq`, `_no_toast`, `_tick_pending`, `_realm`.
-- **UI state:** `yyz_list_mode`, `yyz_sort_key`, `yyz_sort_desc`, `xa_height`.
+- **UI state:** `old_list_mode`, `old_sort_key`, `old_sort_desc`, `xa_height`.
 - **Other:** `ucm_domicile_cheat_active`.
 
 **World-wide, fine as globals:**
 
 - Compatibility detection: `ucm_compat_*_loaded`, `MTS_is_loaded`.
 - AI world settings: `ucm_ai_*`, `ucm_world_ai_boost_*`, `ucm_celestial_governor_rotation_grace_skip`, `ucm_samge_years_accum`.
-- World rules: `ucm_family_planning_*`, `ucm_daming_ming_gov_menu_unlocked`, `zhuge_has_guoxi1`, `save_the_data`. Check these in Phase 1; some may be per-player.
+- World rules: `ucm_family_planning_*`, `ucm_daming_ming_gov_menu_unlocked`, `old_has_guoxi1`, `save_the_data`. Check these in Phase 1; some may be per-player.
 - Read-only catalogs: tradition and men-at-arms global lists.
 
 ## Innovation generator (task 5)

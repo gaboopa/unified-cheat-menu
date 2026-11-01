@@ -1,0 +1,439 @@
+﻿# Artifact crafter and editor. All state is on the player: slots ucm_craft_m1..5 with amounts ucm_craft_m1_cnt..5_cnt,
+# the highlighted slot ucm_craft_slot, and ucm_craft_picked, the value of that slot. Scripted GUIs run these with root = player.
+
+ucm_craft_set_slot_effect = {
+  set_variable = { name = ucm_craft_m$SLOT$ value = $VAL$ }
+  set_variable = { name = ucm_craft_m$SLOT$_cnt value = $CNT$ }
+}
+
+ucm_craft_select_slot_effect = {
+  set_variable = { name = ucm_craft_slot value = $SLOT$ }
+  set_variable = { name = ucm_craft_picked value = var:ucm_craft_m$SLOT$ }
+}
+
+ucm_craft_reset_slots_effect = {
+  ucm_craft_set_slot_effect = { SLOT = 1 VAL = 0 CNT = 0 }
+  ucm_craft_set_slot_effect = { SLOT = 2 VAL = 0 CNT = 0 }
+  ucm_craft_set_slot_effect = { SLOT = 3 VAL = 0 CNT = 0 }
+  ucm_craft_set_slot_effect = { SLOT = 4 VAL = 0 CNT = 0 }
+  ucm_craft_set_slot_effect = { SLOT = 5 VAL = 0 CNT = 0 }
+  ucm_craft_select_slot_effect = { SLOT = 1 }
+}
+
+ucm_craft_set_type_effect = {
+  set_variable = { name = ucm_craft_tab value = $TAB$ }
+  set_variable = { name = ucm_craft_type value = $TYPE$ }
+}
+
+ucm_craft_set_quality_effect = {
+  set_variable = { name = ucm_craft_wealth value = $WEALTH$ }
+}
+
+# Point a slot at a modifier: 0 empties it, and a slot that was empty starts with one layer.
+ucm_craft_pick_into_slot_effect = {
+  set_variable = { name = ucm_craft_m$SLOT$ value = $VAL$ }
+  if = {
+    limit = { var:ucm_craft_m$SLOT$ = 0 }
+    set_variable = { name = ucm_craft_m$SLOT$_cnt value = 0 }
+  }
+  else_if = {
+    limit = { var:ucm_craft_m$SLOT$_cnt = 0 }
+    set_variable = { name = ucm_craft_m$SLOT$_cnt value = 1 }
+  }
+}
+
+ucm_craft_pick_modifier_effect = {
+  if = {
+    limit = { var:ucm_craft_slot = 1 }
+    ucm_craft_pick_into_slot_effect = { SLOT = 1 VAL = $VAL$ }
+  }
+  else_if = {
+    limit = { var:ucm_craft_slot = 2 }
+    ucm_craft_pick_into_slot_effect = { SLOT = 2 VAL = $VAL$ }
+  }
+  else_if = {
+    limit = { var:ucm_craft_slot = 3 }
+    ucm_craft_pick_into_slot_effect = { SLOT = 3 VAL = $VAL$ }
+  }
+  else_if = {
+    limit = { var:ucm_craft_slot = 4 }
+    ucm_craft_pick_into_slot_effect = { SLOT = 4 VAL = $VAL$ }
+  }
+  else_if = {
+    limit = { var:ucm_craft_slot = 5 }
+    ucm_craft_pick_into_slot_effect = { SLOT = 5 VAL = $VAL$ }
+  }
+  set_variable = { name = ucm_craft_picked value = $VAL$ }
+  add_character_flag = ucm_craft_slots_changed
+}
+
+ucm_craft_change_amount_effect = {
+  if = {
+    limit = { var:ucm_craft_m$SLOT$ > 0 }
+    change_variable = { name = ucm_craft_m$SLOT$_cnt add = $DELTA$ }
+    if = {
+      limit = { var:ucm_craft_m$SLOT$_cnt < 1 }
+      set_variable = { name = ucm_craft_m$SLOT$_cnt value = 1 }
+    }
+    else_if = {
+      limit = { var:ucm_craft_m$SLOT$_cnt > 999 }
+      set_variable = { name = ucm_craft_m$SLOT$_cnt value = 999 }
+    }
+    add_character_flag = ucm_craft_slots_changed
+  }
+}
+
+ucm_craft_add_layers_effect = {
+  while = {
+    count = scope:ucm_craft_player.var:ucm_craft_m$SLOT$_cnt
+    add_artifact_modifier = $MOD$
+  }
+}
+
+# Artifact scope: adds a slot's layers and remembers the slot, so the editor can restore the exact amount.
+ucm_craft_save_slot_effect = {
+  ucm_craft_apply_slot_effect = { SLOT = $SLOT$ }
+  set_variable = { name = ucm_craft_saved_m$SLOT$ value = scope:ucm_craft_player.var:ucm_craft_m$SLOT$ }
+  set_variable = { name = ucm_craft_saved_m$SLOT$_cnt value = scope:ucm_craft_player.var:ucm_craft_m$SLOT$_cnt }
+}
+
+ucm_craft_save_slots_effect = {
+  ucm_craft_save_slot_effect = { SLOT = 1 }
+  ucm_craft_save_slot_effect = { SLOT = 2 }
+  ucm_craft_save_slot_effect = { SLOT = 3 }
+  ucm_craft_save_slot_effect = { SLOT = 4 }
+  ucm_craft_save_slot_effect = { SLOT = 5 }
+}
+
+ucm_craft_load_slot_effect = {
+  ucm_craft_set_slot_effect = {
+    SLOT = $SLOT$
+    VAL = scope:ucm_craft_edit_pick.var:ucm_craft_saved_m$SLOT$
+    CNT = scope:ucm_craft_edit_pick.var:ucm_craft_saved_m$SLOT$_cnt
+  }
+}
+
+# Fills exactly one slot, the next free one, then moves on. A sixth detected modifier stays on the artifact, unshown.
+ucm_craft_detect_put_effect = {
+  if = {
+    limit = { var:ucm_craft_detect_next = 1 }
+    ucm_craft_set_slot_effect = { SLOT = 1 VAL = $VAL$ CNT = $CNT$ }
+  }
+  else_if = {
+    limit = { var:ucm_craft_detect_next = 2 }
+    ucm_craft_set_slot_effect = { SLOT = 2 VAL = $VAL$ CNT = $CNT$ }
+  }
+  else_if = {
+    limit = { var:ucm_craft_detect_next = 3 }
+    ucm_craft_set_slot_effect = { SLOT = 3 VAL = $VAL$ CNT = $CNT$ }
+  }
+  else_if = {
+    limit = { var:ucm_craft_detect_next = 4 }
+    ucm_craft_set_slot_effect = { SLOT = 4 VAL = $VAL$ CNT = $CNT$ }
+  }
+  else_if = {
+    limit = { var:ucm_craft_detect_next = 5 }
+    ucm_craft_set_slot_effect = { SLOT = 5 VAL = $VAL$ CNT = $CNT$ }
+  }
+  change_variable = { name = ucm_craft_detect_next add = 1 }
+}
+
+ucm_craft_detect_one_effect = {
+  if = {
+    limit = { has_artifact_modifier = $MOD$ }
+    root = { ucm_craft_detect_put_effect = { VAL = $VAL$ CNT = $CNT$ } }
+  }
+}
+
+ucm_craft_strip_one_effect = {
+  while = {
+    limit = { has_artifact_modifier = $MOD$ }
+    remove_artifact_modifier = $MOD$
+  }
+}
+
+# The first five tier modifiers the artifact has are the ones detection showed in the slots.
+ucm_craft_strip_detected_one_effect = {
+  if = {
+    limit = {
+      has_artifact_modifier = $MOD$
+      root = { var:ucm_craft_detect_next <= 5 }
+    }
+    remove_artifact_modifier = $MOD$
+    root = {
+      change_variable = { name = ucm_craft_detect_next add = 1 }
+    }
+  }
+}
+
+# Artifact scope.
+ucm_craft_apply_quality_effect = {
+  if = {
+    limit = { scope:ucm_craft_player = { var:ucm_craft_wealth = 500 } }
+    set_artifact_rarity = illustrious
+  }
+  else_if = {
+    limit = { scope:ucm_craft_player = { var:ucm_craft_wealth = 250 } }
+    set_artifact_rarity = famed
+  }
+  else_if = {
+    limit = { scope:ucm_craft_player = { var:ucm_craft_wealth = 100 } }
+    set_artifact_rarity = masterwork
+  }
+  else = {
+    set_artifact_rarity = common
+  }
+}
+
+# Artifact scope. The name and description keys read the copied text; the owner gets a copy too, for where it's displayed.
+ucm_craft_apply_text_effect = {
+  if = {
+    limit = { scope:ucm_craft_player = { has_character_flag = ucm_craft_has_custom_name } }
+    owner ?= {
+      copy_localized_text = { key = ucm_craft_custom_name target = scope:ucm_craft_player }
+    }
+    copy_localized_text = { key = ucm_craft_custom_name target = scope:ucm_craft_player }
+    set_variable = { name = ucm_craft_has_custom_name value = 1 }
+    set_artifact_name = ucm_craft_artifact_name
+  }
+  else_if = {
+    limit = { has_variable = ucm_craft_has_custom_name }
+    remove_variable = ucm_craft_has_custom_name
+    set_artifact_name = ucm_craft_default_name
+  }
+  if = {
+    limit = { scope:ucm_craft_player = { has_character_flag = ucm_craft_has_custom_desc } }
+    owner ?= {
+      copy_localized_text = { key = ucm_craft_custom_desc target = scope:ucm_craft_player }
+    }
+    copy_localized_text = { key = ucm_craft_custom_desc target = scope:ucm_craft_player }
+    set_variable = { name = ucm_craft_has_custom_desc value = 1 }
+    set_artifact_description = ucm_craft_artifact_desc
+  }
+  else_if = {
+    limit = { has_variable = ucm_craft_has_custom_desc }
+    remove_variable = ucm_craft_has_custom_desc
+    set_artifact_description = ucm_craft_default_desc
+  }
+}
+
+ucm_craft_clear_text_flags_effect = {
+  remove_character_flag = ucm_craft_has_custom_name
+  remove_character_flag = ucm_craft_has_custom_desc
+}
+
+# The window hides while a text event is up.
+ucm_craft_open_text_event_effect = {
+  add_character_flag = ucm_craft_text_edit_open
+  trigger_event = { id = $EVENT$ days = 0 }
+}
+
+# Recipient scope.
+ucm_craft_make_artifact_effect = {
+  save_scope_value_as = { name = ucm_craft_wealth value = scope:ucm_craft_player.var:ucm_craft_wealth }
+  create_artifact = {
+    name = $NAME$
+    description = ucm_craft_default_desc
+    creator = scope:ucm_craft_player
+    type = $TYPE$
+    template = ucm_craft_artifact_template
+    visuals = $VISUALS$
+    wealth = scope:ucm_craft_wealth
+    quality = scope:ucm_craft_wealth
+    decaying = no
+    modifier = artifact_placeholder_modifier
+    generate_history = no
+    save_scope_as = ucm_craft_artifact
+  }
+  scope:ucm_craft_artifact = {
+    remove_artifact_modifier = artifact_placeholder_modifier
+    set_variable = { name = historical_unique_artifact value = yes }
+    ucm_craft_apply_quality_effect = yes
+    ucm_craft_save_slots_effect = yes
+    ucm_craft_apply_text_effect = yes
+  }
+}
+
+ucm_craft_create_effect = {
+  save_scope_as = ucm_craft_player
+  var:ucm_craft_recipient = {
+    save_scope_as = ucm_craft_toast_recipient
+    ucm_craft_create_by_type_effect = yes
+  }
+  send_interface_toast = {
+    type = event_toast_effect_good
+    title = ucm_craft_created
+    left_icon = root
+    right_icon = scope:ucm_craft_toast_recipient
+  }
+  ucm_craft_clear_text_flags_effect = yes
+  remove_character_flag = ucm_craft_gui_open
+}
+
+# Menu entry points: scope:actor is the player.
+ucm_craft_lock_recipient_effect = {
+  ucm_cheat_menu_lock_recipient_effect = yes
+  scope:actor = {
+    ucm_cheat_menu_sync_target_effect = yes
+    if = {
+      limit = { exists = scope:ucm_cheat_menu_target }
+      set_variable = { name = ucm_craft_recipient value = scope:ucm_cheat_menu_target }
+    }
+    else_if = {
+      limit = { exists = scope:recipient }
+      set_variable = { name = ucm_craft_recipient value = scope:recipient }
+    }
+    else = {
+      set_variable = { name = ucm_craft_recipient value = this }
+    }
+  }
+}
+
+ucm_cheat_menu_open_artifact_craft_effect = {
+  if = {
+    limit = { scope:actor = { is_ai = no } }
+    ucm_craft_lock_recipient_effect = yes
+    scope:actor = {
+      if = {
+        limit = { NOT = { has_variable = ucm_craft_type } }
+        ucm_craft_set_type_effect = { TAB = 1 TYPE = 1 }
+      }
+      ucm_craft_set_quality_effect = { WEALTH = 10 }
+      ucm_craft_reset_slots_effect = yes
+      ucm_craft_close_effect = yes
+      add_character_flag = ucm_craft_gui_open
+    }
+  }
+}
+
+ucm_cheat_menu_open_artifact_repair_effect = {
+  ucm_craft_lock_recipient_effect = yes
+  scope:actor = { ucm_craft_open_picker_effect = yes }
+}
+
+ucm_craft_open_picker_effect = {
+  ucm_craft_close_effect = yes
+  set_variable = { name = ucm_craft_pick_page value = 0 }
+  trigger_event = { id = ucm_artifact_craft.1 days = 0 }
+}
+
+# Inside ordered_character_artifact: saves this artifact as the row of the current page it lands on.
+ucm_craft_pick_row_effect = {
+  if = {
+    limit = { root = { var:ucm_craft_pick_row = 0 } }
+    save_scope_as = ucm_craft_pick_0
+  }
+  else_if = {
+    limit = { root = { var:ucm_craft_pick_row = 1 } }
+    save_scope_as = ucm_craft_pick_1
+  }
+  else_if = {
+    limit = { root = { var:ucm_craft_pick_row = 2 } }
+    save_scope_as = ucm_craft_pick_2
+  }
+  else_if = {
+    limit = { root = { var:ucm_craft_pick_row = 3 } }
+    save_scope_as = ucm_craft_pick_3
+  }
+  else_if = {
+    limit = { root = { var:ucm_craft_pick_row = 4 } }
+    save_scope_as = ucm_craft_pick_4
+  }
+  else_if = {
+    limit = { root = { var:ucm_craft_pick_row = 5 } }
+    save_scope_as = ucm_craft_pick_more
+  }
+  root = {
+    change_variable = { name = ucm_craft_pick_row add = 1 }
+  }
+}
+
+# Picker option: artifact scope, root = player. Loads the artifact into the editor window.
+ucm_craft_edit_artifact_effect = {
+  save_scope_as = ucm_craft_edit_pick
+  root = {
+    set_variable = { name = ucm_craft_edit_target value = scope:ucm_craft_edit_pick }
+    remove_localized_text = ucm_craft_custom_name
+    remove_localized_text = ucm_craft_custom_desc
+    set_variable = { name = ucm_craft_detect_next value = 1 }
+    ucm_craft_reset_slots_effect = yes
+    if = {
+      limit = { scope:ucm_craft_edit_pick = { has_variable = ucm_craft_has_custom_name } }
+      copy_localized_text = { key = ucm_craft_custom_name target = scope:ucm_craft_edit_pick }
+      add_character_flag = ucm_craft_has_custom_name
+    }
+    if = {
+      limit = { scope:ucm_craft_edit_pick = { has_variable = ucm_craft_has_custom_desc } }
+      copy_localized_text = { key = ucm_craft_custom_desc target = scope:ucm_craft_edit_pick }
+      add_character_flag = ucm_craft_has_custom_desc
+    }
+    if = {
+      limit = { scope:ucm_craft_edit_pick = { has_variable = ucm_craft_saved_m1 } }
+      ucm_craft_load_slot_effect = { SLOT = 1 }
+      ucm_craft_load_slot_effect = { SLOT = 2 }
+      ucm_craft_load_slot_effect = { SLOT = 3 }
+      ucm_craft_load_slot_effect = { SLOT = 4 }
+      ucm_craft_load_slot_effect = { SLOT = 5 }
+    }
+    else = {
+      scope:ucm_craft_edit_pick = { ucm_craft_detect_slots_effect = yes }
+    }
+    if = {
+      limit = { scope:ucm_craft_edit_pick = { rarity = illustrious } }
+      ucm_craft_set_quality_effect = { WEALTH = 500 }
+    }
+    else_if = {
+      limit = { scope:ucm_craft_edit_pick = { rarity = famed } }
+      ucm_craft_set_quality_effect = { WEALTH = 250 }
+    }
+    else_if = {
+      limit = { scope:ucm_craft_edit_pick = { rarity = masterwork } }
+      ucm_craft_set_quality_effect = { WEALTH = 100 }
+    }
+    else = {
+      ucm_craft_set_quality_effect = { WEALTH = 10 }
+    }
+    ucm_craft_select_slot_effect = { SLOT = 1 }
+    add_character_flag = ucm_craft_edit_gui_open
+  }
+}
+
+ucm_craft_save_edit_effect = {
+  save_scope_as = ucm_craft_player
+  var:ucm_craft_edit_target = {
+    save_scope_as = ucm_craft_artifact
+    ucm_craft_apply_quality_effect = yes
+    ucm_craft_apply_text_effect = yes
+    if = {
+      limit = { scope:ucm_craft_player = { has_character_flag = ucm_craft_slots_changed } }
+      ucm_craft_strip_layers_effect = yes
+      if = {
+        limit = { NOT = { has_variable = ucm_craft_saved_m1 } }
+        root = {
+          set_variable = { name = ucm_craft_detect_next value = 1 }
+        }
+        ucm_craft_strip_detected_effect = yes
+      }
+      ucm_craft_save_slots_effect = yes
+    }
+  }
+  send_interface_toast = {
+    type = event_toast_effect_good
+    title = ucm_craft_saved
+    left_icon = root
+    right_icon = scope:ucm_craft_artifact
+  }
+  ucm_craft_close_effect = yes
+}
+
+ucm_craft_close_effect = {
+  remove_character_flag = ucm_craft_gui_open
+  remove_character_flag = ucm_craft_edit_gui_open
+  remove_character_flag = ucm_craft_text_edit_open
+  remove_character_flag = ucm_craft_slots_changed
+  ucm_craft_clear_text_flags_effect = yes
+  if = {
+    limit = { has_variable = ucm_craft_edit_target }
+    remove_variable = ucm_craft_edit_target
+  }
+}

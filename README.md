@@ -40,6 +40,7 @@ English, German, Russian, Simplified Chinese and Turkish.
 | `tools/ck3parse.py` | Shared parsing helpers for the generators |
 | `tools/audit_baseline.py` | Fails if code inherited from the original baseline reappears |
 | `tools/check_refs.py` | Reports references to effects, triggers, events, traits and loc keys nothing defines |
+| `tools/check_mod.py` | CI checks that need no game files: balanced braces, localization format, every `ucm_` name defined |
 | `tools/gen_ek2_compatch.py` | Regenerates the derived files in `compat/ek2/`, including the EK2 faith editor data and picker stubs |
 | `tools/gen_faith_editor.py` | Generates the faith editor's data effects from the 1.20 doctrine, tenet and religion databases |
 | `tools/gen_trait_editor.py` | Generates the trait editor window, its click dispatcher and its labels from the trait database |

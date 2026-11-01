@@ -36,7 +36,7 @@ RUNTIME_DEF = re.compile(
 )
 GUI_NAME = re.compile(rf"\bname\s*=\s*\"?({NAME})")
 # Read or cleared, but nothing sets them any more. Harmless; remove the reads, then these, once tested in game.
-KNOWN_UNSET = {"ucm_cheat_menu_cheat_menu", "ucm_chenzhi_force_feudal_conversion", "ucm_no_marry_vow"}
+KNOWN_UNSET = {"ucm_cheat_menu_cheat_menu", "ucm_chenzhi_force_feudal_conversion"}
 
 
 TRANSLATIONS = ("german", "russian", "simp_chinese", "turkish")

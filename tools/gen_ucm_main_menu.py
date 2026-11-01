@@ -342,114 +342,135 @@ def crozier_buttons(name, ind):
     return [ind + b for b in out]
 
 
+def hbox(ind, *body):
+    return [f"{ind}hbox = {{", f"{ind}  layoutpolicy_horizontal = expanding", f"{ind}  spacing = 4", *body, f"{ind}}}"]
+
+
+def _item_vs(it, ind):
+    return [f"{ind}button_standard = {{", f"{ind}  layoutpolicy_horizontal = expanding", f"{ind}  size = {{ 0 30 }}", f'{ind}  text = "{it[2]}"',
+            f"{ind}  down = \"[GetVariableSystem.Exists( '{it[1]}' )]\"", f"{ind}  onclick = \"[GetVariableSystem.Toggle( '{it[1]}' )]\"", f"{ind}}}"]
+
+
+def _item_togglerow(it, ind):
+    buttons = []
+    for name, flag in it[1]:
+        b = sgui_button(name, ind + "  ")
+        b.insert(1, f"{ind}    down = \"[GetPlayer.MakeScope.HasFlag('{flag}')]\"")
+        buttons += b
+    return hbox(ind, *buttons)
+
+
+def _item_picks(it, ind):
+    # Rows of 3: a flowcontainer doesn't wrap, and one long row widens the whole pane past the window.
+    lines = []
+    for i in range(0, len(it[1]), 3):
+        buttons = []
+        for g in it[1][i:i + 3]:
+            buttons += [
+                f"{ind}  button_standard = {{",
+                f"{ind}    layoutpolicy_horizontal = expanding",
+                f"{ind}    size = {{ 0 28 }}",
+                f'{ind}    text = "ucm_group_pick_{g}"',
+                f'{ind}    tooltip = "ucm_group_pick_{g}_tt"',
+                f"{ind}    down = \"[ObjectsEqual( GetPlayer.MakeScope.Var( 'ucm_group_pick' ).GetFlagName, '{g}' )]\"",
+                f"{ind}    onclick = \"[GetScriptedGui( 'ucm_group_pick_{g}' ).Execute( {R} )]\"",
+                f"{ind}  }}",
+            ]
+        lines += hbox(ind, *buttons)
+    return lines
+
+
+def _item_czrow(it, ind):
+    lines = [f"{ind}hbox = {{", f"{ind}  spacing = 2"]
+    if len(it) > 2:
+        lines.append(f'{ind}  text_single = {{ text = "{it[2]}" using = Font_Size_Small }}')
+    for name in it[1]:
+        lines += crozier_buttons(name, ind + "  ")
+    return lines + [f"{ind}  expand = {{}}", f"{ind}}}"]
+
+
+def _item_row(it, ind):
+    buttons = []
+    for name in it[1]:
+        buttons += sgui_button(name, ind + "  ")
+    return hbox(ind, *buttons)
+
+
+def _item_ia(it, ind):
+    k = it[1]
+    return [
+        f"{ind}button_standard = {{",
+        f"{ind}  layoutpolicy_horizontal = expanding",
+        f"{ind}  size = {{ 0 30 }}",
+        f"{ind}  visible = \"[{C}.IsPlayerInteractionShown( '{k}' )]\"",
+        f"{ind}  enabled = \"[{C}.IsPlayerInteractionValid( '{k}' )]\"",
+        f"{ind}  text = \"[{C}.GetPlayerInteractionName( '{k}' )]\"",
+        f"{ind}  tooltip = \"[{C}.GetPlayerInteractionTooltip( '{k}' )]\"",
+        f"{ind}  onclick = \"[{C}.OpenPlayerInteraction( '{k}' )]\"",
+        f"{ind}}}",
+    ]
+
+
+def _item_dec(it, ind):
+    return [
+        f"{ind}button_standard = {{",
+        f"{ind}  layoutpolicy_horizontal = expanding",
+        f"{ind}  size = {{ 0 30 }}",
+        f"{ind}  datacontext = \"[GetDecisionWithKey( '{it[1]}' )]\"",
+        f"{ind}  visible = \"[GetDecisionWithKey( '{it[1]}' ).IsShownForPlayer]\"",  # spelled out: grid() lifts it onto the row, outside this datacontext
+        f'{ind}  text = "[Decision.GetTitleForPlayer]"',
+        f'{ind}  tooltip = "[Decision.GetShortDescForPlayer]"',
+        f"{ind}  onclick = \"[OpenGameViewData( 'decision_detail', Decision.Self )]\"",
+        f"{ind}}}",
+    ]
+
+
+def _item_steps(it, ind):
+    buttons = [f'{ind}  text_single = {{ text = "UCM_STEP_LABEL" }}']
+    for n in (1, 5, 10, 25, 100):
+        buttons += sgui_button(f"ucm_step_{n}", ind + "  ", "56", expand=False)
+    return hbox(ind, *buttons, f"{ind}  expand = {{}}")
+
+
+def _item_value(it, ind):
+    _, label, value, sg = it
+    return hbox(
+        ind,
+        f'{ind}  text_single = {{ size = {{ 140 30 }} text = "{label}" }}',
+        f"{ind}  text_single = {{ size = {{ 50 30 }} raw_text = \"[{value}]\" default_format = \"#high\" }}",
+        *sgui_button(f"{sg}_down", ind + "  ", "56", expand=False),
+        *sgui_button(f"{sg}_up", ind + "  ", "56", expand=False),
+        f"{ind}  expand = {{}}",
+    )
+
+
+def _item_skill(it, ind):
+    s = it[1]
+    return _item_value(("value", f"UCM_SKILL_{s.upper()}", f"{C}.GetSkill( '{s}' )", f"ucm_skill_{s}"), ind)
+
+
+ITEMS = {
+    "vs": _item_vs,
+    "togglerow": _item_togglerow,
+    "cz": lambda it, ind: crozier_buttons(it[1], ind),
+    "picks": _item_picks,
+    "czrow": _item_czrow,
+    "h": lambda it, ind: [f'{ind}text_single = {{ layoutpolicy_horizontal = expanding text = "{it[1]}" using = Font_Size_Medium default_format = "#high" }}'],
+    "t": lambda it, ind: [f'{ind}text_multi = {{ layoutpolicy_horizontal = expanding autoresize = yes max_width = 560 text = "{it[1]}" default_format = "#low" }}'],
+    "sg": lambda it, ind: sgui_button(it[1], ind),
+    "row": _item_row,
+    "ia": _item_ia,
+    "dec": _item_dec,
+    "steps": _item_steps,
+    "value": _item_value,
+    "skill": _item_skill,
+}
+
+
 def item(it, ind):
-    if it[0] == "vs":
-        return [f"{ind}button_standard = {{", f"{ind}  layoutpolicy_horizontal = expanding", f"{ind}  size = {{ 0 30 }}", f'{ind}  text = "{it[2]}"',
-                f"{ind}  down = \"[GetVariableSystem.Exists( '{it[1]}' )]\"", f"{ind}  onclick = \"[GetVariableSystem.Toggle( '{it[1]}' )]\"", f"{ind}}}"]
-    if it[0] == "togglerow":
-        lines = [f"{ind}hbox = {{", f"{ind}  layoutpolicy_horizontal = expanding", f"{ind}  spacing = 4"]
-        for name, flag in it[1]:
-            b = sgui_button(name, ind + "  ")
-            b.insert(1, f"{ind}    down = \"[GetPlayer.MakeScope.HasFlag('{flag}')]\"")
-            lines += b
-        return lines + [f"{ind}}}"]
-    if it[0] == "cz":
-        return crozier_buttons(it[1], ind)
-    if it[0] == "picks":
-        # Rows of 3: a flowcontainer doesn't wrap, and one long row widens the whole pane past the window.
-        lines = []
-        for i in range(0, len(it[1]), 3):
-            lines += [f"{ind}hbox = {{", f"{ind}  layoutpolicy_horizontal = expanding", f"{ind}  spacing = 4"]
-            for g in it[1][i:i + 3]:
-                lines += [
-                    f"{ind}  button_standard = {{",
-                    f"{ind}    layoutpolicy_horizontal = expanding",
-                    f"{ind}    size = {{ 0 28 }}",
-                    f'{ind}    text = "ucm_group_pick_{g}"',
-                    f'{ind}    tooltip = "ucm_group_pick_{g}_tt"',
-                    f"{ind}    down = \"[ObjectsEqual( GetPlayer.MakeScope.Var( 'ucm_group_pick' ).GetFlagName, '{g}' )]\"",
-                    f"{ind}    onclick = \"[GetScriptedGui( 'ucm_group_pick_{g}' ).Execute( {R} )]\"",
-                    f"{ind}  }}",
-                ]
-            lines.append(f"{ind}}}")
-        return lines
-    if it[0] == "czrow":
-        lines = [f"{ind}hbox = {{", f"{ind}  spacing = 2"]
-        if len(it) > 2:
-            lines.append(f'{ind}  text_single = {{ text = "{it[2]}" using = Font_Size_Small }}')
-        for name in it[1]:
-            lines += crozier_buttons(name, ind + "  ")
-        return lines + [f"{ind}  expand = {{}}", f"{ind}}}"]
-    kind = it[0]
-    if kind == "h":
-        return [f'{ind}text_single = {{ layoutpolicy_horizontal = expanding text = "{it[1]}" using = Font_Size_Medium default_format = "#high" }}']
-    if kind == "t":
-        return [f'{ind}text_multi = {{ layoutpolicy_horizontal = expanding autoresize = yes max_width = 560 text = "{it[1]}" default_format = "#low" }}']
-    if kind == "sg":
-        return sgui_button(it[1], ind)
-    if kind == "row":
-        lines = [f"{ind}hbox = {{", f"{ind}  layoutpolicy_horizontal = expanding", f"{ind}  spacing = 4"]
-        for name in it[1]:
-            lines += sgui_button(name, ind + "  ")
-        return lines + [f"{ind}}}"]
-    if kind == "ia":
-        k = it[1]
-        return [
-            f"{ind}button_standard = {{",
-            f"{ind}  layoutpolicy_horizontal = expanding",
-            f"{ind}  size = {{ 0 30 }}",
-            f"{ind}  visible = \"[{C}.IsPlayerInteractionShown( '{k}' )]\"",
-            f"{ind}  enabled = \"[{C}.IsPlayerInteractionValid( '{k}' )]\"",
-            f"{ind}  text = \"[{C}.GetPlayerInteractionName( '{k}' )]\"",
-            f"{ind}  tooltip = \"[{C}.GetPlayerInteractionTooltip( '{k}' )]\"",
-            f"{ind}  onclick = \"[{C}.OpenPlayerInteraction( '{k}' )]\"",
-            f"{ind}}}",
-        ]
-    if kind == "dec":
-        return [
-            f"{ind}button_standard = {{",
-            f"{ind}  layoutpolicy_horizontal = expanding",
-            f"{ind}  size = {{ 0 30 }}",
-            f"{ind}  datacontext = \"[GetDecisionWithKey( '{it[1]}' )]\"",
-            f"{ind}  visible = \"[GetDecisionWithKey( '{it[1]}' ).IsShownForPlayer]\"",  # spelled out: grid() lifts it onto the row, outside this datacontext
-            f'{ind}  text = "[Decision.GetTitleForPlayer]"',
-            f'{ind}  tooltip = "[Decision.GetShortDescForPlayer]"',
-            f"{ind}  onclick = \"[OpenGameViewData( 'decision_detail', Decision.Self )]\"",
-            f"{ind}}}",
-        ]
-    if kind == "steps":
-        lines = [f"{ind}hbox = {{", f"{ind}  layoutpolicy_horizontal = expanding", f"{ind}  spacing = 4",
-                 f'{ind}  text_single = {{ text = "UCM_STEP_LABEL" }}']
-        for n in (1, 5, 10, 25, 100):
-            lines += sgui_button(f"ucm_step_{n}", ind + "  ", "56", expand=False)
-        return lines + [f"{ind}  expand = {{}}", f"{ind}}}"]
-    if kind == "value":
-        _, label, value, sg = it
-        return [
-            f"{ind}hbox = {{",
-            f"{ind}  layoutpolicy_horizontal = expanding",
-            f"{ind}  spacing = 4",
-            f'{ind}  text_single = {{ size = {{ 140 30 }} text = "{label}" }}',
-            f"{ind}  text_single = {{ size = {{ 50 30 }} raw_text = \"[{value}]\" default_format = \"#high\" }}",
-            *sgui_button(f"{sg}_down", ind + "  ", "56", expand=False),
-            *sgui_button(f"{sg}_up", ind + "  ", "56", expand=False),
-            f"{ind}  expand = {{}}",
-            f"{ind}}}",
-        ]
-    if kind == "skill":
-        s = it[1]
-        return [
-            f"{ind}hbox = {{",
-            f"{ind}  layoutpolicy_horizontal = expanding",
-            f"{ind}  spacing = 4",
-            f'{ind}  text_single = {{ size = {{ 140 30 }} text = "UCM_SKILL_{s.upper()}" }}',
-            f"{ind}  text_single = {{ size = {{ 50 30 }} raw_text = \"[{C}.GetSkill( '{s}' )]\" default_format = \"#high\" }}",
-            *sgui_button(f"ucm_skill_{s}_down", ind + "  ", "56", expand=False),
-            *sgui_button(f"ucm_skill_{s}_up", ind + "  ", "56", expand=False),
-            f"{ind}  expand = {{}}",
-            f"{ind}}}",
-        ]
-    raise ValueError(it)
+    if it[0] not in ITEMS:
+        raise ValueError(it)
+    return ITEMS[it[0]](it, ind)
 
 
 GRID_KINDS = ("sg", "ia", "dec")

@@ -13,9 +13,14 @@ ucm_seduce_shield_active_for_target_trigger = {
   }
 }
 
-# 日度清理入向/出向密谋：以家眷为 root
-ucm_fidelity_ward_is_shielded_harem_of_patron_trigger = {
-  ucm_seduce_shield_active_for_target_trigger = yes
+# this = a scheme the fidelity sweep ends.
+ucm_fidelity_scheme_type_trigger = {
+  OR = {
+    scheme_type = seduce
+    scheme_type = courting
+    scheme_type = abduct
+    scheme_type = elope
+  }
 }
 
 # 任一人类家主开启椒房护持时，启用「全局 AI 禁欲/禁出轨」规则（等同篡改游戏规则）

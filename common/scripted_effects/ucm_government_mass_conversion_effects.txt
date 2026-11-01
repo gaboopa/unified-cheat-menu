@@ -1,35 +1,70 @@
 ﻿# 首都部落/游牧/牧民地产改为城堡，再换东亚宅邸并改政府（对齐原版行政转换）
 
-ucm_convert_character_to_celestial_government_effect = {
+ucm_capital_to_castle_effect = {
+  if = {
+    limit = { is_landed = yes }
+    capital_province = {
+      if = {
+        limit = {
+          OR = {
+            has_holding_type = tribal_holding
+            has_holding_type = herder_holding
+            has_holding_type = nomad_holding
+          }
+        }
+        set_holding_type = castle_holding
+        ucm_ensure_castle_holding_base_castle_building = yes
+      }
+    }
+  }
+}
+
+# Callers check has_tgp_dlc_trigger first.
+ucm_apply_tgp_government_effect = {
+  ucm_capital_to_castle_effect = yes
+  tgp_domicile_conversion_when_changing_government_type = {
+    NEW_DOMICILE_TYPE = $DOMICILE$
+    NEW_GOVERNMENT_TYPE = $GOVERNMENT$
+  }
+  change_government = $GOVERNMENT$
+}
+
+ucm_convert_character_to_mpo_government_effect = {
   if = {
     limit = {
-      has_tgp_dlc_trigger = yes
-      NOT = { has_government = celestial_government }
+      has_mpo_dlc_trigger = yes
+      NOT = { has_government = $GOVERNMENT$ }
     }
     if = {
       limit = { is_landed = yes }
       capital_province = {
         if = {
           limit = {
+            NOT = { has_holding_type = $HOLDING$ }
             OR = {
+              has_holding_type = castle_holding
+              has_holding_type = city_holding
+              has_holding_type = church_holding
               has_holding_type = tribal_holding
               has_holding_type = herder_holding
               has_holding_type = nomad_holding
             }
           }
-          set_holding_type = castle_holding
-          ucm_ensure_castle_holding_base_castle_building = yes
+          set_holding_type = $HOLDING$
         }
       }
     }
-    if = {
-      limit = { has_tgp_dlc_trigger = yes }
-      tgp_domicile_conversion_when_changing_government_type = {
-        NEW_DOMICILE_TYPE = east_asian_estate
-        NEW_GOVERNMENT_TYPE = celestial_government
-      }
+    change_government = $GOVERNMENT$
+  }
+}
+
+ucm_convert_character_to_celestial_government_effect = {
+  if = {
+    limit = {
+      has_tgp_dlc_trigger = yes
+      NOT = { has_government = celestial_government }
     }
-    change_government = celestial_government
+    ucm_apply_tgp_government_effect = { GOVERNMENT = celestial_government DOMICILE = east_asian_estate }
   }
 }
 
@@ -39,30 +74,7 @@ ucm_convert_character_to_meritocratic_government_effect = {
       has_tgp_dlc_trigger = yes
       NOT = { has_government = meritocratic_government }
     }
-    if = {
-      limit = { is_landed = yes }
-      capital_province = {
-        if = {
-          limit = {
-            OR = {
-              has_holding_type = tribal_holding
-              has_holding_type = herder_holding
-              has_holding_type = nomad_holding
-            }
-          }
-          set_holding_type = castle_holding
-          ucm_ensure_castle_holding_base_castle_building = yes
-        }
-      }
-    }
-    if = {
-      limit = { has_tgp_dlc_trigger = yes }
-      tgp_domicile_conversion_when_changing_government_type = {
-        NEW_DOMICILE_TYPE = east_asian_estate
-        NEW_GOVERNMENT_TYPE = meritocratic_government
-      }
-    }
-    change_government = meritocratic_government
+    ucm_apply_tgp_government_effect = { GOVERNMENT = meritocratic_government DOMICILE = east_asian_estate }
     ucm_player_government_lock_apply_effect = yes
   }
 }
@@ -70,22 +82,7 @@ ucm_convert_character_to_meritocratic_government_effect = {
 ucm_convert_character_to_administrative_government_effect = {
   if = {
     limit = { NOT = { has_government = administrative_government } }
-    if = {
-      limit = { is_landed = yes }
-      capital_province = {
-        if = {
-          limit = {
-            OR = {
-              has_holding_type = tribal_holding
-              has_holding_type = herder_holding
-              has_holding_type = nomad_holding
-            }
-          }
-          set_holding_type = castle_holding
-          ucm_ensure_castle_holding_base_castle_building = yes
-        }
-      }
-    }
+    ucm_capital_to_castle_effect = yes
     if = {
       limit = { has_tgp_dlc_trigger = yes }
       add_character_flag = new_government_is_byz_admin
@@ -106,30 +103,7 @@ ucm_convert_character_to_japan_administrative_government_effect = {
       NOT = { has_government = japan_administrative_government }
       tgp_can_become_japan_administrative_trigger = yes
     }
-    if = {
-      limit = { is_landed = yes }
-      capital_province = {
-        if = {
-          limit = {
-            OR = {
-              has_holding_type = tribal_holding
-              has_holding_type = herder_holding
-              has_holding_type = nomad_holding
-            }
-          }
-          set_holding_type = castle_holding
-          ucm_ensure_castle_holding_base_castle_building = yes
-        }
-      }
-    }
-    if = {
-      limit = { has_tgp_dlc_trigger = yes }
-      tgp_domicile_conversion_when_changing_government_type = {
-        NEW_DOMICILE_TYPE = japanese_manor
-        NEW_GOVERNMENT_TYPE = japan_administrative_government
-      }
-    }
-    change_government = japan_administrative_government
+    ucm_apply_tgp_government_effect = { GOVERNMENT = japan_administrative_government DOMICILE = japanese_manor }
   }
 }
 
@@ -139,30 +113,7 @@ ucm_convert_character_to_steppe_admin_government_effect = {
       has_tgp_dlc_trigger = yes
       NOT = { has_government = steppe_admin_government }
     }
-    if = {
-      limit = { is_landed = yes }
-      capital_province = {
-        if = {
-          limit = {
-            OR = {
-              has_holding_type = tribal_holding
-              has_holding_type = herder_holding
-              has_holding_type = nomad_holding
-            }
-          }
-          set_holding_type = castle_holding
-          ucm_ensure_castle_holding_base_castle_building = yes
-        }
-      }
-    }
-    if = {
-      limit = { has_tgp_dlc_trigger = yes }
-      tgp_domicile_conversion_when_changing_government_type = {
-        NEW_DOMICILE_TYPE = east_asian_estate
-        NEW_GOVERNMENT_TYPE = steppe_admin_government
-      }
-    }
-    change_government = steppe_admin_government
+    ucm_apply_tgp_government_effect = { GOVERNMENT = steppe_admin_government DOMICILE = east_asian_estate }
   }
 }
 
@@ -178,22 +129,7 @@ ucm_convert_character_to_feudal_government_effect = {
       NOT = { has_government = japan_administrative_government }
       NOT = { has_government = japan_feudal_government }
     }
-    if = {
-      limit = { is_landed = yes }
-      capital_province = {
-        if = {
-          limit = {
-            OR = {
-              has_holding_type = tribal_holding
-              has_holding_type = herder_holding
-              has_holding_type = nomad_holding
-            }
-          }
-          set_holding_type = castle_holding
-          ucm_ensure_castle_holding_base_castle_building = yes
-        }
-      }
-    }
+    ucm_capital_to_castle_effect = yes
     change_government = feudal_government
     if = {
       limit = { is_ai = no }
@@ -247,22 +183,7 @@ ucm_convert_character_to_clan_government_effect = {
       NOT = { has_government = japan_administrative_government }
       NOT = { has_government = japan_feudal_government }
     }
-    if = {
-      limit = { is_landed = yes }
-      capital_province = {
-        if = {
-          limit = {
-            OR = {
-              has_holding_type = tribal_holding
-              has_holding_type = herder_holding
-              has_holding_type = nomad_holding
-            }
-          }
-          set_holding_type = castle_holding
-          ucm_ensure_castle_holding_base_castle_building = yes
-        }
-      }
-    }
+    ucm_capital_to_castle_effect = yes
     change_government = clan_government
   }
 }
@@ -287,35 +208,7 @@ ucm_convert_character_to_mandala_government_effect = {
 }
 
 ucm_convert_character_to_nomadic_government_effect = {
-  if = {
-    limit = {
-      has_mpo_dlc_trigger = yes
-      NOT = { has_government = nomad_government }
-    }
-    if = {
-      limit = { is_landed = yes }
-      capital_province = {
-        if = {
-          limit = {
-            NOT = { has_holding_type = nomad_holding }
-          }
-          if = {
-            limit = {
-              OR = {
-                has_holding_type = castle_holding
-                has_holding_type = city_holding
-                has_holding_type = church_holding
-                has_holding_type = tribal_holding
-                has_holding_type = herder_holding
-              }
-            }
-            set_holding_type = nomad_holding
-          }
-        }
-      }
-    }
-    change_government = nomad_government
-  }
+  ucm_convert_character_to_mpo_government_effect = { GOVERNMENT = nomad_government HOLDING = nomad_holding }
 }
 
 # CK3 1.20: use the faith's own theocracy type (Christians get ecclesiastical_government with By God Alone),
@@ -339,61 +232,10 @@ ucm_convert_character_to_japan_feudal_government_effect = {
       has_tgp_dlc_trigger = yes
       NOT = { has_government = japan_feudal_government }
     }
-    if = {
-      limit = { is_landed = yes }
-      capital_province = {
-        if = {
-          limit = {
-            OR = {
-              has_holding_type = tribal_holding
-              has_holding_type = herder_holding
-              has_holding_type = nomad_holding
-            }
-          }
-          set_holding_type = castle_holding
-          ucm_ensure_castle_holding_base_castle_building = yes
-        }
-      }
-    }
-    if = {
-      limit = { has_tgp_dlc_trigger = yes }
-      tgp_domicile_conversion_when_changing_government_type = {
-        NEW_DOMICILE_TYPE = japanese_manor
-        NEW_GOVERNMENT_TYPE = japan_feudal_government
-      }
-    }
-    change_government = japan_feudal_government
+    ucm_apply_tgp_government_effect = { GOVERNMENT = japan_feudal_government DOMICILE = japanese_manor }
   }
 }
 
 ucm_convert_character_to_herder_government_effect = {
-  if = {
-    limit = {
-      has_mpo_dlc_trigger = yes
-      NOT = { has_government = herder_government }
-    }
-    if = {
-      limit = { is_landed = yes }
-      capital_province = {
-        if = {
-          limit = {
-            NOT = { has_holding_type = herder_holding }
-          }
-          if = {
-            limit = {
-              OR = {
-                has_holding_type = castle_holding
-                has_holding_type = city_holding
-                has_holding_type = church_holding
-                has_holding_type = tribal_holding
-                has_holding_type = nomad_holding
-              }
-            }
-            set_holding_type = herder_holding
-          }
-        }
-      }
-    }
-    change_government = herder_government
-  }
+  ucm_convert_character_to_mpo_government_effect = { GOVERNMENT = herder_government HOLDING = herder_holding }
 }

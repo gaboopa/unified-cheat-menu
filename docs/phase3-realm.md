@@ -1,4 +1,4 @@
-# Phase 3 — Titles, Faith & Culture, Realm tabs
+# Phase 3: Titles, Faith & Culture, Realm tabs
 
 Fills the main menu's **Titles, Government & Diplomacy**, **Faith & Culture** and **Realm, Holdings & Construction** tabs (spec 4.3–4.5). Static checks pass. **Not tested in game.**
 
@@ -20,7 +20,7 @@ Same approach as Phase 2, plus one new button type:
 | Vassals & Contracts | Make target independent; target becomes second's vassal | Force vassal, modify contracts, tribute contract; imprison vassals, enfeoffment, consolidate or strip titles (decisions) |
 | Target's Government | 14 governments, each through the baseline's own conversion effect (it handles holdings and DLC checks) | Set authority |
 | Your Succession | | Succession law, single heir, youngest heir, gender succession, dynasty of many crowns, subject government (decisions) |
-| Alliances & Truces | Ally, break alliance, 10-year truce (target ↔ second) | Make ally, adjust or add truce |
+| Alliances & Truces | Ally, break alliance, 10-year truce (between target and second) | Make ally, adjust or add truce |
 | Wars | End all the target's wars with a white peace | Unrestricted and expansion wars, great holy war, crusade and jihad eras |
 | AI Behavior | | The seven AI toggle decisions |
 

@@ -1,4 +1,4 @@
-# Phase 5 — Court, DLC & Advanced, Settings tabs
+# Phase 5: Court, DLC & Advanced, Settings tabs
 
 Fills the **Court & Character Generation**, **DLC & Advanced Systems** and **Settings & Utilities** tabs (spec 4.8, 4.9). Static checks pass. **Not tested in game.**
 
@@ -47,4 +47,4 @@ Many of these baseline interactions are debug-only. Their buttons only appear wi
 
 1. Court: appoint an NPC as chancellor from the menu. They take the seat.
 2. DLC: on an adult NPC ruler, Start Regency → Make Second Character the Diarch. Their diarchy shows the second character.
-4. Check `error.log` for `ucm_` lines.
+3. Check `error.log` for `ucm_` lines.

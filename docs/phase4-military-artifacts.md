@@ -1,4 +1,4 @@
-# Phase 4 — Military, Artifacts and always-on cheats
+# Phase 4: Military, Artifacts and always-on cheats
 
 Fills the **Military & Warfare** and **Artifacts & Equipment** tabs (spec 4.6, 4.7), and adds the baseline's always-on cheats to **Quick Actions** (spec 8.3). Static checks pass. **Not tested in game.**
 

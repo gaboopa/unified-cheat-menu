@@ -1,4 +1,4 @@
-# Phase 6 — Group actions across modules
+# Phase 6: Group actions across modules
 
 Extends the Phase 1 group framework (spec Section 5) from 2 groups and 3 actions to **14 groups and 10 actions**, picked in the menu. Static checks pass. **Not tested in game.**
 

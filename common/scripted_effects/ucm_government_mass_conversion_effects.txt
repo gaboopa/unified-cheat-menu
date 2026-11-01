@@ -125,7 +125,7 @@ ucm_convert_character_to_feudal_government_effect = {
         has_character_flag = ucm_chenzhi_force_feudal_conversion
         NOT = { ucm_protected_from_forced_feudal_conversion_trigger = yes }
       }
-      # Fix: Japanese administrative (a starting government) must not be changed by the generic convert-to-feudal
+      # Japanese administrative (a starting government) must not be changed by the generic convert-to-feudal
       NOT = { has_government = japan_administrative_government }
       NOT = { has_government = japan_feudal_government }
     }

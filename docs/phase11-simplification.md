@@ -1,6 +1,6 @@
-# Phase 11 — Simplification, bug fixes, dead code round 2
+# Phase 11: Simplification, bug fixes, dead code round 2
 
-Works through the rest of the earlier code review after [phase10-dead-code.md](phase10-dead-code.md). Nothing here has been load-tested yet. Mechanical rewrites were done by Haiku agents and the two design-heavy ones (artifact windows, monthly pulses) by Sonnet agents; every result was re-checked as described below.
+Works through the rest of the earlier code review after [phase10-dead-code.md](phase10-dead-code.md). Nothing here has been load-tested yet. Haiku agents did the mechanical rewrites and Sonnet agents the two design-heavy ones (artifact windows, monthly pulses). Every result was re-checked as described below.
 
 **Equivalence checker.** Where a rewrite should not change behaviour, a script inlined the new parameterised helpers (substituting `$PARAM$`) and compared every top-level object with the git HEAD version, ignoring whitespace and comments. "N/N equivalent" below means every effect or event expands back to exactly the old text.
 
@@ -16,7 +16,7 @@ Works through the rest of the earlier code review after [phase10-dead-code.md](p
 
 | Where | Was | Now |
 | --- | --- | --- |
-| `ucm_acm_artifact_slot_sync_effects.txt` | Each detection block wrote the modifier into slot 1, then (plain `if`s) slots 2–5 too, so one modifier filled every slot | One `put` helper with `else_if`: each modifier the artifact has takes the next free slot. 106 blocks became 98 calls; 8 duplicate blocks (same modifier, different count) dropped, since they would now take a second slot. 7,654 → 344 lines |
+| `ucm_acm_artifact_slot_sync_effects.txt` | Each detection block wrote the modifier into slot 1, then (plain `if`s) slots 2–5 too, so one modifier filled every slot | One `put` helper with `else_if`: each modifier the artifact has takes the next free slot. 106 blocks became 98 calls; 8 duplicate blocks (same modifier, different count) dropped, since they would now take a second slot. 7,654 to 344 lines |
 | `00_special_gift_2.txt` | `NOT = { is_adult = no has_trait = water_of_life }` offered the gift to spouses who already had the trait | `is_adult = yes` and `NOT = { has_trait = water_of_life }` |
 | `ucm_imperial_examination_merit_override.txt` | Stale copy of vanilla `imperial_examination.9000/9001` (wrong skill descriptions, old `stress_impact`, wrong background) | Fresh 1.20.1.2 copy. Differs from vanilla only in `id_override_priority`, the skill-scaled merit (2 lines), the government-lock call (2) and the mod's examiner fetch |
 
@@ -24,17 +24,17 @@ Works through the rest of the earlier code review after [phase10-dead-code.md](p
 
 | File | Lines | Check |
 | --- | --- | --- |
-| `events/ucm_char_design_events.txt` + new `common/scripted_effects/ucm_char_design_effects.txt` | 40,023 → 25,269 + 5,291. 306 option bodies call 102 helpers (`PARENT`, `CHANCE`); option wrappers stay in the events because names and triggers can't move into an effect | 61/61 equivalent |
-| `old_modifier_effects.txt` | 5,569 → 1,943 (5 helpers over 266 keys; about 11 irregular blocks left written out) | 9/9 equivalent |
-| `old_child_effects.txt` | 2,819 → 869 (4 helpers; the age-18 heirs have extra traits, so they get their own two) | 70/70 equivalent |
+| `events/ucm_char_design_events.txt` + new `common/scripted_effects/ucm_char_design_effects.txt` | 40,023 to 25,269 + 5,291. 306 option bodies call 102 helpers (`PARENT`, `CHANCE`); option wrappers stay in the events because names and triggers can't move into an effect | 61/61 equivalent |
+| `old_modifier_effects.txt` | 5,569 to 1,943 (5 helpers over 266 keys; about 11 irregular blocks left written out) | 9/9 equivalent |
+| `old_child_effects.txt` | 2,819 to 869 (4 helpers; the age-18 heirs have extra traits, so they get their own two) | 70/70 equivalent |
 
 ## GUI work per frame
 
 | Where | Was | Now |
 | --- | --- | --- |
 | `ucm_trait_editor.gui`, `ucm_cheat_trait_editor.gui` | 945 calls into a 301-branch scripted GUI just to ask "has trait X" | `GetPlayer.MakeScope.Var('ucm_trait_gui_target').Char.HasTrait( GetTrait('x') )`. `ucm_trait_gui_has` (1,212 lines) and `ucm_cheat_trait_gui_has` deleted |
-| `ucm_acm_mod_pick_guis.txt` | 375 "is selected" scripted GUIs | The GUI compares the slot variable directly (`EqualTo_CFixedPoint( ...Var('ucm_craft_m1').GetValue, '(CFixedPoint)3' )`). The 375 "pick" scripted GUIs stay (GUI can't pass a number into `Execute`) but are one-liners now. 10,500 → 4,486 lines. Side effect: with nothing picked, value 0 ("none") shows as selected |
-| `ucm_artifact_craft.gui`, `ucm_artifact_repair.gui` | The five modifier-slot panels (≈4,000 lines) were byte-identical in both windows | Defined once as types in the new `gui/ucm_artifact_shared.gui`. 4,504 + 4,212 → 524 + 232 + 3,992 |
+| `ucm_acm_mod_pick_guis.txt` | 375 "is selected" scripted GUIs | The GUI compares the slot variable directly (`EqualTo_CFixedPoint( ...Var('ucm_craft_m1').GetValue, '(CFixedPoint)3' )`). The 375 "pick" scripted GUIs stay (GUI can't pass a number into `Execute`) but are one-liners now. 10,500 to 4,486 lines. Side effect: with nothing picked, value 0 ("none") shows as selected |
+| `ucm_artifact_craft.gui`, `ucm_artifact_repair.gui` | The five modifier-slot panels (≈4,000 lines) were byte-identical in both windows | Defined once as types in the new `gui/ucm_artifact_shared.gui`. 4,504 + 4,212 to 524 + 232 + 3,992 |
 
 ## Performance
 

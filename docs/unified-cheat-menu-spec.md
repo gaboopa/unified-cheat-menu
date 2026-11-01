@@ -1,13 +1,13 @@
 # Unified CK3 Cheat Menu
 
-> History: this spec predates the rewrite that removed all inherited code. "Baseline mod" means the mod this project started from; `old_` names are its identifiers, kept here only to explain past decisions.
+> History: this spec predates the rewrite that removed all inherited code. "Baseline mod" means the mod this project started from; `old_` names are its identifiers, kept here only to explain past decisions. `agent.md` was the baseline's notes file, since deleted from this repo.
 
-**Proposed Functional and Interface Specification — Version 1.3**
+**Proposed functional and interface specification, version 1.3**
 
 **Target:** Crusader Kings III 1.20.x "Crozier" (verified against 1.20.1.2 game files)\
 **Baseline:** started from the baseline mod at upstream commit `bfcb175` (CC BY 4.0), since heavily rewritten\
 **Feature reference:** Daddy Pika's Cheat Menu / Divine Intervention (behavior only; no code or assets)\
-**Status:** Phases 0–7 implemented, followed by review, upstream-cleanup and simplification passes (Phases 8–11) and an Elder Kings 2 compatch (`compat/ek2/`, [ek2-compatch-plan.md](ek2-compatch-plan.md)). See the phase notes in docs/. Most features still need in-game testing; Phases 9–11 and the compatch haven't been load-tested yet.
+**Status:** Phases 0–7 implemented, followed by review, upstream-cleanup and simplification passes (Phases 8–11), gap features (Phase 12) and an Elder Kings 2 compatch (`compat/ek2/`, [ek2-compatch-plan.md](ek2-compatch-plan.md)). See the phase notes in docs/. Most features still need in-game testing; Phases 10–12 and the compatch haven't been load-tested yet.
 
 This document is the original design. Where later phases changed or dropped something, the text says so; the phase notes record what was actually built.
 
@@ -30,7 +30,7 @@ Corrections from the game's own `script_docs` output (1.20.1.2), which replaces 
 
 - Removed **Rename character** (no character-rename effect exists) and **Set offspring sex** (no supported parameter).
 - Pickers now use **generated lists** instead of reading the game's definitions at runtime.
-- Rewrote the Faith Editor for the 1.20 Faith → **Rite** model and limited tenet-slot claims to what's been verified.
+- Rewrote the Faith Editor for the 1.20 model, where faiths work through **Rites**, and limited tenet-slot claims to what's been verified.
 - Added **multiplayer-safe targeting**: per-player state lives on the player's character, not in global variables.
 - Added a **vanilla override inventory**, a **global defines** review, and an **error.log baseline** to Phase 0.
 - Settled licensing: the baseline mod is CC BY 4.0.
@@ -50,17 +50,17 @@ This specification is a proposed design. It doesn't claim these features already
 
 ## 1. Project objectives
 
-Create a comprehensive CK3 cheat menu that keeps the baseline mod's convenient character interactions and organized menus and adds the advanced controls associated with Divine Intervention.
+Create a CK3 cheat menu that keeps the baseline mod's convenient character interactions and organized menus and adds the advanced controls associated with Divine Intervention.
 
 The resulting mod must work standalone. Players shouldn't need to install either original mod.
 
 ### 1.1 Governing requirements
 
-1. **Preserve existing functionality.** All working the baseline mod features stay accessible and keep their existing behavior unless deliberately improved.
-2. **Interaction-first design.** Right-clicking characters remains the primary entry point. Dedicated GUI windows are used only where they substantially improve complex editing.
+1. **Preserve existing functionality.** All working baseline mod features stay accessible and keep their existing behavior unless deliberately improved.
+2. **Interaction-first design.** Right-clicking characters remains the primary entry point. Dedicated GUI windows are only for complex editing.
 3. **Context-aware actions.** The menu identifies the relevant character, realm, title, culture, faith, or other target automatically.
 4. **Minimal clutter.** Don't flood the normal character interaction menu with hundreds of cheats.
-5. **Comprehensive coverage.** Support all ten feature categories, including advanced DLC systems.
+5. **Full coverage.** Support all ten feature categories, including advanced DLC systems.
 6. **Click to target, groups for scale.** Every action applies to the thing you right-clicked. Actions on many targets use built-in groups derived from it, never a manual selection list.
 7. **Explicit targeting.** Every operation clearly identifies who or what will be modified.
 8. **No silent destructive actions.** Dangerous operations require confirmation and disclose their scope.
@@ -70,7 +70,7 @@ The resulting mod must work standalone. Players shouldn't need to install either
 
 ### 1.2 Preservation policy
 
-Inventory existing the baseline mod functionality against the forked baseline before development begins.
+Inventory existing baseline mod functionality against the forked baseline before development begins.
 
 Reuse working features where appropriate rather than reimplementing them unnecessarily.
 
@@ -94,7 +94,7 @@ A feature isn't preserved just because its menu entry is still visible. Its beha
 
 The interface uses three layers.
 
-### Layer 1 — Character interactions
+### Layer 1: Character interactions
 
 When you right-click a character, you see a compact set of cheat entries.
 
@@ -108,7 +108,7 @@ Players who prefer more direct shortcuts can enable additional entries in Settin
 
 Ordinary cheat operations must not require debug mode.
 
-### Layer 2 — Main categorized menu
+### Layer 2: Main categorized menu
 
 The main cheat menu shows:
 
@@ -134,13 +134,13 @@ Group actions (Section 5) live inside the category they belong to. For example, 
 
 Each category opens a focused submenu. Complex categories may open a dedicated GUI editor.
 
-Layer 2 is a single custom window with tabs, opened from the Layer 1 interaction. the baseline mod already uses this pattern (`common/character_interactions/01_ucm_gui_launcher_interactions.txt`). the baseline mod's existing decision-based menus stay available during migration.
+Layer 2 is a single custom window with tabs, opened from the Layer 1 interaction. The baseline mod already uses this pattern (`common/character_interactions/01_ucm_gui_launcher_interactions.txt`). The baseline mod's existing decision-based menus stay available during migration.
 
-### Layer 3 — Specialized editors
+### Layer 3: Specialized editors
 
 Use dedicated editing windows for operations that involve large lists, many values, or several interacting targets.
 
-| Editor               | Intended functionality                                             | the baseline mod starting point                       |
+| Editor               | Intended functionality                                             | Baseline mod starting point                       |
 | -------------------- | ------------------------------------------------------------------ | ---------------------------------------------- |
 | Character Editor     | Skills, traits, genetics, health, sexuality, age, perks, modifiers | `ucm_trait_editor.gui`, `ucm_lifestyle.gui`, `ucm_cheat_trait_editor.gui` |
 | Relationship Editor  | Clicked and second character: relationship status, family relationships | None                                      |
@@ -215,7 +215,7 @@ An in-game history may record completed actions, but it must not imply that all 
 
 ## 4.1 Character & Genetics
 
-**Purpose:** Comprehensive editing of individual character properties.
+**Purpose:** Edit individual character properties.
 
 **Menu hierarchy**
 
@@ -258,7 +258,7 @@ Required functions:
 - Apply one increment to all six attributes.
 - Apply predefined skill presets.
 - Reset attributes to an explicitly defined baseline, where technically supported.
-- Preserve the baseline mod's powerful attribute-enhancement options.
+- Preserve the baseline mod's attribute-enhancement options.
 
 The editor shows current values and expected results before significant changes.
 
@@ -308,7 +308,7 @@ Provide:
 - Apply persistent health regeneration.
 - Apply health penalties and physical conditions.
 
-**Important distinction:** Immortality, agelessness, and permanent health protection are separate effects. Don't present them as interchangeable.
+Immortality, agelessness, and permanent health protection are separate effects. Don't present them as interchangeable.
 
 ### Lifestyle & Education
 
@@ -581,7 +581,7 @@ War operations must check existing wars, war objectives, character status, and p
 
 ## 4.4 Faith & Culture
 
-**Purpose:** Comprehensive editing and conversion of culture and religion.
+**Purpose:** Edit and convert culture and religion.
 
 **Menu hierarchy**
 
@@ -1111,7 +1111,7 @@ Label experimental actions clearly.
 
 ---
 
-# 5. Group Actions
+# 5. Group actions
 
 There's no manual selection system: no pins and no saved selection lists. Instead, an action can apply to a **built-in group** taken from the thing you right-clicked. The group is worked out when the action runs, so there's nothing to set up beforehand or to clear afterwards.
 
@@ -1183,13 +1183,13 @@ A group action must not stop at the first invalid target.
 
 ## 6.1 Consistent visual conventions
 
-Use CK3's existing visual language:
+Use CK3's existing visual style:
 
 - Existing icons and panel styles where appropriate.
 - Standard game tooltips.
 - Consistent spacing and navigation.
 - Clear grouping of actions.
-- Existing the baseline mod terminology where it's familiar and accurate.
+- Existing baseline mod terminology where it's familiar and accurate.
 
 Avoid an elaborate standalone HUD.
 
@@ -1235,13 +1235,13 @@ Every editor shows its target prominently.
 
 For example:
 
-**Character Editor — Duke Robert**\
+**Character Editor: Duke Robert**\
 Target: Duke Robert | Second character: Lady Matilda
 
-**Culture Editor — Anglo-Saxon**\
+**Culture Editor: Anglo-Saxon**\
 Editing: Anglo-Saxon Culture | Scope: Global Culture Definition
 
-**Max Development — Realm Counties**\
+**Max Development: Realm Counties**\
 Group: Every county in Duke Robert's realm | Valid: 34 | Skipped: 2
 
 These labels are illustrations, not interface requirements.
@@ -1348,7 +1348,7 @@ Use CK3's existing modding mechanisms:
 **Generated catalogs.** There's no loop over building types, men-at-arms types, or artifact templates (`every_maa_regiment` and `every_artifact` cover existing regiments and artifacts, not the definitions). Pickers for those are **generated offline** from the game files by scripts in `tools/`, as the baseline already does:
 
 - `tools/gen_cw_tradition_picker_lists.py` produces `ucm_cw_tradition_picker_lists_generated.txt` (and, with `--agot-dir`, the AGOT variant in `tools/out/agot/`).
-- `tools/gen_ek2_compatch.py` produces the religion virtue/sin data and the merged/derived files under `compat/ek2/`.
+- `tools/gen_ek2_compatch.py` produces the faith editor data and the merged/derived files under `compat/ek2/`.
 - `tools/gen_ucm_main_menu.py` produces `gui/ucm_main_menu.gui`; `tools/gen_ucm_translations.py` produces the German, Russian, Chinese and Turkish `ucm_l_*.yml`. `tools/ck3parse.py` is their shared parser.
 - ~~`tools/gen_ucm_cw_innovation_sguis.py`~~ removed in Phase 10: no GUI ever called the innovation scripted GUIs it generated.
 
@@ -1374,13 +1374,13 @@ Avoid:
 - Unbounded recurring character scans.
 - Persistent global modifiers where a one-time change is enough.
 - Global defines changes that affect players who aren't using cheats.
-- Overwriting existing the baseline mod identifiers without a migration plan.
+- Overwriting existing baseline mod identifiers without a migration plan.
 
 Where baseline components are kept, reuse them carefully, and use a new project-specific namespace for additions.
 
 ### 7.4.1 Vanilla override inventory
 
-This is the Phase 0 inventory of the baseline. Since then: `gui/interaction_confirmation.gui` and the debug localization overrides were removed in Phase 7 (replaced by `localization/replace/`), `09_mpo_values.txt` in Phase 9; the two `.info` files are no longer in the repo. Still overridden: `gui/window_character.gui`, `gui/interaction_menu_window.gui`, `gui/frontend_ingame_menu.gui` and `tgp_china_minister_on_action.txt`.
+This is the Phase 0 inventory of the baseline. Since then: `gui/interaction_confirmation.gui` and the debug localization overrides were removed in Phase 7 (replaced by `localization/replace/`), `09_mpo_values.txt` in Phase 9; the two `.info` files are no longer in the repo. The later rewrite removed `gui/window_character.gui`, `gui/interaction_menu_window.gui`, `gui/frontend_ingame_menu.gui` and `tgp_china_minister_on_action.txt` too, so the repo now has none of these overrides.
 
 The baseline replaced these vanilla files outright. Any other mod that changes the same file conflicts, and the last one in load order wins.
 
@@ -1405,7 +1405,7 @@ The baseline's `common/defines` overrides include at least `NProvince.MAX_BUILDI
 
 ---
 
-# 8. Save Safety and State Management
+# 8. Save safety and state management
 
 ## 8.1 Destructive operations
 
@@ -1455,7 +1455,7 @@ Removing a persistent cheat removes only the state the mod manages, not unrelate
 
 ---
 
-# 9. Game and Mod Compatibility
+# 9. Game and mod compatibility
 
 ## 9.1 Primary target
 
@@ -1506,21 +1506,21 @@ Divine Intervention's publicly documented behavior can serve as a feature refere
 
 ---
 
-# 10. Implementation Roadmap
+# 10. Implementation roadmap
 
-All ten feature categories are in the final scope, but development proceeds in controlled phases.
+All ten feature categories are in the final scope, but development proceeds in phases.
 
 | Phase                | Scope                                                                                | Exit requirement                              |
 | -------------------- | ------------------------------------------------------------------------------------ | --------------------------------------------- |
-| 0 — Baseline         | Audit the baseline mod, establish a clean test build, inventory working behavior, record the error.log baseline, review vanilla overrides and global defines | Existing-feature regression baseline and recorded error count |
-| 1 — Foundation       | Navigation, clicked-target and second-character targeting, group-action framework, single-player gate, validation, execution, confirmations | Stable single-target and group workflows; menu hidden when a second player connects |
-| 2 — Characters       | Attributes, traits, genetics, health, lifestyle, relationships, family               | Character and relationship tests pass         |
-| 3 — Realm            | Titles, government, diplomacy, culture, faith/rite, construction                     | Realm-changing effects validated              |
-| 4 — Military & Items | Armies, war operations, artifacts, modifiers                                         | Military and artifact tests pass              |
-| 5 — Court & DLC      | Spawning, automated appointments, legends, activities, schemes, regencies, domiciles | DLC-dependent tests pass                      |
-| 6 — Group Actions    | Group versions of actions across supported modules, large-group handling             | Group correctness and performance tests pass  |
-| 7 — Hardening        | Localization, compatibility, accessibility, packaging, regressions, catalog regeneration | Release acceptance suite passes           |
-| 8–11 (added)         | Whole-repo review fixes; upstream-code fixes (the earlier code review); dead-code removal; simplification | Done, not yet load-tested; see below |
+| 0: Baseline         | Audit the baseline mod, establish a clean test build, inventory working behavior, record the error.log baseline, review vanilla overrides and global defines | Existing-feature regression baseline and recorded error count |
+| 1: Foundation       | Navigation, clicked-target and second-character targeting, group-action framework, single-player gate, validation, execution, confirmations | Stable single-target and group workflows; menu hidden when a second player connects |
+| 2: Characters       | Attributes, traits, genetics, health, lifestyle, relationships, family               | Character and relationship tests pass         |
+| 3: Realm            | Titles, government, diplomacy, culture, faith/rite, construction                     | Realm-changing effects validated              |
+| 4: Military & Items | Armies, war operations, artifacts, modifiers                                         | Military and artifact tests pass              |
+| 5: Court & DLC      | Spawning, automated appointments, legends, activities, schemes, regencies, domiciles | DLC-dependent tests pass                      |
+| 6: Group Actions    | Group versions of actions across supported modules, large-group handling             | Group correctness and performance tests pass  |
+| 7: Hardening        | Localization, compatibility, accessibility, packaging, regressions, catalog regeneration | Release acceptance suite passes           |
+| 8–11 (added)         | Whole-repo review fixes; upstream-code fixes (the earlier code review); dead-code removal; simplification | Done; Phases 10–11 not yet load-tested. See below |
 | EK2 compatch (added) | Detection, vanilla-data isolation, `compat/ek2/` mod | Done except the load test; see [ek2-compatch-plan.md](ek2-compatch-plan.md) |
 
 ### Phase 0 tasks
@@ -1532,7 +1532,7 @@ All ten feature categories are in the final scope, but development proceeds in c
 5. Recover or rewrite the missing `gen_ucm_cw_innovation_sguis.py` generator. (Rewritten in Phase 0, then removed in Phase 10 as unused.)
 6. Click through each existing feature and record whether it works, using the "Verify" notes in `agent.md`.
 
-Phase 0 progress and findings are recorded in [phase0-baseline.md](phase0-baseline.md). Phase 1 is described in [phase1-foundation.md](phase1-foundation.md), Phase 2 in [phase2-characters.md](phase2-characters.md), Phase 3 in [phase3-realm.md](phase3-realm.md), Phase 4 in [phase4-military-artifacts.md](phase4-military-artifacts.md), Phase 5 in [phase5-court-dlc.md](phase5-court-dlc.md), Phase 6 in [phase6-group-actions.md](phase6-group-actions.md), Phase 7 in [phase7-hardening.md](phase7-hardening.md), Phase 8 in [phase8-review-fixes.md](phase8-review-fixes.md), Phase 9 in [phase9-upstream-fixes.md](phase9-upstream-fixes.md), Phase 10 in [phase10-dead-code.md](phase10-dead-code.md), Phase 11 in [phase11-simplification.md](phase11-simplification.md), Phase 12 (features recreated from the the baseline mod and Divine Intervention gap review) in [phase12-gap-features.md](phase12-gap-features.md).
+Phase 0 progress and findings are recorded in [phase0-baseline.md](phase0-baseline.md). Phase 1 is described in [phase1-foundation.md](phase1-foundation.md), Phase 2 in [phase2-characters.md](phase2-characters.md), Phase 3 in [phase3-realm.md](phase3-realm.md), Phase 4 in [phase4-military-artifacts.md](phase4-military-artifacts.md), Phase 5 in [phase5-court-dlc.md](phase5-court-dlc.md), Phase 6 in [phase6-group-actions.md](phase6-group-actions.md), Phase 7 in [phase7-hardening.md](phase7-hardening.md), Phase 8 in [phase8-review-fixes.md](phase8-review-fixes.md), Phase 9 in [phase9-upstream-fixes.md](phase9-upstream-fixes.md), Phase 10 in [phase10-dead-code.md](phase10-dead-code.md), Phase 11 in [phase11-simplification.md](phase11-simplification.md), Phase 12 (features recreated from the baseline mod and Divine Intervention gap review) in [phase12-gap-features.md](phase12-gap-features.md).
 
 Keep a usable build at the end of every phase.
 
@@ -1540,11 +1540,11 @@ Don't combine large structural changes with unrelated feature additions in the s
 
 ---
 
-# 11. Validation and Acceptance Criteria
+# 11. Validation and acceptance criteria
 
 ## 11.1 Preservation
 
-- Existing the baseline mod interactions remain accessible.
+- Existing baseline mod interactions remain accessible.
 - Existing behavior is unchanged unless deliberately replaced.
 - Previously working military presets still work.
 - Existing artifacts can still be created, edited, and repaired.
@@ -1556,7 +1556,7 @@ Don't combine large structural changes with unrelated feature additions in the s
 
 - A right-click action changes the clicked target, not the player, unless explicitly requested.
 - The second character keeps the correct identity and is cleared when that character dies.
-- Invalid, removed, or dead targets are handled gracefully.
+- An action on an invalid, removed, or dead target does nothing and logs no error.
 - A group action affects exactly the group it names, worked out when it runs.
 - No action runs on an unintended title or character.
 - With a second player connected, no interaction, decision, or window from the mod is shown, and persistent cheats stop applying.
@@ -1565,7 +1565,7 @@ Don't combine large structural changes with unrelated feature additions in the s
 
 - No unintended titles or holdings are destroyed.
 - Parentage edits can't create ancestry loops.
-- Government changes handle invalid targets gracefully.
+- A government change on an invalid target does nothing.
 - Religion/culture edits apply at the specified level.
 - Artifact edits don't silently delete unrelated modifiers.
 - Turning off a cheat stops its persistent effects.
@@ -1611,60 +1611,48 @@ A visible button or localization entry alone doesn't make a feature complete.
 
 ---
 
-# 12. Final Product Definition
+# 12. Final product definition
 
-The finished Unified CK3 Cheat Menu offers the breadth of a full game editor while keeping the speed and convenience of the baseline mod's right-click interface.
+The finished menu covers character, family, realm, culture, faith, military, artifact, court and DLC mechanics in one window, opened by right-clicking a character.
 
-Its defining characteristics:
-
-**Accessible:** Most common cheats take only a right-click and a few selections.
-
-**Comprehensive:** Character, family, realm, culture, faith, military, artifact, court, and DLC mechanics are covered in one consistent interface.
-
-**Precise:** Complex operations let the player say exactly which characters, titles, counties, or other entities are affected.
-
-**Flexible:** Simple single-target actions sit alongside advanced editors and batch operations.
-
-**Maintainable:** Each feature has a stable internal definition, clear ownership, guarded effects, and tests.
-
-**Reliable:** The menu flags unsupported operations rather than failing silently or acting on the wrong target.
-
-The governing design principle:
-
-**the baseline mod's presentation, expanded with Divine Intervention's depth, implemented as one coherent and maintainable mod.**
+- Most common cheats take a right-click and a few selections.
+- Complex operations name exactly which characters, titles or counties they change.
+- Single-target actions sit next to the advanced editors and group actions.
+- Each feature has a stable internal definition, guarded effects and tests.
+- The menu flags unsupported operations rather than failing silently or acting on the wrong target.
 
 ---
 
-# Appendix A — Engine verification (CK3 1.20.1.2)
+# Appendix A: Engine verification (CK3 1.20.1.2)
 
 Checked against the game's own documentation (`script_docs` output: `logs/effects.log`, `triggers.log`, `modifiers.log`), plus the vanilla and baseline script that uses each effect. "Verified" means documented by the engine. It hasn't necessarily been tested in game.
 
 | Claim | Result | Evidence |
 | --- | --- | --- |
-| Script can loop over traits, innovations, traditions, tenets, doctrines | ✅ Verified | `every_trait`, `every_culture_innovation`, `every_culture_tradition`, `every_tenet`, `every_doctrine` ("Iterate through every … in the database") |
-| Script can loop over building types, MAA types, artifact templates | ❌ No | No database iterator for these; `every_maa_regiment` and `every_artifact` cover existing instances only |
-| Typed text can rename titles, artifacts, houses, cultures, faiths, rites | ✅ Verified | `set_title_name_dynamic`, `set_artifact_name`, `set_house_name`, `set_culture_name`, `set_faith_name`, `set_rite_name`; text-entry pattern in `accolade_events.txt` and `07_dlc_ep3_scripted_effects.txt` |
-| Typed text can rename characters | ❌ Failed in game | `change_first_name = <dynamic_description>` exists, but in Phase 2 testing it rejected typed text ("Name is too long", then "Couldn't find new first name"). Dropped at the user's request |
-| Typed text can be read as a number | ❌ No | The text controller stores a string shown through localization |
-| Pregnancy with chosen father and number of children | ✅ Verified | `make_pregnant` / `make_pregnant_no_checks`: `father`, `number_of_children`, `known_bastard` |
-| Choosing the baby's sex | ✅ Verified | `set_pregnancy_gender = female/male/random` in `effects.log`. Not a `make_pregnant` parameter |
-| Biological father | ✅ Verified | `set_real_father`, `set_father`, `set_mother` |
-| Sexuality, weight | ✅ Verified | `set_sexuality`, `change_current_weight` |
-| Immortality | ⚠️ Partial | `set_immortal_age` only works if already immortal; `is_immortal` trigger exists. Granting immortality needs another effect (verify) |
-| Personal tenet slots | ✅ Verified | `personal_tenet_slot_add` is a modifier; `set_personal_tenet`, `force_set_personal_tenet` effects |
-| Extra core tenets | ⚠️ Unverified | `add_rite_tenet` exists with no documented limit; test in game |
-| Single scripted GUI for innovations | ⚠️ Likely (moot: the innovation scripted GUIs were removed in Phase 10) | `add_innovation` accepts a `culture_innovation` target; GUI scope passing needs verifying |
-| Virtue/sin cap | ✅ Verified | `MAX_VIRTUES_SINS = 7` in `00_defines.txt` |
-| Mod disables achievements | ❌ No | Vanilla `ACHIEVEMENTS_EXPLANATION` lists no mod or checksum condition; Divine Intervention (also changes `common/`) documents only debug mode as disabling them. Not yet confirmed in an Ironman game |
+| Script can loop over traits, innovations, traditions, tenets, doctrines | Verified | `every_trait`, `every_culture_innovation`, `every_culture_tradition`, `every_tenet`, `every_doctrine` ("Iterate through every … in the database") |
+| Script can loop over building types, MAA types, artifact templates | No | No database iterator for these; `every_maa_regiment` and `every_artifact` cover existing instances only |
+| Typed text can rename titles, artifacts, houses, cultures, faiths, rites | Verified | `set_title_name_dynamic`, `set_artifact_name`, `set_house_name`, `set_culture_name`, `set_faith_name`, `set_rite_name`; text-entry pattern in `accolade_events.txt` and `07_dlc_ep3_scripted_effects.txt` |
+| Typed text can rename characters | Failed in game | `change_first_name = <dynamic_description>` exists, but in Phase 2 testing it rejected typed text ("Name is too long", then "Couldn't find new first name"). Dropped at the user's request |
+| Typed text can be read as a number | No | The text controller stores a string shown through localization |
+| Pregnancy with chosen father and number of children | Verified | `make_pregnant` / `make_pregnant_no_checks`: `father`, `number_of_children`, `known_bastard` |
+| Choosing the baby's sex | Verified | `set_pregnancy_gender = female/male/random` in `effects.log`. Not a `make_pregnant` parameter |
+| Biological father | Verified | `set_real_father`, `set_father`, `set_mother` |
+| Sexuality, weight | Verified | `set_sexuality`, `change_current_weight` |
+| Immortality | Partial | `set_immortal_age` only works if already immortal; `is_immortal` trigger exists. Granting immortality needs another effect (verify) |
+| Personal tenet slots | Verified | `personal_tenet_slot_add` is a modifier; `set_personal_tenet`, `force_set_personal_tenet` effects |
+| Extra core tenets | Unverified | `add_rite_tenet` exists with no documented limit; test in game |
+| Single scripted GUI for innovations | Likely (moot: the innovation scripted GUIs were removed in Phase 10) | `add_innovation` accepts a `culture_innovation` target; GUI scope passing needs verifying |
+| Virtue/sin cap | Verified | `MAX_VIRTUES_SINS = 7` in `00_defines.txt` |
+| Mod disables achievements | No | Vanilla `ACHIEVEMENTS_EXPLANATION` lists no mod or checksum condition; Divine Intervention (also changes `common/`) documents only debug mode as disabling them. Not yet confirmed in an Ironman game |
 
-# Appendix B — Baseline audit summary
+# Appendix B: Baseline audit summary
 
-This records the original the baseline mod baseline at the start of the project, not the current repo.
+This records the original baseline mod at the start of the project, not the current repo.
 
-- **Source:** `the baseline repository`, commit `bfcb175` ("Portrait GUI Cheats"), cloned with full history. The local clone's remote is named `upstream`.
+- **Source:** the baseline mod's repository, commit `bfcb175` ("Portrait GUI Cheats"), cloned with full history. The local clone's remote is named `upstream`.
 - **Version:** `descriptor.mod` version `10.22.26-BGA3`, `supported_version="1.20.*"`, tag "1.20 'Crozier'".
 - **License:** CC BY 4.0.
 - **Size:** about 159 scripted-effect files, 53 scripted-trigger files, 61 event files, 27 GUI files, 22 scripted-GUI files, 17 character-interaction files, and localization in five languages.
-- **Entry points:** right-click → "Open the baseline mod Character Tools"; Decisions → Realm & Government Tools → Open Sub Menu Editor.
+- **Entry points:** right-click → "Character Tools"; Decisions → Realm & Government Tools → Open Sub Menu Editor.
 - **Known state:** ported to 1.20 and reaches the map with vanilla. Features still need clicking through (`agent.md`).
 - **Risks:** 10 vanilla file overrides (Section 7.4.1), global defines changes (Section 7.4.2), global-variable targeting that isn't multiplayer-safe (moot since v1.3: single-player only), large starting error count (Section 10), missing innovation generator script (Section 7.3; later removed as unused).

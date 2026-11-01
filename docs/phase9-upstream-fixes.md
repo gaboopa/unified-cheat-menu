@@ -1,13 +1,13 @@
-# Phase 9 — Upstream fixes: global side effects and broken references
+# Phase 9: Upstream fixes: global side effects and broken references
 
-Fixes the Critical items C1–C10 from the earlier code review and removes the code that pointed at content missing from 1.20.1.2. This phase has not been load-tested yet.
+Fixes the Critical items C1–C10 from the earlier code review and removes the code that pointed at content missing from 1.20.1.2. The first load test and its follow-up fixes are below; the re-run in the checklist is still open.
 
 ## Critical (C1–C10)
 
 | # | Was | Now |
 | --- | --- | --- |
 | C1 | `old_legends_values.txt` rewrote legend spread for the whole world | Deleted (vanilla formula) |
-| C2 | `ucm_cheat_values.txt`: erudition legacy 10 → 100 for every dynasty | Deleted (vanilla) |
+| C2 | `ucm_cheat_values.txt`: erudition legacy 10 to 100 for every dynasty | Deleted (vanilla) |
 | C3 | `dynasty_of_many_crowns_decision` stale override: 2 kingdoms instead of 10, available to the AI | Override removed from `005_zhuge_qita_decisions.txt`. The menu button now shows the vanilla decision |
 | C8 | `09_mpo_values.txt`: a full vanilla copy, made to add a `bloodline_god` bonus to commander study | Deleted (vanilla). The bonus is gone |
 | C4 | `DB_duchy_*` (72 duchy buildings, built by the AI in every game) | Deleted, along with `DB_building_requirement_triggers.txt`, `DB_buildings_l_*`, the 196 keys in the zh/tr consolidated files, and 19 `icon_db_*` icons |

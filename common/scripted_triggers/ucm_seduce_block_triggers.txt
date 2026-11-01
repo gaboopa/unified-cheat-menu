@@ -1,5 +1,5 @@
 ﻿# Chamber Watch: based on the head of household (spouse or concubinist) having ucm_seduce_shield_active; covers their spouses and concubines (is_concubine)
-# No longer also uses is_playable_character (landless spouses slipped through); human head of household = is_ai = no, AI never has this flag.
+# Checks is_ai = no, not is_playable_character, which let landless spouses through. The AI never has this flag.
 
 # This character is a spouse or concubine under the watch: any spouse, or their concubinist, has the flag
 ucm_seduce_shield_active_for_target_trigger = {

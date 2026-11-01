@@ -56,6 +56,7 @@ English, German, Russian, Simplified Chinese and Turkish.
 | `tools/gen_icons.py` | Redraws every DDS under `gfx/` as a badge built from its file name |
 | `tools/gen_pickers.py` | Generates the culture, religion, faith and tradition pickers |
 | `tools/gen_ucm_crozier.py` | Generates the Crozier toggles and actions |
+| `tools/gen_ucm_crozier_loc.py` | Generates the Crozier cheat text in every language |
 | `tools/gen_ucm_domicile.py` | Generates the estate presets from the domicile buildings |
 
 The game-data generators take `--game-dir <CK3>/game` (or `CK3_GAME_DIR`); rerun them after a game update instead of editing their output.
@@ -84,4 +85,3 @@ Licensed under [Creative Commons Attribution 4.0 International](LICENSE). Compar
 - no vanilla file overrides beyond what a feature needs, with vanilla-only data split out so total conversions can patch it;
 - an Elder Kings 2 compatch.
 
-See `docs/` for details.

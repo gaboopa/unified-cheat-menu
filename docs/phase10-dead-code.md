@@ -1,10 +1,10 @@
-# Phase 10 — Dead code: faith doctrine lists, scripted GUIs, events
+# Phase 10: Dead code: faith doctrine lists, scripted GUIs, events
 
 Removes upstream code that nothing can reach, from the "Dead code" section of the earlier code review. Nothing reachable changed. This phase has not been load-tested yet.
 
 ## Faith doctrine lists (commit fa52434)
 
-Deleted `ucm_acm_faith_refresh_active_doctrine_lists_effect` and `ucm_acm_faith_remove_doctrine_from_selected_effect` from `ucm_acm_faith_doctrine_lists_effects.txt` (40,354 lines; 53,216 → 12,862). Neither had a caller, and the `ucm_acm_fe_active_*` lists the refresh effect filled are never read.
+Deleted `ucm_acm_faith_refresh_active_doctrine_lists_effect` and `ucm_acm_faith_remove_doctrine_from_selected_effect` from `ucm_acm_faith_doctrine_lists_effects.txt` (40,354 lines; 53,216 to 12,862). Neither had a caller, and the `ucm_acm_fe_active_*` lists the refresh effect filled are never read.
 
 **Kept:** `ucm_acm_faith_fill_empty_tenet_slots_effect` and `ucm_acm_faith_clear_empty_tenet_slots_effect`. Nothing calls them, but the spec lists them under the faith editor, so wiring them up or removing them is a spec decision.
 

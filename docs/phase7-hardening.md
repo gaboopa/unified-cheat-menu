@@ -1,4 +1,4 @@
-# Phase 7 — Hardening, localization, packaging
+# Phase 7: Hardening, localization, packaging
 
 ## Compatibility clean-up (Phase 0 recommendations)
 
@@ -20,7 +20,7 @@ Kept as documented in Phase 0: `window_character.gui` and `interaction_menu_wind
 ## Packaging
 
 - New `README.md` covering install, use, the single-player rule and repository layout, with credits and the CC BY 4.0 change notice.
-- New `thumbnail.png` (generated; no the baseline mod branding). The the baseline mod logo images are removed.
+- New `thumbnail.png` (generated, with no baseline mod branding). The baseline mod logo images are removed.
 - The upstream README and development notes moved to `earlier notes/`.
 
 ## Load test

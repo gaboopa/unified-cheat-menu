@@ -1,4 +1,4 @@
-# Unified Cheat Menu — layout handoff
+# Unified Cheat Menu layout handoff
 
 A mockup of the in-game cheat menu (`gui/ucm_main_menu.gui`, 880×680 window), one screenshot per tab.
 Labels come from `localization/english`. The interactive canvas is at

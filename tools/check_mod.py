@@ -1,5 +1,5 @@
-"""Static checks that need no game files, for CI: balanced braces, localization format, and that every ucm_ name
-used is defined somewhere in the mod.
+"""Static checks that need no game files, for CI: balanced braces, localization format, language parity, every ucm_
+name used being defined somewhere in the mod, and valid DDS files and icon references.
 
     python tools/check_mod.py               # list every problem, exit 1 if any
     python tools/check_mod.py --self-check
@@ -10,6 +10,7 @@ variable or flag counts as defining it, so a typo made the same way at every use
 import argparse
 import os
 import re
+import struct
 import sys
 import tempfile
 
@@ -36,6 +37,31 @@ RUNTIME_DEF = re.compile(
 GUI_NAME = re.compile(rf"\bname\s*=\s*\"?({NAME})")
 # Read or cleared, but nothing sets them any more. Harmless; remove the reads, then these, once tested in game.
 KNOWN_UNSET = {"ucm_cheat_menu_cheat_menu", "ucm_chenzhi_force_feudal_conversion", "ucm_no_marry_vow"}
+
+
+TRANSLATIONS = ("german", "russian", "simp_chinese", "turkish")
+ENGLISH_ONLY_FILES = {"ucm_ek2_l_english.yml"}  # the EK2 tab's labels stay English
+ICON_PATH = re.compile(r"gfx/[\w/.-]+\.(?:dds|tga|png)\b")
+# `icon = x` in these folders means <folder>/x.dds.
+ICON_DIRS = {
+    "casus_belli_types": "casus_bellis", "character_interactions": "character_interactions", "modifiers": "modifiers",
+    "men_at_arms_types": "regimenttypes", "religion": "faith", "traits": "traits",
+}
+ICON_USE = re.compile(r"\b(?:reformed_)?icon\s*=\s*\"?([\w.-]+)(?![\w$.-])")
+# Checked against the 1.20.1.2 install. check_refs.py doesn't cover these, so recheck after a game update.
+VANILLA_ICONS = {
+    "gfx/interface/illustrations/decisions/decision_misc.dds",
+    "gfx/interface/icons/character_interactions/debug_chars.dds",
+    "gfx/interface/icons/character_interactions/debug_take_title.dds",
+    "gfx/interface/icons/character_interactions/icon_contract_modification_single.dds",
+    "gfx/interface/icons/faith/christianity_messalian.dds",
+    "gfx/interface/icons/traits/whole_of_body.dds",
+    *(f"gfx/interface/icons/modifiers/{n}.dds" for n in (
+        "county_modifier_development_positive", "economy_positive", "martial_positive", "piety_positive",
+        "prowess_positive", "social_negative", "social_positive", "stewardship_positive")),
+}
+# Used by gen_ucm_crozier.py, but neither the mod nor vanilla has it. Remove once the generator picks a real icon.
+KNOWN_MISSING_ICONS = {"gfx/interface/icons/modifiers/positive.dds"}
 
 
 def walk(root, exts):
@@ -128,6 +154,39 @@ def ucm_name_problems(root):
     return [f"{where}: {name} is not defined" for name, where in sorted(used.items())]
 
 
+def parity_problems(root):
+    english = set()
+    for f in walk(os.path.join(root, "localization", "english"), (".yml",)):
+        if os.path.basename(f) not in ENGLISH_ONLY_FILES:
+            english.update(k for k, _ in LOC_LINE.findall(read(f)))
+    return [f"{lang}: {key} is missing" for lang in TRANSLATIONS for key in sorted(english - set(load_loc(lang, root)))]
+
+
+def icon_problems(root):
+    out = []
+    for f in walk(root, (".dds",)):
+        with open(f, "rb") as fh:
+            head = fh.read(128)
+        if len(head) < 128 or head[:4] != b"DDS " or head[4:8] != struct.pack("<I", 124) or head[76:80] != struct.pack("<I", 32):
+            out.append(f"{os.path.relpath(f, root)}: invalid DDS header")
+    used = {}
+    for f in walk(root, (".txt", ".gui", ".yml")):
+        rel = os.path.relpath(f, root)
+        text = strip_comments(read(f))
+        for path in ICON_PATH.findall(text):
+            used.setdefault(path, rel)
+        parts = rel.split(os.sep)
+        folder = parts[parts.index("common") + 1] if "common" in parts[:-1] else None
+        if folder in ICON_DIRS:
+            for name in ICON_USE.findall(text):
+                file_name = name if name.endswith(".dds") else f"{name}.dds"
+                used.setdefault(f"gfx/interface/icons/{ICON_DIRS[folder]}/{file_name}", rel)
+    for path, rel in sorted(used.items()):
+        if path not in VANILLA_ICONS | KNOWN_MISSING_ICONS and not os.path.exists(os.path.join(root, path)):
+            out.append(f"{rel}: {path} doesn't exist")
+    return out
+
+
 def write(root, rel, data):
     path = os.path.join(root, rel)
     os.makedirs(os.path.dirname(path), exist_ok=True)
@@ -173,6 +232,22 @@ ucm_sgui = { saved_scopes = { ucm_sg } }
 """)
         got = [p.split(": ")[1] for p in ucm_name_problems(d)]
         assert got == ["ucm_gone_effect is not defined", "ucm_never_set is not defined", "ucm_ns.2 is not defined"], got
+    with tempfile.TemporaryDirectory() as d:
+        write(d, "localization/english/a_l_english.yml", b'l_english:\n a:0 "x"\n b:0 "y"\n')
+        write(d, "localization/english/ucm_ek2_l_english.yml", b'l_english:\n tab:0 "EK2"\n')
+        for lang in TRANSLATIONS:
+            write(d, f"localization/{lang}/a_l_{lang}.yml", f'l_{lang}:\n a:0 "x"\n'.encode() + (b' b:0 "y"\n' if lang != "turkish" else b""))
+        assert parity_problems(d) == ["turkish: b is missing"], parity_problems(d)
+    with tempfile.TemporaryDirectory() as d:
+        good = b"DDS " + struct.pack("<I", 124) + bytes(68) + struct.pack("<I", 32) + bytes(48)
+        write(d, "gfx/interface/icons/traits/a.dds", good)
+        write(d, "gfx/interface/icons/traits/bad.dds", b"DDS ")
+        write(d, "common/traits/t.txt", b'a = { icon = "a.dds" }\nb = { icon = gone }\nc = { icon = $P$ }\nd = { icon = x_$P$ }\n# icon = no\n')
+        write(d, "common/decisions/d.txt", b'a = { reference = "gfx/interface/illustrations/decisions/decision_misc.dds" }\nb = { icon = not_a_path }\nc = { reference = "gfx/nope.dds" }\n')
+        got = [p.replace(os.sep, "/") for p in icon_problems(d)]
+        assert got == ["gfx/interface/icons/traits/bad.dds: invalid DDS header",
+                       "common/traits/t.txt: gfx/interface/icons/traits/gone.dds doesn't exist",
+                       "common/decisions/d.txt: gfx/nope.dds doesn't exist"], got
     print("check_mod self-check OK")
 
 
@@ -183,7 +258,8 @@ def main():
         return self_check()
     sys.stdout.reconfigure(encoding="utf-8")  # problem lines quote Cyrillic and Chinese text
     found = 0
-    for title, check in (("braces", brace_problems), ("localization", loc_problems), ("ucm names", ucm_name_problems)):
+    for title, check in (("braces", brace_problems), ("localization", loc_problems), ("language parity", parity_problems),
+                         ("ucm names", ucm_name_problems), ("icons", icon_problems)):
         problems = check(MOD_DIR)
         for p in problems:
             print(p)

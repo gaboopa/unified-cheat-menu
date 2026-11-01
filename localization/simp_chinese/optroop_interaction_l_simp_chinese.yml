@@ -1,0 +1,3 @@
+﻿l_simp_chinese:
+ open_optroop_menu: "打开家族卫队菜单"
+ open_optroop_menu_desc: "[recipient.GetShortUINameNoTooltip|U]将获得家族卫队选项"

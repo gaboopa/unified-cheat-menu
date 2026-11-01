@@ -19,5 +19,5 @@ jobs:
           python tools/check_refs.py --self-check
           python tools/audit_baseline.py --self-check
           python tools/check_mod.py --self-check
-      - name: Braces, localization format, ucm_ names
+      - name: Braces, localization, parity, ucm_ names, icons
         run: python tools/check_mod.py
